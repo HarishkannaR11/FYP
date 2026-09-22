@@ -1,0 +1,238 @@
+=== WSL2 STABILITY DIAGNOSIS & FIX REPORT ===
+Date: 2026-09-18
+Context: AD-group rs-fMRI production preprocessing (masked GLM), 25 acquisitions
+
+--------------------------------------------------------------------
+1. OBSERVED ERROR
+--------------------------------------------------------------------
+Repeated WSL2 crashes during Nipype execution, approx. every 4-8 minutes:
+
+    An existing connection was forcibly closed by the remote host.
+    Error code: Wsl/Service/0x80072746
+
+Effect: any process running inside WSL (including the Nipype MultiProc
+workflow) was killed without warning. Background nohup'd processes died
+silently; long-running foreground wsl.exe calls were also cut off.
+
+--------------------------------------------------------------------
+2. DIAGNOSIS METHODOLOGY (evidence gathered BEFORE concluding cause)
+--------------------------------------------------------------------
+Checked, in order, without assuming the cause:
+
+  a) Disk space:        C:\ free = 28.8 GB / 447 GB total -- NOT the cause
+                         WSL ext4 (/dev/sdc) free = 908 GB / 1007 GB -- NOT the cause
+  b) Windows power plan: Sleep-after = 0 (never) on both AC/DC
+                         Hibernate-after = 0 (AC) / effectively never (DC)
+                         -- sleep/hibernate NOT the cause
+  c) Event Viewer:       Microsoft-Windows-Hyper-V-Worker-Admin: 0 errors, last 24h
+                         System log Id 41/6008 (unexpected shutdown): 0 events
+                         Application log WSL/LxssManager errors: 0 events
+                         -- no hard Hyper-V VM-crash fault was logged
+  d) WSL version:        WSL 2.3.26.0, kernel 5.15.167.4-1 -- current, not an
+                         old known-buggy build
+  e) .wslconfig (before fix): only `debugConsole=true` -- NO explicit memory,
+                         swap, or processor limits set
+  f) Host RAM (measured multiple times during the incident):
+                         Total physical RAM = 7834.5 MB (~7.65 GB) -- a very
+                         small total for a host also running WSL2
+                         Free RAM observed as low as 255.6 MB and repeatedly
+                         under 1 GB free
+                         Top consumers: vmmemWSL (636-1105 MB, fluctuating),
+                         FIVE separate "Antigravity IDE" processes (combined
+                         ~900 MB-1.3 GB), msedge (multiple processes, ~300-400
+                         MB combined), X-VPN_root (~111-126 MB), MsMpEng /
+                         Windows Defender (~200-220 MB), claude (~240-250 MB)
+  g) WSL-internal dmesg:  `hv_balloon: Max. dynamic memory size: 3916 MB`
+                         confirms Hyper-V Dynamic Memory ballooning active
+                         against the WSL VM
+                         `systemd-journald: File .../system.journal corrupted
+                         or uncleanly shut down, renaming and replacing`
+                         (observed on MULTIPLE fresh boots) -- direct evidence
+                         of forced/unclean VM termination, not graceful
+                         shutdown
+  h) No OOM-killer messages inside the WSL guest's own dmesg -- the guest
+     kernel itself was not the one killing processes; the VM's connection
+     to the host was being torn down from OUTSIDE the guest
+
+--------------------------------------------------------------------
+3. DIAGNOSED ROOT CAUSE
+--------------------------------------------------------------------
+System-wide (Windows host) RAM exhaustion. The host has only ~7.65 GB total
+physical RAM, and other concurrently running Windows applications (multiple
+Antigravity IDE windows, Microsoft Edge, X-VPN, Windows Defender, and this
+Claude Code session itself) routinely consume nearly all of it, leaving as
+little as ~255 MB free system-wide. With no explicit `.wslconfig` memory
+ceiling, WSL2's Hyper-V Dynamic Memory (hv_balloon) was floating/ballooning
+against this same scarce pool. When the 25-acquisition Nipype job's peak
+memory demand (loading multiple float64 4D BOLD arrays, each ~220 MB+, per
+worker) pushed total system memory to its limit, the WSL2 VM's service
+connection was forcibly torn down by the host to relieve pressure --
+surfacing to the client as `Wsl/Service/0x80072746`.
+
+This is NOT a Hyper-V hard-crash (no Hyper-V-Worker fault events logged),
+NOT a disk-space issue, NOT a sleep/power-management issue, and NOT a guest-
+side OOM-kill (no guest dmesg OOM messages) -- it is host memory pressure
+destabilizing the VM's connection from the outside.
+
+--------------------------------------------------------------------
+4. FIX APPLIED
+--------------------------------------------------------------------
+a) `.wslconfig` (C:\Users\krish\.wslconfig) -- added explicit, bounded
+   resource limits so the WSL VM has a stable, predictable footprint
+   instead of floating dynamically against host pressure:
+
+       [wsl2]
+       debugConsole=true
+       memory=3GB
+       swap=4GB
+       processors=4
+
+   Applied via `wsl --shutdown` + fresh boot (config is read at VM-start
+   time). Verified post-fix: WSL reports 2.9 GiB total memory, 4.0 GiB
+   swap (was 3.7 GiB / 1 GiB before).
+
+b) Nipype `n_procs`: reduced from 2 to 1 in
+   pipeline/fsfast_ad_production_masked.py (execution parameter only --
+   NO change to any processing step, tool, algorithm, or scientific
+   parameter of the frozen pipeline).
+
+c) Added an optional `AD_STABILITY_TEST_RUN_KEY` environment-variable
+   gate to the SAME production script, letting it run against exactly one
+   acquisition for controlled testing without altering the pipeline logic
+   or creating a separate/divergent script.
+
+d) Nipype cache-corruption recovery: several `.pklz` result files in the
+   Nipype work directory had been truncated ("Ran out of input" on
+   unpickling) by earlier forced VM kills mid-write. These are corrupted
+   CACHE ENTRIES, not source data or scientific outputs -- 10 specific
+   corrupted files across 7 subjects were identified by scanning every
+   result_*.pklz file in the work dir and attempting to unpickle each one,
+   then deleted individually (NOT a wholesale cache wipe). This forces
+   only those specific nodes to recompute; all other cached/completed
+   nodes were preserved untouched.
+
+e) Built a resilient retry wrapper (scripts/setup/retry_stability_test.sh,
+   and its full-run counterpart scripts/setup/retry_ad_production.sh) that
+   runs OUTSIDE the WSL VM (in Windows Git Bash), so it survives VM
+   restarts, automatically detects and cleans newly-corrupted cache
+   pickles after a crash, and relaunches -- stopping only on WORKFLOW_DONE
+   or a genuine (non-cache-corruption) Python error.
+
+f) Host-side mitigation (closing memory-heavy applications) was offered
+   to the user via explicit prompt; the user chose NOT to have any
+   applications closed. This remains the single largest available lever
+   for full stability and was NOT applied.
+
+--------------------------------------------------------------------
+5. WSL MEMORY/SWAP CONFIGURATION (final)
+--------------------------------------------------------------------
+memory=3GB, swap=4GB, processors=4 (was: no explicit limit / WSL2 default
+~50% of host RAM, no configured swap beyond WSL2's own 1GB default)
+
+--------------------------------------------------------------------
+6. NIPYPE WORKER COUNT
+--------------------------------------------------------------------
+n_procs=1 (was: 2)
+
+--------------------------------------------------------------------
+7. STABILITY-TEST RESULTS (single acquisition, sub-002S5018 ses-01)
+--------------------------------------------------------------------
+Monitoring window: ~14:35:57 to ~14:41:56 (approx. 6 minutes of continuous
+resource logging at 30s intervals; test itself, across all retry attempts,
+spanned from 14:14 to 14:41, ~27 minutes wall-clock including 2 crash/
+recovery cycles before the final clean pass).
+
+Observed during monitoring:
+  - Host free RAM fluctuated widely: 1878 MB -> 255.6 MB -> 1606 MB ->
+    480.8 MB -> 1584 MB (never stably above ~2 GB, repeatedly near-critical)
+  - vmmemWSL fluctuated 489 MB - 1692 MB
+  - WSL internal memory usage stayed low and well within its 2.9 GB cap
+    (typically 465-685 MB used) -- the VM itself was never short on its
+    OWN allotted memory
+  - WSL uptime resets observed MULTIPLE times in the monitoring window
+    (approx. 4-5 distinct restarts) -- WSL continued restarting
+    intermittently even after the .wslconfig and n_procs fixes were
+    applied, directly tracking the host free-RAM dips
+  - The resilient retry wrapper successfully detected each restart,
+    cleaned corrupted cache pickles automatically, and relaunched without
+    manual intervention each time
+
+Final outcome: the single-acquisition test DID complete successfully with
+a QC PASS:
+  - Output: derivatives/fsfast/AD/sub-002S5018/ses-01/func/ (5 files:
+    preproc_bold.nii.gz, brain_mask.nii.gz, motion_timeseries.tsv,
+    design_matrix.txt, preproc_bold.json)
+  - Brain mask: 35464 voxels (18.04% of FOV), non-empty, not flagged
+    suspicious
+  - Motion-explained R^2: 0.118 before GLM -> 2.4e-10 after GLM (nuisance
+    regression behaved as expected)
+  - QC status: PASS
+
+HONEST ASSESSMENT (per explicit instruction not to claim success from a
+single restart): sustained, uninterrupted stability across the full
+15-20 minute window was NOT achieved. WSL continued to restart
+intermittently throughout the monitoring period, tracking host memory
+dips down to ~255-480 MB free. The .wslconfig and n_procs fixes reduced
+peak WSL-side memory pressure and made recovery automatic and lossless
+(via the retry wrapper + cache-corruption auto-cleaning), but did NOT
+eliminate the underlying host-memory-driven instability, because the
+dominant memory consumers (multiple Antigravity IDE windows, browser,
+VPN) remain open by the user's explicit choice.
+
+--------------------------------------------------------------------
+8. WHETHER PRODUCTION SUCCESSFULLY RESUMED
+--------------------------------------------------------------------
+NOT YET launched for the full 25-acquisition run as of this report. Per
+the explicit instruction "Do not launch the full workload until this test
+passes" and "verify sustained stability first" -- given the test achieved
+a correct PASS output but NOT sustained stability, this is reported back
+to the user for an explicit decision before the full run is launched:
+proceed now under the resilient/self-healing retry approach (slower,
+self-recovering, but no risk of data loss or corruption reaching final
+outputs), or wait until host memory pressure is relieved.
+
+--------------------------------------------------------------------
+9. CONFIRMATION THAT CACHED WORK WAS PRESERVED
+--------------------------------------------------------------------
+Confirmed. All previously-completed, non-corrupted Nipype cache entries
+(splitkey/getpaths/precheck/checksum/validate/moco/smooth/design/glmfit
+results for subjects not affected by pickle corruption) remain in
+/home/harish/fyp_work/fsfast_ad_masked/work/ and were reused (shown as
+"Cached" in the Nipype log) rather than recomputed. Only the 10 explicitly
+identified corrupted result files were removed, each individually
+verified as unreadable (pickle.loads "Ran out of input") before deletion
+-- no wholesale cache deletion occurred, and no BIDS/, raw_data/, NIfTI_/,
+or audit/ file was touched at any point.
+
+--------------------------------------------------------------------
+10. REMAINING ISSUES
+--------------------------------------------------------------------
+- Host RAM is fundamentally insufficient for the current combination of
+  open applications + WSL2 + this Nipype job. This is the primary
+  remaining risk to a clean, uninterrupted 25-acquisition run.
+- The resilient retry wrapper mitigates but does not eliminate this: the
+  full run will likely take substantially longer wall-clock time than a
+  stable environment would need, due to repeated crash/recover cycles.
+- No data-loss or output-corruption risk was observed or is expected from
+  continuing this way, since: (a) the atomic-write pattern in `finalize`
+  never writes partial output to derivatives/ -- outputs only appear after
+  full QC pass, (b) corrupted Nipype cache entries are automatically
+  detected and cleaned before they can silently propagate bad data, and
+  (c) source-file checksums are re-verified for every acquisition.
+
+========================================
+ROOT CAUSE -> FIX -> STABILITY TEST -> PRODUCTION STATUS
+========================================
+ROOT CAUSE: Host-wide Windows RAM exhaustion (7.65GB total, routinely
+  <1GB free due to other running applications) destabilizing the WSL2 VM's
+  service connection under Hyper-V Dynamic Memory pressure.
+FIX: .wslconfig memory=3GB/swap=4GB/processors=4 (bounded VM footprint) +
+  Nipype n_procs 2->1 (execution-only change) + corrupted-cache-pickle
+  auto-detection/cleanup + resilient host-side retry wrapper.
+STABILITY TEST: PARTIAL PASS. Single acquisition completed with a correct
+  QC-PASS output, but WSL continued restarting intermittently throughout
+  the ~6-minute monitored window (host RAM still repeatedly <500MB free).
+  Sustained, uninterrupted stability was NOT demonstrated.
+PRODUCTION STATUS: NOT YET launched for the full 25-acquisition run --
+  awaiting user decision (proceed now via self-healing retry, or wait
+  until host memory pressure is relieved).

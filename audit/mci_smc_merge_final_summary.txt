@@ -1,0 +1,8 @@
+--- FINAL MCI/SMC MERGE VERIFICATION ---
+total_json_acquisitions: 67
+niftis_already_present: 38
+successfully_mapped_and_copied: 29
+unmatched: 0
+ambiguous: 0
+invalid_nifti: 0
+remaining_missing: 0

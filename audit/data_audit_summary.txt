@@ -1,0 +1,14 @@
+===========================================================
+DATASET AUDIT SUMMARY
+===========================================================
+A. Current directory structure: c:\Users\krish\FYP\NIfTI
+B. Total number of subjects: 131
+C. Total number of fMRI files (NIfTI exists): 72
+D. Number of valid NIfTI files: 72
+E. Number of JSON-only records: 103
+F. Number of zero-byte/invalid NIfTI files: 0
+G. Number of subjects with multiple acquisitions: 35
+H. Number of subjects with T1w: 0
+I. Number of subjects requiring manual review: 39
+J. Recommended next step: Review the 'data_audit.csv', specifically subjects marked as DUPLICATE_OR_MULTIPLE_ACQUISITION and MISSING_NIFTI, to clarify session/run mapping before proceeding to BIDS formatting.
+===========================================================

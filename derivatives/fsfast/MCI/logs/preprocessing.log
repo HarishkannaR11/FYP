@@ -1,0 +1,40 @@
+2026-09-22T08:03:03.046073 === MCI: 35 acquisitions to process (n_procs=1) ===
+2026-09-22T08:03:08.044378 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T08:03:08.045207 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T08:05:37.421540 FAIL sub-002S0729/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T08:07:25.080718 WARN sub-002S0729/ses-02/run-01  reg=8.8s warp=36.4s total=107.5s FD_mean=0.460 tSNR=118.6
+2026-09-22T08:10:17.741425 WARN sub-002S0729/ses-03/run-01  reg=14.1s warp=82.4s total=172.4s FD_mean=0.446 tSNR=109.8
+2026-09-22T08:13:16.890547 PASS sub-002S1155/ses-01/run-01  reg=10.6s warp=87.2s total=178.7s FD_mean=0.203 tSNR=169.8
+2026-09-22T08:15:08.019170 FAIL sub-002S1155/ses-02/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T08:17:02.994110 PASS sub-002S1155/ses-03/run-01  reg=7.3s warp=46.0s total=114.9s FD_mean=0.168 tSNR=148.6
+2026-09-22T08:19:24.394745 WARN sub-002S1268/ses-01/run-01  reg=12.5s warp=61.8s total=141.2s FD_mean=0.547 tSNR=105.6
+2026-09-22T08:21:44.106264 WARN sub-002S1268/ses-02/run-01  reg=15.2s warp=50.8s total=139.4s FD_mean=0.359 tSNR=115.2
+2026-09-22T08:23:50.120239 WARN sub-002S4229/ses-01/run-01  reg=12.7s warp=43.0s total=125.8s FD_mean=0.311 tSNR=137.4
+2026-09-22T08:26:15.378620 WARN sub-002S4229/ses-02/run-01  reg=8.8s warp=66.7s total=145.0s FD_mean=0.329 tSNR=161.1
+2026-09-22T08:28:23.258274 WARN sub-002S4229/ses-03/run-01  reg=7.8s warp=58.7s total=127.5s FD_mean=0.166 tSNR=164.4
+2026-09-22T08:31:20.329776 FAIL sub-002S4799/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T08:34:03.588072 WARN sub-002S4799/ses-02/run-01  reg=12.7s warp=72.4s total=163.0s FD_mean=0.138 tSNR=155.5
+2026-09-22T08:36:07.984605 WARN sub-006S4713/ses-01/run-01  reg=9.0s warp=52.8s total=124.1s FD_mean=0.213 tSNR=181.6
+2026-09-22T08:37:59.542663 WARN sub-006S4713/ses-01/run-02  reg=10.5s warp=43.1s total=111.3s FD_mean=0.233 tSNR=175.0
+2026-09-22T08:39:54.731580 WARN sub-006S4713/ses-02/run-01  reg=9.9s warp=46.9s total=115.0s FD_mean=0.208 tSNR=163.3
+2026-09-22T08:41:35.229088 WARN sub-013S1186/ses-01/run-01  reg=9.5s warp=34.5s total=100.3s FD_mean=0.468 tSNR=157.6
+2026-09-22T08:43:05.573360 WARN sub-013S1186/ses-02/run-01  reg=6.7s warp=27.9s total=90.1s FD_mean=0.382 tSNR=92.6
+2026-09-22T08:44:36.923094 WARN sub-013S1186/ses-03/run-01  reg=6.5s warp=27.3s total=91.1s FD_mean=0.474 tSNR=147.2
+2026-09-22T08:46:18.036585 WARN sub-013S2389/ses-01/run-01  reg=10.5s warp=26.6s total=100.9s FD_mean=0.267 tSNR=168.0
+2026-09-22T08:47:54.723171 WARN sub-013S2389/ses-02/run-01  reg=14.3s warp=25.6s total=96.5s FD_mean=0.274 tSNR=118.3
+2026-09-22T08:49:32.271130 WARN sub-018S2180/ses-01/run-01  reg=7.3s warp=27.7s total=97.4s FD_mean=0.253 tSNR=134.0
+2026-09-22T08:51:21.405501 PASS sub-018S2180/ses-02/run-01  reg=8.5s warp=31.8s total=108.8s FD_mean=0.168 tSNR=149.8
+2026-09-22T08:53:17.009499 WARN sub-018S2180/ses-03/run-01  reg=9.0s warp=34.5s total=115.4s FD_mean=0.217 tSNR=146.9
+2026-09-22T08:55:23.139623 WARN sub-018S2180/ses-04/run-01  reg=11.6s warp=40.1s total=122.9s FD_mean=0.336 tSNR=106.4
+2026-09-22T08:57:23.097263 WARN sub-053S0919/ses-01/run-01  reg=8.4s warp=40.1s total=119.7s FD_mean=0.156 tSNR=149.1
+2026-09-22T08:59:12.434867 WARN sub-053S0919/ses-02/run-01  reg=12.6s warp=36.8s total=109.1s FD_mean=0.366 tSNR=127.5
+2026-09-22T09:01:01.437682 WARN sub-053S4813/ses-01/run-01  reg=9.1s warp=41.2s total=108.8s FD_mean=0.539 tSNR=120.4
+2026-09-22T09:02:42.330482 WARN sub-053S4813/ses-02/run-01  reg=8.5s warp=33.2s total=100.7s FD_mean=0.512 tSNR=161.6
+2026-09-22T09:04:49.743892 PASS sub-100S4556/ses-01/run-01  reg=9.7s warp=50.2s total=127.2s FD_mean=0.166 tSNR=141.0
+2026-09-22T09:06:33.887836 WARN sub-100S4556/ses-02/run-01  reg=8.3s warp=36.1s total=103.9s FD_mean=0.303 tSNR=102.7
+2026-09-22T09:08:18.303382 WARN sub-130S4294/ses-01/run-01  reg=9.2s warp=31.3s total=104.2s FD_mean=0.451 tSNR=107.7
+2026-09-22T09:09:51.662945 WARN sub-130S4294/ses-02/run-01  reg=7.6s warp=29.3s total=93.2s FD_mean=0.407 tSNR=124.7
+2026-09-22T09:11:28.054978 WARN sub-130S4294/ses-03/run-01  reg=8.6s warp=26.5s total=96.2s FD_mean=0.546 tSNR=106.2
+2026-09-22T09:13:13.896001 WARN sub-136S0107/ses-01/run-01  reg=7.8s warp=32.9s total=105.6s FD_mean=0.197 tSNR=117.8
+2026-09-22T09:13:14.151957 === MCI COMPLETE: 4 PASS, 28 WARN, 3 FAIL, 0 SKIPPED ===
+2026-09-22T09:13:14.152325 GROUP_MCI_DONE

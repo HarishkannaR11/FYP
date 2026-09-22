@@ -1,0 +1,248 @@
+=== FS-FAST IMPLEMENTATION VERIFICATION ===
+
+FreeSurfer version:            7.4.1 (intended; archive on disk is this version)
+FreeSurfer installation path:  /home/harish/freesurfer (INCOMPLETE -- see below)
+FREESURFER_HOME:                <unset>
+License status:                MISSING at the standard FREESURFER_HOME location.
+                                (A license file has been separately staged and validated for
+                                 format outside the install tree, ready to be placed once
+                                 installation completes. Contents are not reproduced here.)
+
+INSTALLATION STATE (found during this verification, not assumed):
+Two earlier installation attempts overlapped: two separate `wget -c` processes were found
+running concurrently against the same archive file (one started ~11:57, a second at ~13:08),
+which corrupts the download by both writing to the same file at once. A third stray process
+had additionally proceeded to `tar -xzf` unconditionally (a flaw in the earlier install script,
+which ran the extraction step regardless of the integrity-check result). All of these stray
+background processes were terminated during this verification, since they were actively
+corrupting the archive; no new installation or download was started. As a result:
+  - /home/harish/freesurfer exists but is a PARTIAL extraction (~1.7G of the full package).
+  - bin/ (where recon-all, preproc-sess, mc-afni2, mri_fwhm, mri_glmfit, mri_convert live)
+    has NOT been reached by the extraction and does not exist yet.
+  - No FS-FAST/FreeSurfer command is installed or runnable at this time.
+This is reported as observed fact, not assumption -- confirmed by direct `which` checks,
+directory listing, and process inspection below.
+
+=== COMMAND AVAILABILITY ===
+
+recon-all:      NOT FOUND (which: no match; bin/ does not exist)
+preproc-sess:   NOT FOUND (which: no match; bin/ does not exist)
+mc-afni2:       NOT FOUND (which: no match; bin/ does not exist)
+mri_fwhm:       NOT FOUND (which: no match; bin/ does not exist)
+mri_glmfit:     NOT FOUND (which: no match; bin/ does not exist)
+mri_convert:    NOT FOUND (which: no match; bin/ does not exist)
+
+Version/help output: NOT OBTAINABLE. No command exists to query. Nothing below in this
+report about mc-afni2/preproc-sess/mri_fwhm's exact runtime behavior is drawn from this
+installed copy -- none of it could be, since the binary does not exist yet. Where this
+report describes their expected behavior, it is explicitly marked as "from documentation/
+prior audit, NOT verified against the installed binary" and must be re-confirmed once
+installation completes.
+
+=== NIPYPE ===
+
+Nipype version: 1.12.0 (confirmed importable)
+NiBabel: 5.4.2 | Nilearn: 0.14.1 | PyBIDS: 0.22.0 | pydicom: 3.0.2 (all confirmed importable)
+
+Available FreeSurfer interfaces (verified by introspecting nipype.interfaces.freesurfer,
+86 classes total -- this does NOT require the FreeSurfer binaries to be installed):
+  - MRIConvert          -> wraps mri_convert.       EXISTING, directly usable.
+  - GLMFit              -> wraps mri_glmfit.        EXISTING, directly usable.
+  - RobustRegister      -> wraps mri_robust_register. EXISTING, directly usable.
+  - Smooth              -> wraps mris_volsmooth (NOT mri_fwhm as an earlier planning
+                            document assumed -- corrected here). Its `reg_file` input
+                            is MANDATORY when using surface_fwhm and required by the tool's
+                            own design ("registers volume to surface anatomical"), i.e. it
+                            fundamentally depends on a FreeSurfer surface/anatomical
+                            registration. UNAVAILABLE for this BOLD-only, T1w-less dataset.
+  - ApplyVolTransform    -> wraps mri_vol2vol.       EXISTING (not currently needed).
+  - SurfaceSmooth/SurfaceTransform -> wrap mri_surf2surf. Surface-based; not applicable
+                            without a FreeSurfer surface model (T1w-dependent). Not usable.
+
+No nipype.interfaces.freesurfer class wraps preproc-sess, mc-afni2, or mri_fwhm.
+
+Custom CommandLine nodes required for:
+  - preproc-sess   (no nipype wrapper exists at all)
+  - mc-afni2       (no nipype wrapper exists at all)
+  - mri_fwhm       (no nipype wrapper exists at all; MRIConvert's own --fwhm flag is a
+                     possible alternative using an EXISTING interface -- see step 4 below)
+
+=== PREPROCESSING IMPLEMENTATION ===
+
+1. Data validation
+Status: AVAILABLE (tooling confirmed working; does not need FS-FAST binaries)
+Implementation: NiBabel (shape/readability/NaN-Inf checks) + PyBIDS (structure checks).
+  Optionally nipype.interfaces.freesurfer.MRIConvert (--in_info/--in_stats flags) once
+  installed, purely as a secondary cross-check.
+Nipype: nipype.interfaces.utility.Function (custom Python node) is sufficient; MRIConvert
+  EXISTING interface available as a supplement once installed.
+
+2. Motion correction
+Status: CONDITIONAL -- data-wise supportable; NOT YET VERIFIED against the installed
+  binary because no FS-FAST binary exists yet (see COMMAND AVAILABILITY above).
+Implementation: mc-afni2 is the FS-FAST-native tool for this (per prior audits and public
+  FS-FAST documentation), invoked directly rather than through the full preproc-sess driver
+  (preproc-sess additionally assumes a FreeSurfer subject/session directory structure and
+  a completed recon-all for its later steps, neither of which applies here). This
+  characterization is FROM DOCUMENTATION/PRIOR AUDIT, NOT verified against the installed
+  version, per the instruction not to assume behavior from a different FreeSurfer version --
+  it must be re-confirmed once the binary exists (via mc-afni2 --help or equivalent).
+  An alternative already confirmed via Nipype introspection: RobustRegister
+  (mri_robust_register) takes only source_file/target_file, no FreeSurfer-subject or T1w
+  dependency -- but it registers one 3D volume to another 3D volume, not a 4D series
+  natively, so using it for full-run motion correction would require splitting the run
+  into individual 3D frames and looping the registration per frame, then reassembling --
+  materially different from mc-afni2's single-call 4D-in/4D-out design. This is reported
+  as an available fallback option only; it is not being substituted for mc-afni2 without
+  your decision.
+Nipype: mc-afni2 needs a custom CommandLine node (no wrapper exists). RobustRegister has
+  an EXISTING nipype interface if that path is ever chosen instead.
+4D support: mc-afni2 -- expected to accept/produce 4D directly, per documentation, NOT
+  verified on this installation yet. RobustRegister -- confirmed 3D-to-3D only (verified
+  from its actual input spec).
+T1w requirement: mc-afni2 -- none (operates in native functional space). RobustRegister --
+  none (mandatory inputs are just source_file/target_file, confirmed from its input spec).
+
+3. Slice-timing correction
+Status: EXCLUDED (not a gap to fix -- confirmed unsupportable by the data itself)
+Reason: 0/175 BIDS JSON sidecars contain SliceTiming; the original DICOM was independently
+  audited and shown not to contain recoverable per-slice temporal information either
+  (AcquisitionTime/TriggerTime constant across slices within a volume; no field states an
+  explicit slice acquisition order/scheme). Conclusion carried forward from that audit:
+  SLICE_TIMING_NOT_RECOVERABLE. Not fabricated or inferred here.
+
+4. Spatial smoothing
+Status: CONDITIONAL -- data-wise supportable; command-level behavior NOT YET VERIFIED
+  (binary not installed).
+Implementation: Two candidate paths, both consistent with FS-FAST/Nipype and neither
+  requiring T1w:
+    (a) mri_fwhm directly (dedicated FS-FAST smoothing/smoothness tool) -- matches the
+        earlier project plan document; requires a custom CommandLine node since no nipype
+        wrapper exists; exact flags NOT verified against the installed binary yet.
+    (b) nipype.interfaces.freesurfer.MRIConvert's own `--fwhm` option -- confirmed present
+        in MRIConvert's actual input spec ("smooth input volume by fwhm mm"), using an
+        EXISTING nipype interface with no custom node needed, and no anatomical dependency
+        (MRIConvert's only mandatory input is in_file).
+  nipype.interfaces.freesurfer.Smooth (mris_volsmooth) is UNAVAILABLE (see NIPYPE section --
+  requires reg_file / surface anatomy).
+Nipype: (a) custom CommandLine required. (b) MRIConvert, EXISTING.
+4D support: NOT VERIFIED for mri_fwhm (binary absent). MRIConvert's --fwhm: dimensionality
+  behavior on a 4D series not confirmed from documentation alone; must be checked once
+  installed, per the instruction not to assume from external documentation.
+T1w requirement: none for either candidate path.
+
+5. Temporal filtering / detrending
+Status: CONDITIONAL -- mri_glmfit is confirmed (from its actual input spec, not assumption)
+  to be a general-purpose GLM estimator, NOT a dedicated high-pass/low-pass filter. It has
+  no --highpass/--lowpass-style flag. Detrending/filtering is achievable only by supplying
+  an explicit design matrix (--X / `design` input) containing polynomial or cosine-basis
+  regressors that WE must construct -- mri_glmfit does not generate them itself. This is a
+  standard, legitimate regression-based filtering technique (the same principle FSL's own
+  highpass filter uses internally), but it is not a single-flag operation, and must be
+  built explicitly, not assumed to exist as a convenience feature.
+Implementation: nipype.interfaces.freesurfer.GLMFit, in_file=4D BOLD (confirmed GLMFit's
+  mandatory input accepts a 4D file directly), design=<constructed regressor matrix>.
+Nipype: GLMFit -- EXISTING interface, confirmed usable, no custom node required for the
+  mri_glmfit call itself. A separate (non-FS-FAST) step to construct the polynomial/cosine
+  design-matrix file is needed -- this is orchestration/data-prep, not a preprocessing
+  framework substitution.
+
+6. Nuisance regression
+Motion regressors: CONDITIONAL/AVAILABLE-in-principle. mri_glmfit accepts arbitrary
+  regressors via `design` (--X) or `per_voxel_reg` (--pvr). Motion parameters produced by
+  the motion-correction step (2) can be formatted into such a design-matrix file and
+  supplied this way. Not yet verified end-to-end since step 2's actual output format from
+  the installed mc-afni2 is not yet known (binary absent).
+WM/CSF regressors: UNAVAILABLE -- no T1w-derived segmentation exists (0/131 participants
+  have T1w). No anatomical mask has been or will be fabricated. This is a hard limitation
+  of the BOLD-only dataset, not a software limitation.
+
+7. Final QC
+Status: AVAILABLE (tooling confirmed; independent of FS-FAST binaries)
+Implementation: NiBabel-based checks (readability, shape/dimension consistency, NaN/Inf
+  absence, participant/session/run traceability) producing a per-run pass/fail CSV.
+
+=== EXCLUDED STEPS ===
+
+Slice timing:
+Reason: Confirmed unrecoverable from both BIDS JSON (0/175) and original DICOM (per the
+  dedicated DICOM slice-timing audit). Not omitted by preference -- omitted because the
+  data does not support it, and fabrication was explicitly disallowed.
+
+Fieldmap correction:
+Reason: 0 fieldmaps exist anywhere in the dataset. Cannot be fabricated.
+
+T1w/recon-all:
+Reason: 0/131 participants have a T1w image. recon-all is FreeSurfer's structural/T1w
+  processing workflow; it has no valid input in this dataset and is therefore not part of
+  this BOLD-only pipeline. This is a data limitation, not a decision made by this audit,
+  and is not proposed to be changed.
+
+=== PILOT DESIGN ===
+
+Pilot subject: sub-002S0413
+Pilot session: ses-01
+Pilot run: run-01
+Input: /mnt/c/Users/krish/FYP/BIDS/sub-002S0413/ses-01/func/sub-002S0413_ses-01_task-rest_run-01_bold.nii.gz
+  (confirmed present, 4D, 140 volumes, 64x64x48, in the existing BOLD-dimensions audit;
+   note this run's BIDS RepetitionTime is 6.02158s -- separately confirmed correct against
+   the raw DICOM's own AcquisitionDuration/AcquisitionTime evidence in the DICOM audit,
+   despite the raw DICOM header's (0018,0080) tag under-reporting it as 3000ms.)
+
+Planned nodes (design only, NOT executed):
+  1. Input-validation Function node: NiBabel load, confirm shape (64,64,48,140), no NaN/Inf.
+  2. Motion-correction node: custom CommandLine wrapping mc-afni2 (pending re-verification
+     of its actual CLI once FreeSurfer is installed) -> motion-corrected 4D BOLD + motion
+     parameter file.
+  3. [Slice-timing correction: OMITTED per EXCLUDED STEPS above.]
+  4. Smoothing node: EITHER a custom CommandLine wrapping mri_fwhm, OR MRIConvert with
+     --fwhm set (both pending final choice + verification once installed).
+  5. Temporal filtering/detrending node: GLMFit (EXISTING interface), in_file = motion-
+     corrected+smoothed BOLD, design = constructed polynomial/cosine regressor matrix.
+  6. Nuisance regression: folded into the same GLMFit call via additional regressor
+     columns for the motion parameters from step 2 (WM/CSF regressors excluded, see above).
+  7. Final QC Function node: NiBabel-based checks on the final output, written to
+     audit/preprocessing_qc_report.csv (per-run pass/fail).
+
+Expected outputs (once actually run, which has NOT happened):
+  sub-002S0413_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz
+  sub-002S0413_ses-01_task-rest_run-01_desc-motion_timeseries.tsv
+  A QC row in audit/preprocessing_qc_report.csv
+
+QC: shape preserved (64,64,48,140), no NaN/Inf, motion-parameter file exists and has 140
+  rows, output NIfTI opens cleanly in NiBabel, BIDS entities preserved in filename.
+
+Expected runtime measurement method: wall-clock time the actual pilot node execution takes,
+  measured directly (e.g. Nipype's own per-node duration in the workflow log, or a simple
+  time.time() bracket around the run) once you authorize execution -- NOT estimated in
+  advance, and NOT reported here as a number, since nothing has been run.
+
+=== FINAL STATUS ===
+
+NOT_READY
+
+What remains before a pilot can be executed:
+1. FreeSurfer 7.4.1 must actually finish installing. Current state: partial extraction only
+   (~1.7G of the full package; bin/ does not exist). The prior attempts were corrupted by
+   two concurrent wget processes writing to the same file and by a script that ran `tar`
+   unconditionally regardless of an integrity check; those stray processes have been
+   stopped during this verification, but no new download/extraction was started, per this
+   task's scope (verification only, not reinstallation). Completing installation is a
+   decision for you to authorize separately.
+2. license.txt must be placed at $FREESURFER_HOME/license.txt once (1) is done. A validated
+   license file is already staged and ready; only the copy-into-place step remains.
+3. Once installed, mc-afni2, mri_fwhm, preproc-sess, mri_glmfit, mri_convert must be
+   re-verified directly (--help/--version) against THIS installed copy -- nothing in this
+   report about their exact runtime flags has been confirmed against a real binary, and
+   per your own instruction this must not be assumed from another version's documentation.
+4. A final choice between the two smoothing-implementation candidates (mri_fwhm via custom
+   CommandLine, vs. MRIConvert's built-in --fwhm) should be made once mri_fwhm's actual
+   behavior can be inspected -- this is a detail for you/your mentor to decide, not one
+   this audit resolves unilaterally.
+5. The polynomial/cosine regressor design-matrix construction (for GLMFit's temporal
+   filtering and nuisance regression) needs to be written and unit-tested against a
+   synthetic array before being pointed at real data.
+
+Nothing above proposes changing the framework, adding T1w, or substituting another
+preprocessing package. All items are implementation/installation completion steps for the
+already-decided FS-FAST + Nipype, BOLD-only pipeline.

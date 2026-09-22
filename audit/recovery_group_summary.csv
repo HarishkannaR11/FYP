@@ -1,0 +1,7 @@
+diagnostic_group,original_valid_nifti,already_recovered,remaining_missing,confirmed_raw_match,no_raw_match,uncertain,final_expected
+AD,0,0,25,19,6,0,19
+CN_Final,20,11,0,0,0,0,31
+EMCI,15,15,0,0,0,0,30
+LMCI,0,11,12,12,0,0,23
+MCI,26,0,9,9,0,0,35
+SMC_Final,12,0,20,20,0,0,32

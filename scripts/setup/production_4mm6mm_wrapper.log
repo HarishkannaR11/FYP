@@ -1,0 +1,809 @@
+<3>WSL (258) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (258) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (258) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (258) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (258) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 attempt 1 at Sun Sep 20 16:52:01 IST 2026 ===
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 2 at Sun Sep 20 16:52:18 IST 2026 ===
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (407) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (407) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (407) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (407) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (407) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 3 at Sun Sep 20 16:52:40 IST 2026 ===
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 4 at Sun Sep 20 16:53:00 IST 2026 ===
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 5 at Sun Sep 20 16:53:17 IST 2026 ===
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 6 at Sun Sep 20 16:53:36 IST 2026 ===
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 7 at Sun Sep 20 16:53:53 IST 2026 ===
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+<3>WSL (329) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+FATAL: unknown group 197615
+<3>WSL (378) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (378) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (378) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (378) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (378) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 8 at Sun Sep 20 16:54:09 IST 2026 ===
+<3>WSL (273) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (273) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (273) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (273) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (273) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (367) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (367) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (367) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (367) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (367) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 9 at Sun Sep 20 16:54:30 IST 2026 ===
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (397) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 10 at Sun Sep 20 16:54:48 IST 2026 ===
+<3>WSL (354) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (354) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (354) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (354) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (354) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (405) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 11 at Sun Sep 20 16:55:05 IST 2026 ===
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 12 at Sun Sep 20 16:55:21 IST 2026 ===
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 13 at Sun Sep 20 16:55:41 IST 2026 ===
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 14 at Sun Sep 20 16:56:01 IST 2026 ===
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (272) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (376) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 15 at Sun Sep 20 16:56:21 IST 2026 ===
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (371) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (371) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (371) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (371) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (371) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 16 at Sun Sep 20 16:56:41 IST 2026 ===
+<3>WSL (355) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (355) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (355) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (355) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (355) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (386) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (386) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (386) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (386) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (386) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (396) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (396) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (396) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (396) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (396) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 17 at Sun Sep 20 16:56:58 IST 2026 ===
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (388) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (398) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (398) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (398) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (398) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (398) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 18 at Sun Sep 20 16:57:15 IST 2026 ===
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 19 at Sun Sep 20 16:57:33 IST 2026 ===
+<3>WSL (267) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (267) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (267) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (267) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (267) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 20 at Sun Sep 20 16:57:52 IST 2026 ===
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 21 at Sun Sep 20 16:58:10 IST 2026 ===
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (280) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (401) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 22 at Sun Sep 20 16:58:27 IST 2026 ===
+<3>WSL (266) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (266) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (266) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (266) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (266) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 23 at Sun Sep 20 16:58:45 IST 2026 ===
+<3>WSL (261) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (261) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (261) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (261) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (261) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (364) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (364) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (364) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (364) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (364) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 24 at Sun Sep 20 16:59:03 IST 2026 ===
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 25 at Sun Sep 20 16:59:20 IST 2026 ===
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 26 at Sun Sep 20 16:59:37 IST 2026 ===
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 27 at Sun Sep 20 16:59:55 IST 2026 ===
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 28 at Sun Sep 20 17:00:12 IST 2026 ===
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (381) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (391) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 29 at Sun Sep 20 17:00:30 IST 2026 ===
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (389) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (399) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 30 at Sun Sep 20 17:00:48 IST 2026 ===
+<3>WSL (282) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (282) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (282) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (282) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (282) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (394) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 31 at Sun Sep 20 17:01:06 IST 2026 ===
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 32 at Sun Sep 20 17:01:26 IST 2026 ===
+<3>WSL (346) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (346) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (346) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (346) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (346) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 33 at Sun Sep 20 17:01:43 IST 2026 ===
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (360) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (390) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (400) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (400) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (400) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (400) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (400) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 34 at Sun Sep 20 17:01:59 IST 2026 ===
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 35 at Sun Sep 20 17:02:19 IST 2026 ===
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (275) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (369) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (379) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 36 at Sun Sep 20 17:02:39 IST 2026 ===
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (274) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (377) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (387) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 37 at Sun Sep 20 17:02:59 IST 2026 ===
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (276) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+<3>WSL (321) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (321) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+FATAL: unknown group 197615
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (370) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (380) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 38 at Sun Sep 20 17:03:20 IST 2026 ===
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (365) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (365) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (365) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (365) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (365) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 39 at Sun Sep 20 17:03:40 IST 2026 ===
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 attempt 40 at Sun Sep 20 17:04:00 IST 2026 ===
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/197615/logs/preprocessing.log: No such file or directory
+FATAL: unknown group 197615
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (372) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [production retry] GROUP=197615 no DONE marker in new output -- likely WSL crash. Restarting WSL. ===
+=== [production retry] retrying GROUP=197615 in 5s (completed acquisitions are preserved and will be skipped) ===
+=== [production retry] GROUP=197615 FAILED to complete after 40 attempts -- STOPPING ===

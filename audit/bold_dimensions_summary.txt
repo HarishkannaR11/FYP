@@ -1,0 +1,57 @@
+=== BOLD DIMENSIONAL AUDIT SUMMARY ===
+
+Total NIfTI Files: 175
+Readable NIfTIs: 175
+3D Files: 0
+4D Files: 175
+
+--- DATASET VARIANCE ---
+Unique Spatial Dimensions: ['(64, 64, 36)', '(64, 64, 48)', '(80, 80, 48)']
+Unique Voxel Sizes: ['(2.94, 2.94, 3.31)', '(3.03, 3.03, 3.31)', '(3.15, 3.15, 3.31)', '(3.31, 3.31, 3.31)']
+Unique Volume Counts (T): [7, 140]
+Unique TR Values: [2.25, 3, 3.00044, 3.001, 3.00393, 6.02158, 6.02353]
+
+--- GROUP STATISTICS ---
+AD:
+  Total Files: 25
+  4D Files: 25
+  Dimensional Anomalies: 0
+LMCI:
+  Total Files: 23
+  4D Files: 23
+  Dimensional Anomalies: 0
+MCI:
+  Total Files: 35
+  4D Files: 35
+  Dimensional Anomalies: 0
+EMCI:
+  Total Files: 30
+  4D Files: 30
+  Dimensional Anomalies: 0
+CN_Final:
+  Total Files: 30
+  4D Files: 30
+  Dimensional Anomalies: 0
+SMC_Final:
+  Total Files: 32
+  4D Files: 32
+  Dimensional Anomalies: 0
+
+--- DEVIATIONS & ANOMALIES ---
+Majority Shape: (64, 64, 48, 140)
+Majority Volumes: 140
+
+Participant: sub-002S2010 | Session: ses-01 | File: sub-002S2010_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (64, 64, 36, 140) | Volumes: 140 | TR Match: YES
+Participant: sub-012S4026 | Session: ses-01 | File: sub-012S4026_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (80, 80, 48, 7) | Volumes: 7 | TR Match: YES
+Participant: sub-012S4128 | Session: ses-02 | File: sub-012S4128_ses-02_task-rest_run-01_bold.nii.gz
+  Shape: (80, 80, 48, 140) | Volumes: 140 | TR Match: YES
+Participant: sub-012S4643 | Session: ses-01 | File: sub-012S4643_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (80, 80, 48, 140) | Volumes: 140 | TR Match: YES
+Participant: sub-012S5121 | Session: ses-01 | File: sub-012S5121_ses-01_task-rest_run-01_bold.nii
+  Shape: (80, 80, 48, 140) | Volumes: 140 | TR Match: YES
+Participant: sub-012S5195 | Session: ses-01 | File: sub-012S5195_ses-01_task-rest_run-01_bold.nii
+  Shape: (80, 80, 48, 140) | Volumes: 140 | TR Match: YES
+Participant: sub-012S5213 | Session: ses-01 | File: sub-012S5213_ses-01_task-rest_run-01_bold.nii
+  Shape: (80, 80, 48, 140) | Volumes: 140 | TR Match: YES

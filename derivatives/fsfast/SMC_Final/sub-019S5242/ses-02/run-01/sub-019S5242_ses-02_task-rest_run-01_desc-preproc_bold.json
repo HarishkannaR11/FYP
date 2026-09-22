@@ -1,0 +1,89 @@
+{
+  "subject": "sub-019S5242",
+  "session": "ses-02",
+  "run": "run-01",
+  "source_bold": "/mnt/c/Users/krish/FYP/BIDS/sub-019S5242/ses-02/func/sub-019S5242_ses-02_task-rest_run-01_bold.nii",
+  "original_dimensions": [
+    64,
+    64,
+    48,
+    140
+  ],
+  "final_dimensions": [
+    46,
+    55,
+    46,
+    135
+  ],
+  "original_voxel_size_mm": [
+    3.3125,
+    3.3125,
+    3.3125
+  ],
+  "final_voxel_size_mm": [
+    4.0,
+    4.0,
+    4.0
+  ],
+  "TR_seconds": 2.9999985694885254,
+  "discarded_volumes": 5,
+  "retained_volumes": 135,
+  "slice_timing_status": "NOT_PERFORMED",
+  "motion_correction": "mc-afni2",
+  "mni_template": "MNI152NLin6Asym",
+  "registration_method": "ANTsPy ants.registration(type_of_transform='SyN'); direct EPI->MNI (no T1w)",
+  "resampling": "4mm isotropic (nilearn continuous resample onto template-derived grid)",
+  "smoothing": "6.0mm FWHM (nilearn smooth_img)",
+  "detrending": "linear (OLS intercept+linear removal, temporal mean restored)",
+  "nuisance_regression": {
+    "n_regressors": 27,
+    "regressor_names": [
+      "intercept",
+      "friston24_trans_x",
+      "friston24_trans_y",
+      "friston24_trans_z",
+      "friston24_roll",
+      "friston24_pitch",
+      "friston24_yaw",
+      "friston24_trans_x_deriv",
+      "friston24_trans_y_deriv",
+      "friston24_trans_z_deriv",
+      "friston24_roll_deriv",
+      "friston24_pitch_deriv",
+      "friston24_yaw_deriv",
+      "friston24_trans_x_sq",
+      "friston24_trans_y_sq",
+      "friston24_trans_z_sq",
+      "friston24_roll_sq",
+      "friston24_pitch_sq",
+      "friston24_yaw_sq",
+      "friston24_trans_x_deriv_sq",
+      "friston24_trans_y_deriv_sq",
+      "friston24_trans_z_deriv_sq",
+      "friston24_roll_deriv_sq",
+      "friston24_pitch_deriv_sq",
+      "friston24_yaw_deriv_sq",
+      "white_matter",
+      "global_signal"
+    ],
+    "friston24_included": true,
+    "WM_status": "PERFORMED (template prior)",
+    "CSF_status": "NOT PERFORMED",
+    "WM_CSF_source": "template priors (MNI152NLin2009cAsym label-WM/CSF probseg), NOT subject T1w segmentation"
+  },
+  "bandpass_hz": [
+    0.01,
+    0.1
+  ],
+  "software_versions": {
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "nibabel": "5.4.2",
+    "antspyx": "0.6.3"
+  },
+  "processing_date_utc": "2026-09-22T09:53:55.236926+00:00",
+  "processing_status": "WARN",
+  "checksum_before": "3fb2bb44607b7c5aa398bfa58468614e",
+  "checksum_after": "3fb2bb44607b7c5aa398bfa58468614e",
+  "checksum_match": true
+}

@@ -1,0 +1,31 @@
+========================================================
+1. RE-SCAN RAW DATA
+========================================================
+Number of raw archives/files scanned: 6
+Number of AD archives/files detected: 1
+Number of EMCI archives/files detected: 1
+Number of LMCI archives/files detected: 1
+Total DICOM series discovered: 185
+
+========================================================
+8. FINAL SUMMARY
+========================================================
+Original MISSING_NIFTI records: 103
+
+Already recovered before this run: 37
+
+New exact matches: 60
+
+New high-confidence matches: 0
+
+Total confirmed matches: 60
+
+No raw match: 6
+
+Uncertain: 0
+
+Already recovered and therefore skipped: 37
+
+Final number that would be converted: 60
+
+Final expected number of valid fMRI NIfTIs after recovery: 170

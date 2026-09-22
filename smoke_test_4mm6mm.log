@@ -1,0 +1,20 @@
+SMOKE TEST: sub-002S5018/ses-01/run-01
+FAIL sub-002S5018/ses-01/run-01: mc-afni2 failed: home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+tee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+tee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+tee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+Invalid null command.
+
+RESULT: {'group': 'AD', 'sub': 'sub-002S5018', 'ses': 'ses-01', 'run': 'run-01', 'status': 'FAIL', 'reason': 'mc-afni2 failed: home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\ntee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\ntee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\ntee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\nInvalid null command.\n'}
+SMOKE_TEST_ELAPSED: 18.9s
+SMOKE_TEST_DONE
+SMOKE TEST: sub-002S5018/ses-01/run-01
+FAIL sub-002S5018/ses-01/run-01: mc-afni2 failed: home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+tee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+tee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+tee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory
+Invalid null command.
+
+RESULT: {'group': 'AD', 'sub': 'sub-002S5018', 'ses': 'ses-01', 'run': 'run-01', 'status': 'FAIL', 'reason': 'mc-afni2 failed: home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\ntee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\ntee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\ntee: /home/harish/fyp_work/fsfast_4mm6mm/smoketest/sub-002S5018_ses-01_run-01/mc.nii.gz.mclog: No such file or directory\nInvalid null command.\n'}
+SMOKE_TEST_ELAPSED: 18.9s
+SMOKE_TEST_DONE

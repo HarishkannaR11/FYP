@@ -1,0 +1,7 @@
+=== [SMC_Final production retry] attempt 1 at Fri Sep 18 23:36:43 IST 2026 ===
+<3>WSL (338) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (338) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (338) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (338) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (338) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [SMC_Final production retry] WORKFLOW_DONE detected, stopping ===

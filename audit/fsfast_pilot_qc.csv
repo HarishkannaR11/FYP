@@ -1,0 +1,6 @@
+stage,file,shape,shape_match,has_nan,has_inf,min,max,readable,status,error
+input_original_BIDS,/mnt/c/Users/krish/FYP/BIDS/sub-002S0413/ses-01/func/sub-002S0413_ses-01_task-rest_run-01_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,0.0000,4722217.3334,YES,PASS,
+motion_corrected,/home/harish/fyp_work/pilot/moco/sub-002S0413_ses-01_task-rest_run-01_desc-moco_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,0.0000,4722217.5000,YES,PASS,
+smoothed,/home/harish/fyp_work/pilot/smooth/sub-002S0413_ses-01_task-rest_run-01_desc-smooth_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,12.4394,4238440.5000,YES,PASS,
+final_preproc_eres,/mnt/c/Users/krish/FYP/derivatives/fsfast/sub-002S0413/ses-01/func/sub-002S0413_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,-796063.2500,820566.9375,YES,PASS,
+motion_parameters,/home/harish/fyp_work/pilot/moco/sub-002S0413_ses-01_task-rest_run-01_desc-moco_bold.mcdat,"(140 rows, 10 cols)",YES,False,False,-0.3675,0.3378,YES,PASS,

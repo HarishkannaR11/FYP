@@ -1,0 +1,7 @@
+=== [pilot 2mm4mm retry] attempt 1 at Sun Sep 20 14:45:13 IST 2026 ===
+<3>WSL (340) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (340) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (340) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (340) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (340) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [pilot 2mm4mm retry] PILOT_2MM4MM_DONE detected, stopping ===

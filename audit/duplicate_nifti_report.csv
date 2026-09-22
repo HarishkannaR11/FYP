@@ -1,0 +1,3 @@
+issue_type,group,subject_id,json_path,nifti_path,notes
+IDENTICAL_CONTENT,LMCI,006_S_4363,,C:\Users\krish\FYP\NIfTI\NIfTI\LMCI\006_S_4363\006_S_4363_WIP_Resting_State_fMRI_20120619135852_501.nii,File hash matches 1 other file(s)
+IDENTICAL_CONTENT,LMCI,006_S_4363,,C:\Users\krish\FYP\NIfTI\NIfTI\LMCI\006_S_4363\006_S_4363_WIP_Resting_State_fMRI_20120619135852_601.nii,File hash matches 1 other file(s)

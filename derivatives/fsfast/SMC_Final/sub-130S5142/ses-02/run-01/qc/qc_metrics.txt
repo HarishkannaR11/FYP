@@ -1,0 +1,33 @@
+subject: sub-130S5142
+session: ses-02
+run: run-01
+mean_FD_mm: 0.16041851411426053
+median_FD_mm: 0.1156590429316744
+max_FD_mm: 0.8493515546626886
+FD_gt_0.2mm: 25
+FD_gt_0.5mm: 8
+FD_gt_1.0mm: 0
+mean_tSNR: 154.29043579101562
+median_tSNR: 148.21397399902344
+SNR: 15.27650260925293
+CNR: NOT_RELIABLY_COMPUTABLE
+mean_DVARS_raw: 9840.631653743003
+median_DVARS_raw: 9254.7890625
+max_DVARS_raw: 21923.5
+dvars_type: RAW_INTENSITY
+spatial_entropy_bits: 7.0394127193387135
+temporal_entropy_bits: 3.60547032042832
+mask_voxel_count: 28549
+WM_regressor: PERFORMED (template prior)
+CSF_regressor: NOT PERFORMED
+slice_timing: NOT_PERFORMED
+registration_in_MNI: True
+checksum_before: 38ca01353d1f122cb5aa096f142147d4
+checksum_after: 38ca01353d1f122cb5aa096f142147d4
+checksum_match: True
+n_volumes_orig: 140
+n_volumes_retained: 135
+final_NaN: 0
+final_Inf: 0
+qc_status: WARN
+qc_warnings: mean/frame FD: 8/135 volumes exceed 0.5mm (5.9%)

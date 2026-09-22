@@ -1,0 +1,72 @@
+MCI
+----
+Total JSON acquisitions: 35
+Existing NIfTI: 26
+Already recovered: 0
+Missing NIfTI: 9
+Raw DICOM matches: 9
+Successfully converted: 9
+Conversion failures: 0
+No raw match: 0
+Ambiguous: 0
+Invalid NIfTI: 0
+Not fMRI: 0
+
+SMC
+----
+Total JSON acquisitions: 0
+Existing NIfTI: 0
+Already recovered: 0
+Missing NIfTI: 0
+Raw DICOM matches: 0
+Successfully converted: 0
+Conversion failures: 0
+No raw match: 0
+Ambiguous: 0
+Invalid NIfTI: 0
+Not fMRI: 0
+
+SMC_Final
+----
+Total JSON acquisitions: 32
+Existing NIfTI: 12
+Already recovered: 0
+Missing NIfTI: 20
+Raw DICOM matches: 20
+Successfully converted: 20
+Conversion failures: 0
+No raw match: 0
+Ambiguous: 0
+Invalid NIfTI: 0
+Not fMRI: 0
+
+--- Successfully Recovered Files ---
+002_S_0729 | 20110816150745 | C:\Users\krish\FYP\recovered_fmri\MCI\002_S_0729\002_S_0729_Resting_State_fMRI_20110816150745_501.nii
+002_S_1155 | 20121220121612 | C:\Users\krish\FYP\recovered_fmri\MCI\002_S_1155\002_S_1155_Resting_State_fMRI_20121220121612_501.nii
+002_S_1268 | 20120322081204 | C:\Users\krish\FYP\recovered_fmri\MCI\002_S_1268\002_S_1268_Resting_State_fMRI_20120322081204_501.nii
+002_S_4229 | 20120410072800 | C:\Users\krish\FYP\recovered_fmri\MCI\002_S_4229\002_S_4229_Resting_State_fMRI_20120410072800_501.nii
+002_S_4229 | 20120918120730 | C:\Users\krish\FYP\recovered_fmri\MCI\002_S_4229\002_S_4229_Resting_State_fMRI_20120918120730_501.nii
+002_S_4799 | 20130702065742 | C:\Users\krish\FYP\recovered_fmri\MCI\002_S_4799\002_S_4799_Resting_State_fMRI_20130702065742_601.nii
+013_S_2389 | 20120215161724 | C:\Users\krish\FYP\recovered_fmri\MCI\013_S_2389\013_S_2389_Resting_State_fMRI_20120215161724_501.nii
+100_S_4556 | 20121126104757 | C:\Users\krish\FYP\recovered_fmri\MCI\100_S_4556\100_S_4556_Resting_State_fMRI_20121126104757_501.nii
+130_S_4294 | 20120515085854 | C:\Users\krish\FYP\recovered_fmri\MCI\130_S_4294\130_S_4294_WIP_Resting_State_fMRI_20120515085854_501.nii
+002_S_5230 | 20130923071859 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\002_S_5230\002_S_5230_Resting_State_fMRI_20130923071859_501.nii
+002_S_5230 | 20140124084608 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\002_S_5230\002_S_5230_Resting_State_fMRI_20140124084608_501.nii
+012_S_5121 | 20130315121050 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\012_S_5121\012_S_5121_Resting_State_fMRI_20130315121050_501.nii
+012_S_5195 | 20130614141931 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\012_S_5195\012_S_5195_Resting_State_fMRI_20130614141931_501.nii
+012_S_5213 | 20130710125726 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\012_S_5213\012_S_5213_Resting_State_fMRI_20130710125726_501.nii
+018_S_5250 | 20130808124511 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\018_S_5250\018_S_5250_WIP_Resting_State_fMRI_20130808124511_501.nii
+019_S_5242 | 20130702124503 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\019_S_5242\019_S_5242_Resting_State_fMRI_20130702124503_701.nii
+019_S_5242 | 20140117140335 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\019_S_5242\019_S_5242_Resting_State_fMRI_20140117140335_601.nii
+053_S_5202 | 20130607121216 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\053_S_5202\053_S_5202_WIP_Resting_State_fMRI_20130607121216_501.nii
+053_S_5202 | 20130920091211 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\053_S_5202\053_S_5202_WIP_Resting_State_fMRI_20130920091211_501.nii
+053_S_5272 | 20130812080932 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\053_S_5272\053_S_5272_WIP_Resting_State_fMRI_20130812080932_501.nii
+053_S_5287 | 20130910165518 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\053_S_5287\053_S_5287_WIP_Resting_State_fMRI_20130910165518_501.nii
+100_S_5096 | 20130328132018 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\100_S_5096\100_S_5096_Resting_State_fMRI_20130328132018_501.nii
+100_S_5102 | 20130329110911 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\100_S_5102\100_S_5102_Resting_State_fMRI_20130329110911_501.nii
+100_S_5280 | 20130816120412 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\100_S_5280\100_S_5280_Resting_State_fMRI_20130816120412_501.nii
+100_S_5280 | 20150929141020 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\100_S_5280\100_S_5280_Resting_State_fMRI_20150929141020_501.nii
+130_S_5142 | 20130419142414 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\130_S_5142\130_S_5142_Resting_State_fMRI_20130419142414_501.nii
+130_S_5142 | 20130726104415 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\130_S_5142\130_S_5142_Resting_State_fMRI_20130726104415_501.nii
+130_S_5258 | 20130718071910 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\130_S_5258\130_S_5258_Resting_State_fMRI_20130718071910_501.nii
+131_S_5148 | 20130418065419 | C:\Users\krish\FYP\recovered_fmri\SMC_Final\131_S_5148\131_S_5148_Resting_State_fMRI_20130418065419_501.nii

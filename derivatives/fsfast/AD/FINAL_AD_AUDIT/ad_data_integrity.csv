@@ -1,0 +1,2 @@
+subject,session,run,is_4D,shape,voxel_size_mm,is_4mm_isotropic,has_NaN,has_Inf,non_empty,affine_valid,n_timepoints
+sub-002S5018,ses-01,run-01,True,"(46, 55, 46, 135)","(4.0, 4.0, 4.0)",True,False,False,True,True,135

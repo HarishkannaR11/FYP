@@ -1,0 +1,7 @@
+subject,ses,run,metric,stored,recomputed,abs_diff,match,note
+sub-002S5018,ses-01,run-01,mean_tSNR,129.1625213623047,344.29632568359375,215.13380432128906,False,expected large difference: stored value used pre-detrend smoothed stage (not saved to disk); recomputed value uses final post-bandpass residual (only stage available on disk)
+sub-002S5018,ses-01,run-01,SNR,12.079385757446289,12.079385757446289,0.0,True,"both computed on the RAW native-space input with the same fBIRN-style formula -- should match exactly. (SNR on the FINAL MNI-space image is NOT COMPUTABLE: it is exactly zero outside the brain mask by construction, so no background region exists.)"
+sub-002S5018,ses-01,run-01,mean_FD_mm,0.28058693722256844,0.28058693722256844,0.0,True,both derived from the same native .mcdat; should match exactly
+sub-002S5018,ses-01,run-01,mean_DVARS_raw,16139.895813899253,5767.817891135144,10372.077922764109,False,expected large difference: stored value used pre-detrend smoothed stage (not saved to disk); recomputed uses final post-bandpass residual
+sub-002S5018,ses-01,run-01,spatial_entropy_bits,7.098903261793398,7.098734872616722,0.00016838917667527653,True,stored value used pre-detrend smoothed stage mean image; recomputed uses final post-bandpass residual mean image -- difference expected
+sub-002S5018,ses-01,run-01,temporal_entropy_bits,3.563435352635794,3.5229870408784385,0.040448311757355526,True,stored value used pre-detrend smoothed stage; recomputed uses final post-bandpass residual -- difference expected

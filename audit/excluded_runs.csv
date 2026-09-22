@@ -1,0 +1,3 @@
+participant_id,session,run,group,reason,decided_by,date_decided,source_file_retained
+sub-012S4026,ses-01,run-01,CN_Final,Only 7 volumes (all other runs have 140); source DICOM archive contains a single file for this acquisition -- truncation originates at acquisition/export,user,2026-09-13,YES
+sub-006S4363,ses-01,run-02,LMCI,Byte-identical duplicate of ses-01/run-01 (same MD5 e7a650bfacca1fbf40e9a3ffa6f16797; same acquisition datetime 20120619135852; exported twice under series 501 and 601). run-01 is kept for processing.,user,2026-09-16,YES

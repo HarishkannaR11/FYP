@@ -1,0 +1,492 @@
+########################################################################
+### STARTING GROUP: AD  at Tue Sep 22 10:15:44 IST 2026
+########################################################################
+<3>WSL (344) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (344) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (344) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (344) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (344) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [AD] attempt 1 at Tue Sep 22 10:15:44 IST 2026 ===
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (352) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/logs/preprocessing.log: No such file or directory
+2026-09-22T04:45:51.514471 === AD: 25 acquisitions to process (n_procs=1) ===
+2026-09-22T04:45:54.723580 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T04:45:54.724136 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T04:45:54.788809 SKIP sub-002S5018/ses-01/run-01 -- COMPLETED, validated on disk (resuming, not reprocessed)
+2026-09-22T04:48:03.919597 WARN sub-002S5018/ses-02/run-01  reg=7.6s warp=56.9s total=128.0s FD_mean=0.276 tSNR=142.0
+2026-09-22T04:50:08.932178 WARN sub-006S4153/ses-01/run-01  reg=9.5s warp=48.6s total=124.7s FD_mean=0.382 tSNR=139.2
+2026-09-22T04:52:10.021084 PASS sub-006S4192/ses-01/run-01  reg=8.4s warp=52.0s total=120.9s FD_mean=0.178 tSNR=160.9
+2026-09-22T04:54:24.586275 WARN sub-013S5071/ses-01/run-01  reg=7.1s warp=60.4s total=134.3s FD_mean=0.575 tSNR=78.2
+2026-09-22T04:56:30.777587 WARN sub-018S4696/ses-01/run-01  reg=7.3s warp=53.0s total=125.9s FD_mean=0.286 tSNR=130.8
+2026-09-22T04:58:23.630487 WARN sub-018S4733/ses-01/run-01  reg=8.1s warp=42.9s total=112.6s FD_mean=0.450 tSNR=63.8
+2026-09-22T05:00:20.480214 WARN sub-019S4252/ses-01/run-01  reg=10.6s warp=42.3s total=116.6s FD_mean=0.223 tSNR=151.7
+2026-09-22T05:02:10.424536 WARN sub-019S4477/ses-01/run-01  reg=7.4s warp=35.5s total=109.8s FD_mean=0.486 tSNR=118.8
+2026-09-22T05:03:53.810791 WARN sub-019S4477/ses-02/run-01  reg=8.3s warp=30.7s total=103.1s FD_mean=0.384 tSNR=145.0
+2026-09-22T05:05:34.907555 WARN sub-019S4549/ses-01/run-01  reg=6.3s warp=32.8s total=100.8s FD_mean=0.360 tSNR=107.0
+2026-09-22T05:07:15.392121 WARN sub-019S4549/ses-02/run-01  reg=6.8s warp=35.0s total=100.3s FD_mean=0.389 tSNR=140.7
+2026-09-22T05:09:17.573546 WARN sub-019S5012/ses-01/run-01  reg=6.9s warp=43.2s total=122.0s FD_mean=0.352 tSNR=120.4
+2026-09-22T05:11:14.194700 WARN sub-019S5019/ses-01/run-01  reg=7.2s warp=38.6s total=116.2s FD_mean=1.334 tSNR=57.2
+2026-09-22T05:13:07.663296 WARN sub-031S4024/ses-01/run-01  reg=7.8s warp=36.5s total=113.2s FD_mean=0.223 tSNR=107.6
+2026-09-22T05:15:00.282479 WARN sub-130S4641/ses-01/run-01  reg=9.6s warp=33.2s total=112.4s FD_mean=0.452 tSNR=101.4
+2026-09-22T05:16:43.578871 WARN sub-130S4660/ses-01/run-01  reg=8.0s warp=26.0s total=103.1s FD_mean=1.012 tSNR=60.8
+2026-09-22T05:18:40.860663 WARN sub-130S4730/ses-01/run-01  reg=8.1s warp=34.1s total=117.1s FD_mean=0.519 tSNR=113.9
+2026-09-22T05:20:25.173571 WARN sub-130S4730/ses-02/run-01  reg=10.9s warp=30.1s total=104.1s FD_mean=0.360 tSNR=122.4
+2026-09-22T05:22:02.754403 WARN sub-130S4971/ses-01/run-01  reg=11.0s warp=27.6s total=97.4s FD_mean=0.296 tSNR=103.6
+2026-09-22T05:23:35.246057 WARN sub-130S4982/ses-01/run-01  reg=6.7s warp=26.3s total=92.3s FD_mean=0.513 tSNR=112.7
+2026-09-22T05:25:14.481850 WARN sub-130S4982/ses-02/run-01  reg=7.1s warp=31.9s total=99.1s FD_mean=0.452 tSNR=100.4
+2026-09-22T05:27:08.378473 WARN sub-130S4984/ses-01/run-01  reg=10.2s warp=40.1s total=113.7s FD_mean=0.277 tSNR=148.6
+2026-09-22T05:28:56.606829 WARN sub-130S4990/ses-01/run-01  reg=8.2s warp=37.2s total=107.9s FD_mean=0.521 tSNR=74.5
+2026-09-22T05:30:31.127678 WARN sub-130S5059/ses-01/run-01  reg=6.3s warp=28.8s total=94.3s FD_mean=0.403 tSNR=121.0
+2026-09-22T05:30:31.387277 === AD COMPLETE: 1 PASS, 24 WARN, 0 FAIL, 1 SKIPPED ===
+2026-09-22T05:30:31.387582 GROUP_AD_DONE
+<3>WSL (3037) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (3037) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (3037) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (3037) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (3037) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [AD] DONE (reached its own manifest end) ===
+########################################################################
+### STARTING GROUP: CN_Final  at Tue Sep 22 11:00:28 IST 2026
+########################################################################
+<3>WSL (3046) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (3046) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (3046) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (3046) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (3046) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [CN_Final] attempt 1 at Tue Sep 22 11:00:28 IST 2026 ===
+<3>WSL (3054) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (3054) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (3054) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (3054) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (3054) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/CN_Final/logs/preprocessing.log: No such file or directory
+2026-09-22T05:30:37.043599 === CN_Final: 29 acquisitions to process (n_procs=1) ===
+2026-09-22T05:30:40.484929 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T05:30:40.485525 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T05:32:12.200238 FAIL sub-002S0413/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T05:33:43.713504 FAIL sub-002S0685/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T05:35:28.883520 WARN sub-002S1261/ses-01/run-01  reg=8.4s warp=31.9s total=105.1s FD_mean=0.485 tSNR=118.6
+2026-09-22T05:37:10.081325 WARN sub-002S1280/ses-01/run-01  reg=9.4s warp=29.8s total=101.0s FD_mean=0.298 tSNR=132.0
+2026-09-22T05:38:47.659655 WARN sub-006S4357/ses-01/run-01  reg=10.0s warp=31.6s total=97.4s FD_mean=0.223 tSNR=177.7
+2026-09-22T05:40:19.231973 WARN sub-010S4345/ses-01/run-01  reg=7.1s warp=29.2s total=91.3s FD_mean=0.502 tSNR=118.7
+2026-09-22T05:42:00.094675 WARN sub-010S4442/ses-01/run-01  reg=8.6s warp=33.4s total=100.7s FD_mean=0.441 tSNR=122.3
+2026-09-22T05:43:29.663509 WARN sub-010S4442/ses-02/run-01  reg=7.5s warp=21.3s total=89.3s FD_mean=0.275 tSNR=220.9
+2026-09-22T05:45:04.914888 WARN sub-012S4545/ses-01/run-01  reg=6.6s warp=28.4s total=95.1s FD_mean=0.186 tSNR=169.7
+2026-09-22T05:46:50.248785 PASS sub-012S4643/ses-01/run-01  reg=8.9s warp=29.5s total=105.2s FD_mean=0.156 tSNR=162.5
+2026-09-22T05:48:53.752973 WARN sub-013S4579/ses-01/run-01  reg=7.1s warp=56.0s total=123.3s FD_mean=1.265 tSNR=51.8
+2026-09-22T05:50:42.705083 WARN sub-013S4616/ses-01/run-01  reg=12.7s warp=37.5s total=108.8s FD_mean=0.402 tSNR=108.5
+2026-09-22T05:52:17.477434 WARN sub-018S4257/ses-01/run-01  reg=7.5s warp=28.7s total=94.5s FD_mean=0.199 tSNR=118.1
+2026-09-22T05:54:23.467494 WARN sub-018S4313/ses-01/run-01  reg=8.8s warp=41.7s total=125.8s FD_mean=1.079 tSNR=322315.3
+2026-09-22T05:56:08.098928 WARN sub-018S4349/ses-01/run-01  reg=7.6s warp=36.1s total=104.4s FD_mean=0.183 tSNR=139.9
+2026-09-22T05:57:42.640132 WARN sub-018S4399/ses-01/run-01  reg=7.6s warp=27.9s total=94.3s FD_mean=0.302 tSNR=146.6
+2026-09-22T05:59:21.167004 PASS sub-018S4400/ses-01/run-01  reg=11.4s warp=30.6s total=98.2s FD_mean=0.125 tSNR=184.5
+2026-09-22T06:01:00.968679 WARN sub-019S4367/ses-01/run-01  reg=13.8s warp=26.8s total=99.6s FD_mean=0.189 tSNR=121.2
+2026-09-22T06:02:35.876481 WARN sub-019S4835/ses-01/run-01  reg=7.5s warp=25.7s total=94.7s FD_mean=0.478 tSNR=51.1
+2026-09-22T06:04:40.653172 WARN sub-031S4021/ses-01/run-01  reg=11.5s warp=40.4s total=124.5s FD_mean=0.284 tSNR=132.4
+2026-09-22T06:06:52.622375 WARN sub-031S4032/ses-01/run-01  reg=13.9s warp=42.0s total=131.7s FD_mean=0.196 tSNR=148.2
+2026-09-22T06:09:04.335962 WARN sub-031S4218/ses-01/run-01  reg=12.5s warp=42.2s total=131.4s FD_mean=0.312 tSNR=112.8
+2026-09-22T06:11:00.362620 WARN sub-031S4474/ses-01/run-01  reg=10.4s warp=35.4s total=115.7s FD_mean=0.394 tSNR=90.5
+2026-09-22T06:12:56.798657 WARN sub-031S4496/ses-01/run-01  reg=9.0s warp=34.8s total=116.2s FD_mean=0.853 tSNR=90.4
+2026-09-22T06:14:24.690986 WARN sub-129S0778/ses-01/run-01  reg=6.0s warp=27.3s total=87.7s FD_mean=0.258 tSNR=159.5
+2026-09-22T06:15:56.776879 WARN sub-129S4422/ses-01/run-01  reg=8.9s warp=25.2s total=91.9s FD_mean=0.189 tSNR=133.2
+2026-09-22T06:17:24.013406 WARN sub-130S4343/ses-01/run-01  reg=11.1s warp=20.1s total=87.1s FD_mean=0.366 tSNR=132.8
+2026-09-22T06:18:52.042964 WARN sub-130S4352/ses-01/run-01  reg=8.0s warp=25.0s total=87.8s FD_mean=0.261 tSNR=143.0
+2026-09-22T06:20:21.567280 WARN sub-136S0186/ses-01/run-01  reg=7.8s warp=24.6s total=89.3s FD_mean=0.341 tSNR=135.8
+2026-09-22T06:20:21.780690 === CN_Final COMPLETE: 2 PASS, 25 WARN, 2 FAIL, 0 SKIPPED ===
+2026-09-22T06:20:21.780877 GROUP_CN_Final_DONE
+<3>WSL (5550) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (5550) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (5550) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (5550) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (5550) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [CN_Final] DONE (reached its own manifest end) ===
+########################################################################
+### STARTING GROUP: EMCI  at Tue Sep 22 11:50:20 IST 2026
+########################################################################
+<3>WSL (5559) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (5559) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (5559) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (5559) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (5559) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [EMCI] attempt 1 at Tue Sep 22 11:50:21 IST 2026 ===
+<3>WSL (5567) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (5567) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (5567) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (5567) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (5567) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/EMCI/logs/preprocessing.log: No such file or directory
+2026-09-22T06:20:26.273174 === EMCI: 30 acquisitions to process (n_procs=1) ===
+2026-09-22T06:20:29.653196 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T06:20:29.653714 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T06:22:14.573812 WARN sub-002S2010/ses-01/run-01  reg=9.5s warp=39.3s total=104.0s FD_mean=0.835 tSNR=122.5
+2026-09-22T06:23:45.085167 FAIL sub-002S2043/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T06:25:25.460565 WARN sub-002S2073/ses-01/run-01  reg=8.0s warp=30.0s total=100.3s FD_mean=0.330 tSNR=127.1
+2026-09-22T06:27:08.271722 WARN sub-002S4237/ses-01/run-01  reg=8.0s warp=37.5s total=102.4s FD_mean=0.192 tSNR=147.6
+2026-09-22T06:28:48.124338 WARN sub-002S4447/ses-01/run-01  reg=6.8s warp=31.9s total=99.7s FD_mean=0.277 tSNR=149.1
+2026-09-22T06:30:42.001792 WARN sub-002S4473/ses-01/run-01  reg=12.0s warp=40.3s total=113.7s FD_mean=0.181 tSNR=153.9
+2026-09-22T06:32:13.817642 WARN sub-006S4679/ses-01/run-01  reg=10.2s warp=25.9s total=91.6s FD_mean=0.546 tSNR=100.1
+2026-09-22T06:33:49.359015 WARN sub-012S4012/ses-01/run-01  reg=8.6s warp=26.5s total=95.3s FD_mean=0.546 tSNR=108.2
+2026-09-22T06:35:15.704177 WARN sub-012S4128/ses-01/run-01  reg=7.6s warp=24.6s total=86.2s FD_mean=0.542 tSNR=107.3
+2026-09-22T06:37:20.026879 WARN sub-012S4128/ses-02/run-01  reg=11.4s warp=32.2s total=124.1s FD_mean=0.438 tSNR=129.0
+2026-09-22T06:39:18.372975 WARN sub-012S4188/ses-01/run-01  reg=9.0s warp=37.9s total=118.0s FD_mean=0.210 tSNR=167.4
+2026-09-22T06:41:26.954660 WARN sub-012S4849/ses-01/run-01  reg=8.7s warp=44.7s total=128.4s FD_mean=0.444 tSNR=87.3
+2026-09-22T06:43:23.715866 WARN sub-012S4987/ses-01/run-01  reg=8.5s warp=33.7s total=116.5s FD_mean=0.264 tSNR=139.6
+2026-09-22T06:45:26.265343 WARN sub-013S2324/ses-01/run-01  reg=11.0s warp=35.7s total=122.3s FD_mean=0.473 tSNR=100.2
+2026-09-22T06:46:56.374635 WARN sub-013S4268/ses-01/run-01  reg=9.0s warp=24.8s total=89.9s FD_mean=0.405 tSNR=124.3
+2026-09-22T06:48:29.845337 PASS sub-013S4791/ses-01/run-01  reg=7.8s warp=24.4s total=93.3s FD_mean=0.142 tSNR=165.3
+2026-09-22T06:50:29.051314 WARN sub-013S4917/ses-01/run-01  reg=10.7s warp=35.8s total=119.0s FD_mean=0.139 tSNR=223.3
+2026-09-22T06:52:26.656508 WARN sub-018S2133/ses-01/run-01  reg=9.2s warp=35.0s total=117.4s FD_mean=0.319 tSNR=136.9
+2026-09-22T06:54:32.783508 WARN sub-018S2138/ses-01/run-01  reg=14.6s warp=36.3s total=125.9s FD_mean=0.582 tSNR=121.2
+2026-09-22T06:56:39.594144 WARN sub-018S2155/ses-01/run-01  reg=10.6s warp=34.2s total=126.6s FD_mean=0.160 tSNR=138.3
+2026-09-22T06:58:37.937898 WARN sub-018S4597/ses-01/run-01  reg=14.2s warp=36.1s total=118.1s FD_mean=0.259 tSNR=169.9
+2026-09-22T07:00:09.781699 WARN sub-018S4809/ses-01/run-01  reg=7.0s warp=23.7s total=91.7s FD_mean=0.380 tSNR=165.4
+2026-09-22T07:01:39.908198 WARN sub-018S4868/ses-01/run-01  reg=7.7s warp=24.3s total=89.9s FD_mean=0.451 tSNR=117.4
+2026-09-22T07:03:08.589786 WARN sub-019S4285/ses-01/run-01  reg=7.7s warp=23.9s total=88.5s FD_mean=0.411 tSNR=128.3
+2026-09-22T07:04:59.448226 WARN sub-019S4680/ses-01/run-01  reg=11.4s warp=28.2s total=110.7s FD_mean=0.290 tSNR=120.4
+2026-09-22T07:07:20.897637 WARN sub-031S2018/ses-01/run-01  reg=9.6s warp=50.2s total=141.2s FD_mean=0.249 tSNR=133.2
+2026-09-22T07:09:23.182867 WARN sub-031S2018/ses-02/run-01  reg=10.7s warp=33.2s total=122.0s FD_mean=0.254 tSNR=136.8
+2026-09-22T07:11:22.629531 WARN sub-031S2022/ses-01/run-01  reg=11.1s warp=31.0s total=119.2s FD_mean=0.618 tSNR=117.7
+2026-09-22T07:13:22.879953 WARN sub-031S2233/ses-01/run-01  reg=10.8s warp=31.8s total=120.0s FD_mean=0.199 tSNR=161.6
+2026-09-22T07:15:21.434173 WARN sub-031S2233/ses-02/run-01  reg=13.8s warp=32.2s total=118.3s FD_mean=0.146 tSNR=187.7
+2026-09-22T07:15:21.703881 === EMCI COMPLETE: 1 PASS, 28 WARN, 1 FAIL, 0 SKIPPED ===
+2026-09-22T07:15:21.704240 GROUP_EMCI_DONE
+<3>WSL (8177) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (8177) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (8177) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (8177) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (8177) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [EMCI] DONE (reached its own manifest end) ===
+########################################################################
+### STARTING GROUP: LMCI  at Tue Sep 22 12:45:21 IST 2026
+########################################################################
+<3>WSL (8186) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (8186) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (8186) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (8186) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (8186) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [LMCI] attempt 1 at Tue Sep 22 12:45:21 IST 2026 ===
+<3>WSL (8194) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (8194) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (8194) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (8194) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (8194) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/LMCI/logs/preprocessing.log: No such file or directory
+2026-09-22T07:15:28.676242 === LMCI: 22 acquisitions to process (n_procs=1) ===
+2026-09-22T07:15:32.259256 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T07:15:32.259697 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T07:17:37.019648 FAIL sub-002S4171/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T07:19:39.696453 WARN sub-002S4171/ses-02/run-01  reg=14.2s warp=35.6s total=122.5s FD_mean=0.229 tSNR=158.9
+2026-09-22T07:22:14.666183 WARN sub-002S4219/ses-01/run-01  reg=14.5s warp=61.9s total=154.7s FD_mean=0.250 tSNR=134.6
+2026-09-22T07:23:59.906656 WARN sub-002S4251/ses-01/run-01  reg=10.2s warp=29.1s total=104.9s FD_mean=0.217 tSNR=112.5
+2026-09-22T07:25:38.073243 WARN sub-002S4521/ses-01/run-01  reg=8.2s warp=28.3s total=98.0s FD_mean=0.224 tSNR=152.8
+2026-09-22T07:27:16.842544 WARN sub-002S4654/ses-01/run-01  reg=7.2s warp=29.4s total=98.5s FD_mean=0.212 tSNR=167.7
+2026-09-22T07:29:06.158955 WARN sub-002S4746/ses-01/run-01  reg=9.6s warp=36.6s total=109.1s FD_mean=0.315 tSNR=120.3
+2026-09-22T07:30:55.379508 WARN sub-006S4346/ses-01/run-01  reg=8.0s warp=38.0s total=109.0s FD_mean=0.253 tSNR=139.7
+2026-09-22T07:32:35.266593 WARN sub-006S4363/ses-01/run-01  reg=8.4s warp=28.3s total=99.7s FD_mean=0.434 tSNR=103.4
+2026-09-22T07:35:08.097087 WARN sub-006S4515/ses-01/run-01  reg=12.2s warp=76.1s total=152.6s FD_mean=0.433 tSNR=105.1
+2026-09-22T07:36:59.574593 WARN sub-013S4595/ses-01/run-01  reg=7.7s warp=39.4s total=111.2s FD_mean=0.189 tSNR=151.5
+2026-09-22T07:38:52.680893 WARN sub-018S4889/ses-01/run-01  reg=10.3s warp=31.2s total=112.8s FD_mean=0.236 tSNR=137.3
+2026-09-22T07:41:45.846610 WARN sub-019S4293/ses-01/run-01  reg=11.2s warp=71.1s total=172.9s FD_mean=0.294 tSNR=99.7
+2026-09-22T07:44:38.686010 WARN sub-019S4548/ses-01/run-01  reg=11.0s warp=74.3s total=172.4s FD_mean=0.252 tSNR=135.7
+2026-09-22T07:46:56.748357 WARN sub-031S4194/ses-01/run-01  reg=14.1s warp=38.4s total=137.7s FD_mean=0.360 tSNR=178.9
+2026-09-22T07:49:13.139911 WARN sub-031S4203/ses-01/run-01  reg=13.4s warp=51.6s total=136.1s FD_mean=0.451 tSNR=109.0
+2026-09-22T07:51:05.929348 WARN sub-031S4203/ses-02/run-01  reg=11.2s warp=27.6s total=112.6s FD_mean=0.361 tSNR=121.4
+2026-09-22T07:53:09.003060 WARN sub-031S4590/ses-01/run-01  reg=8.2s warp=44.5s total=122.7s FD_mean=0.273 tSNR=115.2
+2026-09-22T07:55:12.030326 WARN sub-130S4250/ses-01/run-01  reg=8.6s warp=40.6s total=122.8s FD_mean=0.420 tSNR=115.0
+2026-09-22T07:57:41.799985 WARN sub-130S4542/ses-01/run-01  reg=11.6s warp=61.8s total=149.5s FD_mean=0.361 tSNR=84.3
+2026-09-22T08:00:10.385644 WARN sub-130S4605/ses-01/run-01  reg=10.6s warp=57.0s total=148.3s FD_mean=0.645 tSNR=105.0
+2026-09-22T08:02:52.480340 WARN sub-130S4817/ses-01/run-01  reg=10.9s warp=54.7s total=161.8s FD_mean=0.361 tSNR=130.2
+2026-09-22T08:02:52.790787 === LMCI COMPLETE: 0 PASS, 21 WARN, 1 FAIL, 0 SKIPPED ===
+2026-09-22T08:02:52.791147 GROUP_LMCI_DONE
+<3>WSL (10050) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (10050) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (10050) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (10050) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (10050) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [LMCI] DONE (reached its own manifest end) ===
+########################################################################
+### STARTING GROUP: MCI  at Tue Sep 22 13:32:53 IST 2026
+########################################################################
+<3>WSL (10059) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (10059) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (10059) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (10059) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (10059) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [MCI] attempt 1 at Tue Sep 22 13:32:54 IST 2026 ===
+<3>WSL (10067) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (10067) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (10067) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (10067) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (10067) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/MCI/logs/preprocessing.log: No such file or directory
+2026-09-22T08:03:03.046073 === MCI: 35 acquisitions to process (n_procs=1) ===
+2026-09-22T08:03:08.044378 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T08:03:08.045207 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T08:05:37.421540 FAIL sub-002S0729/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T08:07:25.080718 WARN sub-002S0729/ses-02/run-01  reg=8.8s warp=36.4s total=107.5s FD_mean=0.460 tSNR=118.6
+2026-09-22T08:10:17.741425 WARN sub-002S0729/ses-03/run-01  reg=14.1s warp=82.4s total=172.4s FD_mean=0.446 tSNR=109.8
+2026-09-22T08:13:16.890547 PASS sub-002S1155/ses-01/run-01  reg=10.6s warp=87.2s total=178.7s FD_mean=0.203 tSNR=169.8
+2026-09-22T08:15:08.019170 FAIL sub-002S1155/ses-02/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T08:17:02.994110 PASS sub-002S1155/ses-03/run-01  reg=7.3s warp=46.0s total=114.9s FD_mean=0.168 tSNR=148.6
+2026-09-22T08:19:24.394745 WARN sub-002S1268/ses-01/run-01  reg=12.5s warp=61.8s total=141.2s FD_mean=0.547 tSNR=105.6
+2026-09-22T08:21:44.106264 WARN sub-002S1268/ses-02/run-01  reg=15.2s warp=50.8s total=139.4s FD_mean=0.359 tSNR=115.2
+2026-09-22T08:23:50.120239 WARN sub-002S4229/ses-01/run-01  reg=12.7s warp=43.0s total=125.8s FD_mean=0.311 tSNR=137.4
+2026-09-22T08:26:15.378620 WARN sub-002S4229/ses-02/run-01  reg=8.8s warp=66.7s total=145.0s FD_mean=0.329 tSNR=161.1
+2026-09-22T08:28:23.258274 WARN sub-002S4229/ses-03/run-01  reg=7.8s warp=58.7s total=127.5s FD_mean=0.166 tSNR=164.4
+2026-09-22T08:31:20.329776 FAIL sub-002S4799/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T08:34:03.588072 WARN sub-002S4799/ses-02/run-01  reg=12.7s warp=72.4s total=163.0s FD_mean=0.138 tSNR=155.5
+2026-09-22T08:36:07.984605 WARN sub-006S4713/ses-01/run-01  reg=9.0s warp=52.8s total=124.1s FD_mean=0.213 tSNR=181.6
+2026-09-22T08:37:59.542663 WARN sub-006S4713/ses-01/run-02  reg=10.5s warp=43.1s total=111.3s FD_mean=0.233 tSNR=175.0
+2026-09-22T08:39:54.731580 WARN sub-006S4713/ses-02/run-01  reg=9.9s warp=46.9s total=115.0s FD_mean=0.208 tSNR=163.3
+2026-09-22T08:41:35.229088 WARN sub-013S1186/ses-01/run-01  reg=9.5s warp=34.5s total=100.3s FD_mean=0.468 tSNR=157.6
+2026-09-22T08:43:05.573360 WARN sub-013S1186/ses-02/run-01  reg=6.7s warp=27.9s total=90.1s FD_mean=0.382 tSNR=92.6
+2026-09-22T08:44:36.923094 WARN sub-013S1186/ses-03/run-01  reg=6.5s warp=27.3s total=91.1s FD_mean=0.474 tSNR=147.2
+2026-09-22T08:46:18.036585 WARN sub-013S2389/ses-01/run-01  reg=10.5s warp=26.6s total=100.9s FD_mean=0.267 tSNR=168.0
+2026-09-22T08:47:54.723171 WARN sub-013S2389/ses-02/run-01  reg=14.3s warp=25.6s total=96.5s FD_mean=0.274 tSNR=118.3
+2026-09-22T08:49:32.271130 WARN sub-018S2180/ses-01/run-01  reg=7.3s warp=27.7s total=97.4s FD_mean=0.253 tSNR=134.0
+2026-09-22T08:51:21.405501 PASS sub-018S2180/ses-02/run-01  reg=8.5s warp=31.8s total=108.8s FD_mean=0.168 tSNR=149.8
+2026-09-22T08:53:17.009499 WARN sub-018S2180/ses-03/run-01  reg=9.0s warp=34.5s total=115.4s FD_mean=0.217 tSNR=146.9
+2026-09-22T08:55:23.139623 WARN sub-018S2180/ses-04/run-01  reg=11.6s warp=40.1s total=122.9s FD_mean=0.336 tSNR=106.4
+2026-09-22T08:57:23.097263 WARN sub-053S0919/ses-01/run-01  reg=8.4s warp=40.1s total=119.7s FD_mean=0.156 tSNR=149.1
+2026-09-22T08:59:12.434867 WARN sub-053S0919/ses-02/run-01  reg=12.6s warp=36.8s total=109.1s FD_mean=0.366 tSNR=127.5
+2026-09-22T09:01:01.437682 WARN sub-053S4813/ses-01/run-01  reg=9.1s warp=41.2s total=108.8s FD_mean=0.539 tSNR=120.4
+2026-09-22T09:02:42.330482 WARN sub-053S4813/ses-02/run-01  reg=8.5s warp=33.2s total=100.7s FD_mean=0.512 tSNR=161.6
+2026-09-22T09:04:49.743892 PASS sub-100S4556/ses-01/run-01  reg=9.7s warp=50.2s total=127.2s FD_mean=0.166 tSNR=141.0
+2026-09-22T09:06:33.887836 WARN sub-100S4556/ses-02/run-01  reg=8.3s warp=36.1s total=103.9s FD_mean=0.303 tSNR=102.7
+2026-09-22T09:08:18.303382 WARN sub-130S4294/ses-01/run-01  reg=9.2s warp=31.3s total=104.2s FD_mean=0.451 tSNR=107.7
+2026-09-22T09:09:51.662945 WARN sub-130S4294/ses-02/run-01  reg=7.6s warp=29.3s total=93.2s FD_mean=0.407 tSNR=124.7
+2026-09-22T09:11:28.054978 WARN sub-130S4294/ses-03/run-01  reg=8.6s warp=26.5s total=96.2s FD_mean=0.546 tSNR=106.2
+2026-09-22T09:13:13.896001 WARN sub-136S0107/ses-01/run-01  reg=7.8s warp=32.9s total=105.6s FD_mean=0.197 tSNR=117.8
+2026-09-22T09:13:14.151957 === MCI COMPLETE: 4 PASS, 28 WARN, 3 FAIL, 0 SKIPPED ===
+2026-09-22T09:13:14.152325 GROUP_MCI_DONE
+<3>WSL (12984) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (12984) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (12984) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (12984) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (12984) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [MCI] DONE (reached its own manifest end) ===
+########################################################################
+### STARTING GROUP: SMC_Final  at Tue Sep 22 14:43:16 IST 2026
+########################################################################
+<3>WSL (12993) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (12993) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (12993) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (12993) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (12993) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [SMC_Final] attempt 1 at Tue Sep 22 14:43:16 IST 2026 ===
+<3>WSL (13001) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (13001) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (13001) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (13001) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (13001) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+bash: line 1: /mnt/c/Users/krish/FYP/derivatives/fsfast/SMC_Final/logs/preprocessing.log: No such file or directory
+2026-09-22T09:13:19.494183 === SMC_Final: 32 acquisitions to process (n_procs=1) ===
+2026-09-22T09:13:23.336025 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T09:13:23.336704 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T09:15:01.130812 WARN sub-002S5230/ses-01/run-01  reg=8.0s warp=28.3s total=96.8s FD_mean=0.216 tSNR=93.9
+2026-09-22T09:16:39.179424 WARN sub-002S5230/ses-02/run-01  reg=8.2s warp=29.7s total=97.8s FD_mean=0.237 tSNR=128.6
+2026-09-22T09:18:12.989994 WARN sub-002S5230/ses-03/run-01  reg=9.1s warp=24.5s total=93.6s FD_mean=0.397 tSNR=128.1
+2026-09-22T09:20:04.786866 WARN sub-002S5256/ses-01/run-01  reg=7.8s warp=35.8s total=111.6s FD_mean=0.165 tSNR=180.1
+2026-09-22T09:22:09.897710 FAIL sub-002S5256/ses-02/run-01: invalid filter band for TR=6.023525238037109 (Nyquist=0.0830078700164848)
+2026-09-22T09:24:24.963461 WARN sub-006S5153/ses-01/run-01  reg=13.8s warp=48.5s total=134.9s FD_mean=0.511 tSNR=108.5
+2026-09-22T09:26:49.883010 WARN sub-006S5153/ses-02/run-01  reg=13.2s warp=55.5s total=144.6s FD_mean=0.369 tSNR=133.2
+2026-09-22T09:29:24.336623 WARN sub-012S5121/ses-01/run-01  reg=9.5s warp=54.0s total=154.2s FD_mean=1.066 tSNR=76.8
+2026-09-22T09:30:53.195159 WARN sub-012S5121/ses-02/run-01  reg=9.8s warp=25.4s total=88.6s FD_mean=0.593 tSNR=105.1
+2026-09-22T09:32:27.892073 PASS sub-012S5157/ses-01/run-01  reg=7.5s warp=27.6s total=94.5s FD_mean=0.150 tSNR=147.4
+2026-09-22T09:33:53.824179 WARN sub-012S5157/ses-02/run-01  reg=8.7s warp=24.6s total=85.8s FD_mean=0.143 tSNR=138.8
+2026-09-22T09:35:44.535067 PASS sub-012S5195/ses-01/run-01  reg=11.1s warp=26.7s total=110.5s FD_mean=0.182 tSNR=127.8
+2026-09-22T09:37:48.474742 WARN sub-012S5213/ses-01/run-01  reg=9.5s warp=29.8s total=123.7s FD_mean=0.590 tSNR=117.4
+2026-09-22T09:40:12.039245 WARN sub-013S5137/ses-01/run-01  reg=13.7s warp=54.5s total=143.0s FD_mean=0.219 tSNR=144.9
+2026-09-22T09:42:12.210148 WARN sub-013S5137/ses-02/run-01  reg=9.9s warp=33.7s total=119.8s FD_mean=0.286 tSNR=101.2
+2026-09-22T09:44:14.003835 WARN sub-018S5250/ses-01/run-01  reg=13.5s warp=34.3s total=121.5s FD_mean=0.313 tSNR=101.5
+2026-09-22T09:46:17.200090 WARN sub-018S5262/ses-01/run-01  reg=11.7s warp=34.9s total=122.9s FD_mean=0.266 tSNR=169.0
+2026-09-22T09:48:28.801764 WARN sub-019S5180/ses-01/run-01  reg=12.0s warp=46.7s total=131.4s FD_mean=0.536 tSNR=156.5
+2026-09-22T09:51:26.784707 WARN sub-019S5242/ses-01/run-01  reg=10.5s warp=84.3s total=177.7s FD_mean=0.469 tSNR=124.8
+2026-09-22T09:53:55.243985 WARN sub-019S5242/ses-02/run-01  reg=10.9s warp=59.1s total=148.1s FD_mean=0.437 tSNR=138.1
+2026-09-22T09:55:37.984564 WARN sub-053S5202/ses-01/run-01  reg=9.9s warp=30.1s total=102.5s FD_mean=0.438 tSNR=115.6
+2026-09-22T09:57:35.805058 WARN sub-053S5202/ses-02/run-01  reg=7.9s warp=45.6s total=117.6s FD_mean=0.525 tSNR=106.2
+2026-09-22T09:59:31.390897 WARN sub-053S5272/ses-01/run-01  reg=8.5s warp=40.6s total=115.3s FD_mean=0.307 tSNR=185.6
+2026-09-22T10:01:18.511131 WARN sub-053S5287/ses-01/run-01  reg=7.1s warp=31.4s total=106.9s FD_mean=0.194 tSNR=190.0
+2026-09-22T10:03:22.637184 WARN sub-100S5096/ses-01/run-01  reg=10.9s warp=42.2s total=123.9s FD_mean=0.537 tSNR=96.5
+2026-09-22T10:05:11.744270 WARN sub-100S5102/ses-01/run-01  reg=7.4s warp=37.8s total=108.9s FD_mean=0.303 tSNR=119.9
+2026-09-22T10:07:00.395178 WARN sub-100S5280/ses-01/run-01  reg=8.0s warp=31.5s total=108.4s FD_mean=0.266 tSNR=123.7
+2026-09-22T10:08:45.932328 WARN sub-100S5280/ses-02/run-01  reg=8.6s warp=33.1s total=105.3s FD_mean=0.436 tSNR=123.7
+2026-09-22T10:10:49.387496 WARN sub-130S5142/ses-01/run-01  reg=7.7s warp=51.7s total=123.2s FD_mean=0.349 tSNR=111.6
+2026-09-22T10:12:34.275021 WARN sub-130S5142/ses-02/run-01  reg=6.8s warp=32.5s total=104.7s FD_mean=0.160 tSNR=154.3
+2026-09-22T10:14:14.644039 WARN sub-130S5258/ses-01/run-01  reg=7.4s warp=29.3s total=100.1s FD_mean=0.437 tSNR=68.5
+2026-09-22T10:15:52.633649 WARN sub-131S5148/ses-01/run-01  reg=10.6s warp=33.7s total=97.8s FD_mean=0.540 tSNR=80.0
+2026-09-22T10:15:52.853114 === SMC_Final COMPLETE: 2 PASS, 29 WARN, 1 FAIL, 0 SKIPPED ===
+2026-09-22T10:15:52.853383 GROUP_SMC_Final_DONE
+<3>WSL (15667) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (15667) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (15667) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (15667) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (15667) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [SMC_Final] DONE (reached its own manifest end) ===
+########################################################################
+### ALL SIX GROUPS COMPLETE at Tue Sep 22 15:45:53 IST 2026
+########################################################################
+ALL_SIX_GROUPS_DONE
+hape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,

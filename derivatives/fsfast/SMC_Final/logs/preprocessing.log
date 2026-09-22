@@ -1,0 +1,37 @@
+2026-09-22T09:13:19.494183 === SMC_Final: 32 acquisitions to process (n_procs=1) ===
+2026-09-22T09:13:23.336025 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T09:13:23.336704 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T09:15:01.130812 WARN sub-002S5230/ses-01/run-01  reg=8.0s warp=28.3s total=96.8s FD_mean=0.216 tSNR=93.9
+2026-09-22T09:16:39.179424 WARN sub-002S5230/ses-02/run-01  reg=8.2s warp=29.7s total=97.8s FD_mean=0.237 tSNR=128.6
+2026-09-22T09:18:12.989994 WARN sub-002S5230/ses-03/run-01  reg=9.1s warp=24.5s total=93.6s FD_mean=0.397 tSNR=128.1
+2026-09-22T09:20:04.786866 WARN sub-002S5256/ses-01/run-01  reg=7.8s warp=35.8s total=111.6s FD_mean=0.165 tSNR=180.1
+2026-09-22T09:22:09.897710 FAIL sub-002S5256/ses-02/run-01: invalid filter band for TR=6.023525238037109 (Nyquist=0.0830078700164848)
+2026-09-22T09:24:24.963461 WARN sub-006S5153/ses-01/run-01  reg=13.8s warp=48.5s total=134.9s FD_mean=0.511 tSNR=108.5
+2026-09-22T09:26:49.883010 WARN sub-006S5153/ses-02/run-01  reg=13.2s warp=55.5s total=144.6s FD_mean=0.369 tSNR=133.2
+2026-09-22T09:29:24.336623 WARN sub-012S5121/ses-01/run-01  reg=9.5s warp=54.0s total=154.2s FD_mean=1.066 tSNR=76.8
+2026-09-22T09:30:53.195159 WARN sub-012S5121/ses-02/run-01  reg=9.8s warp=25.4s total=88.6s FD_mean=0.593 tSNR=105.1
+2026-09-22T09:32:27.892073 PASS sub-012S5157/ses-01/run-01  reg=7.5s warp=27.6s total=94.5s FD_mean=0.150 tSNR=147.4
+2026-09-22T09:33:53.824179 WARN sub-012S5157/ses-02/run-01  reg=8.7s warp=24.6s total=85.8s FD_mean=0.143 tSNR=138.8
+2026-09-22T09:35:44.535067 PASS sub-012S5195/ses-01/run-01  reg=11.1s warp=26.7s total=110.5s FD_mean=0.182 tSNR=127.8
+2026-09-22T09:37:48.474742 WARN sub-012S5213/ses-01/run-01  reg=9.5s warp=29.8s total=123.7s FD_mean=0.590 tSNR=117.4
+2026-09-22T09:40:12.039245 WARN sub-013S5137/ses-01/run-01  reg=13.7s warp=54.5s total=143.0s FD_mean=0.219 tSNR=144.9
+2026-09-22T09:42:12.210148 WARN sub-013S5137/ses-02/run-01  reg=9.9s warp=33.7s total=119.8s FD_mean=0.286 tSNR=101.2
+2026-09-22T09:44:14.003835 WARN sub-018S5250/ses-01/run-01  reg=13.5s warp=34.3s total=121.5s FD_mean=0.313 tSNR=101.5
+2026-09-22T09:46:17.200090 WARN sub-018S5262/ses-01/run-01  reg=11.7s warp=34.9s total=122.9s FD_mean=0.266 tSNR=169.0
+2026-09-22T09:48:28.801764 WARN sub-019S5180/ses-01/run-01  reg=12.0s warp=46.7s total=131.4s FD_mean=0.536 tSNR=156.5
+2026-09-22T09:51:26.784707 WARN sub-019S5242/ses-01/run-01  reg=10.5s warp=84.3s total=177.7s FD_mean=0.469 tSNR=124.8
+2026-09-22T09:53:55.243985 WARN sub-019S5242/ses-02/run-01  reg=10.9s warp=59.1s total=148.1s FD_mean=0.437 tSNR=138.1
+2026-09-22T09:55:37.984564 WARN sub-053S5202/ses-01/run-01  reg=9.9s warp=30.1s total=102.5s FD_mean=0.438 tSNR=115.6
+2026-09-22T09:57:35.805058 WARN sub-053S5202/ses-02/run-01  reg=7.9s warp=45.6s total=117.6s FD_mean=0.525 tSNR=106.2
+2026-09-22T09:59:31.390897 WARN sub-053S5272/ses-01/run-01  reg=8.5s warp=40.6s total=115.3s FD_mean=0.307 tSNR=185.6
+2026-09-22T10:01:18.511131 WARN sub-053S5287/ses-01/run-01  reg=7.1s warp=31.4s total=106.9s FD_mean=0.194 tSNR=190.0
+2026-09-22T10:03:22.637184 WARN sub-100S5096/ses-01/run-01  reg=10.9s warp=42.2s total=123.9s FD_mean=0.537 tSNR=96.5
+2026-09-22T10:05:11.744270 WARN sub-100S5102/ses-01/run-01  reg=7.4s warp=37.8s total=108.9s FD_mean=0.303 tSNR=119.9
+2026-09-22T10:07:00.395178 WARN sub-100S5280/ses-01/run-01  reg=8.0s warp=31.5s total=108.4s FD_mean=0.266 tSNR=123.7
+2026-09-22T10:08:45.932328 WARN sub-100S5280/ses-02/run-01  reg=8.6s warp=33.1s total=105.3s FD_mean=0.436 tSNR=123.7
+2026-09-22T10:10:49.387496 WARN sub-130S5142/ses-01/run-01  reg=7.7s warp=51.7s total=123.2s FD_mean=0.349 tSNR=111.6
+2026-09-22T10:12:34.275021 WARN sub-130S5142/ses-02/run-01  reg=6.8s warp=32.5s total=104.7s FD_mean=0.160 tSNR=154.3
+2026-09-22T10:14:14.644039 WARN sub-130S5258/ses-01/run-01  reg=7.4s warp=29.3s total=100.1s FD_mean=0.437 tSNR=68.5
+2026-09-22T10:15:52.633649 WARN sub-131S5148/ses-01/run-01  reg=10.6s warp=33.7s total=97.8s FD_mean=0.540 tSNR=80.0
+2026-09-22T10:15:52.853114 === SMC_Final COMPLETE: 2 PASS, 29 WARN, 1 FAIL, 0 SKIPPED ===
+2026-09-22T10:15:52.853383 GROUP_SMC_Final_DONE

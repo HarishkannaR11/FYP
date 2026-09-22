@@ -1,0 +1,2 @@
+subject,session,run,tSNR_mean,tSNR_median,SNR,SNR_native_fallback,CNR,FD_mean,FD_median,FD_max,FD_gt_0.2_count,FD_gt_0.2_percent,FD_gt_0.5_count,FD_gt_0.5_percent,FD_gt_1.0_count,FD_gt_1.0_percent,DVARS_mean,DVARS_median,DVARS_max,spatial_entropy,temporal_entropy,brainnetome_rois_present,brainnetome_zero_rois,brainnetome_lt5,brainnetome_lt10,status
+sub-002S5018,ses-01,run-01,344.2963,345.1119,NOT_COMPUTABLE_FROM_FINAL_IMAGE,12.0794,NOT_COMPUTABLE,0.2806,0.2483,0.8959,87,64.44,11,8.15,0,0.0,5767.8179,5486.519,10501.334,7.0987,3.523,246,0,0,0,WARN

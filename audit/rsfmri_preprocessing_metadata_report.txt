@@ -1,0 +1,183 @@
+=== RS-fMRI PREPROCESSING METADATA AUDIT ===
+
+Dataset:
+BIDS root:            C:\Users\krish\FYP\BIDS  (WSL: /mnt/c/Users/krish/FYP/BIDS)
+Participants:         131
+BOLD acquisitions:    175  (174 eligible / 1 excluded: sub-012S4026_ses-01_run-01, 7 volumes)
+
+=== SLICE-TIMING AUDIT ===
+
+Total runs:                          175
+Runs with SliceTiming:               0
+Runs without SliceTiming:            175
+Runs with valid SliceTiming:         0
+Runs with inconsistent SliceTiming:  0
+
+Conclusion:
+No BOLD run in this dataset contains a "SliceTiming" field in its JSON sidecar. This was
+re-verified directly against the raw JSON files (not inherited from any earlier script's
+output): a case-insensitive recursive grep for "slicetiming" across every JSON file in
+the BIDS tree returns zero matches. Slice-timing correction is therefore NOT technically
+supported by the available metadata, for any of the 175 runs. No SliceTiming values were
+inferred or fabricated from TR or image dimensions.
+
+Note on a related but distinct field: 8 of the 175 JSON sidecars contain a "FrameTimesStart"
+array. This is per-VOLUME (temporal frame) timing, not per-SLICE timing -- its length equals
+each run's volume count (T), never the Z dimension (confirmed programmatically across all 8
+occurrences). It must not be used as, or confused with, SliceTiming data.
+
+Full per-run detail: audit/slice_timing_inventory.csv
+Full summary + examples: audit/slice_timing_summary.txt
+
+=== BOLD PREPROCESSING STEPS ===
+
+1. Data validation / input QC
+Status: AVAILABLE
+FS-FAST/Nipype tool: NiBabel (readability/shape check) + PyBIDS (BIDS structure validation),
+  orchestrated via a Nipype utility.Function node (not an FS-FAST binary -- this stage is
+  pure Python/orchestration).
+Required input: 4D BOLD NIfTI + BIDS-compliant naming/sidecars.
+Dataset contains required input: YES (175/175 files readable, 4D, valid BIDS naming).
+Reason: All inputs required for this step exist. This step also mechanically identifies
+  and flags sub-012S4026_ses-01_run-01 (7 volumes) for exclusion -- it is not deleted or
+  modified, only excluded from the iterable run list.
+
+2. Motion correction
+Status: AVAILABLE (data-wise)
+FS-FAST/Nipype tool: mc-afni2 (FS-FAST's native motion-correction wrapper around AFNI's
+  3dvolreg, bundled inside $FREESURFER_HOME/bin). Invoked directly rather than through the
+  full preproc-sess driver (see note below). No dedicated nipype.interfaces.freesurfer class
+  wraps mc-afni2 specifically; it would be called via a generic nipype.interfaces.base.CommandLine
+  node.
+Required input: 4D BOLD NIfTI (native functional space) + a reference volume (first/middle
+  frame of the same run). Does NOT require T1w.
+Dataset contains required input: YES.
+Reason: Motion correction operates purely within functional space and has no T1w dependency.
+  Data-wise this step is fully supportable. Actual execution additionally depends on the
+  FS-FAST binary being installed and licensed -- see "FS-FAST ENVIRONMENT" below; at the time
+  of this audit that installation is still in progress, so the step is not yet EXECUTABLE,
+  though it is AVAILABLE in the sense this audit is scoped to (data/methodological availability).
+
+3. Slice-timing correction
+Status: UNAVAILABLE
+FS-FAST/Nipype tool: Would be invoked via preproc-sess's -stc option (FS-FAST's built-in
+  slice-timing-correction step), which requires an explicit slice-order/SliceTiming
+  specification as input.
+Required input: SliceTiming array (or equivalent slice-order file) per run.
+Dataset contains required input: NO -- confirmed 0/175 runs contain a SliceTiming field
+  (see SLICE-TIMING AUDIT above).
+Reason: This metadata is genuinely absent from the dataset, not merely undetected. Per
+  project rules, SliceTiming must not be fabricated or inferred from TR/dimensions.
+  Consequently this step cannot be technically performed on this dataset as currently
+  constituted. This is reported as a limitation, not silently substituted or skipped
+  without mention.
+
+4. Spatial smoothing
+Status: AVAILABLE (data-wise)
+FS-FAST/Nipype tool: mri_fwhm (FS-FAST native volumetric spatial smoothing). Nipype:
+  nipype.interfaces.freesurfer.Smooth (or a CommandLine wrapper if the installed FreeSurfer
+  version's nipype class signature does not match mri_fwhm's exact CLI).
+Required input: functional volume (ideally post-motion-correction). Does NOT require T1w
+  (volumetric smoothing needs no anatomical mask in this BOLD-only design).
+Dataset contains required input: YES.
+Reason: Same as motion correction -- data requirement is met; execution is pending FS-FAST
+  installation completion.
+
+5. Temporal filtering / detrending
+Status: AVAILABLE (data-wise)
+FS-FAST/Nipype tool: mri_glmfit (using polynomial/Fourier regressors for high-pass/low-pass
+  filtering in native space). Nipype: nipype.interfaces.freesurfer.GLMFit.
+Required input: functional time series + per-run TR (for building the regressor/design
+  matrix). Does NOT require T1w.
+Dataset contains required input: YES -- RepetitionTime is present in every JSON sidecar.
+Reason: TR values vary substantially across runs (2.25s, 3.00-3.004s, 6.02-6.024s per the
+  prior BOLD-dimensions audit). Filter/regressor parameters must therefore be computed
+  per-run from each run's own TR -- they cannot be hardcoded as a single dataset-wide value.
+
+6. Nuisance regression
+Status: CONDITIONAL
+FS-FAST/Nipype tool: mri_glmfit, using motion parameters produced by step 2 (mc-afni2) as
+  regressors. Nipype: nipype.interfaces.freesurfer.GLMFit.
+Required input: motion parameter file (from motion correction) at minimum. Conventional
+  WM/CSF-derived nuisance regressors additionally require a FreeSurfer aseg segmentation,
+  which itself requires a completed recon-all on a T1w image.
+Dataset contains required input: PARTIAL -- motion-parameter regression is supportable
+  (once step 2 runs); WM/CSF-mask-based regression is NOT, since there is no T1w and
+  therefore no aseg segmentation possible.
+Reason: Marked CONDITIONAL because the step is only partially supportable: motion-parameter
+  regression, yes; anatomically-derived nuisance regressors, no. Whether to additionally use
+  global-signal regression (computable directly from BOLD data, no T1w needed) is a
+  methodological choice for the mentor to decide -- this audit does not decide it.
+
+7. Final preprocessing QC
+Status: AVAILABLE
+Tool/method: NiBabel (readability, shape/dimension, NaN/Inf checks) via a Nipype
+  utility.Function node, producing a per-run pass/fail CSV. This is Python-tooling-based,
+  not an FS-FAST binary, so it does not depend on the pending FreeSurfer installation.
+Required input: preprocessing step outputs (motion-corrected / smoothed / filtered BOLD).
+Dataset contains required input: N/A at audit time (outputs do not yet exist; no
+  preprocessing has been executed, per Task 4 of this audit).
+Reason: Tooling (NiBabel 5.4.2, confirmed installed and importable) is fully available now;
+  the step itself simply has nothing to check yet since no derivatives have been created.
+
+=== OPTIONAL/UNAVAILABLE INPUTS ===
+
+Fieldmaps: ABSENT (0/175 runs have any fmap entry). B0 distortion correction is therefore
+  UNAVAILABLE and is correctly NOT part of the main pipeline -- consistent with the existing
+  project plan, not added or removed by this audit.
+
+T1w: ABSENT (0/131 participants). Consequently:
+  - recon-all (FreeSurfer's structural/T1w processing workflow) is NOT part of this BOLD-only
+    pipeline. recon-all operates on T1w anatomical images to build a subject's structural
+    surface/segmentation model; since no T1w exists in this dataset, recon-all has no valid
+    input and cannot be run, regardless of framework choice. This is a data limitation, not
+    a preprocessing-framework limitation, and does not implicate FS-FAST itself.
+  - Any step that depends on a completed recon-all (bbregister anatomical registration,
+    aseg-based WM/CSF masks, surface-based smoothing/analysis) is UNAVAILABLE for the same
+    reason and is correspondingly omitted or downgraded (see step 6 above).
+  - This remains BOLD-only by the existing project design. Nothing above should be read as a
+    recommendation to add T1w -- that decision belongs to the mentor.
+
+Other missing inputs: reliable SliceTiming metadata (see SLICE-TIMING AUDIT above).
+
+=== FS-FAST ENVIRONMENT ===
+
+FreeSurfer:  NOT INSTALLED at time of this audit. FREESURFER_HOME is unset. A prior
+  installation attempt failed because the downloaded archive was truncated (1.4G vs an
+  expected multi-GB package; gzip/tar integrity check failed). A fresh download/extraction
+  is in progress in the background as of this audit but had not completed
+  (archive at ~4.5G, not yet extracted, /home/harish/freesurfer does not exist).
+FS-FAST:     NOT AVAILABLE. All checked commands confirmed NOT FOUND in PATH:
+  recon-all, preproc-sess, mc-afni2, mri_fwhm, mri_glmfit, mri_convert.
+Nipype:      1.12.0 (confirmed importable in /home/harish/fyp-neuro-env)
+NiBabel:     5.4.2  (confirmed importable)
+Nilearn:     0.14.1 (confirmed importable)
+PyBIDS:      0.22.0 (confirmed importable)
+
+=== FINAL PREPROCESSING SEQUENCE ===
+
+(Established from the actual dataset metadata and installed software above. Not executed.
+Not a redesign -- this is the mentor-approved FS-FAST + Nipype, BOLD-only sequence, with each
+step's technical availability stated plainly.)
+
+1. Input validation / QC (NiBabel + PyBIDS, Nipype Function node)
+   -> exclude sub-012S4026_ses-01_run-01 (7 volumes) from the iterable run list.
+2. Motion correction -- mc-afni2 (per-run reference-volume rigid realignment)
+   -> outputs: motion-corrected 4D BOLD + motion parameter file, per run.
+3. Slice-timing correction -- OMITTED. No SliceTiming metadata exists for any of the 175
+   runs; fabricating it is prohibited. This is a reported limitation, pending mentor decision.
+4. Spatial smoothing -- mri_fwhm on the motion-corrected volumes.
+5. Temporal filtering / detrending -- mri_glmfit, with per-run regressors built from each
+   run's own RepetitionTime (TR is not uniform across the dataset).
+6. Nuisance regression -- mri_glmfit using motion parameters from step 2. WM/CSF-mask-based
+   regressors are not available (no T1w/aseg). Global-signal regression is an available but
+   undecided option -- mentor/pipeline-owner decision required.
+7. Final QC -- NiBabel-based per-run validation (readability, shape, NaN/Inf, traceability),
+   producing audit/preprocessing_qc_report.csv.
+
+Execution of this sequence is blocked until:
+  (a) FreeSurfer 7.4.1 finishes installing and license.txt is verified in place, and
+  (b) mc-afni2 / mri_fwhm / mri_glmfit / mri_convert are confirmed present and runnable.
+
+No step above substitutes FSL, fMRIPrep, ANTs, AFNI (standalone), or SPM for FS-FAST. No T1w
+or fieldmap data was assumed, fabricated, or required to be added.

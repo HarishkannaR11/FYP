@@ -1,0 +1,50 @@
+{
+  "subject": "sub-019S4549",
+  "session": "ses-01",
+  "run": "run-01",
+  "group": "AD",
+  "bold_source": "/mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/sub-019S4549_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz",
+  "bold_volumes": 135,
+  "TR_s": 3.0,
+  "n_rois": 246,
+  "brain_mask_voxels": 28549,
+  "alff": {
+    "method": "Zang et al. 2007 (mean amplitude in band)",
+    "band_hz": [
+      0.01,
+      0.1
+    ],
+    "note": "BOLD already band-pass filtered 0.01-0.10Hz during preprocessing"
+  },
+  "reho": {
+    "method": "Kendall's coefficient of concordance (KCC)",
+    "neighborhood": "27-voxel (3x3x3 incl. center)",
+    "reason": "Zang et al. 2004 original definition; AFNI 3dReHo / DPARSF default",
+    "boundary_handling": "K varies per voxel; restricted to in-mask neighbors"
+  },
+  "fc": {
+    "method": "Pearson correlation",
+    "self_connections": "included in matrix diagonal, excluded from DC/strength sums",
+    "negative_correlations": "retained",
+    "thresholding": "none (full weighted matrix)"
+  },
+  "degree_centrality": {
+    "definition": "DC_i = sum_{j!=i} FC[i,j]",
+    "weighted": true,
+    "signed": true,
+    "threshold": null
+  },
+  "fc_regional_strength": {
+    "definition": "mean_{j!=i} FC[i,j]"
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "scipy": "1.15.3",
+    "nibabel": "5.4.2",
+    "pandas": "3.0.5"
+  },
+  "processing_date_utc": "2026-09-22T16:55:03.644121+00:00",
+  "roi_timeseries_source": "/mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/roi_timeseries.npy",
+  "roi_timeseries_modified": false
+}

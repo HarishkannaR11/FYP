@@ -1,0 +1,11 @@
+sub,ses,run,stage,file,shape,shape_match,has_nan,has_inf,readable,status,error
+sub-002S0413,ses-01,run-01,input_original_BIDS,/mnt/c/Users/krish/FYP/BIDS/sub-002S0413/ses-01/func/sub-002S0413_ses-01_task-rest_run-01_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0413,ses-01,run-01,motion_corrected,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0413/moco/moco_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0413,ses-01,run-01,smoothed,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0413/smooth/smooth_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0413,ses-01,run-01,final_preproc_eres,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0413/glmfit/glmdir/eres.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0413,ses-01,run-01,motion_parameters,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0413/moco/moco_bold.mcdat,"(140 rows, 10 cols)",YES,False,False,YES,PASS,
+sub-002S0685,ses-01,run-01,input_original_BIDS,/mnt/c/Users/krish/FYP/BIDS/sub-002S0685/ses-01/func/sub-002S0685_ses-01_task-rest_run-01_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0685,ses-01,run-01,motion_corrected,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0685/moco/moco_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0685,ses-01,run-01,smoothed,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0685/smooth/smooth_bold.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0685,ses-01,run-01,final_preproc_eres,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0685/glmfit/glmdir/eres.nii.gz,"(64, 64, 48, 140)",YES,False,False,YES,PASS,
+sub-002S0685,ses-01,run-01,motion_parameters,/home/harish/fyp_work/pilot2w/work/fsfast_2worker_pilot/_sub_sub-002S0685/moco/moco_bold.mcdat,"(140 rows, 10 cols)",YES,False,False,YES,PASS,

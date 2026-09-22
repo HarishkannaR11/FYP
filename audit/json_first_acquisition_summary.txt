@@ -1,0 +1,28 @@
+=== JSON-FIRST ACQUISITION MAPPING SUMMARY ===
+
+Total JSON acquisitions: 175
+JSON_WITH_EXACT_NIFTI: 165
+JSON_WITH_METADATA_MATCH: 0
+JSON_WITHOUT_NIFTI: 9
+AMBIGUOUS_MAPPING: 1
+Total NIfTI: 167
+NIFTI_WITHOUT_JSON: 2
+DUPLICATE_JSON: 0
+DUPLICATE_NIFTI: 0
+INVALID_NIFTI: 0
+
+=== MISSING NIFTI BY JSON ===
+CN_Final | 002_S_0685 | 002_S_0685_Resting_State_fMRI_20110708070427_501.json | 20110708070427 | Found 2 exact stem matches (likely duplicate files).
+AD | 002_S_5018 | 002_S_5018_Resting_State_fMRI_20130516122033_501.json | 20130516122033 | No exact stem or metadata match found.
+AD | 006_S_4153 | 006_S_4153_WIP_Resting_State_fMRI_20120327121013_501.json | 20120327121013 | No exact stem or metadata match found.
+AD | 019_S_4477 | 019_S_4477_Resting_State_fMRI_20130213122116_501.json | 20130213122116 | No exact stem or metadata match found.
+AD | 019_S_4549 | 019_S_4549_Resting_State_fMRI_20130313113703_601.json | 20130313113703 | No exact stem or metadata match found.
+AD | 130_S_4730 | 130_S_4730_WIP_Resting_State_fMRI_20130612085835_701.json | 20130612085835 | No exact stem or metadata match found.
+AD | 130_S_4982 | 130_S_4982_Resting_State_fMRI_20131025101621_501.json | 20131025101621 | No exact stem or metadata match found.
+LMCI | 130_S_4542 | 130_S_4542_WIP_Resting_State_fMRI_20120905131830_501.json | 20120905131830 | No exact stem or metadata match found.
+LMCI | 130_S_4605 | 130_S_4605_Resting_State_fMRI_20121019110807_501.json | 20121019110807 | No exact stem or metadata match found.
+LMCI | 130_S_4817 | 130_S_4817_Resting_State_fMRI_20130122083214_601.json | 20130122083214 | No exact stem or metadata match found.
+
+=== ORPHAN NIFTI ===
+CN_Final | 002_S_0685 | 002_S_0685_Resting_State_fMRI_20110708070427_501.nii.gz | C:\Users\krish\FYP\NIfTI\NIfTI\CN_Final\002_S_0685\002_S_0685_Resting_State_fMRI_20110708070427_501.nii.gz | Could not match to any JSON
+CN_Final | 002_S_0685 | 002_S_0685_Resting_State_fMRI_20110708070427_501.nii | C:\Users\krish\FYP\NIfTI\NIfTI\CN_Final\002_S_0685\002_S_0685_Resting_State_fMRI_20110708070427_501.nii\002_S_0685_Resting_State_fMRI_20110708070427_501.nii | Could not match to any JSON

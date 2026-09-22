@@ -1,0 +1,67 @@
+=== FREESURFER INSTALLATION ===
+Version:                freesurfer-linux-ubuntu22_x86_64-7.4.1-20230614-7eb8460
+Installation path:      /home/harish/freesurfer
+FREESURFER_HOME:        /home/harish/freesurfer (confirmed set correctly in an
+                         INTERACTIVE shell via .bashrc)
+Installation integrity: VERIFIED. Archive (9,484,461,482 bytes) passed `gzip -t`
+                         and a full `tar -tzf` listing (81,520 entries) before
+                         extraction. Extraction completed with exit code 0.
+                         bin/ contains 812 files. Disk usage after install:
+                         23G used, 933G free on the WSL filesystem -- ample
+                         headroom, no space constraint.
+
+NOTE ON NON-INTERACTIVE SHELLS: /home/harish/.bashrc begins with the standard
+Debian/Ubuntu guard `case $- in *i*) ;; *) return;; esac`, which returns
+immediately for NON-interactive shells -- before ever reaching the
+FREESURFER_HOME export further down the file. This means a plain
+`bash -lc "command"` (non-interactive) does NOT pick up FREESURFER_HOME or
+PATH, while a normal INTERACTIVE terminal session (what you actually use)
+does -- verified directly both ways. This is standard, pre-existing shell
+behavior, not something introduced by this install. It is flagged here
+because Nipype's CommandLine nodes launch subprocesses directly and may not
+inherit an interactive shell's environment depending on how the orchestrating
+Python process itself was started; if a future Nipype run cannot find these
+commands despite this report showing them installed, this is the first thing
+to check (e.g. by launching the Nipype script from an interactive shell that
+has already sourced FreeSurfer, or by setting FREESURFER_HOME/PATH explicitly
+in the Python process's environment before spawning nodes). No change was
+made to .bashrc's guard -- flagging only, per this task's verification-only
+scope.
+
+=== LICENSE ===
+License status: PRESENT (non-empty file at $FREESURFER_HOME/license.txt).
+                 Contents not reproduced here, per instruction. Not fabricated
+                 -- this is the license file you obtained directly from the
+                 FreeSurfer registration page.
+
+=== FS-FAST COMMANDS ===
+recon-all:      /home/harish/freesurfer/bin/recon-all
+preproc-sess:   /home/harish/freesurfer/fsfast/bin/preproc-sess
+mc-afni2:       /home/harish/freesurfer/fsfast/bin/mc-afni2
+mri_fwhm:       /home/harish/freesurfer/bin/mri_fwhm
+mri_glmfit:     /home/harish/freesurfer/bin/mri_glmfit
+mri_convert:    /home/harish/freesurfer/bin/mri_convert
+
+All six confirmed present and resolvable via `which` in an interactive WSL
+shell for user harish, using the newly completed installation. None of these
+paths are guessed or assumed -- each was directly resolved.
+
+=== NIPYPE ===
+Nipype version:  1.12.0
+NiBabel version: 5.4.2
+Nilearn version: 0.14.1
+PyBIDS version:  0.22.0
+(all confirmed importable in /home/harish/fyp-neuro-env)
+
+=== FINAL STATUS ===
+READY
+
+FreeSurfer 7.4.1 is fully extracted, FREESURFER_HOME is correctly configured
+for interactive use, the license is in place, and all six required FS-FAST
+commands resolve to real executables. This clears the installation blocker
+that previously made the project NOT_READY. Command-level behavior (exact
+CLI flags, 4D handling, whether preproc-sess/mc-afni2 require a FreeSurfer
+subject structure, etc.) has NOT yet been exercised against this installed
+copy -- that verification (running --help, not actual preprocessing) is the
+logical next step, separate from this installation-status check, and no
+preprocessing, BIDS modification, or pilot execution was performed here.

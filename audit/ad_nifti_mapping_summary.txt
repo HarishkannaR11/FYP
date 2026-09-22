@@ -1,0 +1,94 @@
+=== AD SUBJECT / NIfTI MAPPING AUDIT ===
+
+Group-membership source (ONLY source used): /mnt/c/Users/krish/FYP/BIDS/participants.tsv
+NIfTI source directory: /mnt/c/Users/krish/FYP/NIfTI_/NIfTI/AD
+
+NOTE ON SESSION INFERENCE: raw NIfTI filenames encode a real acquisition
+datetime (YYYYMMDDHHMMSS) but not an explicit ses-XX label. Where a subject
+has multiple dated files, session number was assigned by chronological order
+(earliest datetime = ses-01, next = ses-02, ...) -- the same convention already
+established and cross-checked elsewhere in this project (DICOM audit). This is
+read from real embedded metadata, not fabricated. The already_in_derivatives
+check is done PER INFERRED SESSION, not per subject -- an earlier draft of this
+script incorrectly checked at the subject level only, which wrongly marked an
+unprocessed second session as already done for a multi-session subject; this was
+caught and fixed before this report was finalized.
+
+Total AD subjects listed in participants.tsv: 20
+AD subjects with a matching folder under NIfTI_/NIfTI/AD: 20
+AD subjects with NO matching folder found: 0
+
+Total NIfTI files found across all AD subject folders: 25
+Total classified as BOLD resting-state candidates: 25
+
+--- Classification breakdown (all NIfTI files) ---
+  BOLD_RESTING_STATE: 25
+
+--- Subjects with 2+ BOLD files ---
+  sub-002S5018: 2 BOLD files
+  sub-019S4477: 2 BOLD files
+  sub-019S4549: 2 BOLD files
+  sub-130S4730: 2 BOLD files
+  sub-130S4982: 2 BOLD files
+
+--- Subjects with missing/zero BOLD data ---
+  None
+
+--- Subjects already processed in derivatives/fsfast ---
+  sub-002S5018
+  sub-006S4153
+  sub-006S4192
+  sub-013S5071
+  sub-018S4696
+
+--- BOLD runs NOT yet in derivatives (candidates for next processing) ---
+  sub-002S5018: 002_S_5018_Resting_State_fMRI_20131118104100_501.nii.gz (TR=3.001, dims=(64, 64, 48, 140))
+  sub-018S4733: 018_S_4733_WIP_Resting_State_fMRI_20121130110351_601.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-019S4252: 019_S_4252_Resting_State_fMRI_20121023124915_501.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-019S4477: 019_S_4477_Resting_State_fMRI_20120807131900_701.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-019S4477: 019_S_4477_Resting_State_fMRI_20130213122116_501.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-019S4549: 019_S_4549_Resting_State_fMRI_20121030144055_601.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-019S4549: 019_S_4549_Resting_State_fMRI_20130313113703_601.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-019S5012: 019_S_5012_Resting_State_fMRI_20130515125619_501.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-019S5019: 019_S_5019_Resting_State_fMRI_20130514132411_501.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-031S4024: 031_S_4024_WIP_Resting_State_fMRI_20111028135128_601.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4641: 130_S_4641_Resting_State_fMRI_20121010131159_501.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4660: 130_S_4660_Resting_State_fMRI_20121017134229_701.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4730: 130_S_4730_Resting_State_fMRI_20121219085923_701.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4730: 130_S_4730_WIP_Resting_State_fMRI_20130612085835_701.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4971: 130_S_4971_Resting_State_fMRI_20130503125602_501.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4982: 130_S_4982_Resting_State_fMRI_20130426091244_501.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4982: 130_S_4982_Resting_State_fMRI_20131025101621_501.nii.gz (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4984: 130_S_4984_Resting_State_fMRI_20130328100512_501.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-130S4990: 130_S_4990_Resting_State_fMRI_20130426105741_501.nii (TR=3, dims=(64, 64, 48, 140))
+  sub-130S5059: 130_S_5059_Resting_State_fMRI_20130809090025_501.nii (TR=3, dims=(64, 64, 48, 140))
+
+=== FINAL SUMMARY ===
+
+Total AD subjects from CSV: 20
+Total NIfTI files: 25
+Total eligible resting-state BOLD runs: 25
+Subjects with 2+ BOLD files: 5 ['sub-002S5018', 'sub-019S4477', 'sub-019S4549', 'sub-130S4730', 'sub-130S4982']
+Subjects with missing BOLD data: 0 []
+Subjects already processed (in derivatives/fsfast): 5 ['sub-002S5018', 'sub-006S4153', 'sub-006S4192', 'sub-013S5071', 'sub-018S4696']
+Runs that should be processed next: 20
+  sub-002S5018 -- 002_S_5018_Resting_State_fMRI_20131118104100_501.nii.gz
+  sub-018S4733 -- 018_S_4733_WIP_Resting_State_fMRI_20121130110351_601.nii
+  sub-019S4252 -- 019_S_4252_Resting_State_fMRI_20121023124915_501.nii
+  sub-019S4477 -- 019_S_4477_Resting_State_fMRI_20120807131900_701.nii.gz
+  sub-019S4477 -- 019_S_4477_Resting_State_fMRI_20130213122116_501.nii.gz
+  sub-019S4549 -- 019_S_4549_Resting_State_fMRI_20121030144055_601.nii.gz
+  sub-019S4549 -- 019_S_4549_Resting_State_fMRI_20130313113703_601.nii.gz
+  sub-019S5012 -- 019_S_5012_Resting_State_fMRI_20130515125619_501.nii
+  sub-019S5019 -- 019_S_5019_Resting_State_fMRI_20130514132411_501.nii
+  sub-031S4024 -- 031_S_4024_WIP_Resting_State_fMRI_20111028135128_601.nii
+  sub-130S4641 -- 130_S_4641_Resting_State_fMRI_20121010131159_501.nii
+  sub-130S4660 -- 130_S_4660_Resting_State_fMRI_20121017134229_701.nii
+  sub-130S4730 -- 130_S_4730_Resting_State_fMRI_20121219085923_701.nii.gz
+  sub-130S4730 -- 130_S_4730_WIP_Resting_State_fMRI_20130612085835_701.nii.gz
+  sub-130S4971 -- 130_S_4971_Resting_State_fMRI_20130503125602_501.nii
+  sub-130S4982 -- 130_S_4982_Resting_State_fMRI_20130426091244_501.nii.gz
+  sub-130S4982 -- 130_S_4982_Resting_State_fMRI_20131025101621_501.nii.gz
+  sub-130S4984 -- 130_S_4984_Resting_State_fMRI_20130328100512_501.nii
+  sub-130S4990 -- 130_S_4990_Resting_State_fMRI_20130426105741_501.nii
+  sub-130S5059 -- 130_S_5059_Resting_State_fMRI_20130809090025_501.nii

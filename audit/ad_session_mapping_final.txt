@@ -1,0 +1,61 @@
+=== AD SESSION MAPPING FINAL VERIFICATION ===
+
+Group-membership source: /mnt/c/Users/krish/FYP/BIDS/participants.tsv (only source used)
+Session/run assignment source: /mnt/c/Users/krish/FYP/audit/bids_session_run_mapping.csv (authoritative record from
+  the original BIDS creation process -- cross-checked against, and found to
+  exactly match, the independent chronological-order inference used in the
+  prior AD NIfTI mapping audit. Using this file directly here rather than
+  re-deriving, since it is the ground-truth record, not an inference.)
+
+Total AD subjects: 20
+Total AD BOLD acquisitions (rows): 25
+
+--- CHECK 1: every acquisition has EXACTLY one session ---
+  PASS: all 25 acquisitions map to a distinct (subject, session) pair. No two acquisitions share a session.
+
+--- CHECK 2 & 5: every session has a UNIQUE derivative output path (no collision) ---
+  PASS: all 25 computed output paths are unique. No overwrite is possible with this mapping.
+
+--- CHECK 3: already-processed runs correctly identified ---
+  25 runs found with an existing output file:
+    sub-002S5018 ses-01
+    sub-002S5018 ses-02
+    sub-006S4153 ses-01
+    sub-006S4192 ses-01
+    sub-013S5071 ses-01
+    sub-018S4696 ses-01
+    sub-018S4733 ses-01
+    sub-019S4252 ses-01
+    sub-019S4477 ses-01
+    sub-019S4477 ses-02
+    sub-019S4549 ses-01
+    sub-019S4549 ses-02
+    sub-019S5012 ses-01
+    sub-019S5019 ses-01
+    sub-031S4024 ses-01
+    sub-130S4641 ses-01
+    sub-130S4660 ses-01
+    sub-130S4730 ses-01
+    sub-130S4730 ses-02
+    sub-130S4971 ses-01
+    sub-130S4982 ses-01
+    sub-130S4982 ses-02
+    sub-130S4984 ses-01
+    sub-130S4990 ses-01
+    sub-130S5059 ses-01
+
+--- CHECK 4: remaining runs correctly identified ---
+  0 runs with no existing output file (candidates for next processing):
+
+--- NO ISSUES DETECTED ---
+
+=== SUMMARY ===
+
+Total BOLD acquisitions verified: 25
+Already processed: 25
+Remaining (to be processed next): 0
+Source files missing: 0
+Session collisions: 0
+Output path collisions: 0
+
+OVERALL: SAFE TO PROCEED

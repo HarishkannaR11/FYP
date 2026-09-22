@@ -1,0 +1,35 @@
+2026-09-22T06:20:26.273174 === EMCI: 30 acquisitions to process (n_procs=1) ===
+2026-09-22T06:20:29.653196 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-09-22T06:20:29.653714 WM/CSF mapping (template-level, precomputed): no_transform
+2026-09-22T06:22:14.573812 WARN sub-002S2010/ses-01/run-01  reg=9.5s warp=39.3s total=104.0s FD_mean=0.835 tSNR=122.5
+2026-09-22T06:23:45.085167 FAIL sub-002S2043/ses-01/run-01: invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+2026-09-22T06:25:25.460565 WARN sub-002S2073/ses-01/run-01  reg=8.0s warp=30.0s total=100.3s FD_mean=0.330 tSNR=127.1
+2026-09-22T06:27:08.271722 WARN sub-002S4237/ses-01/run-01  reg=8.0s warp=37.5s total=102.4s FD_mean=0.192 tSNR=147.6
+2026-09-22T06:28:48.124338 WARN sub-002S4447/ses-01/run-01  reg=6.8s warp=31.9s total=99.7s FD_mean=0.277 tSNR=149.1
+2026-09-22T06:30:42.001792 WARN sub-002S4473/ses-01/run-01  reg=12.0s warp=40.3s total=113.7s FD_mean=0.181 tSNR=153.9
+2026-09-22T06:32:13.817642 WARN sub-006S4679/ses-01/run-01  reg=10.2s warp=25.9s total=91.6s FD_mean=0.546 tSNR=100.1
+2026-09-22T06:33:49.359015 WARN sub-012S4012/ses-01/run-01  reg=8.6s warp=26.5s total=95.3s FD_mean=0.546 tSNR=108.2
+2026-09-22T06:35:15.704177 WARN sub-012S4128/ses-01/run-01  reg=7.6s warp=24.6s total=86.2s FD_mean=0.542 tSNR=107.3
+2026-09-22T06:37:20.026879 WARN sub-012S4128/ses-02/run-01  reg=11.4s warp=32.2s total=124.1s FD_mean=0.438 tSNR=129.0
+2026-09-22T06:39:18.372975 WARN sub-012S4188/ses-01/run-01  reg=9.0s warp=37.9s total=118.0s FD_mean=0.210 tSNR=167.4
+2026-09-22T06:41:26.954660 WARN sub-012S4849/ses-01/run-01  reg=8.7s warp=44.7s total=128.4s FD_mean=0.444 tSNR=87.3
+2026-09-22T06:43:23.715866 WARN sub-012S4987/ses-01/run-01  reg=8.5s warp=33.7s total=116.5s FD_mean=0.264 tSNR=139.6
+2026-09-22T06:45:26.265343 WARN sub-013S2324/ses-01/run-01  reg=11.0s warp=35.7s total=122.3s FD_mean=0.473 tSNR=100.2
+2026-09-22T06:46:56.374635 WARN sub-013S4268/ses-01/run-01  reg=9.0s warp=24.8s total=89.9s FD_mean=0.405 tSNR=124.3
+2026-09-22T06:48:29.845337 PASS sub-013S4791/ses-01/run-01  reg=7.8s warp=24.4s total=93.3s FD_mean=0.142 tSNR=165.3
+2026-09-22T06:50:29.051314 WARN sub-013S4917/ses-01/run-01  reg=10.7s warp=35.8s total=119.0s FD_mean=0.139 tSNR=223.3
+2026-09-22T06:52:26.656508 WARN sub-018S2133/ses-01/run-01  reg=9.2s warp=35.0s total=117.4s FD_mean=0.319 tSNR=136.9
+2026-09-22T06:54:32.783508 WARN sub-018S2138/ses-01/run-01  reg=14.6s warp=36.3s total=125.9s FD_mean=0.582 tSNR=121.2
+2026-09-22T06:56:39.594144 WARN sub-018S2155/ses-01/run-01  reg=10.6s warp=34.2s total=126.6s FD_mean=0.160 tSNR=138.3
+2026-09-22T06:58:37.937898 WARN sub-018S4597/ses-01/run-01  reg=14.2s warp=36.1s total=118.1s FD_mean=0.259 tSNR=169.9
+2026-09-22T07:00:09.781699 WARN sub-018S4809/ses-01/run-01  reg=7.0s warp=23.7s total=91.7s FD_mean=0.380 tSNR=165.4
+2026-09-22T07:01:39.908198 WARN sub-018S4868/ses-01/run-01  reg=7.7s warp=24.3s total=89.9s FD_mean=0.451 tSNR=117.4
+2026-09-22T07:03:08.589786 WARN sub-019S4285/ses-01/run-01  reg=7.7s warp=23.9s total=88.5s FD_mean=0.411 tSNR=128.3
+2026-09-22T07:04:59.448226 WARN sub-019S4680/ses-01/run-01  reg=11.4s warp=28.2s total=110.7s FD_mean=0.290 tSNR=120.4
+2026-09-22T07:07:20.897637 WARN sub-031S2018/ses-01/run-01  reg=9.6s warp=50.2s total=141.2s FD_mean=0.249 tSNR=133.2
+2026-09-22T07:09:23.182867 WARN sub-031S2018/ses-02/run-01  reg=10.7s warp=33.2s total=122.0s FD_mean=0.254 tSNR=136.8
+2026-09-22T07:11:22.629531 WARN sub-031S2022/ses-01/run-01  reg=11.1s warp=31.0s total=119.2s FD_mean=0.618 tSNR=117.7
+2026-09-22T07:13:22.879953 WARN sub-031S2233/ses-01/run-01  reg=10.8s warp=31.8s total=120.0s FD_mean=0.199 tSNR=161.6
+2026-09-22T07:15:21.434173 WARN sub-031S2233/ses-02/run-01  reg=13.8s warp=32.2s total=118.3s FD_mean=0.146 tSNR=187.7
+2026-09-22T07:15:21.703881 === EMCI COMPLETE: 1 PASS, 28 WARN, 1 FAIL, 0 SKIPPED ===
+2026-09-22T07:15:21.704240 GROUP_EMCI_DONE

@@ -1,0 +1,3 @@
+group,subject,session,run,reason
+CN_Final,sub-012S4026,ses-01,run-01,7-volume truncated acquisition (pre-excluded from manifest)
+LMCI,sub-006S4363,ses-01,run-02,byte-identical duplicate of ses-01/run-01 (pre-excluded from manifest)

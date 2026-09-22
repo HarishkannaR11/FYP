@@ -1,0 +1,76 @@
+========================================================
+RAW-DATA ↔ NIFTI MATCHING AUDIT SUMMARY
+========================================================
+
+Total NIfTI files checked: 140
+Original NIfTI checked: 73
+Recovered NIfTI checked: 67
+
+--- STATUS COUNTS ---
+VERIFIED_MATCH: 0
+LIKELY_MATCH: 137
+MISMATCH: 0
+NO_RAW_MATCH: 0
+NO_JSON: 0
+NEEDS_MANUAL_REVIEW: 3
+
+Duplicate Image IDs: 4
+Unique ADNI Image IDs: 7
+
+========================================================
+GROUP BREAKDOWN
+========================================================
+
+Group: CN_Final
+  NIfTI count: 31
+  Verified: 0
+  Likely: 31
+  Mismatch: 0
+  No raw match: 0
+  No JSON: 0
+  Manual review: 0
+
+Group: EMCI
+  NIfTI count: 30
+  Verified: 0
+  Likely: 30
+  Mismatch: 0
+  No raw match: 0
+  No JSON: 0
+  Manual review: 0
+
+Group: MCI
+  NIfTI count: 26
+  Verified: 0
+  Likely: 26
+  Mismatch: 0
+  No raw match: 0
+  No JSON: 0
+  Manual review: 0
+
+Group: UNKNOWN
+  NIfTI count: 12
+  Verified: 0
+  Likely: 12
+  Mismatch: 0
+  No raw match: 0
+  No JSON: 0
+  Manual review: 0
+
+Group: AD
+  NIfTI count: 19
+  Verified: 0
+  Likely: 19
+  Mismatch: 0
+  No raw match: 0
+  No JSON: 0
+  Manual review: 0
+
+Group: LMCI
+  NIfTI count: 22
+  Verified: 0
+  Likely: 19
+  Mismatch: 0
+  No raw match: 0
+  No JSON: 0
+  Manual review: 3

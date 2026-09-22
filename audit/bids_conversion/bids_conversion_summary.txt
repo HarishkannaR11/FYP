@@ -1,0 +1,160 @@
+=== BIDS CONVERSION INVENTORY & MAPPING SUMMARY ===
+
+READ-ONLY audit. No source NIfTI/JSON file was read-modified, renamed, or deleted.
+No BIDS dataset has been written by this script -- this is the mapping PLAN only.
+
+Source root: /mnt/c/Users/krish/FYP/NIfTI_/NIfTI
+Total source NIfTI files found: 175
+Total subjects (folders): 131
+
+Classified as BOLD resting-state (mappable): 175
+Ambiguous (no acquisition datetime -- FLAGGED, not invented): 0
+Non-BOLD (not mapped to func/): 0
+Missing JSON sidecar: 0
+Duplicate content (identical MD5): 2
+
+--- Subjects per group (BOLD-mapped) ---
+  AD: 20 subjects
+  CN_Final: 29 subjects
+  EMCI: 27 subjects
+  LMCI: 20 subjects
+  MCI: 14 subjects
+  SMC_Final: 21 subjects
+
+--- Sessions per subject distribution ---
+  97 subjects have 1 session(s)
+  27 subjects have 2 session(s)
+  6 subjects have 3 session(s)
+  1 subjects have 4 session(s)
+
+--- Runs per session distribution ---
+  171 sessions have 1 run(s)
+  2 sessions have 2 run(s)
+
+--- Subjects with MULTIPLE acquisitions (35) ---
+  sub-002S0729 (MCI): 3 acquisitions
+      ses-01 run-01  date=20110816  002_S_0729_Resting_State_fMRI_20110816150745_501.nii
+      ses-02 run-01  date=20120807  002_S_0729_Resting_State_fMRI_20120807072109_501.nii.gz
+      ses-03 run-01  date=20130816  002_S_0729_Resting_State_fMRI_20130816131444_501.nii.gz
+  sub-002S1155 (MCI): 3 acquisitions
+      ses-01 run-01  date=20111222  002_S_1155_Resting_State_fMRI_20111222093538_501.nii.gz
+      ses-02 run-01  date=20121220  002_S_1155_Resting_State_fMRI_20121220121612_501.nii
+      ses-03 run-01  date=20140109  002_S_1155_Resting_State_fMRI_20140109094525_501.nii.gz
+  sub-002S1268 (MCI): 2 acquisitions
+      ses-01 run-01  date=20110413  002_S_1268_Resting_State_fMRI_20110413141227_501.nii.gz
+      ses-02 run-01  date=20120322  002_S_1268_Resting_State_fMRI_20120322081204_501.nii
+  sub-002S4171 (LMCI): 2 acquisitions
+      ses-01 run-01  date=20110808  002_S_4171_Resting_State_fMRI_20110808171700_501.nii
+      ses-02 run-01  date=20120229  002_S_4171_Resting_State_fMRI_20120229125052_501.nii
+  sub-002S4229 (MCI): 3 acquisitions
+      ses-01 run-01  date=20120410  002_S_4229_Resting_State_fMRI_20120410072800_501.nii
+      ses-02 run-01  date=20120918  002_S_4229_Resting_State_fMRI_20120918120730_501.nii
+      ses-03 run-01  date=20131016  002_S_4229_Resting_State_fMRI_20131016191144_601.nii.gz
+  sub-002S4799 (MCI): 2 acquisitions
+      ses-01 run-01  date=20130110  002_S_4799_Resting_State_fMRI_20130110170144_501.nii.gz
+      ses-02 run-01  date=20130702  002_S_4799_Resting_State_fMRI_20130702065742_601.nii
+  sub-002S5018 (AD): 2 acquisitions
+      ses-01 run-01  date=20130516  002_S_5018_Resting_State_fMRI_20130516122033_501.nii.gz
+      ses-02 run-01  date=20131118  002_S_5018_Resting_State_fMRI_20131118104100_501.nii.gz
+  sub-002S5230 (SMC_Final): 3 acquisitions
+      ses-01 run-01  date=20130627  002_S_5230_Resting_State_fMRI_20130627072358_501.nii.gz
+      ses-02 run-01  date=20130923  002_S_5230_Resting_State_fMRI_20130923071859_501.nii
+      ses-03 run-01  date=20140124  002_S_5230_Resting_State_fMRI_20140124084608_501.nii
+  sub-002S5256 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130715  002_S_5256_Resting_State_fMRI_20130715135848_501.nii.gz
+      ses-02 run-01  date=20140219  002_S_5256_Resting_State_fMRI_20140219183724_501.nii.gz
+  sub-006S4363 (LMCI): 2 acquisitions
+      ses-01 run-01  date=20120619  006_S_4363_WIP_Resting_State_fMRI_20120619135852_501.nii
+      ses-01 run-02  date=20120619  006_S_4363_WIP_Resting_State_fMRI_20120619135852_601.nii
+  sub-006S4713 (MCI): 3 acquisitions
+      ses-01 run-01  date=20121128  006_S_4713_WIP_Resting_State_fMRI_20121128113857_501.nii.gz
+      ses-01 run-02  date=20121128  006_S_4713_WIP_Resting_State_fMRI_20121128113857_601.nii.gz
+      ses-02 run-01  date=20130612  006_S_4713_WIP_Resting_State_fMRI_20130612133514_601.nii.gz
+  sub-006S5153 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130422  006_S_5153_WIP_Resting_State_fMRI_20130422121056_601.nii.gz
+      ses-02 run-01  date=20130802  006_S_5153_WIP_Resting_State_fMRI_20130802124448_501.nii.gz
+  sub-010S4442 (CN_Final): 2 acquisitions
+      ses-01 run-01  date=20121203  010_S_4442_Resting_State_fMRI_20121203120121_501.nii.gz
+      ses-02 run-01  date=20130510  010_S_4442_Resting_State_fMRI_20130510112930_501.nii
+  sub-012S4128 (EMCI): 2 acquisitions
+      ses-01 run-01  date=20120306  012_S_4128_WIP_Resting_State_fMRI_20120306102645_501.nii.gz
+      ses-02 run-01  date=20130805  012_S_4128_Resting_State_fMRI_20130805083817_501.nii.gz
+  sub-012S5121 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130315  012_S_5121_Resting_State_fMRI_20130315121050_501.nii
+      ses-02 run-01  date=20130628  012_S_5121_Resting_State_fMRI_20130628102151_501.nii.gz
+  sub-012S5157 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130516  012_S_5157_Resting_State_fMRI_20130516141520_501.nii.gz
+      ses-02 run-01  date=20130919  012_S_5157_Resting_State_fMRI_20130919102633_501.nii.gz
+  sub-013S1186 (MCI): 3 acquisitions
+      ses-01 run-01  date=20110223  013_S_1186_Resting_State_fMRI_20110223111215_601.nii.gz
+      ses-02 run-01  date=20120216  013_S_1186_Resting_State_fMRI_20120216164155_501.nii.gz
+      ses-03 run-01  date=20130129  013_S_1186_Resting_State_fMRI_20130129150419_501.nii.gz
+  sub-013S2389 (MCI): 2 acquisitions
+      ses-01 run-01  date=20120215  013_S_2389_Resting_State_fMRI_20120215161724_501.nii
+      ses-02 run-01  date=20121010  013_S_2389_Resting_State_fMRI_20121010171113_501.nii.gz
+  sub-013S5137 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130419  013_S_5137_Resting_State_fMRI_20130419163152_501.nii.gz
+      ses-02 run-01  date=20130724  013_S_5137_Resting_State_fMRI_20130724150050_501.nii.gz
+  sub-018S2180 (MCI): 4 acquisitions
+      ses-01 run-01  date=20110726  018_S_2180_WIP_Resting_State_fMRI_20110726085824_501.nii.gz
+      ses-02 run-01  date=20120127  018_S_2180_WIP_Resting_State_fMRI_20120127115319_501.nii.gz
+      ses-03 run-01  date=20130102  018_S_2180_WIP_Resting_State_fMRI_20130102123650_901.nii.gz
+      ses-04 run-01  date=20140107  018_S_2180_WIP_Resting_State_fMRI_20140107105839_601.nii.gz
+  sub-019S4477 (AD): 2 acquisitions
+      ses-01 run-01  date=20120807  019_S_4477_Resting_State_fMRI_20120807131900_701.nii.gz
+      ses-02 run-01  date=20130213  019_S_4477_Resting_State_fMRI_20130213122116_501.nii.gz
+  sub-019S4549 (AD): 2 acquisitions
+      ses-01 run-01  date=20121030  019_S_4549_Resting_State_fMRI_20121030144055_601.nii.gz
+      ses-02 run-01  date=20130313  019_S_4549_Resting_State_fMRI_20130313113703_601.nii.gz
+  sub-019S5242 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130702  019_S_5242_Resting_State_fMRI_20130702124503_701.nii
+      ses-02 run-01  date=20140117  019_S_5242_Resting_State_fMRI_20140117140335_601.nii
+  sub-031S2018 (EMCI): 2 acquisitions
+      ses-01 run-01  date=20110131  031_S_2018_WIP_Resting_State_fMRI_20110131140823_501.nii
+      ses-02 run-01  date=20110627  031_S_2018_WIP_Resting_State_fMRI_20110627143001_601.nii
+  sub-031S2233 (EMCI): 2 acquisitions
+      ses-01 run-01  date=20110613  031_S_2233_WIP_Resting_State_fMRI_20110613161310_501.nii
+      ses-02 run-01  date=20120105  031_S_2233_WIP_Resting_State_fMRI_20120105121317_801.nii
+  sub-031S4203 (LMCI): 2 acquisitions
+      ses-01 run-01  date=20120320  031_S_4203_WIP_Resting_State_fMRI_20120320121200_701.nii
+      ses-02 run-01  date=20120926  031_S_4203_WIP_Resting_State_fMRI_20120926135547_601.nii
+  sub-053S0919 (MCI): 2 acquisitions
+      ses-01 run-01  date=20130104  053_S_0919_WIP_Resting_State_fMRI_20130104133039_701.nii.gz
+      ses-02 run-01  date=20131205  053_S_0919_WIP_Resting_State_fMRI_20131205141516_901.nii.gz
+  sub-053S4813 (MCI): 2 acquisitions
+      ses-01 run-01  date=20130110  053_S_4813_WIP_Resting_State_fMRI_20130110145000_501.nii.gz
+      ses-02 run-01  date=20130731  053_S_4813_WIP_Resting_State_fMRI_20130731113808_501.nii.gz
+  sub-053S5202 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130607  053_S_5202_WIP_Resting_State_fMRI_20130607121216_501.nii
+      ses-02 run-01  date=20130920  053_S_5202_WIP_Resting_State_fMRI_20130920091211_501.nii
+  sub-100S4556 (MCI): 2 acquisitions
+      ses-01 run-01  date=20121126  100_S_4556_Resting_State_fMRI_20121126104757_501.nii
+      ses-02 run-01  date=20130606  100_S_4556_Resting_State_fMRI_20130606105751_501.nii.gz
+  sub-100S5280 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130816  100_S_5280_Resting_State_fMRI_20130816120412_501.nii
+      ses-02 run-01  date=20150929  100_S_5280_Resting_State_fMRI_20150929141020_501.nii
+  sub-130S4294 (MCI): 3 acquisitions
+      ses-01 run-01  date=20120515  130_S_4294_WIP_Resting_State_fMRI_20120515085854_501.nii
+      ses-02 run-01  date=20121127  130_S_4294_Resting_State_fMRI_20121127085220_601.nii.gz
+      ses-03 run-01  date=20131115  130_S_4294_Resting_State_fMRI_20131115085607_501.nii.gz
+  sub-130S4730 (AD): 2 acquisitions
+      ses-01 run-01  date=20121219  130_S_4730_Resting_State_fMRI_20121219085923_701.nii.gz
+      ses-02 run-01  date=20130612  130_S_4730_WIP_Resting_State_fMRI_20130612085835_701.nii.gz
+  sub-130S4982 (AD): 2 acquisitions
+      ses-01 run-01  date=20130426  130_S_4982_Resting_State_fMRI_20130426091244_501.nii.gz
+      ses-02 run-01  date=20131025  130_S_4982_Resting_State_fMRI_20131025101621_501.nii.gz
+  sub-130S5142 (SMC_Final): 2 acquisitions
+      ses-01 run-01  date=20130419  130_S_5142_Resting_State_fMRI_20130419142414_501.nii
+      ses-02 run-01  date=20130726  130_S_5142_Resting_State_fMRI_20130726104415_501.nii
+
+--- Duplicate-content files (identical MD5) ---
+  sub-006S4363 ses-01 run-01: DUPLICATE_MD5 (same content as: 006_S_4363_WIP_Resting_State_fMRI_20120619135852_601.nii)
+  sub-006S4363 ses-01 run-02: DUPLICATE_MD5 (same content as: 006_S_4363_WIP_Resting_State_fMRI_20120619135852_501.nii)
+
+--- Ambiguous session assignment (flagged for review, NOT invented) ---
+  None -- every BOLD file carried an acquisition datetime in its filename.
+
+--- Comparison against the EXISTING BIDS dataset ---
+  Planned BOLD targets already present in existing BIDS/: 175 of 175
+  Planned BOLD targets NOT present in existing BIDS/: 0
+

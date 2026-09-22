@@ -1,0 +1,77 @@
+======================================================================
+SECTION 1 -- LOCATE COMPLETED AD ACQUISITIONS (read-only scan)
+======================================================================
+AD acquisitions with completed output found on disk: 1
+  sub-002S5018/ses-01/run-01  -- /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-002S5018/ses-01/run-01/sub-002S5018_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz
+
+NOTE: full AD group has 25 expected acquisitions (per verified inventory). Only 1 have been processed with the new 4mm/6mm pipeline as of this audit (the remaining 24 were blocked by WSL/host instability, not by any input validity problem). This audit covers exactly the 1 acquisition(s) that exist on disk -- it does NOT claim group-level statistics for the full AD group.
+
+======================================================================
+AUDITING sub-002S5018/ses-01/run-01
+======================================================================
+  INTEGRITY subject: sub-002S5018
+  INTEGRITY session: ses-01
+  INTEGRITY run: run-01
+  INTEGRITY is_4D: True
+  INTEGRITY shape: (46, 55, 46, 135)
+  INTEGRITY voxel_size_mm: (4.0, 4.0, 4.0)
+  INTEGRITY is_4mm_isotropic: True
+  INTEGRITY has_NaN: False
+  INTEGRITY has_Inf: False
+  INTEGRITY non_empty: True
+  INTEGRITY affine_valid: True
+  INTEGRITY n_timepoints: 135
+  brain mask voxels: 28549
+
+  --- tSNR (recomputed from final desc-preproc_bold.nii.gz) ---
+    mean=344.2963 median=345.1119 min=24.3889 max=1051.6338 sd=170.6105
+    voxels with near-zero temporal SD (bottom 1 pct): 286
+    NOTE: this is computed on the FINAL post-bandpass residual (the only stage saved
+    to disk for this production run). The pipeline's OWN internal QC computed tSNR on
+    the pre-detrend/pre-nuisance/pre-bandpass smoothed stage, which is intentionally
+    not saved as an intermediate file. A large difference from the stored value is
+    EXPECTED here, not a bug -- see the cross-check table.
+
+  --- SNR (recomputed, fBIRN-style: mean signal in mask / std background) ---
+    SNR = NOT COMPUTABLE FROM FINAL IMAGE
+    reason: NOT COMPUTABLE FROM THE FINAL IMAGE: the final desc-preproc_bold.nii.gz is exactly zero outside brain_mask.nii.gz by construction (87831 voxels outside the mask, 0 nonzero) -- there is no background region left to estimate noise from once masking has been applied. This is a real property of the final output, not a computation error. SNR CAN be computed on the raw native-space input instead (which still has real background), matching what the pipeline's own stored SNR did.
+    SNR (fallback, raw native-space input): 12.0794  (signal: native brain mask; background: native non-brain nonzero voxels)
+
+  --- CNR ---
+    CNR = NOT COMPUTABLE
+    Reason: no T1w anatomical image exists for this subject/dataset, so no reliable
+    GM/WM/CSF tissue boundary can be defined. CNR requires a valid tissue contrast
+    definition; fabricating one from BOLD/EPI alone would not be scientifically valid.
+
+  --- FD (recomputed from native mc-afni2 .mcdat) ---
+    n_FD_samples=135  n_final_timepoints=135  samples_match_timepoints=True
+    mean=0.2806 median=0.2483 max=0.8959
+    >0.2mm: 87 (64.44%)   >0.5mm: 11 (8.15%)   >1.0mm: 0 (0.0%)
+    stored mean_FD_mm=0.28058693722256844 vs recomputed=0.28058693722256844 -> MATCH=True (diff=0.00e+00)
+
+  --- DVARS (recomputed from final desc-preproc_bold.nii.gz) ---
+    TYPE: RAW-INTENSITY DVARS (sqrt(mean(diff^2)) in native scanner intensity units, unnormalized)
+    mean=5767.8179 median=5486.5190 max=10501.3340 sd=1292.3872
+    NOTE: recomputed on the FINAL post-bandpass residual (only stage on disk); the pipeline's
+    own stored DVARS used the pre-detrend smoothed stage (not saved). Difference expected.
+
+  --- Spatial entropy (recomputed) ---
+    spatial_entropy = 7.0987 bits (256-bin histogram, in-mask mean of FINAL image)
+
+  --- Temporal entropy (recomputed) ---
+    temporal_entropy = 3.5230 bits (mean per-voxel, 16-bin z-scored histogram, FINAL image)
+
+  --- Brainnetome-246 coverage (independently recomputed on this acquisition's grid) ---
+    ROIs present (>0 vox): 246/246   zero-voxel: 0   <5vox: 0   <10vox: 0
+    min=10 median=68.0 max=186
+    Brainnetome coverage = 246/246 (independently recomputed, not copied from a prior report)
+
+======================================================================
+SECTION 6/7 -- WRITING OUTPUTS
+======================================================================
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/FINAL_AD_AUDIT/AD_QC_METRICS_RECOMPUTED.csv
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/FINAL_AD_AUDIT/ad_crosscheck_stored_vs_recomputed.csv
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/FINAL_AD_AUDIT/ad_data_integrity.csv
+
+report written: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/FINAL_AD_AUDIT/AD_INDEPENDENT_QC_AUDIT.md
+AD_INDEPENDENT_QC_AUDIT_DONE

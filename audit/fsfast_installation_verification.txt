@@ -1,0 +1,24 @@
+=== FS-FAST INSTALLATION VERIFICATION ===
+
+-- FreeSurfer Information --
+FreeSurfer Version: 7.4.1
+FREESURFER_HOME: /home/harish/freesurfer
+Installation Path: /home/harish/freesurfer
+License Status: MISSING. A license.txt file is strictly required to run FreeSurfer commands.
+
+-- FS-FAST / FreeSurfer Commands Found --
+recon-all: Not Found
+preproc-sess: Not Found
+mc-afni2: Not Found
+mri_fwhm: Not Found
+mri_glmfit: Not Found
+mri_convert: Not Found
+
+-- Python Environment --
+Python Version: Python 3.12.3
+Nipype Version: 1.12.0
+Virtual Environment: /home/harish/fyp-neuro-env
+
+-- Installation Warnings/Errors --
+If License Status is MISSING, all commands above will fail to execute when run (they will throw a license error). 
+You must obtain a free license from https://surfer.nmr.mgh.harvard.edu/registration.html and save it to /home/harish/freesurfer/license.txt

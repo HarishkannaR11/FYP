@@ -1,0 +1,7 @@
+group,expected,acquisition_dirs_found,completed_and_valid,failed_or_incomplete
+AD,25,25,25,0
+CN_Final,29,29,27,2
+EMCI,30,30,29,1
+LMCI,22,22,21,1
+MCI,35,35,32,3
+SMC_Final,32,32,31,1

@@ -1,0 +1,747 @@
+=== 2026-09-18 14:35:57 (t+0s) ===
+HostFreeRAM_MB=1878.2
+WSL_uptime:  09:06:03 up 0 min,  0 user,  load average: 0.00, 0.00, 0.00
+Mem:           2.9Gi       467Mi       2.3Gi       2.8Mi       313Mi       2.5Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.00 0.00 0.00 3/196 299
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (273) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (273) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (302) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (302) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (302) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (302) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:36:05 (t+31s) ===
+HostFreeRAM_MB=928.7
+vmmemWSL_MB=772.8
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+WSL_uptime:  09:06:07 up 0 min,  1 user,  load average: 0.00, 0.00, 0.00
+Mem:           2.9Gi       474Mi       2.2Gi       2.9Mi       361Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.00 0.00 0.00 1/180 382
+ to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (385) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:36:33 (t+36s) ===
+HostFreeRAM_MB=1127
+vmmemWSL_MB=489.2
+WSL_uptime:  09:06:36 up 0 min,  0 user,  load average: 0.96, 0.20, 0.06
+Mem:           2.9Gi       465Mi       2.3Gi       2.8Mi       343Mi       2.5Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.96 0.20 0.06 3/190 300
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (266) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (266) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (313) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (313) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (313) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (313) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:36:37 (t+63s) ===
+HostFreeRAM_MB=710.2
+vmmemWSL_MB=769.2
+WSL_uptime:  09:06:38 up 0 min,  1 user,  load average: 0.96, 0.20, 0.06
+Mem:           2.9Gi       473Mi       2.2Gi       2.9Mi       360Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.96 0.20 0.06 1/194 371
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (363) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (363) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:37:06 (t+69s) ===
+HostFreeRAM_MB=666.7
+vmmemWSL_MB=873.7
+WSL_uptime:  09:07:07 up 1 min,  1 user,  load average: 0.58, 0.18, 0.06
+Mem:           2.9Gi       529Mi       2.1Gi       3.0Mi       410Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.58 0.18 0.06 1/173 441
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (433) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (433) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (445) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (445) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (445) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (445) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:37:08 (t+94s) ===
+HostFreeRAM_MB=654.6
+vmmemWSL_MB=878.7
+WSL_uptime:  09:07:10 up 1 min,  1 user,  load average: 0.58, 0.18, 0.06
+Mem:           2.9Gi       531Mi       2.1Gi       3.0Mi       410Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.58 0.18 0.06 1/174 462
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (454) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (454) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (465) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (465) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (465) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (465) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:37:37 (t+100s) ===
+HostFreeRAM_MB=727.3
+vmmemWSL_MB=843.4
+WSL_uptime:  09:07:38 up 1 min,  1 user,  load average: 0.35, 0.16, 0.06
+Mem:           2.9Gi       478Mi       2.2Gi       3.0Mi       412Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.35 0.16 0.06 1/166 522
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (514) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (514) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (526) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (526) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (526) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (526) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:37:39 (t+125s) ===
+HostFreeRAM_MB=648
+vmmemWSL_MB=844.4
+WSL_uptime:  09:07:41 up 1 min,  1 user,  load average: 0.35, 0.16, 0.06
+Mem:           2.9Gi       481Mi       2.2Gi       3.0Mi       412Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.35 0.16 0.06 1/167 543
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (535) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (535) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (547) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (547) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (547) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (547) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:38:08 (t+131s) ===
+HostFreeRAM_MB=624.3
+vmmemWSL_MB=831.4
+WSL_uptime:  09:08:09 up 2 min,  1 user,  load average: 0.21, 0.14, 0.06
+Mem:           2.9Gi       464Mi       2.2Gi       3.0Mi       414Mi       2.5Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.21 0.14 0.06 1/169 613
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (605) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (605) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (616) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (616) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (616) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (616) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:38:11 (t+157s) ===
+HostFreeRAM_MB=603.8
+vmmemWSL_MB=833.4
+WSL_uptime:  09:08:12 up 2 min,  1 user,  load average: 0.19, 0.14, 0.06
+Mem:           2.9Gi       468Mi       2.2Gi       3.0Mi       414Mi       2.5Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.19 0.14 0.06 1/169 651
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (643) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (643) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (654) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (654) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (654) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (654) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:38:39 (t+162s) ===
+HostFreeRAM_MB=255.6
+vmmemWSL_MB=1105.5
+WSL_uptime:  09:08:41 up 2 min,  1 user,  load average: 0.13, 0.13, 0.05
+Mem:           2.9Gi       685Mi       1.9Gi       3.0Mi       529Mi       2.2Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.13 0.13 0.05 2/180 718
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (709) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (709) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (721) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (721) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (721) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (721) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:38:42 (t+188s) ===
+HostFreeRAM_MB=537.5
+vmmemWSL_MB=1046.5
+WSL_uptime:  09:08:43 up 2 min,  1 user,  load average: 0.20, 0.14, 0.06
+Mem:           2.9Gi       812Mi       1.7Gi       3.0Mi       530Mi       2.1Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.20 0.14 0.06 2/180 738
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (730) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (730) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (741) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (741) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (741) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (741) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:39:12 (t+195s) ===
+HostFreeRAM_MB=1065.1
+vmmemWSL_MB=775.5
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+WSL_uptime:  09:09:13 up 0 min,  1 user,  load average: 0.00, 0.00, 0.00
+Mem:           2.9Gi       476Mi       2.2Gi       3.0Mi       363Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.00 0.00 0.00 1/169 392
+ to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:39:14 (t+220s) ===
+HostFreeRAM_MB=1045.7
+vmmemWSL_MB=779.6
+WSL_uptime:  09:09:15 up 0 min,  1 user,  load average: 0.00, 0.00, 0.00
+Mem:           2.9Gi       478Mi       2.2Gi       3.0Mi       363Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.00 0.00 0.00 1/169 412
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (404) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (404) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:39:43 (t+226s) ===
+HostFreeRAM_MB=1142.3
+vmmemWSL_MB=528
+WSL_uptime:  09:09:47 up 0 min,  0 user,  load average: 0.00, 0.00, 0.00
+Mem:           2.9Gi       467Mi       2.3Gi       2.8Mi       334Mi       2.5Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.00 0.00 0.00 2/192 313
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (277) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+WSL_uptime:  09:09:47 up 0 min,  1 user,  load average: 0.00, 0.00, 0.00
+Mem:           2.9Gi       475Mi       2.3Gi       2.8Mi       342Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.00 0.00 0.00 3/195 351
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (327) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (327) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (374) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:40:17 (t+260s) ===
+HostFreeRAM_MB=1606.3
+7 (t+283s) ===
+vmmemWSL_MB=585.4
+5.5
+WSL_uptime:  09:10:20 up 1 min 09:10:20 up 1 min,  0 user,  load average:Mem:           2.9Mem:           2.9Gi       481Mi       2.2Gi       2.8Mi       346Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.72 0.15 0.05 6/199 303
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (270) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (270) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (312) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+
+=== 2026-09-18 14:40:50 (t+293s) ===
+HostFreeRAM_MB=1228.1
+0 (t+316s) ===
+vmmemWSL_MB=809.1
+2.8
+vmmemWSL_MB=832.1
+: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+WSL_uptime:  09:10:52 up 1 min,  1 user,  load average: 0.73, 0.20, 0.07
+Mem:           2.9Gi       517Mi       2.2Gi       2.9Mi       369Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.73 0.20 0.07 1/211 372
+ to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (364) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (375) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+WSL_uptime:  09:10:52 up 1 min,  1 user,  load average: 0.73, 0.20, 0.07
+Mem:           2.9Gi       530Mi       2.2Gi       2.9Mi       380Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.73 0.20 0.07 2/211 392
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (384) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (395) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:41:22 (t+325s) ===
+HostFreeRAM_MB=480.8
+22 (t+348s) ===
+HostFreeRAM_MB=480.8
+vmmemWSL_MB=1692.4
+WSL_uptime:  09:11:26 up 2 min,  1 user,  load average: 0.55, 0.21, 0.08
+Mem:           2.9Gi       625Mi       1.8Gi       3.0Mi       634Mi       2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.55 0.21 0.08 1/188 452
+  2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.60 0.21 0.08 2/190 447
+ to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (439) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (464) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (464) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (464) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (464) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+
+=== 2026-09-18 14:41:56 (t+359s) ===
+HostFreeRAM_MB=1584.2
+6 (t+382s) ===
+vmmemWSL_MB=834.2
+9.5
+WSL_uptime:  09:12:00 up 2 min,  0 user,  load average: 0.33, 0.19, 0.07
+Mem:           2.9Gi       477Mi       2.3Gi       2.8Mi       330Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.33 0.19 0.07 3/205 312
+i       330Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.33 0.19 0.07 2/201 312
+ to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (278) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (321) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (321) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (321) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (321) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+
+=== 2026-09-18 14:42:30 (t+393s) ===
+HostFreeRAM_MB=1525.1
+0 (t+416s) ===
+vmmemWSL_MB=596.6
+3.7
+vmmemWSL_MB=596.6
+:31 up 3 min,  1 user,  load average: 0.44, 0.22, 0.09
+Mem:           2.9Gi       487Mi       2.2Gi       2.9Mi       360Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.44 0.22 0.09 1/182 350
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (342) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (342) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+WSL_uptime:  09:12:31 up 3 min,  1 user,  load average: 0.44, 0.22, 0.09
+Mem:           2.9Gi       489Mi       2.2Gi       2.9Mi       360Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.44 0.22 0.09 1/182 370
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (362) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (373) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (373) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (373) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (373) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:43:01 (t+424s) ===
+HostFreeRAM_MB=1716.3
+1 (t+447s) ===
+vmmemWSL_MB=479.7
+4.2
+WSL_uptime:  09:13:04 up 4 min,  0 user,  load average: 0.56, 0.26, 0.11
+Mem:           2.9Gi       477Mi       2.3Gi       2.9Mi       334Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.56 0.26 0.11 5/200 302
+hList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (269) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (269) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+WSL_uptime:  09:13:04 up 4 min,  0 user,  load average: 0.56, 0.26, 0.11
+Mem:           2.9Gi       477Mi       2.3Gi       2.9Mi       334Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.56 0.26 0.11 3/200 302
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (311) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (311) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (311) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (311) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+
+=== 2026-09-18 14:43:34 (t+457s) ===
+HostFreeRAM_MB=2026.5
+4 (t+480s) ===
+vmmemWSL_MB=481.4
+5
+WSL_uptime:  09:13:37 up 4 min,  1 user,  load average: 0.34, 0.23, 0.10
+Mem:           2.9Gi       483Mi       2.3Gi       2.8Mi       330Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.34 0.23 0.10 6/201 315
+ser,  load average: 0.34, 0.23, 0.10
+Mem:           2.9Gi       483Mi       2.3Gi       2.8Mi       330Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.34 0.23 0.10 3/199 315
+ to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (342) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (342) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (342) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (342) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+
+=== 2026-09-18 14:44:07 (t+490s) ===
+HostFreeRAM_MB=2052.8
+7 (t+513s) ===
+vmmemWSL_MB=336.5
+1.4
+WSL_uptime:  09:14:10 up 5 min 09:14:10 up 5 min,  0 user,  load average:Mem:           2.9Mem:           2.9Gi       488Mi       2.3Gi       2.8Mi       327Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.75 0.32 0.13 3/204 305
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (271) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOF<3>WSL (268) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (316) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (316) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (316) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+
+=== 2026-09-18 14:44:40 (t+523s) ===
+HostFreeRAM_MB=1939.6
+0 (t+546s) ===
+vmmemWSL_MB=368.1
+0.8
+WSL_uptime:  09:14:44 up 5 min,  0 user,  load average: 0.45, 0.29, 0.12
+Mem:           2.9Gi       477Mi       2.2Gi       2.8Mi       348Mi       2.4Gi
+Swap:          4.0Gi     Mem:           2.9Gi       477Mi       2.2Gi       2.8Mi       348Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.45 0.29 0.12 2/201 310
+ to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (269) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (330) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (330) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (330) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (330) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+
+=== MONITOR COMPLETE (540 s elapsed) ===
+=== 2026-09-18 14:45:13 (t+579s) ===
+HostFreeRAM_MB=1622.1
+vmmemWSL_MB=699.6
+WSL_uptime:  09:15:14 up 6 min,  1 user,  load average: 0.27, 0.26, 0.12
+Mem:           2.9Gi       538Mi       2.1Gi       3.0Mi       413Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.27 0.26 0.12 1/179 452
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (444) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (444) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (455) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (455) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (455) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (455) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:45:45 (t+611s) ===
+HostFreeRAM_MB=1674.4
+vmmemWSL_MB=704.1
+WSL_uptime:  09:15:45 up 6 min,  1 user,  load average: 0.16, 0.24, 0.11
+Mem:           2.9Gi       546Mi       2.1Gi       3.0Mi       413Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.16 0.24 0.11 1/179 494
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (486) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (486) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (497) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (497) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (497) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (497) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:46:16 (t+642s) ===
+HostFreeRAM_MB=1673.6
+vmmemWSL_MB=706.6
+WSL_uptime:  09:16:17 up 7 min,  1 user,  load average: 0.10, 0.21, 0.11
+Mem:           2.9Gi       547Mi       2.1Gi       3.0Mi       413Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.10 0.21 0.11 1/179 524
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (516) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (516) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (527) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (527) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (527) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (527) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:46:47 (t+673s) ===
+HostFreeRAM_MB=1718.6
+vmmemWSL_MB=708.5
+WSL_uptime:  09:16:48 up 7 min,  1 user,  load average: 0.06, 0.19, 0.10
+Mem:           2.9Gi       547Mi       2.1Gi       3.0Mi       413Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.06 0.19 0.10 1/179 554
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (546) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (546) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (557) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (557) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (557) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (557) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:47:19 (t+705s) ===
+HostFreeRAM_MB=1703.8
+vmmemWSL_MB=712.5
+WSL_uptime:  09:17:20 up 8 min,  1 user,  load average: 0.03, 0.17, 0.09
+Mem:           2.9Gi       551Mi       2.1Gi       3.0Mi       414Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.03 0.17 0.09 1/180 588
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (580) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (580) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (591) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (591) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (591) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (591) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:47:50 (t+736s) ===
+HostFreeRAM_MB=1687
+vmmemWSL_MB=750.7
+WSL_uptime:  09:17:51 up 8 min,  1 user,  load average: 0.02, 0.15, 0.09
+Mem:           2.9Gi       555Mi       2.1Gi       3.0Mi       414Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.02 0.15 0.09 1/179 618
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (610) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (610) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (621) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (621) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (621) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (621) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:48:21 (t+767s) ===
+HostFreeRAM_MB=1672.6
+vmmemWSL_MB=734.9
+WSL_uptime:  09:18:22 up 9 min,  1 user,  load average: 0.01, 0.13, 0.09
+Mem:           2.9Gi       549Mi       2.1Gi       3.0Mi       414Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.01 0.13 0.09 1/180 648
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (640) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (640) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (651) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (651) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (651) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (651) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:48:52 (t+798s) ===
+HostFreeRAM_MB=1702.7
+vmmemWSL_MB=734.8
+WSL_uptime:  09:18:53 up 9 min,  1 user,  load average: 0.00, 0.12, 0.08
+Mem:           2.9Gi       552Mi       2.1Gi       3.0Mi       414Mi       2.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.00 0.12 0.08 1/175 677
+ to translate D:\app\dbhomeXE\bin
+<3>WSL (669) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (669) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (680) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (680) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (680) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (680) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:49:24 (t+830s) ===
+HostFreeRAM_MB=1613.1
+vmmemWSL_MB=800.8
+WSL_uptime:  09:19:25 up 10 min,  1 user,  load average: 0.22, 0.16, 0.10
+Mem:           2.9Gi       630Mi       2.0Gi       3.0Mi       420Mi       2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.22 0.16 0.10 1/175 761
+to translate D:\app\dbhomeXE\bin
+<3>WSL (751) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (751) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (764) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (764) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (764) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (764) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:49:55 (t+861s) ===
+HostFreeRAM_MB=1562.7
+vmmemWSL_MB=897.9
+WSL_uptime:  09:19:56 up 10 min,  1 user,  load average: 0.46, 0.22, 0.12
+Mem:           2.9Gi       637Mi       1.9Gi       3.0Mi       520Mi       2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.46 0.22 0.12 2/171 865
+to translate D:\app\dbhomeXE\bin
+<3>WSL (856) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (856) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (868) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (868) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (868) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (868) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:50:26 (t+892s) ===
+HostFreeRAM_MB=1264.1
+vmmemWSL_MB=1156.1
+WSL_uptime:  09:20:27 up 11 min,  1 user,  load average: 0.73, 0.31, 0.16
+Mem:           2.9Gi       710Mi       1.7Gi       3.0Mi       701Mi       2.2Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.73 0.31 0.16 2/171 918
+to translate D:\app\dbhomeXE\bin
+<3>WSL (910) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (910) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (921) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (921) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (921) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (921) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:50:58 (t+924s) ===
+HostFreeRAM_MB=1425.1
+vmmemWSL_MB=989.2
+WSL_uptime:  09:20:59 up 11 min,  1 user,  load average: 0.44, 0.28, 0.15
+Mem:           2.9Gi       615Mi       1.9Gi       3.0Mi       616Mi       2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.44 0.28 0.15 1/169 962
+to translate D:\app\dbhomeXE\bin
+<3>WSL (954) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (954) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (965) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (965) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (965) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (965) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:51:29 (t+955s) ===
+HostFreeRAM_MB=1429.4
+vmmemWSL_MB=989.3
+WSL_uptime:  09:21:30 up 12 min,  1 user,  load average: 0.27, 0.25, 0.14
+Mem:           2.9Gi       618Mi       1.9Gi       3.0Mi       616Mi       2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.27 0.25 0.14 1/168 992
+to translate D:\app\dbhomeXE\bin
+<3>WSL (984) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (984) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+TranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (995) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (995) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (995) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (995) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:52:00 (t+986s) ===
+HostFreeRAM_MB=1430.8
+vmmemWSL_MB=989.3
+WSL_uptime:  09:22:01 up 12 min,  1 user,  load average: 0.16, 0.23, 0.14
+Mem:           2.9Gi       620Mi       1.9Gi       3.0Mi       616Mi       2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.16 0.23 0.14 1/168 1022
+d to translate D:\app\dbhomeXE\bin
+<3>WSL (1014) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1014) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+lTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (1025) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1025) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (1025) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1025) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:52:31 (t+1017s) ===
+HostFreeRAM_MB=1228.7
+vmmemWSL_MB=1189.5
+WSL_uptime:  09:22:32 up 13 min,  1 user,  load average: 0.23, 0.24, 0.14
+Mem:           2.9Gi       627Mi       1.7Gi       3.0Mi       809Mi       2.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.23 0.24 0.14 1/168 1053
+d to translate D:\app\dbhomeXE\bin
+<3>WSL (1045) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1045) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+lTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (1056) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1056) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (1056) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1056) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== 2026-09-18 14:53:03 (t+1049s) ===
+HostFreeRAM_MB=950.8
+vmmemWSL_MB=1383.3
+WSL_uptime:  09:23:04 up 13 min,  1 user,  load average: 0.45, 0.29, 0.17
+Mem:           2.9Gi       729Mi       1.5Gi       3.0Mi       908Mi       2.2Gi
+Swap:          4.0Gi          0B       4.0Gi
+WSL_load: 0.45 0.29 0.17 2/169 1086
+d to translate D:\app\dbhomeXE\bin
+<3>WSL (1078) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1078) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+pipeline_process: ALIVE
+lTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (1089) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1089) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (1089) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (1089) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+
+=== MONITOR COMPLETE (1080 s elapsed) ===

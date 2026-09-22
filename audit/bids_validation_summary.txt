@@ -1,0 +1,10 @@
+=== BIDS VALIDATION SUMMARY ===
+
+Total Subjects: 131
+Total Sessions: 173
+Total BIDS NIfTI: 175
+Total BIDS JSON: 175
+Valid NIfTI (nibabel): 175
+Invalid NIfTI: 0
+Orphan NIfTI: 0
+Orphan JSON: 0

@@ -1,0 +1,81 @@
+=== BIDS DATASET VALIDATION REPORT ===
+
+Dataset validated: /mnt/c/Users/krish/FYP/BIDS
+Scope: the EXISTING BIDS dataset, cross-checked against an independently
+re-derived mapping built from the raw NIfTI_/NIfTI source tree.
+
+--- 1. Required / recommended top-level files ---
+  dataset_description.json: PRESENT (REQUIRED)
+  participants.tsv: PRESENT (RECOMMENDED)
+  participants.json: MISSING (RECOMMENDED)
+  README: MISSING (RECOMMENDED)
+
+--- 2. File counts ---
+  Source NIfTI files (NIfTI_/NIfTI tree): 175
+  BOLD NIfTI files in BIDS: 175
+  BOLD JSON sidecars in BIDS: 175
+  Successfully mapped source -> BIDS target: 175
+  Mapped targets NOT present in BIDS: 0
+  Orphan JSON (json without matching nii): 0
+
+--- 3. BIDS filename compliance ---
+  Files checked: 350
+  Non-compliant filenames: 0
+  NOTE: this is the Python bids_validator module, which validates FILENAME/PATH
+  compliance against the BIDS spec only. It is NOT the full official Node.js
+  bids-validator (which additionally checks JSON field contents, cross-file
+  consistency and dataset-level rules). The official validator is not installed
+  here -- reported honestly rather than claiming full validation.
+
+--- 4. participants.tsv consistency ---
+  participants.tsv entries: 131
+  sub-* directories on disk: 131
+  In participants.tsv but no directory: 0 []
+  Directory present but not in participants.tsv: 0 []
+  Group label mismatches (participants.tsv vs source folder): 0
+
+--- 5. Duplicate content (identical MD5) ---
+  2 source files have byte-identical duplicates:
+      sub-006S4363 ses-01 run-01 (LMCI) -- 006_S_4363_WIP_Resting_State_fMRI_20120619135852_501.nii
+      sub-006S4363 ses-01 run-02 (LMCI) -- 006_S_4363_WIP_Resting_State_fMRI_20120619135852_601.nii
+  IMPACT: these are currently represented as SEPARATE runs in the BIDS dataset,
+  which inflates the acquisition count and would feed the same scan twice into
+  any downstream analysis. Flagged for review -- NOT auto-removed.
+
+--- 6. Metadata consistency across mapped BOLD files ---
+  Distinct shapes: 4
+      (64, 64, 48, 140): 168 runs
+      (80, 80, 48, 140): 5 runs
+      (64, 64, 36, 140): 1 runs
+      (80, 80, 48, 7): 1 runs
+  Distinct TR values: 7
+      TR=3: 137 runs
+      TR=3.001: 24 runs
+      TR=6.02158: 7 runs
+      TR=3.00044: 4 runs
+      TR=2.25: 1 runs
+      TR=3.00393: 1 runs
+      TR=6.02353: 1 runs
+  Distinct volume counts: 2
+      140 volumes: 174 runs
+      7 volumes: 1 runs
+
+--- 7. Session / run structure ---
+  Subjects with BOLD data: 131
+      97 subjects with 1 session(s)
+      27 subjects with 2 session(s)
+      6 subjects with 3 session(s)
+      1 subjects with 4 session(s)
+      171 sessions with 1 run(s)
+      2 sessions with 2 run(s)
+
+  Subjects with MULTIPLE sessions: 34
+  Sessions with MULTIPLE runs: 2
+      sub-006S4363 ses-01: 2 runs
+      sub-006S4713 ses-01: 2 runs
+
+--- 8. Overall ---
+  ISSUES FOUND:
+    - participants.json missing (recommended)
+    - README missing (recommended)
+    - 2 duplicate-content files represented as distinct runs

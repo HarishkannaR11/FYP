@@ -1,0 +1,13 @@
+{
+  "total_acquisitions_validated": 25,
+  "PASS": 20,
+  "WARN": 5,
+  "FAIL": 0,
+  "high_motion_flagged_runs": [
+    "sub-013S5071 ses-01",
+    "sub-019S5019 ses-01",
+    "sub-130S4641 ses-01",
+    "sub-130S4660 ses-01"
+  ],
+  "figures_generated": 25
+}

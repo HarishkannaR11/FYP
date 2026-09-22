@@ -1,0 +1,47 @@
+=== AD PREPROCESSING QUANTITATIVE QC SUMMARY ===
+
+Total acquisitions: 25
+PASS: 15  WARN: 10  FAIL: 0
+
+FD threshold used for reporting (NOT for exclusion): 0.5 mm (Power et al. 2012 commonly-cited adult resting-state value)
+Low-frequency power cutoff: 0.01 Hz
+
+--- Motion outliers (IQR-based, computed across this dataset's own distribution) ---
+  sub-019S5019 ses-01: mean FD = 1.302 mm
+  sub-130S4660 ses-01: mean FD = 0.984 mm
+
+--- tSNR outliers (IQR-based) ---
+  None
+
+--- Temporal SD outliers (IQR-based) ---
+  None
+
+--- Spatial smoothness (FWHM after) outliers (IQR-based) ---
+  sub-006S4192 ses-01: estimated FWHM after = 13.07 mm
+
+--- Per-run overall status ---
+  sub-002S5018 ses-01: PASS
+  sub-002S5018 ses-02: PASS
+  sub-006S4153 ses-01: PASS
+  sub-006S4192 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=7.35mm after=13.07mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:statistical outlier: FWHM after=13.07mm (IQR-based)
+  sub-013S5071 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=7.17mm after=11.79mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:mean FD 0.572mm exceeds 0.5mm reference threshold
+  sub-018S4696 ses-01: PASS
+  sub-018S4733 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0, 121] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=7.17mm after=11.82mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:raw global-signal spike(s) at NON-first volumes: [121]
+  sub-019S4252 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0, 1] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=6.58mm after=11.33mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:raw global-signal spike(s) at NON-first volumes: [1]
+  sub-019S4477 ses-01: PASS
+  sub-019S4477 ses-02: PASS
+  sub-019S4549 ses-01: PASS
+  sub-019S4549 ses-02: PASS
+  sub-019S5012 ses-01: PASS
+  sub-019S5019 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [85]; estimated FWHM before=6.81mm after=10.87mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:mean FD 1.302mm exceeds 0.5mm reference threshold; WARN:raw global-signal spike(s) at NON-first volumes: [85]; WARN:statistical outlier: mean FD=1.302mm (IQR-based, vs this dataset's own distribution)
+  sub-031S4024 ses-01: PASS
+  sub-130S4641 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0, 100] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=6.65mm after=11.12mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:raw global-signal spike(s) at NON-first volumes: [100]
+  sub-130S4660 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0, 108] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=6.89mm after=10.90mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:mean FD 0.984mm exceeds 0.5mm reference threshold; WARN:raw global-signal spike(s) at NON-first volumes: [108]; WARN:statistical outlier: mean FD=0.984mm (IQR-based, vs this dataset's own distribution)
+  sub-130S4730 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=7.49mm after=12.43mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:mean FD 0.517mm exceeds 0.5mm reference threshold
+  sub-130S4730 ses-02: PASS
+  sub-130S4971 ses-01: PASS
+  sub-130S4982 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=6.13mm after=10.29mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:mean FD 0.512mm exceeds 0.5mm reference threshold
+  sub-130S4982 ses-02: PASS
+  sub-130S4984 ses-01: PASS
+  sub-130S4990 ses-01: WARN -- tSNR 'after' computed on pre-GLM smoothed intermediate (magnitude domain), NOT the zero-mean residual -- standard tSNR is undefined for a zero-mean signal; raw global-signal spikes (|z|>3) at volumes: [0] (includes volume 0 -- expected non-steady-state first-volume effect, not a defect); estimated FWHM before=6.81mm after=11.07mm (requested 6mm; independently ESTIMATED via Forman et al. spatial-derivative method, not assumed to equal 6mm exactly); WARN:mean FD 0.515mm exceeds 0.5mm reference threshold
+  sub-130S5059 ses-01: PASS

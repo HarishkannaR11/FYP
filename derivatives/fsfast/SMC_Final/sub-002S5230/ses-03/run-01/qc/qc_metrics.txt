@@ -1,0 +1,33 @@
+subject: sub-002S5230
+session: ses-03
+run: run-01
+mean_FD_mm: 0.3973855310771297
+median_FD_mm: 0.3132104671524154
+max_FD_mm: 1.506267412597643
+FD_gt_0.2mm: 104
+FD_gt_0.5mm: 31
+FD_gt_1.0mm: 9
+mean_tSNR: 128.05784606933594
+median_tSNR: 110.82726287841797
+SNR: 13.319557189941406
+CNR: NOT_RELIABLY_COMPUTABLE
+mean_DVARS_raw: 16810.386853573928
+median_DVARS_raw: 14502.8251953125
+max_DVARS_raw: 54782.76953125
+dvars_type: RAW_INTENSITY
+spatial_entropy_bits: 7.0781551613420035
+temporal_entropy_bits: 3.5038471792330923
+mask_voxel_count: 28549
+WM_regressor: PERFORMED (template prior)
+CSF_regressor: NOT PERFORMED
+slice_timing: NOT_PERFORMED
+registration_in_MNI: True
+checksum_before: 7cf94269198868b0a49557b7fb4e084e
+checksum_after: 7cf94269198868b0a49557b7fb4e084e
+checksum_match: True
+n_volumes_orig: 140
+n_volumes_retained: 135
+final_NaN: 0
+final_Inf: 0
+qc_status: WARN
+qc_warnings: mean/frame FD: 31/135 volumes exceed 0.5mm (23.0%)

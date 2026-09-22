@@ -1,0 +1,509 @@
+=== SLICE COVERAGE / BRAIN-TISSUE AUDIT (real image data) ===
+
+Method: for each sampled run, loaded the actual 4D BOLD NIfTI (read-only), 
+computed the temporal-mean 3D volume, derived a data-driven intensity 
+threshold via Otsu's method (no assumed/fixed cutoff), then computed the 
+percentage of above-threshold ('tissue-like') voxels per axial (Z) slice. 
+Classification: BRAIN >=5% tissue voxels, MARGINAL 1-5%, NON-BRAIN <1%.
+This is a standard, reproducible coverage-QC method, not a visual guess.
+
+--- sub-002S0413 ses-01 run-01 (64x64x48 group) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-002S0413/ses-01/func/sub-002S0413_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (64, 64, 48, 140), volumes averaged for this analysis: 140
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 1060231.45
+  Number of slices (Z): 48
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0       69771.29             0.44        NON-BRAIN
+       1       73718.22             0.49        NON-BRAIN
+       2       75022.40             0.44        NON-BRAIN
+       3       83315.42             0.59        NON-BRAIN
+       4       91245.16             1.27         MARGINAL
+       5      104289.05             2.54         MARGINAL
+       6      113565.14             3.08         MARGINAL
+       7      117451.63             3.44         MARGINAL
+       8      119310.35             3.91         MARGINAL
+       9      126669.12             4.39         MARGINAL
+      10      152967.67             5.71            BRAIN
+      11      182767.18             7.25            BRAIN
+      12      209213.47             9.13            BRAIN
+      13      234402.25            10.79            BRAIN
+      14      264901.61            12.11            BRAIN
+      15      290220.74            13.04            BRAIN
+      16      319591.00            14.26            BRAIN
+      17      368688.98            16.43            BRAIN
+      18      431807.12            19.68            BRAIN
+      19      500626.99            22.71            BRAIN
+      20      570821.69            25.37            BRAIN
+      21      604726.56            26.78            BRAIN
+      22      611439.92            27.66            BRAIN
+      23      621837.81            28.17            BRAIN
+      24      642394.82            28.20            BRAIN
+      25      671877.41            28.86            BRAIN
+      26      706700.84            29.66            BRAIN
+      27      713705.86            31.20            BRAIN
+      28      736720.62            32.69            BRAIN
+      29      774298.24            34.08            BRAIN
+      30      798166.16            35.13            BRAIN
+      31      812759.01            35.69            BRAIN
+      32      807593.07            35.35            BRAIN
+      33      757189.18            34.20            BRAIN
+      34      727284.45            33.03            BRAIN
+      35      692862.18            31.42            BRAIN
+      36      643755.61            29.20            BRAIN
+      37      596237.20            26.76            BRAIN
+      38      548514.49            24.39            BRAIN
+      39      487759.58            21.58            BRAIN
+      40      416664.07            17.85            BRAIN
+      41      353961.56            14.70            BRAIN
+      42      287982.68            11.21            BRAIN
+      43      215968.55             7.76            BRAIN
+      44      123858.29             4.03         MARGINAL
+      45       34444.53             0.66        NON-BRAIN
+      46       17700.58             0.00        NON-BRAIN
+      47       17156.89             0.00        NON-BRAIN
+  SUMMARY: BRAIN slices (>=5% tissue): [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]
+           MARGINAL slices (1-5% tissue): [4, 5, 6, 7, 8, 9, 44]
+           NON-BRAIN slices (<1% tissue): [0, 1, 2, 3, 45, 46, 47]
+
+--- sub-002S0685 ses-01 run-01 (64x64x48 group) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-002S0685/ses-01/func/sub-002S0685_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (64, 64, 48, 140), volumes averaged for this analysis: 140
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 1207105.39
+  Number of slices (Z): 48
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0      118108.28             0.63        NON-BRAIN
+       1      113443.63             0.51        NON-BRAIN
+       2      109771.56             0.59        NON-BRAIN
+       3      105142.20             0.63        NON-BRAIN
+       4      103316.38             0.95        NON-BRAIN
+       5      107508.29             1.61         MARGINAL
+       6      127077.27             3.08         MARGINAL
+       7      158455.23             5.00            BRAIN
+       8      185996.48             6.52            BRAIN
+       9      196799.67             7.35            BRAIN
+      10      207676.33             8.33            BRAIN
+      11      216817.84             8.89            BRAIN
+      12      254410.71            10.47            BRAIN
+      13      299723.03            11.33            BRAIN
+      14      332791.28            12.23            BRAIN
+      15      389973.38            15.33            BRAIN
+      16      430578.93            17.24            BRAIN
+      17      504486.34            20.85            BRAIN
+      18      583070.27            23.71            BRAIN
+      19      653892.29            26.37            BRAIN
+      20      697012.66            27.71            BRAIN
+      21      732017.20            28.91            BRAIN
+      22      747247.67            29.22            BRAIN
+      23      758221.47            29.74            BRAIN
+      24      811463.27            30.91            BRAIN
+      25      873087.31            33.13            BRAIN
+      26      947755.25            36.67            BRAIN
+      27      980417.49            37.77            BRAIN
+      28      998364.65            38.31            BRAIN
+      29     1000243.55            38.06            BRAIN
+      30      995937.61            37.60            BRAIN
+      31      970945.81            37.28            BRAIN
+      32      916196.44            36.13            BRAIN
+      33      852963.26            34.57            BRAIN
+      34      806529.85            32.74            BRAIN
+      35      772004.91            31.01            BRAIN
+      36      726916.80            28.64            BRAIN
+      37      665720.05            26.17            BRAIN
+      38      593830.47            23.24            BRAIN
+      39      518651.59            20.02            BRAIN
+      40      445843.58            16.89            BRAIN
+      41      377999.80            13.55            BRAIN
+      42      300995.11             9.84            BRAIN
+      43      185586.86             5.62            BRAIN
+      44       51096.41             0.73        NON-BRAIN
+      45       19429.42             0.00        NON-BRAIN
+      46       16716.42             0.00        NON-BRAIN
+      47       16018.76             0.00        NON-BRAIN
+  SUMMARY: BRAIN slices (>=5% tissue): [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]
+           MARGINAL slices (1-5% tissue): [5, 6]
+           NON-BRAIN slices (<1% tissue): [0, 1, 2, 3, 4, 44, 45, 46, 47]
+
+--- sub-002S0729 ses-01 run-01 (64x64x48 group) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-002S0729/ses-01/func/sub-002S0729_ses-01_task-rest_run-01_bold.nii
+  Shape: (64, 64, 48, 140), volumes averaged for this analysis: 140
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 1138692.39
+  Number of slices (Z): 48
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0      104716.56             0.42        NON-BRAIN
+       1       95638.72             0.71        NON-BRAIN
+       2       89166.23             0.66        NON-BRAIN
+       3       85017.46             0.63        NON-BRAIN
+       4       82869.25             0.59        NON-BRAIN
+       5       79653.44             0.83        NON-BRAIN
+       6       81432.58             1.07         MARGINAL
+       7       81037.49             1.07         MARGINAL
+       8       84418.83             1.51         MARGINAL
+       9       94542.35             2.29         MARGINAL
+      10      134151.71             4.22         MARGINAL
+      11      169444.59             5.69            BRAIN
+      12      220709.02             8.23            BRAIN
+      13      280568.43            11.45            BRAIN
+      14      333049.51            13.87            BRAIN
+      15      351741.98            14.55            BRAIN
+      16      346248.16            13.99            BRAIN
+      17      357376.63            14.09            BRAIN
+      18      391375.95            15.23            BRAIN
+      19      443218.08            17.14            BRAIN
+      20      541662.77            21.29            BRAIN
+      21      624213.46            25.34            BRAIN
+      22      723291.99            30.08            BRAIN
+      23      785621.18            33.47            BRAIN
+      24      810030.89            34.47            BRAIN
+      25      825708.96            34.69            BRAIN
+      26      838414.84            34.16            BRAIN
+      27      841203.72            33.79            BRAIN
+      28      839063.68            33.13            BRAIN
+      29      826926.07            32.30            BRAIN
+      30      777937.36            31.05            BRAIN
+      31      716985.53            29.91            BRAIN
+      32      672597.11            28.25            BRAIN
+      33      635884.71            26.78            BRAIN
+      34      606994.87            25.24            BRAIN
+      35      562084.77            23.22            BRAIN
+      36      507147.39            21.14            BRAIN
+      37      460939.84            18.97            BRAIN
+      38      398086.90            16.19            BRAIN
+      39      336278.39            13.75            BRAIN
+      40      270371.12            11.01            BRAIN
+      41      209612.85             8.18            BRAIN
+      42      151732.29             5.79            BRAIN
+      43       74268.65             2.20         MARGINAL
+      44       31506.65             0.34        NON-BRAIN
+      45       17100.76             0.00        NON-BRAIN
+      46       16220.21             0.00        NON-BRAIN
+      47       14971.45             0.00        NON-BRAIN
+  SUMMARY: BRAIN slices (>=5% tissue): [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]
+           MARGINAL slices (1-5% tissue): [6, 7, 8, 9, 10, 43]
+           NON-BRAIN slices (<1% tissue): [0, 1, 2, 3, 4, 5, 44, 45, 46, 47]
+
+--- sub-012S4128 ses-02 run-01 (80x80x48 group (voxel 3.03mm)) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-012S4128/ses-02/func/sub-012S4128_ses-02_task-rest_run-01_bold.nii.gz
+  Shape: (80, 80, 48, 140), volumes averaged for this analysis: 140
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 556528.48
+  Number of slices (Z): 48
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0       37767.58             0.56        NON-BRAIN
+       1       36000.30             0.44        NON-BRAIN
+       2       38202.81             0.50        NON-BRAIN
+       3       41828.29             0.62        NON-BRAIN
+       4       42275.47             0.75        NON-BRAIN
+       5       39306.75             0.80        NON-BRAIN
+       6       43566.37             1.09         MARGINAL
+       7       62019.69             3.19         MARGINAL
+       8       73515.86             5.09            BRAIN
+       9       79198.21             5.39            BRAIN
+      10       84015.36             6.06            BRAIN
+      11       91991.57             6.80            BRAIN
+      12       94347.74             7.08            BRAIN
+      13      100871.52             7.50            BRAIN
+      14      108637.10             8.36            BRAIN
+      15      113472.39             9.12            BRAIN
+      16      124923.05            10.17            BRAIN
+      17      143132.03            11.47            BRAIN
+      18      162404.58            13.19            BRAIN
+      19      187132.22            15.36            BRAIN
+      20      210123.93            17.08            BRAIN
+      21      231028.78            19.11            BRAIN
+      22      248719.95            20.06            BRAIN
+      23      263778.06            20.44            BRAIN
+      24      270409.07            21.09            BRAIN
+      25      268331.56            21.39            BRAIN
+      26      272613.51            21.67            BRAIN
+      27      292928.73            22.70            BRAIN
+      28      309304.81            24.17            BRAIN
+      29      318431.41            25.37            BRAIN
+      30      333875.52            25.97            BRAIN
+      31      335666.12            26.34            BRAIN
+      32      329654.97            26.38            BRAIN
+      33      321774.87            25.77            BRAIN
+      34      304327.07            24.59            BRAIN
+      35      281722.69            23.30            BRAIN
+      36      262287.55            21.78            BRAIN
+      37      237309.79            19.91            BRAIN
+      38      219015.78            18.19            BRAIN
+      39      194849.44            16.08            BRAIN
+      40      170534.99            13.97            BRAIN
+      41      144528.10            11.86            BRAIN
+      42      116947.05             9.27            BRAIN
+      43       91174.50             6.75            BRAIN
+      44       67635.70             4.56         MARGINAL
+      45       40633.27             1.70         MARGINAL
+      46       21076.93             0.12        NON-BRAIN
+      47       15931.76             0.00        NON-BRAIN
+  SUMMARY: BRAIN slices (>=5% tissue): [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]
+           MARGINAL slices (1-5% tissue): [6, 7, 44, 45]
+           NON-BRAIN slices (<1% tissue): [0, 1, 2, 3, 4, 5, 46, 47]
+
+--- sub-012S4643 ses-01 run-01 (80x80x48 group (voxel 3.15mm)) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-012S4643/ses-01/func/sub-012S4643_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (80, 80, 48, 140), volumes averaged for this analysis: 140
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 571830.21
+  Number of slices (Z): 48
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0       47454.96             0.48        NON-BRAIN
+       1       45412.51             0.53        NON-BRAIN
+       2       44248.39             0.61        NON-BRAIN
+       3       38909.06             0.58        NON-BRAIN
+       4       39524.07             1.12         MARGINAL
+       5       51683.45             2.48         MARGINAL
+       6       62155.70             4.06         MARGINAL
+       7       64574.79             4.50         MARGINAL
+       8       66612.23             4.67         MARGINAL
+       9       71958.35             5.22            BRAIN
+      10       69588.59             4.78         MARGINAL
+      11       63124.26             4.56         MARGINAL
+      12       79320.95             5.69            BRAIN
+      13       94609.34             7.17            BRAIN
+      14      110422.43             8.75            BRAIN
+      15      134744.96            10.64            BRAIN
+      16      153333.14            12.36            BRAIN
+      17      173571.45            14.09            BRAIN
+      18      194380.48            16.03            BRAIN
+      19      212567.94            17.84            BRAIN
+      20      222964.74            18.33            BRAIN
+      21      232264.17            19.52            BRAIN
+      22      239966.27            19.95            BRAIN
+      23      253177.09            20.38            BRAIN
+      24      267835.15            22.31            BRAIN
+      25      293624.20            24.41            BRAIN
+      26      308079.26            25.50            BRAIN
+      27      319583.07            26.25            BRAIN
+      28      320693.60            26.44            BRAIN
+      29      321867.90            26.42            BRAIN
+      30      322459.98            26.02            BRAIN
+      31      313375.79            25.34            BRAIN
+      32      304163.75            24.67            BRAIN
+      33      298113.04            23.67            BRAIN
+      34      294216.50            22.62            BRAIN
+      35      279951.65            21.36            BRAIN
+      36      262102.13            19.72            BRAIN
+      37      242471.15            18.20            BRAIN
+      38      218519.24            16.22            BRAIN
+      39      191571.46            14.02            BRAIN
+      40      160840.73            11.61            BRAIN
+      41      131374.85             9.02            BRAIN
+      42       98839.39             6.53            BRAIN
+      43       66491.40             4.11         MARGINAL
+      44       29665.37             1.25         MARGINAL
+      45       14707.40             0.09        NON-BRAIN
+      46       12584.41             0.00        NON-BRAIN
+      47       12367.68             0.00        NON-BRAIN
+  SUMMARY: BRAIN slices (>=5% tissue): [9, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]
+           MARGINAL slices (1-5% tissue): [4, 5, 6, 7, 8, 10, 11, 43, 44]
+           NON-BRAIN slices (<1% tissue): [0, 1, 2, 3, 45, 46, 47]
+
+--- sub-012S5121 ses-01 run-01 (80x80x48 group (voxel 3.15mm)) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-012S5121/ses-01/func/sub-012S5121_ses-01_task-rest_run-01_bold.nii
+  Shape: (80, 80, 48, 140), volumes averaged for this analysis: 140
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 570527.81
+  Number of slices (Z): 48
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0       44761.33             0.20        NON-BRAIN
+       1       44170.90             0.28        NON-BRAIN
+       2       42980.20             0.30        NON-BRAIN
+       3       43463.33             0.34        NON-BRAIN
+       4       43760.65             0.38        NON-BRAIN
+       5       44009.92             0.62        NON-BRAIN
+       6       43147.49             1.03         MARGINAL
+       7       47394.88             1.66         MARGINAL
+       8       55959.87             2.80         MARGINAL
+       9       64674.27             4.16         MARGINAL
+      10       69024.59             4.56         MARGINAL
+      11       75718.16             5.30            BRAIN
+      12       77816.06             5.58            BRAIN
+      13       82060.39             5.88            BRAIN
+      14       85211.29             6.42            BRAIN
+      15       97904.29             7.03            BRAIN
+      16      112085.81             8.31            BRAIN
+      17      122548.56             9.06            BRAIN
+      18      140692.62            10.81            BRAIN
+      19      165463.83            12.94            BRAIN
+      20      187812.68            15.02            BRAIN
+      21      211598.05            17.20            BRAIN
+      22      225332.09            18.45            BRAIN
+      23      242677.64            19.88            BRAIN
+      24      240972.45            19.47            BRAIN
+      25      242383.12            19.22            BRAIN
+      26      248470.21            19.92            BRAIN
+      27      265912.58            20.98            BRAIN
+      28      279502.04            21.75            BRAIN
+      29      292858.50            23.23            BRAIN
+      30      305860.70            24.73            BRAIN
+      31      318437.89            25.66            BRAIN
+      32      324318.28            26.31            BRAIN
+      33      327265.31            26.25            BRAIN
+      34      319640.31            26.00            BRAIN
+      35      310579.68            25.14            BRAIN
+      36      297974.23            23.89            BRAIN
+      37      283003.10            22.12            BRAIN
+      38      262429.13            20.12            BRAIN
+      39      249768.89            18.61            BRAIN
+      40      237751.00            17.27            BRAIN
+      41      224357.26            16.00            BRAIN
+      42      202749.62            14.47            BRAIN
+      43      179441.98            12.84            BRAIN
+      44      151284.08            10.31            BRAIN
+      45      129152.02             8.19            BRAIN
+      46       98448.56             5.66            BRAIN
+      47       56377.22             2.34         MARGINAL
+  SUMMARY: BRAIN slices (>=5% tissue): [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]
+           MARGINAL slices (1-5% tissue): [6, 7, 8, 9, 10, 47]
+           NON-BRAIN slices (<1% tissue): [0, 1, 2, 3, 4, 5]
+
+--- sub-002S2010 ses-01 run-01 (64x64x36 group (ONLY run at this shape)) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-002S2010/ses-01/func/sub-002S2010_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (64, 64, 36, 140), volumes averaged for this analysis: 140
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 757197.45
+  Number of slices (Z): 36
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0      193825.65            10.67            BRAIN
+       1      222108.07            12.87            BRAIN
+       2      250606.76            15.21            BRAIN
+       3      293150.67            18.21            BRAIN
+       4      338247.19            20.97            BRAIN
+       5      356457.93            21.97            BRAIN
+       6      370172.48            22.66            BRAIN
+       7      378361.69            22.75            BRAIN
+       8      390043.42            23.68            BRAIN
+       9      402282.17            24.46            BRAIN
+      10      413740.47            26.20            BRAIN
+      11      442464.61            28.27            BRAIN
+      12      464765.32            29.44            BRAIN
+      13      481636.53            29.93            BRAIN
+      14      478945.00            29.86            BRAIN
+      15      470907.41            29.30            BRAIN
+      16      456313.70            28.20            BRAIN
+      17      444419.03            27.25            BRAIN
+      18      426153.10            26.22            BRAIN
+      19      399526.31            24.51            BRAIN
+      20      373876.71            22.88            BRAIN
+      21      342452.78            20.68            BRAIN
+      22      309313.46            18.60            BRAIN
+      23      282877.89            16.55            BRAIN
+      24      255671.18            14.23            BRAIN
+      25      221539.99            11.67            BRAIN
+      26      179011.81             8.79            BRAIN
+      27      134277.02             6.32            BRAIN
+      28       82587.31             3.03         MARGINAL
+      29       37604.59             0.66        NON-BRAIN
+      30       26208.73             0.00        NON-BRAIN
+      31       25776.37             0.00        NON-BRAIN
+      32       23088.74             0.00        NON-BRAIN
+      33       21648.89             0.00        NON-BRAIN
+      34       19660.15             0.00        NON-BRAIN
+      35       16668.97             0.00        NON-BRAIN
+  SUMMARY: BRAIN slices (>=5% tissue): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+           MARGINAL slices (1-5% tissue): [28]
+           NON-BRAIN slices (<1% tissue): [29, 30, 31, 32, 33, 34, 35]
+
+--- sub-012S4026 ses-01 run-01 (80x80x48, 7-volume outlier run) ---
+  File: /mnt/c/Users/krish/FYP/BIDS/sub-012S4026/ses-01/func/sub-012S4026_ses-01_task-rest_run-01_bold.nii.gz
+  Shape: (80, 80, 48, 7), volumes averaged for this analysis: 7
+  Data-driven Otsu threshold (on temporal-mean volume, nonzero voxels): 490062.55
+  Number of slices (Z): 48
+   Slice  MeanIntensity  TissueFraction%   Classification
+       0       55109.80             0.39        NON-BRAIN
+       1       51282.58             0.27        NON-BRAIN
+       2       51159.28             0.38        NON-BRAIN
+       3       50510.74             0.58        NON-BRAIN
+       4       48415.80             0.81        NON-BRAIN
+       5       42671.51             0.80        NON-BRAIN
+       6       43810.69             0.98        NON-BRAIN
+       7       58677.25             2.77         MARGINAL
+       8       72655.41             5.12            BRAIN
+       9       81028.22             6.20            BRAIN
+      10       86184.33             7.28            BRAIN
+      11       87901.55             7.94            BRAIN
+      12       94736.07             8.27            BRAIN
+      13      102572.01             8.78            BRAIN
+      14      113387.31             9.80            BRAIN
+      15      119876.73            10.98            BRAIN
+      16      131559.65            11.86            BRAIN
+      17      146527.30            13.16            BRAIN
+      18      164857.68            14.80            BRAIN
+      19      188377.97            17.34            BRAIN
+      20      211753.17            19.75            BRAIN
+      21      238461.95            22.25            BRAIN
+      22      246222.70            23.14            BRAIN
+      23      248719.16            23.14            BRAIN
+      24      258674.46            23.48            BRAIN
+      25      271116.28            24.33            BRAIN
+      26      287198.92            26.27            BRAIN
+      27      310807.17            29.17            BRAIN
+      28      336825.67            31.37            BRAIN
+      29      348087.49            31.77            BRAIN
+      30      349181.93            31.89            BRAIN
+      31      343034.79            31.69            BRAIN
+      32      334086.09            31.02            BRAIN
+      33      314974.85            29.88            BRAIN
+      34      301977.09            28.73            BRAIN
+      35      295598.62            27.52            BRAIN
+      36      287463.10            25.86            BRAIN
+      37      268216.73            23.91            BRAIN
+      38      248724.80            21.78            BRAIN
+      39      223311.54            19.44            BRAIN
+      40      199589.64            17.14            BRAIN
+      41      171881.53            14.62            BRAIN
+      42      139785.88            11.45            BRAIN
+      43      107680.16             8.53            BRAIN
+      44      188517.81            17.34            BRAIN
+      45      181599.70            16.61            BRAIN
+      46      181914.63            16.88            BRAIN
+      47      178954.77            15.97            BRAIN
+  SUMMARY: BRAIN slices (>=5% tissue): [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+           MARGINAL slices (1-5% tissue): [7]
+           NON-BRAIN slices (<1% tissue): [0, 1, 2, 3, 4, 5, 6]
+
+=== CROSS-RUN COMPARISON ===
+
+--- 64x64x48 group (3 runs sampled) ---
+  Non-brain slice indices per run:
+    sub-002S0413 ses-01: [0, 1, 2, 3, 45, 46, 47]
+    sub-002S0685 ses-01: [0, 1, 2, 3, 4, 44, 45, 46, 47]
+    sub-002S0729 ses-01: [0, 1, 2, 3, 4, 5, 44, 45, 46, 47]
+  Non-brain slices common to ALL sampled runs in this group: [0, 1, 2, 3, 45, 46, 47]
+  Non-brain slices in AT LEAST ONE run (union): [0, 1, 2, 3, 4, 5, 44, 45, 46, 47]
+  -> PARTIALLY CONSISTENT: some non-brain slices are shared, others vary by subject.
+
+--- 80x80x48 group (voxel 3.03mm) (1 runs sampled) ---
+  Only one run available in this group: sub-012S4128 -- non-brain slices: [0, 1, 2, 3, 4, 5, 46, 47]. No cross-run comparison possible (this is the only acquisition at this shape in the whole dataset).
+
+--- 80x80x48 group (voxel 3.15mm) (2 runs sampled) ---
+  Non-brain slice indices per run:
+    sub-012S4643 ses-01: [0, 1, 2, 3, 45, 46, 47]
+    sub-012S5121 ses-01: [0, 1, 2, 3, 4, 5]
+  Non-brain slices common to ALL sampled runs in this group: [0, 1, 2, 3]
+  Non-brain slices in AT LEAST ONE run (union): [0, 1, 2, 3, 4, 5, 45, 46, 47]
+  -> PARTIALLY CONSISTENT: some non-brain slices are shared, others vary by subject.
+
+--- 64x64x36 group (ONLY run at this shape) (1 runs sampled) ---
+  Only one run available in this group: sub-002S2010 -- non-brain slices: [29, 30, 31, 32, 33, 34, 35]. No cross-run comparison possible (this is the only acquisition at this shape in the whole dataset).
+
+--- 80x80x48, 7-volume outlier run (1 runs sampled) ---
+  Only one run available in this group: sub-012S4026 -- non-brain slices: [0, 1, 2, 3, 4, 5, 6]. No cross-run comparison possible (this is the only acquisition at this shape in the whole dataset).
+
+=== 36-SLICE vs 48-SLICE COMPARISON ===
+
+36-slice run (sub-002S2010): non-brain slices = [29, 30, 31, 32, 33, 34, 35] out of 36 total.
+48-slice runs: see per-group breakdown above.
+Only a single 36-slice acquisition exists in the entire dataset (1 of 175 runs) -- any conclusion about the 36-slice protocol's coverage pattern rests on this one run alone and cannot be cross-validated within this dataset.
+
+=== ANOMALY NOTE ===
+
+sub-012S4026 (the 7-volume outlier) shows tissue fraction DROP smoothly from slice 30 to slice 43 (31.89% down to 8.53%, a normal brain-boundary taper), then jump back UP at slices 44-47 (17.34%, 16.61%, 16.88%, 15.97%) instead of continuing to fall. This is inconsistent with normal anatomical tapering and is likely an artifact of averaging only 7 volumes (a much noisier temporal mean than the 140-volume runs) rather than a real coverage difference -- flagged here, not explained away, since this run already has other known problems (insufficient volume count).
+
+=== FIXED SLICE-CROPPING RULE: SCIENTIFICALLY JUSTIFIED? ===
+
+NO -- not as a single universal rule across the whole dataset. Evidence:
+
+1. WITHIN the 64x64x48 group (3 subjects, same protocol), the number of non-brain slices at the bottom ranges 4-6 and at the top ranges 3-4, depending on the individual subject's head positioning. Only slices {0,1,2,3} (bottom) and {45,46,47} (top) were non-brain in ALL 3 sampled subjects -- a subject with less non-brain margin (e.g. sub-002S0413) would have real brain tissue immediately adjacent to a crop boundary sized for a subject with more margin (e.g. sub-002S0729).
+2. WITHIN the 80x80x48 (3.15mm) group, two subjects scanned on the same protocol show a materially different TOP boundary: sub-012S4643 has 3 non-brain slices at the top (45-47), while sub-012S5121 has NONE -- its brain-classified tissue extends all the way to slice 46. A fixed top-crop calibrated to one of these subjects would either leave background in the other or cut real tissue from it.
+3. ACROSS shape groups, the pattern is qualitatively different, not just differently-sized: the single 64x64x36 run has ZERO non-brain slices at the bottom (slice 0 is already 10.67% tissue) and 7 non-brain slices at the top -- the opposite emphasis from every 48-slice run sampled, which all have non-brain margin at BOTH ends. A rule tuned to the 48-slice protocol (e.g. 'drop N slices from each end') would incorrectly remove real brain tissue from the bottom of the 36-slice run, where none exists to remove.
+4. Two of the four groups sampled (64x64x36 and the 7-volume 80x80x48 outlier) have only ONE acquisition each in the entire 175-run dataset -- there is no way to statistically validate a cropping rule for either group from this dataset alone.
+
+A CONSERVATIVE, protocol-specific floor (only removing slices confirmed non-brain in EVERY sampled subject of a given shape/protocol group, e.g. bottom-4/top-3 for the 64x64x48 group specifically) is a more defensible starting point than a single dataset-wide number -- but even that is based on only 3-8 sampled runs per group here, not the full set of runs in each group, and would need either (a) checking against more/all runs in that specific group before being trusted as a floor, or (b) a per-run adaptive approach (e.g. computing this same tissue-fraction profile per run and cropping individually) rather than any fixed number. This is reported as an option for you/your mentor to weigh -- no cropping rule has been decided or applied here.

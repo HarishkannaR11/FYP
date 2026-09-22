@@ -1,0 +1,130 @@
+
+======================================================================
+STEP 0 -- LOAD INPUTS (read-only)
+======================================================================
+BOLD (voxel-level, preprocessed): /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/sub-019S4549_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz
+Brain mask: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brain_mask.nii.gz
+Aligned atlas (not re-resampled): /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/brainnetome_246_4mm.nii.gz
+ROI time series (read-only, NOT modified): /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/roi_timeseries.npy
+BOLD shape=(46, 55, 46, 135)  TR=3.0s  T=135
+mask grid matches BOLD: True
+atlas grid matches BOLD: True  -> atlas NOT re-resampled (as instructed)
+roi_timeseries.npy loaded read-only: shape=(135, 246) (NOT modified, NOT overwritten)
+brain mask voxels: 28549
+
+======================================================================
+STEP 1 -- ALFF (voxel-level, then aggregated to 246 ROIs)
+======================================================================
+TR (from current BOLD header, not assumed) = 3.0s
+Nyquist = 0.166667 Hz;  band [0.01, 0.1] Hz valid (0.10 < Nyquist): True
+
+METHODOLOGICAL NOTE: the current preprocessed BOLD was ALREADY band-pass filtered to
+0.01-0.10 Hz during preprocessing (frozen pipeline step). ALFF is therefore computed on
+the full available spectrum of this already-band-limited signal -- since negligible power
+exists outside 0.01-0.10 Hz post-filtering, this is effectively equivalent to the
+traditional ALFF definition (amplitude summed within that band). This is a documented
+consequence of the frozen pipeline, not a methodological substitution.
+n frequency bins total: 68; n bins in [0.01,0.1] Hz: 36
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/alff_map.nii.gz
+ALFF ROI values: shape=(246,), NaN=0
+saved: alff_roi_values.csv, alff_roi_values.npy
+
+======================================================================
+STEP 2 -- ReHo (voxel-level, 27-neighbor KCC, then aggregated to 246 ROIs)
+======================================================================
+Neighborhood definition: 27-voxel cube (3x3x3, INCLUDING the center voxel itself).
+Reason: this is the original Zang et al. (2004) ReHo definition and the default used by
+AFNI 3dReHo and DPARSF/DPABI -- the most common and best-validated choice in the
+literature. Not chosen arbitrarily.
+Edge/boundary voxels: neighbors are restricted to those also inside the brain mask, so K
+(the number of time series in the KCC formula) may be <27 near the mask boundary -- this
+is standard practice (matches AFNI 3dReHo behavior) and is explicitly accounted for in the
+Kendall's W formula below (K varies per voxel, not fixed at 27).
+computing ReHo for 28549 in-mask voxels...
+ReHo computation completed in 68.0s
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/reho_map.nii.gz
+ReHo ROI values: shape=(246,), NaN=0
+saved: reho_roi_values.csv, reho_roi_values.npy
+
+======================================================================
+STEP 3 -- FUNCTIONAL CONNECTIVITY (246 x 246, from roi_timeseries.npy)
+======================================================================
+Method: Pearson correlation between every pair of ROI time series (135 timepoints each).
+Self-connections: diagonal is included in the FC matrix (will be ~1.0), but EXCLUDED from
+  degree centrality and regional-strength sums (see Steps 4/5).
+Negative correlations: RETAINED (not clipped, not absolute-valued).
+Thresholding: NONE applied -- full weighted matrix preserved, per instruction to prefer
+  weighted DC over an arbitrary/unvalidated threshold.
+FC shape: (246, 246)
+FC min=-0.8144 max=1.0000 mean=0.0099 median=-0.0101
+NaN=0  Inf=0  symmetry_error=1.11e-16  diagonal~=1: True
+saved: fc_matrix.npy, fc_matrix.csv
+
+======================================================================
+STEP 4 -- DEGREE CENTRALITY (weighted, signed, no threshold)
+======================================================================
+Definition: DC_i = sum_{j != i} FC[i,j]  (raw signed connection weights, diagonal excluded)
+DC shape: (246,)
+saved: degree_centrality.csv, degree_centrality.npy
+
+======================================================================
+STEP 5 -- FC REGIONAL STRENGTH (derived summary, mean not sum)
+======================================================================
+Definition: FC_strength_i = mean_{j != i} FC[i,j]
+saved: fc_regional_strength.csv
+
+======================================================================
+STEP 6 -- BIOMARKER QC
+======================================================================
+  ALFF: n=246 NaN=0 Inf=0 min=28292.4590 median=65980.0547 max=127465.8984 zero_var=False
+  ReHo: n=246 NaN=0 Inf=0 min=0.3198 median=0.4685 max=0.6803 zero_var=False
+  DegreeCentrality: n=246 NaN=0 Inf=0 min=-16.8441 median=2.8250 max=12.9438 zero_var=False
+  FC_RegionalStrength: n=246 NaN=0 Inf=0 min=-0.0688 median=0.0115 max=0.0528 zero_var=False
+  FC_matrix: n=60516 NaN=0 Inf=0 min=-0.8144 median=-0.0101 max=1.0000 zero_var=False
+saved: biomarker_qc.csv
+
+======================================================================
+STEP 7 -- CROSS-CHECK ROI IDs
+======================================================================
+ALFF ROI IDs == ReHo ROI IDs == DC ROI IDs == FC ROI IDs == 1..246: True
+No missing ROI, no duplicate ROI (each biomarker array is a fixed-length 246 vector indexed 1..246 by construction).
+
+======================================================================
+STEP 8 -- REGIONAL BIOMARKER MATRIX
+======================================================================
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/regional_biomarker_matrix.csv  shape=(246, 6)
+
+======================================================================
+STEP 9 -- METADATA + REPORT
+======================================================================
+saved: biomarker_metadata.json
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/biomarker_qc_report.md
+
+======================================================================
+FINAL RESPONSE
+======================================================================
+ALFF:
+246 values -- PASS
+
+ReHo:
+246 values -- PASS
+
+DC:
+246 values -- PASS
+
+FC:
+246 x 246 -- PASS
+
+Regional biomarker matrix:
+246 x 6 -- PASS
+
+NaN:
+0
+
+Inf:
+0
+
+Output:
+/mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers
+
+BIOMARKER_PILOT_DONE

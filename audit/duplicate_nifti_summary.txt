@@ -1,0 +1,19 @@
+=== DUPLICATE NIFTI AUDIT SUMMARY ===
+
+Total JSONs analyzed: 175
+Total NIfTIs analyzed: 175
+
+JSONs with multiple matching NIfTIs: 0
+Orphan NIfTIs (No matching JSON): 0
+Hash collisions (Identical content, different filename): 1
+
+--- MULTIPLE NIFTIS FOR SAME JSON ---
+None
+
+--- ORPHAN NIFTIS ---
+None
+
+--- IDENTICAL CONTENT (DIFFERENT FILES) ---
+Collision Group:
+  -> C:\Users\krish\FYP\NIfTI\NIfTI\LMCI\006_S_4363\006_S_4363_WIP_Resting_State_fMRI_20120619135852_501.nii
+  -> C:\Users\krish\FYP\NIfTI\NIfTI\LMCI\006_S_4363\006_S_4363_WIP_Resting_State_fMRI_20120619135852_601.nii

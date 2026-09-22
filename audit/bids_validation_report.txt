@@ -1,0 +1,46 @@
+=== BIDS VALIDATION AUDIT SUMMARY ===
+
+--- PARTICIPANTS.TSV MATCHING ---
+Subjects in TSV: 131
+Subject directories: 131
+Missing from dir (in TSV only): None
+Missing from TSV (in dir only): None
+
+--- FILE INTEGRITY ---
+Total Acquisition Stems: 175
+Perfect JSON+NIfTI Pairs: 175
+Orphan NIfTIs: 0
+Orphan JSONs: 0
+BIDS Non-Compliant Names: 0
+
+--- DIAGNOSTIC GROUP STATISTICS ---
+
+AD:
+  Subjects: 20
+  Sessions: 25
+  Valid Runs/Files: 25
+
+LMCI:
+  Subjects: 20
+  Sessions: 22
+  Valid Runs/Files: 23
+
+MCI:
+  Subjects: 14
+  Sessions: 34
+  Valid Runs/Files: 35
+
+EMCI:
+  Subjects: 27
+  Sessions: 30
+  Valid Runs/Files: 30
+
+CN_Final:
+  Subjects: 29
+  Sessions: 30
+  Valid Runs/Files: 30
+
+SMC_Final:
+  Subjects: 21
+  Sessions: 32
+  Valid Runs/Files: 32

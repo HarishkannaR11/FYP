@@ -1,0 +1,33 @@
+subject: sub-018S4400
+session: ses-01
+run: run-01
+mean_FD_mm: 0.12465008625933843
+median_FD_mm: 0.1135993108859688
+max_FD_mm: 0.27339566627292156
+FD_gt_0.2mm: 18
+FD_gt_0.5mm: 0
+FD_gt_1.0mm: 0
+mean_tSNR: 184.4795684814453
+median_tSNR: 177.7808837890625
+SNR: 12.3030366897583
+CNR: NOT_RELIABLY_COMPUTABLE
+mean_DVARS_raw: 11850.963451784048
+median_DVARS_raw: 11751.6396484375
+max_DVARS_raw: 14904.3779296875
+dvars_type: RAW_INTENSITY
+spatial_entropy_bits: 7.209211601860674
+temporal_entropy_bits: 3.622939815302736
+mask_voxel_count: 28549
+WM_regressor: PERFORMED (template prior)
+CSF_regressor: NOT PERFORMED
+slice_timing: NOT_PERFORMED
+registration_in_MNI: True
+checksum_before: 7702d27ea567b808d5a6ece9ea8feb62
+checksum_after: 7702d27ea567b808d5a6ece9ea8feb62
+checksum_match: True
+n_volumes_orig: 140
+n_volumes_retained: 135
+final_NaN: 0
+final_Inf: 0
+qc_status: PASS
+qc_warnings: 

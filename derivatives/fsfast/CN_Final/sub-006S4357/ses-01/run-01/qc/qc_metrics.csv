@@ -1,0 +1,34 @@
+Metric,Value
+subject,sub-006S4357
+session,ses-01
+run,run-01
+mean_FD_mm,0.2229017813905763
+median_FD_mm,0.20388376736367675
+max_FD_mm,0.6621689664841829
+FD_gt_0.2mm,68
+FD_gt_0.5mm,4
+FD_gt_1.0mm,0
+mean_tSNR,177.6793212890625
+median_tSNR,186.46676635742188
+SNR,15.155550956726074
+CNR,NOT_RELIABLY_COMPUTABLE
+mean_DVARS_raw,1346.8347951405085
+median_DVARS_raw,1277.3297729492188
+max_DVARS_raw,3800.69921875
+dvars_type,RAW_INTENSITY
+spatial_entropy_bits,7.215897687280236
+temporal_entropy_bits,3.5544169088380926
+mask_voxel_count,28549
+WM_regressor,PERFORMED (template prior)
+CSF_regressor,NOT PERFORMED
+slice_timing,NOT_PERFORMED
+registration_in_MNI,True
+checksum_before,603e10743c77067f7e5ba1f970917d7b
+checksum_after,603e10743c77067f7e5ba1f970917d7b
+checksum_match,True
+n_volumes_orig,140
+n_volumes_retained,135
+final_NaN,0
+final_Inf,0
+qc_status,WARN
+qc_warnings,mean/frame FD: 4/135 volumes exceed 0.5mm (3.0%)

@@ -1,0 +1,7 @@
+=== [MCI production retry] attempt 1 at Fri Sep 18 22:43:35 IST 2026 ===
+<3>WSL (296) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (296) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (296) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (296) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (296) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [MCI production retry] WORKFLOW_DONE detected, stopping ===

@@ -1,0 +1,438 @@
+=== GROUP -> SUBJECT -> SESSION -> RUN -> BOLD FILE ===
+
+AD  (20 subjects, 25 acquisitions)
+  sub-002S5018  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130516  -> sub-002S5018_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20131118  -> sub-002S5018_ses-02_task-rest_run-01_bold.nii.gz
+  sub-006S4153  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120327  -> sub-006S4153_ses-01_task-rest_run-01_bold.nii.gz
+  sub-006S4192  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120507  -> sub-006S4192_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S5071  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130827  -> sub-013S5071_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4696  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121101  -> sub-018S4696_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4733  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121130  -> sub-018S4733_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4252  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121023  -> sub-019S4252_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4477  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20120807  -> sub-019S4477_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130213  -> sub-019S4477_ses-02_task-rest_run-01_bold.nii.gz
+  sub-019S4549  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20121030  -> sub-019S4549_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130313  -> sub-019S4549_ses-02_task-rest_run-01_bold.nii.gz
+  sub-019S5012  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130515  -> sub-019S5012_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S5019  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130514  -> sub-019S5019_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4024  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20111028  -> sub-031S4024_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4641  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121010  -> sub-130S4641_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4660  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121017  -> sub-130S4660_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4730  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20121219  -> sub-130S4730_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130612  -> sub-130S4730_ses-02_task-rest_run-01_bold.nii.gz
+  sub-130S4971  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130503  -> sub-130S4971_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4982  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130426  -> sub-130S4982_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20131025  -> sub-130S4982_ses-02_task-rest_run-01_bold.nii.gz
+  sub-130S4984  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130328  -> sub-130S4984_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4990  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130426  -> sub-130S4990_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S5059  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130809  -> sub-130S5059_ses-01_task-rest_run-01_bold.nii.gz
+
+CN_Final  (29 subjects, 30 acquisitions)
+  sub-002S0413  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110616  -> sub-002S0413_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S0685  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110708  -> sub-002S0685_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S1261  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110314  -> sub-002S1261_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S1280  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110504  -> sub-002S1280_ses-01_task-rest_run-01_bold.nii.gz
+  sub-006S4357  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20140122  -> sub-006S4357_ses-01_task-rest_run-01_bold.nii.gz
+  sub-010S4345  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120920  -> sub-010S4345_ses-01_task-rest_run-01_bold.nii.gz
+  sub-010S4442  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20121203  -> sub-010S4442_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130510  -> sub-010S4442_ses-02_task-rest_run-01_bold.nii.gz
+  sub-012S4026  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20111207  -> sub-012S4026_ses-01_task-rest_run-01_bold.nii.gz
+  sub-012S4545  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120924  -> sub-012S4545_ses-01_task-rest_run-01_bold.nii.gz
+  sub-012S4643  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121016  -> sub-012S4643_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S4579  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121219  -> sub-013S4579_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S4616  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121025  -> sub-013S4616_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4257  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120731  -> sub-018S4257_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4313  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121128  -> sub-018S4313_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4349  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120710  -> sub-018S4349_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4399  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130111  -> sub-018S4399_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4400  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130102  -> sub-018S4400_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4367  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121119  -> sub-019S4367_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4835  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130115  -> sub-019S4835_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4021  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130506  -> sub-031S4021_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4032  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130509  -> sub-031S4032_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4218  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121002  -> sub-031S4218_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4474  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120801  -> sub-031S4474_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4496  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20140220  -> sub-031S4496_ses-01_task-rest_run-01_bold.nii.gz
+  sub-129S0778  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120913  -> sub-129S0778_ses-01_task-rest_run-01_bold.nii.gz
+  sub-129S4422  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130107  -> sub-129S4422_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4343  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20131114  -> sub-130S4343_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4352  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20131204  -> sub-130S4352_ses-01_task-rest_run-01_bold.nii.gz
+  sub-136S0186  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121011  -> sub-136S0186_ses-01_task-rest_run-01_bold.nii.gz
+
+EMCI  (27 subjects, 30 acquisitions)
+  sub-002S2010  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110122  -> sub-002S2010_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S2043  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110916  -> sub-002S2043_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S2073  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110309  -> sub-002S2073_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S4237  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120503  -> sub-002S4237_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S4447  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120814  -> sub-002S4447_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S4473  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120823  -> sub-002S4473_ses-01_task-rest_run-01_bold.nii.gz
+  sub-006S4679  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130718  -> sub-006S4679_ses-01_task-rest_run-01_bold.nii.gz
+  sub-012S4012  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20111107  -> sub-012S4012_ses-01_task-rest_run-01_bold.nii.gz
+  sub-012S4128  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20120306  -> sub-012S4128_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130805  -> sub-012S4128_ses-02_task-rest_run-01_bold.nii.gz
+  sub-012S4188  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120502  -> sub-012S4188_ses-01_task-rest_run-01_bold.nii.gz
+  sub-012S4849  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130225  -> sub-012S4849_ses-01_task-rest_run-01_bold.nii.gz
+  sub-012S4987  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130513  -> sub-012S4987_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S2324  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120417  -> sub-013S2324_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S4268  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120523  -> sub-013S4268_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S4791  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130417  -> sub-013S4791_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S4917  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130320  -> sub-013S4917_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S2133  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110802  -> sub-018S2133_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S2138  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110908  -> sub-018S2138_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S2155  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110701  -> sub-018S2155_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4597  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130311  -> sub-018S4597_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4809  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130108  -> sub-018S4809_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4868  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130211  -> sub-018S4868_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4285  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120430  -> sub-019S4285_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4680  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121029  -> sub-019S4680_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S2018  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20110131  -> sub-031S2018_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20110627  -> sub-031S2018_ses-02_task-rest_run-01_bold.nii.gz
+  sub-031S2022  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20110215  -> sub-031S2022_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S2233  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20110613  -> sub-031S2233_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120105  -> sub-031S2233_ses-02_task-rest_run-01_bold.nii.gz
+
+LMCI  (20 subjects, 23 acquisitions)
+  sub-002S4171  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20110808  -> sub-002S4171_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120229  -> sub-002S4171_ses-02_task-rest_run-01_bold.nii.gz
+  sub-002S4219  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120323  -> sub-002S4219_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S4251  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120417  -> sub-002S4251_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S4521  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120904  -> sub-002S4521_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S4654  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121023  -> sub-002S4654_ses-01_task-rest_run-01_bold.nii.gz
+  sub-002S4746  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121211  -> sub-002S4746_ses-01_task-rest_run-01_bold.nii.gz
+  sub-006S4346  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120524  -> sub-006S4346_ses-01_task-rest_run-01_bold.nii.gz
+  sub-006S4363  (1 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20120619  -> sub-006S4363_ses-01_task-rest_run-01_bold.nii.gz  [DUPLICATE CONTENT]
+      ses-01 / run-02  date=20120619  -> sub-006S4363_ses-01_task-rest_run-02_bold.nii.gz  [DUPLICATE CONTENT]
+  sub-006S4515  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130314  -> sub-006S4515_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S4595  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121024  -> sub-013S4595_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S4889  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130228  -> sub-018S4889_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4293  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120509  -> sub-019S4293_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S4548  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120827  -> sub-019S4548_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4194  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120228  -> sub-031S4194_ses-01_task-rest_run-01_bold.nii.gz
+  sub-031S4203  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20120320  -> sub-031S4203_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120926  -> sub-031S4203_ses-02_task-rest_run-01_bold.nii.gz
+  sub-031S4590  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121001  -> sub-031S4590_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4250  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120411  -> sub-130S4250_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4542  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120905  -> sub-130S4542_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4605  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20121019  -> sub-130S4605_ses-01_task-rest_run-01_bold.nii.gz
+  sub-130S4817  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130122  -> sub-130S4817_ses-01_task-rest_run-01_bold.nii.gz
+
+MCI  (14 subjects, 35 acquisitions)
+  sub-002S0729  (3 session(s), 3 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20110816  -> sub-002S0729_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120807  -> sub-002S0729_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20130816  -> sub-002S0729_ses-03_task-rest_run-01_bold.nii.gz
+  sub-002S1155  (3 session(s), 3 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20111222  -> sub-002S1155_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20121220  -> sub-002S1155_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20140109  -> sub-002S1155_ses-03_task-rest_run-01_bold.nii.gz
+  sub-002S1268  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20110413  -> sub-002S1268_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120322  -> sub-002S1268_ses-02_task-rest_run-01_bold.nii.gz
+  sub-002S4229  (3 session(s), 3 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20120410  -> sub-002S4229_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120918  -> sub-002S4229_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20131016  -> sub-002S4229_ses-03_task-rest_run-01_bold.nii.gz
+  sub-002S4799  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130110  -> sub-002S4799_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130702  -> sub-002S4799_ses-02_task-rest_run-01_bold.nii.gz
+  sub-006S4713  (2 session(s), 3 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20121128  -> sub-006S4713_ses-01_task-rest_run-01_bold.nii.gz
+      ses-01 / run-02  date=20121128  -> sub-006S4713_ses-01_task-rest_run-02_bold.nii.gz
+      ses-02 / run-01  date=20130612  -> sub-006S4713_ses-02_task-rest_run-01_bold.nii.gz
+  sub-013S1186  (3 session(s), 3 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20110223  -> sub-013S1186_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120216  -> sub-013S1186_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20130129  -> sub-013S1186_ses-03_task-rest_run-01_bold.nii.gz
+  sub-013S2389  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20120215  -> sub-013S2389_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20121010  -> sub-013S2389_ses-02_task-rest_run-01_bold.nii.gz
+  sub-018S2180  (4 session(s), 4 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20110726  -> sub-018S2180_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120127  -> sub-018S2180_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20130102  -> sub-018S2180_ses-03_task-rest_run-01_bold.nii.gz
+      ses-04 / run-01  date=20140107  -> sub-018S2180_ses-04_task-rest_run-01_bold.nii.gz
+  sub-053S0919  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130104  -> sub-053S0919_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20131205  -> sub-053S0919_ses-02_task-rest_run-01_bold.nii.gz
+  sub-053S4813  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130110  -> sub-053S4813_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130731  -> sub-053S4813_ses-02_task-rest_run-01_bold.nii.gz
+  sub-100S4556  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20121126  -> sub-100S4556_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130606  -> sub-100S4556_ses-02_task-rest_run-01_bold.nii.gz
+  sub-130S4294  (3 session(s), 3 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20120515  -> sub-130S4294_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20121127  -> sub-130S4294_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20131115  -> sub-130S4294_ses-03_task-rest_run-01_bold.nii.gz
+  sub-136S0107  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20120906  -> sub-136S0107_ses-01_task-rest_run-01_bold.nii.gz
+
+SMC_Final  (21 subjects, 32 acquisitions)
+  sub-002S5230  (3 session(s), 3 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130627  -> sub-002S5230_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130923  -> sub-002S5230_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20140124  -> sub-002S5230_ses-03_task-rest_run-01_bold.nii.gz
+  sub-002S5256  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130715  -> sub-002S5256_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20140219  -> sub-002S5256_ses-02_task-rest_run-01_bold.nii.gz
+  sub-006S5153  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130422  -> sub-006S5153_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130802  -> sub-006S5153_ses-02_task-rest_run-01_bold.nii.gz
+  sub-012S5121  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130315  -> sub-012S5121_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130628  -> sub-012S5121_ses-02_task-rest_run-01_bold.nii.gz
+  sub-012S5157  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130516  -> sub-012S5157_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130919  -> sub-012S5157_ses-02_task-rest_run-01_bold.nii.gz
+  sub-012S5195  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130614  -> sub-012S5195_ses-01_task-rest_run-01_bold.nii.gz
+  sub-012S5213  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130710  -> sub-012S5213_ses-01_task-rest_run-01_bold.nii.gz
+  sub-013S5137  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130419  -> sub-013S5137_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130724  -> sub-013S5137_ses-02_task-rest_run-01_bold.nii.gz
+  sub-018S5250  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130808  -> sub-018S5250_ses-01_task-rest_run-01_bold.nii.gz
+  sub-018S5262  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130812  -> sub-018S5262_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S5180  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130522  -> sub-019S5180_ses-01_task-rest_run-01_bold.nii.gz
+  sub-019S5242  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130702  -> sub-019S5242_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20140117  -> sub-019S5242_ses-02_task-rest_run-01_bold.nii.gz
+  sub-053S5202  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130607  -> sub-053S5202_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130920  -> sub-053S5202_ses-02_task-rest_run-01_bold.nii.gz
+  sub-053S5272  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130812  -> sub-053S5272_ses-01_task-rest_run-01_bold.nii.gz
+  sub-053S5287  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130910  -> sub-053S5287_ses-01_task-rest_run-01_bold.nii.gz
+  sub-100S5096  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130328  -> sub-100S5096_ses-01_task-rest_run-01_bold.nii.gz
+  sub-100S5102  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130329  -> sub-100S5102_ses-01_task-rest_run-01_bold.nii.gz
+  sub-100S5280  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130816  -> sub-100S5280_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20150929  -> sub-100S5280_ses-02_task-rest_run-01_bold.nii.gz
+  sub-130S5142  (2 session(s), 2 acquisition(s))   <-- MULTIPLE ACQUISITIONS
+      ses-01 / run-01  date=20130419  -> sub-130S5142_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130726  -> sub-130S5142_ses-02_task-rest_run-01_bold.nii.gz
+  sub-130S5258  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130718  -> sub-130S5258_ses-01_task-rest_run-01_bold.nii.gz
+  sub-131S5148  (1 session(s), 1 acquisition(s))
+      ses-01 / run-01  date=20130418  -> sub-131S5148_ses-01_task-rest_run-01_bold.nii.gz
+
+
+=== SUBJECTS WITH MULTIPLE ACQUISITIONS ===
+Total: 35 subjects
+
+AD  sub-002S5018: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130516  -> sub-002S5018_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20131118  -> sub-002S5018_ses-02_task-rest_run-01_bold.nii.gz
+AD  sub-019S4477: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20120807  -> sub-019S4477_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130213  -> sub-019S4477_ses-02_task-rest_run-01_bold.nii.gz
+AD  sub-019S4549: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20121030  -> sub-019S4549_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130313  -> sub-019S4549_ses-02_task-rest_run-01_bold.nii.gz
+AD  sub-130S4730: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20121219  -> sub-130S4730_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130612  -> sub-130S4730_ses-02_task-rest_run-01_bold.nii.gz
+AD  sub-130S4982: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130426  -> sub-130S4982_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20131025  -> sub-130S4982_ses-02_task-rest_run-01_bold.nii.gz
+CN_Final  sub-010S4442: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20121203  -> sub-010S4442_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130510  -> sub-010S4442_ses-02_task-rest_run-01_bold.nii.gz
+EMCI  sub-012S4128: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20120306  -> sub-012S4128_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130805  -> sub-012S4128_ses-02_task-rest_run-01_bold.nii.gz
+EMCI  sub-031S2018: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20110131  -> sub-031S2018_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20110627  -> sub-031S2018_ses-02_task-rest_run-01_bold.nii.gz
+EMCI  sub-031S2233: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20110613  -> sub-031S2233_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120105  -> sub-031S2233_ses-02_task-rest_run-01_bold.nii.gz
+LMCI  sub-002S4171: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20110808  -> sub-002S4171_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120229  -> sub-002S4171_ses-02_task-rest_run-01_bold.nii.gz
+LMCI  sub-006S4363: 2 acquisitions across 1 session(s)
+      ses-01 / run-01  date=20120619  -> sub-006S4363_ses-01_task-rest_run-01_bold.nii.gz  [DUPLICATE CONTENT]
+      ses-01 / run-02  date=20120619  -> sub-006S4363_ses-01_task-rest_run-02_bold.nii.gz  [DUPLICATE CONTENT]
+LMCI  sub-031S4203: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20120320  -> sub-031S4203_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120926  -> sub-031S4203_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-002S0729: 3 acquisitions across 3 session(s)
+      ses-01 / run-01  date=20110816  -> sub-002S0729_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120807  -> sub-002S0729_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20130816  -> sub-002S0729_ses-03_task-rest_run-01_bold.nii.gz
+MCI  sub-002S1155: 3 acquisitions across 3 session(s)
+      ses-01 / run-01  date=20111222  -> sub-002S1155_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20121220  -> sub-002S1155_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20140109  -> sub-002S1155_ses-03_task-rest_run-01_bold.nii.gz
+MCI  sub-002S1268: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20110413  -> sub-002S1268_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120322  -> sub-002S1268_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-002S4229: 3 acquisitions across 3 session(s)
+      ses-01 / run-01  date=20120410  -> sub-002S4229_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120918  -> sub-002S4229_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20131016  -> sub-002S4229_ses-03_task-rest_run-01_bold.nii.gz
+MCI  sub-002S4799: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130110  -> sub-002S4799_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130702  -> sub-002S4799_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-006S4713: 3 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20121128  -> sub-006S4713_ses-01_task-rest_run-01_bold.nii.gz
+      ses-01 / run-02  date=20121128  -> sub-006S4713_ses-01_task-rest_run-02_bold.nii.gz
+      ses-02 / run-01  date=20130612  -> sub-006S4713_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-013S1186: 3 acquisitions across 3 session(s)
+      ses-01 / run-01  date=20110223  -> sub-013S1186_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120216  -> sub-013S1186_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20130129  -> sub-013S1186_ses-03_task-rest_run-01_bold.nii.gz
+MCI  sub-013S2389: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20120215  -> sub-013S2389_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20121010  -> sub-013S2389_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-018S2180: 4 acquisitions across 4 session(s)
+      ses-01 / run-01  date=20110726  -> sub-018S2180_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20120127  -> sub-018S2180_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20130102  -> sub-018S2180_ses-03_task-rest_run-01_bold.nii.gz
+      ses-04 / run-01  date=20140107  -> sub-018S2180_ses-04_task-rest_run-01_bold.nii.gz
+MCI  sub-053S0919: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130104  -> sub-053S0919_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20131205  -> sub-053S0919_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-053S4813: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130110  -> sub-053S4813_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130731  -> sub-053S4813_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-100S4556: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20121126  -> sub-100S4556_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130606  -> sub-100S4556_ses-02_task-rest_run-01_bold.nii.gz
+MCI  sub-130S4294: 3 acquisitions across 3 session(s)
+      ses-01 / run-01  date=20120515  -> sub-130S4294_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20121127  -> sub-130S4294_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20131115  -> sub-130S4294_ses-03_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-002S5230: 3 acquisitions across 3 session(s)
+      ses-01 / run-01  date=20130627  -> sub-002S5230_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130923  -> sub-002S5230_ses-02_task-rest_run-01_bold.nii.gz
+      ses-03 / run-01  date=20140124  -> sub-002S5230_ses-03_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-002S5256: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130715  -> sub-002S5256_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20140219  -> sub-002S5256_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-006S5153: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130422  -> sub-006S5153_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130802  -> sub-006S5153_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-012S5121: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130315  -> sub-012S5121_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130628  -> sub-012S5121_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-012S5157: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130516  -> sub-012S5157_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130919  -> sub-012S5157_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-013S5137: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130419  -> sub-013S5137_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130724  -> sub-013S5137_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-019S5242: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130702  -> sub-019S5242_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20140117  -> sub-019S5242_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-053S5202: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130607  -> sub-053S5202_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130920  -> sub-053S5202_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-100S5280: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130816  -> sub-100S5280_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20150929  -> sub-100S5280_ses-02_task-rest_run-01_bold.nii.gz
+SMC_Final  sub-130S5142: 2 acquisitions across 2 session(s)
+      ses-01 / run-01  date=20130419  -> sub-130S5142_ses-01_task-rest_run-01_bold.nii.gz
+      ses-02 / run-01  date=20130726  -> sub-130S5142_ses-02_task-rest_run-01_bold.nii.gz

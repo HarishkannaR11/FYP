@@ -1,0 +1,67 @@
+=== AD PREPROCESSING VALIDATION REPORT ===
+
+Independent post-hoc validation -- re-derived from the actual raw BIDS input,
+the actual derivative output, AND the preserved Nipype intermediate files
+(pre-smoothing motion-corrected volume, saved design matrix, motion .mcdat)
+for each of the 25 AD acquisitions. Command exit code 0 was NOT treated as
+sufficient evidence -- every check below is a direct computation on the actual
+data.
+
+Total acquisitions validated: 25
+PASS: 20  WARN: 5  FAIL: 0
+
+METHODOLOGY TRANSPARENCY NOTE: the spatial-coverage check went through two
+corrections during this validation, both caught by inspecting actual data
+rather than trusting the first automated result:
+  1. Initial version compared the final residual output (eres.nii.gz) against
+     the raw input using a positive-intensity Otsu threshold -- this flagged
+     19/25 runs with large apparent "coverage loss" (up to 37 slices). Direct
+     inspection of the output's actual values showed it is a zero-mean,
+     SIGNED GLM residual (min -519278, max 490717, mean ~-0.06) -- exactly
+     correct after intercept removal, but a magnitude-domain threshold is the
+     wrong tool for it. This was a validation-method artifact, not a pipeline
+     defect.
+  2. A revised residual-domain check used per-voxel temporal VARIANCE with an
+     Otsu threshold -- this produced an even more alarming "0-3/48 slices
+     with modeled signal" for 5 runs. Direct inspection showed the variance
+     distribution is extremely heavy-tailed (median ~42,000 vs max ~1.1
+     billion in one case) -- a handful of extreme-variance edge/artifact
+     voxels dragged Otsu's threshold far above the bulk of real tissue
+     voxels. Per-slice MEDIAN variance (robust to outliers) showed a normal,
+     sensible brain-shaped profile all along. Switched to a robust
+     percentile-of-median-based threshold, which resolved this.
+  Both corrections are documented here, not hidden, per the instruction to
+  verify actual outputs rather than trust a single computed number.
+
+--- Per-check summary ---
+  nan_inf_check: PASS=25 WARN=0 FAIL=0
+  smoothing_check: PASS=25 WARN=0 FAIL=0
+  temporal_check: PASS=25 WARN=0 FAIL=0
+  spatial_coverage_check: PASS=20 WARN=5 FAIL=0
+
+--- High-motion runs flagged (informational only, NOT excluded) ---
+  sub-013S5071 ses-01
+  sub-019S5019 ses-01
+  sub-130S4641 ses-01
+  sub-130S4660 ses-01
+
+--- Runs with WARN or FAIL and why ---
+  sub-006S4153 ses-01: WARN -- smoothing roughness reduction: 46.1% (before=10000.5 after=5386.0); temporal mean magnitude in-brain: input=180908.50809198534 output=0.01689418740325489; MAGNITUDE-DOMAIN check (input vs pre-GLM smoothed): slices with coverage in input but not smoothed intermediate: [10]; RESIDUAL-DOMAIN (variance-based) slices with modeled signal: 30/48; input brain slices: 34/48; residual variance low in [37, 38, 39, 40, 41, 42, 43]; median tSNR in-brain: input=55.298748433263654 output(residual-based)=1.326793794480181e-05
+  sub-006S4192 ses-01: WARN -- smoothing roughness reduction: 45.2% (before=11072.5 after=6071.2); temporal mean magnitude in-brain: input=225582.4646374518 output=0.024778821897723957; MAGNITUDE-DOMAIN check (input vs pre-GLM smoothed): slices with coverage in input but not smoothed intermediate: [42]; RESIDUAL-DOMAIN (variance-based) slices with modeled signal: 42/48; input brain slices: 38/48; residual variance low in [41]; median tSNR in-brain: input=62.978367605943276 output(residual-based)=1.523004715233098e-05
+  sub-019S4477 ses-02: WARN -- smoothing roughness reduction: 45.8% (before=70103.8 after=38014.2); temporal mean magnitude in-brain: input=1481649.8749076065 output=0.11590814833875088; MAGNITUDE-DOMAIN check (input vs pre-GLM smoothed): slices with coverage in input but not smoothed intermediate: [8]; RESIDUAL-DOMAIN (variance-based) slices with modeled signal: 48/48; input brain slices: 35/48; median tSNR in-brain: input=52.43708288848734 output(residual-based)=1.3004341565548697e-05
+  sub-130S4641 ses-01: WARN -- smoothing roughness reduction: 43.2% (before=90414.6 after=51311.1); temporal mean magnitude in-brain: input=1841424.4957496852 output=0.35862241235742953; MAGNITUDE-DOMAIN check (input vs pre-GLM smoothed): slices with coverage in input but not smoothed intermediate: [6]; RESIDUAL-DOMAIN (variance-based) slices with modeled signal: 48/48; input brain slices: 38/48; median tSNR in-brain: input=37.23495252496077 output(residual-based)=2.067197235973577e-05; FLAGGED: high motion run (max_trans > 1.0mm)
+  sub-130S4990 ses-01: WARN -- smoothing roughness reduction: 43.1% (before=94609.8 after=53875.2); temporal mean magnitude in-brain: input=2027227.0303064487 output=0.08577816864721112; MAGNITUDE-DOMAIN check (input vs pre-GLM smoothed): slices with coverage in input but not smoothed intermediate: [5]; RESIDUAL-DOMAIN (variance-based) slices with modeled signal: 46/48; input brain slices: 37/48; median tSNR in-brain: input=25.513310583819727 output(residual-based)=3.65426020437667e-06
+
+--- What could NOT be independently verified ---
+  - Orientation/geometric correctness of motion correction beyond header/shape
+    agreement (no ground-truth motion trajectory exists to compare against;
+    AFNI 3dvolreg's own internal displacement estimates were used as reported,
+    not independently re-derived by a second algorithm).
+  - Whether 6mm is the SCIENTIFICALLY correct smoothing kernel for this data --
+    only that measurable smoothing occurred, consistent with the requested value.
+  - Absolute correctness of the GLM regression coefficients (only verified that
+    the design matrix contains the intended, real regressors, and that the
+    residual's temporal mean was reduced as expected for a correctly-specified GLM).
+  - Any run whose Nipype working-directory intermediates were unavailable could
+    only be checked at the input/output level, not the full pipeline (flagged
+    per-run in the notes column where this applied).

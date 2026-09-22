@@ -1,0 +1,43 @@
+=== FS-FAST 4D MOTION CORRECTION VERIFICATION ===
+
+--- 1. FreeSurfer Version ---
+Status: NOT INSTALLED. (As per your previous instruction: "Do NOT download or install the 15GB FreeSurfer package yet").
+Analysis below is based on the official FreeSurfer 7.x architecture.
+
+--- 2. FS-FAST Version/Tools ---
+FS-FAST relies on the overarching `preproc-sess` script, which orchestrates several binaries:
+- `mkanalysis-sess`
+- `selxavg3-sess`
+- `mri_fwhm` (smoothing)
+- `mc-afni2` (motion correction)
+
+--- 3. Actual 4D Motion-Correction Mechanism ---
+When `preproc-sess -motion` is invoked, FS-FAST does NOT use a native FreeSurfer-developed registration tool for 4D fMRI data. 
+Instead, FS-FAST explicitly relies on an included wrapper script called `mc-afni2` (and historically `mcflirt`).
+
+--- 4. External Dependencies ---
+`mc-afni2` is literally a bundled compilation of AFNI's `3dvolreg`. 
+Therefore, FS-FAST explicitly uses **AFNI** as an external dependency to perform 4D motion correction. While it is bundled with the FreeSurfer installation so you don't have to install AFNI separately, it is fundamentally an AFNI command.
+
+--- 5. Nipype Compatibility ---
+- Does Nipype have a dedicated `mc-afni2` interface? NO.
+- Can Nipype invoke `preproc-sess`? YES, via `nipype.interfaces.freesurfer.PreprocSess`.
+- **CRITICAL ISSUE**: `PreprocSess` requires a full FS-FAST directory structure, including a completed FreeSurfer `recon-all` subject directory (which requires a T1w image). It cannot process raw BIDS NIfTI files directly in an isolated BOLD-only mode.
+- Can a custom Nipype `CommandLine` node safely invoke `mc-afni2` directly? YES. It could take a 4D BOLD file and output a motion-corrected file.
+
+--- 6. Exact Proposed Command ---
+If we bypassed `preproc-sess` and used the bundled AFNI tool directly:
+`mc-afni2 --i <input_bold.nii.gz> --targ <target_volume> --o <output_bold.nii.gz> --mcdat <motion_params.dat>`
+
+--- 7. Expected Inputs/Outputs ---
+- Input: 4D BOLD NIfTI.
+- Output: 4D BOLD NIfTI (motion corrected) + motion parameter text file.
+
+--- 8. CONCLUSION ---
+Status: **NOT SUPPORTED (WITHOUT AFNI/FSL or T1w)**.
+
+1. **No Pure FreeSurfer Solution**: Standard FS-FAST cannot perform 4D BOLD motion correction natively without relying on its bundled AFNI (`3dvolreg`) dependency. 
+2. **No Isolated preproc-sess**: The official FS-FAST script (`preproc-sess`) strictly requires a T1w-derived `recon-all` subject directory to function. It is incapable of running BOLD-only preprocessing directly on 4D BIDS NIfTI files.
+3. **Framework Violation**: Using `mc-afni2` directly violates your explicit rule: "Do NOT silently substitute FSL, fMRIPrep, ANTs, or another preprocessing framework" (as `mc-afni2` is literally AFNI).
+
+Because standard FS-FAST inherently depends on AFNI for 4D motion correction and inherently requires T1w `recon-all` data for its `preproc-sess` wrapper, a purely native, BOLD-only, 4D FreeSurfer preprocessing pipeline is architecturally impossible.

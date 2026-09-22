@@ -1,0 +1,45 @@
+{
+  "subject": "sub-019S4549",
+  "session": "ses-01",
+  "run": "run-01",
+  "group": "AD",
+  "atlas": "Brainnetome246",
+  "atlas_source_resolution": "2mm",
+  "target_resolution": "4mm",
+  "interpolation": "nearest_neighbor",
+  "roi_count_expected": 246,
+  "roi_count_present": 246,
+  "bold_source": "/mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/sub-019S4549_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz",
+  "bold_dimensions": [
+    46,
+    55,
+    46,
+    135
+  ],
+  "bold_voxel_size_mm": [
+    4.0,
+    4.0,
+    4.0
+  ],
+  "bold_TR_s": 3.0,
+  "roi_timeseries_shape": [
+    135,
+    246
+  ],
+  "zero_voxel_rois": 0,
+  "rois_lt5_voxels": 0,
+  "rois_lt10_voxels": 0,
+  "nan_in_matrix": false,
+  "inf_in_matrix": false,
+  "zero_variance_rois": 0,
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "nibabel": "5.4.2",
+    "nilearn": "0.14.1",
+    "pandas": "3.0.5"
+  },
+  "processing_date_utc": "2026-09-22T16:44:49.153601+00:00",
+  "grid_match_bold": true,
+  "labels_1_246_present_in_native_atlas": true
+}

@@ -1,0 +1,14 @@
+=== Spatial roughness / smoothness comparison ===
+Subject: sub-002S5018 ses-01 (representative AD acquisition)
+
+Metric 1: Forman et al. (1995) spatial-derivative FWHM estimate (mm)
+  raw (unprocessed source)      : 6.461 mm
+  after mc-afni2 (motion-corr)  : 6.494 mm
+  after mri_fwhm 6mm smoothing  : 10.843 mm
+
+Metric 2: mean |spatial gradient| normalized by mean intensity (dimensionless, lower = smoother)
+  raw                            : 0.05724
+  after mc-afni2                : 0.05691
+  after mri_fwhm 6mm smoothing  : 0.03193
+
+CONCLUSION: smoothed output is CONFIRMED SMOOTHER than raw/motion-corrected by both independent metrics.

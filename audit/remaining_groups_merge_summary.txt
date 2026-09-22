@@ -1,0 +1,34 @@
+--- REMAINING GROUPS DRY RUN SUMMARY ---
+
+AD
+--
+Total JSON: 25
+Existing NIfTI: 0
+Recovered and ready to merge: 19
+Requires LMCI conversion: 0
+RAW Unavailable (AD): 6
+
+EMCI
+----
+Total JSON: 30
+Existing NIfTI: 15
+Recovered and ready to merge: 15
+Requires LMCI conversion: 0
+RAW Unavailable (AD): 0
+
+LMCI
+----
+Total JSON: 23
+Existing NIfTI: 0
+Recovered and ready to merge: 19
+Requires LMCI conversion: 4
+RAW Unavailable (AD): 0
+
+CN_Final
+--------
+Total JSON: 30
+Existing NIfTI: 19
+Recovered and ready to merge: 11
+Requires LMCI conversion: 0
+RAW Unavailable (AD): 0
+

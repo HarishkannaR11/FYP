@@ -1,0 +1,17 @@
+========================================================
+DATA AUDIT SUMMARY
+========================================================
+1. Where dataset is located: c:\Users\krish\FYP\NIfTI\NIfTI
+2. Folder structure: diagnostic_group/subject_id/
+3. Total subjects: 131
+4. Total fMRI acquisitions (JSON or NIfTI records): 176
+5. Total valid NIfTI files: 73
+   (Valid 4D fMRI: 73)
+6. Total JSON-only records: 103
+7. Total compressed archives (with matching image inside): 0
+8. Total invalid/empty NIfTI files: 0
+9. Total subjects with multiple acquisitions: 36
+10. Total subjects with T1w: 0 (Without: 131)
+11. Missing metadata fields across JSONs: PhaseEncodingDirection, TotalReadoutTime, SliceTiming
+12. Records needing manual review: 41
+========================================================

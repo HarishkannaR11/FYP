@@ -1,0 +1,237 @@
+=== PART 1: BIDS JSON SIDECAR -- BROAD KEYWORD SCAN ===
+
+Total BOLD JSON sidecars scanned: 175
+Keys matching keywords found:
+  SliceThickness: example values = ['3.313', '3.31']
+  SpacingBetweenSlices: example values = ['3.313', '3.31']
+  PixelBandwidth: example values = ['2109.7', '1886', '1887']
+
+Confirms: no multiband/SMS metadata and no slice-timing-adjacent field of any kind exists in the BIDS JSON layer, beyond what was already audited.
+
+=== PART 2: DICOM -- REPRESENTATIVE SERIES ACROSS ALL PROTOCOL SIGNATURES ===
+
+Total DICOM series folders available: 172
+Distinct protocol signatures (TR, NumberOfSlicesMR, SoftwareVersion): 17
+
+--- Signature TR=3000 nSlices=48 SW=['3.2.1', '3.2.1.1']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 388 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 197 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['2.6.3', '2.6.3.7']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 486 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 200 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['4.1.1', '4.1.1.1']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 465 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['4.1.2', '4.1.2.0']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 465 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['3.2.1', '3.2.1.0']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 465 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['4.1.2', '4.1.2.1']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 465 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=2999.99853515625 nSlices=48 SW=['3.2.3', '3.2.3.0']  (AD.zip) ---
+  RepetitionTime (0018,0080): 2999.99853515625
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 487 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 201 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=2999.99780273437 nSlices=48 SW=['3.2.3', '3.2.3.0']  (AD.zip) ---
+  RepetitionTime (0018,0080): 2999.99780273437
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 458 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['4.1.3', '4.1.3.0']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 465 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['3.2.2', '3.2.2.0']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 461 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000.99829101562 nSlices=48 SW=['3.2.1', '3.2.1.1']  (AD.zip) ---
+  RepetitionTime (0018,0080): 3000.99829101562
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 475 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 202 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['2.6.3', '2.6.3.4']  (CN_Final.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 337 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 82 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3000 nSlices=48 SW=['2.6.3', '2.6.3.6']  (CN_Final.zip) ---
+  RepetitionTime (0018,0080): 3000
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 479 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 200 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=2250 nSlices=36 SW=['2.6.3', '2.6.3.4']  (EMCI.zip) ---
+  RepetitionTime (0018,0080): 2250
+  NumberOfSlicesMR (2001,1018): 36
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 338 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 82 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3003.92602539062 nSlices=48 SW=['3.2.3', '3.2.3.1']  (SMC_Final.zip) ---
+  RepetitionTime (0018,0080): 3003.92602539062
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 475 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 202 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=3001.00073242187 nSlices=48 SW=['3.2.3', '3.2.3.1']  (SMC_Final.zip) ---
+  RepetitionTime (0018,0080): 3001.00073242187
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 475 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 202 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+--- Signature TR=2999.99780273437 nSlices=48 SW=['3.2.3', '3.2.3.1']  (SMC_Final.zip) ---
+  RepetitionTime (0018,0080): 2999.99780273437
+  NumberOfSlicesMR (2001,1018): 48
+  NumberOfTemporalPositions (0020,0105): 140
+  TriggerTime present: True | AcquisitionTime present: True
+  SliceTiming-equivalent standard tag present: NO (not a DICOM standard tag for classic single-frame MR)
+  Total elements scanned: 458 (including private groups 2001/2005)
+  No tag with a DECODABLE name matching {'multiband', 'simultaneous', 'multi-band', 'sms', 'accel'} was found in this header.
+  CAVEAT: 199 private-group elements in this header have NO decodable name (pydicom's dictionary does not define them for this vendor/tag) -- their semantic meaning is undocumented. Their values were NOT inspected or pattern-matched to guess at a multiband factor, per instruction not to infer. This means a multiband indicator hidden in an undocumented private tag cannot be fully ruled out by this method alone -- only that no NAMED tag indicates one.
+
+=== PART 3: SAME-VOLUME, DIFFERENT-SLICE TIMING CHECK (broadened) ===
+
+For each representative series below, gathered a sample of instances, grouped by TemporalPositionIdentifier (volume index), and compared AcquisitionTime / TriggerTime across DIFFERENT slices within the SAME volume. This is a direct read of real recorded values -- no inference.
+
+--- Signature TR=3000 nSlices=48 (AD.zip) : volume TPI=78, 3 different slices sampled ---
+    Distinct AcquisitionTime values across these slices: 1 -> ['142025.25']
+    Distinct TriggerTime values across these slices: 1 -> ['231000']
+    RESULT: IDENTICAL across all sampled slices in this volume -- confirms no per-slice temporal granularity in this series either.
+
+--- AD.zip ADNI/019_S_4252/Resting_State_fMRI/2012-04-24_12_59_17.0/I300352 : not enough same-volume samples in this window, skipped ---
+--- Signature TR=3000 nSlices=48 (AD.zip) : volume TPI=47, 3 different slices sampled ---
+    Distinct AcquisitionTime values across these slices: 1 -> ['123300.71']
+    Distinct TriggerTime values across these slices: 1 -> ['138000']
+    RESULT: IDENTICAL across all sampled slices in this volume -- confirms no per-slice temporal granularity in this series either.
+
+--- Signature TR=3000 nSlices=48 (AD.zip) : volume TPI=68, 5 different slices sampled ---
+    Distinct AcquisitionTime values across these slices: 1 -> ['130327.42']
+    Distinct TriggerTime values across these slices: 1 -> ['201000']
+    RESULT: IDENTICAL across all sampled slices in this volume -- confirms no per-slice temporal granularity in this series either.
+
+--- AD.zip ADNI/018_S_4696/Resting_State_fMRI/2012-11-01_11_17_01.0/I343571 : not enough same-volume samples in this window, skipped ---
+--- Signature TR=3000 nSlices=48 (AD.zip) : volume TPI=135, 3 different slices sampled ---
+    Distinct AcquisitionTime values across these slices: 1 -> ['142326.53']
+    Distinct TriggerTime values across these slices: 1 -> ['402000']
+    RESULT: IDENTICAL across all sampled slices in this volume -- confirms no per-slice temporal granularity in this series either.
+
+--- AD.zip ADNI/019_S_5019/Resting_State_fMRI/2013-05-14_13_24_11.0/I372471 : not enough same-volume samples in this window, skipped ---
+--- Signature TR=2999.99780273437 nSlices=48 (AD.zip) : volume TPI=98, 44 different slices sampled ---
+    Distinct AcquisitionTime values across these slices: 1 -> ['153354.67']
+    Distinct TriggerTime values across these slices: 1 -> ['290998.99']
+    RESULT: IDENTICAL across all sampled slices in this volume -- confirms no per-slice temporal granularity in this series either.
+
+--- Signature TR=3000 nSlices=48 (AD.zip) : volume TPI=118, 3 different slices sampled ---
+    Distinct AcquisitionTime values across these slices: 1 -> ['133502.65']
+    Distinct TriggerTime values across these slices: 1 -> ['351000']
+    RESULT: IDENTICAL across all sampled slices in this volume -- confirms no per-slice temporal granularity in this series either.
+
+=== FINAL CONCLUSION ===
+
+1. Slice acquisition timing: NOT FOUND. No standard DICOM tag (e.g. no Frame Acquisition DateTime / enhanced-MR per-frame timing -- this dataset uses classic single-frame DICOM, not enhanced multi-frame) and no private tag encodes a distinct acquisition instant per slice. AcquisitionTime and TriggerTime are confirmed IDENTICAL across every slice within a volume, re-confirmed here across multiple protocol signatures/software versions, not just the two series checked previously.
+
+2. Slice acquisition order: NOT ESTABLISHED. (2001,100A) Slice Number MR gives a per-slice SPATIAL index (confirmed present), but no tag anywhere (standard or private) explicitly states the TEMPORAL acquisition sequence/scheme (ascending, descending, interleaved, etc.). Per instruction, spatial slice number was NOT used to infer or guess temporal order.
+
+3. Multiband/SMS factor: NOT FOUND among NAMED tags. No standard or private tag with a decodable name matching multiband/SMS/acceleration/simultaneous terminology was present in any of the checked representative headers (scanned ALL elements per header, typically 150-200+ including private groups 2001/2005). Combined with MRAcquisitionType=2D and the acquisition era/protocol (ADNI2 resting-state fMRI, Philips Achieva/Intera, 2011-2015 -- multiband EPI was not yet standard for this class of study), this is consistent with conventional (non-multiband) 2D EPI. HOWEVER: each header also contains dozens of private-group elements with NO decodable name (pydicom has no dictionary entry for them for this vendor) -- their raw values were deliberately NOT inspected or pattern-matched to guess a multiband factor, per instruction not to infer. So this is reported as 'no NAMED tag found', not as a definitive proof that no multiband factor exists anywhere in the file.
+
+4. Number of slices: FOUND AND RELIABLE. (2001,1018) Number of Slices MR (Philips private) is present and consistent with the Z-dimension of the converted NIfTI for every matched run (48 or 36, depending on protocol).
+
+5. Repetition time: FOUND, WITH A KNOWN CAVEAT ALREADY DOCUMENTED. (0018,0080) RepetitionTime is present in every header, but for the TR~6.02s protocol group it under-reports the true effective volume TR by ~2x (independently confirmed via AcquisitionDuration/NumberOfTemporalPositions and empirical AcquisitionTime deltas between consecutive volumes, per the prior DICOM audit). BIDS's own RepetitionTime value is the reliable one to use for these runs.
+
+No SliceTiming values were inferred, derived, or fabricated at any point in this audit.
+
+SLICE_TIMING_NOT_RECOVERABLE

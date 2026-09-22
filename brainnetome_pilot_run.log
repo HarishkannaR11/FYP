@@ -1,0 +1,169 @@
+
+======================================================================
+STEP 1 -- LOCATE AND VERIFY EXACT INPUT
+======================================================================
+PREPROCESSED BOLD (input): /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/sub-019S4549_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz
+exists: True
+ATLAS (input, read-only):  /mnt/c/Users/krish/FYP/atlases/Brainnetome246/BN_Atlas_246_2mm.nii.gz
+ATLAS LUT (input, read-only): /mnt/c/Users/krish/FYP/atlases/Brainnetome246/BN_Atlas_246_LUT.txt
+
+======================================================================
+STEP 2 -- INSPECT PREPROCESSED BOLD
+======================================================================
+  dimensions: (46, 55, 46, 135)
+  n_volumes: 135
+  voxel_size_mm: (4.0, 4.0, 4.0)
+  TR_s: 3.0
+  orientation: RAS
+  datatype: float32
+  NaN_count: 0
+  Inf_count: 0
+  affine:
+    [  4.   0.   0. -90.]
+    [   0.    4.    0. -126.]
+    [  0.   0.   4. -72.]
+    [0. 0. 0. 1.]
+
+  T (actual number of volumes, read from file, not assumed) = 135
+
+======================================================================
+STEP 3 -- INSPECT BRAINNETOME ATLAS (original, untouched)
+======================================================================
+  dimensions: (91, 109, 91)
+  voxel_size_mm: (2.0, 2.0, 2.0)
+  orientation: LAS
+  n_unique_labels_incl_0: 247
+  min_label: 0.0
+  max_label: 246.0
+  atlas affine:
+    [-2.  0.  0. 90.]
+    [   0.    2.    0. -126.]
+    [  0.   0.   2. -72.]
+    [0. 0. 0. 1.]
+
+  CHECKED (not assumed): labels 1-246 all present in native atlas: True
+  missing labels: []
+  unexpected/extra labels: []
+
+======================================================================
+STEP 4 -- ALIGN BRAINNETOME TO CURRENT BOLD GRID (nearest-neighbor only)
+======================================================================
+  atlas reoriented (lossless, zero interpolation) to: RAS before resampling
+  interpolation used: NEAREST NEIGHBOR ONLY (nilearn resample_img, interpolation='nearest')
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/brainnetome_246_4mm.nii.gz
+
+  aligned atlas dimensions: (46, 55, 46)  (BOLD: (46, 55, 46))
+  aligned atlas affine == BOLD affine: True
+  original 2mm atlas file modified: NO (only read)
+
+======================================================================
+STEP 5 -- INDEPENDENT ATLAS VALIDATION (recomputed from the saved aligned file)
+======================================================================
+  reloaded aligned atlas unique labels (incl 0): 247  min=0  max=246
+  ROIs present (>0 voxels): 246 / 246
+  zero-voxel ROIs: 0
+  ROIs <5 voxels: 0
+  ROIs <10 voxels: 0
+  min=10  median=68.0  max=186
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/roi_voxel_counts.csv
+
+  BRAINNETOME COVERAGE (actual, not assumed): 246 / 246
+
+======================================================================
+STEP 6 -- EXTRACT ROI TIME SERIES (mean signal per ROI, no re-resampling)
+======================================================================
+
+======================================================================
+STEP 7 -- SAVE ROI MATRIX (T x 246)
+======================================================================
+  T (from BOLD) = 135,  ROI count = 246  ->  expected shape = (135, 246)
+  actual roi_ts.shape = (135, 246)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/roi_timeseries.csv
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/roi_timeseries.npy  shape=(135, 246) dtype=float64
+
+======================================================================
+STEP 8 -- ROI TIME-SERIES QC
+======================================================================
+  ROIs with any NaN: 0
+  ROIs with any Inf: 0
+  ROIs with zero variance: 0
+  ROIs with extremely low variance (<1st pct of nonzero SDs): 3
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/roi_timeseries_qc.csv
+
+======================================================================
+STEP 9 -- MATRIX VALIDATION (independent re-check)
+======================================================================
+  matrix shape: (135, 246)
+  rows == BOLD volumes (135): True
+  columns == 246: True
+  matrix contains NaN: False  (n ROIs with NaN column: 0)
+  matrix contains Inf: False
+  completely empty ROIs (0 voxels -> NaN column): 0
+
+======================================================================
+STEP 10 -- METADATA + REPORT
+======================================================================
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/brainnetome_metadata.json
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome/brainnetome_qc_report.md
+
+======================================================================
+FINAL REPORT
+======================================================================
+SUBJECT:
+sub-019S4549
+
+SESSION:
+ses-01
+
+RUN:
+run-01
+
+BOLD dimensions:
+(46, 55, 46, 135)
+
+BOLD voxel size:
+(4.0, 4.0, 4.0)
+
+BOLD volumes:
+135
+
+Brainnetome original resolution:
+(2.0, 2.0, 2.0) ((91, 109, 91))
+
+Brainnetome aligned resolution:
+(4.0, 4.0, 4.0) ((46, 55, 46))
+
+Atlas/BOLD grid match:
+YES
+
+Interpolation:
+Nearest Neighbor
+
+Brainnetome coverage:
+246 / 246
+
+Zero-voxel ROIs:
+0
+
+ROIs <5 voxels:
+0
+
+ROIs <10 voxels:
+0
+
+ROI matrix:
+135 x 246
+
+NaN:
+0 ROI column(s) (False)
+
+Inf:
+0
+
+Zero-variance ROIs:
+0
+
+Output directory:
+/mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/brainnetome
+
+BRAINNETOME_PILOT_DONE

@@ -1,0 +1,24 @@
+# Exclude massive folders as per user instruction
+
+NIfTI/
+BIDS/
+
+# Exclude FreeSurfer stuff
+/home/harish/fyp-neuro-env
+/home/harish/freesurfer
+/usr/local/freesurfer
+license.txt
+.license
+
+# Cache and temp files
+__pycache__/
+*.pyc
+.gemini/
+scratch/
+.DS_Store
+
+
+pilot_preprocessing/
+pilot_preprocessing_2mm4mm/
+tools/
+

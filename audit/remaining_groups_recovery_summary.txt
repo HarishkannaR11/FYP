@@ -1,0 +1,44 @@
+AD
+----
+Total JSON acquisitions: 25
+Existing NIfTI: 0
+Already recovered NIfTI: 19
+Missing NIfTI: 6
+Raw DICOM available: 0
+Raw DICOM unavailable: 6
+Ambiguous: 0
+Proposed for conversion: 0
+
+EMCI
+----
+Total JSON acquisitions: 30
+Existing NIfTI: 15
+Already recovered NIfTI: 15
+Missing NIfTI: 0
+Raw DICOM available: 0
+Raw DICOM unavailable: 0
+Ambiguous: 0
+Proposed for conversion: 0
+
+LMCI
+----
+Total JSON acquisitions: 23
+Existing NIfTI: 0
+Already recovered NIfTI: 19
+Missing NIfTI: 4
+Raw DICOM available: 4
+Raw DICOM unavailable: 0
+Ambiguous: 0
+Proposed for conversion: 4
+
+CN_Final
+----
+Total JSON acquisitions: 30
+Existing NIfTI: 19
+Already recovered NIfTI: 11
+Missing NIfTI: 0
+Raw DICOM available: 0
+Raw DICOM unavailable: 0
+Ambiguous: 0
+Proposed for conversion: 0
+

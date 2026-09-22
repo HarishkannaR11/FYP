@@ -1,0 +1,267 @@
+
+======================================================================
+STEP 0 -- INPUT AUDIT (read-only)
+======================================================================
+INPUT NIFTI PATH: /mnt/c/Users/krish/FYP/BIDS/sub-019S4549/ses-01/func/sub-019S4549_ses-01_task-rest_run-01_bold.nii.gz
+JSON PATH: /mnt/c/Users/krish/FYP/BIDS/sub-019S4549/ses-01/func/sub-019S4549_ses-01_task-rest_run-01_bold.json
+SUBJECT: sub-019S4549   SESSION: ses-01
+EXACTLY ONE 4D NIfTI WILL BE PROCESSED. No other subject will be touched.
+
+  n_dimensions: 4
+  dim_x: 64
+  dim_y: 64
+  dim_z: 48
+  n_timepoints: 140
+  TR_seconds: 3.0
+  voxel_size_mm: [3.3125, 3.3125, 3.3125]
+  orientation: LAS
+  datatype_on_disk: int16
+  min: 0.0
+  max: 4134844.25
+  mean: 364101.1875
+  NaN_count: 0
+  Inf_count: 0
+  is_4D: True
+  affine:
+    [ -3.3125    0.       -0.      105.83672]
+    [  -0.        3.3125   -0.     -103.3516]
+    [  0.        0.        3.3125  -77.96124]
+    [0. 0. 0. 1.]
+  JSON RepetitionTime: 3   SliceTiming present: False
+
+INPUT AUDIT: VALID -- proceeding.
+
+======================================================================
+STEP 1 -- DISCARD FIRST 5 VOLUMES
+======================================================================
+  140 -> 135 volumes (removed exactly 5, VERIFIED)
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-discard5_bold.nii.gz  shape=(64, 64, 48, 135)  dtype=float32
+
+======================================================================
+STEP 2 -- SLICE-TIMING CORRECTION
+======================================================================
+  SLICE_TIMING = NOT_PERFORMED
+  REASON = SliceTiming metadata unavailable
+  No slice order assumed or fabricated.
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-no-stc_bold.nii.gz  shape=(64, 64, 48, 135)  dtype=float32
+
+======================================================================
+STEP 3 -- HEAD-MOTION CORRECTION / REALIGNMENT
+======================================================================
+  tool: FreeSurfer FS-FAST mc-afni2, rigid-body 6-DOF
+  reference: first retained volume (frame 0 of the post-discard series)
+  command: mc-afni2 --i /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-no-stc_bold.nii.gz --o /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-mc_bold.nii.gz --mcdat /home/harish/fyp_work/pilot_preprocessing_2mm4mm/motion/mc-afni2_motion.mcdat
+  exit code: 0
+  motion parameters (native mc-afni2 values): /home/harish/fyp_work/pilot_preprocessing_2mm4mm/motion/motion_parameters.tsv
+  FD (Power 2012): mean=0.3597mm  median=0.3116mm  max=1.3931mm
+  No volumes censored based on motion.
+
+======================================================================
+STEP 4 -- MNI NORMALIZATION
+======================================================================
+  MNI normalization was performed directly from BOLD/EPI because no T1w anatomical image was available.
+  reference template: MNI152NLin6Asym res-02 desc-brain_T1w -- /home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+  this is the SAME grid the Brainnetome-246 atlas ships on (verified in Step 13), so the
+  registration transform is applied with output geometry = this template directly: a
+  single interpolation step lands the data exactly on the 2mm analysis/atlas grid, with
+  no separate downstream resampling operation (avoids a second interpolation pass).
+  registration-reference brain mask (Otsu + largest component + fill): 44226 voxels
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/meanBOLD_brain_reference.nii.gz  shape=(64, 64, 48)  dtype=float32
+  registration: ANTsPy ants.registration(type_of_transform='SyN') -- rigid+affine+SyN
+  registration completed in 6.2s
+  forward transform saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/xfm_fwd_0_tmpj4ya_dyx1Warp.nii.gz
+  forward transform saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/xfm_fwd_1_tmpj4ya_dyx0GenericAffine.mat
+  inverse transform saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/xfm_inv_0_tmpj4ya_dyx0GenericAffine.mat
+  inverse transform saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/xfm_inv_1_tmpj4ya_dyx1InverseWarp.nii.gz
+  applying transform to all volumes of the motion-corrected 4D series...
+  4D resampling into MNI (2mm, single-shot) completed in 47.8s
+  desc-mni_bold: shape=(91, 109, 91, 135)  voxel=(2.0, 2.0, 2.0)  orientation=RAS
+  affine finite=True  det=8.0000
+  VERIFIED in MNI space (grid + affine identical to template): True
+  registration QC figure: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/qc/registration_qc.png
+
+======================================================================
+STEP 5 -- 2mm ISOTROPIC RESAMPLING
+======================================================================
+  target grid: (91, 109, 91), 2x2x2mm, MNI152NLin6Asym res-02 affine (Brainnetome-compatible)
+  desc-mni_bold is already on this exact grid: True
+  NO additional resampling performed -- the registration in Step 4 already targeted this grid in a single interpolation pass. desc-mni2mm_bold.nii.gz is byte-identical to desc-mni_bold.nii.gz (verified below), saved separately only to satisfy the requested output structure.
+  file size match confirms identical content: True
+  dimensions: (91, 109, 91, 135)
+  voxel size: (2.0, 2.0, 2.0)
+  VERIFIED: voxel size == 2 x 2 x 2 mm
+  affine:
+    [  2.   0.  -0. -90.]
+    [   0.    2.   -0. -126.]
+    [  0.   0.   2. -72.]
+    [0. 0. 0. 1.]
+  analysis brain mask (template brain mask AND non-constant BOLD coverage): 228483 voxels
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/brain_mask_mni2mm.nii.gz  shape=(91, 109, 91)  dtype=uint8
+  MNI coverage: BOLD covers 100.0% of the template brain mask
+
+======================================================================
+STEP 6 -- SPATIAL SMOOTHING (4 mm FWHM)
+======================================================================
+  nilearn.image.smooth_img(fwhm=4.0) -- fwhm argument is FWHM in mm, NOT sigma
+  equivalent Gaussian sigma = FWHM/(2*sqrt(2*ln2)) = 1.6986 mm
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-smooth4mm_bold.nii.gz  shape=(91, 109, 91, 135)
+
+======================================================================
+STEP 7 -- LINEAR DETRENDING
+======================================================================
+  removed intercept + linear trend per voxel (OLS); voxel temporal mean restored
+  LINEAR ONLY -- no quadratic term
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-detrend_bold.nii.gz  shape=(91, 109, 91, 135)  dtype=float32
+  timepoints before=135 after=135  VERIFIED unchanged: True
+
+======================================================================
+STEP 8 -- NUISANCE REGRESSION
+======================================================================
+  Friston-24 built: 6 motion + 6 derivatives + 6 squares + 6 squared-derivatives = 24 columns (VERIFIED, not reduced)
+
+  WM / CSF regressors:
+    No T1w anatomical image exists, so subject-specific tissue segmentation is impossible.
+    Testing published template tissue priors (no segmentation fabricated).
+    source priors: MNI152NLin2009cAsym res-02 label-WM/CSF probseg
+    inter-template transform: /home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_from-MNI152NLin2009cAsym_mode-image_xfm.h5  size=204735104 bytes  usable=True
+    xfm_inverse failed: ValueError: Cannot invert transform 0 (/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_from-MNI152NLin2009c
+    empirical check -- correlation of transformed WM prior with template T1w intensity:
+      no_transform: r = +0.7840
+      xfm_forward: r = +0.6912
+    selected mapping: no_transform  (r=+0.7840)
+    priors resampled directly onto the target template grid (no inter-template warp applied)
+    WM eroded 1x (avoid GM partial volume); CSF NOT eroded (ventricular sheet too thin)
+    WM: prob>=0.95 -> 24210 vox; after 1x erosion and brain-mask intersection -> 4707 vox
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/wm_mask_mni2mm.nii.gz  shape=(91, 109, 91)  dtype=uint8
+    CSF: prob>=0.9 -> 923 vox; after 0x erosion and brain-mask intersection -> 111 vox
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/transforms/csf_mask_mni2mm.nii.gz  shape=(91, 109, 91)  dtype=uint8
+    (these masks are already at the 2mm analysis resolution -- no separate extraction-
+     resolution workaround needed here, unlike the earlier 4mm/6mm pilot)
+    global signal: mean over 228483 brain-mask voxels
+      corr(WM, GlobalSignal)  = +0.7878  (n_vox=4707)
+      corr(CSF, GlobalSignal) = +0.2618  (n_vox=111)
+      WM usable: True    CSF usable: True  (thresholds: >=20 vox, |r| with GS < 0.98)
+
+  nuisance design matrix: 135 timepoints x 28 regressors
+  columns: intercept, friston24_trans_x, friston24_trans_y, friston24_trans_z, friston24_roll, friston24_pitch, friston24_yaw, friston24_trans_x_deriv, friston24_trans_y_deriv, friston24_trans_z_deriv, friston24_roll_deriv, friston24_pitch_deriv, friston24_yaw_deriv, friston24_trans_x_sq, friston24_trans_y_sq, friston24_trans_z_sq, friston24_roll_sq, friston24_pitch_sq, friston24_yaw_sq, friston24_trans_x_deriv_sq, friston24_trans_y_deriv_sq, friston24_trans_z_deriv_sq, friston24_roll_deriv_sq, friston24_pitch_deriv_sq, friston24_yaw_deriv_sq, white_matter, csf, global_signal
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-nuisance_bold.nii.gz  shape=(91, 109, 91, 135)  dtype=float32
+
+======================================================================
+STEP 9 -- TEMPORAL BAND-PASS FILTER (0.01 - 0.10 Hz)
+======================================================================
+  TR (from NIfTI header): 3.0s;  Nyquist: 0.166667 Hz
+  0 < 0.01 < 0.1 < 0.166667: True
+  2nd-order Butterworth, zero-phase (filtfilt)
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/intermediate/desc-bandpass_bold.nii.gz  shape=(91, 109, 91, 135)  dtype=float32
+  timepoints: 135 (unchanged)
+
+======================================================================
+STEP 10 -- FINAL PILOT BOLD
+======================================================================
+  /home/harish/fyp_work/pilot_preprocessing_2mm4mm/final/sub-019S4549_ses-01_task-rest_run-01_desc-2mm4mm_pilot_bold.nii.gz
+  shape=(91, 109, 91, 135)  voxel=(2.0, 2.0, 2.0)  TR=3.0  dtype=float32
+  finite=True  non-empty=True  NaN=False  Inf=False
+
+======================================================================
+STEP 13 -- BRAINNETOME-246 COMPATIBILITY TEST
+======================================================================
+  atlas: /mnt/c/Users/krish/FYP/atlases/Brainnetome246/BN_Atlas_246_2mm.nii.gz
+  atlas dims=(91, 109, 91)  voxel=(2.0, 2.0, 2.0)  orientation=LAS
+  atlas affine:
+    [-2.  0.  0. 90.]
+    [   0.    2.    0. -126.]
+    [  0.   0.   2. -72.]
+    [0. 0. 0. 1.]
+  labels 1-246 all present: True
+  labels with 0 voxels at native atlas resolution: []
+
+  atlas grid vs final-BOLD grid identical WITHOUT any reorientation: False
+  atlas orientation: LAS  vs BOLD orientation: RAS
+  after LOSSLESS canonical reorientation (exact array flip, zero interpolation), atlas grid identical to final-BOLD grid: True
+  per-label voxel counts unchanged after reorientation (confirms zero interpolation loss): True
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/brainnetome/Brainnetome246_on_BOLD_grid.nii.gz  shape=(91, 109, 91)  dtype=int16
+  resampling method used: NONE (exact lossless reorientation only -- grids matched after removing the L/R array-index flip; no interpolation of any kind was applied)
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/brainnetome/Brainnetome246_on_BOLD_grid.nii.gz
+
+======================================================================
+STEP 14 -- ROI VOXEL COVERAGE
+======================================================================
+  status thresholds used: ZERO_VOXELS=0, VERY_SMALL=1-9, ADEQUATE>=10  (documented, not arbitrary)
+  ROIs with 0 voxels: 0
+  ROIs with 1-2 voxels: 0
+  ROIs VERY_SMALL (1-9 voxels): 0
+  ROIs ADEQUATE (>=10 voxels): 246
+  min voxel count: 86   max: 1534   median: 538.5   mean: 571.87
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/brainnetome/roi_voxel_counts.csv
+
+======================================================================
+STEP 15 -- ROI TIME-SERIES EXTRACTION
+======================================================================
+  coverage check (require 0 ROIs with zero voxels): PASS
+  extracted 135 timepoints x 246 ROIs
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/brainnetome/brainnetome_246_timeseries.tsv
+
+======================================================================
+STEP 17 -- VISUAL QC (all stages, same subject)
+======================================================================
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/qc/before_after_mean.png
+  visual inspection (brain coverage / distortion / dropout / alignment), not sharpness-based:
+    A: motion-corrected native: nonzero-voxel fraction=1.000, mean=364303.0, max=3718662.8
+    B: MNI normalized (2mm): nonzero-voxel fraction=0.744, mean=494109.9, max=3532368.2
+    C: 2mm BOLD (post-verify): nonzero-voxel fraction=0.744, mean=494109.9, max=3532368.2
+    D: 4mm-FWHM smoothed: nonzero-voxel fraction=0.822, mean=447150.0, max=2991584.0
+    E: final pilot BOLD: nonzero-voxel fraction=0.253, mean=1329048.1, max=2992002.2
+    B vs template brain-mask overlap: 100.0% (from Step 5) -- no evident dropout or missing brain regions at this coverage level
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/qc/roi_coverage.png
+
+======================================================================
+QC METRICS
+======================================================================
+  original_n_volumes: 140
+  retained_n_volumes: 135
+  TR_seconds: 3.0
+  original_voxel_size_mm: [3.3125, 3.3125, 3.3125]
+  final_voxel_size_mm: [2.0, 2.0, 2.0]
+  mean_FD_mm: 0.35972469574460425
+  max_FD_mm: 1.3931205060746947
+  mean_DVARS: 16418.17833926073
+  mean_tSNR: 93.10643005371094
+  tSNR_stage: 4mm-smoothed pre-detrend (non-zero-mean stage)
+  mean_brain_signal: 1329048.125
+  mean_global_signal: 1329049.625
+  n_brainnetome_rois: 246
+  rois_zero_voxels: 0
+  min_roi_voxel_count: 86
+  median_roi_voxel_count: 538.5
+  max_roi_voxel_count: 1534
+  WM_regressor: PERFORMED (template prior)
+  CSF_regressor: PERFORMED (template prior)
+  slice_timing_correction: NOT_PERFORMED
+  roi_coverage_check: PASS
+
+======================================================================
+STEP 18 -- COMPARISON WITH 4mm/6mm PAPER PILOT
+======================================================================
+  paper (4mm/6mm) pilot final output: /mnt/c/Users/krish/FYP/pilot_preprocessing/final/sub-019S4549_ses-01_task-rest_run-01_desc-paperpreproc_bold.nii.gz  exists=True
+  paper pilot grid: (46, 55, 46) voxel=(4.0, 4.0, 4.0)
+  Brainnetome coverage on the PAPER (4mm/6mm) grid, computed fresh via the same nearest-neighbor procedure: 0-voxel ROIs=0  very-small (1-9 vox)=0  min=10  max=186  median=68.0
+  saved: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/qc/pilot_comparison.md
+
+======================================================================
+REPRODUCIBILITY
+======================================================================
+  pipeline_config.json written  (runtime 216.3s)
+  report written: /home/harish/fyp_work/pilot_preprocessing_2mm4mm/PILOT_2MM_4MM_REPORT.md
+
+======================================================================
+PILOT COMPLETE
+======================================================================
+No ALFF, ReHo, Degree Centrality or Functional Connectivity was performed.
+PILOT STATUS: SUCCESS
+FINAL BOLD: /mnt/c/Users/krish/FYP/pilot_preprocessing_2mm4mm/final/sub-019S4549_ses-01_task-rest_run-01_desc-2mm4mm_pilot_bold.nii.gz
+BRAINNETOME ATLAS (aligned): /mnt/c/Users/krish/FYP/pilot_preprocessing_2mm4mm/brainnetome/Brainnetome246_on_BOLD_grid.nii.gz
+ROI COVERAGE: 246 / 246 nonzero  (0 zero-voxel ROIs)
+ROI TIME SERIES: /mnt/c/Users/krish/FYP/pilot_preprocessing_2mm4mm/brainnetome/brainnetome_246_timeseries.tsv
+Copying completed run from WSL-native scratch (/home/harish/fyp_work/pilot_preprocessing_2mm4mm) to Windows-visible location (/mnt/c/Users/krish/FYP/pilot_preprocessing_2mm4mm)...
+PILOT_2MM4MM_DONE
+Copy complete. All outputs available under: /mnt/c/Users/krish/FYP/pilot_preprocessing_2mm4mm
