@@ -1,6 +1,6 @@
 # FYP rs-fMRI Pipeline — Methodology Summary
 
-**Project:** Comorbidity-Aware Meta-Bayesian Multi-Attention Transformer for Discovering Shared Alzheimer's Disease Progression Representations Across Multiple Resting-State fMRI Biomarkers
+**Project:** Assessment of Alzheimer's Disease Progression Using Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI
 **Scope of this summary:** condensed version of `FYP_RSFMRI_COMPLETE_METHODOLOGY_AND_IMPLEMENTATION.md`. Only implemented, verified work is described. Where evidence is insufficient, this document says "Not explicitly documented/verified in the current implementation" rather than guessing.
 **Date:** 2026-09-22
 

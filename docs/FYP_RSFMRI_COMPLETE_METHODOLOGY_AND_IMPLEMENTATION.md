@@ -1,4 +1,4 @@
-# Comorbidity-Aware Meta-Bayesian Multi-Attention Transformer for Alzheimer's Disease Progression Prediction using Resting-State fMRI Biomarkers
+# Assessment of Alzheimer's Disease Progression Using Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI
 
 ## Complete Methodology and Implementation Documentation
 

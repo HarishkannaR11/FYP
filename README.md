@@ -1,4 +1,4 @@
-# Comorbidity-Aware Meta-Bayesian Multi-Attention Transformer for Alzheimer's Disease Progression Prediction (rs-fMRI)
+# Assessment of Alzheimer's Disease Progression Using Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI
 
 Final Year Project. Predicting Alzheimer's disease progression
 (CN → SMC → EMCI → LMCI → MCI → AD) from resting-state fMRI (rs-fMRI)
