@@ -1,0 +1,96 @@
+{
+  "subject": "sub-130S4982",
+  "session": "ses-02",
+  "run": "run-01",
+  "group": "AD",
+  "bold_source": "/mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-130S4982/ses-02/run-01/sub-130S4982_ses-02_task-rest_run-01_desc-preproc_bold.nii.gz",
+  "bold_volumes": 135,
+  "TR_s": 3.0,
+  "n_rois": 246,
+  "brain_mask_voxels": 28549,
+  "alff": {
+    "method": "Zang et al. 2007 (mean amplitude in band)",
+    "band_hz": [
+      0.01,
+      0.1
+    ],
+    "note": "BOLD already band-pass filtered 0.01-0.10Hz during preprocessing",
+    "level": "voxel-wise, then ROI mean"
+  },
+  "reho": {
+    "method": "Kendall's coefficient of concordance (KCC)",
+    "neighborhood": "27-voxel (3x3x3 incl. center)",
+    "reason": "Zang et al. 2004 original definition; AFNI 3dReHo / DPARSF default",
+    "boundary_handling": "K varies per voxel; restricted to in-mask neighbors",
+    "level": "voxel-wise, then ROI mean"
+  },
+  "fc": {
+    "method": "Pearson correlation",
+    "matrix": "246x246",
+    "self_connections": "included in matrix diagonal, excluded from DC/strength",
+    "negative_correlations": "retained",
+    "thresholding": "none (full weighted matrix)",
+    "binarization": "none"
+  },
+  "degree_centrality": {
+    "definition": "DC_i = sum_{j!=i} FC[i,j]",
+    "weighted": true,
+    "signed": true,
+    "threshold": null,
+    "self_connection_excluded": true
+  },
+  "fc_regional_strength": {
+    "definition": "mean_{j!=i} FC[i,j]",
+    "signed": true,
+    "absolute_value": false
+  },
+  "regional_matrix": {
+    "csv_shape": [
+      246,
+      5
+    ],
+    "npy_shape": [
+      246,
+      4
+    ],
+    "features": [
+      "ALFF",
+      "ReHo",
+      "DC",
+      "FC_Strength"
+    ],
+    "row_order": "ROI 1..246"
+  },
+  "consistency_checks": {
+    "brainnetome_labels_1_246": true,
+    "roi_ts_shape_ok": true,
+    "alff_len_ok": true,
+    "reho_len_ok": true,
+    "dc_len_ok": true,
+    "fc_strength_len_ok": true,
+    "fc_shape_ok": true,
+    "regional_matrix_shape_ok": true,
+    "roi_ids_match_across_files": true,
+    "no_duplicate_roi_ids": true,
+    "no_missing_roi_ids": true,
+    "no_nan_in_biomarkers": true,
+    "no_inf_in_biomarkers": true,
+    "fc_symmetric": true,
+    "fc_diagonal_is_1": true,
+    "dc_matches_fc_definition": true,
+    "fc_strength_matches_fc_definition": true,
+    "dc_max_abs_diff": 0.0,
+    "fc_strength_max_abs_diff": 0.0
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "scipy": "1.15.3",
+    "nibabel": "5.4.2",
+    "nilearn": "0.14.1",
+    "pandas": "3.0.5"
+  },
+  "processing_date_utc": "2026-09-23T10:25:30.293725+00:00",
+  "preprocessing_modified": false,
+  "atlas_modified": false
+}

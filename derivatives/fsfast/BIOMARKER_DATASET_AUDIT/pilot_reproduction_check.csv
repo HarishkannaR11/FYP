@@ -1,0 +1,9 @@
+quantity,max_abs_diff,match_1e-10,match_1e-6
+"ALFF (246,)",0.0,True,True
+"ReHo (246,)",0.0,True,True
+FC (246x246),3.3306690738754696e-16,True,True
+"DegreeCentrality (246,)",1.7763568394002505e-15,True,True
+"ROI timeseries (T,246)",0.0,True,True
+"FC strength (246,)",9.8879238130678e-17,True,True
+"ROI voxel counts (246,)",0.0,True,True
+aligned atlas labels,0.0,True,True

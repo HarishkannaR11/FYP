@@ -1,0 +1,25 @@
+
+========================================================================
+DRY-RUN DISCOVERY
+========================================================================
+eligible (preprocessing COMPLETED, not excluded): 165
+skipped (preproc FAILED or audit exclusion):      8
+  AD        : 25
+  CN_Final  : 27
+  EMCI      : 29
+  LMCI      : 21
+  MCI       : 32
+  SMC_Final : 31
+
+validating BOLD inputs (this reads every file)...
+  checked 25/165
+  checked 50/165
+  checked 75/165
+  checked 100/165
+  checked 125/165
+  checked 150/165
+
+BOLD validation: 165 valid, 0 invalid
+
+manifest written: /mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/processing_manifest.csv
+DISCOVERY_DONE

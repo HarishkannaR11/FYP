@@ -1,0 +1,500 @@
+
+========================================================================
+DATASET BIOMARKER GENERATION (MAX_WORKERS=1)
+========================================================================
+scratch: /home/harish/fyp_work/biomarkers_scratch  (atlas staged locally)
+acquisitions in scope: 165
+[1/165] AD/sub-002S5018/ses-01/run-01  already complete and validated -- skipping
+[2/165] AD/sub-002S5018/ses-02/run-01  already complete and validated -- skipping
+[3/165] AD/sub-006S4153/ses-01/run-01  already complete and validated -- skipping
+[4/165] AD/sub-006S4192/ses-01/run-01  already complete and validated -- skipping
+
+========================================================================
+DATASET BIOMARKER GENERATION (MAX_WORKERS=1)
+========================================================================
+scratch: /home/harish/fyp_work/biomarkers_scratch  (atlas staged locally)
+acquisitions in scope: 165
+[5/165] AD/sub-013S5071/ses-01/run-01  already complete and validated -- skipping
+Traceback (most recent call last):
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 1203, in <module>
+    mode_run(sys.argv[2] if len(sys.argv) > 2 else None)
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 977, in mode_run
+[1/165] AD/sub-002S5018/ses-01/run-01  already complete and validated -- skipping
+    save_state(state)
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 795, in save_state
+    os.replace(tmp, STATE_JSON)
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/biomarker_processing_state.json.tmp' -> '/mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/biomarker_processing_state.json'
+[2/165] AD/sub-002S5018/ses-02/run-01  already complete and validated -- skipping
+[3/165] AD/sub-006S4153/ses-01/run-01  already complete and validated -- skipping
+[4/165] AD/sub-006S4192/ses-01/run-01  already complete and validated -- skipping
+[5/165] AD/sub-013S5071/ses-01/run-01  already complete and validated -- skipping
+[6/165] AD/sub-018S4696/ses-01/run-01  already complete and validated -- skipping
+[7/165] AD/sub-018S4733/ses-01/run-01  already complete and validated -- skipping
+[8/165] AD/sub-019S4252/ses-01/run-01  already complete and validated -- skipping
+[9/165] AD/sub-019S4477/ses-01/run-01  already complete and validated -- skipping
+[10/165] AD/sub-019S4477/ses-02/run-01  already complete and validated -- skipping
+[11/165] AD/sub-019S4549/ses-01/run-01  already complete and validated -- skipping
+[12/165] AD/sub-019S4549/ses-02/run-01  already complete and validated -- skipping
+[13/165] AD/sub-019S5012/ses-01/run-01  already complete and validated -- skipping
+[14/165] AD/sub-019S5019/ses-01/run-01  already complete and validated -- skipping
+[15/165] AD/sub-031S4024/ses-01/run-01  already complete and validated -- skipping
+[16/165] AD/sub-130S4641/ses-01/run-01  already complete and validated -- skipping
+[17/165] AD/sub-130S4660/ses-01/run-01  already complete and validated -- skipping
+[18/165] AD/sub-130S4730/ses-01/run-01  already complete and validated -- skipping
+[19/165] AD/sub-130S4730/ses-02/run-01  already complete and validated -- skipping
+[20/165] AD/sub-130S4971/ses-01/run-01  already complete and validated -- skipping
+[21/165] AD/sub-130S4982/ses-01/run-01  already complete and validated -- skipping
+[22/165] AD/sub-130S4982/ses-02/run-01  already complete and validated -- skipping
+[23/165] AD/sub-130S4984/ses-01/run-01  already complete and validated -- skipping
+[24/165] AD/sub-130S4990/ses-01/run-01  already complete and validated -- skipping
+[25/165] AD/sub-130S5059/ses-01/run-01  already complete and validated -- skipping
+[26/165] CN_Final/sub-002S1261/ses-01/run-01  already complete and validated -- skipping
+[27/165] CN_Final/sub-002S1280/ses-01/run-01  already complete and validated -- skipping
+[28/165] CN_Final/sub-006S4357/ses-01/run-01  already complete and validated -- skipping
+[29/165] CN_Final/sub-010S4345/ses-01/run-01  already complete and validated -- skipping
+[30/165] CN_Final/sub-010S4442/ses-01/run-01  already complete and validated -- skipping
+[31/165] CN_Final/sub-010S4442/ses-02/run-01  already complete and validated -- skipping
+[32/165] CN_Final/sub-012S4545/ses-01/run-01  already complete and validated -- skipping
+[33/165] CN_Final/sub-012S4643/ses-01/run-01  already complete and validated -- skipping
+[34/165] CN_Final/sub-013S4579/ses-01/run-01  already complete and validated -- skipping
+[35/165] CN_Final/sub-013S4616/ses-01/run-01  already complete and validated -- skipping
+[36/165] CN_Final/sub-018S4257/ses-01/run-01  already complete and validated -- skipping
+[37/165] CN_Final/sub-018S4313/ses-01/run-01  already complete and validated -- skipping
+[38/165] CN_Final/sub-018S4349/ses-01/run-01  already complete and validated -- skipping
+[39/165] CN_Final/sub-018S4399/ses-01/run-01  already complete and validated -- skipping
+[40/165] CN_Final/sub-018S4400/ses-01/run-01  already complete and validated -- skipping
+[41/165] CN_Final/sub-019S4367/ses-01/run-01  already complete and validated -- skipping
+[42/165] CN_Final/sub-019S4835/ses-01/run-01  already complete and validated -- skipping
+[43/165] CN_Final/sub-031S4021/ses-01/run-01  already complete and validated -- skipping
+[44/165] CN_Final/sub-031S4032/ses-01/run-01  already complete and validated -- skipping
+[45/165] CN_Final/sub-031S4218/ses-01/run-01  already complete and validated -- skipping
+[46/165] CN_Final/sub-031S4474/ses-01/run-01  already complete and validated -- skipping
+[47/165] CN_Final/sub-031S4496/ses-01/run-01  already complete and validated -- skipping
+[48/165] CN_Final/sub-129S0778/ses-01/run-01  already complete and validated -- skipping
+[49/165] CN_Final/sub-129S4422/ses-01/run-01  already complete and validated -- skipping
+[50/165] CN_Final/sub-130S4343/ses-01/run-01  already complete and validated -- skipping
+[51/165] CN_Final/sub-130S4352/ses-01/run-01  already complete and validated -- skipping
+[52/165] CN_Final/sub-136S0186/ses-01/run-01  already complete and validated -- skipping
+[53/165] EMCI/sub-002S2010/ses-01/run-01  already complete and validated -- skipping
+[54/165] EMCI/sub-002S2073/ses-01/run-01  already complete and validated -- skipping
+[55/165] EMCI/sub-002S4237/ses-01/run-01  already complete and validated -- skipping
+[56/165] EMCI/sub-002S4447/ses-01/run-01  already complete and validated -- skipping
+[57/165] EMCI/sub-002S4473/ses-01/run-01  already complete and validated -- skipping
+[58/165] EMCI/sub-006S4679/ses-01/run-01  already complete and validated -- skipping
+[59/165] EMCI/sub-012S4012/ses-01/run-01  already complete and validated -- skipping
+[60/165] EMCI/sub-012S4128/ses-01/run-01  already complete and validated -- skipping
+[61/165] EMCI/sub-012S4128/ses-02/run-01  already complete and validated -- skipping
+[62/165] EMCI/sub-012S4188/ses-01/run-01  already complete and validated -- skipping
+[63/165] EMCI/sub-012S4849/ses-01/run-01  already complete and validated -- skipping
+[64/165] EMCI/sub-012S4987/ses-01/run-01  already complete and validated -- skipping
+[65/165] EMCI/sub-013S2324/ses-01/run-01  already complete and validated -- skipping
+[66/165] EMCI/sub-013S4268/ses-01/run-01  already complete and validated -- skipping
+[67/165] EMCI/sub-013S4791/ses-01/run-01  already complete and validated -- skipping
+[68/165] EMCI/sub-013S4917/ses-01/run-01  already complete and validated -- skipping
+[69/165] EMCI/sub-018S2133/ses-01/run-01  already complete and validated -- skipping
+[70/165] EMCI/sub-018S2138/ses-01/run-01  already complete and validated -- skipping
+[71/165] EMCI/sub-018S2155/ses-01/run-01  already complete and validated -- skipping
+[72/165] EMCI/sub-018S4597/ses-01/run-01  already complete and validated -- skipping
+[73/165] EMCI/sub-018S4809/ses-01/run-01  already complete and validated -- skipping
+[74/165] EMCI/sub-018S4868/ses-01/run-01  already complete and validated -- skipping
+[75/165] EMCI/sub-019S4285/ses-01/run-01  already complete and validated -- skipping
+[76/165] EMCI/sub-019S4680/ses-01/run-01  already complete and validated -- skipping
+[77/165] EMCI/sub-031S2018/ses-01/run-01  already complete and validated -- skipping
+[78/165] EMCI/sub-031S2018/ses-02/run-01  already complete and validated -- skipping
+[79/165] EMCI/sub-031S2022/ses-01/run-01  already complete and validated -- skipping
+[80/165] EMCI/sub-031S2233/ses-01/run-01  already complete and validated -- skipping
+[81/165] EMCI/sub-031S2233/ses-02/run-01  already complete and validated -- skipping
+[82/165] LMCI/sub-002S4171/ses-02/run-01  already complete and validated -- skipping
+[83/165] LMCI/sub-002S4219/ses-01/run-01  already complete and validated -- skipping
+[84/165] LMCI/sub-002S4251/ses-01/run-01  already complete and validated -- skipping
+[85/165] LMCI/sub-002S4521/ses-01/run-01  already complete and validated -- skipping
+[86/165] LMCI/sub-002S4654/ses-01/run-01  already complete and validated -- skipping
+[87/165] LMCI/sub-002S4746/ses-01/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[88/165] LMCI/sub-006S4346/ses-01/run-01  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[89/165] LMCI/sub-006S4363/ses-01/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[90/165] LMCI/sub-006S4515/ses-01/run-01  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[91/165] LMCI/sub-013S4595/ses-01/run-01  OK in 2.3s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[92/165] LMCI/sub-018S4889/ses-01/run-01  OK in 2.5s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[93/165] LMCI/sub-019S4293/ses-01/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[94/165] LMCI/sub-019S4548/ses-01/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[95/165] LMCI/sub-031S4194/ses-01/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[96/165] LMCI/sub-031S4203/ses-01/run-01  OK in 3.2s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[97/165] LMCI/sub-031S4203/ses-02/run-01  OK in 7.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[98/165] LMCI/sub-031S4590/ses-01/run-01  OK in 7.5s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[99/165] LMCI/sub-130S4250/ses-01/run-01  OK in 4.5s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[100/165] LMCI/sub-130S4542/ses-01/run-01  OK in 6.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[101/165] LMCI/sub-130S4605/ses-01/run-01  OK in 16.5s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[102/165] LMCI/sub-130S4817/ses-01/run-01  OK in 4.3s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+
+========================================================================
+DATASET BIOMARKER GENERATION (MAX_WORKERS=1)
+========================================================================
+scratch: /home/harish/fyp_work/biomarkers_scratch  (atlas staged locally)
+acquisitions in scope: 165
+[1/165] AD/sub-002S5018/ses-01/run-01  already complete and validated -- skipping
+[2/165] AD/sub-002S5018/ses-02/run-01  already complete and validated -- skipping
+[3/165] AD/sub-006S4153/ses-01/run-01  already complete and validated -- skipping
+[4/165] AD/sub-006S4192/ses-01/run-01  already complete and validated -- skipping
+[5/165] AD/sub-013S5071/ses-01/run-01  already complete and validated -- skipping
+[6/165] AD/sub-018S4696/ses-01/run-01  already complete and validated -- skipping
+[7/165] AD/sub-018S4733/ses-01/run-01  already complete and validated -- skipping
+[8/165] AD/sub-019S4252/ses-01/run-01  already complete and validated -- skipping
+[9/165] AD/sub-019S4477/ses-01/run-01  already complete and validated -- skipping
+[10/165] AD/sub-019S4477/ses-02/run-01  already complete and validated -- skipping
+[11/165] AD/sub-019S4549/ses-01/run-01  already complete and validated -- skipping
+[12/165] AD/sub-019S4549/ses-02/run-01  already complete and validated -- skipping
+[13/165] AD/sub-019S5012/ses-01/run-01  already complete and validated -- skipping
+[14/165] AD/sub-019S5019/ses-01/run-01  already complete and validated -- skipping
+[15/165] AD/sub-031S4024/ses-01/run-01  already complete and validated -- skipping
+[16/165] AD/sub-130S4641/ses-01/run-01  already complete and validated -- skipping
+[17/165] AD/sub-130S4660/ses-01/run-01  already complete and validated -- skipping
+[18/165] AD/sub-130S4730/ses-01/run-01  already complete and validated -- skipping
+[19/165] AD/sub-130S4730/ses-02/run-01  already complete and validated -- skipping
+[20/165] AD/sub-130S4971/ses-01/run-01  already complete and validated -- skipping
+[21/165] AD/sub-130S4982/ses-01/run-01  already complete and validated -- skipping
+[22/165] AD/sub-130S4982/ses-02/run-01  already complete and validated -- skipping
+[23/165] AD/sub-130S4984/ses-01/run-01  already complete and validated -- skipping
+[24/165] AD/sub-130S4990/ses-01/run-01  already complete and validated -- skipping
+[25/165] AD/sub-130S5059/ses-01/run-01  already complete and validated -- skipping
+[26/165] CN_Final/sub-002S1261/ses-01/run-01  already complete and validated -- skipping
+[27/165] CN_Final/sub-002S1280/ses-01/run-01  already complete and validated -- skipping
+[28/165] CN_Final/sub-006S4357/ses-01/run-01  already complete and validated -- skipping
+
+========================================================================
+DATASET BIOMARKER GENERATION (MAX_WORKERS=1)
+========================================================================
+scratch: /home/harish/fyp_work/biomarkers_scratch  (atlas staged locally)
+acquisitions in scope: 165
+[29/165] CN_Final/sub-010S4345/ses-01/run-01  already complete and validated -- skipping
+[1/165] AD/sub-002S5018/ses-01/run-01  already complete and validated -- skipping
+[30/165] CN_Final/sub-010S4442/ses-01/run-01  already complete and validated -- skipping
+[2/165] AD/sub-002S5018/ses-02/run-01  already complete and validated -- skipping
+[31/165] CN_Final/sub-010S4442/ses-02/run-01  already complete and validated -- skipping
+[3/165] AD/sub-006S4153/ses-01/run-01  already complete and validated -- skipping
+[32/165] CN_Final/sub-012S4545/ses-01/run-01  already complete and validated -- skipping
+[4/165] AD/sub-006S4192/ses-01/run-01  already complete and validated -- skipping
+[33/165] CN_Final/sub-012S4643/ses-01/run-01  already complete and validated -- skipping
+[5/165] AD/sub-013S5071/ses-01/run-01  already complete and validated -- skipping
+[34/165] CN_Final/sub-013S4579/ses-01/run-01  already complete and validated -- skipping
+[6/165] AD/sub-018S4696/ses-01/run-01  already complete and validated -- skipping
+[35/165] CN_Final/sub-013S4616/ses-01/run-01  already complete and validated -- skipping
+[7/165] AD/sub-018S4733/ses-01/run-01  already complete and validated -- skipping
+[36/165] CN_Final/sub-018S4257/ses-01/run-01  already complete and validated -- skipping
+[8/165] AD/sub-019S4252/ses-01/run-01  already complete and validated -- skipping
+[37/165] CN_Final/sub-018S4313/ses-01/run-01  already complete and validated -- skipping
+[9/165] AD/sub-019S4477/ses-01/run-01  already complete and validated -- skipping
+[38/165] CN_Final/sub-018S4349/ses-01/run-01  already complete and validated -- skipping
+[10/165] AD/sub-019S4477/ses-02/run-01  already complete and validated -- skipping
+[39/165] CN_Final/sub-018S4399/ses-01/run-01  already complete and validated -- skipping
+[11/165] AD/sub-019S4549/ses-01/run-01  already complete and validated -- skipping
+[40/165] CN_Final/sub-018S4400/ses-01/run-01  already complete and validated -- skipping
+[12/165] AD/sub-019S4549/ses-02/run-01  already complete and validated -- skipping
+[41/165] CN_Final/sub-019S4367/ses-01/run-01  already complete and validated -- skipping
+[13/165] AD/sub-019S5012/ses-01/run-01  already complete and validated -- skipping
+[42/165] CN_Final/sub-019S4835/ses-01/run-01  already complete and validated -- skipping
+[14/165] AD/sub-019S5019/ses-01/run-01  already complete and validated -- skipping
+[43/165] CN_Final/sub-031S4021/ses-01/run-01  already complete and validated -- skipping
+[15/165] AD/sub-031S4024/ses-01/run-01  already complete and validated -- skipping
+[44/165] CN_Final/sub-031S4032/ses-01/run-01  already complete and validated -- skipping
+[16/165] AD/sub-130S4641/ses-01/run-01  already complete and validated -- skipping
+[45/165] CN_Final/sub-031S4218/ses-01/run-01  already complete and validated -- skipping
+[17/165] AD/sub-130S4660/ses-01/run-01  already complete and validated -- skipping
+[46/165] CN_Final/sub-031S4474/ses-01/run-01  already complete and validated -- skipping
+[18/165] AD/sub-130S4730/ses-01/run-01  already complete and validated -- skipping
+[47/165] CN_Final/sub-031S4496/ses-01/run-01  already complete and validated -- skipping
+[19/165] AD/sub-130S4730/ses-02/run-01  already complete and validated -- skipping
+[48/165] CN_Final/sub-129S0778/ses-01/run-01  already complete and validated -- skipping
+[20/165] AD/sub-130S4971/ses-01/run-01  already complete and validated -- skipping
+[49/165] CN_Final/sub-129S4422/ses-01/run-01  already complete and validated -- skipping
+[21/165] AD/sub-130S4982/ses-01/run-01  already complete and validated -- skipping
+[50/165] CN_Final/sub-130S4343/ses-01/run-01  already complete and validated -- skipping
+[22/165] AD/sub-130S4982/ses-02/run-01  already complete and validated -- skipping
+[51/165] CN_Final/sub-130S4352/ses-01/run-01  already complete and validated -- skipping
+[23/165] AD/sub-130S4984/ses-01/run-01  already complete and validated -- skipping
+[52/165] CN_Final/sub-136S0186/ses-01/run-01  already complete and validated -- skipping
+[24/165] AD/sub-130S4990/ses-01/run-01  already complete and validated -- skipping
+[53/165] EMCI/sub-002S2010/ses-01/run-01  already complete and validated -- skipping
+[25/165] AD/sub-130S5059/ses-01/run-01  already complete and validated -- skipping
+[54/165] EMCI/sub-002S2073/ses-01/run-01  already complete and validated -- skipping
+[26/165] CN_Final/sub-002S1261/ses-01/run-01  already complete and validated -- skipping
+[55/165] EMCI/sub-002S4237/ses-01/run-01  already complete and validated -- skipping
+[27/165] CN_Final/sub-002S1280/ses-01/run-01  already complete and validated -- skipping
+[56/165] EMCI/sub-002S4447/ses-01/run-01  already complete and validated -- skipping
+[28/165] CN_Final/sub-006S4357/ses-01/run-01  already complete and validated -- skipping
+[57/165] EMCI/sub-002S4473/ses-01/run-01  already complete and validated -- skipping
+[29/165] CN_Final/sub-010S4345/ses-01/run-01  already complete and validated -- skipping
+[58/165] EMCI/sub-006S4679/ses-01/run-01  already complete and validated -- skipping
+[30/165] CN_Final/sub-010S4442/ses-01/run-01  already complete and validated -- skipping
+[59/165] EMCI/sub-012S4012/ses-01/run-01  already complete and validated -- skipping
+[31/165] CN_Final/sub-010S4442/ses-02/run-01  already complete and validated -- skipping
+[60/165] EMCI/sub-012S4128/ses-01/run-01  already complete and validated -- skipping
+[32/165] CN_Final/sub-012S4545/ses-01/run-01  already complete and validated -- skipping
+[61/165] EMCI/sub-012S4128/ses-02/run-01  already complete and validated -- skipping
+[33/165] CN_Final/sub-012S4643/ses-01/run-01  already complete and validated -- skipping
+[62/165] EMCI/sub-012S4188/ses-01/run-01  already complete and validated -- skipping
+[34/165] CN_Final/sub-013S4579/ses-01/run-01  already complete and validated -- skipping
+[63/165] EMCI/sub-012S4849/ses-01/run-01  already complete and validated -- skipping
+[35/165] CN_Final/sub-013S4616/ses-01/run-01  already complete and validated -- skipping
+Traceback (most recent call last):
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 1203, in <module>
+    mode_run(sys.argv[2] if len(sys.argv) > 2 else None)
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 977, in mode_run
+[64/165] EMCI/sub-012S4987/ses-01/run-01  already complete and validated -- skipping
+    save_state(state)
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 795, in save_state
+    os.replace(tmp, STATE_JSON)
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/biomarker_processing_state.json.tmp' -> '/mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/biomarker_processing_state.json'
+[65/165] EMCI/sub-013S2324/ses-01/run-01  already complete and validated -- skipping
+[66/165] EMCI/sub-013S4268/ses-01/run-01  already complete and validated -- skipping
+[67/165] EMCI/sub-013S4791/ses-01/run-01  already complete and validated -- skipping
+[68/165] EMCI/sub-013S4917/ses-01/run-01  already complete and validated -- skipping
+[69/165] EMCI/sub-018S2133/ses-01/run-01  already complete and validated -- skipping
+[70/165] EMCI/sub-018S2138/ses-01/run-01  already complete and validated -- skipping
+[71/165] EMCI/sub-018S2155/ses-01/run-01  already complete and validated -- skipping
+[72/165] EMCI/sub-018S4597/ses-01/run-01  already complete and validated -- skipping
+[73/165] EMCI/sub-018S4809/ses-01/run-01  already complete and validated -- skipping
+[74/165] EMCI/sub-018S4868/ses-01/run-01  already complete and validated -- skipping
+[75/165] EMCI/sub-019S4285/ses-01/run-01  already complete and validated -- skipping
+[76/165] EMCI/sub-019S4680/ses-01/run-01  already complete and validated -- skipping
+[77/165] EMCI/sub-031S2018/ses-01/run-01  already complete and validated -- skipping
+[78/165] EMCI/sub-031S2018/ses-02/run-01  already complete and validated -- skipping
+[79/165] EMCI/sub-031S2022/ses-01/run-01  already complete and validated -- skipping
+[80/165] EMCI/sub-031S2233/ses-01/run-01  already complete and validated -- skipping
+[81/165] EMCI/sub-031S2233/ses-02/run-01  already complete and validated -- skipping
+[82/165] LMCI/sub-002S4171/ses-02/run-01  already complete and validated -- skipping
+[83/165] LMCI/sub-002S4219/ses-01/run-01  already complete and validated -- skipping
+[84/165] LMCI/sub-002S4251/ses-01/run-01  already complete and validated -- skipping
+[85/165] LMCI/sub-002S4521/ses-01/run-01  already complete and validated -- skipping
+[86/165] LMCI/sub-002S4654/ses-01/run-01  already complete and validated -- skipping
+[87/165] LMCI/sub-002S4746/ses-01/run-01  already complete and validated -- skipping
+[88/165] LMCI/sub-006S4346/ses-01/run-01  already complete and validated -- skipping
+[89/165] LMCI/sub-006S4363/ses-01/run-01  already complete and validated -- skipping
+[90/165] LMCI/sub-006S4515/ses-01/run-01  already complete and validated -- skipping
+[91/165] LMCI/sub-013S4595/ses-01/run-01  already complete and validated -- skipping
+[92/165] LMCI/sub-018S4889/ses-01/run-01  already complete and validated -- skipping
+[93/165] LMCI/sub-019S4293/ses-01/run-01  already complete and validated -- skipping
+[94/165] LMCI/sub-019S4548/ses-01/run-01  already complete and validated -- skipping
+[95/165] LMCI/sub-031S4194/ses-01/run-01  already complete and validated -- skipping
+[96/165] LMCI/sub-031S4203/ses-01/run-01  already complete and validated -- skipping
+[97/165] LMCI/sub-031S4203/ses-02/run-01  already complete and validated -- skipping
+[98/165] LMCI/sub-031S4590/ses-01/run-01  already complete and validated -- skipping
+[99/165] LMCI/sub-130S4250/ses-01/run-01  already complete and validated -- skipping
+[100/165] LMCI/sub-130S4542/ses-01/run-01  already complete and validated -- skipping
+[101/165] LMCI/sub-130S4605/ses-01/run-01  already complete and validated -- skipping
+[102/165] LMCI/sub-130S4817/ses-01/run-01  already complete and validated -- skipping
+[103/165] MCI/sub-002S0729/ses-02/run-01  OK in 3.4s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[104/165] MCI/sub-002S0729/ses-03/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[105/165] MCI/sub-002S1155/ses-01/run-01  OK in 2.5s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[106/165] MCI/sub-002S1155/ses-03/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[107/165] MCI/sub-002S1268/ses-01/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[108/165] MCI/sub-002S1268/ses-02/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[109/165] MCI/sub-002S4229/ses-01/run-01  OK in 3.3s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[110/165] MCI/sub-002S4229/ses-02/run-01  OK in 3.0s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[111/165] MCI/sub-002S4229/ses-03/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[112/165] MCI/sub-002S4799/ses-02/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[113/165] MCI/sub-006S4713/ses-01/run-01  OK in 3.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[114/165] MCI/sub-006S4713/ses-01/run-02  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[115/165] MCI/sub-006S4713/ses-02/run-01  OK in 2.5s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[116/165] MCI/sub-013S1186/ses-01/run-01  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[117/165] MCI/sub-013S1186/ses-02/run-01  OK in 2.5s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[118/165] MCI/sub-013S1186/ses-03/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[119/165] MCI/sub-013S2389/ses-01/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[120/165] MCI/sub-013S2389/ses-02/run-01  OK in 5.3s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[121/165] MCI/sub-018S2180/ses-01/run-01  OK in 3.4s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[122/165] MCI/sub-018S2180/ses-02/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[123/165] MCI/sub-018S2180/ses-03/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[124/165] MCI/sub-018S2180/ses-04/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[125/165] MCI/sub-053S0919/ses-01/run-01  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[126/165] MCI/sub-053S0919/ses-02/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[127/165] MCI/sub-053S4813/ses-01/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[128/165] MCI/sub-053S4813/ses-02/run-01  OK in 3.3s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[129/165] MCI/sub-100S4556/ses-01/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[130/165] MCI/sub-100S4556/ses-02/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[131/165] MCI/sub-130S4294/ses-01/run-01  OK in 3.0s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+
+========================================================================
+DATASET BIOMARKER GENERATION (MAX_WORKERS=1)
+========================================================================
+scratch: /home/harish/fyp_work/biomarkers_scratch  (atlas staged locally)
+acquisitions in scope: 165
+[1/165] AD/sub-002S5018/ses-01/run-01  already complete and validated -- skipping
+[2/165] AD/sub-002S5018/ses-02/run-01  already complete and validated -- skipping
+[3/165] AD/sub-006S4153/ses-01/run-01  already complete and validated -- skipping
+[4/165] AD/sub-006S4192/ses-01/run-01  already complete and validated -- skipping
+[5/165] AD/sub-013S5071/ses-01/run-01  already complete and validated -- skipping
+[6/165] AD/sub-018S4696/ses-01/run-01  already complete and validated -- skipping
+[7/165] AD/sub-018S4733/ses-01/run-01  already complete and validated -- skipping
+[8/165] AD/sub-019S4252/ses-01/run-01  already complete and validated -- skipping
+[9/165] AD/sub-019S4477/ses-01/run-01  already complete and validated -- skipping
+[10/165] AD/sub-019S4477/ses-02/run-01  already complete and validated -- skipping
+[11/165] AD/sub-019S4549/ses-01/run-01  already complete and validated -- skipping
+[12/165] AD/sub-019S4549/ses-02/run-01  already complete and validated -- skipping
+[13/165] AD/sub-019S5012/ses-01/run-01  already complete and validated -- skipping
+[132/165] MCI/sub-130S4294/ses-02/run-01  OK in 3.3s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[14/165] AD/sub-019S5019/ses-01/run-01  already complete and validated -- skipping
+[15/165] AD/sub-031S4024/ses-01/run-01  already complete and validated -- skipping
+[16/165] AD/sub-130S4641/ses-01/run-01  already complete and validated -- skipping
+[17/165] AD/sub-130S4660/ses-01/run-01  already complete and validated -- skipping
+[18/165] AD/sub-130S4730/ses-01/run-01  already complete and validated -- skipping
+[19/165] AD/sub-130S4730/ses-02/run-01  already complete and validated -- skipping
+[20/165] AD/sub-130S4971/ses-01/run-01  already complete and validated -- skipping
+[21/165] AD/sub-130S4982/ses-01/run-01  already complete and validated -- skipping
+[22/165] AD/sub-130S4982/ses-02/run-01  already complete and validated -- skipping
+[23/165] AD/sub-130S4984/ses-01/run-01  already complete and validated -- skipping
+[24/165] AD/sub-130S4990/ses-01/run-01  already complete and validated -- skipping
+[25/165] AD/sub-130S5059/ses-01/run-01  already complete and validated -- skipping
+[26/165] CN_Final/sub-002S1261/ses-01/run-01  already complete and validated -- skipping
+[27/165] CN_Final/sub-002S1280/ses-01/run-01  already complete and validated -- skipping
+[28/165] CN_Final/sub-006S4357/ses-01/run-01  already complete and validated -- skipping
+[29/165] CN_Final/sub-010S4345/ses-01/run-01  already complete and validated -- skipping
+[30/165] CN_Final/sub-010S4442/ses-01/run-01  already complete and validated -- skipping
+[31/165] CN_Final/sub-010S4442/ses-02/run-01  already complete and validated -- skipping
+[32/165] CN_Final/sub-012S4545/ses-01/run-01  already complete and validated -- skipping
+[33/165] CN_Final/sub-012S4643/ses-01/run-01  already complete and validated -- skipping
+[133/165] MCI/sub-130S4294/ses-03/run-01  OK in 4.2s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[34/165] CN_Final/sub-013S4579/ses-01/run-01  already complete and validated -- skipping
+[35/165] CN_Final/sub-013S4616/ses-01/run-01  already complete and validated -- skipping
+[36/165] CN_Final/sub-018S4257/ses-01/run-01  already complete and validated -- skipping
+[37/165] CN_Final/sub-018S4313/ses-01/run-01  already complete and validated -- skipping
+[38/165] CN_Final/sub-018S4349/ses-01/run-01  already complete and validated -- skipping
+[39/165] CN_Final/sub-018S4399/ses-01/run-01  already complete and validated -- skipping
+[40/165] CN_Final/sub-018S4400/ses-01/run-01  already complete and validated -- skipping
+[41/165] CN_Final/sub-019S4367/ses-01/run-01  already complete and validated -- skipping
+[42/165] CN_Final/sub-019S4835/ses-01/run-01  already complete and validated -- skipping
+[43/165] CN_Final/sub-031S4021/ses-01/run-01  already complete and validated -- skipping
+[44/165] CN_Final/sub-031S4032/ses-01/run-01  already complete and validated -- skipping
+[45/165] CN_Final/sub-031S4218/ses-01/run-01  already complete and validated -- skipping
+[46/165] CN_Final/sub-031S4474/ses-01/run-01  already complete and validated -- skipping
+[47/165] CN_Final/sub-031S4496/ses-01/run-01  already complete and validated -- skipping
+[48/165] CN_Final/sub-129S0778/ses-01/run-01  already complete and validated -- skipping
+[49/165] CN_Final/sub-129S4422/ses-01/run-01  already complete and validated -- skipping
+[50/165] CN_Final/sub-130S4343/ses-01/run-01  already complete and validated -- skipping
+[51/165] CN_Final/sub-130S4352/ses-01/run-01  already complete and validated -- skipping
+[134/165] MCI/sub-136S0107/ses-01/run-01  OK in 3.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[52/165] CN_Final/sub-136S0186/ses-01/run-01  already complete and validated -- skipping
+[53/165] EMCI/sub-002S2010/ses-01/run-01  already complete and validated -- skipping
+[54/165] EMCI/sub-002S2073/ses-01/run-01  already complete and validated -- skipping
+[55/165] EMCI/sub-002S4237/ses-01/run-01  already complete and validated -- skipping
+[56/165] EMCI/sub-002S4447/ses-01/run-01  already complete and validated -- skipping
+[57/165] EMCI/sub-002S4473/ses-01/run-01  already complete and validated -- skipping
+[58/165] EMCI/sub-006S4679/ses-01/run-01  already complete and validated -- skipping
+[59/165] EMCI/sub-012S4012/ses-01/run-01  already complete and validated -- skipping
+[60/165] EMCI/sub-012S4128/ses-01/run-01  already complete and validated -- skipping
+[61/165] EMCI/sub-012S4128/ses-02/run-01  already complete and validated -- skipping
+[62/165] EMCI/sub-012S4188/ses-01/run-01  already complete and validated -- skipping
+[63/165] EMCI/sub-012S4849/ses-01/run-01  already complete and validated -- skipping
+[64/165] EMCI/sub-012S4987/ses-01/run-01  already complete and validated -- skipping
+[65/165] EMCI/sub-013S2324/ses-01/run-01  already complete and validated -- skipping
+[66/165] EMCI/sub-013S4268/ses-01/run-01  already complete and validated -- skipping
+[67/165] EMCI/sub-013S4791/ses-01/run-01  already complete and validated -- skipping
+[68/165] EMCI/sub-013S4917/ses-01/run-01  already complete and validated -- skipping
+[69/165] EMCI/sub-018S2133/ses-01/run-01  already complete and validated -- skipping
+[70/165] EMCI/sub-018S2138/ses-01/run-01  already complete and validated -- skipping
+[135/165] SMC_Final/sub-002S5230/ses-01/run-01  OK in 4.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[71/165] EMCI/sub-018S2155/ses-01/run-01  already complete and validated -- skipping
+[72/165] EMCI/sub-018S4597/ses-01/run-01  already complete and validated -- skipping
+[73/165] EMCI/sub-018S4809/ses-01/run-01  already complete and validated -- skipping
+[74/165] EMCI/sub-018S4868/ses-01/run-01  already complete and validated -- skipping
+[75/165] EMCI/sub-019S4285/ses-01/run-01  already complete and validated -- skipping
+[76/165] EMCI/sub-019S4680/ses-01/run-01  already complete and validated -- skipping
+[77/165] EMCI/sub-031S2018/ses-01/run-01  already complete and validated -- skipping
+[78/165] EMCI/sub-031S2018/ses-02/run-01  already complete and validated -- skipping
+[79/165] EMCI/sub-031S2022/ses-01/run-01  already complete and validated -- skipping
+[80/165] EMCI/sub-031S2233/ses-01/run-01  already complete and validated -- skipping
+[81/165] EMCI/sub-031S2233/ses-02/run-01  already complete and validated -- skipping
+[82/165] LMCI/sub-002S4171/ses-02/run-01  already complete and validated -- skipping
+[83/165] LMCI/sub-002S4219/ses-01/run-01  already complete and validated -- skipping
+[84/165] LMCI/sub-002S4251/ses-01/run-01  already complete and validated -- skipping
+[85/165] LMCI/sub-002S4521/ses-01/run-01  already complete and validated -- skipping
+[86/165] LMCI/sub-002S4654/ses-01/run-01  already complete and validated -- skipping
+[87/165] LMCI/sub-002S4746/ses-01/run-01  already complete and validated -- skipping
+[88/165] LMCI/sub-006S4346/ses-01/run-01  already complete and validated -- skipping
+[89/165] LMCI/sub-006S4363/ses-01/run-01  already complete and validated -- skipping
+[90/165] LMCI/sub-006S4515/ses-01/run-01  already complete and validated -- skipping
+[136/165] SMC_Final/sub-002S5230/ses-02/run-01  OK in 3.2s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[91/165] LMCI/sub-013S4595/ses-01/run-01  already complete and validated -- skipping
+[92/165] LMCI/sub-018S4889/ses-01/run-01  already complete and validated -- skipping
+[93/165] LMCI/sub-019S4293/ses-01/run-01  already complete and validated -- skipping
+[94/165] LMCI/sub-019S4548/ses-01/run-01  already complete and validated -- skipping
+Traceback (most recent call last):
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 1203, in <module>
+    mode_run(sys.argv[2] if len(sys.argv) > 2 else None)
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 1002, in mode_run
+    save_state(state)
+  File "/mnt/c/Users/krish/FYP/scripts/biomarkers/biomarker_dataset_pipeline.py", line 795, in save_state
+    os.replace(tmp, STATE_JSON)
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/biomarker_processing_state.json.tmp' -> '/mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/biomarker_processing_state.json'
+[95/165] LMCI/sub-031S4194/ses-01/run-01  already complete and validated -- skipping
+[96/165] LMCI/sub-031S4203/ses-01/run-01  already complete and validated -- skipping
+[97/165] LMCI/sub-031S4203/ses-02/run-01  already complete and validated -- skipping
+[98/165] LMCI/sub-031S4590/ses-01/run-01  already complete and validated -- skipping
+[99/165] LMCI/sub-130S4250/ses-01/run-01  already complete and validated -- skipping
+[100/165] LMCI/sub-130S4542/ses-01/run-01  already complete and validated -- skipping
+[101/165] LMCI/sub-130S4605/ses-01/run-01  already complete and validated -- skipping
+[102/165] LMCI/sub-130S4817/ses-01/run-01  already complete and validated -- skipping
+[103/165] MCI/sub-002S0729/ses-02/run-01  already complete and validated -- skipping
+[104/165] MCI/sub-002S0729/ses-03/run-01  already complete and validated -- skipping
+[105/165] MCI/sub-002S1155/ses-01/run-01  already complete and validated -- skipping
+[106/165] MCI/sub-002S1155/ses-03/run-01  already complete and validated -- skipping
+[107/165] MCI/sub-002S1268/ses-01/run-01  already complete and validated -- skipping
+[108/165] MCI/sub-002S1268/ses-02/run-01  already complete and validated -- skipping
+[109/165] MCI/sub-002S4229/ses-01/run-01  already complete and validated -- skipping
+[110/165] MCI/sub-002S4229/ses-02/run-01  already complete and validated -- skipping
+[111/165] MCI/sub-002S4229/ses-03/run-01  already complete and validated -- skipping
+[112/165] MCI/sub-002S4799/ses-02/run-01  already complete and validated -- skipping
+[113/165] MCI/sub-006S4713/ses-01/run-01  already complete and validated -- skipping
+[114/165] MCI/sub-006S4713/ses-01/run-02  already complete and validated -- skipping
+[115/165] MCI/sub-006S4713/ses-02/run-01  already complete and validated -- skipping
+[116/165] MCI/sub-013S1186/ses-01/run-01  already complete and validated -- skipping
+[117/165] MCI/sub-013S1186/ses-02/run-01  already complete and validated -- skipping
+[118/165] MCI/sub-013S1186/ses-03/run-01  already complete and validated -- skipping
+[119/165] MCI/sub-013S2389/ses-01/run-01  already complete and validated -- skipping
+[120/165] MCI/sub-013S2389/ses-02/run-01  already complete and validated -- skipping
+[121/165] MCI/sub-018S2180/ses-01/run-01  already complete and validated -- skipping
+[122/165] MCI/sub-018S2180/ses-02/run-01  already complete and validated -- skipping
+[123/165] MCI/sub-018S2180/ses-03/run-01  already complete and validated -- skipping
+[124/165] MCI/sub-018S2180/ses-04/run-01  already complete and validated -- skipping
+[125/165] MCI/sub-053S0919/ses-01/run-01  already complete and validated -- skipping
+[126/165] MCI/sub-053S0919/ses-02/run-01  already complete and validated -- skipping
+[127/165] MCI/sub-053S4813/ses-01/run-01  already complete and validated -- skipping
+[128/165] MCI/sub-053S4813/ses-02/run-01  already complete and validated -- skipping
+[129/165] MCI/sub-100S4556/ses-01/run-01  already complete and validated -- skipping
+[130/165] MCI/sub-100S4556/ses-02/run-01  already complete and validated -- skipping
+[131/165] MCI/sub-130S4294/ses-01/run-01  already complete and validated -- skipping
+[132/165] MCI/sub-130S4294/ses-02/run-01  already complete and validated -- skipping
+[133/165] MCI/sub-130S4294/ses-03/run-01  already complete and validated -- skipping
+[134/165] MCI/sub-136S0107/ses-01/run-01  already complete and validated -- skipping
+[135/165] SMC_Final/sub-002S5230/ses-01/run-01  already complete and validated -- skipping
+[136/165] SMC_Final/sub-002S5230/ses-02/run-01  already complete and validated -- skipping
+[137/165] SMC_Final/sub-002S5230/ses-03/run-01  OK in 3.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[138/165] SMC_Final/sub-002S5256/ses-01/run-01  OK in 2.4s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[139/165] SMC_Final/sub-006S5153/ses-01/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[140/165] SMC_Final/sub-006S5153/ses-02/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[141/165] SMC_Final/sub-012S5121/ses-01/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[142/165] SMC_Final/sub-012S5121/ses-02/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[143/165] SMC_Final/sub-012S5157/ses-01/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[144/165] SMC_Final/sub-012S5157/ses-02/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[145/165] SMC_Final/sub-012S5195/ses-01/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[146/165] SMC_Final/sub-012S5213/ses-01/run-01  OK in 3.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[147/165] SMC_Final/sub-013S5137/ses-01/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[148/165] SMC_Final/sub-013S5137/ses-02/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[149/165] SMC_Final/sub-018S5250/ses-01/run-01  OK in 3.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[150/165] SMC_Final/sub-018S5262/ses-01/run-01  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[151/165] SMC_Final/sub-019S5180/ses-01/run-01  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[152/165] SMC_Final/sub-019S5242/ses-01/run-01  OK in 3.0s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[153/165] SMC_Final/sub-019S5242/ses-02/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[154/165] SMC_Final/sub-053S5202/ses-01/run-01  OK in 3.0s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[155/165] SMC_Final/sub-053S5202/ses-02/run-01  OK in 3.4s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[156/165] SMC_Final/sub-053S5272/ses-01/run-01  OK in 2.8s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[157/165] SMC_Final/sub-053S5287/ses-01/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[158/165] SMC_Final/sub-100S5096/ses-01/run-01  OK in 4.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[159/165] SMC_Final/sub-100S5102/ses-01/run-01  OK in 3.1s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[160/165] SMC_Final/sub-100S5280/ses-01/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[161/165] SMC_Final/sub-100S5280/ses-02/run-01  OK in 2.9s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[162/165] SMC_Final/sub-130S5142/ses-01/run-01  OK in 2.7s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[163/165] SMC_Final/sub-130S5142/ses-02/run-01  OK in 2.6s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[164/165] SMC_Final/sub-130S5258/ses-01/run-01  OK in 3.0s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+[165/165] SMC_Final/sub-131S5148/ses-01/run-01  OK in 3.4s  T=135 ROIs=246/246 zeroVar=0 -> COMPLETED
+
+processed=29  skipped_already_complete=136  failed=0
+RUN_DONE

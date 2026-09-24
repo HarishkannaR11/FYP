@@ -1,0 +1,52 @@
+{
+  "subject": "sub-031S2018",
+  "session": "ses-01",
+  "run": "run-01",
+  "group": "EMCI",
+  "atlas": "Brainnetome246",
+  "atlas_source_path": "/mnt/c/Users/krish/FYP/atlases/Brainnetome246/BN_Atlas_246_2mm.nii.gz",
+  "atlas_native_dimensions": [
+    91,
+    109,
+    91
+  ],
+  "atlas_native_voxel_size_mm": [
+    2.0,
+    2.0,
+    2.0
+  ],
+  "atlas_original_modified": false,
+  "interpolation": "nearest_neighbor",
+  "target_grid": "subject preprocessed BOLD grid",
+  "aligned_dimensions": [
+    46,
+    55,
+    46
+  ],
+  "aligned_voxel_size_mm": [
+    4.0,
+    4.0,
+    4.0
+  ],
+  "grid_match_bold": true,
+  "labels_1_246_present_in_native_atlas": true,
+  "roi_count_expected": 246,
+  "roi_count_present": 246,
+  "zero_voxel_rois": 0,
+  "rois_lt5_voxels": 0,
+  "rois_lt10_voxels": 0,
+  "bold_source": "/mnt/c/Users/krish/FYP/derivatives/fsfast/EMCI/sub-031S2018/ses-01/run-01/sub-031S2018_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz",
+  "bold_dimensions": [
+    46,
+    55,
+    46,
+    135
+  ],
+  "bold_TR_s": 3.0,
+  "brain_mask_voxels": 28549,
+  "roi_timeseries_shape": [
+    135,
+    246
+  ],
+  "processing_date_utc": "2026-09-23T10:42:34.747844+00:00"
+}
