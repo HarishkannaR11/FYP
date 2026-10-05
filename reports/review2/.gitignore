@@ -1,0 +1,10 @@
+# LaTeX build files
+*.aux
+*.lof
+*.lot
+*.toc
+*.out
+*.log
+*.synctex.gz
+*.fls
+*.fdb_latexmk

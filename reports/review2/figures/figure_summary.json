@@ -1,0 +1,62 @@
+{
+ "acquisitions": 165,
+ "subjects": 127,
+ "scans_per_subject": {
+  "1": 96,
+  "2": 25,
+  "3": 5,
+  "4": 1
+ },
+ "raw_alff_mean_range": [
+  850.2868639938231,
+  215172.30973704267
+ ],
+ "dc_fcstrength_r": 0.9999999999999998,
+ "dc_fcstrength_max_abs_dev": 6.938893903907228e-18,
+ "group_fc": [
+  {
+   "group": "CN_Final",
+   "subjects": 26,
+   "mean_z": 0.0177,
+   "mean_abs_z": 0.1296
+  },
+  {
+   "group": "SMC_Final",
+   "subjects": 21,
+   "mean_z": 0.0172,
+   "mean_abs_z": 0.1324
+  },
+  {
+   "group": "EMCI",
+   "subjects": 26,
+   "mean_z": 0.0144,
+   "mean_abs_z": 0.1326
+  },
+  {
+   "group": "MCI",
+   "subjects": 14,
+   "mean_z": 0.0166,
+   "mean_abs_z": 0.1309
+  },
+  {
+   "group": "LMCI",
+   "subjects": 20,
+   "mean_z": 0.0171,
+   "mean_abs_z": 0.1413
+  },
+  {
+   "group": "AD",
+   "subjects": 20,
+   "mean_z": 0.0182,
+   "mean_abs_z": 0.1581
+  }
+ ],
+ "group_reho_mean": {
+  "AD": 0.4887,
+  "CN_Final": 0.4886,
+  "EMCI": 0.4889,
+  "LMCI": 0.4802,
+  "MCI": 0.4833,
+  "SMC_Final": 0.4858
+ }
+}
