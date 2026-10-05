@@ -6,7 +6,9 @@
 
 Stages implemented and validated: **dataset audit → preprocessing → Brainnetome-246 parcellation → ROI time-series extraction → single-subject biomarker generation pilot (ALFF, ReHo, DC, FC) → independent biomarker validation.**
 
-Stages **NOT YET IMPLEMENTED**: full-dataset biomarker generation (only a single-acquisition pilot exists), feature normalization, feature fusion, the Multi-Attention Transformer, meta-learning, comorbidity fusion, the Bayesian ordinal classifier, uncertainty estimation, and explainability. These are described only as planned future stages, never as completed work.
+Stages implemented and verified: **dataset audit → preprocessing → Brainnetome-246 parcellation → ROI time-series extraction → biomarker generation (ALFF, ReHo, FC, DC) → within-subject normalization**, each across all 165 preprocessed acquisitions.
+
+Stages **NOT YET IMPLEMENTED**: cross-subject (train-fold-only) scaling, the subject-level cohort index and cross-validation folds, feature fusion, the Multi-Attention Transformer, meta-learning, comorbidity fusion, the Bayesian ordinal classifier, uncertainty estimation, and explainability. These are described only as planned future stages, never as completed work.
 
 Document generated: 2026-09-22.
 
@@ -31,10 +33,12 @@ Subjects are organized under `BIDS/sub-<ID>/ses-<NN>/func/`, with group membersh
 The six groups implemented in this project, in the clinical progression ordering used throughout:
 
 ```
-CN_Final → SMC_Final → EMCI → LMCI → MCI → AD
+CN_Final → SMC_Final → EMCI → MCI → LMCI → AD
 ```
 
-(Cognitively Normal → Subjective Memory Complaint → Early MCI → Late MCI → MCI → Alzheimer's Disease)
+(Cognitively Normal → Subjective Memory Concern → Early MCI → MCI → Late MCI → Alzheimer's Disease)
+
+This ordering is the one fixed in the Review-I report: the three mild-cognitive-impairment cohorts run early (EMCI), intermediate (MCI), late (LMCI). An earlier revision of this document recorded `EMCI → LMCI → MCI`, which was incorrect. The ordinal classifier's loss structure depends on this ordering, so it is held fixed.
 
 ### A.5 Number of subjects / acquisitions per group
 
@@ -434,7 +438,7 @@ Final image affine and shape checked against the expected template-derived 4mm g
 
 ## PART O — Brainnetome-246 Parcellation
 
-**Status: implemented and validated as a single-acquisition pilot** (`sub-019S4549/ses-01/run-01`, AD group) — **not yet run across the full dataset.**
+**Status: COMPLETE across all 165 preprocessed acquisitions.** Implemented first as a single-acquisition pilot (`sub-019S4549/ses-01/run-01`, AD group), then scaled by `scripts/biomarkers/biomarker_dataset_pipeline.py` after that pipeline was required to reproduce the pilot bit-identically (Part S.2). The atlas is re-aligned per subject onto that subject's own BOLD grid; it is not computed once and copied.
 
 ### O.1 Atlas
 
@@ -459,19 +463,23 @@ Brainnetome 2mm (LAS)
 
 **Grid verified identical to BOLD:** same dimensions, same affine (`np.allclose` check), confirmed in the pilot and additionally confirmed across a sample from all six production groups in the FINAL_6GROUP_AUDIT (every acquisition registers onto the identical fixed template-derived grid, so this check generalizes).
 
-### O.3 Pilot validation result
+### O.3 Validation result — all 165 acquisitions
 
-Independently recomputed from the saved aligned atlas file (not assumed):
+Recomputed per acquisition from each saved aligned atlas file (never assumed, never extrapolated from the pilot):
 
-- **Brainnetome coverage: 246 / 246 ROIs present**
-- Zero-voxel ROIs: **0**
-- ROIs with <5 voxels: **0**
-- ROIs with <10 voxels: **0**
-- Minimum ROI size: **10 voxels**
-- Median ROI size: **68.0 voxels**
-- Maximum ROI size: **186 voxels**
+| Check | Result |
+|---|---|
+| Acquisitions with 246/246 ROIs present | **165 / 165** |
+| Acquisitions with any zero-voxel ROI | **0** |
+| Acquisitions with any ROI <5 voxels | **0** |
+| Acquisitions with any ROI <10 voxels | **0** |
+| Smallest ROI anywhere in the dataset | **10 voxels** |
+| Atlas/BOLD dimension match | 165 / 165 |
+| Atlas/BOLD affine match | 165 / 165 |
 
-This same 246/246 coverage was independently re-confirmed at the dataset level in `FINAL_6GROUP_AUDIT/dataset_brainnetome_summary.csv`, computed once and shown to apply identically across all six groups (since the final grid is invariant by construction).
+Pilot acquisition specifically: min 10 / median 68.0 / max 186 voxels.
+
+Complete coverage is expected by construction — every acquisition is registered to the same template-derived 4mm grid, so the aligned atlas is identical across the cohort — but it was verified per acquisition rather than assumed, and the per-acquisition results are stored in each `biomarkers/brainnetome_qc.csv` and aggregated in `BIOMARKER_DATASET_AUDIT/dataset_biomarker_summary.csv`.
 
 ---
 
@@ -493,9 +501,9 @@ This same 246/246 coverage was independently re-confirmed at the dataset level i
 
 ---
 
-## PART Q — Biomarker Generation (Single-Acquisition Pilot)
+## PART Q — Biomarker Generation
 
-**Status: implemented and independently validated as a single-acquisition pilot only** (`sub-019S4549/ses-01/run-01`). Not yet scaled to the full dataset.
+**Status: COMPLETE across all 165 preprocessed acquisitions, 0 failures.** Definitions below are unchanged from the validated pilot; the dataset-scale implementation reproduces the pilot bit-identically for ALFF, ReHo, ROI time series and atlas labels (Part S.2).
 
 ### Q.1 ALFF
 
@@ -566,6 +574,8 @@ A combined per-ROI feature table is generated per acquisition:
 
 ## PART S — Biomarker Validation (Independent)
 
+### S.1 Pilot acquisition — independent validation
+
 An independent validation pass was run as a **separate script and process** from biomarker generation, reading only the saved output files (never reusing in-memory values from generation, never modifying the source files). Results:
 
 | Check | Result |
@@ -583,6 +593,119 @@ An independent validation pass was run as a **separate script and process** from
 | Regional biomarker matrix | 246 rows, ROI IDs 1–246 exactly once, 0 duplicates, 0 missing, all 4 columns exactly match their source files |
 
 **Final validation status: PASS.** Every mathematical/structural check (shapes, NaN/Inf, symmetry, diagonal, DC agreement, FC-strength agreement, cross-file internal consistency) passed. This validation is a mathematical/structural verification only — it makes no claim about the biological or diagnostic meaningfulness of the values (see Part X, Limitations).
+
+### S.2 Pilot reproduction gate (before dataset scale-up)
+
+Before any other acquisition was processed, the dataset-scale implementation was required to reproduce the already-validated pilot. It was run into a scratch directory (`BIOMARKER_DATASET_AUDIT/PILOT_VERIFICATION/`) and compared against the pilot's existing outputs, which were never written to:
+
+| Quantity | Max absolute difference vs. pilot |
+|---|---|
+| ALFF (246,) | **0.000e+00** (bit-identical) |
+| ReHo (246,) | **0.000e+00** (bit-identical) |
+| ROI time series (135, 246) | **0.000e+00** (bit-identical) |
+| Aligned atlas labels | **0.000e+00** (bit-identical) |
+| ROI voxel counts (246,) | **0.000e+00** (bit-identical) |
+| FC (246, 246) | 3.331e-16 |
+| Degree centrality (246,) | 1.776e-15 |
+| FC regional strength (246,) | 9.888e-17 |
+
+Recorded in `BIOMARKER_DATASET_AUDIT/pilot_reproduction_check.csv`. This gate matters because the dataset implementation computes ReHo by a different, vectorized route (precomputing per-voxel ranks once and accumulating neighbour rank-sums by shifted array addition, rather than looping over ~28,500 voxels). The result being bit-identical proves the optimization did not alter the definition — it reduced ReHo runtime from ~68s to ~3s per acquisition.
+
+The pilot directory was then written in **no-clobber** mode: files that already existed were preserved, not regenerated. All eight original pilot files and the separate `brainnetome/` folder remain untouched.
+
+### S.3 Dataset-level verification — all 165 acquisitions
+
+Every acquisition carries its own cross-file consistency check, in which DC and FC regional strength are recomputed from that acquisition's stored FC matrix and compared against the stored vectors (tolerance 1e-10):
+
+| Check | Result |
+|---|---|
+| Acquisitions audited | 165 / 165 |
+| ROI time series shape (135, 246) | 165 / 165 |
+| Non-finite values in regional time series | 0 |
+| Regions with zero temporal variance | 0 |
+| ALFF non-finite or negative values | 0 |
+| ReHo values outside valid [0,1] | 0 |
+| ReHo range across dataset | 0.2352 – 0.8231 |
+| FC non-finite values | 0 |
+| FC max diagonal error | 2.220e-16 |
+| FC max asymmetry | 2.220e-16 |
+| FC negative off-diagonal share | mean 50.09% (range 45.55–53.12%) |
+| **DC recomputed from stored FC, max difference** | **0.000e+00** |
+| FC-strength recomputed, max difference | 6.939e-18 |
+| Acquisitions passing all consistency checks | **165 / 165** |
+| Processing failures | **0** |
+
+The DC result is the single strongest piece of evidence in this stage: it shows not merely that the files are well formed, but that the stored values are exactly what the documented definition produces, for every acquisition.
+
+---
+
+## PART S2 — Within-Subject Normalization
+
+**Status: COMPLETE across all 165 acquisitions, 0 failures.** Implemented in `scripts/biomarkers/normalize_within_subject.py`.
+
+### S2.1 Why this stage exists
+
+Raw ALFF is expressed in FFT amplitude units proportional to each acquisition's raw BOLD intensity. Across the dataset the per-acquisition mean ALFF spans **850.29 to 215,172.31** — a factor of roughly 250. ReHo, being a bounded coefficient, spans only 0.311 to 0.589. Feeding both unnormalized into a single model would let scanner and protocol scaling dominate any biological signal.
+
+### S2.2 Leakage-free by construction
+
+Every statistic used is computed from **that one acquisition's own 246 regional values**. No cross-subject mean, no cross-subject standard deviation, no ROI-wise statistic across subjects, and no diagnostic label is used anywhere in this stage. Cross-subject scaling is deliberately deferred to the modelling stage, where it must be fitted on training subjects only, after a subject-level split.
+
+### S2.3 Transforms as implemented
+
+| Feature | Transform | Rationale |
+|---|---|---|
+| ALFF → **mALFF** | `ALFF_i / mean(ALFF)` | Removes raw-intensity scaling. A ratio, not a z-score, because ALFF is strictly positive and the ratio form is what the literature reports |
+| ReHo → **mReHo** | `ReHo_i / mean(ReHo)` | Removes each subject's global coherence offset |
+| DC → **DC_z** | `(DC_i − mean(DC)) / std(DC, ddof=0)` | A z-score because DC is signed, which rules out min–max scaling. `ddof=0` chosen and applied identically to all 165 |
+| FC → **Fisher-z FC** | `arctanh(clip(r, ±0.999999))` on off-diagonal; diagonal exactly 0 | Variance-stabilizes correlations. Signed, unthresholded, negatives retained, **not** z-scored within subject |
+
+**Diagonal handling.** The FC diagonal is exactly 1.0, and `arctanh(1) = inf`. The implementation zeroes the diagonal **before** applying `arctanh`, so an infinity is never produced at any point (no transient `inf`, no RuntimeWarning), then sets the diagonal to exactly 0.0. Clipping is applied to off-diagonal entries only.
+
+### S2.4 FC_Strength excluded as redundant
+
+The pipeline stores a regional connectivity strength defined as the **mean** of each region's off-diagonal connectivity, while DC is the **sum** over the same entries. They therefore differ only by the constant factor 245:
+
+- Measured Pearson correlation between DC and FC_Strength: **1.000000000000** in every acquisition checked
+- Max absolute deviation from the exact relation `FC_Strength = DC / 245`: **6.939e-18**
+- Max relative deviation: **7.187e-16**
+
+Under any scale-invariant normalization the two become numerically identical. FC_Strength is therefore **excluded from the model feature set** as perfectly collinear. Its raw files (`fc_strength.npy`, `fc_strength.csv`) are retained unaltered. This means the independent regional feature count is **three**, not four — a correction to the Review-I design, which specified a 246 × 4 input matrix.
+
+### S2.5 Verification — all 165 acquisitions
+
+| Check | Result |
+|---|---|
+| Acquisitions normalized | **165 / 165** |
+| Failures | **0** |
+| Discrepancy vs. expected per-group counts | none |
+| Input / output non-finite values | 0 / 0 |
+| mean(mALFF) per acquisition | 1.000000 for all 165 |
+| mean(mReHo) per acquisition | 1.000000 for all 165 |
+| mean(DC_z) | ≤ 1.6e-16 (target 0) |
+| std(DC_z) | 1.000000 for all 165 |
+| Fisher-z FC symmetric | 165 / 165, max asymmetry 5.329e-15 |
+| Fisher-z FC diagonal exactly 0 | **165 / 165** |
+| Negative correlations preserved negative | 165 / 165 |
+| Off-diagonal entries requiring clipping | **0** across the entire dataset |
+| Fisher-z range across dataset | −2.2653 to 2.5924 |
+
+The clipping count of zero confirms no region pair anywhere in the dataset is numerically perfectly correlated — the ±0.999999 bound was a safeguard that never engaged.
+
+### S2.6 Raw-data integrity
+
+Outputs are written to a **separate tree** (`derivatives/biomarkers_normalized/`); nothing inside any `biomarkers/` directory is modified. The script carries a hard guard that raises if a write path contains a `biomarkers` component or falls outside the output root. Independently confirmed by `git status` over `derivatives/fsfast`: **zero modified or deleted tracked files**.
+
+### S2.7 Resulting model feature set
+
+| Kind | Feature | Shape |
+|---|---|---|
+| Regional | mALFF | (246,) |
+| Regional | mReHo | (246,) |
+| Regional | DC_z | (246,) |
+| Regional (combined) | `regional_biomarkers_normalized.npy` | (246, 3) |
+| Connectivity | Fisher-z FC | (246, 246) |
+| *Excluded* | *FC_Strength (= DC/245)* | — |
 
 ---
 
@@ -626,7 +749,50 @@ derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/
     └── biomarker_qc_report.md                           [QC]
 ```
 
-Each of the six production groups (`AD, CN_Final, EMCI, LMCI, MCI, SMC_Final`) follows the same `sub-<ID>/ses-<NN>/run-<NN>/` structure for the preprocessing + QC layers; `brainnetome/` and `biomarkers/` subdirectories currently exist **only** for the single pilot acquisition documented in Parts O–S.
+**Note on the pilot directory.** The listing above is the *pilot* acquisition, which retains its original filenames (`alff_roi_values.npy`, `regional_biomarker_matrix.csv`, etc.) because it was written in no-clobber mode. **The other 164 acquisitions use the dataset-scale naming**, and the pilot additionally received those files where they did not collide:
+
+```
+derivatives/fsfast/<GROUP>/sub-<ID>/ses-<NN>/run-<NN>/biomarkers/   [all 165]
+├── brainnetome_246_4mm.nii.gz    brainnetome_metadata.json
+├── brainnetome_qc.csv            brainnetome_qc_report.md
+├── roi_timeseries.npy / .csv     roi_voxel_counts.csv
+├── roi_timeseries_qc.csv
+├── alff.npy / .csv               alff_map.nii.gz
+├── reho.npy / .csv               reho_map.nii.gz
+├── fc_matrix.npy
+├── degree_centrality.npy / .csv
+├── fc_strength.npy / .csv        [retained, excluded from features]
+├── regional_biomarkers.npy (246x4) / .csv
+├── biomarker_metadata.json       biomarker_qc_report.md
+```
+
+```
+derivatives/biomarkers_normalized/<GROUP>/sub-<ID>/ses-<NN>/run-<NN>/   [all 165]
+├── malff.npy / .csv
+├── mreho.npy / .csv
+├── dc_z.npy / .csv
+├── fc_fisher_z.npy                              (246x246)
+├── regional_biomarkers_normalized.npy (246x3) / .csv
+└── normalization_metadata.json
+```
+
+Dataset-level audit directories:
+
+```
+derivatives/fsfast/FINAL_6GROUP_AUDIT/              preprocessing audit (10 files)
+derivatives/fsfast/BIOMARKER_DATASET_AUDIT/
+├── dataset_biomarker_summary.csv / .md             per-acquisition + rollup QC
+├── processing_manifest.csv                         14-column per-acquisition manifest
+├── processing_errors.csv                           header-only (no errors)
+├── pilot_reproduction_check.csv                    Part S.2 gate
+└── biomarker_processing_state.json                 resume state
+derivatives/biomarkers_normalized/
+├── normalization_qc.csv                            35-column per-acquisition QC
+├── normalization_qc_report.md
+└── normalization_state.json
+```
+
+All six groups (`AD, CN_Final, EMCI, LMCI, MCI, SMC_Final`) now carry `biomarkers/` and a mirrored `biomarkers_normalized/` entry for **every one of their 165 acquisitions**.
 
 ---
 
@@ -671,7 +837,7 @@ Final preprocessed BOLD (165/173 acquisitions across 6 groups)
   ↓
 Preprocessing QC (tSNR, SNR, CNR=N/A, FD, DVARS, entropy)
   ↓
-[PILOT ONLY, sub-019S4549/ses-01/run-01:]
+[ALL 165 ACQUISITIONS:]
 Brainnetome-246 alignment (nearest-neighbor, 246/246 coverage)
   ↓
 ROI voxel-count validation
@@ -685,14 +851,26 @@ DC (weighted signed sum from FC)
   ↓
 Regional biomarker matrix (246 × 4) + full FC matrix (246×246) retained separately
   ↓
-Independent biomarker validation (PASS)
+Per-acquisition cross-file consistency (DC recompute diff 0.000e+00) — 165/165 PASS
+  ↓
+Within-subject normalization (leakage-free)
+  mALFF · mReHo · DC_z · Fisher-z FC   — 165/165
+  FC_Strength excluded (= DC/245, perfectly collinear)
+  ↓
+Model feature set: 246×3 regional + 246×246 connectivity, per acquisition
   ↓
 [NOT YET IMPLEMENTED:]
-Full-dataset biomarker generation
+Comorbidity table cleaning (LMCI cohort tables still missing)
   ↓
-Feature normalization / fusion
+Subject-level cohort index + stratified GROUPED CV folds (127 subjects, not 165 scans)
   ↓
-Multi-Attention Transformer → Meta-learning → Comorbidity fusion → Bayesian ordinal classifier
+Cross-subject scaling — fitted on TRAIN FOLD ONLY
+  ↓
+Feature fusion → Multi-Attention Transformer → Meta-learning
+  ↓
+Comorbidity fusion → Bayesian ordinal classifier (CN→SMC→EMCI→MCI→LMCI→AD)
+  ↓
+Uncertainty estimation → Explainability
 ```
 
 ---
@@ -758,7 +936,11 @@ Verified directly from provenance JSON sidecars and environment checks (not assu
 - **Direct EPI-to-MNI registration** is inherently less precise than T1w-mediated registration (EPI has lower anatomical contrast and geometric distortion characteristics different from T1w); the registration quality achieved here has not been benchmarked against a T1w-based alternative, since none is possible with this dataset.
 - **Raw-intensity DVARS** (Part N.5) is not directly comparable to the standardized/percent-signal-change DVARS thresholds commonly cited in the literature; no such comparison is made anywhere in this project.
 - **Signed, unthresholded FC and DC** (Parts Q.3/Q.4) mean these values differ conceptually from binary/thresholded graph-theoretic measures common in some connectivity literature; this was a deliberate choice (preferring a fully weighted representation over an unvalidated threshold) and should be interpreted accordingly by any downstream consumer.
-- **Current biomarker pilot validation covers exactly one acquisition** (`sub-019S4549/ses-01/run-01`). The mathematical/structural PASS documented in Part S applies to that single acquisition's outputs only — it is not evidence that the biomarker pipeline will behave identically (e.g., in runtime, edge-case ROI coverage, or numerical stability) across the full 165-acquisition completed preprocessing dataset, which has not yet been run through biomarker generation.
+- **Validation to date is mathematical and structural, not biological.** The 165/165 PASS documented in Parts S and S2 establishes that shapes, finiteness, symmetry and the stored values' agreement with their documented definitions are all correct. It makes no claim that the values are biologically or diagnostically meaningful — that can only be established by the modelling stage, which is not yet built.
+- **Effective sample size is 127 subjects, not 165 acquisitions.** 96 subjects contribute one acquisition, 25 contribute two, 5 contribute three and 1 contributes four. The smallest class by subject count is MCI at **14 subjects**, despite being the largest by acquisition count (32) — it is session-inflated at 2.3 scans/subject. Because validation splits must be grouped by subject, 14 bounds what can be claimed about that class, and a single held-out test split would place roughly 3 MCI subjects in test. Repeated stratified grouped cross-validation is therefore required. No subject appears in more than one group, so labels are subject-consistent.
+- **Comorbidity data is incomplete and the gap is group-structured.** Cohort tables were obtained for five of six groups; the **LMCI tables are absent entirely**, leaving 20 subjects with no CDR, MMSE, GDS, medical-history or APOE4 data. Of 21 subjects lacking APOE4, 20 are the whole LMCI group and only 1 is a genuine individual gap. Because the missingness is group-structured rather than random, an availability indicator would act as a near-perfect proxy for LMCI membership and must **not** be used as a feature. The correct remedy is to obtain the missing tables.
+- **Hypertension and diabetes are not directly available.** The ADNI MEDHIST tables supplied carry only broad categories — `MH4CARD` (cardiovascular, which includes hypertension but also other conditions) and `MH9ENDO` (endocrine-metabolic, which includes diabetes but also thyroid disease). Labelling these as "hypertension" and "diabetes" would overstate what the data supports; the specific conditions require ADNI's detailed medical-history recode tables.
+- **One nominal biomarker is redundant.** FC_Strength is exactly DC/245 (Part S2.4), so the independent regional feature count is three, not the four specified in the Review-I design.
 - **8 acquisitions (of 173 eligible) could not be preprocessed** due to a genuine TR≈6.02s / Nyquist incompatibility with the frozen 0.01–0.10Hz band-pass specification (Part M) — these are permanently excluded from the current derivatives unless the project's methodology is explicitly revisited for that TR subgroup.
 - **Undocumented private DICOM tags** (Part C.2) could not be ruled out as carrying multiband/slice-timing information; the audit explicitly reports "no named tag found," not "no such information exists in the file."
 
@@ -774,15 +956,18 @@ None of the above limitations invalidate the pipeline — they are properties of
 | Slice-timing investigation | **COMPLETED** |
 | Preprocessing (all 6 groups) | **COMPLETED** (165/173 eligible acquisitions; 8 excluded for TR/Nyquist reasons, see Part M) |
 | Preprocessing QC (per-acquisition + 6-group audit) | **COMPLETED** |
-| Brainnetome-246 parcellation | **PILOT COMPLETED** (1 acquisition; not yet run dataset-wide) |
-| ROI time-series extraction | **PILOT COMPLETED** (1 acquisition) |
-| ALFF generation | **PILOT COMPLETED** (1 acquisition) |
-| ReHo generation | **PILOT COMPLETED** (1 acquisition) |
-| FC generation | **PILOT COMPLETED** (1 acquisition) |
-| DC generation | **PILOT COMPLETED** (1 acquisition) |
-| Independent biomarker validation | **COMPLETED** (for the pilot acquisition) |
-| Full-dataset biomarker generation (165 acquisitions) | **NOT YET IMPLEMENTED** |
-| Feature normalization | **NOT YET IMPLEMENTED** |
+| Brainnetome-246 parcellation | **COMPLETED** — 165/165, 246/246 ROI coverage every acquisition |
+| ROI time-series extraction | **COMPLETED** — 165/165, all (135, 246) |
+| ALFF generation | **COMPLETED** — 165/165, 0 NaN/Inf/negative |
+| ReHo generation | **COMPLETED** — 165/165, all within [0,1] |
+| FC generation | **COMPLETED** — 165/165, max diagonal/symmetry error 2.2e-16 |
+| DC generation | **COMPLETED** — 165/165, independent recompute diff **0.000e+00** |
+| Pilot reproduction gate before scale-up | **COMPLETED** — ALFF/ReHo/ROI-TS/atlas bit-identical |
+| Per-acquisition cross-file consistency | **COMPLETED** — 165/165 PASS, 0 failures |
+| Within-subject normalization (mALFF, mReHo, DC_z, Fisher-z FC) | **COMPLETED** — 165/165, 0 failures |
+| Comorbidity data cleaning | **NOT STARTED** — LMCI cohort tables missing (20 subjects) |
+| Subject-level cohort index + grouped CV folds | **NOT YET IMPLEMENTED** |
+| Cross-subject scaling (train-fold only) | **NOT YET IMPLEMENTED** — deliberately deferred |
 | Feature fusion | **NOT YET IMPLEMENTED** |
 | Multi-Attention Transformer | **NOT YET IMPLEMENTED** |
 | Meta-learning | **NOT YET IMPLEMENTED** |
@@ -793,4 +978,21 @@ None of the above limitations invalidate the pipeline — they are properties of
 
 ---
 
-*End of document. This document describes the implementation as verified against project code, logs, provenance metadata, and generated outputs on 2026-09-22. It will require updating as further stages (full-dataset biomarker generation onward) are implemented.*
+### Summary of the completed data foundation
+
+| | Count |
+|---|---:|
+| Raw acquisitions audited | 175 |
+| Documented exclusions | 2 |
+| Eligible for preprocessing | 173 |
+| Successfully preprocessed | **165** |
+| With complete biomarkers | **165** |
+| With complete normalized features | **165** |
+| Distinct subjects represented | **127** |
+| Processing failures at biomarker or normalization stage | **0** |
+
+Per acquisition, the model-ready feature set is **246 × 3** regional features (mALFF, mReHo, DC_z) plus a **246 × 246** Fisher-z connectivity matrix.
+
+---
+
+*End of document. This document describes the implementation as verified against project code, logs, provenance metadata, and generated outputs on 2026-10-05. Preprocessing, parcellation, biomarker generation and within-subject normalization are complete for all 165 acquisitions; it will require updating as the modelling stages are implemented.*

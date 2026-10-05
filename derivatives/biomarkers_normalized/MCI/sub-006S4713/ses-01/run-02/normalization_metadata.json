@@ -1,0 +1,44 @@
+{
+  "subject_id": "sub-006S4713",
+  "session": "ses-01",
+  "run": "run-02",
+  "group": "MCI",
+  "roi_count": 246,
+  "roi_ids": "1-246 (Brainnetome 246, original order preserved)",
+  "source_biomarkers_dir": "/mnt/c/Users/krish/FYP/derivatives/fsfast/MCI/sub-006S4713/ses-01/run-02/biomarkers",
+  "source_files_modified": false,
+  "ALFF_mean": 7206.318108287284,
+  "ReHo_mean": 0.4750172518860034,
+  "DC_mean": 2.2382236413739443,
+  "DC_std": 7.152592512604683,
+  "DC_ddof": 0,
+  "FC_clipping_limit": 0.999999,
+  "FC_clipping_applied_to": "off-diagonal elements only",
+  "FC_n_offdiag_clipped": 0,
+  "FC_diagonal_handling": "diagonal zeroed before arctanh so arctanh(1)=inf is never produced, then set to exactly 0.0",
+  "FC_Strength_excluded": true,
+  "FC_Strength_exclusion_reason": "FC_Strength == DC / 245 exactly; perfectly collinear with DC (Pearson r = 1.0), carries no independent information. Verified this acquisition: max|DC/245 - FC_Strength| = 0.000e+00. Raw fc_strength.npy/.csv left untouched.",
+  "normalization_methods": {
+    "mALFF": "ALFF_i / mean(ALFF) over this acquisition's own 246 ROIs (ratio, not z-score)",
+    "mReHo": "ReHo_i / mean(ReHo) over this acquisition's own 246 ROIs",
+    "DC_z": "(DC_i - mean(DC)) / std(DC, ddof=0) within this acquisition",
+    "FC_fisher_z": "arctanh(clip(r, -0.999999, 0.999999)) on off-diagonal only; diagonal exactly 0; signed, unthresholded, negatives retained; NOT z-scored within subject"
+  },
+  "cross_subject_normalization_applied": false,
+  "cross_subject_note": "none applied: this stage is within-subject only and therefore leakage-free. Cross-subject scaling must be fitted on training subjects only, after a subject-level split.",
+  "labels_used": false,
+  "model_feature_set": [
+    "mALFF (246)",
+    "mReHo (246)",
+    "DC_z (246)",
+    "Fisher-z FC (246x246)"
+  ],
+  "script": "normalize_within_subject.py",
+  "script_version": "1.0.0",
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "pandas": "3.0.5"
+  },
+  "timestamp_utc": "2026-10-05T05:01:04.897851+00:00"
+}

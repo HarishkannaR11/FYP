@@ -10,7 +10,7 @@
 
 - Source: ADNI resting-state fMRI, raw DICOM + partial NIfTI, reorganized into BIDS (`participants.tsv` is the sole source of group membership).
 - **No T1w anatomical image exists for any subject** — this shapes registration, nuisance regression, and CNR throughout the pipeline.
-- Six groups, progression order: `CN_Final → SMC_Final → EMCI → LMCI → MCI → AD`.
+- Six groups, progression order: `CN_Final → SMC_Final → EMCI → MCI → LMCI → AD`.
 - 175 raw acquisitions → 2 documented exclusions (1 truncated run, 1 byte-identical duplicate) → 173 eligible → **165 successfully preprocessed** (8 excluded for a genuine TR≈6.02s/Nyquist incompatibility, see §4).
 
 | Group | AD | CN_Final | EMCI | LMCI | MCI | SMC_Final |
@@ -46,17 +46,17 @@ Key facts:
 
 Computed on the smoothed, pre-nuisance/pre-bandpass stage: tSNR, SNR (native-space, fBIRN-style), FD (Power et al. 2012, from native `.mcdat`), DVARS (**raw-intensity, not standardized — not comparable to literature thresholds**), spatial entropy, temporal entropy. **CNR is `NOT_RELIABLY_COMPUTABLE` for every acquisition** (no T1w). **GCOR is not part of this production pipeline's QC.** Dataset-wide audit (165 acquisitions): 0 NaN/Inf, 0 duplicate outputs, Brainnetome-compatible grid confirmed identical across all six groups.
 
-## 5. Brainnetome-246 Parcellation — Single-Acquisition Pilot
+## 5. Brainnetome-246 Parcellation — All 165 Acquisitions
 
-Status: **pilot only** (`sub-019S4549/ses-01/run-01`), not yet dataset-wide.
+Status: **complete**, 165/165. Atlas re-aligned per subject onto that subject's own BOLD grid.
 
 - Atlas reoriented LAS→RAS (lossless canonical flip) then resampled to the BOLD grid with **nearest-neighbor interpolation only** (categorical labels — never linear).
 - Result: **246/246 ROIs covered, 0 zero-voxel ROIs**, min/median/max voxel count 10/68/186.
 - ROI time series extracted by direct index-masking (mean per ROI per timepoint): verified shape **(135, 246)** — time × ROI. 0 NaN/Inf, 0 zero-variance ROIs, timepoint count matches source BOLD exactly.
 
-## 6. Biomarkers — Single-Acquisition Pilot
+## 6. Biomarkers — All 165 Acquisitions
 
-Status: **pilot only**, same acquisition. All computed at voxel level first (where applicable), then ROI-aggregated.
+Status: **complete**, 165/165, 0 failures. ALFF and ReHo computed at voxel level first, then ROI-aggregated. Before scale-up, the dataset implementation was required to reproduce the validated pilot: ALFF, ReHo, ROI time series and atlas labels came back **bit-identical**; FC/DC within 1.8e-15.
 
 | Biomarker | Method | Key parameters | Result (pilot) |
 |---|---|---|---|
@@ -97,11 +97,14 @@ Python 3.12.3, NumPy 2.3.5, SciPy 1.15.3, NiBabel 5.4.2, Nilearn 0.14.1, ANTsPy 
 | Slice-timing investigation | Completed |
 | Preprocessing, all 6 groups | Completed (165/173) |
 | Preprocessing QC | Completed |
-| Brainnetome parcellation | Pilot completed (1 acquisition) |
-| ALFF / ReHo / FC / DC | Pilot completed (1 acquisition) |
-| Independent biomarker validation | Completed (pilot) |
-| Full-dataset biomarker generation | Not yet implemented |
-| Normalization / fusion | Not yet implemented |
+| Brainnetome parcellation | Completed — 165/165, 246/246 ROI coverage |
+| ROI time-series extraction | Completed — 165/165, all (135, 246) |
+| ALFF / ReHo / FC / DC | Completed — 165/165, 0 failures |
+| Cross-file consistency (DC recompute diff 0.000e+00) | Completed — 165/165 |
+| Within-subject normalization (mALFF, mReHo, DC_z, Fisher-z FC) | Completed — 165/165 |
+| Comorbidity data cleaning | Not started — LMCI tables missing (20 subjects) |
+| Subject-level cohort index + grouped CV folds | Not yet implemented |
+| Cross-subject scaling (train-fold only) / fusion | Not yet implemented |
 | Multi-Attention Transformer | Not yet implemented |
 | Meta-learning | Not yet implemented |
 | Comorbidity fusion | Not yet implemented |

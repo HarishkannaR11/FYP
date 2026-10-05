@@ -1,0 +1,103 @@
+
+========================================================================
+NORMALIZATION AUDIT (from disk)
+========================================================================
+# Within-Subject Biomarker Normalization -- QC Report
+
+Generated (UTC): 2026-10-05T05:01:55.341284+00:00
+Script: `normalize_within_subject.py` v1.0.0
+
+## 1-4. Completion
+
+- Total acquisitions discovered: **165**
+- Successfully normalized: **165**
+- Failed: **0**
+- Acquisitions with incomplete raw inputs (not processed): **0**
+
+No failures.
+
+## 5. Counts by disease group
+
+| Group | Expected | Discovered | Normalized | Failed |
+|---|---:|---:|---:|---:|
+| AD | 25 | 25 | 25 | 0 |
+| CN_Final | 27 | 27 | 27 | 0 |
+| EMCI | 29 | 29 | 29 | 0 |
+| LMCI | 21 | 21 | 21 | 0 |
+| MCI | 32 | 32 | 32 | 0 |
+| SMC_Final | 31 | 31 | 31 | 0 |
+| **TOTAL** | **165** | **165** | **165** | **0** |
+
+## 10. Dataset completeness check
+
+Filesystem agrees with the expected counts (165 total; AD 25, CN_Final 27, EMCI 29, LMCI 21, MCI 32, SMC_Final 31).
+
+## 6-7. Shape / NaN / Inf validation
+
+- All inputs shape-validated (ALFF/ReHo/DC/FC_Strength = (246,), FC = (246,246)): **165/165**
+- Input NaN total: **0**
+- Input Inf total: **0**
+- Output NaN total: **0**
+- Output Inf total: **0**
+
+## 8. mALFF statistics
+
+- Raw mean(ALFF) across acquisitions (the scaling removed): min 850.29, median 84450.03, max 215172.31
+- mean(mALFF) per acquisition: min/median/max = 1.000000 / 1.000000 / 1.000000 (target exactly 1)
+
+## 9. mReHo statistics
+
+- Raw mean(ReHo): min 0.311446, median 0.488632, max 0.589047
+- mean(mReHo) per acquisition: min/median/max = 1.000000 / 1.000000 / 1.000000 (target exactly 1)
+
+## 10. DC-z statistics
+
+- Raw mean(DC): min 0.5073, max 8.3463
+- Raw std(DC) (ddof=0): min 3.0327, max 21.2253
+- mean(DC_z): min/median/max = -1.30e-16 / 0.00e+00 / 1.59e-16 (target 0)
+- std(DC_z): min/median/max = 1.000000 / 1.000000 / 1.000000 (target 1)
+
+## 11. Fisher-z FC statistics
+
+- Fisher-z range across dataset: -2.2653 to 2.5924
+- Off-diagonal elements clipped at +-0.999999 (total across dataset): **0**
+- Negative correlations preserved as negative: **165/165**
+- No thresholding, no absolute value, no within-subject z-scoring applied to FC.
+
+## 12-13. FC symmetry / diagonal checks
+
+- Input FC symmetric (<=1e-6): **165/165**, max asymmetry 2.220e-16
+- Input FC diagonal ~1: max error 2.220e-16
+- Output Fisher-z symmetric: **165/165**, max asymmetry 5.329e-15
+- Output diagonal exactly 0: **165/165**
+
+## 14. FC_Strength / DC redundancy verification
+
+Verified per acquisition that `FC_Strength == DC / 245`:
+
+- Max absolute difference across dataset: **6.939e-18**
+- Max relative difference across dataset: **7.187e-16**
+
+FC_Strength is therefore perfectly collinear with DC (Pearson r = 1.0) and carries no independent information. It is **excluded from the model feature set**. The raw `fc_strength.npy` / `fc_strength.csv` files were left untouched.
+
+## 15. Output completeness
+
+- Acquisitions with all 10 normalized outputs present and re-validated: **165/165**
+- Per acquisition: `malff.npy/.csv`, `mreho.npy/.csv`, `dc_z.npy/.csv`, `fc_fisher_z.npy`, `regional_biomarkers_normalized.npy` (246x3) + `.csv`, `normalization_metadata.json`
+
+## 16. Warnings
+
+None.
+
+## Final model feature set after this stage
+
+| Kind | Feature | Shape |
+|---|---|---|
+| Regional | mALFF | (246,) |
+| Regional | mReHo | (246,) |
+| Regional | DC_z | (246,) |
+| Connectivity | Fisher-z FC | (246, 246) |
+| *Excluded* | *FC_Strength (= DC/245)* | *-* |
+
+No cross-subject normalization, PCA, feature selection, FC flattening, thresholding or label use was performed at this stage.
+AUDIT_DONE

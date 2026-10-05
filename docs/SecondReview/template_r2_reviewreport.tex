@@ -1,0 +1,105 @@
+% Compile twice with: pdflatex Review_Report_Class_Example.tex
+% Keep ssnreview.cls and the optional logo in the same folder.
+\documentclass{ssnreview}
+
+\projecttitle{TITLE OF THE PROJECT}
+\reviewnumber{REVIEW REPORT -- II}
+\students{%
+  Student Name 1 (Register No.)\\
+  Student Name 2 (Register No.)\\
+  Student Name 3 (Register No.)\\
+  Student Name 4 (Register No.)}
+\supervisor{Dr./Mr./Ms. Supervisor Name}
+\department{Department of Computer Science and Engineering}
+\institution{Sri Sivasubramaniya Nadar College of Engineering}
+\academicyear{2026--2027}
+\collegelogo{ssn-logo.png}
+
+\begin{document}
+\makereviewtitle
+\reviewfrontmatter
+
+\begin{reviewabstract}
+Write a concise summary in approximately 200--300 words. Include the background,
+problem, proposed approach, results, and main contribution.
+
+\keywords{Keyword 1; Keyword 2; Keyword 3; Keyword 4}
+\end{reviewabstract}
+
+\chapter{Introduction}
+Introduce the project domain, motivation, context, and significance.
+\section{Objectives}
+\begin{enumerate}[label=\arabic*.]
+  \item To design and develop \ldots
+  \item To implement and evaluate \ldots
+  \item To compare the proposed solution with \ldots
+\end{enumerate}
+
+
+\chapter{First Review - Queries and Answers}
+\begin{itemize}
+  \item Query 1 - Answer
+  \item Query 2 - Answer
+\end{itemize}
+
+
+\chapter{Problem statement}
+Present a precise, measurable problem with inputs, outputs, constraints, and criteria.
+
+\chapter{Methodology}
+Describe the complete workflow used to achieve the objectives.
+%\section{Proposed Workflow}
+%\begin{enumerate}[label=\textbf{Step \arabic*:}]
+%  \item Collect or prepare data and resources.
+%  \item Preprocess inputs and extract relevant features.
+%  \item Design and implement the proposed system.
+%  \item Train, test, validate, or deploy the solution.
+%  \item Evaluate it using suitable metrics and baselines.
+%\end{enumerate}
+
+\section{Architectural Design for Proposed System}
+Explain components, responsibilities, interfaces, data flow, and deployment.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  \draw[rounded corners,thick,fill=blue!8] (0,0) rectangle (3,1.2);
+  \node at (1.5,0.6) {Input Layer};
+  \draw[->,thick] (3,0.6) -- (4,0.6);
+  \draw[rounded corners,thick,fill=green!8] (4,0) rectangle (7,1.2);
+  \node at (5.5,0.6) {Processing Layer};
+  \draw[->,thick] (7,0.6) -- (8,0.6);
+  \draw[rounded corners,thick,fill=orange!12] (8,0) rectangle (11,1.2);
+  \node at (9.5,0.6) {Output Layer};
+\end{tikzpicture}
+\caption{High-level architecture of the proposed system}\label{fig:architecture}
+\end{figure}
+
+\section{Modules}
+For each module, specify its purpose, inputs, processing, outputs, and dependencies.
+\subsection{Module 1: Data/Input Management} Describe input handling and preprocessing.
+\subsection{Module 2: Core Processing} Describe the main algorithm or business logic.
+\subsection{Module 3: User Interface and Output} Describe interaction and reporting.
+\subsection{Module 4: Testing and Evaluation} Describe testing and validation.
+
+\chapter{Implementation}
+
+\section{Module 1}
+   Present the implementation details of Module 1
+  
+
+\chapter{Results and Discussion}
+Present the overall results of your proposed work with existing work and present research based discussion. 
+
+
+%\chapter{Reference}
+\begin{thebibliography}{99}
+\bibitem{samplepaper} A. Author and B. Author, "Title of the research paper", \textit{Journal or Conference Name}, vol.~1, no.~1, pp.~1--10, 2025.
+DOI: \url{https://doi.org/10.3844/jcssp.2021.610.623}.
+\bibitem{r1} Wu, F., Souza, A., Zhang, T., Fifty, C., Yu, T., and Weinberger, K, "Simplifying graph convolutional networks", \textit{In the International Conference on Machine Learning"}, pages 6861–6871. Available from \url{https://proceedings.mlr.press/v97/wu19e.html}
+\bibitem{r2} Zhang, Z. and Fink, O, "Algorithm-informed graph neural networks for leakage detection and localization in water distribution networks", \textit{Reliability Engineering \& System Safety}, page 111494. DOI: \url{https://doi.org/10.1016/j.ress.2025.111494}
+\bibitem{r3}, Zhao, F., Liu, J., Zhang, S., Tao, L., Wang, J., Zhang, Z., and Li, N, "A novel method for detecting the leakage duration of water pipe network based on the anchor box mechanism", \textit{In 2025 IEEE 2nd International Conference on Energy and Electrical Engineering (EEE)}, pages 1–5. IEEE, DOI: \url{https://doi.org/10.1109/eee64897.2025.11162744}
+\bibitem{samplebook} C. Author, \textit{Title of the Book}, 2nd ed. City, Country: Publisher, 2024.
+\bibitem{samplewebsite} Organization Name, ``Title of the webpage,'' 2026. [Online]. Available: \url{https://example.com}. [Accessed: 7-Aug-2026].
+\end{thebibliography}
+
+\end{document}

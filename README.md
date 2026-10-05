@@ -1,7 +1,7 @@
 # Assessment of Alzheimer's Disease Progression Using Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI
 
 Final Year Project. Predicting Alzheimer's disease progression
-(CN → SMC → EMCI → LMCI → MCI → AD) from resting-state fMRI (rs-fMRI)
+(CN → SMC → EMCI → MCI → LMCI → AD) from resting-state fMRI (rs-fMRI)
 functional biomarkers, using a Brainnetome-246 parcellation, a multi-attention
 transformer, meta-learning, comorbidity fusion, and a Bayesian ordinal
 classifier for staging. Source dataset: ADNI, BOLD-only (no T1w, no
@@ -50,7 +50,7 @@ FYP/
 ```
 
 Groups: `AD`, `CN_Final`, `EMCI`, `LMCI`, `MCI`, `SMC_Final`.
-Progression ordering used throughout: `CN → SMC → EMCI → LMCI → MCI → AD`.
+Progression ordering used throughout: `CN → SMC → EMCI → MCI → LMCI → AD`.
 
 ## Current pipeline
 
