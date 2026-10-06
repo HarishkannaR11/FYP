@@ -11,16 +11,37 @@
 %  Items shown in red (\todo{...}) must be filled in before submission.
 % =====================================================================
 \PassOptionsToPackage{obeyspaces,spaces}{url}
+\PassOptionsToPackage{table}{xcolor}
 \documentclass{ssnreview}
 
 % ---- extra packages (all available on Overleaf / TeX Live) ----------
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning,arrows.meta,calc}
 \setlength{\emergencystretch}{3em}  % avoid overfull lines caused by long file names
+\usepackage[most]{tcolorbox}
+
+% ---- colours and styling (match the presentation theme) --------------
+\definecolor{SSNBlue}{RGB}{16,62,110}
+\definecolor{AccentBlue}{RGB}{30,136,229}
+\definecolor{LightBlue}{RGB}{232,242,252}
+\definecolor{DoneGreen}{RGB}{27,122,61}
+\definecolor{PlanOrange}{RGB}{194,98,0}
+\newcommand{\hdr}{\rowcolor{SSNBlue!12}}                      % table header row
+\newcommand{\statusdone}{\textcolor{DoneGreen}{\textbf{Completed}}}
+\newcommand{\statusplan}{\textcolor{PlanOrange}{\textbf{Planned}}}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\newtcolorbox{keybox}[1]{enhanced, breakable, colback=LightBlue,
+  colframe=SSNBlue, coltitle=white, fonttitle=\bfseries, title=#1,
+  arc=2pt, boxrule=0.6pt, left=6pt, right=6pt, top=4pt, bottom=4pt,
+  before skip=10pt, after skip=10pt}
+\newtcolorbox{modulebox}{enhanced, breakable, colback=LightBlue!45,
+  colframe=SSNBlue!55, arc=2pt, boxrule=0.5pt, left=4pt, right=6pt,
+  top=2pt, bottom=2pt}
 
 \newcommand{\todo}[1]{\textcolor{red}{[#1]}}
 \DeclareUrlCommand\code{\urlstyle{tt}}  % breakable typewriter text for paths/identifiers
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.3}
 
 % ---- title-page metadata --------------------------------------------
 \projecttitle{Assessment of Alzheimer's Disease Progression Using a\\
@@ -79,6 +100,47 @@ ALFF; ReHo; functional connectivity; ordinal classification; Bayesian deep
 learning; meta-learning}
 \end{reviewabstract}
 
+\chapter*{List of Abbreviations}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{>{\bfseries}l@{\hspace{1.2cm}}l}
+\toprule
+\hdr Abbreviation & Expansion\\
+\midrule
+AD & Alzheimer's disease\\
+ADNI & Alzheimer's Disease Neuroimaging Initiative\\
+ALFF & Amplitude of low-frequency fluctuation\\
+BIDS & Brain Imaging Data Structure\\
+BOLD & Blood-oxygen-level-dependent\\
+CN & Cognitively normal\\
+CSF & Cerebrospinal fluid\\
+CV & Cross-validation\\
+DC & Degree centrality\\
+DVARS & Temporal derivative RMS variance\\
+EMCI & Early mild cognitive impairment\\
+EPI & Echo-planar imaging\\
+FC & Functional connectivity\\
+FCS & FC strength\\
+FD & Framewise displacement\\
+FWHM & Full width at half maximum\\
+LMCI & Late mild cognitive impairment\\
+MCI & Mild cognitive impairment\\
+MNI & Montreal Neurological Institute\\
+QC & Quality control\\
+ReHo & Regional homogeneity\\
+ROI & Region of interest\\
+rs-fMRI & Resting-state functional MRI\\
+SMC & Subjective memory concern\\
+SNR & Signal-to-noise ratio\\
+TR & Repetition time\\
+tSNR & Temporal signal-to-noise ratio\\
+WM & White matter\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 % =====================================================================
 \chapter{Introduction}
 
@@ -104,8 +166,8 @@ centrality (DC)~\cite{zuo2012}, capture complementary aspects of this
 disruption.
 
 Imaging alone ignores factors that change an individual's risk and
-trajectory. Examples are the APOE~$\varepsilon4$ allele~\cite{corder1993}, age,
-sex and vascular or metabolic comorbidities~\cite{livingston2020}. AD stages are
+trajectory. Examples are age, sex, cognitive status and vascular or metabolic
+comorbidities~\cite{livingston2020}. AD stages are
 also \emph{ordered}: confusing CN with SMC is a smaller error than confusing CN
 with AD. Treating staging as flat multi-class classification ignores this
 structure. These two observations motivate the project. It aims to build a
@@ -124,6 +186,44 @@ and are reported here with their verification evidence. The learning stages
 ordinal classifier) are specified in Chapter~\ref{ch:methodology}. They are scheduled in
 Section~\ref{sec:plan} but are not yet implemented, and no model
 results are claimed in this report.
+
+\begin{table}[H]
+\centering
+\caption{Project progress at a glance}\label{tab:status}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{5.2cm}>{\centering\arraybackslash}p{2.2cm}X}
+\toprule
+Stage & Status & Evidence\\
+\midrule
+Dataset audit, DICOM recovery, exclusions & \statusdone & 175 audited, 29 recovered, 2 excluded\\
+Slice-timing investigation & \statusdone & not recoverable; not performed\\
+Preprocessing and QC (6 groups) & \statusdone & 165 of 173 eligible scans\\
+Brainnetome-246 parcellation & \statusdone & 246/246 ROIs in 165/165 scans\\
+ALFF, ReHo, FC, DC biomarkers & \statusdone & 165/165 pass independent checks\\
+Within-subject normalisation & \statusdone & 165/165, 0 failures\\
+Comorbidity data cleaning & \statusplan & LMCI tables missing\\
+Grouped CV folds, train-fold scaling & \statusplan & --\\
+Multi-attention transformer & \statusplan & --\\
+Meta-learning, comorbidity fusion & \statusplan & --\\
+Bayesian ordinal classifier, uncertainty, XAI & \statusplan & --\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{keybox}{Highlights of this review}
+\begin{itemize}[leftmargin=*, itemsep=1pt]
+  \item \textbf{165} preprocessed rs-fMRI scans from \textbf{127} subjects
+        across six stages, every exclusion documented.
+  \item \textbf{246/246} Brainnetome regions covered in every scan.
+  \item DC recomputed from stored FC matches \textbf{exactly} (difference
+        0.0) in all 165 scans; the dataset code reproduces the validated
+        pilot \textbf{bit for bit}.
+  \item Model-ready features per scan: $\mathbf{246\times3}$ regional
+        (mALFF, mReHo, DC$_z$) $+$ $\mathbf{246\times246}$ Fisher-$z$ FC.
+  \item No metadata was guessed: slice timing, tissue maps and invalid
+        filter bands are handled by documented exclusion or substitution.
+\end{itemize}
+\end{keybox}
 
 \section{Objectives}
 \begin{enumerate}[label=\arabic*.]
@@ -222,8 +322,8 @@ spread reflects the model's uncertainty.
         $\mathbf{R} \in \mathbb{R}^{246\times3}$ (mALFF, mReHo, DC$_z$) and a
         connectivity matrix $\mathbf{Z} \in \mathbb{R}^{246\times246}$
         (Fisher-$z$ FC).
-  \item A comorbidity vector $\mathbf{c}$: age, sex, APOE genotype, and
-        clinical and medical-history variables where available.
+  \item A comorbidity vector $\mathbf{c}$: age, sex, and clinical and
+        medical-history variables where available.
 \end{itemize}
 
 \paragraph{Outputs.} A stage estimate $\hat{y}$, the full distribution
@@ -310,7 +410,7 @@ be implemented.
   \node[done, below=of bn] (ts) {ROI time series\\ $135\times246$};
   \node[done, below=of ts] (bio) {ALFF $\cdot$ ReHo $\cdot$ FC $\cdot$ DC\\ + independent validation};
   \node[done, below=of bio] (norm) {Within-subject normalisation\\ $246\times3$ + $246\times246$};
-  \node[data, below=of norm] (com) {Comorbidity data\\ age, sex, APOE, clinical, history};
+  \node[data, below=of norm] (com) {Comorbidity data\\ age, sex, clinical scores, medical history};
   % column 3 -- modelling
   \node[plan, right=0.7cm of bn] (cv) {Subject-grouped CV folds\\ train-fold-only scaling};
   \node[plan, below=of cv] (mat) {Multi-Attention\\ Transformer};
@@ -339,11 +439,11 @@ For each module the purpose, inputs, processing, outputs and dependencies are
 given below. Implementation detail follows in Chapter~\ref{ch:implementation}.
 
 \subsection{Module 1: Data Acquisition, Audit and Curation}
-\begin{description}[leftmargin=2.4cm, style=nextline, font=\normalfont\itshape]
+\begin{modulebox}\begin{description}[leftmargin=2.6cm, style=nextline, font=\normalfont\bfseries\color{SSNBlue}]
   \item[Purpose] Produce a complete, documented inventory of usable BOLD
         acquisitions before any processing time is spent.
   \item[Inputs] ADNI raw DICOM archives, pre-converted NIfTI files and JSON
-        sidecars for six groups; ADNI image-collection and APOE tables.
+        sidecars for six groups; ADNI image-collection and clinical tables.
   \item[Processing] Inventory audit; recovery of NIfTI-missing records from
         raw DICOM; duplicate/orphan/MD5 hash-collision audit; exclusion
         register; BIDS-style organisation with
@@ -352,10 +452,10 @@ given below. Implementation detail follows in Chapter~\ref{ch:implementation}.
   \item[Outputs] 173 eligible acquisitions; \code{audit/excluded_runs.csv};
         audit reports under \code{audit/}.
   \item[Dependencies] dcm2niix (DICOM to NIfTI), Python (pandas, pydicom).
-\end{description}
+\end{description}\end{modulebox}
 
 \subsection{Module 2: rs-fMRI Preprocessing}
-\begin{description}[leftmargin=2.4cm, style=nextline, font=\normalfont\itshape]
+\begin{modulebox}\begin{description}[leftmargin=2.6cm, style=nextline, font=\normalfont\bfseries\color{SSNBlue}]
   \item[Purpose] Remove non-neural signal and bring every scan into a common
         space, using one frozen pipeline for all groups.
   \item[Inputs] Eligible 4-D BOLD acquisitions.
@@ -369,10 +469,10 @@ given below. Implementation detail follows in Chapter~\ref{ch:implementation}.
         and a QC folder per acquisition.
   \item[Dependencies] FreeSurfer 7.4.1 FS-FAST, ANTsPy, Nilearn, TemplateFlow,
         SciPy.
-\end{description}
+\end{description}\end{modulebox}
 
 \subsection{Module 3: Parcellation and Biomarker Extraction}
-\begin{description}[leftmargin=2.4cm, style=nextline, font=\normalfont\itshape]
+\begin{modulebox}\begin{description}[leftmargin=2.6cm, style=nextline, font=\normalfont\bfseries\color{SSNBlue}]
   \item[Purpose] Summarise each scan as interpretable regional and network
         biomarkers on a fine-grained, connectivity-based atlas~\cite{fan2016}.
   \item[Inputs] Preprocessed BOLD, Brainnetome-246 atlas and look-up table.
@@ -382,10 +482,10 @@ given below. Implementation detail follows in Chapter~\ref{ch:implementation}.
   \item[Outputs] Per acquisition: ROI time series ($135\times246$), ALFF,
         ReHo, DC ($246$ each), FC ($246\times246$), QC and metadata.
   \item[Dependencies] Module 2; NumPy, SciPy, NiBabel, Nilearn.
-\end{description}
+\end{description}\end{modulebox}
 
 \subsection{Module 4: Feature Normalisation and Model-Ready Representation}
-\begin{description}[leftmargin=2.4cm, style=nextline, font=\normalfont\itshape]
+\begin{modulebox}\begin{description}[leftmargin=2.6cm, style=nextline, font=\normalfont\bfseries\color{SSNBlue}]
   \item[Purpose] Remove scanner- and subject-specific scaling without
         letting any information cross between subjects.
   \item[Inputs] Raw biomarkers from Module 3.
@@ -395,10 +495,10 @@ given below. Implementation detail follows in Chapter~\ref{ch:implementation}.
         $\mathbf{Z}\in\mathbb{R}^{246\times246}$ per acquisition, written to a
         separate output tree.
   \item[Dependencies] Module 3.
-\end{description}
+\end{description}\end{modulebox}
 
 \subsection{Module 5: Comorbidity-Aware Meta-Bayesian Staging Model (planned)}
-\begin{description}[leftmargin=2.4cm, style=nextline, font=\normalfont\itshape]
+\begin{modulebox}\begin{description}[leftmargin=2.6cm, style=nextline, font=\normalfont\bfseries\color{SSNBlue}]
   \item[Purpose] Map imaging features and comorbidity information to an ordinal
         stage with calibrated uncertainty.
   \item[Inputs] $\mathbf{R}$, $\mathbf{Z}$ and $\mathbf{c}$ for the subjects in
@@ -428,10 +528,10 @@ given below. Implementation detail follows in Chapter~\ref{ch:implementation}.
   \item[Outputs] $p(y\mid\mathbf{R},\mathbf{Z},\mathbf{c})$, predicted stage,
         uncertainty, attention- and attribution-based regional explanations.
   \item[Dependencies] Modules 4 and 6; PyTorch (planned).
-\end{description}
+\end{description}\end{modulebox}
 
 \subsection{Module 6: Testing and Evaluation}\label{sec:m6}
-\begin{description}[leftmargin=2.4cm, style=nextline, font=\normalfont\itshape]
+\begin{modulebox}\begin{description}[leftmargin=2.6cm, style=nextline, font=\normalfont\bfseries\color{SSNBlue}]
   \item[Purpose] Make every stage verifiable and every model result unbiased.
   \item[Data-level testing (done)] Input validation, per-acquisition QC,
         a pilot-reproduction gate before scale-up, independent re-reading
@@ -444,7 +544,7 @@ given below. Implementation detail follows in Chapter~\ref{ch:implementation}.
         mean absolute stage error, quadratic weighted $\kappa$, expected
         calibration error; ablations removing ordinal structure, comorbidity
         fusion and meta-learning.
-\end{description}
+\end{description}\end{modulebox}
 
 % =====================================================================
 \chapter{Implementation}\label{ch:implementation}
@@ -459,7 +559,7 @@ files.
 \caption{Software environment (from provenance JSON sidecars)}\label{tab:env}
 \begin{tabular}{ll@{\hspace{1.5cm}}ll}
 \toprule
-Component & Version & Component & Version\\
+\hdr Component & Version & Component & Version\\
 \midrule
 Python      & 3.12.3 & Pandas         & 3.0.5\\
 NumPy       & 2.3.5  & Matplotlib     & 3.11.2\\
@@ -507,7 +607,7 @@ also overturned an earlier note that 6 AD scans were unrecoverable (R3).
 \caption{DICOM recovery of acquisitions with missing NIfTI files}\label{tab:recovery}
 \begin{tabular}{lrrrrr}
 \toprule
-Group & JSON records & NIfTI present & Missing & Converted & Failures\\
+\hdr Group & JSON records & NIfTI present & Missing & Converted & Failures\\
 \midrule
 MCI       & 35 & 26 &  9 &  9 & 0\\
 SMC       & 32 & 12 & 20 & 20 & 0\\
@@ -526,7 +626,7 @@ retained, and every batch script consults the exclusion register.
 \caption{Documented pre-processing exclusions (\texttt{audit/excluded\_runs.csv})}\label{tab:excl}
 \begin{tabularx}{\textwidth}{llX}
 \toprule
-Group & Acquisition & Reason\\
+\hdr Group & Acquisition & Reason\\
 \midrule
 CN   & sub-012S4026 / ses-01 / run-01 & Only 7 volumes (others have 140); truncation present in the source DICOM export\\
 LMCI & sub-006S4363 / ses-01 / run-02 & Byte-identical duplicate of run-01 (MD5 \code{e7a650bf...})\\
@@ -560,7 +660,7 @@ The frozen pipeline is \code{pipeline/fsfast_production_4mm6mm.py}
 \small
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.6cm}X}
 \toprule
-Step & Tool & Parameters / notes\\
+\hdr Step & Tool & Parameters / notes\\
 \midrule
 Input validation & NumPy / NiBabel & 4-D; no NaN/Inf; finite affine with $|\det|>10^{-9}$; TR $>0$; non-empty\\
 Volume removal & array slicing & first 5 volumes discarded (140 $\rightarrow$ 135)\\
@@ -693,7 +793,7 @@ mode, so its original files are untouched.
 validated pilot}\label{tab:pilot}
 \begin{tabular}{lll}
 \toprule
-Quantity & Shape & Max.\ abs.\ difference\\
+\hdr Quantity & Shape & Max.\ abs.\ difference\\
 \midrule
 ALFF                 & (246,)      & 0.000 (bit-identical)\\
 ReHo                 & (246,)      & 0.000 (bit-identical)\\
@@ -723,7 +823,7 @@ folds only.
 \small
 \begin{tabularx}{\textwidth}{llX}
 \toprule
-Output & Transform & Rationale\\
+\hdr Output & Transform & Rationale\\
 \midrule
 mALFF & $\text{ALFF}_i / \overline{\text{ALFF}}$ & removes raw-intensity scaling; ratio form as in the literature\\
 mReHo & $\text{ReHo}_i / \overline{\text{ReHo}}$ & removes the subject's global coherence offset\\
@@ -745,9 +845,7 @@ DC$_z$) plus the connectivity matrix $\mathbf{Z}\in\mathbb{R}^{246\times246}$.
 The modelling stages are not yet implemented. Their prerequisites are now in
 place, and the next steps are:
 \begin{enumerate}[label=\arabic*.]
-  \item Obtain and clean the comorbidity tables. APOE genotype from the ADNI
-        APOE results table is available for 126 of the 127 subjects. The
-        clinical cohort tables (CDR, MMSE, GDS, medical history) are present
+  \item Obtain and clean the comorbidity tables. The clinical cohort tables (CDR, MMSE, GDS, medical history) are present
         for five groups but missing for LMCI. Because this gap follows group
         lines, an availability flag would act as a proxy for the LMCI label,
         so it must not be used as a feature.
@@ -758,6 +856,8 @@ place, and the next steps are:
 \end{enumerate}
 
 \section{Output Organisation}
+All outputs follow one directory convention per acquisition:
+\begin{tcolorbox}[colback=gray!4, colframe=SSNBlue!40, boxrule=0.5pt, arc=2pt, fontupper=\small]
 \begin{verbatim}
 derivatives/
   fsfast/<GROUP>/sub-<ID>/ses-<NN>/run-<NN>/
@@ -773,9 +873,21 @@ derivatives/
     malff, mreho, dc_z, fc_fisher_z,
     regional_biomarkers_normalized (246 x 3), metadata
 \end{verbatim}
+\end{tcolorbox}
 
 % =====================================================================
 \chapter{Results and Discussion}\label{ch:results}
+
+\begin{keybox}{Key results}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{6.2cm}X@{}}
+Acquisitions audited / eligible / preprocessed & 175 / 173 / \textbf{165}\\
+Distinct subjects (unit of validation) & \textbf{127}\\
+Biomarker sets passing all consistency checks & \textbf{165/165}, 0 failures\\
+DC recomputed from FC, max.\ difference & \textbf{0.000}\\
+Median tSNR range across groups & 119--139\\
+Mean FD range across groups & 0.32--0.44 mm\\
+\end{tabularx}
+\end{keybox}
 
 \section{Dataset Accounting}
 Figure~\ref{fig:flow} traces every acquisition from the raw dataset to the
@@ -814,13 +926,11 @@ demographics.
 \setlength{\tabcolsep}{4.5pt}
 \caption{Per-group cohort summary (processed subjects only). Age and sex
 are taken from the ADNI image-collection tables, at the earliest rs-fMRI scan
-listed for each subject.
-APOE~$\varepsilon4$+ counts subjects carrying at least one $\varepsilon4$
-allele.}\label{tab:cohort}
+listed for each subject.}\label{tab:cohort}
 \small
 \begin{tabular}{lrrrrrr}
 \toprule
- & CN & SMC & EMCI & MCI & LMCI & AD\\
+\hdr  & CN & SMC & EMCI & MCI & LMCI & AD\\
 \midrule
 Eligible acquisitions      & 29 & 32 & 30 & 35 & 22 & 25\\
 Preprocessed / biomarkers  & 27 & 31 & 29 & 32 & 21 & 25\\
@@ -828,21 +938,16 @@ Subjects (processed)       & 26 & 21 & 26 & 14 & 20 & 20\\
 Scans per subject          & 1.04 & 1.48 & 1.12 & 2.29 & 1.05 & 1.25\\
 Age (mean $\pm$ SD)        & 76.8$\pm$6.4 & 72.0$\pm$5.4 & 70.4$\pm$7.1 & 71.8$\pm$8.1 & \todo{n/a} & 75.3$\pm$7.7\\
 Sex (F/M)                  & 14/12 & 12/9 & 16/10 & 5/9 & \todo{n/a} & 11/9\\
-APOE~$\varepsilon4$+ / genotyped & 8/26 & 8/20 & 17/26 & 5/14 & 7/20 & 19/20\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Two points stand out. First, sessions inflate the MCI class: it is the largest
-by scans but the smallest by subjects. Splitting by scan would put the same
-brain in both training and test sets, so validation must be subject-grouped.
-Second, APOE~$\varepsilon4$ carriage is 31\% in CN and 95\% in AD,
-consistent with its known role as the strongest common genetic risk
-factor~\cite{corder1993}. The intermediate groups do not follow a clean trend
-(65\% in EMCI, 36\% in MCI, 35\% in LMCI), which is unsurprising with 14--26
-subjects per group. APOE is therefore a plausible input for the comorbidity
-branch, not a stage marker on its own.
-The LMCI demographics are not available until its cohort table is obtained.
+The main point is that sessions inflate the MCI class: it is the largest by
+scans but the smallest by subjects. Splitting by scan would put the same brain
+in both training and test sets, so validation must be subject-grouped. The
+CN group is the oldest on average (76.8 years) and EMCI the youngest (70.4),
+so age will be included as a covariate. The LMCI demographics are not
+available until its cohort table is obtained.
 
 \section{Preprocessing Quality Control}
 Table~\ref{tab:qc} and Figure~\ref{fig:qc} summarise QC across the 165
@@ -858,7 +963,7 @@ silently removed.
 \small
 \begin{tabular}{lrrrrrr}
 \toprule
- & CN & SMC & EMCI & MCI & LMCI & AD\\
+\hdr  & CN & SMC & EMCI & MCI & LMCI & AD\\
 \midrule
 Acquisitions                & 27 & 31 & 29 & 32 & 21 & 25\\
 tSNR, median                & 132.8 & 123.7 & 133.2 & 139.2 & 121.4 & 118.8\\
@@ -915,7 +1020,7 @@ quantities independently of the generation code.
 \small
 \begin{tabular}{lr}
 \toprule
-Check & Result\\
+\hdr Check & Result\\
 \midrule
 Acquisitions with all 246 ROIs present / any zero-voxel ROI & 165/165 \;/\; 0\\
 ROI voxel count (min / median / max)                     & 10 / 68 / 186\\
@@ -998,7 +1103,7 @@ performed.
 \small
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
 \toprule
-Aspect & Typical pipeline with T1w and full metadata & This project (BOLD-only ADNI subset)\\
+\hdr Aspect & Typical pipeline with T1w and full metadata & This project (BOLD-only ADNI subset)\\
 \midrule
 Spatial normalisation & BOLD $\rightarrow$ T1w $\rightarrow$ template & direct EPI $\rightarrow$ MNI152 (ANTs SyN)\\
 WM/CSF signals & subject-specific tissue segmentation & template priors with a per-acquisition reliability gate\\
@@ -1106,7 +1211,6 @@ it under subject-grouped cross-validation.
 
 \bibitem{zuo2012} X.-N. Zuo \textit{et al.}, ``Network centrality in the human functional connectome,'' \textit{Cerebral Cortex}, vol.~22, no.~8, pp.~1862--1875, 2012. DOI: \url{https://doi.org/10.1093/cercor/bhr269}.
 
-\bibitem{corder1993} E. H. Corder \textit{et al.}, ``Gene dose of apolipoprotein E type 4 allele and the risk of Alzheimer's disease in late onset families,'' \textit{Science}, vol.~261, no.~5123, pp.~921--923, 1993. DOI: \url{https://doi.org/10.1126/science.8346443}.
 
 \bibitem{fan2016} L. Fan \textit{et al.}, ``The Human Brainnetome Atlas: A new brain atlas based on connectional architecture,'' \textit{Cerebral Cortex}, vol.~26, no.~8, pp.~3508--3526, 2016. DOI: \url{https://doi.org/10.1093/cercor/bhw157}.
 
