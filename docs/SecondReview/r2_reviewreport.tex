@@ -2,8 +2,8 @@
 % Keep ssnreview.cls, ssn-logo.png and the figures/ folder in the same folder.
 %
 % BEFORE SUBMISSION (items shown in red in the PDF):
-%   1. Chapter 2 (First Review - Queries and Answers) must be filled in from the
-%      Review I minutes. It is intentionally left as placeholders.
+%   1. Chapter 2: comment 4 of the Review I comment sheet is cut off in the photo
+%      ("Need ..."). Add its text and the answer. Comments 1-3 are filled in.
 %
 % NOTE: ssnreview.cls does not load amsmath, so \text, \operatorname, align etc.
 % are unavailable. Use \mathrm{} in formulas.
@@ -181,11 +181,13 @@ ahead of its own Review~I timeline (Table~\ref{tab:timeline}).
 \midrule
 Literature survey, problem formulation \& design (Review~1) & Aug & Complete. \\
 Module 2: Preprocessing \& validation (Review~2) & Sep--Oct &
-\textbf{Complete.} 165 of 173 eligible acquisitions preprocessed; 8 rejected for a
-6.02\,s TR; per-acquisition QC and independent verification done. \\
+\textbf{Complete.} 165 of 173 eligible acquisitions preprocessed (outputs dated 20--22
+September 2026); 8 rejected for a 6.02\,s TR; per-acquisition QC and independent
+verification done. \\
 Module 3: Feature extraction --- Brainnetome 246 (Review~3) & Nov &
 \textbf{Complete, one review early.} 165/165 acquisitions parcellated with 246/246
-coverage; ALFF, ReHo, FC and DC generated and verified for all 165. \\
+coverage; ALFF, ReHo, FC and DC generated and audited on 23 September 2026;
+within-subject normalisation finished on 5 October 2026. \\
 Modules 4 \& 5: Multi-Attention Transformer, Meta-Learning \& 6-class classifier &
 Dec--Jan & \textbf{Not started.} No model has been trained; no accuracy, AUC or other
 performance figure exists. \\
@@ -219,7 +221,7 @@ Documentation; final submission & Feb--Mar & Not yet due. \\
 \end{ganttchart}
 \caption{Review~I timeline (bar positions) against progress at Review~II. Dark bars are
 complete, light bars are not started. The vertical line marks Review~II (October);
-Module~3, planned for November, is already complete.}
+Module~3, planned for November, was complete by early October.}
 \label{fig:gantt}
 \end{figure}
 
@@ -229,21 +231,41 @@ the cross-validation folds are not yet built (Section~\ref{sec:notdone}).
 
 \chapter{First Review - Queries and Answers}
 
-% TODO (BEFORE SUBMISSION): replace every placeholder in this chapter with the
-% queries actually raised at Review I and the answers given, taken from the
-% Review I minutes. The queries are not available in the repository and must not
-% be invented.
-\begin{itemize}
-  \item \textbf{Query 1} --- \emph{[To be completed with the query raised by the
-        review panel at Review~I.]} \\
-        \textbf{Answer} --- \emph{[Response.]}
-  \item \textbf{Query 2} --- \emph{[To be completed.]} \\
-        \textbf{Answer} --- \emph{[Response.]}
-\end{itemize}
+The panel's Review~I comments, with the response to each, are below. Each response points
+to the section of this report that gives the detail.
 
-\noindent\textcolor{red}{\textbf{[TO BE COMPLETED BEFORE SUBMISSION.]} Fill in each query
-and answer from the Review~I minutes. The queries raised by the panel are not
-reproduced here because they are not available in the project repository.}
+% TODO (BEFORE SUBMISSION): comment 4 on the Review I comment sheet is cut off in the
+% photo ("Need ..."). Add its full text and the response.
+\begin{itemize}
+  \item \textbf{Comment 1} --- \emph{Need more clarity on the dataset (biomarkers).}\\
+        \textbf{Response} --- The data are ADNI resting-state fMRI acquisitions across the
+        six ordered stages. Of 175 raw acquisitions, 2 were excluded for documented
+        reasons, 173 were eligible and 165 were preprocessed, from 127 distinct subjects
+        (Table~\ref{tab:cohort}). Four biomarkers are extracted per acquisition on the 246
+        Brainnetome regions: ALFF, ReHo, DC and FC, defined in
+        Table~\ref{tab:biomarkers}. After within-subject normalisation they enter the
+        model as a $246\times3$ regional matrix (mALFF, mReHo, DC$_z$) and a
+        $246\times246$ Fisher-$z$ FC matrix (Table~\ref{tab:fourbio}). The dataset will be
+        enlarged by a further 50 acquisitions per stage; these have not yet been
+        downloaded or processed, so every number in this report refers to the current
+        165-acquisition cohort.
+  \item \textbf{Comment 2} --- \emph{Need more clarity on the Meta-Bayesian framework.}\\
+        \textbf{Response} --- ``Meta'' and ``Bayesian'' are two separate parts that solve
+        two separate problems. Meta-learning treats each biomarker as a task and trains
+        the shared encoder to give one biomarker-invariant representation. The Bayesian
+        ordinal head turns that representation into a distribution over the six ordered
+        stages with an uncertainty measure. Section~\ref{sec:metabayes} gives the
+        equations and a diagram. Neither part has been implemented yet.
+  \item \textbf{Comment 3} --- \emph{Need more clarity on the comorbidity data.}\\
+        \textbf{Response} --- The covariates are age, APOE~$\varepsilon4$, MMSE, CDR-SB,
+        GDS and cardiovascular and endocrine medical history. Section~\ref{sec:comorb}
+        lists each one with its ADNI source and current status. The cohort tables are
+        obtained for five of six groups, the LMCI tables are missing, and none has been
+        cleaned yet.
+  \item \textbf{Comment 4} --- \textcolor{red}{[Text cut off in the photographed comment
+        sheet (it reads ``Need \ldots''). Add the comment and its response before
+        submission.]}
+\end{itemize}
 
 \chapter{Problem statement}\label{ch:problem}
 
@@ -547,6 +569,135 @@ explainability overlays and network (DMN, SN, ECN) visualisation. \textbf{Output
 Interactive dashboard. \textbf{Dependencies.} Modules~1 and~5. \textbf{Status.} Not
 started.
 
+\section{Clarification: The Meta-Bayesian Framework}\label{sec:metabayes}
+
+The Review~I panel asked for more clarity on this framework. ``Meta-Bayesian'' combines
+two independent ideas (Table~\ref{tab:metabayes}). Both belong to Modules~4 and~5, and
+neither has been implemented; what follows is the design.
+
+\begin{table}[H]
+\centering
+\caption{The two parts of the Meta-Bayesian framework.}
+\label{tab:metabayes}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}XX@{}}
+\toprule
+\textbf{Part} & \textbf{Problem it addresses} & \textbf{Mechanism and output} \\
+\midrule
+Meta-learning (Module 4) & Each biomarker is a different, noisy view of the same
+disease, and a model trained on one generalises poorly. &
+Each biomarker is a task. A learn-to-learn loop trains the shared encoder so that it
+adapts quickly to any of them. Output: a biomarker-invariant representation $Z'$. \\
+Bayesian ordinal head (Module 5) & Stages are ordered, and borderline subjects need an
+honest confidence, not a single hard label. &
+A cumulative-link output over the six ordered stages, with a distribution over the
+classifier weights. Output: stage probabilities and an uncertainty measure. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[font=\small,>=latex]
+  \tikzset{b/.style={rounded corners,thick,draw,align=center,minimum height=0.9cm,inner sep=4pt},
+            ar/.style={->,thick}}
+  \node[b,fill=blue!8] (t1) at (0,1.65) {Task 1: ALFF};
+  \node[b,fill=blue!8] (t2) at (0,0.55) {Task 2: ReHo};
+  \node[b,fill=blue!8] (t3) at (0,-0.55) {Task 3: DC};
+  \node[b,fill=blue!8] (t4) at (0,-1.65) {Task 4: FC};
+  \node[b,fill=gray!10,dashed,text width=3.6cm,minimum height=4.3cm] (enc) at (4.6,0) {Shared multi-attention\\encoder $f_\theta$\\{\footnotesize inner and outer loop}};
+  \node[b,fill=gray!10,dashed] (z) at (8.1,0) {$Z'$};
+  \node[b,fill=yellow!22] (c) at (8.1,-1.9) {clinical covariates $C$};
+  \node[b,fill=gray!10,dashed] (h) at (10.4,0) {$H=[Z'\,\|\,C]$};
+  \node[b,fill=gray!10,dashed,text width=3.3cm] (head) at (14.0,0) {Bayesian ordinal head\\{\footnotesize distribution over weights}};
+  \node[b,fill=gray!10,dashed,text width=3.0cm] (out) at (18.1,0) {stage $\hat y$, $p(y\mid X,C)$,\\uncertainty};
+  \foreach \t in {t1,t2,t3,t4} \draw[ar] (\t.east) -- (enc.west |- \t.east);
+  \draw[ar] (enc) -- (z); \draw[ar] (z) -- (h); \draw[ar] (c.east) -| (h.south);
+  \draw[ar] (h) -- (head); \draw[ar] (head) -- (out);
+\end{tikzpicture}}
+\caption{The Meta-Bayesian pipeline (design, not implemented). The four biomarkers act as
+meta-learning tasks; the clinical covariates are fused after the shared representation is
+learnt.}
+\label{fig:metabayes}
+\end{figure}
+
+\textbf{Meta-learning across biomarkers.} Let $b\in\{\mathrm{ALFF},\mathrm{ReHo},
+\mathrm{DC},\mathrm{FC}\}$ index the tasks, and let $f_\theta$ be the shared encoder. For each
+task a \emph{support} set adapts the encoder and a \emph{query} set measures how well
+the adapted encoder works, following model-agnostic meta-learning~\cite{finn2017}:
+\begin{equation}
+  \theta'_b = \theta - \alpha\,\nabla_\theta \mathcal{L}^{\mathrm{sup}}_b(\theta),
+  \qquad
+  \theta \leftarrow \theta - \beta\,\nabla_\theta \sum_{b}\mathcal{L}^{\mathrm{qry}}_b(\theta'_b).
+\end{equation}
+The outer update rewards parameters $\theta$ from which a few steps work well on
+\emph{every} biomarker, which is what makes $Z'=f_\theta(X)$ biomarker-invariant. Support
+and query sets are drawn from different subjects, and all of them come from the training
+folds only. The tasks here are biomarkers, not sites or subjects.
+
+\textbf{Bayesian ordinal head.} For the fused vector $H$ the head scores
+$g_w(H)$ and uses ordered thresholds $\theta_0<\dots<\theta_4$ (the cumulative-link
+form~\cite{mccullagh1980}):
+\begin{equation}
+  P(y\le k\mid H,w)=\sigma\big(\theta_k-g_w(H)\big),\qquad k=0,\dots,4 .
+\end{equation}
+The weights have a prior and an approximate posterior $q(w)$, obtained for example by
+variational inference or Monte Carlo dropout~\cite{gal2016}. The predictive probability
+averages over $S$ weight samples $w_s\sim q(w)$:
+\begin{equation}
+  \bar p_k=\frac1S\sum_{s=1}^{S}\Big[P(y\le k\mid H,w_s)-P(y\le k-1\mid H,w_s)\Big],
+\end{equation}
+with $P(y\le -1)=0$ and $P(y\le 5)=1$. Uncertainty is the predictive entropy
+$U=-\sum_k \bar p_k\log\bar p_k$. A subject is flagged as borderline when two adjacent
+stages both carry substantial probability.
+
+\textbf{Status and open choices.} Nothing here has been trained. First-order or full
+meta-gradients, variational inference or Monte Carlo dropout, and the size of $S$ are not
+yet fixed. The model will be evaluated with the Review~I metrics, including expected
+calibration error.
+
+\section{Clarification: The Comorbidity Data}\label{sec:comorb}
+
+The Review~I panel also asked for more clarity on the comorbidity data.
+Table~\ref{tab:comorb} lists every covariate fixed at Review~I with its ADNI source and
+status. The cohort table archives were obtained for five of the six groups, and their
+contents have not yet been parsed or cleaned.
+
+\begin{table}[H]
+\centering
+\caption{Clinical and comorbidity covariates (Review~I design) and their status.}
+\label{tab:comorb}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{2.0cm}X@{}}
+\toprule
+\textbf{Covariate} & \textbf{ADNI source} & \textbf{Type} & \textbf{Status} \\
+\midrule
+Age & image-collection table & years & present for five of six groups (no LMCI table) \\
+APOE~$\varepsilon4$ & cohort tables (APOE4) & carrier status & LMCI missing from the cohort tables; a separate APOE results file in the repository lists 126 of the 127 subjects, LMCI included, and is to be reconciled \\
+MMSE & MMSE table & score 0--30 & obtained for five groups; not cleaned \\
+CDR-SB & CDR table & score 0--18 & obtained for five groups; not cleaned \\
+GDS & Geriatric Depression Scale table & score 0--15 & obtained for five groups; not cleaned \\
+Hypertension & medical history, MH4CARD & binary & broad cardiovascular category only \\
+Diabetes & medical history, MH9ENDO & binary & broad endocrine category only \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{How the covariates enter the model.} The covariates form a vector $C$,
+standardised using training-fold statistics only and concatenated with the learnt
+representation as $H=[Z'\,\|\,C]$ (Review~I design).
+
+\textbf{Missing data.} The LMCI tables are absent entirely, so 20 subjects have no
+cohort-table covariates. Because this gap follows group lines, a missingness indicator
+would act as a proxy for the LMCI label and must not be used as a feature, and no
+imputation will stand in for a whole missing group. The remedy is to obtain the tables.
+
+\textbf{A circularity risk.} ADNI assigns diagnostic categories using, among other
+measures, MMSE and CDR, so a model given MMSE and CDR-SB can partly read its label from
+the definition of that label. Results will therefore be reported with and without these
+two scores, and the imaging claim will rest on the version without them.
+
 \chapter{Implementation}\label{ch:impl}
 
 All processing ran under WSL2 (Ubuntu) on Windows 11 with Python 3.12.3, NumPy
@@ -589,7 +740,8 @@ inferred or fabricated at any point.
 The clinical half of Module~1 is less advanced than the imaging half. Cohort table
 archives (CDR, MMSE, GDS and medical history) have been obtained for five of the six
 groups, but they have not yet been parsed or cleaned, and the LMCI tables are missing
-(Section~\ref{sec:notdone}).
+(Section~\ref{sec:notdone}). A further 50 acquisitions per stage are planned; they have
+not yet been downloaded or processed.
 
 \section{Module 2: Preprocessing Pipeline}\label{sec:preproc}
 
@@ -1118,6 +1270,9 @@ done.
   \item \textbf{Hypertension and diabetes are not directly available.} The ADNI
         medical-history tables supply only the broad categories MH4CARD
         (cardiovascular) and MH9ENDO (endocrine); they are used under those names.
+  \item \textbf{The dataset expansion has not started.} A further 50 acquisitions per
+        stage are planned. They have not been downloaded, converted or processed, and all
+        counts in this report refer to the current 165-acquisition cohort.
   \item \textbf{Modules 4--6 are not started:} Module~4 (multi-attention
         transformer, meta-learning, comorbidity fusion), Module~5 (Bayesian ordinal
         classifier) and Module~6 (decision-support dashboard). No accuracy, AUC or other performance figure exists, and none is
@@ -1156,7 +1311,7 @@ from the design, which illustrates the value of auditing features before modelli
 \textbf{Limitations.} Beyond the absence of T1w and slice-timing data, four
 limitations bear on the conclusions that can eventually be drawn. The effective
 sample is 127 subjects across six ordered classes with a smallest class of 14,
-which bounds model capacity and makes a single held-out test split uninformative;
+(a further 50 acquisitions per stage are planned and will change these counts), which bounds model capacity and makes a single held-out test split uninformative;
 repeated subject-grouped cross-validation is required. No cross-site or cross-scanner
 harmonisation was applied (Table~\ref{tab:deviations}), so site and protocol effects may remain in the features. Eight acquisitions are
 permanently excluded on account of the 6.02\,s TR subgroup unless the filter
