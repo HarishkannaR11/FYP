@@ -1,0 +1,161 @@
+{
+  "generated_utc": "2026-10-07T14:33:22.835493+00:00",
+  "n_acquisitions": 165,
+  "n_subjects": 127,
+  "stage_order": [
+    "CN",
+    "SMC",
+    "EMCI",
+    "MCI",
+    "LMCI",
+    "AD"
+  ],
+  "aggregation": "subject-level: mean within subject, then mean across subjects",
+  "biomarkers": {
+    "mALFF": {
+      "shape": [
+        246,
+        6
+      ],
+      "shape_ok": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "rowz_nan_count": 0,
+      "rowz_inf_count": 0,
+      "n_rois": 246,
+      "n_stages": 6,
+      "min": 0.4137715437799424,
+      "max": 1.9320888045495888,
+      "subject_counts": {
+        "CN": 26,
+        "SMC": 21,
+        "EMCI": 26,
+        "MCI": 14,
+        "LMCI": 20,
+        "AD": 20
+      },
+      "acquisition_counts": {
+        "CN": 27,
+        "SMC": 31,
+        "EMCI": 29,
+        "MCI": 32,
+        "LMCI": 21,
+        "AD": 25
+      },
+      "subject_counts_match_expected": true
+    },
+    "mReHo": {
+      "shape": [
+        246,
+        6
+      ],
+      "shape_ok": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "rowz_nan_count": 0,
+      "rowz_inf_count": 0,
+      "n_rois": 246,
+      "n_stages": 6,
+      "min": 0.7818962433849608,
+      "max": 1.33603531015661,
+      "subject_counts": {
+        "CN": 26,
+        "SMC": 21,
+        "EMCI": 26,
+        "MCI": 14,
+        "LMCI": 20,
+        "AD": 20
+      },
+      "acquisition_counts": {
+        "CN": 27,
+        "SMC": 31,
+        "EMCI": 29,
+        "MCI": 32,
+        "LMCI": 21,
+        "AD": 25
+      },
+      "subject_counts_match_expected": true
+    },
+    "DC_z": {
+      "shape": [
+        246,
+        6
+      ],
+      "shape_ok": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "rowz_nan_count": 0,
+      "rowz_inf_count": 0,
+      "n_rois": 246,
+      "n_stages": 6,
+      "min": -2.1377615115745665,
+      "max": 1.3493328930929174,
+      "subject_counts": {
+        "CN": 26,
+        "SMC": 21,
+        "EMCI": 26,
+        "MCI": 14,
+        "LMCI": 20,
+        "AD": 20
+      },
+      "acquisition_counts": {
+        "CN": 27,
+        "SMC": 31,
+        "EMCI": 29,
+        "MCI": 32,
+        "LMCI": 21,
+        "AD": 25
+      },
+      "subject_counts_match_expected": true
+    },
+    "FC_Strength": {
+      "shape": [
+        246,
+        6
+      ],
+      "shape_ok": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "rowz_nan_count": 0,
+      "rowz_inf_count": 0,
+      "n_rois": 246,
+      "n_stages": 6,
+      "min": -2.1377615115745665,
+      "max": 1.3493328930929172,
+      "subject_counts": {
+        "CN": 26,
+        "SMC": 21,
+        "EMCI": 26,
+        "MCI": 14,
+        "LMCI": 20,
+        "AD": 20
+      },
+      "acquisition_counts": {
+        "CN": 27,
+        "SMC": 31,
+        "EMCI": 29,
+        "MCI": 32,
+        "LMCI": 21,
+        "AD": 25
+      },
+      "subject_counts_match_expected": true
+    }
+  },
+  "roi_integrity": {
+    "count": 246,
+    "no_duplicates": true,
+    "no_missing": true
+  },
+  "fc_strength_redundancy_raw": {
+    "n_acquisitions_checked": 165,
+    "max_abs_difference": 6.938893903907228e-18,
+    "min_pearson_r": 0.9999999999999983,
+    "relation_holds": true
+  },
+  "fc_strength_vs_dc_stage_matrix": {
+    "max_abs_difference": 6.661338147750939e-16,
+    "pearson_r": 1.0
+  },
+  "subjects_in_multiple_stages": [],
+  "warnings": []
+}
