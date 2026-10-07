@@ -41,30 +41,39 @@ Multi-Attention Transformer, to learn a shared, biomarker-invariant AD represent
 explicitly integrating clinical covariates and quantifying prediction uncertainty.
 
 \textbf{Methods:} Resting-state fMRI scans were drawn from the Alzheimer's Disease
-Neuroimaging Initiative (ADNI) repository and passed through a standardized preprocessing
-sequence covering slice-timing alignment, head-motion correction, normalization to a common
-anatomical template, band-limited temporal filtering, and nuisance-signal regression. Four
-complementary functional biomarkers were then extracted---Amplitude of Low-Frequency
-Fluctuations (ALFF), Regional Homogeneity (ReHo), Degree Centrality (DC), and Functional
-Connectivity (FC)---with the brain parcellated into 246 regions via the Brainnetome Atlas. A
-Multi-Attention Transformer (incorporating global, local, and network attention) learned
-critical region embeddings, while a meta-learning module concurrently distilled shared,
-biomarker-invariant disease signatures. These imaging representations were fused with
-patient-specific clinical metadata, including age, APOE $\varepsilon$4 genotype, MMSE,
-CDR-SB, hypertension, diabetes, and Geriatric Depression Scale (GDS) scores. Finally, a
-Bayesian ordinal classifier assigned each subject a position along six sequentially ordered
-cognitive stages spanning the healthy-to-diagnosed continuum---CN, SMC, EMCI, MCI, LMCI,
-and AD---together with a calibrated confidence score for each prediction.
+Neuroimaging Initiative (ADNI) repository. The data foundation was built first: 175
+acquisitions were audited, 29 missing scans were recovered from raw DICOM and 2 were
+excluded, and 165 acquisitions from 127 subjects were preprocessed with head-motion
+correction, direct normalization to the MNI template, band-limited temporal filtering and a
+27-regressor nuisance model. Slice-timing correction was not possible because the metadata
+are not recoverable, and no T1-weighted image exists for any subject, so no anatomical
+co-registration was used. Four complementary functional biomarkers were then
+extracted---Amplitude of Low-Frequency Fluctuations (ALFF), Regional Homogeneity (ReHo),
+Degree Centrality (DC), and Functional Connectivity (FC)---with the brain parcellated into
+246 regions via the Brainnetome Atlas, and each was normalized within subject. The proposed
+model will use a Multi-Attention Transformer (incorporating global, local, and network
+attention) to learn critical region embeddings, and a meta-learning module to distill
+shared, biomarker-invariant disease signatures. These imaging representations will be fused
+with patient-specific clinical metadata (age, APOE $\varepsilon$4 genotype, MMSE, CDR-SB,
+Geriatric Depression Scale scores, and cardiovascular and endocrine medical history). A
+Bayesian ordinal classifier will then assign each subject a position along six sequentially
+ordered cognitive stages spanning the healthy-to-diagnosed continuum---CN, SMC, EMCI, MCI,
+LMCI, and AD---together with a calibrated confidence score for each prediction.
 
-\textbf{Current Development and Evaluation Framework:} The proposed system is currently
-under active development, with the multi-biomarker feature extraction pipelines fully
-established. System performance is judged on the standard classification metric suite
-(accuracy, precision, recall, F1-score, ROC-AUC) alongside two model-specific checks: how
-well-calibrated the Bayesian uncertainty estimates are, and how meaningful the learned
-attention maps prove to be. Ongoing experimental evaluations are structured to demonstrate
-that the proposed framework successfully models the biological progression of the disease,
-outperforms independent single-modality baseline methods, and provides reliable borderline
-subject identification across the six-stage progression continuum.
+\textbf{Current Development and Evaluation Framework:} Modules 1 to 3 of the proposed system
+(data, preprocessing and feature extraction) are complete, one milestone ahead of the
+Review~I timeline. The modelling stages (Modules 4 to 6) have not been started, and no
+performance result is reported. Every derived feature was verified independently, and
+degree centrality recomputed from the stored connectivity matrices agreed exactly for all
+165 acquisitions. Two findings shaped the design. FC strength, the per-region summary of FC,
+is exactly DC$/245$, so all four biomarkers are kept as a $246\times3$ regional matrix plus
+the full $246\times246$ connectivity matrix. Stage-wise group-mean heatmaps over 127 subjects
+show no detectable univariate progression signal (1, 0 and 1 of 246 regions monotonic,
+against about 0.7 expected by chance), which motivates a multivariate model. The model will
+be judged on the standard classification metric suite (accuracy, precision, recall,
+F1-score, ROC-AUC) alongside two model-specific checks: how well calibrated the Bayesian
+uncertainty estimates are, and how meaningful the learned attention maps prove to be, under
+subject-grouped cross-validation and against single-modality baselines.
 
 \textbf{Significance and Conclusion:} This work introduces a novel architectural formulation
 designed to advance transparent modeling of Alzheimer's disease progression. By uniquely
@@ -395,7 +404,7 @@ Building Modules~1--3 added concrete limits that instantiate the above.
         any acquisition.
   \item \textbf{Scan variant irregularities.} Eight acquisitions have a TR of about
         6.02\,s, which breaks the fixed 0.01--0.10\,Hz band; one further acquisition has
-        TR 2.25\,s.
+        TR 2.25\,s, which passes the Nyquist check (0.22\,Hz) and was processed normally.
   \item \textbf{Small effective sample.} 165 acquisitions come from only 127 distinct
         subjects, and the smallest group has 14. Model capacity and validation design
         are bounded by this, not by the acquisition count.
@@ -1147,7 +1156,7 @@ column.
 FD is mean framewise displacement in mm; ``med.'' is the median.}
 \label{tab:groupqc}
 \footnotesize
-\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{@{}lrrrrrr@{}}
 \toprule
 \textbf{Stage} & \textbf{$n$} & \textbf{tSNR mean} & \textbf{tSNR med.} &
@@ -1161,7 +1170,7 @@ LMCI & 21 & 127.54 & 121.41 & 12.99 & 0.322 & 127.54 \\
 AD & 25 & 114.06 & 118.76 & 13.49 & 0.439 & 114.06 \\
 \midrule
 \textbf{All} & \textbf{164} & \textbf{129.40} & \textbf{127.95} & \textbf{13.22} &
-\textbf{0.360} & 2082.04 \\
+\textbf{0.360} & 2082.04 ($n=165$) \\
 \bottomrule
 \end{tabular}
 \end{table}
