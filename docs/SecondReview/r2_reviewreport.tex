@@ -22,8 +22,20 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 \collegelogo{ssn-logo.png}
 
 \setlength{\emergencystretch}{3em}
+% tighter vertical spacing between chapter entries in the contents list
+\makeatletter
+\renewcommand*\l@chapter[2]{\addpenalty{-\@highpenalty}\vskip 0.35em \@plus\p@
+  \setlength\@tempdima{1.5em}\begingroup\parindent\z@ \rightskip\@pnumwidth
+  \parfillskip-\@pnumwidth \leavevmode\bfseries\advance\leftskip\@tempdima
+  \hskip-\leftskip #1\nobreak\hfil\nobreak\hb@xt@\@pnumwidth{\hss#2}\par
+  \penalty\@highpenalty\endgroup}
+\makeatother
+% set the contents list slightly smaller so it fits on one page
+\let\origtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{\begingroup\small\origtableofcontents\endgroup}
 
 \begin{document}
+\setcounter{tocdepth}{1}
 \makereviewtitle
 \reviewfrontmatter
 
@@ -148,7 +160,7 @@ The objectives are those fixed at Review~I.
 Table~\ref{tab:objstatus} states honestly how far each objective has been met. The
 work reported here is the data foundation beneath objectives~1 and~2.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Progress against the Review~I objectives.}
 \label{tab:objstatus}
@@ -181,7 +193,7 @@ The Review~I timeline (August 2026 to March 2027, Figure~\ref{fig:gantt}) schedu
 are complete at Review~II, so on the data side the project stands a full milestone
 ahead of its own Review~I timeline (Table~\ref{tab:timeline}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Review~I timeline versus actual progress at Review~II.}
 \label{tab:timeline}
@@ -208,7 +220,7 @@ Documentation; final submission & Feb--Mar & Not yet due. \\
 \end{tabularx}
 \end{table}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{ganttchart}[
     x unit=1.0cm, y unit chart=0.62cm, y unit title=0.62cm,
@@ -230,7 +242,7 @@ Documentation; final submission & Feb--Mar & Not yet due. \\
   \ganttmilestone{Final submission}{8}
   \ganttvrule{Review II}{3}
 \end{ganttchart}
-\caption{Review~I timeline (bar positions) against progress at Review~II. Dark bars are
+\caption[Review~I timeline against progress at Review~II]{Review~I timeline (bar positions) against progress at Review~II. Dark bars are
 complete, light bars are not started. The vertical line marks Review~II (October);
 Module~3, planned for November, was complete by early October.}
 \label{fig:gantt}
@@ -250,9 +262,9 @@ It was a targeted search, not a systematic review, and two of the three are arXi
 preprints that have not been peer reviewed. Only what their abstracts state is reported
 here.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
-\caption{Recent work against the Review~I gaps. ``Not verified'' means the abstract does
+\caption[Recent work against the Review~I gaps]{Recent work against the Review~I gaps. ``Not verified'' means the abstract does
 not say and the full text was not accessible.}
 \label{tab:litupdate}
 \footnotesize
@@ -408,9 +420,6 @@ Building Modules~1--3 added concrete limits that instantiate the above.
   \item \textbf{Small effective sample.} 165 acquisitions come from only 127 distinct
         subjects, and the smallest group has 14. Model capacity and validation design
         are bounded by this, not by the acquisition count.
-  \item \textbf{Single-worker compute.} All processing runs with one worker on a
-        memory-constrained WSL2 environment, so the pipeline is checkpointed and
-        resumable.
 \end{itemize}
 
 \section{Evaluation Criteria}
@@ -429,9 +438,8 @@ dimensions, as fixed at Review~I:
 \end{itemize}
 The criteria for the data stage reported here are: complete 246/246 regional coverage
 for every acquisition; zero non-finite values in any derived feature; and every derived
-quantity reproducible by independent recomputation to within $10^{-10}$. The model-stage
-criteria above will be evaluated under subject-grouped cross-validation, and none has
-been evaluated yet.
+quantity reproducible by independent recomputation to within $10^{-10}$. None of the
+model-stage criteria has been evaluated yet.
 
 \chapter{Methodology}\label{ch:method}
 
@@ -467,7 +475,7 @@ Auditing the data changed four specifications made at Review~I. Each change was
 forced by what the dataset contains, and none was made for convenience
 (Table~\ref{tab:deviations}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Deviations from the Review~I plan and their evidence.}
 \label{tab:deviations}
@@ -510,7 +518,7 @@ dashboard (Module~6) reading the outputs of the others. Each stage reads only th
 outputs of the stage before it and writes to its own directory, so no stage can modify
 its own input. This separation is what makes each stage independently auditable.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[font=\small,>=latex]
@@ -540,7 +548,7 @@ its own input. This separation is what makes each stage independently auditable.
   \node[draw,dashed,fill=gray!8,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (14.0,-6.7) {};
   \node[anchor=west] at (14.45,-6.7) {\footnotesize not started};
 \end{tikzpicture}}
-\caption{Six-module architecture of the proposed system (Review~I design) with status
+\caption[Six-module architecture with status at Review~II]{Six-module architecture of the proposed system (Review~I design) with status
 at Review~II.}
 \label{fig:architecture}
 \end{figure}
@@ -621,13 +629,15 @@ explainability overlays and network (DMN, SN, ECN) visualisation. \textbf{Output
 Interactive dashboard. \textbf{Dependencies.} Modules~1 and~5. \textbf{Status.} Not
 started.
 
-\section{Clarification: The Meta-Bayesian Framework}\label{sec:metabayes}
+\section{Clarifications Requested at Review I}
+
+\subsection{The Meta-Bayesian Framework}\label{sec:metabayes}
 
 The Review~I panel asked for more clarity on this framework. ``Meta-Bayesian'' combines
 two independent ideas (Table~\ref{tab:metabayes}). Both belong to Modules~4 and~5, and
 neither has been implemented; what follows is the design.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{The two parts of the Meta-Bayesian framework.}
 \label{tab:metabayes}
@@ -648,7 +658,7 @@ classifier weights. Output: stage probabilities and an uncertainty measure. \\
 \end{tabularx}
 \end{table}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[font=\small,>=latex]
@@ -668,7 +678,7 @@ classifier weights. Output: stage probabilities and an uncertainty measure. \\
   \draw[ar] (enc) -- (z); \draw[ar] (z) -- (h); \draw[ar] (c.east) -| (h.south);
   \draw[ar] (h) -- (head); \draw[ar] (head) -- (out);
 \end{tikzpicture}}
-\caption{The Meta-Bayesian pipeline (design, not implemented). The four biomarkers act as
+\caption[The Meta-Bayesian pipeline (design, not implemented)]{The Meta-Bayesian pipeline (design, not implemented). The four biomarkers act as
 meta-learning tasks; the clinical covariates are fused after the shared representation is
 learnt.}
 \label{fig:metabayes}
@@ -709,14 +719,14 @@ meta-gradients, variational inference or Monte Carlo dropout, and the size of $S
 yet fixed. The model will be evaluated with the Review~I metrics, including expected
 calibration error.
 
-\section{Clarification: The Comorbidity Data}\label{sec:comorb}
+\subsection{The Comorbidity Data}\label{sec:comorb}
 
 The Review~I panel also asked for more clarity on the comorbidity data.
 Table~\ref{tab:comorb} lists every covariate fixed at Review~I with its ADNI source and
 status. The cohort table archives were obtained for five of the six groups, and their
 contents have not yet been parsed or cleaned.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Clinical and comorbidity covariates (Review~I design) and their status.}
 \label{tab:comorb}
@@ -770,24 +780,17 @@ series numbers; the duplicate was excluded and the original retained. A second
 acquisition was excluded for containing only 7 volumes where all others contain 140,
 a truncation traced to the source export rather than to any processing step. Both
 exclusions are recorded in a canonical exclusion list that every batch script
-consults.
+consults. An early working note recorded six AD acquisitions as unrecoverable; re-checked
+against the source data it was stale, and all 25 AD acquisitions were present, valid and
+processed.
 
-An early working note recorded six AD acquisitions as unrecoverable. This figure was
-re-checked directly against the current source data before the production run and
-found to be stale: all 20 AD subjects and all 25 AD acquisitions were present and
-valid, and all were processed.
-
-The slice-timing audit examined all 175 JSON sidecars and representative DICOM
-headers spanning all 17 distinct protocol signatures in the archive, inspecting
-private vendor groups as well as standard tags. No sidecar contained a
-\texttt{SliceTiming} field. Within the DICOM headers, \texttt{AcquisitionTime} and
-\texttt{TriggerTime} were identical across all slices sampled within a volume,
-confirming volume-level rather than slice-level timing granularity. A Philips private
-tag provides a per-slice \emph{spatial} index, but no tag anywhere states the
-temporal acquisition order, and the spatial index was deliberately not used to infer
-it. No multiband tag was found among decodable names. The audit's conclusion was
-recorded as \texttt{SLICE\_TIMING\_NOT\_RECOVERABLE}, and no timing value was
-inferred or fabricated at any point.
+The slice-timing audit (evidence in Table~\ref{tab:deviations}) examined all 175 JSON
+sidecars and DICOM headers from all 17 protocol signatures, including private vendor
+groups. \texttt{AcquisitionTime} and \texttt{TriggerTime} are identical across the slices
+of a volume, so timing is known only per volume. A Philips private tag gives a per-slice
+\emph{spatial} index, but no tag states the temporal order, and the spatial index was
+deliberately not used to infer it. The conclusion was recorded as
+\texttt{SLICE\_TIMING\_NOT\_RECOVERABLE}, and no timing value was inferred or fabricated.
 
 The clinical half of Module~1 is less advanced than the imaging half. Cohort table
 archives (CDR, MMSE, GDS and medical history) have been obtained for five of the six
@@ -797,7 +800,7 @@ not yet been downloaded or processed.
 
 \section{Module 2: Preprocessing Pipeline}\label{sec:preproc}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Implemented preprocessing pipeline.}
 \label{tab:preproc}
@@ -843,10 +846,9 @@ terms, white matter, global signal); every provenance record states
 \texttt{CSF\_status = NOT PERFORMED}. The ventricular CSF prior is too thin to survive
 at 4\,mm: the corresponding 2\,mm pilot mask held only 111 voxels (888\,mm$^3$)
 after thresholding at 0.90 and intersection with the brain mask, which is roughly 14
-voxels on the 4\,mm grid, below the 20-voxel minimum. The voxel count and correlation
-at the gate were not stored per acquisition, so this is the explanation consistent
-with the logged evidence rather than a per-acquisition measurement. No substitute
-CSF regressor was introduced. Second, contrast-to-noise ratio is reported as not reliably
+voxels on the 4\,mm grid, below the 20-voxel minimum. The count at the gate was not stored per acquisition, so this is the explanation
+consistent with the logged evidence, not a per-acquisition measurement. No substitute CSF
+regressor was introduced. Second, contrast-to-noise ratio is reported as not reliably
 computable for all 165 acquisitions, because it requires a tissue segmentation this
 dataset cannot provide (no T1w image exists for any of the 131 subjects); no
 segmentation was fabricated to produce a number.
@@ -877,7 +879,7 @@ might silently re-resample the labels a second time.
 
 \subsection{Biomarker Generation}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Implemented biomarker definitions.}
 \label{tab:biomarkers}
@@ -899,30 +901,25 @@ self-connection excluded & $(246,)$ \\
 \end{tabularx}
 \end{table}
 
-ALFF and ReHo are computed at voxel level and only then aggregated to regions,
-rather than computed from the regional time series, so that local spatial
-information is used where the definitions require it. The 27-voxel ReHo neighbourhood
-is the original formulation~\cite{reho} and the default of established toolboxes,
-chosen for comparability rather than arbitrarily. Because the preprocessed BOLD has already been
-band-pass filtered, ALFF is computed on an already band-limited spectrum; this is a
-documented consequence of the fixed pipeline rather than a change of method.
+ALFF and ReHo are computed at voxel level and only then aggregated to regions, so that local
+spatial information is used where the definitions require it. The 27-voxel ReHo
+neighbourhood is the original formulation~\cite{reho} and the default of established
+toolboxes. Because the preprocessed BOLD is already band-pass filtered, ALFF is computed on
+an already band-limited spectrum, a documented consequence of the fixed pipeline. The
+connectivity matrix is kept in full: no threshold, binarisation or absolute value is
+applied, and negative correlations are preserved.
 
-The connectivity matrix is retained in full. No threshold, binarisation or absolute
-value is applied, and negative correlations are preserved, since thresholding would
-impose an unvalidated choice and discard the sign information that distinguishes
-anti-correlated from unconnected regions.
-
-A single-acquisition pilot was implemented and validated first. Before scaling to the
-cohort, the production implementation was required to reproduce that pilot: ALFF,
-ReHo, regional time series, atlas labels and regional voxel counts were recovered
-bit-identically, and FC and DC agreed to within $1.8 \times 10^{-15}$. Only then was
-the pilot's own output directory protected and the remaining acquisitions processed.
+A single-acquisition pilot was validated first, and the production implementation was
+required to reproduce it before scaling up: ALFF, ReHo, regional time series, atlas labels
+and voxel counts were bit-identical, and FC and DC agreed to within
+$1.8 \times 10^{-15}$. Only then was the pilot's output directory protected and the
+remaining acquisitions processed.
 
 \subsection{Within-Subject Normalisation}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
-\caption{Within-subject normalisation, computed from each acquisition's own 246
+\caption[Within-subject normalisation transforms]{Within-subject normalisation, computed from each acquisition's own 246
 regional values only.}
 \label{tab:norm}
 \small
@@ -948,33 +945,27 @@ then set to exactly zero; negative correlations stay negative \\
 \end{tabularx}
 \end{table}
 
-\textbf{Leakage-free by construction.} Every statistic in Table~\ref{tab:norm} is
-computed from that acquisition's own 246 values. No cross-subject statistic and no
-diagnostic label is used at any point, so the stage cannot carry information from a
-test subject into training. Cross-subject scaling is deliberately deferred to the
-modelling stage, where it will be fitted on training folds only. Outputs are written
-to a separate directory tree, and the script refuses any write path inside a raw
-\texttt{biomarkers} directory.
+\textbf{Leakage-free by construction.} Every statistic in Table~\ref{tab:norm} is computed
+from that acquisition's own 246 values; no cross-subject statistic and no diagnostic label
+is used, so the stage cannot carry information from a test subject into training.
+Cross-subject scaling is deferred to the modelling stage, where it will be fitted on
+training folds only. Outputs go to a separate directory tree, and the script refuses any
+write path inside a raw \texttt{biomarkers} directory.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Verification of within-subject normalisation (165 acquisitions, 0 failures).}
 \label{tab:normcheck}
-\small
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xr>{\raggedright\arraybackslash}Xr@{}}
 \toprule
-\textbf{Check} & \textbf{Result} \\
+\textbf{Check} & \textbf{Result} & \textbf{Check} & \textbf{Result} \\
 \midrule
-Acquisitions normalised; failures & 165 / 165; 0 \\
-Non-finite values in inputs; in outputs & 0; 0 \\
-mean(mALFF) and mean(mReHo) per acquisition & 1.000000 in all 165 \\
-mean(DC$_z$), largest magnitude & $\leq 1.6\times10^{-16}$ \\
-std(DC$_z$) per acquisition & 1.000000 in all 165 \\
-Fisher-$z$ diagonal exactly zero & 165 / 165 \\
-Fisher-$z$ maximum asymmetry & $5.329\times10^{-15}$ \\
-Negative correlations preserved as negative & 165 / 165 \\
-Off-diagonal entries requiring clipping at $\pm0.999999$ & 0 \\
-Fisher-$z$ range across the dataset & $-2.2653$ to $2.5924$ \\
+Acquisitions normalised; failures & 165 / 165; 0 & Fisher-$z$ diagonal exactly zero & 165 / 165 \\
+Non-finite inputs; outputs & 0; 0 & Fisher-$z$ maximum asymmetry & $5.329\times10^{-15}$ \\
+mean(mALFF), mean(mReHo) per acquisition & 1.000000 & Negative correlations kept negative & 165 / 165 \\
+std(DC$_z$) per acquisition & 1.000000 & Entries clipped at $\pm0.999999$ & 0 \\
+mean(DC$_z$), largest magnitude & $\leq 1.6\times10^{-16}$ & Fisher-$z$ range & $-2.2653$ to $2.5924$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -991,7 +982,7 @@ over the same 245 entries, so
 \]
 Table~\ref{tab:redundancy} gives the measurements.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Measured equivalence of FC\_Strength and DC.}
 \label{tab:redundancy}
@@ -1018,7 +1009,7 @@ it, the FC-derived regional feature that this report calls FC strength. That sum
 is exactly DC$/245$, so the fourth column added nothing beyond the third. The corrected
 model input therefore carries FC in its full form instead (Table~\ref{tab:fourbio}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Where each Review~I biomarker sits in the model input.}
 \label{tab:fourbio}
@@ -1042,35 +1033,30 @@ correction derived from auditing the features, not a pipeline error. A different
 per-region FC summary that is not a rescaling of DC (for example, within-network
 connectivity) could be added later if the model needs one.
 
-\section{Engineering for an Unstable Execution Environment}
+\section{Engineering and Reproducibility}
 
-Early production runs failed repeatedly, and diagnosis of the failure mode
-materially shaped the implementation. The symptom was that the virtual machine
-terminated after roughly five to twelve acquisitions with no Python traceback. The
-cause was sustained small-granularity array input/output against the Windows
-drive mount, which produced \texttt{Errno 5} input/output errors and virtual machine
-level failures under load. Three changes resolved it. Each acquisition is now staged
-on the native Linux filesystem and its results copied to the Windows-visible tree
-only once complete, so a crash never leaves a partially written output directory.
-Resume validation reads array shapes through memory mapping and file headers instead
-of loading every finished acquisition back into memory, which had been re-reading
-gigabytes on every restart. Finally, a wrapper distinguishes a genuine Python error,
-which stops the run for inspection, from a virtual machine failure, which triggers a
-restart and resumption from the last validated checkpoint. Restart count fell from
-23 to 2 for the same workload.
+\subsection{An Unstable Execution Environment}
 
-Checkpointing re-validates the actual files on disk --- shapes, finiteness and
-structural invariants --- before treating any acquisition as complete, so the
-checkpoint record alone is never trusted.
+Early production runs failed repeatedly: the virtual machine terminated after roughly five
+to twelve acquisitions with no Python traceback, caused by sustained small-granularity
+array input/output against the Windows drive mount (\texttt{Errno 5}). Three changes
+resolved it. Each acquisition is staged on the native Linux filesystem and copied to the
+Windows tree only once complete, so a crash never leaves a partial output directory.
+Resume validation reads array shapes through memory mapping and file headers instead of
+reloading every finished acquisition. A wrapper distinguishes a genuine Python error, which
+stops the run for inspection, from a virtual-machine failure, which restarts and resumes
+from the last validated checkpoint. The restart count fell from 23 to 2 for the same
+workload. Checkpointing re-validates the files on disk (shapes, finiteness and structural
+invariants), so the checkpoint record alone is never trusted.
 
-\section{Code and Reproducibility}\label{sec:repro}
+\subsection{Code and Reproducibility}\label{sec:repro}
 
 All code is in the project repository (\texttt{github.com/HarishkannaR11/FYP}). The scripts
 below are the live pipeline; earlier native-space and pilot scripts are kept in
 \texttt{pipeline/} and \texttt{scripts/} for provenance only and must not be used for new
 work (Table~\ref{tab:repro}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{The live pipeline scripts and where their outputs go.}
 \label{tab:repro}
@@ -1089,29 +1075,18 @@ Stage heatmaps & \texttt{scripts/\allowbreak biomarkers/\allowbreak stage\_heatm
 \end{tabularx}
 \end{table}
 
-Every script is re-runnable: preprocessing and biomarker generation use validated
-checkpoint and resume, and each preprocessed acquisition carries a provenance file recording
-its parameters, software versions and source checksum. The software versions are listed at
-the start of this chapter. The report's own figure panel is rebuilt by
-\texttt{figures/make\_stage\_panel.py}.
-
-\section{Modules 4--6: Status}
-
-Modules~4 (Proposed Deep Learning Model), 5 (Core Output Classifier) and 6 (Decision
-Support Dashboard) have not been started. Their inputs are in place: every acquisition
-has a verified $246\times3$ regional matrix and a $246\times246$ Fisher-$z$ connectivity
-matrix. What remains, in order, is to clean the clinical tables, build the subject-level
-cohort index and grouped cross-validation folds, fit cross-subject scaling on training
-folds only, and then implement Modules~4 and~5 (planned for December--January in the
-Review~I timeline).
+Every script is re-runnable: preprocessing and biomarker generation use validated checkpoint
+and resume, and each preprocessed acquisition carries a provenance file with its parameters,
+software versions and source checksum. The report's figure panels are rebuilt by
+\texttt{figures/make\_stage\_panel.py} and \texttt{figures/make\_group\_fc.py}.
 
 \chapter{Results and Discussion}
 
 \section{Cohort Composition}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
-\caption{Cohort composition after audit, recovery and exclusion, listed in
+\caption[Cohort composition by stage]{Cohort composition after audit, recovery and exclusion, listed in
 progression order.}
 \label{tab:cohort}
 \small
@@ -1147,9 +1122,9 @@ subject-consistent.
 Table~\ref{tab:groupqc} summarises acquisition-level quality control by stage. One
 acquisition is treated separately and is flagged explicitly.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
-\caption{Preprocessing quality control by stage. All columns except the last exclude
+\caption[Preprocessing quality control by stage]{Preprocessing quality control by stage. All columns except the last exclude
 the single artifact acquisition described below ($n=164$ overall). The raw tSNR mean as
 originally reported by the dataset audit, which includes it, is shown in the last
 column.
@@ -1199,7 +1174,7 @@ modelling has not yet been decided.
 
 \section{Biomarker Quality}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Dataset-level quality control over all 165 processed acquisitions.}
 \label{tab:qc}
@@ -1264,10 +1239,10 @@ stages and not how large it is (Figure~\ref{fig:heatmaps}). The absolute-value
 versions (\texttt{derivatives/\allowbreak STAGE\_HEATMAPS/\allowbreak *\_absolute.png}) are available but
 are not shown, because they are dominated by anatomical differences between regions.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{figures/stage_rowz_panel.pdf}
-\caption{Stage-wise regional biomarker patterns across the six-stage progression
+\includegraphics[width=0.86\textwidth]{figures/stage_rowz_panel.pdf}
+\caption[Stage-wise regional biomarker patterns (mALFF, mReHo, DC$_z$)]{Stage-wise regional biomarker patterns across the six-stage progression
 (CN, SMC, EMCI, MCI, LMCI, AD) for 127 subjects; from left to right mALFF, mReHo and
 DC$_z$. Rows are the 246 Brainnetome ROIs in atlas order (cortical 1--210 above the
 dashed line, subcortical 211--246 below); columns are progression stages. Each ROI is
@@ -1280,9 +1255,9 @@ was performed.}
 \label{fig:heatmaps}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
-\caption{Monotonic trends in the stage means. A region counts as monotonic if its
+\caption[Monotonic trends in the stage means]{Monotonic trends in the stage means. A region counts as monotonic if its
 six stage means increase, or decrease, strictly from CN to AD. The expectation by
 chance is $246\times2/6!\approx0.7$, the combinatorial value when the six stage
 means of a region are exchangeable; it is not a hypothesis test. The last column is
@@ -1332,10 +1307,10 @@ coupling between several lobes. The figure is descriptive only; no statistical t
 on it, and a visible difference between two group means would not show that individuals can
 be told apart.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/group_fc_by_stage.pdf}
-\caption{Group-mean Fisher-$z$ functional connectivity ($246\times246$) for each of the
+\caption[Group-mean Fisher-$z$ functional connectivity by stage]{Group-mean Fisher-$z$ functional connectivity ($246\times246$) for each of the
 six stages, with the number of subjects per stage in each panel title. Regions are in
 Brainnetome atlas order, grouped by lobe (frontal 1--68, temporal 69--124, parietal 125--162,
 insular 163--174, limbic 175--188, occipital 189--210, subcortical 211--246). Acquisitions
@@ -1347,11 +1322,11 @@ panels. Descriptive and exploratory only.}
 Figure~\ref{fig:redundancy} places the DC$_z$ and FC\_Strength heatmaps side by
 side, which turns the redundancy of Section~\ref{sec:redundancy} into a visual proof.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[height=0.44\textheight,keepaspectratio]{figures/DC_z_rowz.png}\hfill
-\includegraphics[height=0.44\textheight,keepaspectratio]{figures/FC_Strength_rowz.png}
-\caption{DC$_z$ (left) and FC\_Strength (right), rendered independently from
+\includegraphics[height=0.32\textheight,keepaspectratio]{figures/DC_z_rowz.png}\hfill
+\includegraphics[height=0.32\textheight,keepaspectratio]{figures/FC_Strength_rowz.png}
+\caption[DC$_z$ and FC\_Strength heatmaps compared]{DC$_z$ (left) and FC\_Strength (right), rendered independently from
 separate stored files. The heatmap panels are identical, because
 FC\_Strength $=$ DC$/245$ exactly (maximum difference $6.939\times10^{-18}$ across
 all 165 acquisitions, Pearson $r=1.000000000000$); the plotted row-wise $z$ values
@@ -1366,22 +1341,19 @@ independent of DC.}
 To avoid any ambiguity about the scope of this report, the following are \emph{not}
 done.
 \begin{itemize}
-  \item \textbf{Comorbidity data are not cleaned.} Five of the six cohort table
-        archives are present; the LMCI tables are missing entirely, leaving 20
-        subjects without CDR, MMSE, GDS, medical-history or APOE4 data. Of the 21
-        subjects lacking APOE4, 20 are the whole LMCI group, so the missingness is
-        group-structured, and an availability indicator would act as a proxy label for
-        LMCI. It must not be used as a feature.
-  \item \textbf{Hypertension and diabetes are not directly available.} The ADNI
-        medical-history tables supply only the broad categories MH4CARD
-        (cardiovascular) and MH9ENDO (endocrine); they are used under those names.
-  \item \textbf{The dataset expansion has not started.} A further 50 acquisitions per
-        stage are planned. They have not been downloaded, converted or processed, and all
-        counts in this report refer to the current 165-acquisition cohort.
+  \item \textbf{Comorbidity data are not cleaned.} Five of the six cohort table archives
+        are present; the LMCI tables are missing, leaving 20 subjects without CDR, MMSE,
+        GDS, medical-history or APOE4 data. Of the 21 subjects lacking APOE4, 20 are the
+        LMCI group, so an availability indicator would act as a proxy label for LMCI and
+        must not be used as a feature. Hypertension and diabetes are available only as the
+        broad ADNI categories MH4CARD (cardiovascular) and MH9ENDO (endocrine).
+  \item \textbf{The dataset expansion has not started.} The planned 50 further
+        acquisitions per stage have not been downloaded or processed; all counts in this
+        report refer to the current 165 acquisitions.
   \item \textbf{Modules 4--6 are not started:} Module~4 (multi-attention
         transformer, meta-learning, comorbidity fusion), Module~5 (Bayesian ordinal
-        classifier) and Module~6 (decision-support dashboard). No accuracy, AUC or other performance figure exists, and none is
-        implied anywhere in this report.
+        classifier) and Module~6 (decision-support dashboard). No accuracy, AUC or other
+        performance figure exists, and none is implied anywhere in this report.
   \item \textbf{Cross-validation is not built.} Subject-level folds and train-fold-only
         cross-subject scaling are still to be implemented.
 \end{itemize}
@@ -1389,17 +1361,14 @@ done.
 \section{Discussion}
 
 \textbf{Comparison with conventional practice.} The pipeline departs from a textbook
-rs-fMRI workflow at two points, in both cases because the data compels it. A
-conventional pipeline co-registers BOLD to a subject T1w image and normalises
-through it, and derives tissue regressors from that subject's own segmentation.
-Neither is possible here, so EPI-to-template registration is performed directly and
-tissue regressors are taken from population priors. This is a genuine limitation
-rather than a simplification: direct EPI registration is less precise because EPI
-has lower anatomical contrast, and its quality cannot be benchmarked against a
-T1w-mediated alternative using this dataset. Equally, a conventional pipeline applies
-slice-timing correction; the exhaustive audit described in Chapter~\ref{ch:impl}
-establishes this is not available, and the honest response was to omit the step and
-document it rather than assume an acquisition order.
+rs-fMRI workflow at two points, both forced by the data. A conventional pipeline
+co-registers BOLD to a subject T1w image and derives tissue regressors from that subject's
+own segmentation; neither is possible here, so EPI-to-template registration is direct and
+tissue regressors come from population priors. This is a genuine limitation: direct EPI
+registration is less precise, and its quality cannot be benchmarked against a T1w-mediated
+alternative with this dataset. Likewise, slice-timing correction is unavailable
+(Chapter~\ref{ch:impl}), so the step was omitted and documented instead of assuming an
+acquisition order.
 
 \textbf{On scale and feature redundancy.} Two findings will shape the modelling
 stage more than any preprocessing choice. First, raw ALFF varies by more than two
@@ -1430,18 +1399,15 @@ and MCI has 32 acquisitions from only 14 subjects. The expansion therefore helps
 proportion to the number of \emph{new subjects} it adds. If every added acquisition came from
 a new subject the stages would grow by up to 50 subjects each (MCI from 14 to at most 64),
 so the added acquisitions will be drawn from subjects not already in the cohort wherever
-ADNI allows, and counts will be reported per subject. The expansion reuses the frozen
-Modules~1 to~3 unchanged, and it has not yet started.
+ADNI allows, and counts will be reported per subject. The frozen Modules~1 to~3 are reused
+unchanged.
 
-\textbf{Next steps.} Immediate work is to complete the comorbidity table, construct
-the subject-level cohort index with fixed stratified grouped cross-validation folds
-so that cross-subject scaling can be fitted on training data only, and then
-implement the multi-attention transformer and meta-learning blocks. The ordinal
-scale used by the classifier is the one fixed at Review~I, namely
-CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI $\rightarrow$ LMCI
-$\rightarrow$ AD, which orders the three mild-cognitive-impairment cohorts as
-early, intermediate and late. This ordering determines the loss structure of the
-ordinal model and is therefore held fixed throughout.
+\textbf{Next steps.} Immediate work is to complete the comorbidity table, construct the
+subject-level cohort index with fixed stratified grouped cross-validation folds so that
+cross-subject scaling is fitted on training data only, and then implement the
+multi-attention transformer and meta-learning blocks. The stage order fixed at Review~I
+(CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI $\rightarrow$ LMCI
+$\rightarrow$ AD) determines the loss structure of the ordinal model and is held fixed.
 
 \section{Revised Plan for the Remaining Work}\label{sec:revplan}
 
@@ -1450,7 +1416,7 @@ this report has shown to be necessary (clinical-data cleaning, cross-validation 
 dataset expansion) and keeps the Review~I dates for the modelling, testing and documentation
 stages. It is a proposal and has not been agreed with the supervisor.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{ganttchart}[
     x unit=1.45cm, y unit chart=0.62cm, y unit title=0.62cm,
@@ -1469,7 +1435,7 @@ stages. It is a proposal and has not been agreed with the supervisor.
   \ganttbar{Documentation}{5}{6}\\
   \ganttmilestone{Final submission}{6}
 \end{ganttchart}
-\caption{Proposed revised plan, October to March. The first three rows are new since
+\caption[Proposed revised plan, October to March]{Proposed revised plan, October to March. The first three rows are new since
 Review~I; the model, testing, documentation and final-submission rows keep the Review~I
 dates. Review~I had no separate row for Module~6, so its dates are a proposal.}
 \label{fig:revgantt}
@@ -1499,8 +1465,7 @@ LMCI tables and clean the clinical data, build the subject-grouped cross-validat
 enlarge the dataset by a further 50 acquisitions per stage, and then implement the
 meta-learning and Bayesian ordinal model (Section~\ref{sec:revplan}).
 
-\chapter*{Acknowledgements}
-\addcontentsline{toc}{chapter}{Acknowledgements}
+\section*{Acknowledgements}
 % TODO (BEFORE SUBMISSION): compare the paragraph below, word for word, with the current
 % ADNI Data Use Agreement and manuscript-citation instructions on the ADNI website. The
 % text below is the standard wording; ADNI's pages could not be opened from the build
