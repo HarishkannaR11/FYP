@@ -232,12 +232,10 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
       st/.style={draw=UniversityBlue,fill=LightBlue,rounded corners,
                  text width=2.05cm,minimum height=0.95cm,align=center,font=\scriptsize,
                  execute at begin node={\hyphenpenalty=10000}},
-      no/.style={st,draw=red!70!black,fill=red!6,dashed},
       ar/.style={->,thick,draw=AccentBlue}]
     % Module 2 chain, two rows
     \node[st] (a1) {Discard first 5 volumes};
-    \node[no,right=0.35cm of a1] (a2) {Slice timing\\ \textbf{NOT PERFORMED}};
-    \node[st,right=0.35cm of a2] (a3) {Motion correction\\ mc-afni2};
+    \node[st,right=0.35cm of a1] (a3) {Motion correction\\ mc-afni2};
     \node[st,right=0.35cm of a3] (a4) {Direct EPI$\rightarrow$MNI\\ ANTs SyN, no T1w};
     \node[st,right=0.35cm of a4] (a5) {4\,mm resample};
     \node[st,below=0.45cm of a1] (b1) {6\,mm FWHM smoothing};
@@ -250,10 +248,10 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
     \node[st,right=0.35cm of c1] (c2) {ROI time series\\ $135\times246$};
     \node[st,right=0.35cm of c2] (c3) {ALFF, ReHo, FC, DC};
     \node[st,right=0.35cm of c3] (c4) {Within-subject normalisation};
-    \foreach \x/\y in {a1/a2,a2/a3,a3/a4,a4/a5,b1/b2,b2/b3,b3/b4,b4/b5,c1/c2,c2/c3,c3/c4}
+    \foreach \x/\y in {a1/a3,a3/a4,a4/a5,b1/b2,b2/b3,b3/b4,b4/b5,c1/c2,c2/c3,c3/c4}
       \draw[ar] (\x) -- (\y);
-    \draw[ar] (a5.south) -- ++(0,-0.25) -| ([yshift=0.25cm]b1.north west) -- (b1.north);
-    \draw[ar] (b5.south) -- ++(0,-0.3) -| ([yshift=0.3cm]c1.north west) -- (c1.north);
+    \draw[ar] (a5.south) -- ++(0,-0.25) -| (b1.north);
+    \draw[ar] (b5.south) -- ++(0,-0.3) -| (c1.north);
     \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]a1.west) {Module 2};
     \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]c1.west) {Module 3};
   \end{tikzpicture}
@@ -360,22 +358,22 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
       vrule/.style={very thick, red!70!black}]{1}{8}
     \gantttitle{Aug}{1}\gantttitle{Sep}{1}\gantttitle{Oct}{1}\gantttitle{Nov}{1}\gantttitle{Dec}{1}\gantttitle{Jan}{1}\gantttitle{Feb}{1}\gantttitle{Mar}{1}\\
     \ganttbar[progress=100]{Literature, problem \& design}{1}{1}\\
-    \ganttbar[progress=100]{M2: Preprocessing \& validation}{2}{3}\\
-    \ganttbar[progress=100]{M3: Feature extraction (BN-246)}{4}{4}\\
+    \ganttbar[progress=100]{M2: Preprocessing \& validation}{2}{2}\\
+    \ganttbar[progress=100]{M3: Feature extraction (BN-246)}{3}{3}\\
     \ganttbar[progress=0]{M4 \& M5: Transformer, classifier}{5}{6}\\
     \ganttbar[progress=0]{Testing and evaluation}{7}{7}\\
     \ganttbar[progress=0]{Documentation}{7}{8}\\
     \ganttmilestone{Final submission}{8}
-    \ganttvrule{Review II}{3}
+    \ganttvrule{Review II (Phase 1 final)}{3}
   \end{ganttchart}}
   \vspace{0.15cm}
 
   \begin{alertblock}{One milestone ahead of the Review I plan}
     Module 2 was planned for Review II and Module 3 for Review III.
-    \textbf{Both are complete at Review II.}
+    \textbf{Both are complete at Review II}, the final review of Phase 1.
   \end{alertblock}
   {\footnotesize Applies to the \textbf{data foundation only}: Modules 4--6 are not started and the clinical
-  tables are not cleaned. Preprocessing outputs dated 20--22 Sep; biomarker audit 23 Sep; normalisation 5 Oct.}
+  tables are not cleaned. Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
 \end{frame}
 
 % 10. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
@@ -536,7 +534,6 @@ derivatives/
 % 15. Next steps and closing
 \begin{frame}{Next Steps}
   \begin{enumerate}
-    \item Obtain the \textbf{missing LMCI clinical tables}.
     \item Clean the comorbidity data.
     \item Build subject-grouped cross-validation folds.
     \item Expand the dataset by \textbf{+50 acquisitions per stage}.
