@@ -1,0 +1,593 @@
+% Review II presentation -- built on template_presentation.tex (kept unchanged).
+% Compile with: pdflatex r2_presentation.tex  (run twice)
+%
+% RULE FOR THIS DECK: Modules 4, 5 and 6 are NOT built. The transformer,
+% meta-learning, comorbidity fusion and Bayesian classifier are DESIGN only.
+% No accuracy, AUC, ROC, confusion matrix, calibration or attention result
+% exists, and none may be shown or implied.
+%
+% Items that still need input from the team are shown in red.
+
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% ---------- Theme and colours (unchanged from the template) ----------
+\usetheme{Madrid}
+\usecolortheme{default}
+\definecolor{UniversityBlue}{RGB}{16,62,110}
+\definecolor{AccentBlue}{RGB}{30,136,229}
+\definecolor{LightBlue}{RGB}{232,242,252}
+\definecolor{DarkGray}{RGB}{55,65,81}
+
+\setbeamercolor{structure}{fg=UniversityBlue}
+\setbeamercolor{palette primary}{bg=UniversityBlue,fg=white}
+\setbeamercolor{palette secondary}{bg=AccentBlue,fg=white}
+\setbeamercolor{frametitle}{bg=UniversityBlue,fg=white}
+\setbeamercolor{block title}{bg=UniversityBlue,fg=white}
+\setbeamercolor{block body}{bg=LightBlue,fg=black}
+\setbeamercolor{alerted text}{fg=AccentBlue}
+
+% ---------- Packages ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{pgfgantt}
+\usepackage{multicol}   % for the plan-versus-actual timeline (not in the template)
+
+% ---------- General settings ----------
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{itemize item}{\color{AccentBlue}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{UniversityBlue}$\bullet$}
+\setbeamersize{text margin left=0.7cm,text margin right=0.7cm}
+
+% Footer: project title, institution and slide number
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.42\paperwidth,ht=2.7ex,dp=1.1ex,leftskip=.6em]{author in head/foot}%
+      \insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.46\paperwidth,ht=2.7ex,dp=1.1ex,center]{date in head/foot}%
+      Department of Computer Science and Engineering
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.12\paperwidth,ht=2.7ex,dp=1.1ex,center]{page number in head/foot}%
+      \insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% ---------- Code style ----------
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UniversityBlue}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{AccentBlue},
+  numbers=none,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
+
+% ---------- Status colours (added; theme colours untouched) ----------
+\definecolor{DoneGreen}{RGB}{27,122,61}
+\definecolor{PartAmber}{RGB}{176,110,0}
+\definecolor{NotGray}{RGB}{110,110,110}
+\newcommand{\done}{\textcolor{DoneGreen}{\textbf{Complete}}}
+\newcommand{\partly}{\textcolor{PartAmber}{\textbf{Partly}}}
+\newcommand{\notst}{\textcolor{NotGray}{\textbf{Not started}}}
+\newcommand{\todo}[1]{\textcolor{red}{[#1]}}
+
+% ---------- Editable project details ----------
+\title[AD Progression from rs-fMRI]{Assessment of Alzheimer's Disease Progression Using
+Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
+\subtitle{Second Review}
+\author[Student Team]{%
+  Harishkanna R (3122235001302)\\
+  Dhananchezhiyan M (3122235001041)\\
+  Nagindhar Sachein R L (3122235001702)
+}
+\institute[SSN]{%
+  Guided by: Dr. N. Ahana Priyanka, Assistant Professor\\[2mm]
+  Department of Computer Science and Engineering\\
+  Sri Sivasubramaniya Nadar College of Engineering
+}
+\date{Academic Year 2026--2027}
+
+\begin{document}
+
+% 1. Title slide
+\begin{frame}[plain]
+  \titlepage
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east,xshift=-0.5cm,yshift=0.4cm]
+    at (current page.south east){\includegraphics[width=1.7cm]{ssn-logo.png}};
+  \end{tikzpicture}
+\end{frame}
+
+% 2. First Review - Queries and Answers
+\begin{frame}{First Review - Queries and Answers}
+  \small
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
+    \toprule
+    \textbf{Panel comment} & \textbf{Response} & \textbf{Detail in} \\
+    \midrule
+    Need more clarity on the \textbf{dataset (biomarkers)} &
+    175 audited, 165 preprocessed, 127 subjects. Four biomarkers on 246 regions. &
+    Results slides; report \S6.1 \\[4pt]
+    Need more clarity on the \textbf{Meta-Bayesian framework} &
+    ``Meta'': biomarkers as tasks. ``Bayesian'': ordinal head with uncertainty.
+    \alert{Design only.} &
+    Core Algorithm (design); report \S4.5 \\[4pt]
+    Need more clarity on the \textbf{comorbidity data} &
+    Seven covariates with source and status. LMCI tables missing. &
+    Modules slide; report \S4.5 \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% 3. Problem Statement
+\begin{frame}{Problem Statement}
+  \begin{alertblock}{Problem}
+    Existing systems analyse rs-fMRI biomarkers \textbf{independently} and omit clinical
+    context, giving \textbf{overconfident, deterministic staging errors} on borderline subjects.
+  \end{alertblock}
+  \vspace{0.2cm}
+  \begin{itemize}
+    \item \textbf{Context:} dementia progresses through six ordered stages.
+    \item \textbf{Limitation:} pipelines isolate ALFF, ReHo, DC and FC.
+    \item \textbf{Clinical gap:} models ignore how comorbidities modify neurodegeneration.
+  \end{itemize}
+  \begin{block}{Research question}
+    Can a common AD progression representation be found across several functional
+    biomarkers, accounting for comorbidity and prediction uncertainty?
+  \end{block}
+  {\footnotesize Literature update: 2026 papers cover ordinal staging and uncertainty; none of the
+  three checked uses cross-biomarker meta-learning (report \S1.3).}
+\end{frame}
+
+% 4. Project Objectives
+\begin{frame}{Project Objectives}
+  \small
+  \begin{tabularx}{\textwidth}{>{\bfseries}p{0.5cm}X>{\centering\arraybackslash}p{2.3cm}}
+    \toprule
+    \# & \textbf{Review I objective} & \textbf{Status} \\
+    \midrule
+    1 & Identify functional biomarkers and comorbidity patterns & \partly \\
+    2 & Develop a comorbidity-aware feature representation & \partly \\
+    3 & Design a Meta-Bayesian learning framework & \notst \\
+    4 & Incorporate uncertainty estimation & \notst \\
+    5 & Validate on benchmark data: performance, statistics, clinical & \notst \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item Objectives 1--2: the \textbf{imaging half} is built and verified.
+    \item The comorbidity half is pending: clinical tables are incomplete.
+  \end{itemize}
+\end{frame}
+
+% 5. Proposed System Architecture
+\begin{frame}{Proposed System Architecture}
+  \centering
+  \resizebox{0.98\textwidth}{!}{%
+  \begin{tikzpicture}[font=\small,>=latex]
+    \tikzset{
+      mod/.style={rounded corners,thick,draw,align=center,text width=3.4cm,
+                  minimum height=3.8cm,inner sep=4pt,anchor=north,
+                  execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+      dn/.style={mod,fill=green!12},
+      pt/.style={mod,fill=yellow!22},
+      pl/.style={mod,dashed,fill=gray!8},
+      ar/.style={->,thick}}
+    \node[pt] (m1) at (0,0)    {\footnotesize\textbf{Module 1}\\\footnotesize\textbf{Data/Input}\\\footnotesize\textbf{Management}\\[3pt]\scriptsize raw rs-fMRI (ADNI)\\ audit and recovery\\ clinical tables\\ stage labels};
+    \node[dn] (m2) at (4.1,0)  {\footnotesize\textbf{Module 2}\\\footnotesize\textbf{Preprocessing}\\\footnotesize\textbf{Pipeline}\\[3pt]\scriptsize NIfTI conversion\\ volume removal\\ motion correction\\ EPI$\rightarrow$MNI, 4\,mm\\ band-pass, QC};
+    \node[dn] (m3) at (8.2,0)  {\footnotesize\textbf{Module 3}\\\footnotesize\textbf{Feature Extraction}\\\footnotesize\textbf{(Brainnetome 246)}\\[3pt]\scriptsize 246 ROI time series\\ ALFF, ReHo, DC, FC\\ within-subject\\ normalisation};
+    \node[pl] (m4) at (12.3,0) {\footnotesize\textbf{Module 4}\\\footnotesize\textbf{Proposed Deep}\\\footnotesize\textbf{Learning Model}\\[3pt]\scriptsize transformer encoder\\ multi-attention\\ meta-learning\\ comorbidity fusion};
+    \node[pl] (m5) at (16.4,0) {\footnotesize\textbf{Module 5}\\\footnotesize\textbf{Core Output}\\\footnotesize\textbf{Classifier}\\[3pt]\scriptsize 6-class ordinal stage\\ class probabilities\\ confidence and\\ uncertainty};
+    \node[pl,anchor=north,minimum height=1.4cm,text width=19.8cm] (m6) at (8.2,-4.5) {\footnotesize\textbf{Module 6: Decision Support Dashboard}\\[2pt]\scriptsize patient summary $\cdot$ progression chart $\cdot$ class probabilities $\cdot$ explainability overlays $\cdot$ network visualisation};
+    \foreach \a/\b in {m1/m2,m2/m3,m3/m4,m4/m5} \draw[ar] (\a.east |- 0,-1.9) -- (\b.west |- 0,-1.9);
+    \draw[ar,dashed] (m5.south) -- (m5.south |- m6.north);
+    \node[draw,fill=green!12,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (0,-6.7) {};
+    \node[anchor=west] at (0.45,-6.7) {\footnotesize complete};
+    \node[draw,fill=yellow!22,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (3.6,-6.7) {};
+    \node[anchor=west] at (4.05,-6.7) {\footnotesize partly complete (imaging done, clinical tables not)};
+    \node[draw,dashed,fill=gray!8,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (14.2,-6.7) {};
+    \node[anchor=west] at (14.65,-6.7) {\footnotesize not started (design only)};
+  \end{tikzpicture}}
+\end{frame}
+
+% 6. System Modules
+\begin{frame}{System Modules}
+  \small
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm}>{\centering\arraybackslash}p{1.9cm}X}
+    \toprule
+    \textbf{Module (Review I names)} & \textbf{Status} & \textbf{At Review II} \\
+    \midrule
+    1 Data/Input Management & \partly & Imaging complete; \textbf{clinical tables not cleaned}, LMCI missing \\
+    2 Preprocessing Pipeline & \done & 165 of 173 scans; 8 rejected (TR 6.02\,s) \\
+    3 Feature Extraction (Brainnetome 246) & \done & ALFF, ReHo, DC, FC for 165/165; normalised \\
+    4 Proposed Deep Learning Model & \notst & Transformer, meta-learning, fusion: design only \\
+    5 Core Output Classifier & \notst & Bayesian ordinal head: design only \\
+    6 Decision Support Dashboard & \notst & No interface built \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% 7. Methodology / Workflow
+\begin{frame}{Methodology / Workflow}
+  \centering
+  \begin{tikzpicture}[>=latex,
+      st/.style={draw=UniversityBlue,fill=LightBlue,rounded corners,
+                 text width=2.05cm,minimum height=0.95cm,align=center,font=\scriptsize,
+                 execute at begin node={\hyphenpenalty=10000}},
+      no/.style={st,draw=red!70!black,fill=red!6,dashed},
+      ar/.style={->,thick,draw=AccentBlue}]
+    % Module 2 chain, two rows
+    \node[st] (a1) {Discard first 5 volumes};
+    \node[no,right=0.35cm of a1] (a2) {Slice timing\\ \textbf{NOT PERFORMED}};
+    \node[st,right=0.35cm of a2] (a3) {Motion correction\\ mc-afni2};
+    \node[st,right=0.35cm of a3] (a4) {Direct EPI$\rightarrow$MNI\\ ANTs SyN, no T1w};
+    \node[st,right=0.35cm of a4] (a5) {4\,mm resample};
+    \node[st,below=0.45cm of a1] (b1) {6\,mm FWHM smoothing};
+    \node[st,right=0.35cm of b1] (b2) {Linear detrend};
+    \node[st,right=0.35cm of b2] (b3) {27 nuisance regressors};
+    \node[st,right=0.35cm of b3] (b4) {Band-pass 0.01--0.10\,Hz};
+    \node[st,right=0.35cm of b4] (b5) {Per-scan QC};
+    % Module 3 chain
+    \node[st,below=0.7cm of b1] (c1) {Brainnetome-246 atlas (nearest neighbour)};
+    \node[st,right=0.35cm of c1] (c2) {ROI time series\\ $135\times246$};
+    \node[st,right=0.35cm of c2] (c3) {ALFF, ReHo, FC, DC};
+    \node[st,right=0.35cm of c3] (c4) {Within-subject normalisation};
+    \foreach \x/\y in {a1/a2,a2/a3,a3/a4,a4/a5,b1/b2,b2/b3,b3/b4,b4/b5,c1/c2,c2/c3,c3/c4}
+      \draw[ar] (\x) -- (\y);
+    \draw[ar] (a5.south) -- ++(0,-0.25) -| ([yshift=0.25cm]b1.north west) -- (b1.north);
+    \draw[ar] (b5.south) -- ++(0,-0.3) -| ([yshift=0.3cm]c1.north west) -- (c1.north);
+    \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]a1.west) {Module 2};
+    \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]c1.west) {Module 3};
+  \end{tikzpicture}
+  \vspace{0.3cm}
+
+  \small Every step is checked per acquisition; a scan that fails a check is logged, never silently altered.
+\end{frame}
+
+% 8a. Core Algorithm - implemented
+\begin{frame}{Core Algorithm A: Implemented Biomarkers and Normalisation}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.47\textwidth}
+      \begin{block}{Biomarkers (per Brainnetome region)}
+        \footnotesize
+        \begin{itemize}
+          \item \textbf{ALFF:} mean FFT amplitude, 0.01--0.10\,Hz
+          \item \textbf{ReHo:} Kendall's $W$, 27-voxel neighbourhood
+          \item \textbf{FC:} $246\times246$ Pearson, signed, unthresholded
+          \item \textbf{DC:} $\mathrm{DC}_i=\sum_{j\neq i}\mathrm{FC}_{ij}$
+        \end{itemize}
+      \end{block}
+    \column{0.51\textwidth}
+      \begin{block}{Within-subject normalisation}
+        \footnotesize
+        \begin{itemize}
+          \item mALFF $=\mathrm{ALFF}_i/\overline{\mathrm{ALFF}}$
+          \item mReHo $=\mathrm{ReHo}_i/\overline{\mathrm{ReHo}}$
+          \item $\mathrm{DC}_z=(\mathrm{DC}_i-\overline{\mathrm{DC}})/\sigma_{\mathrm{DC}}$
+          \item FC $\rightarrow\operatorname{artanh}\bigl(\operatorname{clip}(r,\pm0.999999)\bigr)$, diagonal $=0$
+        \end{itemize}
+      \end{block}
+  \end{columns}
+  \vspace{0.2cm}
+  \begin{itemize}
+    \item Every statistic comes from \textbf{one acquisition's own 246 values}.
+    \item No cross-subject statistic and no label: leakage-free by construction.
+    \item Verified: mean(mALFF) = mean(mReHo) = 1.000000; std(DC$_z$) = 1.000000 (165/165).
+    \item 0 off-diagonal entries needed clipping; Fisher-$z$ diagonal exactly 0.
+  \end{itemize}
+\end{frame}
+
+% 8b. Core Algorithm - design only
+\begin{frame}{Core Algorithm B: Meta-Bayesian Pipeline (Design, Not Implemented)}
+  \centering
+  {\small \alert{Design only: nothing is trained and no result exists.}}\par
+  \resizebox{0.9\textwidth}{!}{%
+  \begin{tikzpicture}[font=\small,>=latex]
+    \tikzset{b/.style={rounded corners,thick,draw,align=center,minimum height=0.9cm,inner sep=4pt},
+             ar/.style={->,thick}}
+    \node[b,fill=blue!8] (t1) at (0,1.65) {Task 1: ALFF};
+    \node[b,fill=blue!8] (t2) at (0,0.55) {Task 2: ReHo};
+    \node[b,fill=blue!8] (t3) at (0,-0.55) {Task 3: DC};
+    \node[b,fill=blue!8] (t4) at (0,-1.65) {Task 4: FC};
+    \node[b,fill=gray!10,dashed,text width=3.6cm,minimum height=4.3cm] (enc) at (4.6,0) {Shared multi-attention\\encoder $f_\theta$\\{\footnotesize inner and outer loop}};
+    \node[b,fill=gray!10,dashed] (z) at (8.1,0) {$Z'$};
+    \node[b,fill=yellow!22] (c) at (8.1,-1.9) {clinical covariates $C$};
+    \node[b,fill=gray!10,dashed] (h) at (10.4,0) {$H=[Z'\,\|\,C]$};
+    \node[b,fill=gray!10,dashed,text width=3.3cm] (head) at (14.0,0) {Bayesian ordinal head\\{\footnotesize distribution over weights}};
+    \node[b,fill=gray!10,dashed,text width=3.0cm] (out) at (18.1,0) {stage $\hat y$, $p(y\mid X,C)$,\\uncertainty};
+    \foreach \t in {t1,t2,t3,t4} \draw[ar] (\t.east) -- (enc.west |- \t.east);
+    \draw[ar] (enc) -- (z); \draw[ar] (z) -- (h); \draw[ar] (c.east) -| (h.south);
+    \draw[ar] (h) -- (head); \draw[ar] (head) -- (out);
+  \end{tikzpicture}}
+  \vspace{-0.1cm}
+
+  \begin{columns}[T,onlytextwidth]
+    \column{0.49\textwidth}
+      \begin{block}{MAML update over biomarkers}
+        \scriptsize
+        \vspace{-4pt}
+        \begin{align*}
+          \theta'_b &= \theta-\alpha\,\nabla_\theta\mathcal{L}^{\mathrm{sup}}_b(\theta)\\
+          \theta &\leftarrow \theta-\beta\,\nabla_\theta\sum_{b}\mathcal{L}^{\mathrm{qry}}_b(\theta'_b)
+        \end{align*}
+        \vspace{-8pt}
+      \end{block}
+    \column{0.49\textwidth}
+      \begin{block}{Ordinal head (cumulative link)}
+        \scriptsize
+        \vspace{-4pt}
+        \begin{equation*}
+          P(y\le k\mid H,w)=\sigma\bigl(\tau_k-g_w(H)\bigr),\quad \tau_0<\dots<\tau_4
+        \end{equation*}
+        \vspace{-8pt}
+      \end{block}
+  \end{columns}
+  {\scriptsize Support and query sets are subject-disjoint, within training folds.
+  Uncertainty = predictive entropy over $S$ weight samples.}
+\end{frame}
+
+% 9. Implementation Status
+\begin{frame}{Implementation Status}
+  \centering
+  \resizebox{0.8\textwidth}{!}{%
+  \begin{ganttchart}[
+      x unit=1.05cm, y unit chart=0.5cm, y unit title=0.5cm,
+      title height=1, title label font=\small, bar label font=\small,
+      milestone label font=\small, vgrid={*{1}{draw=none},dotted},
+      hgrid, bar height=0.55,
+      bar/.append style={fill=green!35!black!45},
+      bar incomplete/.append style={fill=gray!22},
+      progress label text={},
+      milestone/.append style={fill=red!60},
+      vrule/.style={very thick, red!70!black}]{1}{8}
+    \gantttitle{Aug}{1}\gantttitle{Sep}{1}\gantttitle{Oct}{1}\gantttitle{Nov}{1}\gantttitle{Dec}{1}\gantttitle{Jan}{1}\gantttitle{Feb}{1}\gantttitle{Mar}{1}\\
+    \ganttbar[progress=100]{Literature, problem \& design}{1}{1}\\
+    \ganttbar[progress=100]{M2: Preprocessing \& validation}{2}{3}\\
+    \ganttbar[progress=100]{M3: Feature extraction (BN-246)}{4}{4}\\
+    \ganttbar[progress=0]{M4 \& M5: Transformer, classifier}{5}{6}\\
+    \ganttbar[progress=0]{Testing and evaluation}{7}{7}\\
+    \ganttbar[progress=0]{Documentation}{7}{8}\\
+    \ganttmilestone{Final submission}{8}
+    \ganttvrule{Review II}{3}
+  \end{ganttchart}}
+  \vspace{0.15cm}
+
+  \begin{alertblock}{One milestone ahead of the Review I plan}
+    Module 2 was planned for Review II and Module 3 for Review III.
+    \textbf{Both are complete at Review II.}
+  \end{alertblock}
+  {\footnotesize Applies to the \textbf{data foundation only}: Modules 4--6 are not started and the clinical
+  tables are not cleaned. Preprocessing outputs dated 20--22 Sep; biomarker audit 23 Sep; normalisation 5 Oct.}
+\end{frame}
+
+% 10. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
+\begin{frame}[fragile]{Pipeline Outputs}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.58\textwidth}
+\begin{lstlisting}
+derivatives/
+  fsfast/<STAGE>/sub-*/ses-*/run-*/
+    *_desc-preproc_bold.nii.gz  + .json
+    qc/            QC metrics and plots
+    biomarkers/    23 files
+  biomarkers_normalized/<STAGE>/.../
+                   10 files
+  fsfast/FINAL_6GROUP_AUDIT/
+  fsfast/BIOMARKER_DATASET_AUDIT/
+  STAGE_HEATMAPS/
+\end{lstlisting}
+    \column{0.40\textwidth}
+      \small
+      \begin{itemize}
+        \item 165 acquisitions, same layout each.
+        \item Each carries a \textbf{provenance record}: parameters, versions, source checksum.
+        \item Resume re-validates files on disk, not the checkpoint.
+        \item Raw biomarkers are never modified.
+      \end{itemize}
+  \end{columns}
+  \vspace{0.2cm}
+  \begin{alertblock}{No interface exists}
+    These are data outputs. The Module 6 dashboard is \textbf{not built}.
+  \end{alertblock}
+  {\scriptsize Counts are per acquisition; the one pilot acquisition keeps its original extra files.}
+\end{frame}
+
+% 11. Results: data-stage only
+\begin{frame}{Results: Data Foundation Verification}
+  \begin{alertblock}{}
+    \small These are \textbf{data-stage} results. \textbf{No model performance exists.}
+  \end{alertblock}
+  \vspace{0.1cm}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+      \footnotesize
+      \begin{tabular}{lrrrr}
+        \toprule
+        \textbf{Stage} & \textbf{Elig.} & \textbf{Prep.} & \textbf{Bio.} & \textbf{Subj.} \\
+        \midrule
+        CN   & 29 & 27 & 27 & 26 \\
+        SMC  & 32 & 31 & 31 & 21 \\
+        EMCI & 30 & 29 & 29 & 26 \\
+        MCI  & 35 & 32 & 32 & 14 \\
+        LMCI & 22 & 21 & 21 & 20 \\
+        AD   & 25 & 25 & 25 & 20 \\
+        \midrule
+        \textbf{Total} & \textbf{173} & \textbf{165} & \textbf{165} & \textbf{127} \\
+        \bottomrule
+      \end{tabular}
+    \column{0.48\textwidth}
+      \footnotesize
+      \begin{tabular}{lr}
+        \toprule
+        \textbf{Check (165 acquisitions)} & \textbf{Result} \\
+        \midrule
+        246/246 regions covered & 165/165 \\
+        ROI series $(135,246)$ & 165/165 \\
+        NaN / Inf / zero-variance & 0 / 0 / 0 \\
+        Pilot reproduction & bit-identical \\
+        DC recomputed from FC, max diff. & \alert{0.000e+00} \\
+        Consistency checks passed & 165/165 \\
+        \bottomrule
+      \end{tabular}
+  \end{columns}
+  \vspace{0.2cm}
+  \begin{itemize}
+    \item \alert{127 subjects, not 165 scans}: 96 have one scan, 25 two, 5 three, 1 four.
+    \item Smallest class: MCI, 32 scans but only \textbf{14 subjects}.
+    \item QC medians ($n=164$): tSNR 127.95, SNR 13.12, FD 0.317\,mm.
+  \end{itemize}
+\end{frame}
+
+% 12. Results: finding 1
+\begin{frame}{Finding 1: FC Strength Equals DC/245}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+      \begin{block}{Review I fourth column was redundant}
+        \footnotesize
+        \begin{equation*}
+          \mathrm{FCS}_i=\frac{1}{245}\sum_{j\neq i}\mathrm{FC}_{ij}=\frac{\mathrm{DC}_i}{245}
+        \end{equation*}
+        \vspace{-6pt}
+      \end{block}
+      \small
+      \begin{itemize}
+        \item Max difference \textbf{6.939e-18}; Pearson $r=1.000000000000$.
+        \item \textbf{All four biomarkers are kept.}
+        \item ALFF, ReHo, DC: $246\times3$ regional matrix.
+        \item FC: full $246\times246$ Fisher-$z$ matrix.
+        \item A design correction found by auditing our own features.
+      \end{itemize}
+    \column{0.46\textwidth}
+      \centering
+      \includegraphics[height=4.0cm]{figures/DC_z_rowz.png}\,
+      \includegraphics[height=4.0cm]{figures/FC_Strength_rowz.png}
+
+      {\scriptsize DC$_z$ (left) and FC\_Strength (right): identical panels, as expected.
+      Descriptive and exploratory only.}
+  \end{columns}
+\end{frame}
+
+% 13. Results: finding 2
+\begin{frame}{Finding 2: No Univariate Progression Signal}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{figures/stage_rowz_panel_slide.pdf}
+
+      {\scriptsize Stage-wise row-$z$ patterns, 127 subjects (CN$\to$AD).
+      Descriptive and exploratory; no statistical test.}
+    \column{0.48\textwidth}
+      \footnotesize
+      \begin{tabular}{lcc}
+        \toprule
+        & \textbf{Monotonic CN$\to$AD} & \textbf{By chance} \\
+        \midrule
+        mALFF & 1 / 246 & $\approx0.7$ \\
+        mReHo & 0 / 246 & $\approx0.7$ \\
+        DC$_z$ & 1 / 246 & $\approx0.7$ \\
+        \bottomrule
+      \end{tabular}
+      \vspace{0.2cm}
+      \small
+      \begin{itemize}
+        \item No more than chance; stage variation is 4--5$\times$ below anatomy.
+        \item Informative, not a failure.
+        \item Group means discard the whole connectivity structure.
+        \item \textbf{Motivates the multivariate model.}
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% 14. Team Responsibilities
+\begin{frame}{Team Responsibilities}
+  \small
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{4.0cm}X}
+    \toprule
+    Team member & Review I assignment & Contribution to this review \\
+    \midrule
+    Harishkanna R & Modules 4 \& 5 (model, classifier) & \todo{to be filled by the team} \\
+    Dhananchezhiyan M & Modules 3 \& 6 (features, dashboard) & \todo{to be filled by the team} \\
+    Nagindhar Sachein R L & Modules 1 \& 2 (data, preprocessing) & \todo{to be filled by the team} \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{0.3cm}
+
+  {\footnotesize The middle column is the ownership recorded at Review I. The right column is left for the team to complete.}
+\end{frame}
+
+% 15. Next steps and closing
+\begin{frame}{Next Steps}
+  \begin{enumerate}
+    \item Obtain the \textbf{missing LMCI clinical tables}.
+    \item Clean the comorbidity data.
+    \item Build subject-grouped cross-validation folds.
+    \item Expand the dataset by \textbf{+50 acquisitions per stage}.
+    \item Then implement Modules 4--5 (Dec--Jan in the Review I plan).
+  \end{enumerate}
+  \vspace{0.3cm}
+  \begin{alertblock}{Where we stand}
+    The data foundation is complete and independently verified: a \alert{full milestone ahead of plan}.
+    The modelling stages are next; no model result exists yet.
+  \end{alertblock}
+  {\footnotesize The expansion helps the 127-subject limit only through \emph{new subjects}; it has not started.}
+\end{frame}
+
+% 16. References
+\begin{frame}{References}
+  \setbeamertemplate{bibliography item}[text]
+  \fontsize{6}{7}\selectfont
+  \begin{multicols}{2}
+  \begin{thebibliography}{99}
+    \bibitem{r1} C. R. Jack Jr. \emph{et al.}, ``ADNI: MRI methods,'' \emph{J. Magn. Reson. Imaging}, 27(4), 2008.
+    \bibitem{r2} R. C. Petersen \emph{et al.}, ``ADNI: clinical characterization,'' \emph{Neurology}, 74(3), 2010.
+    \bibitem{r3} L. Fan \emph{et al.}, ``The Human Brainnetome Atlas,'' \emph{Cerebral Cortex}, 26(8), 2016.
+    \bibitem{r4} Y. Zang \emph{et al.}, ``Regional homogeneity approach to fMRI data analysis,'' \emph{NeuroImage}, 22(1), 2004.
+    \bibitem{r5} Y.-F. Zang \emph{et al.}, ``Altered baseline brain activity in children with ADHD,'' \emph{Brain Dev.}, 29(2), 2007.
+    \bibitem{r6} Q.-H. Zou \emph{et al.}, ``An improved approach to detection of ALFF: fractional ALFF,'' \emph{J. Neurosci. Methods}, 172(1), 2008.
+    \bibitem{r7} X.-N. Zuo \emph{et al.}, ``Network centrality in the human functional connectome,'' \emph{Cereb. Cortex}, 22(8), 2012.
+    \bibitem{r8} J. D. Power \emph{et al.}, ``Spurious but systematic correlations in functional connectivity MRI,'' \emph{NeuroImage}, 59(3), 2012.
+    \bibitem{r9} K. J. Friston \emph{et al.}, ``Movement-related effects in fMRI time-series,'' \emph{Magn. Reson. Med.}, 35(3), 1996.
+    \bibitem{r10} B. B. Avants \emph{et al.}, ``Symmetric diffeomorphic image registration with cross-correlation,'' \emph{Med. Image Anal.}, 12(1), 2008.
+    \bibitem{r11} B. Fischl, ``FreeSurfer,'' \emph{NeuroImage}, 62(2), 2012.
+    \bibitem{r12} R. W. Cox, ``AFNI: software for analysis of functional MR neuroimages,'' \emph{Comput. Biomed. Res.}, 29(3), 1996.
+    \bibitem{r13} A. Vaswani \emph{et al.}, ``Attention is all you need,'' \emph{NeurIPS}, 30, 2017.
+    \bibitem{r14} C. Finn, P. Abbeel, S. Levine, ``Model-agnostic meta-learning,'' \emph{ICML}, 2017.
+    \bibitem{r15} Y. Gal, Z. Ghahramani, ``Dropout as a Bayesian approximation,'' \emph{ICML}, 2016.
+    \bibitem{r16} P. McCullagh, ``Regression models for ordinal data,'' \emph{J. R. Stat. Soc. B}, 42(2), 1980.
+    \bibitem{r17} A. Hariharan, S. N. Gowda, Anala M R, ``Uncertainty-aware longitudinal forecasting of AD progression,'' arXiv:2606.24604, 2026.
+    \bibitem{r18} B.-S. Rauchmann \emph{et al.}, ``Multimodal ordinal modeling of AD severity (MRI and clinical),'' arXiv:2606.11794, 2026.
+    \bibitem{r19} K. Alsalem \emph{et al.}, ``Progression-aware CNN--Transformer for multiclass AD staging,'' \emph{Diagnostics}, 16(4):593, 2026.
+  \end{thebibliography}
+  \end{multicols}
+\end{frame}
+
+% 17. Thank you
+\begin{frame}[plain]
+  \centering
+  \vfill
+  {\usebeamerfont{title}\color{UniversityBlue}\Huge Thank You}\par
+  \vspace{0.5cm}
+  {\Large Questions and Discussion}\par
+  \vspace{0.8cm}
+  \vfill
+\end{frame}
+
+\end{document}
