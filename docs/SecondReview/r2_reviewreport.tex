@@ -63,9 +63,9 @@ biomarkers, is exactly DC$/245$ and was removed, leaving a $246\times3$ regional
 matrix plus the full $246\times246$ Fisher-$z$ connectivity matrix. Stage-wise
 group-mean heatmaps over 127 subjects show no univariate progression signal
 (1, 0 and 1 of 246 regions monotonic, against about 0.7 expected by chance),
-which motivates a multivariate model. Preprocessing and feature extraction were
-scheduled for Reviews~II and~III in the Review~I plan and are both complete, so
-the data side is one milestone ahead. The modelling stages have not been started
+which motivates a multivariate model. Preprocessing and feature extraction
+(Modules~2 and~3 of the Review~I plan) were scheduled for Reviews~II and~III and are
+both complete, so the data side is one milestone ahead. The modelling stages have not been started
 and no performance result is reported.
 
 \keywords{Alzheimer's disease; resting-state fMRI; Brainnetome atlas; functional
@@ -118,66 +118,112 @@ processing with explicit documentation of every point at which the dataset was f
 to be limiting.
 
 \section{Objectives}
+The objectives are those fixed at Review~I.
 \begin{enumerate}[label=\arabic*.]
-  \item To audit, recover and organise a usable ADNI rs-fMRI cohort spanning six
-        diagnostic groups, documenting every exclusion and every metadata limitation
-        rather than silently discarding data.
-  \item To design and implement a reproducible rs-fMRI preprocessing pipeline that
-        is valid under this dataset's constraints, specifically the complete absence
-        of T1-weighted anatomical images and of recoverable slice-timing metadata.
-  \item To parcellate the preprocessed data into the 246-region Brainnetome atlas and
-        generate four complementary regional biomarkers (ALFF, ReHo, FC, DC) with
-        independent numerical verification of every derived quantity.
-  \item To apply a leakage-free within-subject normalisation that removes
-        acquisition-level scaling without using any cross-subject or label
-        information.
-  \item To implement and evaluate a multi-attention transformer with meta-learning
-        that discovers a shared, biomarker-invariant progression representation.
-  \item To fuse that representation with comorbidity variables and to classify
-        disease stage with a Bayesian ordinal model that reports prediction
-        uncertainty, comparing the result against single-biomarker and
-        non-comorbidity-aware baselines.
+  \item To identify functional brain biomarkers and comorbidity patterns associated
+        with Alzheimer's disease progression using resting-state fMRI.
+  \item To develop a comorbidity-aware feature representation framework for robust
+        characterization of Alzheimer's disease progression.
+  \item To design a Meta-Bayesian learning framework for accurate and reliable
+        Alzheimer's disease progression assessment.
+  \item To incorporate uncertainty estimation for improving the confidence and
+        robustness of disease stage prediction.
+  \item To validate the proposed framework using benchmark datasets through
+        performance, statistical, and clinical evaluation.
 \end{enumerate}
 
-Objectives 1--4 are complete and are the subject of this report. Objectives 5 and 6
-have not yet been started and are discussed as future work.
-
-\section{Position Against the Review I Timeline}\label{sec:timeline}
-
-The Review~I plan placed \emph{Module~2: Preprocessing \& Validation} at Review~II
-and \emph{Module~3: Feature Extraction --- Brainnetome-246} at Review~III. Both are
-complete at Review~II, so on the data side the project stands a full milestone ahead
-of its own Review~I timeline (Table~\ref{tab:timeline}). Module numbers in that
-table are those of the Review~I plan; Chapter~\ref{ch:method} numbers this report's
-modules differently.
+Table~\ref{tab:objstatus} states honestly how far each objective has been met. The
+work reported here is the data foundation beneath objectives~1 and~2.
 
 \begin{table}[H]
 \centering
-\caption{Planned (Review~I) versus actual progress at Review~II.}
-\label{tab:timeline}
+\caption{Progress against the Review~I objectives.}
+\label{tab:objstatus}
 \small
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{2.3cm}X@{}}
+\begin{tabularx}{\textwidth}{@{}>{\centering\arraybackslash}p{0.8cm}>{\raggedright\arraybackslash}p{2.6cm}X@{}}
 \toprule
-\textbf{Review I module} & \textbf{Planned for} & \textbf{Status at Review II} \\
+\textbf{Obj.} & \textbf{Status} & \textbf{Evidence} \\
 \midrule
-Module 2: Preprocessing \& Validation & Review II &
-\textbf{Complete.} 165 of 173 eligible acquisitions preprocessed; 8 rejected for a
-6.02\,s TR; per-acquisition QC and independent verification done. \\
-Module 3: Feature Extraction --- Brainnetome-246 & Review III &
-\textbf{Complete, one review early.} 165/165 acquisitions parcellated with 246/246
-coverage; ALFF, ReHo, FC and DC generated and verified for all 165. \\
-Modules 4--6: transformer, meta-learning, comorbidity fusion, Bayesian ordinal
-classifier, dashboard & per Review~I Gantt &
-\textbf{Not started.} No model has been trained; no accuracy, AUC or other
-performance figure exists. \\
+1 & Partly met & ALFF, ReHo, FC and DC extracted and verified for 165 acquisitions
+(127 subjects). Their association with progression is not demonstrated
+(Section~\ref{sec:heatmaps}), and comorbidity patterns have not been analysed because the
+clinical tables are incomplete. \\
+2 & Partly met & The imaging half is built: a $246\times3$ regional matrix plus a
+$246\times246$ Fisher-$z$ connectivity matrix per acquisition. The comorbidity-aware
+half has not been started. \\
+3 & Not started & No Meta-Bayesian model exists. \\
+4 & Not started & No uncertainty estimate exists. \\
+5 & Not started & Only data-level validation (independent recomputation of the
+biomarkers) has been done. No model has been validated; no performance, statistical or
+clinical evaluation exists. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-In addition, within-subject normalisation of all 165 acquisitions is complete. The lead
-should be read narrowly: it applies to the data foundation only. The comorbidity data
-are not yet cleaned and the cross-validation folds are not yet built
-(Section~\ref{sec:notdone}).
+\section{Position Against the Review I Timeline}\label{sec:timeline}
+
+The Review~I timeline (August 2026 to March 2027, Figure~\ref{fig:gantt}) scheduled
+\emph{Module~2: Preprocessing \& Validation} for September--October (Review~II) and
+\emph{Module~3: Feature Extraction --- Brainnetome 246} for November (Review~III). Both
+are complete at Review~II, so on the data side the project stands a full milestone
+ahead of its own Review~I timeline (Table~\ref{tab:timeline}).
+
+\begin{table}[H]
+\centering
+\caption{Review~I timeline versus actual progress at Review~II.}
+\label{tab:timeline}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}p{1.9cm}X@{}}
+\toprule
+\textbf{Review I activity} & \textbf{Planned} & \textbf{Status at Review II} \\
+\midrule
+Literature survey, problem formulation \& design (Review~1) & Aug & Complete. \\
+Module 2: Preprocessing \& validation (Review~2) & Sep--Oct &
+\textbf{Complete.} 165 of 173 eligible acquisitions preprocessed; 8 rejected for a
+6.02\,s TR; per-acquisition QC and independent verification done. \\
+Module 3: Feature extraction --- Brainnetome 246 (Review~3) & Nov &
+\textbf{Complete, one review early.} 165/165 acquisitions parcellated with 246/246
+coverage; ALFF, ReHo, FC and DC generated and verified for all 165. \\
+Modules 4 \& 5: Multi-Attention Transformer, Meta-Learning \& 6-class classifier &
+Dec--Jan & \textbf{Not started.} No model has been trained; no accuracy, AUC or other
+performance figure exists. \\
+Testing and evaluation & Feb & Not started. \\
+Documentation; final submission & Feb--Mar & Not yet due. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{ganttchart}[
+    x unit=1.0cm, y unit chart=0.62cm, y unit title=0.62cm,
+    title height=1, title label font=\small, bar label font=\small,
+    milestone label font=\small, vgrid={*{1}{draw=none},dotted},
+    hgrid, bar height=0.55,
+    bar/.append style={fill=green!35!black!45},
+    bar incomplete/.append style={fill=gray!22},
+    progress label text={},
+    milestone/.append style={fill=red!60},
+    vrule/.style={very thick, red!70!black}]{1}{8}
+  \gantttitle{Aug}{1}\gantttitle{Sep}{1}\gantttitle{Oct}{1}\gantttitle{Nov}{1}\gantttitle{Dec}{1}\gantttitle{Jan}{1}\gantttitle{Feb}{1}\gantttitle{Mar}{1}\\
+  \ganttbar[progress=100]{Literature, problem \& design}{1}{1}\\
+  \ganttbar[progress=100]{M2: Preprocessing \& validation}{2}{3}\\
+  \ganttbar[progress=100]{M3: Feature extraction (BN-246)}{4}{4}\\
+  \ganttbar[progress=0]{M4 \& M5: Transformer, classifier}{5}{6}\\
+  \ganttbar[progress=0]{Testing and evaluation}{7}{7}\\
+  \ganttbar[progress=0]{Documentation}{7}{8}\\
+  \ganttmilestone{Final submission}{8}
+  \ganttvrule{Review II}{3}
+\end{ganttchart}
+\caption{Review~I timeline (bar positions) against progress at Review~II. Dark bars are
+complete, light bars are not started. The vertical line marks Review~II (October);
+Module~3, planned for November, is already complete.}
+\label{fig:gantt}
+\end{figure}
+
+The lead should be read narrowly: it applies to the data foundation only. Module~1 is
+complete for imaging but not for the clinical tables, which are not yet cleaned, and
+the cross-validation folds are not yet built (Section~\ref{sec:notdone}).
 
 \chapter{First Review - Queries and Answers}
 
@@ -253,33 +299,43 @@ for that assignment.
         quantity reproducible by independent recomputation to within $10^{-10}$.
   \item \emph{Model stage (future):} staging performance exceeding
         single-biomarker and comorbidity-agnostic baselines under
-        subject-grouped cross-validation, with calibrated uncertainty.
+        subject-grouped cross-validation, with calibrated uncertainty. As fixed at
+        Review~I, it is reported as accuracy, precision, recall and macro-F1, macro-
+        and per-class ROC-AUC, and expected calibration error, with the learned
+        attention maps compared against established neurodegeneration atlases.
 \end{itemize}
 
 \chapter{Methodology}\label{ch:method}
 
-The project follows a fixed seven-block design. Blocks 1--5 (audit, preprocessing,
-parcellation, biomarkers, normalisation) are complete; blocks 6--7 (representation
-learning and the Bayesian ordinal classifier) have not yet been started.
+The proposed system, the Comorbidity-Aware Meta-Bayesian Multi-Attention Transformer,
+follows the six-module architecture fixed at Review~I: Data/Input Management,
+Preprocessing Pipeline, Functional Feature Extraction (Brainnetome 246), Proposed Deep
+Learning Model, Core Output Classifier and Decision Support Dashboard. Modules~2 and~3
+are complete, Module~1 is complete for imaging only, and Modules~4--6 have not yet
+been started.
 
 \section{Proposed Workflow}
 \begin{enumerate}[label=\textbf{Step \arabic*:}]
-  \item Audit the raw cohort, recover acquisitions lacking image data from DICOM,
-        and document all exclusions.
-  \item Preprocess each acquisition into a common template space under the
-        dataset's metadata constraints.
-  \item Parcellate into the Brainnetome-246 atlas and extract regional time series.
-  \item Generate ALFF, ReHo, FC and DC, and verify every derived quantity.
-  \item Normalise within subject, without using cross-subject or label information.
-  \item Learn a shared biomarker-invariant representation using a multi-attention
-        transformer with meta-learning.
-  \item Fuse comorbidity information and classify stage with a Bayesian ordinal
-        model that reports uncertainty.
+  \item \emph{(Module 1)} Audit the raw cohort, recover acquisitions lacking image
+        data from DICOM, document all exclusions, and sort the clinical tables.
+  \item \emph{(Module 2)} Preprocess each acquisition into a common template space
+        under the dataset's metadata constraints.
+  \item \emph{(Module 3)} Parcellate into the Brainnetome-246 atlas, extract regional
+        time series, and generate and verify ALFF, ReHo, FC and DC.
+  \item \emph{(Module 3)} Normalise within subject, without using cross-subject or
+        label information.
+  \item \emph{(Module 4)} Encode the features with a multi-attention transformer, learn
+        a shared biomarker-invariant representation by meta-learning, and fuse the
+        comorbidity covariates.
+  \item \emph{(Module 5)} Classify stage with a Bayesian ordinal head that reports
+        uncertainty.
+  \item \emph{(Module 6)} Present the stage, probabilities and attention maps in the
+        decision-support dashboard.
 \end{enumerate}
 
 \section{Deviations from the Review I Plan}\label{sec:deviations}
 
-Auditing the data changed three specifications made at Review~I. Each change was
+Auditing the data changed four specifications made at Review~I. Each change was
 forced by what the dataset contains, and none was made for convenience
 (Table~\ref{tab:deviations}).
 
@@ -288,127 +344,151 @@ forced by what the dataset contains, and none was made for convenience
 \caption{Deviations from the Review~I plan and their evidence.}
 \label{tab:deviations}
 \small
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.3cm}X@{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{3.1cm}X@{}}
 \toprule
 \textbf{Review I specified} & \textbf{Implemented} & \textbf{Evidence and consequence} \\
 \midrule
-Slice-timing correction (\S5.2.2) & Step omitted; recorded as
+Slice-timing correction (Module 2, \S5.2.2) & Step omitted; recorded as
 \texttt{NOT\_PERFORMED} in every provenance file &
 No \texttt{SliceTiming} field in any of 175 JSON sidecars; DICOM headers from 17
 protocol signatures, including private vendor tags, give volume-level timing only.
 Outcome \texttt{SLICE\_TIMING\_NOT\_RECOVERABLE}. The step was omitted, not assumed
 away, and no timing was inferred. \\
-Co-registration to structural scans (\S5.2.2) & Direct EPI-to-MNI registration
+Co-registration to structural scans (Module 2, \S5.2.2) & Direct EPI-to-MNI registration
 (ANTsPy SyN) with population-template tissue priors &
 Zero of 131 subjects have a T1w image. Subject segmentation is therefore impossible;
 CNR is not computable for any acquisition, and the CSF regressor failed its
 reliability gate in all 165 (Section~\ref{sec:preproc}). \\
-$246\times4$ regional feature matrix & $246\times3$ regional matrix plus the full
+$246\times4$ regional feature matrix (Module 3, \S5.2.3) & $246\times3$ regional matrix plus the full
 $246\times246$ Fisher-$z$ FC matrix &
 FC strength $=$ DC$/245$ exactly, so one column was a rescaling of another
 (Section~\ref{sec:redundancy}). FC is not dropped; it moves to its full matrix form. \\
+Cross-site scanner variance normalisation via FS-FAST (Scope, \S1.4) & Not
+performed; only within-subject normalisation was applied &
+FS-FAST was used for motion correction. No site or scanner harmonisation step exists in
+the pipeline, so site and protocol effects (matrix size, TR) are recorded but not
+corrected. This is listed as a limitation. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \section{Architectural Design for Proposed System}
 
-Figure~\ref{fig:architecture} shows the system as implemented. Data flows strictly
-left to right; each stage reads only the outputs of the stage before it and writes
-to its own directory, so no stage can modify its own input. This separation is what
-makes each stage independently auditable.
+Figure~\ref{fig:architecture} shows the six-module architecture of Review~I, coloured by
+status at Review~II. Data flows strictly left to right through Modules~1--5, with the
+dashboard (Module~6) reading the outputs of the others. Each stage reads only the
+outputs of the stage before it and writes to its own directory, so no stage can modify
+its own input. This separation is what makes each stage independently auditable.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[font=\small,node distance=0.35cm]
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[font=\small,>=latex]
   \tikzset{
-    blk/.style={rounded corners,thick,draw,minimum width=2.9cm,minimum height=0.95cm,
-                align=center,fill=blue!8},
-    dn/.style={blk,fill=green!10},
-    pend/.style={blk,fill=gray!8,dashed},
+    mod/.style={rounded corners,thick,draw,align=center,text width=3.4cm,
+                minimum height=3.8cm,inner sep=4pt,anchor=north,
+                execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+    dn/.style={mod,fill=green!12},
+    pt/.style={mod,fill=yellow!22},
+    pl/.style={mod,dashed,fill=gray!8},
     ar/.style={->,thick}
   }
-  \node[dn] (a) at (0,0) {Audit \&\\Recovery};
-  \node[dn] (b) at (3.6,0) {Preprocessing\\(EPI$\rightarrow$MNI, 4\,mm)};
-  \node[dn] (c) at (7.2,0) {Brainnetome-246\\Parcellation};
-  \node[dn] (d) at (10.8,0) {Biomarkers\\ALFF/ReHo/FC/DC};
-
-  \node[dn] (e) at (0,-2.0) {Within-subject\\Normalisation};
-  \node[pend] (f) at (3.6,-2.0) {Multi-Attention\\Transformer};
-  \node[pend] (g) at (7.2,-2.0) {Meta-Learning\\(shared repr.)};
-  \node[pend] (h) at (10.8,-2.0) {Comorbidity\\Fusion};
-
-  \node[pend] (i) at (5.4,-3.9) {Bayesian Ordinal Classifier\\
-                                 stage $+$ uncertainty};
-
-  \draw[ar] (a) -- (b);
-  \draw[ar] (b) -- (c);
-  \draw[ar] (c) -- (d);
-  \draw[ar] (d.south) -- ++(0,-0.45) -| (e.north);
-  \draw[ar] (e) -- (f);
-  \draw[ar] (f) -- (g);
-  \draw[ar] (g) -- (h);
-  \draw[ar] (h.south) -- ++(0,-0.4) -| (i.north);
-\end{tikzpicture}
-\caption{High-level architecture of the proposed system. Solid green blocks are
-implemented and verified; dashed grey blocks are planned and not yet started.}
+  \node[pt] (m1) at (0,0) {\footnotesize\textbf{Module 1}\\\footnotesize\textbf{Data/Input}\\\footnotesize\textbf{Management}\\[3pt]\scriptsize raw rs-fMRI (ADNI)\\ audit and recovery\\ clinical tables\\ stage labels};
+  \node[dn] (m2) at (4.1,0) {\footnotesize\textbf{Module 2}\\\footnotesize\textbf{Preprocessing}\\\footnotesize\textbf{Pipeline}\\[3pt]\scriptsize NIfTI conversion\\ volume removal\\ motion correction\\ EPI$\rightarrow$MNI, 4\,mm\\ band-pass, QC};
+  \node[dn] (m3) at (8.2,0) {\footnotesize\textbf{Module 3}\\\footnotesize\textbf{Feature Extraction}\\\footnotesize\textbf{(Brainnetome 246)}\\[3pt]\scriptsize 246 ROI time series\\ ALFF, ReHo, DC, FC\\ within-subject\\ normalisation};
+  \node[pl] (m4) at (12.3,0) {\footnotesize\textbf{Module 4}\\\footnotesize\textbf{Proposed Deep}\\\footnotesize\textbf{Learning Model}\\[3pt]\scriptsize transformer encoder\\ multi-attention\\ meta-learning\\ comorbidity fusion};
+  \node[pl] (m5) at (16.4,0) {\footnotesize\textbf{Module 5}\\\footnotesize\textbf{Core Output}\\\footnotesize\textbf{Classifier}\\[3pt]\scriptsize 6-class ordinal stage\\ class probabilities\\ confidence and\\ uncertainty};
+  \node[pl,anchor=north,minimum height=1.4cm,text width=19.8cm] (m6) at (8.2,-4.5) {\footnotesize\textbf{Module 6: Decision Support Dashboard}\\[2pt]\scriptsize
+      patient summary $\cdot$ progression chart $\cdot$ class probabilities $\cdot$ explainability overlays $\cdot$ network visualisation};
+  \foreach \a/\b in {m1/m2,m2/m3,m3/m4,m4/m5} \draw[ar] (\a.east |- 0,-1.9) -- (\b.west |- 0,-1.9);
+  \draw[ar,dashed] (m5.south) -- (m5.south |- m6.north);
+  % legend
+  \node[draw,fill=green!12,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (0,-6.7) {};
+  \node[anchor=west] at (0.45,-6.7) {\footnotesize complete};
+  \node[draw,fill=yellow!22,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (3.6,-6.7) {};
+  \node[anchor=west] at (4.05,-6.7) {\footnotesize partly complete (imaging done, clinical tables not)};
+  \node[draw,dashed,fill=gray!8,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (14.0,-6.7) {};
+  \node[anchor=west] at (14.45,-6.7) {\footnotesize not started};
+\end{tikzpicture}}
+\caption{Six-module architecture of the proposed system (Review~I design) with status
+at Review~II.}
 \label{fig:architecture}
 \end{figure}
 
 \section{Modules}
+Each module is described by its purpose, inputs, processing, outputs and dependencies,
+using the module names fixed at Review~I.
 
-\subsection{Module 1: Data Audit, Recovery and Organisation}
-\textbf{Purpose.} Establish a trustworthy cohort and an explicit record of what the
-source data does and does not contain. \textbf{Inputs.} Raw ADNI DICOM archives and
-partially converted NIfTI files. \textbf{Processing.} Inventory every acquisition;
-locate acquisitions with metadata but no image data and convert them from DICOM;
-detect duplicate and truncated acquisitions by checksum and header inspection; audit
-slice-timing recoverability; organise into a BIDS-like layout with group membership
-taken only from \texttt{participants.tsv}. \textbf{Outputs.} Organised cohort,
-exclusion list, and audit reports. \textbf{Dependencies.} None.
+\subsection{Module 1: Data/Input Management}
+\textbf{Purpose.} Gather, structure and sanitise the raw inputs, and establish a
+trustworthy cohort with an explicit record of what the source data does and does not
+contain. \textbf{Inputs.} Raw ADNI rs-fMRI scans (DICOM and NIfTI) and the clinical
+tables. \textbf{Processing.} Inventory every acquisition; convert and recover
+acquisitions lacking image data from DICOM; detect duplicate and truncated
+acquisitions by checksum and header inspection; audit slice-timing recoverability;
+organise into a BIDS-like layout with group membership taken only from
+\texttt{participants.tsv}; sort the clinical tables (CDR, MMSE, GDS, medical history,
+age, APOE~$\varepsilon4$). \textbf{Outputs.} Organised cohort, exclusion list and audit
+reports; clinical tables bound to subjects. \textbf{Dependencies.} None.
+\textbf{Status.} Complete for imaging; the clinical tables are obtained for five of six
+groups but not yet cleaned, and the LMCI tables are missing (Section~\ref{sec:notdone}).
 
-\subsection{Module 2: Preprocessing}
-\textbf{Purpose.} Bring every acquisition into a common template space with nuisance
-signal suppressed. \textbf{Inputs.} Module~1 cohort. \textbf{Processing.} The eleven
-steps of Table~\ref{tab:preproc}. \textbf{Outputs.} One preprocessed 4D BOLD volume,
-brain mask, motion parameter file, nuisance design matrix, provenance record and QC
-report per acquisition. \textbf{Dependencies.} Module~1.
+\subsection{Module 2: Preprocessing Pipeline}
+\textbf{Purpose.} Neutralise cross-site and acquisition variance and isolate the
+low-frequency BOLD signal, bringing every acquisition into a common template space.
+\textbf{Inputs.} Module~1 cohort. \textbf{Processing.} The eleven steps of
+Table~\ref{tab:preproc}. \textbf{Outputs.} One preprocessed 4D BOLD volume, brain mask,
+motion parameter file, nuisance design matrix, provenance record and QC report per
+acquisition. \textbf{Dependencies.} Module~1. \textbf{Status.} Complete for 165 of 173
+eligible acquisitions.
 
-\subsection{Module 3: Parcellation and Regional Time-Series Extraction}
-\textbf{Purpose.} Reduce voxel-level data to a fixed 246-region representation.
-\textbf{Inputs.} Preprocessed BOLD; original 2\,mm Brainnetome atlas.
-\textbf{Processing.} Reorient the atlas losslessly, resample it onto each subject's
-own BOLD grid using nearest-neighbour interpolation only, validate regional
-coverage, and extract the mean BOLD time course of each region.
-\textbf{Outputs.} Subject-aligned atlas, $T \times 246$ regional time-series matrix,
-regional voxel counts and QC. \textbf{Dependencies.} Module~2.
+\subsection{Module 3: Functional Feature Extraction (Brainnetome 246)}
+\textbf{Purpose.} Translate the BOLD signal into a fixed 246-region representation and
+four functional biomarkers. \textbf{Inputs.} Preprocessed BOLD from Module~2; the
+Brainnetome atlas. \textbf{Processing.} Parcellation mapping onto each subject's own
+grid with nearest-neighbour interpolation only; regional time-series extraction;
+voxel-wise ALFF and ReHo aggregated to regions; ROI-level FC and DC
+(Table~\ref{tab:biomarkers}); independent recomputation checks; and, as an addition to
+the Review~I design, leakage-free within-subject normalisation
+(Table~\ref{tab:norm}). \textbf{Outputs.} Per acquisition: the $135\times246$ ROI time
+series, ALFF, ReHo and DC vectors, the $246\times246$ FC matrix and, after
+normalisation, a $246\times3$ regional matrix plus the Fisher-$z$ FC matrix (the
+Review~I design specified $246\times4$; see Section~\ref{sec:deviations}).
+\textbf{Dependencies.} Module~2. \textbf{Status.} Complete for 165 of 165 acquisitions.
 
-\subsection{Module 4: Biomarker Generation}
-\textbf{Purpose.} Derive the four complementary biomarkers.
-\textbf{Inputs.} Preprocessed BOLD, aligned atlas, regional time series.
-\textbf{Processing.} ALFF and ReHo are computed voxel-wise and then averaged within
-each region; FC is computed between all region pairs; DC is derived from FC.
-Definitions are given in Table~\ref{tab:biomarkers}.
-\textbf{Outputs.} Per-acquisition biomarker vectors, the full connectivity matrix,
-a combined regional feature matrix, and QC. \textbf{Dependencies.} Module~3.
+\subsection{Module 4: Proposed Deep Learning Model}
+\textbf{Purpose.} Encode multi-scale functional dependencies and distil shared,
+biomarker-invariant disease representations. \textbf{Inputs.} Module~3 features and the
+clinical covariates. \textbf{Processing.} Token encoding of the region features with a
+Transformer; global, local and network self-attention~\cite{vaswani2017};
+latent-representation learning; a meta-learning loop across biomarker
+tasks~\cite{finn2017}; and multimodal fusion into $H=[Z'\,\|\,C]$. Subject-grouped
+stratified cross-validation, with cross-subject scaling fitted on training folds only,
+is part of this module's evaluation protocol. \textbf{Outputs.} Fused latent vector.
+\textbf{Dependencies.} Module~3 and the cleaned clinical tables. \textbf{Status.} Not
+started.
 
-\subsection{Module 5: Within-Subject Normalisation}
-\textbf{Purpose.} Remove acquisition-level scaling that would otherwise dominate
-cross-subject comparison. \textbf{Inputs.} Module~4 biomarkers.
-\textbf{Processing.} Every statistic is computed from the acquisition's own 246
-values, so the stage is leakage-free by construction. Methods are given in
-Table~\ref{tab:norm}. \textbf{Outputs.} Normalised features in a separate directory
-tree; raw biomarkers are never modified. \textbf{Dependencies.} Module~4.
+\subsection{Module 5: Core Output Classifier}
+\textbf{Purpose.} Map the fused vector to a calibrated, uncertainty-aware ordinal stage.
+\textbf{Inputs.} Fused vector from Module~4. \textbf{Processing.} An ordinal multi-layer
+perceptron head over CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI
+$\rightarrow$ LMCI $\rightarrow$ AD with a cumulative-link formulation~\cite{mccullagh1980},
+\begin{equation}
+  P(y \le k \mid H) = \sigma\!\left(\theta_k - g(H)\right), \qquad
+  \theta_0 < \theta_1 < \dots < \theta_4,
+\end{equation}
+with Bayesian layers~\cite{gal2016} for predictive uncertainty and flagging of
+borderline subjects. \textbf{Outputs.} Stage $\hat{y}$ with class probabilities and a
+confidence score. \textbf{Dependencies.} Module~4. \textbf{Status.} Not started.
 
-\subsection{Module 6: Modelling and Evaluation (planned)}
-\textbf{Purpose.} Learn the shared progression representation, fuse comorbidity, and
-classify stage with uncertainty. \textbf{Inputs.} Module~5 features; cleaned
-comorbidity table. \textbf{Processing.} Subject-grouped stratified
-cross-validation, with cross-subject scaling fitted on training folds only;
-multi-attention transformer; meta-learning across biomarkers; comorbidity fusion;
-Bayesian ordinal classification; attention-based explanation.
-\textbf{Outputs.} Stage predictions, uncertainty, region and biomarker attribution.
-\textbf{Dependencies.} Modules~5 and~1.
+\subsection{Module 6: Decision Support Dashboard}
+\textbf{Purpose.} Present the results to a clinician as analytical decision support
+only, not as a replacement for professional evaluation. \textbf{Inputs.} Stage labels,
+probabilities, attention indices and patient metadata from Modules~1, 3, 4 and~5.
+\textbf{Processing.} Patient summary, progression chart, class probabilities,
+explainability overlays and network (DMN, SN, ECN) visualisation. \textbf{Outputs.}
+Interactive dashboard. \textbf{Dependencies.} Modules~1 and~5. \textbf{Status.} Not
+started.
 
 \chapter{Implementation}\label{ch:impl}
 
@@ -417,7 +497,7 @@ All processing ran under WSL2 (Ubuntu) on Windows 11 with Python 3.12.3, NumPy
 25.1.2 and FreeSurfer 7.4.1. Every long-running job used a single worker, with all
 thread-count environment variables pinned to one.
 
-\section{Module 1: Data Audit, Recovery and Organisation}
+\section{Module 1: Data/Input Management}
 
 The initial audit covered 131 subjects and found 72 valid NIfTI files against 103
 records that had JSON metadata but no image data at the audited location. Of these, 29
@@ -449,7 +529,12 @@ it. No multiband tag was found among decodable names. The audit's conclusion was
 recorded as \texttt{SLICE\_TIMING\_NOT\_RECOVERABLE}, and no timing value was
 inferred or fabricated at any point.
 
-\section{Module 2: Preprocessing}\label{sec:preproc}
+The clinical half of Module~1 is less advanced than the imaging half. Cohort table
+archives (CDR, MMSE, GDS and medical history) have been obtained for five of the six
+groups, but they have not yet been parsed or cleaned, and the LMCI tables are missing
+(Section~\ref{sec:notdone}).
+
+\section{Module 2: Preprocessing Pipeline}\label{sec:preproc}
 
 \begin{table}[H]
 \centering
@@ -514,7 +599,9 @@ altered band, since changing the filter for a subset would make those acquisitio
 non-comparable with the rest. Seven of the eight have a TR of 6.02158\,s and one has
 6.02353\,s; all eight belong to site~002 (subject identifiers \texttt{002\_S\_xxxx}).
 
-\section{Module 3: Parcellation and Regional Time-Series Extraction}
+\section{Module 3: Functional Feature Extraction (Brainnetome 246)}
+
+\subsection{Parcellation and Regional Time-Series Extraction}
 
 The Brainnetome atlas~\cite{brainnetome} is supplied at 2\,mm in LAS orientation
 whereas the
@@ -527,7 +614,7 @@ fractional labels with no meaning. Regional time series are extracted by direct 
 masking on the verified-identical grid rather than through a masker utility that
 might silently re-resample the labels a second time.
 
-\section{Module 4: Biomarker Generation}
+\subsection{Biomarker Generation}
 
 \begin{table}[H]
 \centering
@@ -570,7 +657,7 @@ ReHo, regional time series, atlas labels and regional voxel counts were recovere
 bit-identically, and FC and DC agreed to within $1.8 \times 10^{-15}$. Only then was
 the pilot's own output directory protected and the remaining acquisitions processed.
 
-\section{Module 5: Within-Subject Normalisation}
+\subsection{Within-Subject Normalisation}
 
 \begin{table}[H]
 \centering
@@ -631,7 +718,7 @@ Fisher-$z$ range across the dataset & $-2.2653$ to $2.5924$ \\
 \end{tabularx}
 \end{table}
 
-\section{Feature Redundancy: FC Strength and DC}\label{sec:redundancy}
+\subsection{Feature Redundancy: FC Strength and DC}\label{sec:redundancy}
 
 Auditing our own features, rather than inheriting them from the design, exposed an
 exact redundancy. The pipeline stores a regional connectivity strength defined as the
@@ -692,6 +779,16 @@ restart and resumption from the last validated checkpoint. Restart count fell fr
 Checkpointing re-validates the actual files on disk --- shapes, finiteness and
 structural invariants --- before treating any acquisition as complete, so the
 checkpoint record alone is never trusted.
+
+\section{Modules 4--6: Status}
+
+Modules~4 (Proposed Deep Learning Model), 5 (Core Output Classifier) and 6 (Decision
+Support Dashboard) have not been started. Their inputs are in place: every acquisition
+has a verified $246\times3$ regional matrix and a $246\times246$ Fisher-$z$ connectivity
+matrix. What remains, in order, is to clean the clinical tables, build the subject-level
+cohort index and grouped cross-validation folds, fit cross-subject scaling on training
+folds only, and then implement Modules~4 and~5 (planned for December--January in the
+Review~I timeline).
 
 \chapter{Results and Discussion}
 
@@ -942,9 +1039,9 @@ done.
   \item \textbf{Hypertension and diabetes are not directly available.} The ADNI
         medical-history tables supply only the broad categories MH4CARD
         (cardiovascular) and MH9ENDO (endocrine); they are used under those names.
-  \item \textbf{Modules 4--6 are not started:} the multi-attention transformer,
-        meta-learning, comorbidity fusion, the Bayesian ordinal classifier and the
-        dashboard. No accuracy, AUC or other performance figure exists, and none is
+  \item \textbf{Modules 4--6 are not started:} Module~4 (multi-attention
+        transformer, meta-learning, comorbidity fusion), Module~5 (Bayesian ordinal
+        classifier) and Module~6 (decision-support dashboard). No accuracy, AUC or other performance figure exists, and none is
         implied anywhere in this report.
   \item \textbf{Cross-validation is not built.} Subject-level folds and train-fold-only
         cross-subject scaling are still to be implemented.
@@ -970,17 +1067,18 @@ stage more than any preprocessing choice. First, raw ALFF varies by more than tw
 orders of magnitude across acquisitions, because it is expressed in units
 proportional to raw BOLD intensity, whereas ReHo --- being bounded --- varies only
 narrowly. Supplying both unnormalised to a model would allow scanner and protocol
-scaling to dominate any biological signal; the within-subject normalisation of
-Module~5 addresses this. Second, one of the four nominal biomarkers was found to be
+scaling to dominate any biological signal; the within-subject normalisation in
+Module~3 addresses this. Second, one of the four nominal biomarkers was found to be
 an exact rescaling of another, so the independent regional feature count is three,
 not four. Both findings were identified by inspecting the data rather than inherited
 from the design, which illustrates the value of auditing features before modelling.
 
-\textbf{Limitations.} Beyond the absence of T1w and slice-timing data, three
+\textbf{Limitations.} Beyond the absence of T1w and slice-timing data, four
 limitations bear on the conclusions that can eventually be drawn. The effective
 sample is 127 subjects across six ordered classes with a smallest class of 14,
 which bounds model capacity and makes a single held-out test split uninformative;
-repeated subject-grouped cross-validation is required. Eight acquisitions are
+repeated subject-grouped cross-validation is required. No cross-site or cross-scanner
+harmonisation was applied (Table~\ref{tab:deviations}), so site and protocol effects may remain in the features. Eight acquisitions are
 permanently excluded on account of the 6.02\,s TR subgroup unless the filter
 specification is revisited for them. Finally, the comorbidity data are incomplete and the gap is group-structured; see
 Section~\ref{sec:notdone}, which also records what has not yet been done.
@@ -1045,6 +1143,15 @@ pp.~774--781, 2012.
 \bibitem{afni} R. W. Cox, ``AFNI: software for analysis and visualization of
 functional magnetic resonance neuroimages,'' \textit{Computers and Biomedical
 Research}, vol.~29, no.~3, pp.~162--173, 1996.
+
+\bibitem{vaswani2017} A. Vaswani, N. Shazeer, N. Parmar, et al., ``Attention is all you need,'' in \textit{Advances in Neural Information Processing Systems}, vol.~30, 2017.
+
+\bibitem{finn2017} C. Finn, P. Abbeel, and S. Levine, ``Model-agnostic meta-learning for fast adaptation of deep networks,'' in \textit{Proc. International Conference on Machine Learning}, pp.~1126--1135, 2017.
+
+\bibitem{gal2016} Y. Gal and Z. Ghahramani, ``Dropout as a Bayesian approximation: representing model uncertainty in deep learning,'' in \textit{Proc. International Conference on Machine Learning}, pp.~1050--1059, 2016.
+
+\bibitem{mccullagh1980} P. McCullagh, ``Regression models for ordinal data,'' \textit{Journal of the Royal Statistical Society: Series B}, vol.~42, no.~2, pp.~109--142, 1980.
+
 \end{thebibliography}
 
 \end{document}
