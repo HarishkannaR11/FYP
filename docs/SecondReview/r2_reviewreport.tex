@@ -229,6 +229,52 @@ The lead should be read narrowly: it applies to the data foundation only. Module
 complete for imaging but not for the clinical tables, which are not yet cleaned, and
 the cross-validation folds are not yet built (Section~\ref{sec:notdone}).
 
+\section{Literature Update Since Review I}\label{sec:litupdate}
+
+Review~I identified four research gaps: (G1) functional biomarkers analysed independently,
+(G2) clinical comorbidity profiles omitted, (G3) progression treated as a static
+classification, and (G4) no calibrated diagnostic uncertainty. A search for recent work
+since Review~I found three 2026 papers that touch these gaps (Table~\ref{tab:litupdate}).
+It was a targeted search, not a systematic review, and two of the three are arXiv
+preprints that have not been peer reviewed. Only what their abstracts state is reported
+here.
+
+\begin{table}[H]
+\centering
+\caption{Recent work against the Review~I gaps. ``Not verified'' means the abstract does
+not say and the full text was not accessible.}
+\label{tab:litupdate}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Work} & \textbf{Input} & \textbf{Ordinal staging} & \textbf{Uncertainty; gaps touched} \\
+\midrule
+Hariharan, Gowda and Anala~\cite{hariharan2026} (arXiv, 2026) & Longitudinal ADNI visits;
+forecasts diagnosis, CDR-SB, MMSE and hippocampal volume & CORAL ordinal head over three
+classes (CN, MCI, dementia) & Aleatoric (mixture variance) and epistemic (five-member
+bootstrap ensemble) uncertainty; G3, G4 \\
+Rauchmann et al.~\cite{rauchmann2026} (arXiv, 2026) & T1-weighted MRI with demographic and
+genetic variables; ADNI, AIBL, NIFD; subject-level splits & Ordinal regression with
+attention; QWK 0.549 against 0.477 for the non-ordinal model; number of stages not
+verified & Uncertainty not mentioned in the abstract; G2, G3 \\
+Alsalem et al.~\cite{alsalem2026} (\textit{Diagnostics}, 2026) & MRI images & Progression-aware
+ordinal objective; multiclass staging; number of classes not verified & Explainability
+reported; uncertainty not verified; G3 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Effect on the gaps.} G2, G3 and G4 are each partly addressed by at least one of
+these works, so none of them is novel on its own, and this report does not claim
+otherwise. G1, learning a biomarker-invariant representation across several rs-fMRI
+biomarkers by meta-learning, was not addressed by any of the three works checked, although
+this search cannot rule out other work. What distinguishes the present project is the
+combination: functional rs-fMRI biomarkers (ALFF, ReHo, DC, FC) as the imaging input
+rather than structural MRI or clinical scores; six ordered stages, where the one paper
+whose class count was verified uses three; comorbidity fusion; and Bayesian ordinal
+uncertainty. A further difference is imposed by the data: the cohort has no T1w image, so
+the structural-MRI route those papers rely on is not available here.
+
 \chapter{First Review - Queries and Answers}
 
 The panel's Review~I comments, with the response to each, are below. Each response points
@@ -1011,6 +1057,38 @@ Checkpointing re-validates the actual files on disk --- shapes, finiteness and
 structural invariants --- before treating any acquisition as complete, so the
 checkpoint record alone is never trusted.
 
+\section{Code and Reproducibility}\label{sec:repro}
+
+All code is in the project repository (\texttt{github.com/HarishkannaR11/FYP}). The scripts
+below are the live pipeline; earlier native-space and pilot scripts are kept in
+\texttt{pipeline/} and \texttt{scripts/} for provenance only and must not be used for new
+work (Table~\ref{tab:repro}).
+
+\begin{table}[H]
+\centering
+\caption{The live pipeline scripts and where their outputs go.}
+\label{tab:repro}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{5.6cm}X@{}}
+\toprule
+\textbf{Stage} & \textbf{Script} & \textbf{Output} \\
+\midrule
+Data audit and recovery & \texttt{scripts/\allowbreak audit/}, \texttt{scripts/\allowbreak data\_prep/} & \texttt{audit/} reports, BIDS-style cohort \\
+Preprocessing & \texttt{pipeline/\allowbreak fsfast\_production\_4mm6mm.py}, run through \texttt{scripts/\allowbreak setup/\allowbreak retry\_all\_groups\_4mm6mm.sh} & \texttt{derivatives/\allowbreak fsfast/} \\
+Preprocessing audit & \texttt{scripts/\allowbreak audit/\allowbreak final\_6group\_audit.py} & \texttt{FINAL\_6GROUP\_AUDIT/} \\
+Parcellation and biomarkers & \texttt{scripts/\allowbreak biomarkers/\allowbreak biomarker\_dataset\_pipeline.py}, run through \texttt{retry\_biomarker\_dataset.sh} & \texttt{biomarkers/} per acquisition; \texttt{BIOMARKER\_DATASET\_AUDIT/} \\
+Normalisation & \texttt{scripts/\allowbreak biomarkers/\allowbreak normalize\_within\_subject.py} & \texttt{derivatives/\allowbreak biomarkers\_normalized/} \\
+Stage heatmaps & \texttt{scripts/\allowbreak biomarkers/\allowbreak stage\_heatmaps.py} & \texttt{derivatives/\allowbreak STAGE\_HEATMAPS/} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Every script is re-runnable: preprocessing and biomarker generation use validated
+checkpoint and resume, and each preprocessed acquisition carries a provenance file recording
+its parameters, software versions and source checksum. The software versions are listed at
+the start of this chapter. The report's own figure panel is rebuilt by
+\texttt{figures/make\_stage\_panel.py}.
+
 \section{Modules 4--6: Status}
 
 Modules~4 (Proposed Deep Learning Model), 5 (Core Output Classifier) and 6 (Decision
@@ -1182,18 +1260,17 @@ are not shown, because they are dominated by anatomical differences between regi
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.31\textwidth]{figures/mALFF_rowz.png}\hfill
-\includegraphics[width=0.31\textwidth]{figures/mReHo_rowz.png}\hfill
-\includegraphics[width=0.31\textwidth]{figures/DC_z_rowz.png}
+\includegraphics[width=\textwidth]{figures/stage_rowz_panel.pdf}
 \caption{Stage-wise regional biomarker patterns across the six-stage progression
-(CN, SMC, EMCI, MCI, LMCI, AD) for 127 subjects; from left to right mALFF, mReHo
-and DC$_z$. Rows are the 246 Brainnetome ROIs in atlas order (cortical 1--210 above
-the dashed line, subcortical 211--246 below); columns are progression stages. Each
-ROI is $z$-scored independently across the six stages, so colour encodes how a
-region changes across stages rather than its absolute magnitude. Acquisitions were
-averaged within subject before averaging across subjects, so each of the 127
-subjects contributes once. These are descriptive, exploratory visualisations; they
-do not demonstrate disease progression and no statistical testing was performed.}
+(CN, SMC, EMCI, MCI, LMCI, AD) for 127 subjects; from left to right mALFF, mReHo and
+DC$_z$. Rows are the 246 Brainnetome ROIs in atlas order (cortical 1--210 above the
+dashed line, subcortical 211--246 below); columns are progression stages. Each ROI is
+$z$-scored independently across the six stages, so colour encodes how a region changes
+across stages rather than its absolute magnitude; one colour bar applies to all three
+panels. Acquisitions were averaged within subject before averaging across subjects, so
+each of the 127 subjects contributes once. These are descriptive, exploratory
+visualisations; they do not demonstrate disease progression and no statistical testing
+was performed.}
 \label{fig:heatmaps}
 \end{figure}
 
@@ -1318,6 +1395,16 @@ permanently excluded on account of the 6.02\,s TR subgroup unless the filter
 specification is revisited for them. Finally, the comorbidity data are incomplete and the gap is group-structured; see
 Section~\ref{sec:notdone}, which also records what has not yet been done.
 
+\textbf{Mitigation: dataset expansion.} The main limitation above is the small effective
+sample. A further 50 acquisitions per stage (about 300 in total) are planned to address it.
+The limitation counts subjects, not acquisitions: 165 acquisitions come from 127 subjects,
+and MCI has 32 acquisitions from only 14 subjects. The expansion therefore helps in
+proportion to the number of \emph{new subjects} it adds. If every added acquisition came from
+a new subject the stages would grow by up to 50 subjects each (MCI from 14 to at most 64),
+so the added acquisitions will be drawn from subjects not already in the cohort wherever
+ADNI allows, and counts will be reported per subject. The expansion reuses the frozen
+Modules~1 to~3 unchanged, and it has not yet started.
+
 \textbf{Next steps.} Immediate work is to complete the comorbidity table, construct
 the subject-level cohort index with fixed stratified grouped cross-validation folds
 so that cross-subject scaling can be fitted on training data only, and then
@@ -1327,6 +1414,78 @@ CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI $\rightarrow$ LMCI
 $\rightarrow$ AD, which orders the three mild-cognitive-impairment cohorts as
 early, intermediate and late. This ordering determines the loss structure of the
 ordinal model and is therefore held fixed throughout.
+
+\section{Revised Plan for the Remaining Work}\label{sec:revplan}
+
+Figure~\ref{fig:revgantt} revises the Review~I plan for October to March. It adds the work
+this report has shown to be necessary (clinical-data cleaning, cross-validation folds and the
+dataset expansion) and keeps the Review~I dates for the modelling, testing and documentation
+stages. It is a proposal and has not been agreed with the supervisor.
+
+\begin{figure}[H]
+\centering
+\begin{ganttchart}[
+    x unit=1.45cm, y unit chart=0.62cm, y unit title=0.62cm,
+    title height=1, title label font=\small, bar label font=\small,
+    milestone label font=\small, vgrid={*{1}{draw=none},dotted},
+    hgrid, bar height=0.55,
+    bar/.append style={fill=blue!25},
+    milestone/.append style={fill=red!60}]{1}{6}
+  \gantttitle{Oct}{1}\gantttitle{Nov}{1}\gantttitle{Dec}{1}\gantttitle{Jan}{1}\gantttitle{Feb}{1}\gantttitle{Mar}{1}\\
+  \ganttbar{LMCI tables; clinical cleaning}{1}{2}\\
+  \ganttbar{Subject index, grouped CV folds}{2}{2}\\
+  \ganttbar{Dataset expansion (+50 / stage)}{2}{3}\\
+  \ganttbar{M4 \& M5: model and classifier}{3}{4}\\
+  \ganttbar{M6: dashboard (proposed)}{4}{5}\\
+  \ganttbar{Testing and evaluation}{5}{5}\\
+  \ganttbar{Documentation}{5}{6}\\
+  \ganttmilestone{Final submission}{6}
+\end{ganttchart}
+\caption{Proposed revised plan, October to March. The first three rows are new since
+Review~I; the model, testing, documentation and final-submission rows keep the Review~I
+dates. Review~I had no separate row for Module~6, so its dates are a proposal.}
+\label{fig:revgantt}
+\end{figure}
+
+\chapter{Conclusion}\label{ch:conclusion}
+
+This report establishes the data foundation of the Comorbidity-Aware Meta-Bayesian
+framework. Of 175 ADNI rs-fMRI acquisitions audited, 165 from 127 subjects were
+preprocessed with a single frozen pipeline, parcellated into the 246 Brainnetome regions,
+turned into ALFF, ReHo, DC and FC biomarkers, and normalised within subject. Every derived
+value was verified independently, including an exact recomputation of degree centrality for
+all 165 acquisitions. Every limitation of the BOLD-only dataset, from the missing T1w images
+and slice-timing metadata to the eight scans whose 6.02\,s TR breaks the fixed band, was
+handled by documented exclusion or substitution and not by fabrication.
+
+Two findings shaped the design. First, the per-region FC summary of Review~I is exactly
+DC$/245$, so all four biomarkers are kept but enter the model as a $246\times3$ regional
+matrix and a $246\times246$ Fisher-$z$ connectivity matrix. Second, stage-wise group-mean
+heatmaps show no detectable univariate progression signal, which motivates the
+multivariate model of Modules~4 and~5 instead of weakening it.
+
+On the Review~I timeline, Modules~2 and~3 are complete ahead of schedule, while
+Module~1 is complete for imaging only. Modules~4 to~6 have not been started, and no
+accuracy, AUC or other performance figure exists. The next steps are to obtain the missing
+LMCI tables and clean the clinical data, build the subject-grouped cross-validation folds,
+enlarge the dataset by a further 50 acquisitions per stage, and then implement the
+meta-learning and Bayesian ordinal model (Section~\ref{sec:revplan}).
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+% TODO (BEFORE SUBMISSION): compare the paragraph below, word for word, with the current
+% ADNI Data Use Agreement and manuscript-citation instructions on the ADNI website. The
+% text below is the standard wording; ADNI's pages could not be opened from the build
+% environment, so it has NOT been checked against the live source.
+Data used in preparation of this article were obtained from the Alzheimer's Disease
+Neuroimaging Initiative (ADNI) database (adni.loni.usc.edu). As such, the investigators
+within the ADNI contributed to the design and implementation of ADNI and/or provided data
+but did not participate in analysis or writing of this report. A complete listing of ADNI
+investigators can be found at:
+\url{http://adni.loni.usc.edu/wp-content/uploads/how_to_apply/ADNI_Acknowledgement_List.pdf}
+
+\noindent\textcolor{red}{[Verify this wording against the current ADNI Data Use Agreement
+before submission.]}
 
 \begin{thebibliography}{99}
 \bibitem{adnimri} C. R. Jack Jr., M. A. Bernstein, N. C. Fox, et al., ``The
@@ -1387,6 +1546,12 @@ Research}, vol.~29, no.~3, pp.~162--173, 1996.
 
 \bibitem{mccullagh1980} P. McCullagh, ``Regression models for ordinal data,'' \textit{Journal of the Royal Statistical Society: Series B}, vol.~42, no.~2, pp.~109--142, 1980.
 
+
+\bibitem{hariharan2026} A. Hariharan, S. N. Gowda, and Anala M R, ``Uncertainty-aware longitudinal forecasting of Alzheimer's disease progression using deep learning,'' arXiv:2606.24604, 2026.
+
+\bibitem{rauchmann2026} B.-S. Rauchmann, J. Laib, B. Ercik, R. Perneczky, and S. Altares-L\'opez, ``Multimodal ordinal modeling of Alzheimer's disease severity using structural MRI and clinical data,'' arXiv:2606.11794, Jun. 2026.
+
+\bibitem{alsalem2026} K. Alsalem, M. K. Elbashir, A. O. Alzahrani, M. Mohammed, and M. A. Mahmood, ``Progression-aware and explainable CNN--Transformer framework for multiclass Alzheimer's disease staging using MRI,'' \textit{Diagnostics}, vol.~16, no.~4, art.~593, 2026. DOI: \url{https://doi.org/10.3390/diagnostics16040593}
 \end{thebibliography}
 
 \end{document}
