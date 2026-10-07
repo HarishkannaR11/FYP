@@ -1,5 +1,12 @@
 % Compile twice with: pdflatex r2_reviewreport.tex
-% Keep ssnreview.cls and ssn-logo.png in the same folder.
+% Keep ssnreview.cls, ssn-logo.png and the figures/ folder in the same folder.
+%
+% BEFORE SUBMISSION (items shown in red in the PDF):
+%   1. Chapter 2 (First Review - Queries and Answers) must be filled in from the
+%      Review I minutes. It is intentionally left as placeholders.
+%
+% NOTE: ssnreview.cls does not load amsmath, so \text, \operatorname, align etc.
+% are unavailable. Use \mathrm{} in formulas.
 \documentclass{ssnreview}
 
 \projecttitle{Assessment of Alzheimer's Disease Progression Using
@@ -14,6 +21,8 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 \institution{Sri Sivasubramaniya Nadar College of Engineering}
 \academicyear{2026--2027}
 \collegelogo{ssn-logo.png}
+
+\setlength{\emergencystretch}{3em}
 
 \begin{document}
 \makereviewtitle
@@ -37,7 +46,7 @@ dataset, so slice-timing correction was omitted rather than estimated from
 unsupported assumptions. Because no T1-weighted anatomical image exists for any
 subject, a direct EPI-to-MNI normalisation route was adopted using symmetric
 diffeomorphic registration, followed by 4\,mm resampling, 6\,mm smoothing, linear
-detrending, a 26--28 regressor nuisance model and 0.01--0.10\,Hz band-pass
+detrending, a 27-regressor nuisance model and 0.01--0.10\,Hz band-pass
 filtering. Of 173 eligible acquisitions, 165 were preprocessed successfully; the
 eight failures share a single root cause, a 6.02\,s repetition time whose Nyquist
 limit invalidates the fixed filter band.
@@ -48,6 +57,16 @@ functional connectivity and degree centrality --- were generated with per-acquis
 cross-file consistency verification. Degree centrality recomputed independently from
 every stored connectivity matrix agreed exactly. A leakage-free within-subject
 normalisation stage was subsequently applied to all 165 acquisitions.
+
+Two findings shaped the design. FC strength, one of the four planned regional
+biomarkers, is exactly DC$/245$ and was removed, leaving a $246\times3$ regional
+matrix plus the full $246\times246$ Fisher-$z$ connectivity matrix. Stage-wise
+group-mean heatmaps over 127 subjects show no univariate progression signal
+(1, 0 and 1 of 246 regions monotonic, against about 0.7 expected by chance),
+which motivates a multivariate model. Preprocessing and feature extraction were
+scheduled for Reviews~II and~III in the Review~I plan and are both complete, so
+the data side is one milestone ahead. The modelling stages have not been started
+and no performance result is reported.
 
 \keywords{Alzheimer's disease; resting-state fMRI; Brainnetome atlas; functional
 connectivity; ALFF; ReHo; disease progression staging}
@@ -121,10 +140,51 @@ to be limiting.
 \end{enumerate}
 
 Objectives 1--4 are complete and are the subject of this report. Objectives 5 and 6
-are in progress and are discussed as future work.
+have not yet been started and are discussed as future work.
+
+\section{Position Against the Review I Timeline}\label{sec:timeline}
+
+The Review~I plan placed \emph{Module~2: Preprocessing \& Validation} at Review~II
+and \emph{Module~3: Feature Extraction --- Brainnetome-246} at Review~III. Both are
+complete at Review~II, so on the data side the project stands a full milestone ahead
+of its own Review~I timeline (Table~\ref{tab:timeline}). Module numbers in that
+table are those of the Review~I plan; Chapter~\ref{ch:method} numbers this report's
+modules differently.
+
+\begin{table}[H]
+\centering
+\caption{Planned (Review~I) versus actual progress at Review~II.}
+\label{tab:timeline}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{2.3cm}X@{}}
+\toprule
+\textbf{Review I module} & \textbf{Planned for} & \textbf{Status at Review II} \\
+\midrule
+Module 2: Preprocessing \& Validation & Review II &
+\textbf{Complete.} 165 of 173 eligible acquisitions preprocessed; 8 rejected for a
+6.02\,s TR; per-acquisition QC and independent verification done. \\
+Module 3: Feature Extraction --- Brainnetome-246 & Review III &
+\textbf{Complete, one review early.} 165/165 acquisitions parcellated with 246/246
+coverage; ALFF, ReHo, FC and DC generated and verified for all 165. \\
+Modules 4--6: transformer, meta-learning, comorbidity fusion, Bayesian ordinal
+classifier, dashboard & per Review~I Gantt &
+\textbf{Not started.} No model has been trained; no accuracy, AUC or other
+performance figure exists. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+In addition, within-subject normalisation of all 165 acquisitions is complete. The lead
+should be read narrowly: it applies to the data foundation only. The comorbidity data
+are not yet cleaned and the cross-validation folds are not yet built
+(Section~\ref{sec:notdone}).
 
 \chapter{First Review - Queries and Answers}
 
+% TODO (BEFORE SUBMISSION): replace every placeholder in this chapter with the
+% queries actually raised at Review I and the answers given, taken from the
+% Review I minutes. The queries are not available in the repository and must not
+% be invented.
 \begin{itemize}
   \item \textbf{Query 1} --- \emph{[To be completed with the query raised by the
         review panel at Review~I.]} \\
@@ -133,10 +193,9 @@ are in progress and are discussed as future work.
         \textbf{Answer} --- \emph{[Response.]}
 \end{itemize}
 
-\noindent\textbf{Note.} This chapter must be completed from the Review~I minutes.
-The queries actually raised by the panel are not reproduced here because they are
-not available to the author of this draft, and inventing them would misrepresent
-the review record.
+\noindent\textcolor{red}{\textbf{[TO BE COMPLETED BEFORE SUBMISSION.]} Fill in each query
+and answer from the Review~I minutes. The queries raised by the panel are not
+reproduced here because they are not available in the project repository.}
 
 \chapter{Problem statement}
 
@@ -149,9 +208,10 @@ for that assignment.
 \medskip
 \noindent\textbf{Inputs.}
 \begin{itemize}[leftmargin=2em]
-  \item One 4D rs-fMRI BOLD volume per acquisition (ADNI~\cite{adnimri,
-        adniclinical}, Philips 3T, nominal
-        $64 \times 64 \times 48$, TR $\approx 3.0$\,s, 140 volumes).
+  \item One 4D rs-fMRI BOLD series per acquisition (ADNI~\cite{adnimri,
+        adniclinical}, Philips scanners; 159 of 165 acquisitions are
+        $64 \times 64 \times 48$ voxels, 164 of 165 have TR $\approx 3.0$\,s and
+        one has 2.25\,s; 140 volumes before 5 are discarded).
   \item Diagnostic group label per subject, taken only from
         \texttt{participants.tsv}.
   \item Comorbidity variables per subject: age, APOE4 genotype, MMSE, CDR-SB,
@@ -196,10 +256,11 @@ for that assignment.
         subject-grouped cross-validation, with calibrated uncertainty.
 \end{itemize}
 
-\chapter{Methodology}
+\chapter{Methodology}\label{ch:method}
 
-The project follows a fixed seven-block design. Blocks 1--3 and the normalisation
-stage are complete; blocks 4--7 are in progress.
+The project follows a fixed seven-block design. Blocks 1--5 (audit, preprocessing,
+parcellation, biomarkers, normalisation) are complete; blocks 6--7 (representation
+learning and the Bayesian ordinal classifier) have not yet been started.
 
 \section{Proposed Workflow}
 \begin{enumerate}[label=\textbf{Step \arabic*:}]
@@ -215,6 +276,40 @@ stage are complete; blocks 4--7 are in progress.
   \item Fuse comorbidity information and classify stage with a Bayesian ordinal
         model that reports uncertainty.
 \end{enumerate}
+
+\section{Deviations from the Review I Plan}\label{sec:deviations}
+
+Auditing the data changed three specifications made at Review~I. Each change was
+forced by what the dataset contains, and none was made for convenience
+(Table~\ref{tab:deviations}).
+
+\begin{table}[H]
+\centering
+\caption{Deviations from the Review~I plan and their evidence.}
+\label{tab:deviations}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.3cm}X@{}}
+\toprule
+\textbf{Review I specified} & \textbf{Implemented} & \textbf{Evidence and consequence} \\
+\midrule
+Slice-timing correction (\S5.2.2) & Step omitted; recorded as
+\texttt{NOT\_PERFORMED} in every provenance file &
+No \texttt{SliceTiming} field in any of 175 JSON sidecars; DICOM headers from 17
+protocol signatures, including private vendor tags, give volume-level timing only.
+Outcome \texttt{SLICE\_TIMING\_NOT\_RECOVERABLE}. The step was omitted, not assumed
+away, and no timing was inferred. \\
+Co-registration to structural scans (\S5.2.2) & Direct EPI-to-MNI registration
+(ANTsPy SyN) with population-template tissue priors &
+Zero of 131 subjects have a T1w image. Subject segmentation is therefore impossible;
+CNR is not computable for any acquisition, and the CSF regressor failed its
+reliability gate in all 165 (Section~\ref{sec:preproc}). \\
+$246\times4$ regional feature matrix & $246\times3$ regional matrix plus the full
+$246\times246$ Fisher-$z$ FC matrix &
+FC strength $=$ DC$/245$ exactly, so one column was a rescaling of another
+(Section~\ref{sec:redundancy}). FC is not dropped; it moves to its full matrix form. \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \section{Architectural Design for Proposed System}
 
@@ -256,7 +351,7 @@ makes each stage independently auditable.
   \draw[ar] (h.south) -- ++(0,-0.4) -| (i.north);
 \end{tikzpicture}
 \caption{High-level architecture of the proposed system. Solid green blocks are
-implemented and verified; dashed grey blocks are in progress.}
+implemented and verified; dashed grey blocks are planned and not yet started.}
 \label{fig:architecture}
 \end{figure}
 
@@ -305,7 +400,7 @@ values, so the stage is leakage-free by construction. Methods are given in
 Table~\ref{tab:norm}. \textbf{Outputs.} Normalised features in a separate directory
 tree; raw biomarkers are never modified. \textbf{Dependencies.} Module~4.
 
-\subsection{Module 6: Modelling, Evaluation and Reporting (in progress)}
+\subsection{Module 6: Modelling and Evaluation (planned)}
 \textbf{Purpose.} Learn the shared progression representation, fuse comorbidity, and
 classify stage with uncertainty. \textbf{Inputs.} Module~5 features; cleaned
 comorbidity table. \textbf{Processing.} Subject-grouped stratified
@@ -325,10 +420,11 @@ thread-count environment variables pinned to one.
 \section{Module 1: Data Audit, Recovery and Organisation}
 
 The initial audit covered 131 subjects and found 72 valid NIfTI files against 103
-records that had JSON metadata but no image data. Those 103 were matched back to the
-raw DICOM archives; 29 were successfully converted (9 in the MCI group and 20 in the
+records that had JSON metadata but no image data at the audited location. Of these, 29
+were recovered by converting raw DICOM archives (9 in the MCI group and 20 in the
 SMC group, the latter representing 62.5\% of that group's final data), with no
-conversion failures. A dataset-wide checksum audit of 175 image files found no
+conversion failures; the remaining records were reconciled against NIfTI files found
+by the later per-group mapping audits. A dataset-wide checksum audit of 175 image files found no
 orphans and exactly one hash collision, a subject exported twice under different
 series numbers; the duplicate was excluded and the original retained. A second
 acquisition was excluded for containing only 7 volumes where all others contain 140,
@@ -353,7 +449,7 @@ it. No multiband tag was found among decodable names. The audit's conclusion was
 recorded as \texttt{SLICE\_TIMING\_NOT\_RECOVERABLE}, and no timing value was
 inferred or fabricated at any point.
 
-\section{Module 2: Preprocessing}
+\section{Module 2: Preprocessing}\label{sec:preproc}
 
 \begin{table}[H]
 \centering
@@ -379,8 +475,9 @@ Resampling & 4\,mm isotropic, continuous interpolation \\
 Smoothing & 6\,mm FWHM Gaussian \\
 Detrending & Per-voxel linear OLS; intercept and linear term removed, temporal mean
 restored; no quadratic term \\
-Nuisance regression & 26--28 regressors: Friston-24~\cite{friston24}, plus
-white-matter and CSF signals from population template priors, plus global signal \\
+Nuisance regression & 27 regressors in every acquisition: intercept, Friston-24~\cite{friston24},
+white-matter signal from a population template prior, and global signal. A CSF
+candidate from the same priors failed its reliability gate in all 165 acquisitions \\
 Band-pass filter & 0.01--0.10\,Hz, 2nd-order Butterworth, zero-phase
 \texttt{filtfilt}; Nyquist validity checked per acquisition \\
 QC & tSNR, SNR, framewise displacement~\cite{fd}, DVARS, spatial and temporal
@@ -390,14 +487,23 @@ entropy \\
 \end{table}
 
 Two implementation points deserve emphasis. First, because no T1w image exists,
-white-matter and CSF regressors are derived from published population tissue
-probability priors rather than from subject-specific segmentation; each is included
-only if its mask retains at least 20 voxels and its correlation with the global
-signal is below 0.98 in magnitude. This makes the design matrix 26, 27 or 28 columns
-wide depending on the acquisition, which is recorded per acquisition rather than
-assumed constant. Second, contrast-to-noise ratio is reported as not reliably
-computable for every acquisition, because it requires a tissue segmentation this
-dataset cannot provide; no segmentation was fabricated to produce a number.
+white-matter and CSF candidate regressors are derived from published population
+tissue probability priors rather than from subject-specific segmentation; a candidate
+is included only if its mask retains at least 20 voxels and its correlation with the
+global signal is below 0.98 in magnitude. The white-matter regressor passed this gate
+in all 165 acquisitions and the CSF regressor failed it in all 165, so the nuisance
+design matrix has exactly 27 columns in every acquisition (intercept, 24 Friston
+terms, white matter, global signal); every provenance record states
+\texttt{CSF\_status = NOT PERFORMED}. The ventricular CSF prior is too thin to survive
+at 4\,mm: the corresponding 2\,mm pilot mask held only 111 voxels (888\,mm$^3$)
+after thresholding at 0.90 and intersection with the brain mask, which is roughly 14
+voxels on the 4\,mm grid, below the 20-voxel minimum. The voxel count and correlation
+at the gate were not stored per acquisition, so this is the explanation consistent
+with the logged evidence rather than a per-acquisition measurement. No substitute
+CSF regressor was introduced. Second, contrast-to-noise ratio is reported as not reliably
+computable for all 165 acquisitions, because it requires a tissue segmentation this
+dataset cannot provide (no T1w image exists for any of the 131 subjects); no
+segmentation was fabricated to produce a number.
 
 The band-pass step validates, per acquisition, that the requested upper cutoff lies
 below the Nyquist frequency implied by that acquisition's own TR. Eight acquisitions
@@ -405,7 +511,8 @@ failed this check. All eight share a TR of approximately 6.02\,s, roughly double
 3.0\,s used elsewhere in the cohort, giving a Nyquist limit near 0.083\,Hz --- below
 the 0.10\,Hz cutoff. These were refused rather than silently reprocessed with an
 altered band, since changing the filter for a subset would make those acquisitions
-non-comparable with the rest.
+non-comparable with the rest. Seven of the eight have a TR of 6.02158\,s and one has
+6.02353\,s; all eight belong to site~002 (subject identifiers \texttt{002\_S\_xxxx}).
 
 \section{Module 3: Parcellation and Regional Time-Series Extraction}
 
@@ -485,22 +592,85 @@ coherence offset \\
 DC$_z$ & $(\mathrm{DC}_i - \overline{\mathrm{DC}}) / \sigma_{\mathrm{DC}}$ with
 $\mathrm{ddof}=0$~\cite{centrality}. A $z$-score is used because DC is signed, which
 rules out min--max scaling \\
-Fisher-$z$ FC & $\mathrm{arctanh}(r)$ on off-diagonal entries, variance
-stabilising the correlations. The diagonal is zeroed \emph{before} the transform so
-that $\mathrm{arctanh}(1)=\infty$ is never produced, then set to exactly zero
-\\
+Fisher-$z$ FC & $\mathrm{arctanh}\big(\mathrm{clip}(r,\pm0.999999)\big)$ on
+off-diagonal entries, variance stabilising the correlations. The diagonal is zeroed
+\emph{before} the transform so that $\mathrm{arctanh}(1)=\infty$ is never produced,
+then set to exactly zero; negative correlations stay negative \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-An important finding emerged at this stage. The pipeline also stores a regional
-connectivity strength defined as the \emph{mean} of each region's off-diagonal
-connectivity, while DC is the \emph{sum}; the two therefore differ only by the
-constant factor 245. Their measured correlation is $1.000000000000$ across every
-acquisition, with maximum absolute discrepancy $6.9\times10^{-18}$ from the exact
-relation. Under any scale-invariant normalisation the two become numerically
-identical. Connectivity strength is consequently excluded from the model feature
-set as perfectly collinear, though its raw files are retained unaltered.
+\textbf{Leakage-free by construction.} Every statistic in Table~\ref{tab:norm} is
+computed from that acquisition's own 246 values. No cross-subject statistic and no
+diagnostic label is used at any point, so the stage cannot carry information from a
+test subject into training. Cross-subject scaling is deliberately deferred to the
+modelling stage, where it will be fitted on training folds only. Outputs are written
+to a separate directory tree, and the script refuses any write path inside a raw
+\texttt{biomarkers} directory.
+
+\begin{table}[H]
+\centering
+\caption{Verification of within-subject normalisation (165 acquisitions, 0 failures).}
+\label{tab:normcheck}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+\toprule
+\textbf{Check} & \textbf{Result} \\
+\midrule
+Acquisitions normalised; failures & 165 / 165; 0 \\
+Non-finite values in inputs; in outputs & 0; 0 \\
+mean(mALFF) and mean(mReHo) per acquisition & 1.000000 in all 165 \\
+mean(DC$_z$), largest magnitude & $\leq 1.6\times10^{-16}$ \\
+std(DC$_z$) per acquisition & 1.000000 in all 165 \\
+Fisher-$z$ diagonal exactly zero & 165 / 165 \\
+Fisher-$z$ maximum asymmetry & $5.329\times10^{-15}$ \\
+Negative correlations preserved as negative & 165 / 165 \\
+Off-diagonal entries requiring clipping at $\pm0.999999$ & 0 \\
+Fisher-$z$ range across the dataset & $-2.2653$ to $2.5924$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Feature Redundancy: FC Strength and DC}\label{sec:redundancy}
+
+Auditing our own features, rather than inheriting them from the design, exposed an
+exact redundancy. The pipeline stores a regional connectivity strength defined as the
+\emph{mean} of each region's off-diagonal connectivity, while DC is the \emph{sum}
+over the same 245 entries, so
+\[
+  \mathrm{FCS}_i \;=\; \frac{1}{245}\sum_{j\neq i}\mathrm{FC}_{ij}
+  \;=\; \frac{\mathrm{DC}_i}{245}.
+\]
+Table~\ref{tab:redundancy} gives the measurements.
+
+\begin{table}[H]
+\centering
+\caption{Measured equivalence of FC\_Strength and DC.}
+\label{tab:redundancy}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+\toprule
+\textbf{Comparison} & \textbf{Result} \\
+\midrule
+Raw outputs, all 165 acquisitions: $\max|\mathrm{DC}/245-\mathrm{FCS}|$ & $6.939\times10^{-18}$ \\
+Raw outputs: minimum Pearson $r$ across acquisitions & $1.000000000000$ \\
+Stage matrices (both within-subject $z$-scored): $\max|\mathrm{DC}_z-\mathrm{FCS}_z|$ & $6.661\times10^{-16}$ \\
+Stage matrices: Pearson $r$ & $1.0$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Under any scale-invariant normalisation the two columns become numerically identical.
+
+\textbf{Design correction.} Review~I specified a $246\times4$ regional feature matrix
+(ALFF, ReHo, DC, FC strength). One column was a deterministic rescaling of another,
+so the independent regional features are three. The corrected model input is a
+$246\times3$ regional matrix (mALFF, mReHo, DC$_z$) \emph{plus} the full
+$246\times246$ Fisher-$z$ connectivity matrix. FC is not dropped: it moves from a
+collapsed per-region scalar into its full matrix form, which carries strictly more
+information. The raw FC strength files are retained unaltered; only the model feature
+set changes. This is a correction derived from auditing the features, not a pipeline
+error.
 
 \section{Engineering for an Unstable Execution Environment}
 
@@ -560,7 +730,62 @@ both training and test data --- 14 is the number that bounds what can be claimed
 about that class. No subject appears in more than one group, so labels are
 subject-consistent.
 
-\section{Preprocessing and Biomarker Quality}
+\section{Preprocessing Quality Control}\label{sec:qc}
+
+Table~\ref{tab:groupqc} summarises acquisition-level quality control by stage. One
+acquisition is treated separately and is flagged explicitly.
+
+\begin{table}[H]
+\centering
+\caption{Preprocessing quality control by stage. All columns except the last exclude
+the single artifact acquisition described below ($n=164$ overall). The raw tSNR mean as
+originally reported by the dataset audit, which includes it, is shown in the last
+column.
+FD is mean framewise displacement in mm; ``med.'' is the median.}
+\label{tab:groupqc}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+\textbf{Stage} & \textbf{$n$} & \textbf{tSNR mean} & \textbf{tSNR med.} &
+\textbf{SNR mean} & \textbf{FD mean} & \textbf{tSNR raw} \\
+\midrule
+CN (CN\_Final) & 26 & 131.63 & 132.58 & 12.95 & 0.352 & \textbf{12064.36} \\
+SMC (SMC\_Final) & 31 & 125.71 & 123.70 & 13.15 & 0.375 & 125.71 \\
+EMCI & 29 & 137.49 & 133.16 & 13.76 & 0.355 & 137.49 \\
+MCI & 32 & 137.05 & 139.24 & 12.94 & 0.321 & 137.05 \\
+LMCI & 21 & 127.54 & 121.41 & 12.99 & 0.322 & 127.54 \\
+AD & 25 & 114.06 & 118.76 & 13.49 & 0.439 & 114.06 \\
+\midrule
+\textbf{All} & \textbf{164} & \textbf{129.40} & \textbf{127.95} & \textbf{13.22} &
+\textbf{0.360} & 2082.04 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Dataset-wide medians over the 164 acquisitions are tSNR 127.95, SNR 13.12, mean
+framewise displacement 0.317\,mm and raw-intensity DVARS 15270. Contrast-to-noise
+ratio is not available (N/A) for all 165 acquisitions, since no T1w image exists for
+any of the 131 subjects. Head motion is substantial: 134 of the 164 acquisitions
+exceed 0.2\,mm mean FD, 90 exceed 0.3\,mm and 28 exceed 0.5\,mm. High motion is
+flagged, not excluded, under the frozen processing policy, so motion will enter the
+modelling stage as a covariate.
+
+\textbf{Artifact acquisition (reported, not silently dropped).} The audit-reported
+CN tSNR mean of 12064 is produced by a single acquisition,
+\texttt{CN\_Final/\allowbreak sub-018S4313/\allowbreak ses-01/\allowbreak run-01}, whose tSNR is 322,315 against a
+dataset median of 128. The ratio is mean over standard deviation per voxel, so
+near-zero-variance voxels inflate it; the project methodology record attributes the
+value to this effect. The same acquisition has mean FD 1.079\,mm (among the four
+highest of 165) and an anomalously low spatial entropy of 4.21 bits against a
+cohort mean of 7.18 for the other 164. It is excluded from the tSNR, SNR, FD and
+DVARS summaries in Table~\ref{tab:groupqc} and from the medians above, and the raw
+value is kept visible in the last column. With it removed, the CN tSNR mean is 131.63
+(median 132.58), in line with the other stages. The acquisition itself remains among the 165
+preprocessed acquisitions and in every downstream count; how it is handled in
+modelling has not yet been decided.
+
+\section{Biomarker Quality}
 
 \begin{table}[H]
 \centering
@@ -605,13 +830,125 @@ design: because all acquisitions are registered to the same template-derived 4\,
 grid, the aligned atlas is identical across the cohort. This was nonetheless
 verified per acquisition rather than assumed.
 
-Normalisation was applied to all 165 acquisitions with no failures. Mean mALFF and
+Normalisation was applied to all 165 acquisitions with no failures
+(Table~\ref{tab:normcheck}). Mean mALFF and
 mean mReHo equal 1.000000 for every acquisition; DC$_z$ has mean below
 $1.6\times10^{-16}$ and standard deviation 1.000000; the Fisher-$z$ connectivity
 matrix is symmetric to $5.3\times10^{-15}$ with a diagonal of exactly zero in all
 165 cases. No off-diagonal correlation anywhere in the dataset exceeded the
 $\pm0.999999$ clipping bound, so that safeguard never engaged --- confirming no
 region pair is numerically perfectly correlated.
+
+\section{Stage-wise Group Patterns: A Negative Univariate Result}\label{sec:heatmaps}
+
+We tested whether a univariate, per-region group-mean signal distinguishes the six
+progression stages. Stage-wise matrices of size $246\times6$ were generated for
+mALFF, mReHo, DC$_z$ and FC\_Strength with subject-level aggregation: acquisitions
+were averaged within subject first and subjects then averaged within stage, so each
+of the 127 subjects counts once although there are 165 acquisitions. The subject
+counts are CN 26, SMC 21, EMCI 26, MCI 14, LMCI 20 and AD 20. Each region was then
+$z$-scored across the six stages so that colour shows how a region changes across
+stages and not how large it is (Figure~\ref{fig:heatmaps}). The absolute-value
+versions (\texttt{derivatives/\allowbreak STAGE\_HEATMAPS/\allowbreak *\_absolute.png}) are available but
+are not shown, because they are dominated by anatomical differences between regions.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.31\textwidth]{figures/mALFF_rowz.png}\hfill
+\includegraphics[width=0.31\textwidth]{figures/mReHo_rowz.png}\hfill
+\includegraphics[width=0.31\textwidth]{figures/DC_z_rowz.png}
+\caption{Stage-wise regional biomarker patterns across the six-stage progression
+(CN, SMC, EMCI, MCI, LMCI, AD) for 127 subjects; from left to right mALFF, mReHo
+and DC$_z$. Rows are the 246 Brainnetome ROIs in atlas order (cortical 1--210 above
+the dashed line, subcortical 211--246 below); columns are progression stages. Each
+ROI is $z$-scored independently across the six stages, so colour encodes how a
+region changes across stages rather than its absolute magnitude. Acquisitions were
+averaged within subject before averaging across subjects, so each of the 127
+subjects contributes once. These are descriptive, exploratory visualisations; they
+do not demonstrate disease progression and no statistical testing was performed.}
+\label{fig:heatmaps}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Monotonic trends in the stage means. A region counts as monotonic if its
+six stage means increase, or decrease, strictly from CN to AD. The expectation by
+chance is $246\times2/6!\approx0.7$, the combinatorial value when the six stage
+means of a region are exchangeable; it is not a hypothesis test. The last column is
+the median over regions of the standard deviation of the six stage means, divided by
+the standard deviation across regions of the per-region mean (population
+standard deviations).}
+\label{tab:monotonic}
+\small
+\begin{tabularx}{\textwidth}{@{}l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X@{}}
+\toprule
+\textbf{Biomarker} & \textbf{ROIs with monotonic CN$\rightarrow$AD trend} &
+\textbf{Expected by chance} & \textbf{Stage SD / between-ROI SD} \\
+\midrule
+mALFF & 1 / 246 (decreasing) & $\approx0.7$ & 0.18 \\
+mReHo & 0 / 246 & $\approx0.7$ & 0.24 \\
+DC$_z$ & 1 / 246 (increasing) & $\approx0.7$ & 0.23 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The result (Table~\ref{tab:monotonic}) is negative and is reported as such, in four steps.
+\begin{enumerate}[label=\arabic*.]
+  \item We tested for a univariate, per-region group-mean progression signal.
+  \item It is not detectable. Only 1, 0 and 1 of 246 regions are monotonic from CN to
+        AD, which is no more than the roughly 0.7 that chance alone gives, and the
+        variation across stages is about 4--5 times smaller than the anatomical
+        variation between regions (ratios 0.18--0.24).
+  \item This is informative, not a failure of the pipeline. Per-region stage means
+        discard the entire $246\times246$ connectivity structure, and they can only
+        reveal effects large enough to survive averaging over 14--26 subjects per
+        stage. The result does not show that the biomarkers carry no stage
+        information; it shows that group means of single regions do not expose it.
+  \item The multivariate architecture is therefore motivated and not assumed: the
+        transformer sees each subject individually and all 246 regions jointly, with
+        connectivity intact.
+\end{enumerate}
+No heatmap in this report is evidence of progression, and the pipeline has not been
+tested on any classification task.
+
+Figure~\ref{fig:redundancy} places the DC$_z$ and FC\_Strength heatmaps side by
+side, which turns the redundancy of Section~\ref{sec:redundancy} into a visual proof.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.44\textheight,keepaspectratio]{figures/DC_z_rowz.png}\hfill
+\includegraphics[height=0.44\textheight,keepaspectratio]{figures/FC_Strength_rowz.png}
+\caption{DC$_z$ (left) and FC\_Strength (right), rendered independently from
+separate stored files. The heatmap panels are identical, because
+FC\_Strength $=$ DC$/245$ exactly (maximum difference $6.939\times10^{-18}$ across
+all 165 acquisitions, Pearson $r=1.000000000000$); the plotted row-wise $z$ values
+differ by at most $6.4\times10^{-15}$. The right-hand file is wider only because its
+title carries a ``derived'' tag. FC\_Strength therefore carries no information
+independent of DC.}
+\label{fig:redundancy}
+\end{figure}
+
+\section{Work Not Yet Done}\label{sec:notdone}
+
+To avoid any ambiguity about the scope of this report, the following are \emph{not}
+done.
+\begin{itemize}
+  \item \textbf{Comorbidity data are not cleaned.} Five of the six cohort table
+        archives are present; the LMCI tables are missing entirely, leaving 20
+        subjects without CDR, MMSE, GDS, medical-history or APOE4 data. Of the 21
+        subjects lacking APOE4, 20 are the whole LMCI group, so the missingness is
+        group-structured, and an availability indicator would act as a proxy label for
+        LMCI. It must not be used as a feature.
+  \item \textbf{Hypertension and diabetes are not directly available.} The ADNI
+        medical-history tables supply only the broad categories MH4CARD
+        (cardiovascular) and MH9ENDO (endocrine); they are used under those names.
+  \item \textbf{Modules 4--6 are not started:} the multi-attention transformer,
+        meta-learning, comorbidity fusion, the Bayesian ordinal classifier and the
+        dashboard. No accuracy, AUC or other performance figure exists, and none is
+        implied anywhere in this report.
+  \item \textbf{Cross-validation is not built.} Subject-level folds and train-fold-only
+        cross-subject scaling are still to be implemented.
+\end{itemize}
 
 \section{Discussion}
 
@@ -645,13 +982,8 @@ sample is 127 subjects across six ordered classes with a smallest class of 14,
 which bounds model capacity and makes a single held-out test split uninformative;
 repeated subject-grouped cross-validation is required. Eight acquisitions are
 permanently excluded on account of the 6.02\,s TR subgroup unless the filter
-specification is revisited for them. Finally, the comorbidity data obtained to date
-covers five of the six groups: the LMCI cohort tables are absent, leaving 20
-subjects without any clinical variables. Because that gap is group-structured rather
-than random, a missingness indicator would act as a perfect proxy for LMCI
-membership and must not be used as a feature; the correct remedy is to obtain the
-missing tables, after which only one subject in the entire cohort lacks genotype
-data.
+specification is revisited for them. Finally, the comorbidity data are incomplete and the gap is group-structured; see
+Section~\ref{sec:notdone}, which also records what has not yet been done.
 
 \textbf{Next steps.} Immediate work is to complete the comorbidity table, construct
 the subject-level cohort index with fixed stratified grouped cross-validation folds
