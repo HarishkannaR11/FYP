@@ -58,9 +58,11 @@ cross-file consistency verification. Degree centrality recomputed independently 
 every stored connectivity matrix agreed exactly. A leakage-free within-subject
 normalisation stage was subsequently applied to all 165 acquisitions.
 
-Two findings shaped the design. FC strength, one of the four planned regional
-biomarkers, is exactly DC$/245$ and was removed, leaving a $246\times3$ regional
-matrix plus the full $246\times246$ Fisher-$z$ connectivity matrix. Stage-wise
+Two findings shaped the design. All four Review~I biomarkers (ALFF, ReHo, DC and FC)
+are retained, but the per-region FC summary that formed the fourth column of the
+$246\times4$ matrix (FC strength) is exactly DC$/245$. ALFF, ReHo and DC therefore form
+a $246\times3$ regional matrix and FC enters in full as a $246\times246$ Fisher-$z$
+connectivity matrix. Stage-wise
 group-mean heatmaps over 127 subjects show no univariate progression signal
 (1, 0 and 1 of 246 regions monotonic, against about 0.7 expected by chance),
 which motivates a multivariate model. Preprocessing and feature extraction
@@ -148,9 +150,9 @@ work reported here is the data foundation beneath objectives~1 and~2.
 (127 subjects). Their association with progression is not demonstrated
 (Section~\ref{sec:heatmaps}), and comorbidity patterns have not been analysed because the
 clinical tables are incomplete. \\
-2 & Partly met & The imaging half is built: a $246\times3$ regional matrix plus a
-$246\times246$ Fisher-$z$ connectivity matrix per acquisition. The comorbidity-aware
-half has not been started. \\
+2 & Partly met & The imaging half is built from all four biomarkers: ALFF, ReHo and DC
+as a $246\times3$ regional matrix and FC as a $246\times246$ Fisher-$z$ matrix per
+acquisition. The comorbidity-aware half has not been started. \\
 3 & Not started & No Meta-Bayesian model exists. \\
 4 & Not started & No uncertainty estimate exists. \\
 5 & Not started & Only data-level validation (independent recomputation of the
@@ -243,67 +245,119 @@ the cross-validation folds are not yet built (Section~\ref{sec:notdone}).
 and answer from the Review~I minutes. The queries raised by the panel are not
 reproduced here because they are not available in the project repository.}
 
-\chapter{Problem statement}
+\chapter{Problem statement}\label{ch:problem}
 
-\textbf{Problem.} Given a single resting-state fMRI acquisition from a subject with
-no accompanying T1-weighted anatomical scan and no recoverable slice-timing
-metadata, together with that subject's comorbidity profile, assign the subject to
-one of six ordered disease-progression stages and report a calibrated uncertainty
-for that assignment.
+The problem statement is the one fixed at Review~I.
 
 \medskip
-\noindent\textbf{Inputs.}
+\noindent\fbox{\parbox{0.94\textwidth}{\textbf{Problem.} Existing computational systems
+analyse rs-fMRI biomarkers independently and omit clinical context, resulting in
+overconfident deterministic staging errors on borderline subjects for diagnostic
+clinicians.}}
+
+\medskip
+\noindent The primary problem addressed by this research is the development of a unified,
+robust computational framework that can accurately assess continuous Alzheimer's
+disease progression by synthesising heterogeneous multi-biomarker resting-state fMRI
+data with patient-specific clinical characteristics and comorbidity metadata. Three
+points frame it.
 \begin{itemize}[leftmargin=2em]
-  \item One 4D rs-fMRI BOLD series per acquisition (ADNI~\cite{adnimri,
-        adniclinical}, Philips scanners; 159 of 165 acquisitions are
-        $64 \times 64 \times 48$ voxels, 164 of 165 have TR $\approx 3.0$\,s and
-        one has 2.25\,s; 140 volumes before 5 are discarded).
-  \item Diagnostic group label per subject, taken only from
-        \texttt{participants.tsv}.
-  \item Comorbidity variables per subject: age, APOE4 genotype, MMSE, CDR-SB,
-        geriatric depression score, and cardiovascular and endocrine medical
-        history.
+  \item \textbf{Context.} Dementia drives progressive cognitive decline across six
+        ordered stages.
+  \item \textbf{Limitation.} Current pipelines isolate complementary functional
+        features (ALFF, ReHo, DC, FC).
+  \item \textbf{Clinical gap.} Models ignore how patient comorbidities modify the
+        underlying neurodegeneration.
 \end{itemize}
 
-\noindent\textbf{Outputs.}
+\noindent\textbf{Research question.} Can a common Alzheimer's progression representation be
+discovered across multiple functional biomarkers while accounting for patient
+comorbidity profiles and prediction uncertainty?
+
+\section{Input Specifications}
+The framework operates on a multifaceted patient vector extracted from the ADNI
+cohort~\cite{adnimri,adniclinical}:
 \begin{itemize}[leftmargin=2em]
-  \item A predicted progression stage on the ordered scale
-        CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI $\rightarrow$
-        LMCI $\rightarrow$ AD.
-  \item A posterior distribution over stages, from which prediction uncertainty is
-        derived.
-  \item Region-level attribution identifying which of the 246 Brainnetome regions
-        and which biomarkers drove the prediction.
+  \item \textbf{Neuroimaging data:} cleaned, time-ordered BOLD signal recordings
+        extracted from each subject's rs-fMRI scan.
+  \item \textbf{Anatomical representation:} region-of-interest (ROI) matrices
+        parcellated into 246 distinct functional areas using the Brainnetome Atlas.
+  \item \textbf{Functional biomarkers:} four complementary regional descriptors
+        --- ALFF, ReHo, FC and DC --- each capturing a distinct facet of local or
+        network-level brain activity.
+  \item \textbf{Clinical and comorbidity covariates:} age and APOE~$\varepsilon4$
+        genotype status; MMSE and CDR-SB; hypertension history, diabetes mellitus
+        profiling and Geriatric Depression Scale (GDS) scores.
+\end{itemize}
+Diagnostic group labels are taken only from \texttt{participants.tsv}. The ADNI medical-history tables obtained carry only broad cardiovascular and endocrine categories, so the hypertension and diabetes covariates will be used under those category names (Section~\ref{sec:notdone}).
+
+\section{Output Specifications}
+The architecture maps the multi-modal inputs to a risk-calibrated output tuple:
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{6-class ordinal staging:} each subject is placed on the ordered scale
+        CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI $\rightarrow$ LMCI
+        $\rightarrow$ AD.
+  \item \textbf{Probabilistic confidence:} a calibrated uncertainty metric output
+        alongside each stage, flagging boundary cases and atypical trajectories.
+  \item \textbf{Anatomical explainability:} localised attention heatmaps showing which
+        brain regions and macro-networks (DMN, SN, ECN) drove the prediction.
 \end{itemize}
 
-\noindent\textbf{Constraints.}
+\section{System Constraints}
+The framework is bounded by the following, as set at Review~I:
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{No anatomical reference.} Zero of the 131 audited subjects have a
-        T1w image, so anatomical normalisation, subject-specific tissue
-        segmentation and contrast-to-noise estimation are all unavailable.
-  \item \textbf{No slice-timing metadata.} Slice-timing correction cannot be
-        applied to any acquisition in the dataset.
-  \item \textbf{Small effective sample.} 165 acquisitions originate from only 127
-        distinct subjects, and the smallest group contains 14 subjects. Model
-        capacity and validation design are bounded by this, not by the acquisition
-        count.
-  \item \textbf{Single-worker compute.} All processing must run with one worker on a
-        memory-constrained WSL2 environment, so the pipeline must be checkpointed
-        and resumable.
+  \item \textbf{High-dimensional feature spaces:} the spatiotemporal complexity of
+        rs-fMRI requires dimensionality reduction without losing fine neural detail.
+  \item \textbf{Scan variant irregularities:} multi-site scanner variance in ADNI
+        demands standardised preprocessing.
+  \item \textbf{Biomarker heterogeneity:} local synchronisation and global network
+        centrality are different signal types and need a biomarker-invariant mapping.
+  \item \textbf{Cross-modal alignment:} fusing high-dimensional imaging tensors with
+        sparse scalar clinical metadata.
+  \item \textbf{Computational burden:} the memory and training cost of cascaded global,
+        local and network self-attention.
+  \item \textbf{Calibration reliability:} the Bayesian ordinal output must give
+        stable, well-calibrated uncertainty for borderline subjects.
 \end{itemize}
 
-\noindent\textbf{Success criteria.}
+\subsection*{Constraints encountered while building the data foundation}
+Building Modules~1--3 added concrete limits that instantiate the above.
 \begin{itemize}[leftmargin=2em]
-  \item \emph{Data stage (this report):} complete 246/246 regional coverage for every
-        acquisition; zero non-finite values in any derived feature; every derived
-        quantity reproducible by independent recomputation to within $10^{-10}$.
-  \item \emph{Model stage (future):} staging performance exceeding
-        single-biomarker and comorbidity-agnostic baselines under
-        subject-grouped cross-validation, with calibrated uncertainty. As fixed at
-        Review~I, it is reported as accuracy, precision, recall and macro-F1, macro-
-        and per-class ROC-AUC, and expected calibration error, with the learned
-        attention maps compared against established neurodegeneration atlases.
+  \item \textbf{No anatomical reference.} Zero of the 131 audited subjects have a T1w
+        image, so anatomical normalisation, subject-specific tissue segmentation and
+        contrast-to-noise estimation are unavailable.
+  \item \textbf{No slice-timing metadata.} Slice-timing correction cannot be applied to
+        any acquisition.
+  \item \textbf{Scan variant irregularities.} Eight acquisitions have a TR of about
+        6.02\,s, which breaks the fixed 0.01--0.10\,Hz band; one further acquisition has
+        TR 2.25\,s.
+  \item \textbf{Small effective sample.} 165 acquisitions come from only 127 distinct
+        subjects, and the smallest group has 14. Model capacity and validation design
+        are bounded by this, not by the acquisition count.
+  \item \textbf{Single-worker compute.} All processing runs with one worker on a
+        memory-constrained WSL2 environment, so the pipeline is checkpointed and
+        resumable.
 \end{itemize}
+
+\section{Evaluation Criteria}
+Model performance will be validated across quantitative, probabilistic and qualitative
+dimensions, as fixed at Review~I:
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Classification performance:} accuracy, precision, recall and macro-F1
+        across all six stages.
+  \item \textbf{Discriminative performance:} macro-averaged and per-class ROC-AUC.
+  \item \textbf{Bayesian calibration:} expected calibration error (ECE), to test
+        borderline-subject identification.
+  \item \textbf{Explainability:} regional correlation of the learned attention vectors
+        with established neurodegeneration atlases.
+  \item \textbf{Benchmark comparison:} against independent single-modality baselines
+        and standard clinical prediction architectures.
+\end{itemize}
+The criteria for the data stage reported here are: complete 246/246 regional coverage
+for every acquisition; zero non-finite values in any derived feature; and every derived
+quantity reproducible by independent recomputation to within $10^{-10}$. The model-stage
+criteria above will be evaluated under subject-grouped cross-validation, and none has
+been evaluated yet.
 
 \chapter{Methodology}\label{ch:method}
 
@@ -359,10 +413,12 @@ Co-registration to structural scans (Module 2, \S5.2.2) & Direct EPI-to-MNI regi
 Zero of 131 subjects have a T1w image. Subject segmentation is therefore impossible;
 CNR is not computable for any acquisition, and the CSF regressor failed its
 reliability gate in all 165 (Section~\ref{sec:preproc}). \\
-$246\times4$ regional feature matrix (Module 3, \S5.2.3) & $246\times3$ regional matrix plus the full
-$246\times246$ Fisher-$z$ FC matrix &
-FC strength $=$ DC$/245$ exactly, so one column was a rescaling of another
-(Section~\ref{sec:redundancy}). FC is not dropped; it moves to its full matrix form. \\
+$246\times4$ feature matrix of ALFF, ReHo, DC and FC (Module 3, \S5.2.3) & All four
+biomarkers kept: $246\times3$ (mALFF, mReHo, DC$_z$) plus the full $246\times246$
+Fisher-$z$ FC matrix &
+The fourth column was the per-region FC summary (FC strength), which equals DC$/245$
+exactly, so it duplicated the DC column (Section~\ref{sec:redundancy}). FC itself is not
+dropped; it moves to its full matrix form. \\
 Cross-site scanner variance normalisation via FS-FAST (Scope, \S1.4) & Not
 performed; only within-subject normalisation was applied &
 FS-FAST was used for motion correction. No site or scanner harmonisation step exists in
@@ -452,8 +508,9 @@ voxel-wise ALFF and ReHo aggregated to regions; ROI-level FC and DC
 the Review~I design, leakage-free within-subject normalisation
 (Table~\ref{tab:norm}). \textbf{Outputs.} Per acquisition: the $135\times246$ ROI time
 series, ALFF, ReHo and DC vectors, the $246\times246$ FC matrix and, after
-normalisation, a $246\times3$ regional matrix plus the Fisher-$z$ FC matrix (the
-Review~I design specified $246\times4$; see Section~\ref{sec:deviations}).
+normalisation, ALFF, ReHo and DC as a $246\times3$ regional matrix and FC as the
+full Fisher-$z$ matrix. All four Review~I biomarkers are kept; Review~I assembled them
+into a $246\times4$ matrix, whose FC column is covered in Section~\ref{sec:redundancy}.
 \textbf{Dependencies.} Module~2. \textbf{Status.} Complete for 165 of 165 acquisitions.
 
 \subsection{Module 4: Proposed Deep Learning Model}
@@ -749,15 +806,37 @@ Stage matrices: Pearson $r$ & $1.0$ \\
 
 Under any scale-invariant normalisation the two columns become numerically identical.
 
-\textbf{Design correction.} Review~I specified a $246\times4$ regional feature matrix
-(ALFF, ReHo, DC, FC strength). One column was a deterministic rescaling of another,
-so the independent regional features are three. The corrected model input is a
-$246\times3$ regional matrix (mALFF, mReHo, DC$_z$) \emph{plus} the full
-$246\times246$ Fisher-$z$ connectivity matrix. FC is not dropped: it moves from a
-collapsed per-region scalar into its full matrix form, which carries strictly more
-information. The raw FC strength files are retained unaltered; only the model feature
-set changes. This is a correction derived from auditing the features, not a pipeline
-error.
+\textbf{All four biomarkers are kept.} The four biomarkers of Review~I are ALFF, ReHo,
+DC and FC. Review~I assembled them into a $246\times4$ matrix, which needs one value per
+region for each biomarker. ALFF, ReHo and DC are naturally one value per region. FC is
+naturally a region-by-region matrix, so its fourth column was a per-region summary of
+it, the FC-derived regional feature that this report calls FC strength. That summary
+is exactly DC$/245$, so the fourth column added nothing beyond the third. The corrected
+model input therefore carries FC in its full form instead (Table~\ref{tab:fourbio}).
+
+\begin{table}[H]
+\centering
+\caption{Where each Review~I biomarker sits in the model input.}
+\label{tab:fourbio}
+\small
+\begin{tabularx}{\textwidth}{@{}lXl@{}}
+\toprule
+\textbf{Biomarker} & \textbf{Review I ($246\times4$ column)} & \textbf{Model input now} \\
+\midrule
+ALFF & ALFF per region & mALFF, $246\times1$ \\
+ReHo & ReHo per region & mReHo, $246\times1$ \\
+DC & DC per region & DC$_z$, $246\times1$ \\
+FC & FC summary per region (FC strength $=$ DC$/245$) & Fisher-$z$ FC, $246\times246$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+FC therefore moves from a collapsed per-region scalar into its full matrix form, which
+carries strictly more information, so none of the four biomarkers is lost. Only the
+redundant column goes. The raw FC strength files are retained unaltered. This is a
+correction derived from auditing the features, not a pipeline error. A different
+per-region FC summary that is not a rescaling of DC (for example, within-network
+connectivity) could be added later if the model needs one.
 
 \section{Engineering for an Unstable Execution Environment}
 
@@ -1068,9 +1147,10 @@ orders of magnitude across acquisitions, because it is expressed in units
 proportional to raw BOLD intensity, whereas ReHo --- being bounded --- varies only
 narrowly. Supplying both unnormalised to a model would allow scanner and protocol
 scaling to dominate any biological signal; the within-subject normalisation in
-Module~3 addresses this. Second, one of the four nominal biomarkers was found to be
-an exact rescaling of another, so the independent regional feature count is three,
-not four. Both findings were identified by inspecting the data rather than inherited
+Module~3 addresses this. Second, the per-region summary of FC, the fourth column of the
+Review~I matrix, was found to be an exact rescaling of DC. All four biomarkers are
+still used: ALFF, ReHo and DC as three regional features, and FC in full as a
+connectivity matrix. Both findings were identified by inspecting the data rather than inherited
 from the design, which illustrates the value of auditing features before modelling.
 
 \textbf{Limitations.} Beyond the absence of T1w and slice-timing data, four
