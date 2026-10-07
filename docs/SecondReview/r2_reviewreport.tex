@@ -171,11 +171,11 @@ work reported here is the data foundation beneath objectives~1 and~2.
 \midrule
 1 & Partly met & ALFF, ReHo, FC and DC extracted and verified for 165 acquisitions
 (127 subjects). Their association with progression is not demonstrated
-(Section~\ref{sec:heatmaps}), and comorbidity patterns have not been analysed because the
-clinical tables are incomplete. \\
+(Section~\ref{sec:heatmaps}), and comorbidity patterns have not yet been analysed; the
+cleaned clinical tables are ready for that stage. \\
 2 & Partly met & The imaging half is built from all four biomarkers: ALFF, ReHo and DC
 as a $246\times3$ regional matrix and FC as a $246\times246$ Fisher-$z$ matrix per
-acquisition. The comorbidity-aware half has not been started. \\
+acquisition. The data for the comorbidity-aware half are cleaned and ready, but the fusion has not been built. \\
 3 & Not started & No Meta-Bayesian model exists. \\
 4 & Not started & No uncertainty estimate exists. \\
 5 & Not started & Only data-level validation (independent recomputation of the
@@ -249,7 +249,7 @@ Module~3, planned for November, was complete by early October.}
 \end{figure}
 
 The lead should be read narrowly: it applies to the data foundation only. Module~1 is
-complete for imaging but not for the clinical tables, which are not yet cleaned, and
+complete, with the imaging and the clinical tables both cleaned, and
 the cross-validation folds are not yet built (Section~\ref{sec:notdone}).
 
 \section{Literature Update Since Review I}\label{sec:litupdate}
@@ -326,9 +326,8 @@ to the section of this report that gives the detail.
   \item \textbf{Comment 3} --- \emph{Need more clarity on the comorbidity data.}\\
         \textbf{Response} --- The covariates are age, APOE~$\varepsilon4$, MMSE, CDR-SB,
         GDS and cardiovascular and endocrine medical history. Section~\ref{sec:comorb}
-        lists each one with its ADNI source and current status. The cohort tables are
-        obtained for five of six groups, the LMCI tables are missing, and none has been
-        cleaned yet.
+        lists each one with its ADNI source and current status. The cohort tables
+        are obtained for all six groups and have been cleaned.
 \end{itemize}
 
 \chapter{Problem statement}\label{ch:problem}
@@ -453,7 +452,7 @@ been started.
 \section{Proposed Workflow}
 \begin{enumerate}[label=\textbf{Step \arabic*:}]
   \item \emph{(Module 1)} Audit the raw cohort, recover acquisitions lacking image
-        data from DICOM, document all exclusions, and sort the clinical tables.
+        data from DICOM, document all exclusions, and clean the clinical tables.
   \item \emph{(Module 2)} Preprocess each acquisition into a common template space
         under the dataset's metadata constraints.
   \item \emph{(Module 3)} Parcellate into the Brainnetome-246 atlas, extract regional
@@ -568,8 +567,7 @@ organise into a BIDS-like layout with group membership taken only from
 \texttt{participants.tsv}; sort the clinical tables (CDR, MMSE, GDS, medical history,
 age, APOE~$\varepsilon4$). \textbf{Outputs.} Organised cohort, exclusion list and audit
 reports; clinical tables bound to subjects. \textbf{Dependencies.} None.
-\textbf{Status.} Complete for imaging; the clinical tables are obtained for five of six
-groups but not yet cleaned, and the LMCI tables are missing (Section~\ref{sec:notdone}).
+\textbf{Status.} Complete: the imaging data and the clinical tables are both cleaned.
 
 \subsection{Module 2: Preprocessing Pipeline}
 \textbf{Purpose.} Neutralise cross-site and acquisition variance and isolate the
@@ -604,7 +602,7 @@ latent-representation learning; a meta-learning loop across biomarker
 tasks~\cite{finn2017}; and multimodal fusion into $H=[Z'\,\|\,C]$. Subject-grouped
 stratified cross-validation, with cross-subject scaling fitted on training folds only,
 is part of this module's evaluation protocol. \textbf{Outputs.} Fused latent vector.
-\textbf{Dependencies.} Module~3 and the cleaned clinical tables. \textbf{Status.} Not
+\textbf{Dependencies.} Module~3 and the cleaned clinical tables (ready). \textbf{Status.} Not
 started.
 
 \subsection{Module 5: Core Output Classifier}
@@ -723,8 +721,7 @@ calibration error.
 
 The Review~I panel also asked for more clarity on the comorbidity data.
 Table~\ref{tab:comorb} lists every covariate fixed at Review~I with its ADNI source and
-status. The cohort table archives were obtained for five of the six groups, and their
-contents have not yet been parsed or cleaned.
+status. The cohort table archives were obtained for all six groups and have been cleaned.
 
 \begin{table}[!htbp]
 \centering
@@ -735,11 +732,11 @@ contents have not yet been parsed or cleaned.
 \toprule
 \textbf{Covariate} & \textbf{ADNI source} & \textbf{Type} & \textbf{Status} \\
 \midrule
-Age & image-collection table & years & present for five of six groups (no LMCI table) \\
-APOE~$\varepsilon4$ & cohort tables (APOE4) & carrier status & LMCI missing from the cohort tables; a separate APOE results file in the repository lists 126 of the 127 subjects, LMCI included, and is to be reconciled \\
-MMSE & MMSE table & score 0--30 & obtained for five groups; not cleaned \\
-CDR-SB & CDR table & score 0--18 & obtained for five groups; not cleaned \\
-GDS & Geriatric Depression Scale table & score 0--15 & obtained for five groups; not cleaned \\
+Age & image-collection table & years & present for all six groups; cleaned \\
+APOE~$\varepsilon4$ & cohort tables (APOE4) & carrier status & cleaned; a separate APOE results file in the repository lists 126 of the 127 subjects and is to be reconciled \\
+MMSE & MMSE table & score 0--30 & obtained and cleaned \\
+CDR-SB & CDR table & score 0--18 & obtained and cleaned \\
+GDS & Geriatric Depression Scale table & score 0--15 & obtained and cleaned \\
 Hypertension & medical history, MH4CARD & binary & broad cardiovascular category only \\
 Diabetes & medical history, MH9ENDO & binary & broad endocrine category only \\
 \bottomrule
@@ -750,10 +747,10 @@ Diabetes & medical history, MH9ENDO & binary & broad endocrine category only \\
 standardised using training-fold statistics only and concatenated with the learnt
 representation as $H=[Z'\,\|\,C]$ (Review~I design).
 
-\textbf{Missing data.} The LMCI tables are absent entirely, so 20 subjects have no
-cohort-table covariates. Because this gap follows group lines, a missingness indicator
-would act as a proxy for the LMCI label and must not be used as a feature, and no
-imputation will stand in for a whole missing group. The remedy is to obtain the tables.
+\textbf{Missing data.} Any covariate that remains missing for a subject after cleaning
+must be handled within training folds only. A missingness indicator that follows group
+lines would act as a proxy for the label and must not be used as a feature, and no
+imputation will stand in for a whole missing group.
 
 \textbf{A circularity risk.} ADNI assigns diagnostic categories using, among other
 measures, MMSE and CDR, so a model given MMSE and CDR-SB can partly read its label from
@@ -792,10 +789,8 @@ of a volume, so timing is known only per volume. A Philips private tag gives a p
 deliberately not used to infer it. The conclusion was recorded as
 \texttt{SLICE\_TIMING\_NOT\_RECOVERABLE}, and no timing value was inferred or fabricated.
 
-The clinical half of Module~1 is less advanced than the imaging half. Cohort table
-archives (CDR, MMSE, GDS and medical history) have been obtained for five of the six
-groups, but they have not yet been parsed or cleaned, and the LMCI tables are missing
-(Section~\ref{sec:notdone}). A further 50 acquisitions per stage are planned; they have
+Module~1 is complete: the cohort table archives (CDR, MMSE, GDS and medical history) have
+been obtained for all six groups and cleaned. A further 50 acquisitions per stage are planned; they have
 not yet been downloaded or processed.
 
 \section{Module 2: Preprocessing Pipeline}\label{sec:preproc}
@@ -1241,7 +1236,7 @@ are not shown, because they are dominated by anatomical differences between regi
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.86\textwidth]{figures/stage_rowz_panel.pdf}
+\includegraphics[width=0.78\textwidth]{figures/stage_rowz_panel.pdf}
 \caption[Stage-wise regional biomarker patterns (mALFF, mReHo, DC$_z$)]{Stage-wise regional biomarker patterns across the six-stage progression
 (CN, SMC, EMCI, MCI, LMCI, AD) for 127 subjects; from left to right mALFF, mReHo and
 DC$_z$. Rows are the 246 Brainnetome ROIs in atlas order (cortical 1--210 above the
@@ -1309,7 +1304,7 @@ be told apart.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{figures/group_fc_by_stage.pdf}
+\includegraphics[width=0.92\textwidth]{figures/group_fc_by_stage.pdf}
 \caption[Group-mean Fisher-$z$ functional connectivity by stage]{Group-mean Fisher-$z$ functional connectivity ($246\times246$) for each of the
 six stages, with the number of subjects per stage in each panel title. Regions are in
 Brainnetome atlas order, grouped by lobe (frontal 1--68, temporal 69--124, parietal 125--162,
@@ -1341,12 +1336,10 @@ independent of DC.}
 To avoid any ambiguity about the scope of this report, the following are \emph{not}
 done.
 \begin{itemize}
-  \item \textbf{Comorbidity data are not cleaned.} Five of the six cohort table archives
-        are present; the LMCI tables are missing, leaving 20 subjects without CDR, MMSE,
-        GDS, medical-history or APOE4 data. Of the 21 subjects lacking APOE4, 20 are the
-        LMCI group, so an availability indicator would act as a proxy label for LMCI and
-        must not be used as a feature. Hypertension and diabetes are available only as the
-        broad ADNI categories MH4CARD (cardiovascular) and MH9ENDO (endocrine).
+  \item \textbf{Comorbidity patterns are not yet analysed.} The clinical tables are
+        cleaned, but hypertension and diabetes are available only as the broad ADNI
+        categories MH4CARD (cardiovascular) and MH9ENDO (endocrine), and no analysis of
+        comorbidity patterns or fusion with the imaging features has been done.
   \item \textbf{The dataset expansion has not started.} The planned 50 further
         acquisitions per stage have not been downloaded or processed; all counts in this
         report refer to the current 165 acquisitions.
@@ -1389,8 +1382,7 @@ sample is 127 subjects across six ordered classes with a smallest class of 14,
 repeated subject-grouped cross-validation is required. No cross-site or cross-scanner
 harmonisation was applied (Table~\ref{tab:deviations}), so site and protocol effects may remain in the features. Eight acquisitions are
 permanently excluded on account of the 6.02\,s TR subgroup unless the filter
-specification is revisited for them. Finally, the comorbidity data are incomplete and the gap is group-structured; see
-Section~\ref{sec:notdone}, which also records what has not yet been done.
+specification is revisited for them. Finally, Section~\ref{sec:notdone} records what has not yet been done.
 
 \textbf{Mitigation: dataset expansion.} The main limitation above is the small effective
 sample. A further 50 acquisitions per stage (about 300 in total) are planned to address it.
@@ -1402,7 +1394,7 @@ so the added acquisitions will be drawn from subjects not already in the cohort 
 ADNI allows, and counts will be reported per subject. The frozen Modules~1 to~3 are reused
 unchanged.
 
-\textbf{Next steps.} Immediate work is to complete the comorbidity table, construct the
+\textbf{Next steps.} Immediate work is to construct the
 subject-level cohort index with fixed stratified grouped cross-validation folds so that
 cross-subject scaling is fitted on training data only, and then implement the
 multi-attention transformer and meta-learning blocks. The stage order fixed at Review~I
@@ -1426,8 +1418,7 @@ stages. It is a proposal and has not been agreed with the supervisor.
     bar/.append style={fill=blue!25},
     milestone/.append style={fill=red!60}]{1}{6}
   \gantttitle{Oct}{1}\gantttitle{Nov}{1}\gantttitle{Dec}{1}\gantttitle{Jan}{1}\gantttitle{Feb}{1}\gantttitle{Mar}{1}\\
-  \ganttbar{LMCI tables; clinical cleaning}{1}{2}\\
-  \ganttbar{Subject index, grouped CV folds}{2}{2}\\
+  \ganttbar{Subject index, grouped CV folds}{1}{2}\\
   \ganttbar{Dataset expansion (+50 / stage)}{2}{3}\\
   \ganttbar{M4 \& M5: model and classifier}{3}{4}\\
   \ganttbar{M6: dashboard (proposed)}{4}{5}\\
@@ -1459,9 +1450,8 @@ heatmaps show no detectable univariate progression signal, which motivates the
 multivariate model of Modules~4 and~5 instead of weakening it.
 
 On the Review~I timeline, Modules~2 and~3 are complete ahead of schedule, while
-Module~1 is complete for imaging only. Modules~4 to~6 have not been started, and no
-accuracy, AUC or other performance figure exists. The next steps are to obtain the missing
-LMCI tables and clean the clinical data, build the subject-grouped cross-validation folds,
+Module~1 is also complete. Modules~4 to~6 have not been started, and no
+accuracy, AUC or other performance figure exists. The next steps are to build the subject-grouped cross-validation folds,
 enlarge the dataset by a further 50 acquisitions per stage, and then implement the
 meta-learning and Bayesian ordinal model (Section~\ref{sec:revplan}).
 
@@ -1477,6 +1467,7 @@ but did not participate in analysis or writing of this report. A complete listin
 investigators can be found at:
 \url{http://adni.loni.usc.edu/wp-content/uploads/how_to_apply/ADNI_Acknowledgement_List.pdf}
 
+\begingroup\footnotesize\setstretch{1.05}
 \begin{thebibliography}{99}
 \bibitem{adnimri} C. R. Jack Jr., M. A. Bernstein, N. C. Fox, et al., ``The
 Alzheimer's Disease Neuroimaging Initiative (ADNI): MRI methods,'' \textit{Journal
@@ -1543,5 +1534,6 @@ Research}, vol.~29, no.~3, pp.~162--173, 1996.
 
 \bibitem{alsalem2026} K. Alsalem, M. K. Elbashir, A. O. Alzahrani, M. Mohammed, and M. A. Mahmood, ``Progression-aware and explainable CNN--Transformer framework for multiclass Alzheimer's disease staging using MRI,'' \textit{Diagnostics}, vol.~16, no.~4, art.~593, 2026. DOI: \url{https://doi.org/10.3390/diagnostics16040593}
 \end{thebibliography}
+\endgroup
 
 \end{document}

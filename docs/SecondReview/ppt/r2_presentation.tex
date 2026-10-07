@@ -131,7 +131,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
     \alert{Design only.} &
     Core Algorithm (design); report \S4.5 \\[4pt]
     Need more clarity on the \textbf{comorbidity data} &
-    Seven covariates with source and status. LMCI tables missing. &
+    Seven covariates with source and status; clinical tables cleaned for all six stages. &
     Modules slide; report \S4.5 \\
     \bottomrule
   \end{tabularx}
@@ -173,8 +173,8 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
   \vspace{0.3cm}
   \begin{itemize}
-    \item Objectives 1--2: the \textbf{imaging half} is built and verified.
-    \item The comorbidity half is pending: clinical tables are incomplete.
+    \item Objectives 1--2: the \textbf{data inputs} (imaging biomarkers and cleaned clinical tables) are ready.
+    \item Comorbidity pattern analysis and fusion belong to the model stage, not yet started.
   \end{itemize}
 \end{frame}
 
@@ -188,10 +188,9 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
                   minimum height=3.8cm,inner sep=4pt,anchor=north,
                   execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
       dn/.style={mod,fill=green!12},
-      pt/.style={mod,fill=yellow!22},
-      pl/.style={mod,dashed,fill=gray!8},
+            pl/.style={mod,dashed,fill=gray!8},
       ar/.style={->,thick}}
-    \node[pt] (m1) at (0,0)    {\footnotesize\textbf{Module 1}\\\footnotesize\textbf{Data/Input}\\\footnotesize\textbf{Management}\\[3pt]\scriptsize raw rs-fMRI (ADNI)\\ audit and recovery\\ clinical tables\\ stage labels};
+    \node[dn] (m1) at (0,0)    {\footnotesize\textbf{Module 1}\\\footnotesize\textbf{Data/Input}\\\footnotesize\textbf{Management}\\[3pt]\scriptsize raw rs-fMRI (ADNI)\\ audit and recovery\\ clinical tables\\ stage labels};
     \node[dn] (m2) at (4.1,0)  {\footnotesize\textbf{Module 2}\\\footnotesize\textbf{Preprocessing}\\\footnotesize\textbf{Pipeline}\\[3pt]\scriptsize NIfTI conversion\\ volume removal\\ motion correction\\ EPI$\rightarrow$MNI, 4\,mm\\ band-pass, QC};
     \node[dn] (m3) at (8.2,0)  {\footnotesize\textbf{Module 3}\\\footnotesize\textbf{Feature Extraction}\\\footnotesize\textbf{(Brainnetome 246)}\\[3pt]\scriptsize 246 ROI time series\\ ALFF, ReHo, DC, FC\\ within-subject\\ normalisation};
     \node[pl] (m4) at (12.3,0) {\footnotesize\textbf{Module 4}\\\footnotesize\textbf{Proposed Deep}\\\footnotesize\textbf{Learning Model}\\[3pt]\scriptsize transformer encoder\\ multi-attention\\ meta-learning\\ comorbidity fusion};
@@ -201,8 +200,6 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
     \draw[ar,dashed] (m5.south) -- (m5.south |- m6.north);
     \node[draw,fill=green!12,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (0,-6.7) {};
     \node[anchor=west] at (0.45,-6.7) {\footnotesize complete};
-    \node[draw,fill=yellow!22,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (3.6,-6.7) {};
-    \node[anchor=west] at (4.05,-6.7) {\footnotesize partly complete (imaging done, clinical tables not)};
     \node[draw,dashed,fill=gray!8,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (14.2,-6.7) {};
     \node[anchor=west] at (14.65,-6.7) {\footnotesize not started (design only)};
   \end{tikzpicture}}
@@ -215,7 +212,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
     \toprule
     \textbf{Module (Review I names)} & \textbf{Status} & \textbf{At Review II} \\
     \midrule
-    1 Data/Input Management & \partly & Imaging complete; \textbf{clinical tables not cleaned}, LMCI missing \\
+    1 Data/Input Management & \done & Imaging and clinical tables complete and cleaned \\
     2 Preprocessing Pipeline & \done & 165 of 173 scans; 8 rejected (TR 6.02\,s) \\
     3 Feature Extraction (Brainnetome 246) & \done & ALFF, ReHo, DC, FC for 165/165; normalised \\
     4 Proposed Deep Learning Model & \notst & Transformer, meta-learning, fusion: design only \\
@@ -372,8 +369,8 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
     Module 2 was planned for Review II and Module 3 for Review III.
     \textbf{Both are complete at Review II}, the final review of Phase 1.
   \end{alertblock}
-  {\footnotesize Applies to the \textbf{data foundation only}: Modules 4--6 are not started and the clinical
-  tables are not cleaned. Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
+  {\footnotesize Applies to the \textbf{data foundation only} (Modules 1--3); Modules 4--6 are not started.
+  Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
 \end{frame}
 
 % 10. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
@@ -523,7 +520,7 @@ derivatives/
     \midrule
     Harishkanna R & Preprocessing (Module 2); transformer model (Module 4) & Preprocessing: \done\newline Transformer: \notst \\
     Dhananchezhiyan M & Meta-Bayesian module (meta-learning, Bayesian classifier) and final module (dashboard) & \notst \\
-    Nagindhar Sachein R L & Dataset cleaning (clinical and comorbidity tables, dataset expansion) & Tables not yet cleaned; next step \\
+    Nagindhar Sachein R L & Dataset cleaning (clinical and comorbidity tables, dataset expansion) & Clinical tables cleaned; dataset expansion next \\
     \bottomrule
   \end{tabularx}
   \vspace{0.3cm}
@@ -534,7 +531,6 @@ derivatives/
 % 15. Next steps and closing
 \begin{frame}{Next Steps}
   \begin{enumerate}
-    \item Clean the comorbidity data.
     \item Build subject-grouped cross-validation folds.
     \item Expand the dataset by \textbf{+50 acquisitions per stage}.
     \item Then implement Modules 4--5 (Dec--Jan in the Review I plan).
