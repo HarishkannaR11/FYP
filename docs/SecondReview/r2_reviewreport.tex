@@ -2,8 +2,7 @@
 % Keep ssnreview.cls, ssn-logo.png and the figures/ folder in the same folder.
 %
 % BEFORE SUBMISSION (items shown in red in the PDF):
-%   1. Chapter 2: comment 4 of the Review I comment sheet is cut off in the photo
-%      ("Need ..."). Add its text and the answer. Comments 1-3 are filled in.
+%   1. Check the ADNI acknowledgement wording (see the Acknowledgements chapter).
 %
 % NOTE: ssnreview.cls does not load amsmath, so \text, \operatorname, align etc.
 % are unavailable. Use \mathrm{} in formulas.
@@ -283,8 +282,6 @@ the structural-MRI route those papers rely on is not available here.
 The panel's Review~I comments, with the response to each, are below. Each response points
 to the section of this report that gives the detail.
 
-% TODO (BEFORE SUBMISSION): comment 4 on the Review I comment sheet is cut off in the
-% photo ("Need ..."). Add its full text and the response.
 \begin{itemize}
   \item \textbf{Comment 1} --- \emph{Need more clarity on the dataset (biomarkers).}\\
         \textbf{Response} --- The data are ADNI resting-state fMRI acquisitions across the
@@ -311,9 +308,6 @@ to the section of this report that gives the detail.
         lists each one with its ADNI source and current status. The cohort tables are
         obtained for five of six groups, the LMCI tables are missing, and none has been
         cleaned yet.
-  \item \textbf{Comment 4} --- \textcolor{red}{[Text cut off in the photographed comment
-        sheet (it reads ``Need \ldots''). Add the comment and its response before
-        submission.]}
 \end{itemize}
 
 \chapter{Problem statement}\label{ch:problem}
@@ -1319,6 +1313,28 @@ The result (Table~\ref{tab:monotonic}) is negative and is reported as such, in f
 No heatmap in this report is evidence of progression, and the pipeline has not been
 tested on any classification task.
 
+\textbf{Functional connectivity itself.} FC is a $246\times246$ matrix, not a vector, so its
+stage-wise view is the group-mean Fisher-$z$ connectivity matrix of each stage
+(Figure~\ref{fig:groupfc}), averaged within subject first so that each of the 127 subjects
+counts once. The per-region summary of FC, FC strength, is shown beside DC$_z$ in
+Figure~\ref{fig:redundancy}. All six stages show the same broad structure: strong positive
+coupling within lobes along the diagonal, a distinct subcortical block, and weak or negative
+coupling between several lobes. The figure is descriptive only; no statistical test was run
+on it, and a visible difference between two group means would not show that individuals can
+be told apart.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/group_fc_by_stage.pdf}
+\caption{Group-mean Fisher-$z$ functional connectivity ($246\times246$) for each of the
+six stages, with the number of subjects per stage in each panel title. Regions are in
+Brainnetome atlas order, grouped by lobe (frontal 1--68, temporal 69--124, parietal 125--162,
+insular 163--174, limbic 175--188, occipital 189--210, subcortical 211--246). Acquisitions
+were averaged within subject before averaging across subjects. One colour bar applies to all
+panels. Descriptive and exploratory only.}
+\label{fig:groupfc}
+\end{figure}
+
 Figure~\ref{fig:redundancy} places the DC$_z$ and FC\_Strength heatmaps side by
 side, which turns the redundancy of Section~\ref{sec:redundancy} into a visual proof.
 
@@ -1486,9 +1502,6 @@ within the ADNI contributed to the design and implementation of ADNI and/or prov
 but did not participate in analysis or writing of this report. A complete listing of ADNI
 investigators can be found at:
 \url{http://adni.loni.usc.edu/wp-content/uploads/how_to_apply/ADNI_Acknowledgement_List.pdf}
-
-\noindent\textcolor{red}{[Verify this wording against the current ADNI Data Use Agreement
-before submission.]}
 
 \begin{thebibliography}{99}
 \bibitem{adnimri} C. R. Jack Jr., M. A. Bernstein, N. C. Fox, et al., ``The
