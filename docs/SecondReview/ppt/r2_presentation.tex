@@ -7,8 +7,9 @@
 % exists, and none may be shown or implied.
 %
 % Structure: slides 2-12 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 13-28 are the Review II content;
-% backup slides follow "Thank You" and are not counted in the page numbers.
+% (reusing the Review I material); slides 13-26 are the Review II content;
+% backup slides follow "Thank You" and are not counted in the page numbers;
+% the last two are the Phase 2 (modelling) details, design only.
 % Figures made by figures/make_explainer_figs.py come from real project outputs.
 
 \documentclass[aspectratio=169,11pt]{beamer}
@@ -411,7 +412,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
     Need more clarity on the \textbf{Meta-Bayesian framework} &
     ``Meta'': biomarkers as tasks. ``Bayesian'': ordinal head with uncertainty.
     \alert{Design only.} &
-    Model slides (design); report \S4.5 \\[4pt]
+    Phase 2 slides (at the end); report \S4.5 \\[4pt]
     Need more clarity on the \textbf{comorbidity data} &
     Seven covariates with source and coverage. Cleaned table for 127 subjects; the LMCI group has APOE only. &
     Covariates slide; report \S4.5 \\
@@ -522,84 +523,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 18. The Meta-Bayesian model in plain words (design only)
-\begin{frame}{The Meta-Bayesian Model in Plain Words (Design)}
-  \centering
-  \begin{tikzpicture}[>=latex,
-      card/.style={draw=UniversityBlue,dashed,rounded corners,fill=LightBlue,text width=2.9cm,
-                   minimum height=2.45cm,align=center,font=\scriptsize,inner sep=4pt,anchor=north west},
-      ar/.style={->,thick,draw=AccentBlue}]
-    \node[card] (c1) at (0,0)    {{\small\bfseries 1. Four views}\\[3pt] ALFF, ReHo, DC and FC describe the same brain in four ways. Each is one ``task''.};
-    \node[card] (c2) at (3.78,0) {{\small\bfseries 2. Attention}\\[3pt] A transformer learns which regions matter and how they relate: globally, locally and within networks.};
-    \node[card] (c3) at (7.56,0) {{\small\bfseries 3. Meta-learning}\\[3pt] Finds the signature the four views share: a biomarker-invariant representation.};
-    \node[card] (c4) at (11.34,0) {{\small\bfseries 4. Bayesian ordinal output}\\[3pt] A probability for each of six ordered stages, plus how sure the model is.};
-    \foreach \a/\b in {c1/c2,c2/c3,c3/c4} \draw[ar] (\a.east |- 0,-1.25) -- (\b.west |- 0,-1.25);
-    \node[draw=orange!70!black,fill=yellow!20,rounded corners,font=\scriptsize,text width=6.7cm,
-          align=center,inner sep=4pt,anchor=north west] (cl) at (7.56,-2.85)
-      {\textbf{Clinical profile} (age, APOE $\varepsilon$4, MMSE, CDR-SB, GDS, medical history) is added before the final step};
-    \draw[ar] (cl.north) -- ++(0,0.35) -| ([xshift=-0.3cm]c4.south);
-  \end{tikzpicture}
-  \vspace{0.1cm}
-
-  \begin{itemize}
-    \item \textbf{Ordinal:} CN$\to$AD is a progression, so confusing neighbouring stages is a smaller error than confusing distant ones.
-    \item \textbf{Bayesian:} borderline subjects get a wide uncertainty instead of a falsely confident label.
-  \end{itemize}
-  \begin{alertblock}{}
-    \small \textbf{Design only.} Nothing is trained; no accuracy, calibration or attention result exists.
-  \end{alertblock}
-\end{frame}
-
-% 19. Core Algorithm - design only
-\begin{frame}{Core Algorithm B: Meta-Bayesian Pipeline (Design, Not Implemented)}
-  \centering
-  {\small \alert{Design only: nothing is trained and no result exists.}}\par
-  \resizebox{0.84\textwidth}{!}{%
-  \begin{tikzpicture}[font=\small,>=latex]
-    \tikzset{b/.style={rounded corners,thick,draw,align=center,minimum height=0.9cm,inner sep=4pt},
-             ar/.style={->,thick}}
-    \node[b,fill=blue!8] (t1) at (0,1.65) {Task 1: ALFF};
-    \node[b,fill=blue!8] (t2) at (0,0.55) {Task 2: ReHo};
-    \node[b,fill=blue!8] (t3) at (0,-0.55) {Task 3: DC};
-    \node[b,fill=blue!8] (t4) at (0,-1.65) {Task 4: FC};
-    \node[b,fill=gray!10,dashed,text width=3.6cm,minimum height=4.3cm] (enc) at (4.6,0) {Shared multi-attention\\encoder $f_\theta$\\{\footnotesize inner and outer loop}};
-    \node[b,fill=gray!10,dashed] (z) at (8.1,0) {$Z'$};
-    \node[b,fill=yellow!22] (c) at (8.1,-1.9) {clinical covariates $C$};
-    \node[b,fill=gray!10,dashed] (h) at (10.4,0) {$H=[Z'\,\|\,C]$};
-    \node[b,fill=gray!10,dashed,text width=3.3cm] (head) at (14.0,0) {Bayesian ordinal head\\{\footnotesize distribution over weights}};
-    \node[b,fill=gray!10,dashed,text width=3.0cm] (out) at (18.1,0) {stage $\hat y$, $p(y\mid X,C)$,\\uncertainty};
-    \foreach \t in {t1,t2,t3,t4} \draw[ar] (\t.east) -- (enc.west |- \t.east);
-    \draw[ar] (enc) -- (z); \draw[ar] (z) -- (h); \draw[ar] (c.east) -| (h.south);
-    \draw[ar] (h) -- (head); \draw[ar] (head) -- (out);
-  \end{tikzpicture}}
-  \vspace{-0.1cm}
-
-  \begin{columns}[T,onlytextwidth]
-    \column{0.49\textwidth}
-      \begin{block}{MAML update over biomarkers}
-        \scriptsize
-        \vspace{-4pt}
-        \begin{align*}
-          \theta'_b &= \theta-\alpha\,\nabla_\theta\mathcal{L}^{\mathrm{sup}}_b(\theta)\\
-          \theta &\leftarrow \theta-\beta\,\nabla_\theta\sum_{b}\mathcal{L}^{\mathrm{qry}}_b(\theta'_b)
-        \end{align*}
-        \vspace{-8pt}
-      \end{block}
-    \column{0.49\textwidth}
-      \begin{block}{Ordinal head (cumulative link)}
-        \scriptsize
-        \vspace{-4pt}
-        \begin{equation*}
-          P(y\le k\mid H,w)=\sigma\bigl(\tau_k-g_w(H)\bigr),\quad \tau_0<\dots<\tau_4
-        \end{equation*}
-        \vspace{-8pt}
-      \end{block}
-  \end{columns}
-  {\scriptsize Support and query sets are subject-disjoint, within training folds.
-  Uncertainty = predictive entropy over $S$ weight samples.}
-\end{frame}
-
-% 20. Implementation Status
+% 18. Implementation Status
 \begin{frame}{Implementation Status}
   \centering
   \resizebox{0.8\textwidth}{!}{%
@@ -633,7 +557,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
 \end{frame}
 
-% 21. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
+% 19. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
 \begin{frame}[fragile]{Pipeline Outputs}
   \begin{columns}[T,onlytextwidth]
     \column{0.58\textwidth}
@@ -667,7 +591,7 @@ derivatives/
   {\scriptsize Counts are per acquisition; the one pilot acquisition keeps its original extra files.}
 \end{frame}
 
-% 22. Results: data-stage only
+% 20. Results: data-stage only
 \begin{frame}{Results: Data Foundation Verification}
   \begin{alertblock}{}
     \small These are \textbf{data-stage} results. \textbf{No model performance exists.}
@@ -698,7 +622,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 23. How to read the heatmaps
+% 21. How to read the heatmaps
 \begin{frame}{How to Read the Stage Heatmaps}
   \begin{columns}[T,onlytextwidth]
     \column{0.42\textwidth}
@@ -732,7 +656,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 24. Results: finding 1
+% 22. Results: finding 1
 \begin{frame}{Finding 1: FC Strength Equals DC/245}
   \begin{columns}[T,onlytextwidth]
     \column{0.52\textwidth}
@@ -761,7 +685,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 25. Results: finding 2
+% 23. Results: finding 2
 \begin{frame}{Finding 2: No Univariate Progression Signal}
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -792,7 +716,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 26. Team Responsibilities
+% 24. Team Responsibilities
 \begin{frame}{Team Responsibilities}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
@@ -809,7 +733,7 @@ derivatives/
   {\footnotesize Feature extraction (Module 3) was completed by the team and is verified.}
 \end{frame}
 
-% 27. Next steps and closing
+% 25. Next steps and closing
 \begin{frame}{Next Steps}
   \begin{enumerate}
     \item Top up every stage to \textbf{30 processed scans}:
@@ -826,7 +750,7 @@ derivatives/
   {\footnotesize Neither the top-up nor the expansion has started; they help the 127-subject limit only through \emph{new subjects}.}
 \end{frame}
 
-% 28. References
+% 26. References
 \begin{frame}{References}
   \setbeamertemplate{bibliography item}[text]
   \fontsize{6}{7}\selectfont
@@ -855,7 +779,7 @@ derivatives/
   \end{multicols}
 \end{frame}
 
-% 29. Thank you
+% 27. Thank you
 \begin{frame}[plain]
   \centering
   \vfill
@@ -936,6 +860,84 @@ derivatives/
   \end{columns}
   \vspace{0.2cm}
   {\footnotesize Dataset: ADNI via LONI. Versions are those recorded in each acquisition's provenance file.}
+\end{frame}
+
+
+% B4. Phase 2 details: the Meta-Bayesian model in plain words (design only)
+\begin{frame}{The Meta-Bayesian Model in Plain Words (Design)}
+  \centering
+  \begin{tikzpicture}[>=latex,
+      card/.style={draw=UniversityBlue,dashed,rounded corners,fill=LightBlue,text width=2.9cm,
+                   minimum height=2.45cm,align=center,font=\scriptsize,inner sep=4pt,anchor=north west},
+      ar/.style={->,thick,draw=AccentBlue}]
+    \node[card] (c1) at (0,0)    {{\small\bfseries 1. Four views}\\[3pt] ALFF, ReHo, DC and FC describe the same brain in four ways. Each is one ``task''.};
+    \node[card] (c2) at (3.78,0) {{\small\bfseries 2. Attention}\\[3pt] A transformer learns which regions matter and how they relate: globally, locally and within networks.};
+    \node[card] (c3) at (7.56,0) {{\small\bfseries 3. Meta-learning}\\[3pt] Finds the signature the four views share: a biomarker-invariant representation.};
+    \node[card] (c4) at (11.34,0) {{\small\bfseries 4. Bayesian ordinal output}\\[3pt] A probability for each of six ordered stages, plus how sure the model is.};
+    \foreach \a/\b in {c1/c2,c2/c3,c3/c4} \draw[ar] (\a.east |- 0,-1.25) -- (\b.west |- 0,-1.25);
+    \node[draw=orange!70!black,fill=yellow!20,rounded corners,font=\scriptsize,text width=6.7cm,
+          align=center,inner sep=4pt,anchor=north west] (cl) at (7.56,-2.85)
+      {\textbf{Clinical profile} (age, APOE $\varepsilon$4, MMSE, CDR-SB, GDS, medical history) is added before the final step};
+    \draw[ar] (cl.north) -- ++(0,0.35) -| ([xshift=-0.3cm]c4.south);
+  \end{tikzpicture}
+  \vspace{0.1cm}
+
+  \begin{itemize}
+    \item \textbf{Ordinal:} CN$\to$AD is a progression, so confusing neighbouring stages is a smaller error than confusing distant ones.
+    \item \textbf{Bayesian:} borderline subjects get a wide uncertainty instead of a falsely confident label.
+  \end{itemize}
+  \begin{alertblock}{}
+    \small \textbf{Design only.} Nothing is trained; no accuracy, calibration or attention result exists.
+  \end{alertblock}
+\end{frame}
+
+% B5. Phase 2 details: Core Algorithm B (design only)
+\begin{frame}{Core Algorithm B: Meta-Bayesian Pipeline (Design, Not Implemented)}
+  \centering
+  {\small \alert{Design only: nothing is trained and no result exists.}}\par
+  \resizebox{0.84\textwidth}{!}{%
+  \begin{tikzpicture}[font=\small,>=latex]
+    \tikzset{b/.style={rounded corners,thick,draw,align=center,minimum height=0.9cm,inner sep=4pt},
+             ar/.style={->,thick}}
+    \node[b,fill=blue!8] (t1) at (0,1.65) {Task 1: ALFF};
+    \node[b,fill=blue!8] (t2) at (0,0.55) {Task 2: ReHo};
+    \node[b,fill=blue!8] (t3) at (0,-0.55) {Task 3: DC};
+    \node[b,fill=blue!8] (t4) at (0,-1.65) {Task 4: FC};
+    \node[b,fill=gray!10,dashed,text width=3.6cm,minimum height=4.3cm] (enc) at (4.6,0) {Shared multi-attention\\encoder $f_\theta$\\{\footnotesize inner and outer loop}};
+    \node[b,fill=gray!10,dashed] (z) at (8.1,0) {$Z'$};
+    \node[b,fill=yellow!22] (c) at (8.1,-1.9) {clinical covariates $C$};
+    \node[b,fill=gray!10,dashed] (h) at (10.4,0) {$H=[Z'\,\|\,C]$};
+    \node[b,fill=gray!10,dashed,text width=3.3cm] (head) at (14.0,0) {Bayesian ordinal head\\{\footnotesize distribution over weights}};
+    \node[b,fill=gray!10,dashed,text width=3.0cm] (out) at (18.1,0) {stage $\hat y$, $p(y\mid X,C)$,\\uncertainty};
+    \foreach \t in {t1,t2,t3,t4} \draw[ar] (\t.east) -- (enc.west |- \t.east);
+    \draw[ar] (enc) -- (z); \draw[ar] (z) -- (h); \draw[ar] (c.east) -| (h.south);
+    \draw[ar] (h) -- (head); \draw[ar] (head) -- (out);
+  \end{tikzpicture}}
+  \vspace{-0.1cm}
+
+  \begin{columns}[T,onlytextwidth]
+    \column{0.49\textwidth}
+      \begin{block}{MAML update over biomarkers}
+        \scriptsize
+        \vspace{-4pt}
+        \begin{align*}
+          \theta'_b &= \theta-\alpha\,\nabla_\theta\mathcal{L}^{\mathrm{sup}}_b(\theta)\\
+          \theta &\leftarrow \theta-\beta\,\nabla_\theta\sum_{b}\mathcal{L}^{\mathrm{qry}}_b(\theta'_b)
+        \end{align*}
+        \vspace{-8pt}
+      \end{block}
+    \column{0.49\textwidth}
+      \begin{block}{Ordinal head (cumulative link)}
+        \scriptsize
+        \vspace{-4pt}
+        \begin{equation*}
+          P(y\le k\mid H,w)=\sigma\bigl(\tau_k-g_w(H)\bigr),\quad \tau_0<\dots<\tau_4
+        \end{equation*}
+        \vspace{-8pt}
+      \end{block}
+  \end{columns}
+  {\scriptsize Support and query sets are subject-disjoint, within training folds.
+  Uncertainty = predictive entropy over $S$ weight samples.}
 \end{frame}
 
 \end{document}
