@@ -79,6 +79,6 @@ is over all 165 scans.
   dataset floor. Over all scans and regions the smallest variance is 4.6; still not zero.
 - "50.1 % of edges negative across the cohort" is correct; the figure itself shows one scan
   (50.0 %), so say "across all 165 scans" when you quote 50.1 %.
-- The "Why 246 regions?" (subject-identification) figure, Findings 3 and 4, and the two
-  extra Data Limitations bullets in `new_findings_slides.tex` are not in the deck. Their
-  numbers have not been re-checked here, and none of them says anything about disease.
+- Findings 3 and 4, "Why 246 Regions?" and "Residual Motion and Site Effects" are now in the
+  deck. Their numbers were re-checked and a few differ from `new_findings_slides.tex`: see
+  `speaker_notes_findings.md`.

@@ -7,11 +7,12 @@
 % exists, and none may be shown or implied.
 %
 % Structure: slides 2-12 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 13-23 are the Review II content;
+% (reusing the Review I material); slides 13-25 are the Review II content;
 % backup slides follow "Thank You" and are not counted in the page numbers:
-% glossary, data limitations, the 246-ROI verification pair, technology stack,
-% the Phase 2 (modelling) details (design only) and, last, the First Review
-% queries and answers.
+% glossary, data limitations, residual motion and site effects, the 246-ROI
+% verification pair and "why 246 regions", technology stack, the Phase 2
+% (modelling) details (design only) and, last, the First Review queries and
+% answers.
 % Every figure in figures/ is made by a make_*.py script in that folder from
 % real project outputs.
 
@@ -681,7 +682,37 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 22. Team Responsibilities
+% 22. Results: finding 3
+\begin{frame}{Finding 3: The Biomarkers Are Not Redundant}
+  \centering
+  \includegraphics[width=\textwidth]{figures/findings_complementarity.pdf}\\[2pt]
+  \footnotesize\raggedright
+  FC strength equals DC/245 exactly (Finding 1) and was removed. The three kept biomarkers share only
+  \textbf{6--11\,\%} of their variance across the 246 regions (\textbf{89--94\,\% non-redundant}, all 165 scans),
+  and mALFF and DC$_z$ are negatively related in every scan.\par
+  \vspace{0.15cm}
+  \begin{block}{}
+    \footnotesize Gap G1 uses each biomarker as a separate task. That only makes sense if they carry different
+    information, and they overlap little. Whether it improves staging is untested (Phase 2).
+  \end{block}
+\end{frame}
+
+% 23. Results: finding 4
+\begin{frame}{Finding 4: The Features Are Reproducible and Plausible}
+  \centering
+  \includegraphics[width=\textwidth]{figures/findings_reliability.pdf}\\[2pt]
+  \footnotesize\raggedright
+  \textbf{31 people} have repeat scans (69 scans; 45 of 46 pairs are from different sessions). For mALFF, a scan's
+  closest match is the same person's other scan in \textbf{63 of 69} cases (chance $\approx$\,3\,\%), and left--right
+  homologous regions are strongly connected in \textbf{164 of 165} scans (one EMCI scan lacks this and needs checking).\par
+  \vspace{0.15cm}
+  \begin{block}{}
+    \footnotesize Data checks, not a disease classifier: no stage label is used. A person's repeat scans usually share a
+    site and scanner, so part of the reproducibility may be scanner-related.
+  \end{block}
+\end{frame}
+
+% 24. Team Responsibilities
 \begin{frame}{Team Responsibilities}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
@@ -698,7 +729,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   {\footnotesize Feature extraction (Module 3) was completed by the team and is verified.}
 \end{frame}
 
-% 23. References
+% 25. References
 \begin{frame}{References}
   \setbeamertemplate{bibliography item}[text]
   \fontsize{6}{7}\selectfont
@@ -727,7 +758,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{multicols}
 \end{frame}
 
-% 24. Thank you
+% 26. Thank you
 \begin{frame}[plain]
   \centering
   \vfill
@@ -781,7 +812,54 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% B3. The 246-ROI extraction space is verified (for questions)
+% B3. Residual motion and site effects (for questions)
+\begin{frame}{Backup: Residual Motion and Site Effects}
+  \small
+  \begin{columns}[T,onlytextwidth]
+    \column{0.45\textwidth}
+      \textbf{Motion survives the 27 regressors}\\[3pt]
+      \footnotesize
+      \begin{tabular}{lr}
+        \toprule
+        \textbf{Feature} & \textbf{Regions linked to FD} \\
+        \midrule
+        mALFF & \alert{129} / 246 \\
+        mReHo & \alert{131} / 246 \\
+        DC$_z$ & 39 / 246 \\
+        expected by chance & $\approx$ 12 \\
+        \bottomrule
+      \end{tabular}\\[3pt]
+      {\scriptsize Pearson $r$ between a region's value and each scan's mean FD, $p<0.05$ uncorrected, 164 scans
+      (artefact scan excluded). Repeat scans of one person are not independent.}
+      \begin{itemize}
+        \item Mean FD will enter the model as a covariate. DC$_z$ is less affected, but still above chance.
+      \end{itemize}
+    \column{0.53\textwidth}
+      \textbf{Site is concentrated where it hurts}\\[3pt]
+      \footnotesize
+      \setlength{\tabcolsep}{4pt}
+      \begin{tabular}{lrrrr}
+        \toprule
+        & \textbf{Scans} & \textbf{Sites} & \textbf{Top site} & \textbf{Top two} \\
+        \midrule
+        CN & 27 & 11 & 19\,\% & 37\,\% \\
+        SMC & 31 & 10 & 19\,\% & 32\,\% \\
+        EMCI & 29 & 7 & 21\,\% & 41\,\% \\
+        MCI & 32 & 8 & 31\,\% & 47\,\% \\
+        LMCI & 21 & 7 & 29\,\% & 48\,\% \\
+        AD & 25 & 7 & \alert{40\,\%} & \alert{68\,\%} \\
+        \bottomrule
+      \end{tabular}\\[3pt]
+      {\scriptsize Share of a stage's scans from its largest and two largest sites (site = prefix of the ADNI
+      subject ID); 14 sites in all.}
+      \begin{itemize}
+        \item Any CN--AD contrast is partly a site contrast: harmonisation or a site covariate is needed
+              before Module 4.
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% B4. The 246-ROI extraction space is verified (for questions)
 \begin{frame}{Backup: The 246-ROI Extraction Space Is Verified}
   \centering
   \includegraphics[width=\textwidth]{figures/atlas_roi_qc_slide.pdf}\\[4pt]
@@ -792,7 +870,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   per ROI for display.}
 \end{frame}
 
-% B4. 246 regions as connectivity nodes (for questions)
+% B5. 246 regions as connectivity nodes (for questions)
 \begin{frame}{Backup: 246 Regions as Connectivity Nodes}
   \centering
   \includegraphics[width=\textwidth]{figures/atlas_fc_slide.pdf}\\[3pt]
@@ -803,7 +881,22 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   {\scriptsize Matrix and histogram: one representative CN scan.}
 \end{frame}
 
-% B5. Technology stack
+% B6. Why 246 regions? (for questions)
+\begin{frame}{Backup: Why 246 Regions?}
+  \centering
+  \includegraphics[width=\textwidth]{figures/findings_granularity.pdf}\\[2pt]
+  \footnotesize\raggedright
+  Closest-match identification (mALFF; 69 scans, 31 people; no stage label): merging consecutive atlas labels loses
+  information at every step, but returns flatten (a random 100 regions: 88.3\,\%; all 246: \textbf{91.3\,\%}).
+  Two regions share only about 4\,\% of their variance (165 scans).\par
+  \vspace{0.15cm}
+  \begin{block}{}
+    \footnotesize Finer regions keep information that coarser versions of the same data lose. It does not show that
+    246 is optimal for staging disease: only the trained model can test that.
+  \end{block}
+\end{frame}
+
+% B7. Technology stack
 \begin{frame}{Backup: Technology Stack}
   \small
   \begin{columns}[T,onlytextwidth]
@@ -833,7 +926,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 \end{frame}
 
 
-% B6. Phase 2 details: the Meta-Bayesian model in plain words (design only)
+% B8. Phase 2 details: the Meta-Bayesian model in plain words (design only)
 \begin{frame}{The Meta-Bayesian Model in Plain Words (Design)}
   \centering
   \begin{tikzpicture}[>=latex,
@@ -861,7 +954,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{alertblock}
 \end{frame}
 
-% B7. Phase 2 details: Core Algorithm B (design only)
+% B9. Phase 2 details: Core Algorithm B (design only)
 \begin{frame}{Core Algorithm B: Meta-Bayesian Pipeline (Design, Not Implemented)}
   \centering
   {\small \alert{Design only: nothing is trained and no result exists.}}\par
@@ -910,7 +1003,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Uncertainty = predictive entropy over $S$ weight samples.}
 \end{frame}
 
-% B8. First Review - Queries and Answers (last slide)
+% B10. First Review - Queries and Answers (last slide)
 \begin{frame}{First Review - Queries and Answers}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
