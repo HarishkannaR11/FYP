@@ -7,7 +7,7 @@
 % exists, and none may be shown or implied.
 %
 % Structure: slides 2-12 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 13-29 are the Review II content;
+% (reusing the Review I material); slides 13-28 are the Review II content;
 % backup slides follow "Thank You" and are not counted in the page numbers.
 % Figures made by figures/make_explainer_figs.py come from real project outputs.
 
@@ -398,29 +398,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 % PART B. REVIEW II CONTENT
 % =====================================================================
 
-% 13. Project Objectives
-\begin{frame}{Project Objectives}
-  \small
-  \begin{tabularx}{\textwidth}{>{\bfseries}p{0.5cm}X>{\centering\arraybackslash}p{2.3cm}}
-    \toprule
-    \# & \textbf{Review I objective} & \textbf{Status} \\
-    \midrule
-    1 & Identify functional biomarkers and comorbidity patterns & \partly \\
-    2 & Develop a comorbidity-aware feature representation & \partly \\
-    3 & Design a Meta-Bayesian learning framework & \notst \\
-    4 & Incorporate uncertainty estimation & \notst \\
-    5 & Validate on benchmark data: performance, statistics, clinical & \notst \\
-    \bottomrule
-  \end{tabularx}
-  \vspace{0.3cm}
-  \begin{itemize}
-    \item Objectives 1--2: the \textbf{data inputs} are ready: biomarkers for 127 subjects and a cleaned
-          clinical table (covariates for 107 of them).
-    \item Comorbidity pattern analysis and fusion belong to the model stage, not yet started.
-  \end{itemize}
-\end{frame}
-
-% 14. First Review - Queries and Answers
+% 13. First Review - Queries and Answers
 \begin{frame}{First Review - Queries and Answers}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
@@ -441,7 +419,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 15. System Modules
+% 14. System Modules
 \begin{frame}{System Modules}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm}>{\centering\arraybackslash}p{1.9cm}X}
@@ -458,7 +436,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 16. Methodology / Workflow
+% 15. Methodology / Workflow
 \begin{frame}{Methodology / Workflow}
   \centering
   \begin{tikzpicture}[>=latex,
@@ -493,7 +471,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \small Every step is checked per acquisition; a scan that fails a check is logged, never silently altered.
 \end{frame}
 
-% 17. Preprocessing explained
+% 16. Preprocessing explained
 \begin{frame}{Preprocessing: What Each Step Does and Why}
   \footnotesize
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}X}
@@ -511,7 +489,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 18. Core Algorithm - implemented
+% 17. Core Algorithm - implemented
 \begin{frame}{Core Algorithm A: Implemented Biomarkers and Normalisation}
   \begin{columns}[T,onlytextwidth]
     \column{0.47\textwidth}
@@ -544,7 +522,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 19. The Meta-Bayesian model in plain words (design only)
+% 18. The Meta-Bayesian model in plain words (design only)
 \begin{frame}{The Meta-Bayesian Model in Plain Words (Design)}
   \centering
   \begin{tikzpicture}[>=latex,
@@ -572,7 +550,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{alertblock}
 \end{frame}
 
-% 20. Core Algorithm - design only
+% 19. Core Algorithm - design only
 \begin{frame}{Core Algorithm B: Meta-Bayesian Pipeline (Design, Not Implemented)}
   \centering
   {\small \alert{Design only: nothing is trained and no result exists.}}\par
@@ -621,7 +599,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Uncertainty = predictive entropy over $S$ weight samples.}
 \end{frame}
 
-% 21. Implementation Status
+% 20. Implementation Status
 \begin{frame}{Implementation Status}
   \centering
   \resizebox{0.8\textwidth}{!}{%
@@ -655,7 +633,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
 \end{frame}
 
-% 22. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
+% 21. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
 \begin{frame}[fragile]{Pipeline Outputs}
   \begin{columns}[T,onlytextwidth]
     \column{0.58\textwidth}
@@ -689,7 +667,7 @@ derivatives/
   {\scriptsize Counts are per acquisition; the one pilot acquisition keeps its original extra files.}
 \end{frame}
 
-% 23. Results: data-stage only
+% 22. Results: data-stage only
 \begin{frame}{Results: Data Foundation Verification}
   \begin{alertblock}{}
     \small These are \textbf{data-stage} results. \textbf{No model performance exists.}
@@ -720,7 +698,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 24. How to read the heatmaps
+% 23. How to read the heatmaps
 \begin{frame}{How to Read the Stage Heatmaps}
   \begin{columns}[T,onlytextwidth]
     \column{0.42\textwidth}
@@ -754,7 +732,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 25. Results: finding 1
+% 24. Results: finding 1
 \begin{frame}{Finding 1: FC Strength Equals DC/245}
   \begin{columns}[T,onlytextwidth]
     \column{0.52\textwidth}
@@ -783,7 +761,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 26. Results: finding 2
+% 25. Results: finding 2
 \begin{frame}{Finding 2: No Univariate Progression Signal}
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -814,7 +792,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 27. Team Responsibilities
+% 26. Team Responsibilities
 \begin{frame}{Team Responsibilities}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
@@ -831,7 +809,7 @@ derivatives/
   {\footnotesize Feature extraction (Module 3) was completed by the team and is verified.}
 \end{frame}
 
-% 28. Next steps and closing
+% 27. Next steps and closing
 \begin{frame}{Next Steps}
   \begin{enumerate}
     \item Top up every stage to \textbf{30 processed scans}:
@@ -848,7 +826,7 @@ derivatives/
   {\footnotesize Neither the top-up nor the expansion has started; they help the 127-subject limit only through \emph{new subjects}.}
 \end{frame}
 
-% 29. References
+% 28. References
 \begin{frame}{References}
   \setbeamertemplate{bibliography item}[text]
   \fontsize{6}{7}\selectfont
@@ -877,7 +855,7 @@ derivatives/
   \end{multicols}
 \end{frame}
 
-% 30. Thank you
+% 29. Thank you
 \begin{frame}[plain]
   \centering
   \vfill
