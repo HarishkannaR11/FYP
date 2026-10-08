@@ -6,12 +6,14 @@
 % No accuracy, AUC, ROC, confusion matrix, calibration or attention result
 % exists, and none may be shown or implied.
 %
-% Structure: slides 2-11 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 12-22 are the Review II content;
+% Structure: slides 2-12 explain the project for a reader who has not seen it
+% (reusing the Review I material); slides 13-23 are the Review II content;
 % backup slides follow "Thank You" and are not counted in the page numbers:
-% glossary, data limitations, technology stack, the Phase 2 (modelling) details
-% (design only) and, last, the First Review queries and answers.
-% Figures made by figures/make_explainer_figs.py come from real project outputs.
+% glossary, data limitations, the 246-ROI verification pair, technology stack,
+% the Phase 2 (modelling) details (design only) and, last, the First Review
+% queries and answers.
+% Every figure in figures/ is made by a make_*.py script in that folder from
+% real project outputs.
 
 \documentclass[aspectratio=169,11pt]{beamer}
 
@@ -351,7 +353,48 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 11. What is new
+% 11. Brainnetome-246 parcellation as the feature-extraction space (compact and visual)
+\begin{frame}{Brainnetome 246-ROI Parcellation for Feature Extraction}
+  \centering
+  {\small\itshape\color{UniversityBlue} Fine-grained, whole-brain representation for systematic regional
+   and inter-regional feature extraction\par}
+  \vspace{0.05cm}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.30\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{figures/atlas_axial_panel.png}\\[1pt]
+      {\scriptsize Axial slices, $z=-16$ to $+56$\,mm.\\ Each colour is one ROI.}
+    \column{0.69\textwidth}
+      \footnotesize\raggedright
+      \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Fine-grained whole-brain coverage.} 246 anatomically defined ROIs covering
+              cortical and subcortical regions.
+        \item \textbf{Complete extraction space.} 246/246 ROIs present across all 165 acquisitions;
+              no empty or zero-variance ROIs.
+        \item \textbf{Systematic feature extraction.} Each ROI provides regional biomarkers
+              (ALFF, ReHo, DC) and participates in the $246\times246$ FC matrix.
+        \item \textbf{No premature feature selection.} All ROIs are retained to preserve spatial
+              information; predictive importance will be learned by the downstream model.
+      \end{itemize}
+  \end{columns}
+  \vspace{0.12cm}
+  \begin{tikzpicture}[kpi/.style={rounded corners=3pt,fill=UniversityBlue,text=white,align=center,
+        text width=3.3cm,minimum width=3.45cm,minimum height=0.9cm,inner sep=2pt}]
+    \node[kpi] at (1.725,0)  {{\Large\bfseries 246}\\[-3pt]{\scriptsize ROIs}};
+    \node[kpi] at (5.375,0)  {{\Large\bfseries 165}\\[-3pt]{\scriptsize acquisitions}};
+    \node[kpi] at (9.025,0)  {{\Large\bfseries 135 $\times$ 246}\\[-3pt]{\scriptsize ROI time series per scan}};
+    \node[kpi] at (12.675,0) {{\Large\bfseries 246 $\times$ 246}\\[-3pt]{\scriptsize FC matrix per scan}};
+  \end{tikzpicture}\\[0.06cm]
+  \begin{tikzpicture}
+    \node[draw=AccentBlue,fill=LightBlue,rounded corners=3pt,line width=0.8pt,text width=14.2cm,
+          inner sep=3pt,align=left,font=\footnotesize]
+      {The 246 ROIs are not assumed to be equally disease-relevant; they define a complete,
+       reproducible feature-extraction space from which the model will learn predictive regional
+       and connectivity patterns.};
+  \end{tikzpicture}
+\end{frame}
+
+% 12. What is new
 \begin{frame}{What Is New in Our Approach}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries}p{0.8cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}X}
@@ -376,7 +419,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 % PART B. REVIEW II CONTENT
 % =====================================================================
 
-% 12. System Modules
+% 13. System Modules
 \begin{frame}{System Modules}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm}>{\centering\arraybackslash}p{1.9cm}X}
@@ -393,7 +436,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 13. Methodology / Workflow
+% 14. Methodology / Workflow
 \begin{frame}{Methodology / Workflow}
   \centering
   \begin{tikzpicture}[>=latex,
@@ -428,7 +471,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \small Every step is checked per acquisition; a scan that fails a check is logged, never silently altered.
 \end{frame}
 
-% 14. Preprocessing explained
+% 15. Preprocessing explained
 \begin{frame}{Preprocessing: What Each Step Does and Why}
   \footnotesize
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}X}
@@ -446,7 +489,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 15. Core Algorithm - implemented
+% 16. Core Algorithm - implemented
 \begin{frame}{Core Algorithm A: Implemented Biomarkers and Normalisation}
   \begin{columns}[T,onlytextwidth]
     \column{0.47\textwidth}
@@ -479,7 +522,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 16. Implementation Status
+% 17. Implementation Status
 \begin{frame}{Implementation Status}
   \centering
   \resizebox{0.8\textwidth}{!}{%
@@ -513,7 +556,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
 \end{frame}
 
-% 17. Results: data-stage only
+% 18. Results: data-stage only
 \begin{frame}{Results: Data Foundation Verification}
   \begin{alertblock}{}
     \small These are \textbf{data-stage} results. \textbf{No model performance exists.}
@@ -544,7 +587,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 18. How to read the heatmaps
+% 19. How to read the heatmaps
 \begin{frame}{How to Read the Stage Heatmaps}
   \begin{columns}[T,onlytextwidth]
     \column{0.42\textwidth}
@@ -578,7 +621,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 19. Results: finding 1
+% 20. Results: finding 1
 \begin{frame}{Finding 1: FC Strength Equals DC/245}
   \begin{columns}[T,onlytextwidth]
     \column{0.52\textwidth}
@@ -607,7 +650,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 20. Results: finding 2
+% 21. Results: finding 2
 \begin{frame}{Finding 2: No Univariate Progression Signal}
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -638,7 +681,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 21. Team Responsibilities
+% 22. Team Responsibilities
 \begin{frame}{Team Responsibilities}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
@@ -655,7 +698,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   {\footnotesize Feature extraction (Module 3) was completed by the team and is verified.}
 \end{frame}
 
-% 22. References
+% 23. References
 \begin{frame}{References}
   \setbeamertemplate{bibliography item}[text]
   \fontsize{6}{7}\selectfont
@@ -684,7 +727,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{multicols}
 \end{frame}
 
-% 23. Thank you
+% 24. Thank you
 \begin{frame}[plain]
   \centering
   \vfill
@@ -738,7 +781,29 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% B3. Technology stack
+% B3. The 246-ROI extraction space is verified (for questions)
+\begin{frame}{Backup: The 246-ROI Extraction Space Is Verified}
+  \centering
+  \includegraphics[width=\textwidth]{figures/atlas_roi_qc_slide.pdf}\\[4pt]
+  \footnotesize\raggedright
+  \textbf{246/246 ROIs are present in all 165 acquisitions:} no empty ROI (the smallest has 10 voxels),
+  no zero-variance time series, no NaN or Inf. Every scan gives the same $135\times246$ matrix.\\[2pt]
+  {\scriptsize (a): the atlas on the 4\,mm grid. (b), (c): one representative CN scan; (c) is z-scored
+  per ROI for display.}
+\end{frame}
+
+% B4. 246 regions as connectivity nodes (for questions)
+\begin{frame}{Backup: 246 Regions as Connectivity Nodes}
+  \centering
+  \includegraphics[width=\textwidth]{figures/atlas_fc_slide.pdf}\\[3pt]
+  \footnotesize\raggedright
+  \textbf{Signed and unthresholded:} all 30{,}135 unique edges are kept for each of the 165 acquisitions.
+  About half are negative (50.1\,\% over the 165 scans; per-scan range 45.6--53.1\,\%), as expected after
+  global signal regression, which is part of the 27-regressor design and centres the values near zero.\\[1pt]
+  {\scriptsize Matrix and histogram: one representative CN scan.}
+\end{frame}
+
+% B5. Technology stack
 \begin{frame}{Backup: Technology Stack}
   \small
   \begin{columns}[T,onlytextwidth]
@@ -768,7 +833,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 \end{frame}
 
 
-% B4. Phase 2 details: the Meta-Bayesian model in plain words (design only)
+% B6. Phase 2 details: the Meta-Bayesian model in plain words (design only)
 \begin{frame}{The Meta-Bayesian Model in Plain Words (Design)}
   \centering
   \begin{tikzpicture}[>=latex,
@@ -796,7 +861,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{alertblock}
 \end{frame}
 
-% B5. Phase 2 details: Core Algorithm B (design only)
+% B7. Phase 2 details: Core Algorithm B (design only)
 \begin{frame}{Core Algorithm B: Meta-Bayesian Pipeline (Design, Not Implemented)}
   \centering
   {\small \alert{Design only: nothing is trained and no result exists.}}\par
@@ -845,7 +910,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Uncertainty = predictive entropy over $S$ weight samples.}
 \end{frame}
 
-% B6. First Review - Queries and Answers (last slide)
+% B8. First Review - Queries and Answers (last slide)
 \begin{frame}{First Review - Queries and Answers}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
