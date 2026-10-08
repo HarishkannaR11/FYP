@@ -5,10 +5,10 @@ About 1.5 minutes. Say it slowly; point at each picture as you go.
 
 ## Slide 3 - the stages and the data per stage (15 s)
 
-"These are the six stages, from cognitively normal to Alzheimer's disease. Under each
-stage you can see how many people we have. Each stage has about 30 scans - between 21
-and 32 - and 165 scans in total from 127 people, because some people were scanned more
-than once. The exact count per stage is in the dataset table on slide 7."
+"These are the six stages, from cognitively normal to Alzheimer's disease. Each stage
+has about 30 scans - between 21 and 32 - and 165 scans in total from 127 people, because
+some people were scanned more than once. The exact count per stage is in the dataset
+table on slide 7."
 
 ## Slide 8 - the four biomarkers (60-75 s)
 
