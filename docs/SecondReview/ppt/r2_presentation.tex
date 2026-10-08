@@ -145,20 +145,20 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 3. The six stages (subjects and scans per stage)
+% 3. The six stages (subjects per box; scan range stated in the text)
 \begin{frame}{The Six Stages of Progression}
   \centering
   \begin{tikzpicture}[>=latex,
-      stg/.style={draw=UniversityBlue,rounded corners,text width=2.0cm,minimum height=3.6cm,
+      stg/.style={draw=UniversityBlue,rounded corners,text width=2.0cm,minimum height=3.3cm,
                   align=center,font=\scriptsize,inner sep=3pt,anchor=north west}]
-    \node[stg,fill=UniversityBlue!5]  at (0,0)    {{\normalsize\bfseries CN}\\ Cognitively Normal\\[3pt] \emph{normal memory and thinking tests}\\[4pt] \textbf{26} subjects\\ \textbf{27} scans};
-    \node[stg,fill=UniversityBlue!11] at (2.48,0) {{\normalsize\bfseries SMC}\\ Subjective Memory Concern\\[3pt] \emph{memory worries reported, tests normal}\\[4pt] \textbf{21} subjects\\ \textbf{31} scans};
-    \node[stg,fill=UniversityBlue!18] at (4.96,0) {{\normalsize\bfseries EMCI}\\ Early Mild Cognitive Impairment\\[3pt] \emph{mild, early memory impairment}\\[4pt] \textbf{26} subjects\\ \textbf{29} scans};
-    \node[stg,fill=UniversityBlue!26] at (7.44,0) {{\normalsize\bfseries MCI}\\ Mild Cognitive Impairment\\[3pt] \emph{noticeable impairment, daily life largely intact}\\[4pt] \textbf{14} subjects\\ \textbf{32} scans};
-    \node[stg,fill=UniversityBlue!34] at (9.92,0) {{\normalsize\bfseries LMCI}\\ Late Mild Cognitive Impairment\\[3pt] \emph{more marked memory impairment}\\[4pt] \textbf{20} subjects\\ \textbf{21} scans};
-    \node[stg,fill=UniversityBlue!43] at (12.4,0) {{\normalsize\bfseries AD}\\ Alzheimer's Disease (dementia)\\[3pt] \emph{impairment that disrupts daily life}\\[4pt] \textbf{20} subjects\\ \textbf{25} scans};
-    \draw[->,very thick,draw=AccentBlue] (0,-3.9) -- (11.4,-3.9);
-    \node[anchor=west,font=\scriptsize] at (11.55,-3.9) {increasing impairment};
+    \node[stg,fill=UniversityBlue!5]  at (0,0)    {{\normalsize\bfseries CN}\\ Cognitively Normal\\[3pt] \emph{normal memory and thinking tests}\\[4pt] \textbf{26} subjects};
+    \node[stg,fill=UniversityBlue!11] at (2.48,0) {{\normalsize\bfseries SMC}\\ Subjective Memory Concern\\[3pt] \emph{memory worries reported, tests normal}\\[4pt] \textbf{21} subjects};
+    \node[stg,fill=UniversityBlue!18] at (4.96,0) {{\normalsize\bfseries EMCI}\\ Early Mild Cognitive Impairment\\[3pt] \emph{mild, early memory impairment}\\[4pt] \textbf{26} subjects};
+    \node[stg,fill=UniversityBlue!26] at (7.44,0) {{\normalsize\bfseries MCI}\\ Mild Cognitive Impairment\\[3pt] \emph{noticeable impairment, daily life largely intact}\\[4pt] \textbf{14} subjects};
+    \node[stg,fill=UniversityBlue!34] at (9.92,0) {{\normalsize\bfseries LMCI}\\ Late Mild Cognitive Impairment\\[3pt] \emph{more marked memory impairment}\\[4pt] \textbf{20} subjects};
+    \node[stg,fill=UniversityBlue!43] at (12.4,0) {{\normalsize\bfseries AD}\\ Alzheimer's Disease (dementia)\\[3pt] \emph{impairment that disrupts daily life}\\[4pt] \textbf{20} subjects};
+    \draw[->,very thick,draw=AccentBlue] (0,-3.6) -- (11.4,-3.6);
+    \node[anchor=west,font=\scriptsize] at (11.55,-3.6) {increasing impairment};
   \end{tikzpicture}
   \vspace{0.05cm}
 
