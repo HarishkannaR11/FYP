@@ -1,0 +1,117 @@
+subject_id,source_file,key,variable,conflicting_values,n_source_rows,possible_resolution
+sub-006S4153,AD_9_01_2026,"('006_S_4153',)",Image Data ID,I390346 | I335306,2,NOT RESOLVED - requires manual review
+sub-006S4153,AD_9_01_2026,"('006_S_4153',)",Age,82 | 81,2,NOT RESOLVED - requires manual review
+sub-006S4153,AD_9_01_2026,"('006_S_4153',)",Visit,v21 | v11,2,NOT RESOLVED - requires manual review
+sub-006S4153,AD_9_01_2026,"('006_S_4153',)",Acq Date,9/16/2013 | 9/18/2012,2,NOT RESOLVED - requires manual review
+sub-019S4252,AD_9_01_2026,"('019_S_4252',)",Image Data ID,I300352 | I341972,2,NOT RESOLVED - requires manual review
+sub-019S4252,AD_9_01_2026,"('019_S_4252',)",Age,87 | 88,2,NOT RESOLVED - requires manual review
+sub-019S4252,AD_9_01_2026,"('019_S_4252',)",Visit,v05 | v11,2,NOT RESOLVED - requires manual review
+sub-019S4252,AD_9_01_2026,"('019_S_4252',)",Acq Date,4/24/2012 | 10/23/2012,2,NOT RESOLVED - requires manual review
+sub-019S5012,AD_9_01_2026,"('019_S_5012',)",Image Data ID,I372599 | I400431,2,NOT RESOLVED - requires manual review
+sub-019S5012,AD_9_01_2026,"('019_S_5012',)",Visit,v05 | v11,2,NOT RESOLVED - requires manual review
+sub-019S5012,AD_9_01_2026,"('019_S_5012',)",Acq Date,5/15/2013 | 12/05/2013,2,NOT RESOLVED - requires manual review
+sub-130S4641,AD_9_01_2026,"('130_S_4641',)",Image Data ID,I367094 | I342048,2,NOT RESOLVED - requires manual review
+sub-130S4641,AD_9_01_2026,"('130_S_4641',)",Age,75 | 74,2,NOT RESOLVED - requires manual review
+sub-130S4641,AD_9_01_2026,"('130_S_4641',)",Visit,v11 | v05,2,NOT RESOLVED - requires manual review
+sub-130S4641,AD_9_01_2026,"('130_S_4641',)",Acq Date,4/12/2013 | 10/10/2012,2,NOT RESOLVED - requires manual review
+sub-130S4984,AD_9_01_2026,"('130_S_4984',)",Image Data ID,I392395 | I364935,2,NOT RESOLVED - requires manual review
+sub-130S4984,AD_9_01_2026,"('130_S_4984',)",Visit,v11 | v05,2,NOT RESOLVED - requires manual review
+sub-130S4984,AD_9_01_2026,"('130_S_4984',)",Acq Date,9/27/2013 | 3/28/2013,2,NOT RESOLVED - requires manual review
+sub-010S4442,CN_Final_9_01_2026,"('010_S_4442',)",Image Data ID,I373523 | I350450,2,NOT RESOLVED - requires manual review
+sub-010S4442,CN_Final_9_01_2026,"('010_S_4442',)",Age,76 | 75,2,NOT RESOLVED - requires manual review
+sub-010S4442,CN_Final_9_01_2026,"('010_S_4442',)",Visit,v11 | v05,2,NOT RESOLVED - requires manual review
+sub-010S4442,CN_Final_9_01_2026,"('010_S_4442',)",Acq Date,5/10/2013 | 12/03/2012,2,NOT RESOLVED - requires manual review
+sub-012S4128,EMCI_9_01_2026,"('012_S_4128',)",Image Data ID,I385092 | I290438,2,NOT RESOLVED - requires manual review
+sub-012S4128,EMCI_9_01_2026,"('012_S_4128',)",Age,75 | 74,2,NOT RESOLVED - requires manual review
+sub-012S4128,EMCI_9_01_2026,"('012_S_4128',)",Visit,v21 | v05,2,NOT RESOLVED - requires manual review
+sub-012S4128,EMCI_9_01_2026,"('012_S_4128',)",Acq Date,8/05/2013 | 3/06/2012,2,NOT RESOLVED - requires manual review
+sub-031S2018,EMCI_9_01_2026,"('031_S_2018',)",Image Data ID,I215435 | I242177,2,NOT RESOLVED - requires manual review
+sub-031S2018,EMCI_9_01_2026,"('031_S_2018',)",Age,77 | 78,2,NOT RESOLVED - requires manual review
+sub-031S2018,EMCI_9_01_2026,"('031_S_2018',)",Visit,m06 | v06,2,NOT RESOLVED - requires manual review
+sub-031S2018,EMCI_9_01_2026,"('031_S_2018',)",Acq Date,1/31/2011 | 6/27/2011,2,NOT RESOLVED - requires manual review
+sub-031S2233,EMCI_9_01_2026,"('031_S_2233',)",Image Data ID,I275532 | I240043,2,NOT RESOLVED - requires manual review
+sub-031S2233,EMCI_9_01_2026,"('031_S_2233',)",Age,57 | 56,2,NOT RESOLVED - requires manual review
+sub-031S2233,EMCI_9_01_2026,"('031_S_2233',)",Visit,v06 | m06,2,NOT RESOLVED - requires manual review
+sub-031S2233,EMCI_9_01_2026,"('031_S_2233',)",Acq Date,1/05/2012 | 6/13/2011,2,NOT RESOLVED - requires manual review
+sub-002S0729,MCI_9_01_2026,"('002_S_0729',)",Image Data ID,I385942 | I322050 | I251176,3,NOT RESOLVED - requires manual review
+sub-002S0729,MCI_9_01_2026,"('002_S_0729',)",Age,72 | 71 | 70,3,NOT RESOLVED - requires manual review
+sub-002S0729,MCI_9_01_2026,"('002_S_0729',)",Visit,v21 | v11 | v06,3,NOT RESOLVED - requires manual review
+sub-002S0729,MCI_9_01_2026,"('002_S_0729',)",Acq Date,8/16/2013 | 8/07/2012 | 8/16/2011,3,NOT RESOLVED - requires manual review
+sub-002S1155,MCI_9_01_2026,"('002_S_1155',)",Image Data ID,I352947 | I274147 | I404373,3,NOT RESOLVED - requires manual review
+sub-002S1155,MCI_9_01_2026,"('002_S_1155',)",Age,64 | 63 | 65,3,NOT RESOLVED - requires manual review
+sub-002S1155,MCI_9_01_2026,"('002_S_1155',)",Visit,v11 | v06 | v21,3,NOT RESOLVED - requires manual review
+sub-002S1155,MCI_9_01_2026,"('002_S_1155',)",Acq Date,12/20/2012 | 12/22/2011 | 1/09/2014,3,NOT RESOLVED - requires manual review
+sub-002S1268,MCI_9_01_2026,"('002_S_1268',)",Image Data ID,I227595 | I292427,2,NOT RESOLVED - requires manual review
+sub-002S1268,MCI_9_01_2026,"('002_S_1268',)",Age,87 | 88,2,NOT RESOLVED - requires manual review
+sub-002S1268,MCI_9_01_2026,"('002_S_1268',)",Visit,m48 | v06,2,NOT RESOLVED - requires manual review
+sub-002S1268,MCI_9_01_2026,"('002_S_1268',)",Acq Date,4/13/2011 | 3/22/2012,2,NOT RESOLVED - requires manual review
+sub-002S4229,MCI_9_01_2026,"('002_S_4229',)",Image Data ID,I335317 | I394820 | I296652,3,NOT RESOLVED - requires manual review
+sub-002S4229,MCI_9_01_2026,"('002_S_4229',)",Age,67 | 69,3,NOT RESOLVED - requires manual review
+sub-002S4229,MCI_9_01_2026,"('002_S_4229',)",Visit,v11 | v21 | v05,3,NOT RESOLVED - requires manual review
+sub-002S4229,MCI_9_01_2026,"('002_S_4229',)",Acq Date,9/18/2012 | 10/16/2013 | 4/10/2012,3,NOT RESOLVED - requires manual review
+sub-002S4799,MCI_9_01_2026,"('002_S_4799',)",Image Data ID,I354814 | I379008,2,NOT RESOLVED - requires manual review
+sub-002S4799,MCI_9_01_2026,"('002_S_4799',)",Visit,v05 | v11,2,NOT RESOLVED - requires manual review
+sub-002S4799,MCI_9_01_2026,"('002_S_4799',)",Acq Date,1/10/2013 | 7/02/2013,2,NOT RESOLVED - requires manual review
+sub-006S4713,MCI_9_01_2026,"('006_S_4713',)",Image Data ID,I348396 | I348393 | I376286,3,NOT RESOLVED - requires manual review
+sub-006S4713,MCI_9_01_2026,"('006_S_4713',)",Age,71 | 72,3,NOT RESOLVED - requires manual review
+sub-006S4713,MCI_9_01_2026,"('006_S_4713',)",Visit,v05 | v11,3,NOT RESOLVED - requires manual review
+sub-006S4713,MCI_9_01_2026,"('006_S_4713',)",Acq Date,11/28/2012 | 6/12/2013,3,NOT RESOLVED - requires manual review
+sub-013S1186,MCI_9_01_2026,"('013_S_1186',)",Image Data ID,I363411 | I220070 | I287005,3,NOT RESOLVED - requires manual review
+sub-013S1186,MCI_9_01_2026,"('013_S_1186',)",Age,89 | 87 | 88,3,NOT RESOLVED - requires manual review
+sub-013S1186,MCI_9_01_2026,"('013_S_1186',)",Visit,v11 | m48 | v06,3,NOT RESOLVED - requires manual review
+sub-013S1186,MCI_9_01_2026,"('013_S_1186',)",Acq Date,1/29/2013 | 2/23/2011 | 2/16/2012,3,NOT RESOLVED - requires manual review
+sub-013S2389,MCI_9_01_2026,"('013_S_2389',)",Image Data ID,I286425 | I339828,2,NOT RESOLVED - requires manual review
+sub-013S2389,MCI_9_01_2026,"('013_S_2389',)",Visit,m06 | v06,2,NOT RESOLVED - requires manual review
+sub-013S2389,MCI_9_01_2026,"('013_S_2389',)",Acq Date,2/15/2012 | 10/10/2012,2,NOT RESOLVED - requires manual review
+sub-018S2180,MCI_9_01_2026,"('018_S_2180',)",Image Data ID,I281032 | I353098 | I404042 | I247852,4,NOT RESOLVED - requires manual review
+sub-018S2180,MCI_9_01_2026,"('018_S_2180',)",Age,79 | 80 | 81 | 78,4,NOT RESOLVED - requires manual review
+sub-018S2180,MCI_9_01_2026,"('018_S_2180',)",Visit,v06 | v11 | v21 | m06,4,NOT RESOLVED - requires manual review
+sub-018S2180,MCI_9_01_2026,"('018_S_2180',)",Acq Date,1/27/2012 | 1/02/2013 | 1/07/2014 | 7/26/2011,4,NOT RESOLVED - requires manual review
+sub-053S0919,MCI_9_01_2026,"('053_S_0919',)",Image Data ID,I354654 | I400360,2,NOT RESOLVED - requires manual review
+sub-053S0919,MCI_9_01_2026,"('053_S_0919',)",Age,69 | 70,2,NOT RESOLVED - requires manual review
+sub-053S0919,MCI_9_01_2026,"('053_S_0919',)",Visit,v06 | v11,2,NOT RESOLVED - requires manual review
+sub-053S0919,MCI_9_01_2026,"('053_S_0919',)",Acq Date,1/04/2013 | 12/05/2013,2,NOT RESOLVED - requires manual review
+sub-053S4813,MCI_9_01_2026,"('053_S_4813',)",Image Data ID,I383934 | I354697,2,NOT RESOLVED - requires manual review
+sub-053S4813,MCI_9_01_2026,"('053_S_4813',)",Age,69 | 68,2,NOT RESOLVED - requires manual review
+sub-053S4813,MCI_9_01_2026,"('053_S_4813',)",Visit,v11 | v05,2,NOT RESOLVED - requires manual review
+sub-053S4813,MCI_9_01_2026,"('053_S_4813',)",Acq Date,7/31/2013 | 1/10/2013,2,NOT RESOLVED - requires manual review
+sub-100S4556,MCI_9_01_2026,"('100_S_4556',)",Image Data ID,I375664 | I347906,2,NOT RESOLVED - requires manual review
+sub-100S4556,MCI_9_01_2026,"('100_S_4556',)",Visit,v11 | v05,2,NOT RESOLVED - requires manual review
+sub-100S4556,MCI_9_01_2026,"('100_S_4556',)",Acq Date,6/06/2013 | 11/26/2012,2,NOT RESOLVED - requires manual review
+sub-130S4294,MCI_9_01_2026,"('130_S_4294',)",Image Data ID,I348045 | I304596 | I398599,3,NOT RESOLVED - requires manual review
+sub-130S4294,MCI_9_01_2026,"('130_S_4294',)",Age,76 | 77,3,NOT RESOLVED - requires manual review
+sub-130S4294,MCI_9_01_2026,"('130_S_4294',)",Visit,v11 | v05 | v21,3,NOT RESOLVED - requires manual review
+sub-130S4294,MCI_9_01_2026,"('130_S_4294',)",Acq Date,11/27/2012 | 5/15/2012 | 11/15/2013,3,NOT RESOLVED - requires manual review
+sub-002S5230,SMC_Final_9_01_2026,"('002_S_5230',)",Image Data ID,I378490 | I391667 | I407829,3,NOT RESOLVED - requires manual review
+sub-002S5230,SMC_Final_9_01_2026,"('002_S_5230',)",Visit,v02 | v04 | v05,3,NOT RESOLVED - requires manual review
+sub-002S5230,SMC_Final_9_01_2026,"('002_S_5230',)",Acq Date,6/27/2013 | 9/23/2013 | 1/24/2014,3,NOT RESOLVED - requires manual review
+sub-002S5256,SMC_Final_9_01_2026,"('002_S_5256',)",Image Data ID,I380899 | I414939,2,NOT RESOLVED - requires manual review
+sub-002S5256,SMC_Final_9_01_2026,"('002_S_5256',)",Visit,v02 | v05,2,NOT RESOLVED - requires manual review
+sub-002S5256,SMC_Final_9_01_2026,"('002_S_5256',)",Acq Date,7/15/2013 | 2/19/2014,2,NOT RESOLVED - requires manual review
+sub-006S5153,SMC_Final_9_01_2026,"('006_S_5153',)",Image Data ID,I368159 | I384312,2,NOT RESOLVED - requires manual review
+sub-006S5153,SMC_Final_9_01_2026,"('006_S_5153',)",Visit,v02 | v04,2,NOT RESOLVED - requires manual review
+sub-006S5153,SMC_Final_9_01_2026,"('006_S_5153',)",Acq Date,4/22/2013 | 8/02/2013,2,NOT RESOLVED - requires manual review
+sub-012S5121,SMC_Final_9_01_2026,"('012_S_5121',)",Image Data ID,I363549 | I379263,2,NOT RESOLVED - requires manual review
+sub-012S5121,SMC_Final_9_01_2026,"('012_S_5121',)",Visit,v02 | v04,2,NOT RESOLVED - requires manual review
+sub-012S5121,SMC_Final_9_01_2026,"('012_S_5121',)",Acq Date,3/15/2013 | 6/28/2013,2,NOT RESOLVED - requires manual review
+sub-012S5157,SMC_Final_9_01_2026,"('012_S_5157',)",Image Data ID,I372896 | I391370,2,NOT RESOLVED - requires manual review
+sub-012S5157,SMC_Final_9_01_2026,"('012_S_5157',)",Visit,v02 | v04,2,NOT RESOLVED - requires manual review
+sub-012S5157,SMC_Final_9_01_2026,"('012_S_5157',)",Acq Date,5/16/2013 | 9/19/2013,2,NOT RESOLVED - requires manual review
+sub-013S5137,SMC_Final_9_01_2026,"('013_S_5137',)",Image Data ID,I382589 | I368206,2,NOT RESOLVED - requires manual review
+sub-013S5137,SMC_Final_9_01_2026,"('013_S_5137',)",Visit,v04 | v02,2,NOT RESOLVED - requires manual review
+sub-013S5137,SMC_Final_9_01_2026,"('013_S_5137',)",Acq Date,7/24/2013 | 4/19/2013,2,NOT RESOLVED - requires manual review
+sub-019S5242,SMC_Final_9_01_2026,"('019_S_5242',)",Image Data ID,I379089 | I405606,2,NOT RESOLVED - requires manual review
+sub-019S5242,SMC_Final_9_01_2026,"('019_S_5242',)",Age,67 | 68,2,NOT RESOLVED - requires manual review
+sub-019S5242,SMC_Final_9_01_2026,"('019_S_5242',)",Visit,v02 | v05,2,NOT RESOLVED - requires manual review
+sub-019S5242,SMC_Final_9_01_2026,"('019_S_5242',)",Acq Date,7/02/2013 | 1/17/2014,2,NOT RESOLVED - requires manual review
+sub-053S5202,SMC_Final_9_01_2026,"('053_S_5202',)",Image Data ID,I375698 | I391409,2,NOT RESOLVED - requires manual review
+sub-053S5202,SMC_Final_9_01_2026,"('053_S_5202',)",Visit,v02 | v04,2,NOT RESOLVED - requires manual review
+sub-053S5202,SMC_Final_9_01_2026,"('053_S_5202',)",Acq Date,6/07/2013 | 9/20/2013,2,NOT RESOLVED - requires manual review
+sub-100S5280,SMC_Final_9_01_2026,"('100_S_5280',)",Image Data ID,I776235 | I387121,2,NOT RESOLVED - requires manual review
+sub-100S5280,SMC_Final_9_01_2026,"('100_S_5280',)",Age,70 | 68,2,NOT RESOLVED - requires manual review
+sub-100S5280,SMC_Final_9_01_2026,"('100_S_5280',)",Visit,v21 | v02,2,NOT RESOLVED - requires manual review
+sub-100S5280,SMC_Final_9_01_2026,"('100_S_5280',)",Acq Date,9/29/2015 | 8/16/2013,2,NOT RESOLVED - requires manual review
+sub-130S5142,SMC_Final_9_01_2026,"('130_S_5142',)",Image Data ID,I387133 | I368288,2,NOT RESOLVED - requires manual review
+sub-130S5142,SMC_Final_9_01_2026,"('130_S_5142',)",Age,77 | 76,2,NOT RESOLVED - requires manual review
+sub-130S5142,SMC_Final_9_01_2026,"('130_S_5142',)",Visit,v04 | v02,2,NOT RESOLVED - requires manual review
+sub-130S5142,SMC_Final_9_01_2026,"('130_S_5142',)",Acq Date,7/26/2013 | 4/19/2013,2,NOT RESOLVED - requires manual review
