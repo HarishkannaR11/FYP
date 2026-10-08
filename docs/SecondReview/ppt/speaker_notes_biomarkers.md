@@ -1,16 +1,16 @@
 # Speaker notes: the biomarkers, in simple words
 
-For slides 8 ("Every Scan in Every Stage") and 9 ("The Four Functional Biomarkers").
+For slide 3 ("The Six Stages of Progression") and slide 8 ("The Four Functional Biomarkers").
 About 1.5 minutes. Say it slowly; point at each picture as you go.
 
-## Slide 8 – every scan in every stage (15 s)
+## Slide 3 - the stages and the data per stage (15 s)
 
-"These are all the scans we use. We have about 30 scans in each of the six stages –
-between 21 and 32 depending on the stage – and 165 in total, from 127 people.
-Each small picture is one scan. The one with the red box has a technical artefact; we
-report it openly and keep it out of the quality summaries."
+"These are the six stages, from cognitively normal to Alzheimer's disease. Under each
+stage you can see how many people and how many scans we have. Each stage has about 30
+scans - between 21 and 32 - and 165 scans in total from 127 people, because some people
+were scanned more than once."
 
-## Slide 9 – the four biomarkers (60–75 s)
+## Slide 8 - the four biomarkers (60-75 s)
 
 "While the person rests in the scanner, we record the brain every 3 seconds. In every
 small region of the brain the signal goes up and down slowly, like a wave. We ask four
