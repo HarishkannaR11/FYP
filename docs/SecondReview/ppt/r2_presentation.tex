@@ -7,7 +7,7 @@
 % exists, and none may be shown or implied.
 %
 % Structure: slides 2-12 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 13-30 are the Review II content;
+% (reusing the Review I material); slides 13-29 are the Review II content;
 % backup slides follow "Thank You" and are not counted in the page numbers.
 % Figures made by figures/make_explainer_figs.py come from real project outputs.
 
@@ -126,9 +126,8 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 
 % 2. Background and Motivation (Review I, condensed)
 \begin{frame}{Background and Motivation}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
-      \small
+  \begin{columns}[c,onlytextwidth]
+    \column{0.50\textwidth}
       \begin{itemize}
         \item \textbf{Alzheimer's disease (AD)} is the most common cause of dementia,
               about 60--70\% of cases worldwide.
@@ -138,17 +137,12 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
         \item Tissue loss (right) appears late. \textbf{Brain activity}, measured with
               functional MRI, can change earlier.
       \end{itemize}
-    \column{0.46\textwidth}
+    \column{0.48\textwidth}
       \centering
       \includegraphics[width=\linewidth]{figures/r1_ad_brain_coronal.jpg}\par
       {\scriptsize Healthy brain (left) and advanced AD (right): thinner cortex, shrunken
       hippocampus, enlarged ventricles. Illustration reused from Review I.}
   \end{columns}
-  \vspace{0.15cm}
-  \begin{block}{What is missing today}
-    \small Existing tools look at \textbf{one biomarker at a time}, use \textbf{imaging only},
-    and give a \textbf{single hard label} with no measure of confidence.
-  \end{block}
 \end{frame}
 
 % 3. The six stages
@@ -196,37 +190,32 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   three checked uses cross-biomarker meta-learning (report \S1.3).}
 \end{frame}
 
-% 5. The project in one picture
-\begin{frame}{The Project in One Picture}
+% 5. Proposed System Architecture (replaces the earlier one-picture overview)
+\begin{frame}{Proposed System Architecture}
   \centering
-  \begin{tikzpicture}[>=latex,
-      io/.style={draw=UniversityBlue,rounded corners,align=center,font=\footnotesize,
-                 inner sep=5pt,text width=4.0cm},
-      ar/.style={->,very thick,draw=AccentBlue},
-      chip/.style={rounded corners,align=center,font=\scriptsize,inner sep=4pt,text width=4.0cm,
-                   minimum height=0.95cm}]
-    \node[io,fill=LightBlue,minimum height=1.45cm,anchor=north west] (in1) at (0,0)
-      {\textbf{Resting-state fMRI scan}\\ brain activity recorded at rest};
-    \node[io,fill=yellow!20,minimum height=1.45cm,anchor=north west] (in2) at (0,-1.75)
-      {\textbf{Clinical profile}\\ age, APOE $\varepsilon$4, MMSE, CDR-SB, GDS, medical history};
-    \node[io,dashed,fill=gray!8,minimum height=3.2cm,anchor=north west] (md) at (5.1,0)
-      {\textbf{Comorbidity-aware\\ Meta-Bayesian model}\\[3pt]
-       \scriptsize transformer attention over 246 brain regions, meta-learning across four biomarkers,
-       clinical fusion, Bayesian ordinal head};
-    \node[io,dashed,fill=gray!8,minimum height=3.2cm,anchor=north west] (out) at (10.2,0)
-      {\textbf{Output}\\[3pt]
-       \scriptsize a stage on the six-step scale\\ a probability for each stage\\ how sure the model is};
-    \draw[ar] (in1.east) -- ++(0.65,0) |- ([yshift=0.5cm]md.west);
-    \draw[ar] (in2.east) -- ++(0.65,0) |- ([yshift=-0.5cm]md.west);
-    \draw[ar] (md.east) -- (out.west);
-    \node[chip,fill=green!12,draw=DoneGreen,anchor=north west] at (0,-3.75)
-      {\textbf{Inputs prepared}\\ Modules 1--3 complete};
-    \node[chip,dashed,draw=NotGray,fill=gray!8,anchor=north west] at (5.1,-3.75)
-      {\textbf{Designed, not built}\\ Modules 4--5};
-    \node[chip,dashed,draw=NotGray,fill=gray!8,anchor=north west] at (10.2,-3.75)
-      {\textbf{Planned}\\ Module 6 dashboard};
-  \end{tikzpicture}
-  \vspace{0.3cm}
+  \resizebox{0.98\textwidth}{!}{%
+  \begin{tikzpicture}[font=\small,>=latex]
+    \tikzset{
+      mod/.style={rounded corners,thick,draw,align=center,text width=3.4cm,
+                  minimum height=3.8cm,inner sep=4pt,anchor=north,
+                  execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+      dn/.style={mod,fill=green!12},
+            pl/.style={mod,dashed,fill=gray!8},
+      ar/.style={->,thick}}
+    \node[dn] (m1) at (0,0)    {\footnotesize\textbf{Module 1}\\\footnotesize\textbf{Data/Input}\\\footnotesize\textbf{Management}\\[3pt]\scriptsize raw rs-fMRI (ADNI)\\ audit and recovery\\ clinical tables\\ stage labels};
+    \node[dn] (m2) at (4.1,0)  {\footnotesize\textbf{Module 2}\\\footnotesize\textbf{Preprocessing}\\\footnotesize\textbf{Pipeline}\\[3pt]\scriptsize NIfTI conversion\\ volume removal\\ motion correction\\ EPI$\rightarrow$MNI, 4\,mm\\ band-pass, QC};
+    \node[dn] (m3) at (8.2,0)  {\footnotesize\textbf{Module 3}\\\footnotesize\textbf{Feature Extraction}\\\footnotesize\textbf{(Brainnetome 246)}\\[3pt]\scriptsize 246 ROI time series\\ ALFF, ReHo, DC, FC\\ within-subject\\ normalisation};
+    \node[pl] (m4) at (12.3,0) {\footnotesize\textbf{Module 4}\\\footnotesize\textbf{Proposed Deep}\\\footnotesize\textbf{Learning Model}\\[3pt]\scriptsize transformer encoder\\ multi-attention\\ meta-learning\\ comorbidity fusion};
+    \node[pl] (m5) at (16.4,0) {\footnotesize\textbf{Module 5}\\\footnotesize\textbf{Core Output}\\\footnotesize\textbf{Classifier}\\[3pt]\scriptsize 6-class ordinal stage\\ class probabilities\\ confidence and\\ uncertainty};
+    \node[pl,anchor=north,minimum height=1.4cm,text width=19.8cm] (m6) at (8.2,-4.5) {\footnotesize\textbf{Module 6: Decision Support Dashboard}\\[2pt]\scriptsize patient summary $\cdot$ progression chart $\cdot$ class probabilities $\cdot$ explainability overlays $\cdot$ network visualisation};
+    \foreach \a/\b in {m1/m2,m2/m3,m3/m4,m4/m5} \draw[ar] (\a.east |- 0,-1.9) -- (\b.west |- 0,-1.9);
+    \draw[ar,dashed] (m5.south) -- (m5.south |- m6.north);
+    \node[draw,fill=green!12,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (0,-6.7) {};
+    \node[anchor=west] at (0.45,-6.7) {\footnotesize complete};
+    \node[draw,dashed,fill=gray!8,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (14.2,-6.7) {};
+    \node[anchor=west] at (14.65,-6.7) {\footnotesize not started (design only)};
+  \end{tikzpicture}}
+  \vspace{0.25cm}
 
   \small \textbf{Goal:} place each person on the six-stage scale from a resting-state scan and
   clinical context, and say how sure the model is.
@@ -448,33 +437,6 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
     Covariates slide; report \S4.5 \\
     \bottomrule
   \end{tabularx}
-\end{frame}
-
-% 15. Proposed System Architecture
-\begin{frame}{Proposed System Architecture}
-  \centering
-  \resizebox{0.98\textwidth}{!}{%
-  \begin{tikzpicture}[font=\small,>=latex]
-    \tikzset{
-      mod/.style={rounded corners,thick,draw,align=center,text width=3.4cm,
-                  minimum height=3.8cm,inner sep=4pt,anchor=north,
-                  execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
-      dn/.style={mod,fill=green!12},
-            pl/.style={mod,dashed,fill=gray!8},
-      ar/.style={->,thick}}
-    \node[dn] (m1) at (0,0)    {\footnotesize\textbf{Module 1}\\\footnotesize\textbf{Data/Input}\\\footnotesize\textbf{Management}\\[3pt]\scriptsize raw rs-fMRI (ADNI)\\ audit and recovery\\ clinical tables\\ stage labels};
-    \node[dn] (m2) at (4.1,0)  {\footnotesize\textbf{Module 2}\\\footnotesize\textbf{Preprocessing}\\\footnotesize\textbf{Pipeline}\\[3pt]\scriptsize NIfTI conversion\\ volume removal\\ motion correction\\ EPI$\rightarrow$MNI, 4\,mm\\ band-pass, QC};
-    \node[dn] (m3) at (8.2,0)  {\footnotesize\textbf{Module 3}\\\footnotesize\textbf{Feature Extraction}\\\footnotesize\textbf{(Brainnetome 246)}\\[3pt]\scriptsize 246 ROI time series\\ ALFF, ReHo, DC, FC\\ within-subject\\ normalisation};
-    \node[pl] (m4) at (12.3,0) {\footnotesize\textbf{Module 4}\\\footnotesize\textbf{Proposed Deep}\\\footnotesize\textbf{Learning Model}\\[3pt]\scriptsize transformer encoder\\ multi-attention\\ meta-learning\\ comorbidity fusion};
-    \node[pl] (m5) at (16.4,0) {\footnotesize\textbf{Module 5}\\\footnotesize\textbf{Core Output}\\\footnotesize\textbf{Classifier}\\[3pt]\scriptsize 6-class ordinal stage\\ class probabilities\\ confidence and\\ uncertainty};
-    \node[pl,anchor=north,minimum height=1.4cm,text width=19.8cm] (m6) at (8.2,-4.5) {\footnotesize\textbf{Module 6: Decision Support Dashboard}\\[2pt]\scriptsize patient summary $\cdot$ progression chart $\cdot$ class probabilities $\cdot$ explainability overlays $\cdot$ network visualisation};
-    \foreach \a/\b in {m1/m2,m2/m3,m3/m4,m4/m5} \draw[ar] (\a.east |- 0,-1.9) -- (\b.west |- 0,-1.9);
-    \draw[ar,dashed] (m5.south) -- (m5.south |- m6.north);
-    \node[draw,fill=green!12,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (0,-6.7) {};
-    \node[anchor=west] at (0.45,-6.7) {\footnotesize complete};
-    \node[draw,dashed,fill=gray!8,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (14.2,-6.7) {};
-    \node[anchor=west] at (14.65,-6.7) {\footnotesize not started (design only)};
-  \end{tikzpicture}}
 \end{frame}
 
 % 16. System Modules
