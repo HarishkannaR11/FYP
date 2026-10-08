@@ -6,8 +6,8 @@
 % No accuracy, AUC, ROC, confusion matrix, calibration or attention result
 % exists, and none may be shown or implied.
 %
-% Structure: slides 2-12 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 13-29 are the Review II content;
+% Structure: slides 2-13 explain the project for a reader who has not seen it
+% (reusing the Review I material); slides 14-30 are the Review II content;
 % backup slides follow "Thank You" and are not counted in the page numbers.
 % Figures made by figures/make_explainer_figs.py come from real project outputs.
 
@@ -280,39 +280,57 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 8. The four biomarkers
+% 8. Every scan in every stage
+\begin{frame}{Every Scan in Every Stage}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.75\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{figures/stage_gallery.png}
+    \column{0.23\textwidth}
+      \footnotesize
+      \begin{itemize}
+        \item About \textbf{30 scans in each stage} (21 to 32), \textbf{165 in total}.
+        \item Each tile is one scan: its average brain image, one axial slice.
+        \item Every scan gives the same four biomarkers.
+        \item \textcolor{red}{Red outline:} the one flagged artefact scan, reported and kept out of the QC summaries.
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% 9. The four biomarkers (plain words)
 \begin{frame}{The Four Functional Biomarkers}
   \begin{columns}[T,onlytextwidth]
     \column{0.245\textwidth}
       \centering
       {\bfseries ALFF}\\ {\scriptsize how strong}\\[2pt]
-      \includegraphics[height=2.0cm]{figures/bm_alff.png}\\[2pt]
-      \scriptsize Size of the slow signal swings in a region.\\ One value per region.
+      \includegraphics[height=1.75cm]{figures/bm_alff.png}\\[2pt]
+      \scriptsize How big the slow swings of a region's signal are.\\ Big swings: stronger activity.
     \column{0.245\textwidth}
       \centering
       {\bfseries ReHo}\\ {\scriptsize how locally in step}\\[2pt]
-      \includegraphics[height=2.0cm]{figures/bm_reho.png}\\[2pt]
-      \scriptsize How closely neighbouring voxels move together.\\ One value per region.
+      \includegraphics[height=1.75cm]{figures/bm_reho.png}\\[2pt]
+      \scriptsize Do the small spots inside a region rise and fall together?\\ Yes: the region works in step.
     \column{0.245\textwidth}
       \centering
       {\bfseries FC}\\ {\scriptsize who talks to whom}\\[2pt]
-      \includegraphics[height=2.0cm]{figures/bm_fc.png}\\[2pt]
-      \scriptsize Correlation between the signals of two regions.\\ A $246\times246$ matrix.
+      \includegraphics[height=1.75cm]{figures/bm_fc.png}\\[2pt]
+      \scriptsize Do two different regions rise and fall together?\\ The more alike, the more connected.
     \column{0.245\textwidth}
       \centering
       {\bfseries DC}\\ {\scriptsize how connected}\\[2pt]
-      \includegraphics[height=2.0cm]{figures/bm_dc.png}\\[2pt]
-      \scriptsize Total connectivity of a region: the sum of its FC row.\\ One value per region.
+      \includegraphics[height=1.75cm]{figures/bm_dc.png}\\[2pt]
+      \scriptsize Add up a region's connections to all other regions.\\ A big total: a hub.
   \end{columns}
   \vspace{0.1cm}
-  \begin{block}{Four views of the same brain}
-    \footnotesize Activity (ALFF), local synchrony (ReHo), connections (FC) and network hubs (DC).
-    Review I argued they are complementary; the model will learn from all four \cite{r4,r5,r7}.
+  \begin{block}{Four simple questions about every brain region}
+    \footnotesize How strongly does it fluctuate? (ALFF) \quad Do its parts move together? (ReHo) \quad
+    Which other regions move with it? (FC) \quad How connected is it overall? (DC)
   \end{block}
-  {\tiny One axial slice of one CN scan (DC painted onto atlas regions); FC: full matrix, one row outlined.}
+  {\tiny Computed for every scan: about 30 scans in each of the six stages, 165 in total \cite{r4,r5,r7}.
+  Pictures: one CN scan.}
 \end{frame}
 
-% 9. The brain atlas
+% 10. The brain atlas
 \begin{frame}{The Brain Atlas: 246 Regions}
   \begin{columns}[T,onlytextwidth]
     \column{0.64\textwidth}
@@ -332,7 +350,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 10. From one scan to features
+% 11. From one scan to features
 \begin{frame}{From One Scan to Features}
   \centering
   \includegraphics[width=0.97\textwidth]{figures/scan_to_features.pdf}
@@ -346,7 +364,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 11. Clinical context
+% 12. Clinical context
 \begin{frame}{Clinical Context: Covariates and Comorbidity}
   \footnotesize
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{2.3cm}}
@@ -371,7 +389,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 12. What is new
+% 13. What is new
 \begin{frame}{What Is New in Our Approach}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries}p{0.8cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}X}
@@ -396,7 +414,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 % PART B. REVIEW II CONTENT
 % =====================================================================
 
-% 13. Project Objectives
+% 14. Project Objectives
 \begin{frame}{Project Objectives}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries}p{0.5cm}X>{\centering\arraybackslash}p{2.3cm}}
@@ -418,7 +436,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 14. First Review - Queries and Answers
+% 15. First Review - Queries and Answers
 \begin{frame}{First Review - Queries and Answers}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
