@@ -10,7 +10,8 @@ has about 30 scans, and 165 scans in total from 127 people, because some people 
 scanned more than once. The exact count per stage is in the dataset table on slide 7."
 
 If asked for the exact numbers: 27 CN, 31 SMC, 29 EMCI, 32 MCI, 21 LMCI, 25 AD scans
-(LMCI is the smallest).
+(LMCI is the smallest). To reach 30 in every stage we still need to add +3 CN, +1 EMCI,
++9 LMCI and +5 AD processed scans (18 in all); SMC and MCI are already above 30.
 
 ## Slide 8 - the four biomarkers (60-75 s)
 

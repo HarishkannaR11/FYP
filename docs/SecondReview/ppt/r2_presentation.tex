@@ -246,7 +246,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 % 7. The dataset
 \begin{frame}{The Dataset: ADNI}
   \begin{columns}[T,onlytextwidth]
-    \column{0.54\textwidth}
+    \column{0.52\textwidth}
       \small
       \begin{itemize}
         \item \textbf{ADNI} is a public, multi-site study that shares brain scans and clinical
@@ -258,25 +258,26 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
               0.01--0.10\,Hz band.
         \item \textbf{127 subjects}: some were scanned more than once.
       \end{itemize}
-    \column{0.41\textwidth}
+    \column{0.45\textwidth}
       \centering
       \footnotesize
-      \begin{tabular}{lrrr}
+      \begin{tabular}{lrrrr}
         \toprule
-        \textbf{Stage} & \textbf{Eligible} & \textbf{Processed} & \textbf{Subjects} \\
+        \textbf{Stage} & \textbf{Elig.} & \textbf{Proc.} & \textbf{Subj.} & \textbf{To 30} \\
         \midrule
-        CN   & 29 & 27 & 26 \\
-        SMC  & 32 & 31 & 21 \\
-        EMCI & 30 & 29 & 26 \\
-        MCI  & 35 & 32 & 14 \\
-        LMCI & 22 & 21 & 20 \\
-        AD   & 25 & 25 & 20 \\
+        CN   & 29 & 27 & 26 & +3 \\
+        SMC  & 32 & 31 & 21 & 0 \\
+        EMCI & 30 & 29 & 26 & +1 \\
+        MCI  & 35 & 32 & 14 & 0 \\
+        LMCI & 22 & 21 & 20 & +9 \\
+        AD   & 25 & 25 & 20 & +5 \\
         \midrule
-        \textbf{Total} & \textbf{173} & \textbf{165} & \textbf{127} \\
+        \textbf{Total} & \textbf{173} & \textbf{165} & \textbf{127} & \textbf{+18} \\
         \bottomrule
       \end{tabular}\par
       \vspace{0.2cm}
-      {\scriptsize Scans are counted per acquisition; subjects are people.}
+      {\scriptsize Counts are per acquisition; subjects are people. Elig.: passed the audit;
+      Proc.: preprocessed; To 30: processed scans still to add for 30 per stage.}
   \end{columns}
 \end{frame}
 
@@ -833,6 +834,8 @@ derivatives/
 % 28. Next steps and closing
 \begin{frame}{Next Steps}
   \begin{enumerate}
+    \item Top up every stage to \textbf{30 processed scans}:
+          \textbf{+3} CN, \textbf{+1} EMCI, \textbf{+9} LMCI, \textbf{+5} AD (18 scans).
     \item Build subject-grouped cross-validation folds.
     \item Expand the dataset by \textbf{+50 acquisitions per stage}.
     \item Then implement Modules 4--5 (Dec--Jan in the Review I plan).
@@ -842,7 +845,7 @@ derivatives/
     The data foundation is complete and independently verified: a \alert{full milestone ahead of plan}.
     The modelling stages are next; no model result exists yet.
   \end{alertblock}
-  {\footnotesize The expansion helps the 127-subject limit only through \emph{new subjects}; it has not started.}
+  {\footnotesize Neither the top-up nor the expansion has started; they help the 127-subject limit only through \emph{new subjects}.}
 \end{frame}
 
 % 29. References
