@@ -6,7 +6,10 @@
 % No accuracy, AUC, ROC, confusion matrix, calibration or attention result
 % exists, and none may be shown or implied.
 %
-% Items that still need input from the team are shown in red.
+% Structure: slides 2-12 explain the project for a reader who has not seen it
+% (reusing the Review I material); slides 13-30 are the Review II content;
+% backup slides follow "Thank You" and are not counted in the page numbers.
+% Figures made by figures/make_explainer_figs.py come from real project outputs.
 
 \documentclass[aspectratio=169,11pt]{beamer}
 
@@ -41,8 +44,9 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{hyperref}
-\usepackage{pgfgantt}
-\usepackage{multicol}   % for the plan-versus-actual timeline (not in the template)
+\usepackage{pgfgantt}   % plan-versus-actual timeline (not in the template)
+\usepackage{multicol}   % two-column reference list (not in the template)
+\usepackage{appendixnumberbeamer}  % backup slides are not counted in the total
 
 % ---------- General settings ----------
 \setbeamertemplate{navigation symbols}{}
@@ -107,6 +111,10 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 
 \begin{document}
 
+% =====================================================================
+% PART A. UNDERSTANDING THE PROJECT (for a reader new to it)
+% =====================================================================
+
 % 1. Title slide
 \begin{frame}[plain]
   \titlepage
@@ -116,28 +124,59 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tikzpicture}
 \end{frame}
 
-% 2. First Review - Queries and Answers
-\begin{frame}{First Review - Queries and Answers}
-  \small
-  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
-    \toprule
-    \textbf{Panel comment} & \textbf{Response} & \textbf{Detail in} \\
-    \midrule
-    Need more clarity on the \textbf{dataset (biomarkers)} &
-    175 audited, 165 preprocessed, 127 subjects. Four biomarkers on 246 regions. &
-    Results slides; report \S6.1 \\[4pt]
-    Need more clarity on the \textbf{Meta-Bayesian framework} &
-    ``Meta'': biomarkers as tasks. ``Bayesian'': ordinal head with uncertainty.
-    \alert{Design only.} &
-    Core Algorithm (design); report \S4.5 \\[4pt]
-    Need more clarity on the \textbf{comorbidity data} &
-    Seven covariates with source and status; clinical tables cleaned for all six stages. &
-    Modules slide; report \S4.5 \\
-    \bottomrule
-  \end{tabularx}
+% 2. Background and Motivation (Review I, condensed)
+\begin{frame}{Background and Motivation}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+      \small
+      \begin{itemize}
+        \item \textbf{Alzheimer's disease (AD)} is the most common cause of dementia,
+              about 60--70\% of cases worldwide.
+        \item It is \textbf{progressive}: memory, reasoning and daily function decline,
+              mostly after age 65.
+        \item India's ageing population is making the burden grow.
+        \item Tissue loss (right) appears late. \textbf{Brain activity}, measured with
+              functional MRI, can change earlier.
+      \end{itemize}
+    \column{0.46\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{figures/r1_ad_brain_coronal.jpg}\par
+      {\scriptsize Healthy brain (left) and advanced AD (right): thinner cortex, shrunken
+      hippocampus, enlarged ventricles. Illustration reused from Review I.}
+  \end{columns}
+  \vspace{0.15cm}
+  \begin{block}{What is missing today}
+    \small Existing tools look at \textbf{one biomarker at a time}, use \textbf{imaging only},
+    and give a \textbf{single hard label} with no measure of confidence.
+  \end{block}
 \end{frame}
 
-% 3. Problem Statement
+% 3. The six stages
+\begin{frame}{The Six Stages of Progression}
+  \centering
+  \begin{tikzpicture}[>=latex,
+      stg/.style={draw=UniversityBlue,rounded corners,text width=2.0cm,minimum height=3.3cm,
+                  align=center,font=\scriptsize,inner sep=3pt,anchor=north west}]
+    \node[stg,fill=UniversityBlue!5]  at (0,0)    {{\normalsize\bfseries CN}\\ Cognitively Normal\\[3pt] \emph{normal memory and thinking tests}\\[4pt] $n=26$};
+    \node[stg,fill=UniversityBlue!11] at (2.48,0) {{\normalsize\bfseries SMC}\\ Subjective Memory Concern\\[3pt] \emph{memory worries reported, tests normal}\\[4pt] $n=21$};
+    \node[stg,fill=UniversityBlue!18] at (4.96,0) {{\normalsize\bfseries EMCI}\\ Early Mild Cognitive Impairment\\[3pt] \emph{mild, early memory impairment}\\[4pt] $n=26$};
+    \node[stg,fill=UniversityBlue!26] at (7.44,0) {{\normalsize\bfseries MCI}\\ Mild Cognitive Impairment\\[3pt] \emph{noticeable impairment, daily life largely intact}\\[4pt] $n=14$};
+    \node[stg,fill=UniversityBlue!34] at (9.92,0) {{\normalsize\bfseries LMCI}\\ Late Mild Cognitive Impairment\\[3pt] \emph{more marked memory impairment}\\[4pt] $n=20$};
+    \node[stg,fill=UniversityBlue!43] at (12.4,0) {{\normalsize\bfseries AD}\\ Alzheimer's Disease (dementia)\\[3pt] \emph{impairment that disrupts daily life}\\[4pt] $n=20$};
+    \draw[->,very thick,draw=AccentBlue] (0,-3.65) -- (14.6,-3.65)
+      node[midway,below,font=\scriptsize]{increasing impairment};
+  \end{tikzpicture}
+  \vspace{0.15cm}
+
+  \begin{itemize}
+    \item Labels are ADNI's diagnostic groups; $n$ is the number of subjects in our cohort (127 in total).
+    \item The model treats them as an \textbf{ordered scale} (fixed at Review I):
+          CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI $\rightarrow$ LMCI $\rightarrow$ AD.
+    \item Neighbouring stages overlap, so every label should come with a \textbf{confidence}.
+  \end{itemize}
+\end{frame}
+
+% 4. Problem Statement
 \begin{frame}{Problem Statement}
   \begin{alertblock}{Problem}
     Existing systems analyse rs-fMRI biomarkers \textbf{independently} and omit clinical
@@ -157,7 +196,218 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   three checked uses cross-biomarker meta-learning (report \S1.3).}
 \end{frame}
 
-% 4. Project Objectives
+% 5. The project in one picture
+\begin{frame}{The Project in One Picture}
+  \centering
+  \begin{tikzpicture}[>=latex,
+      io/.style={draw=UniversityBlue,rounded corners,align=center,font=\footnotesize,
+                 inner sep=5pt,text width=4.0cm},
+      ar/.style={->,very thick,draw=AccentBlue},
+      chip/.style={rounded corners,align=center,font=\scriptsize,inner sep=4pt,text width=4.0cm,
+                   minimum height=0.95cm}]
+    \node[io,fill=LightBlue,minimum height=1.45cm,anchor=north west] (in1) at (0,0)
+      {\textbf{Resting-state fMRI scan}\\ brain activity recorded at rest};
+    \node[io,fill=yellow!20,minimum height=1.45cm,anchor=north west] (in2) at (0,-1.75)
+      {\textbf{Clinical profile}\\ age, APOE $\varepsilon$4, MMSE, CDR-SB, GDS, medical history};
+    \node[io,dashed,fill=gray!8,minimum height=3.2cm,anchor=north west] (md) at (5.1,0)
+      {\textbf{Comorbidity-aware\\ Meta-Bayesian model}\\[3pt]
+       \scriptsize transformer attention over 246 brain regions, meta-learning across four biomarkers,
+       clinical fusion, Bayesian ordinal head};
+    \node[io,dashed,fill=gray!8,minimum height=3.2cm,anchor=north west] (out) at (10.2,0)
+      {\textbf{Output}\\[3pt]
+       \scriptsize a stage on the six-step scale\\ a probability for each stage\\ how sure the model is};
+    \draw[ar] (in1.east) -- ++(0.65,0) |- ([yshift=0.5cm]md.west);
+    \draw[ar] (in2.east) -- ++(0.65,0) |- ([yshift=-0.5cm]md.west);
+    \draw[ar] (md.east) -- (out.west);
+    \node[chip,fill=green!12,draw=DoneGreen,anchor=north west] at (0,-3.75)
+      {\textbf{Inputs prepared}\\ Modules 1--3 complete};
+    \node[chip,dashed,draw=NotGray,fill=gray!8,anchor=north west] at (5.1,-3.75)
+      {\textbf{Designed, not built}\\ Modules 4--5};
+    \node[chip,dashed,draw=NotGray,fill=gray!8,anchor=north west] at (10.2,-3.75)
+      {\textbf{Planned}\\ Module 6 dashboard};
+  \end{tikzpicture}
+  \vspace{0.3cm}
+
+  \small \textbf{Goal:} place each person on the six-stage scale from a resting-state scan and
+  clinical context, and say how sure the model is.
+\end{frame}
+
+% 6. Resting-state fMRI in plain words
+\begin{frame}{Resting-State fMRI in Plain Words}
+  \small
+  \begin{itemize}
+    \item The participant lies still in the scanner and does \textbf{no task}.
+    \item Every 3\,s the scanner takes a 3-D picture of the brain: 140 pictures, about 7 minutes.
+    \item The signal is \textbf{BOLD}: local blood oxygenation, a proxy for neural activity.
+    \item Slow fluctuations (0.01--0.10\,Hz) in linked regions rise and fall together.
+  \end{itemize}
+  \vspace{0.1cm}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.45\textwidth}
+      \centering
+      \includegraphics[height=2.85cm]{figures/r1_nifti_viewer.jpg}\par
+      {\scriptsize One converted scan in three planes (Review I).}
+    \column{0.53\textwidth}
+      \centering
+      \includegraphics[height=2.85cm]{figures/ts_example.pdf}\par
+      {\scriptsize Three regions from one scan: left and right A31 move together, an occipital region does not.}
+  \end{columns}
+\end{frame}
+
+% 7. The dataset
+\begin{frame}{The Dataset: ADNI}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.54\textwidth}
+      \small
+      \begin{itemize}
+        \item \textbf{ADNI} is a public, multi-site study that shares brain scans and clinical
+              data \cite{r1,r2}.
+        \item We use its \textbf{resting-state fMRI only}: the download has no structural (T1) scans.
+        \item Each scan: 140 volumes, TR = 3\,s for most, voxels of about 3\,mm.
+        \item 175 scans audited, 2 excluded (1 duplicate, 1 truncated): 173 eligible,
+              \textbf{165 processed}. Eight failed: their TR of 6.02\,s is too slow for the
+              0.01--0.10\,Hz band.
+        \item \textbf{127 subjects}: some were scanned more than once.
+      \end{itemize}
+    \column{0.41\textwidth}
+      \centering
+      \footnotesize
+      \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Stage} & \textbf{Eligible} & \textbf{Processed} & \textbf{Subjects} \\
+        \midrule
+        CN   & 29 & 27 & 26 \\
+        SMC  & 32 & 31 & 21 \\
+        EMCI & 30 & 29 & 26 \\
+        MCI  & 35 & 32 & 14 \\
+        LMCI & 22 & 21 & 20 \\
+        AD   & 25 & 25 & 20 \\
+        \midrule
+        \textbf{Total} & \textbf{173} & \textbf{165} & \textbf{127} \\
+        \bottomrule
+      \end{tabular}\par
+      \vspace{0.2cm}
+      {\scriptsize Scans are counted per acquisition; subjects are people.}
+  \end{columns}
+\end{frame}
+
+% 8. The four biomarkers
+\begin{frame}{The Four Functional Biomarkers}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.245\textwidth}
+      \centering
+      {\bfseries ALFF}\\ {\scriptsize how strong}\\[2pt]
+      \includegraphics[height=2.0cm]{figures/bm_alff.png}\\[2pt]
+      \scriptsize Size of the slow signal swings in a region.\\ One value per region.
+    \column{0.245\textwidth}
+      \centering
+      {\bfseries ReHo}\\ {\scriptsize how locally in step}\\[2pt]
+      \includegraphics[height=2.0cm]{figures/bm_reho.png}\\[2pt]
+      \scriptsize How closely neighbouring voxels move together.\\ One value per region.
+    \column{0.245\textwidth}
+      \centering
+      {\bfseries FC}\\ {\scriptsize who talks to whom}\\[2pt]
+      \includegraphics[height=2.0cm]{figures/bm_fc.png}\\[2pt]
+      \scriptsize Correlation between the signals of two regions.\\ A $246\times246$ matrix.
+    \column{0.245\textwidth}
+      \centering
+      {\bfseries DC}\\ {\scriptsize how connected}\\[2pt]
+      \includegraphics[height=2.0cm]{figures/bm_dc.png}\\[2pt]
+      \scriptsize Total connectivity of a region: the sum of its FC row.\\ One value per region.
+  \end{columns}
+  \vspace{0.1cm}
+  \begin{block}{Four views of the same brain}
+    \footnotesize Activity (ALFF), local synchrony (ReHo), connections (FC) and network hubs (DC).
+    Review I argued they are complementary; the model will learn from all four \cite{r4,r5,r7}.
+  \end{block}
+  {\tiny One axial slice of one CN scan (DC painted onto atlas regions); FC: full matrix, one row outlined.}
+\end{frame}
+
+% 9. The brain atlas
+\begin{frame}{The Brain Atlas: 246 Regions}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.64\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{figures/atlas_overview.png}
+    \column{0.34\textwidth}
+      \footnotesize
+      \begin{itemize}
+        \item An \textbf{atlas} divides the brain into named regions so scans can be compared
+              region by region.
+        \item \textbf{Brainnetome atlas:} 246 regions, 123 per hemisphere \cite{r3}.
+              Each colour is one region.
+        \item Every scan is warped to a common template (MNI space), so region $k$ is the same
+              place in every person.
+        \item A region's signal is the average of its voxels: \textbf{246 time series per scan}.
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% 10. From one scan to features
+\begin{frame}{From One Scan to Features}
+  \centering
+  \includegraphics[width=0.97\textwidth]{figures/scan_to_features.pdf}
+  \vspace{0.1cm}
+
+  \begin{itemize}
+    \item Each scan ends as \textbf{ALFF, ReHo and DC for 246 regions} (a $246\times3$ table)
+          plus a \textbf{$246\times246$ connectivity matrix}.
+    \item Every panel is a real output of one typical CN scan.
+    \item The same recipe ran on all 165 scans, and each result was verified.
+  \end{itemize}
+\end{frame}
+
+% 11. Clinical context
+\begin{frame}{Clinical Context: Covariates and Comorbidity}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{2.3cm}}
+    \toprule
+    Covariate & What it is, and why it matters & Present, of 127 \\
+    \midrule
+    Age & years at the scan; risk rises with age & 107 \\
+    APOE $\varepsilon$4 & copies of the $\varepsilon$4 variant; strongest common genetic risk factor & 126 \\
+    MMSE & 0--30 cognitive screening score; lower is worse & 107 \\
+    CDR-SB & 0--18 clinician-rated severity; higher is worse & 107 \\
+    GDS & 0--15 depression scale; often accompanies decline & 107 \\
+    Cardiovascular history & ADNI category MH4CARD; includes hypertension & 107 \\
+    Endocrine/metabolic hist. & ADNI category MH9ENDO; includes diabetes & 107 \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{0.1cm}
+  \begin{itemize}
+    \item \textbf{Cleaned master table} for all 127 subjects (90 columns): each score matched to the
+          visit nearest the MRI; \textbf{no imputation}; 116 conflicting duplicates flagged for review.
+    \item \textbf{LMCI group (20 subjects): APOE $\varepsilon$4 only.} No source tables for the other covariates were found.
+    \item MMSE and CDR also help define the stages: results will be reported with and without them.
+  \end{itemize}
+\end{frame}
+
+% 12. What is new
+\begin{frame}{What Is New in Our Approach}
+  \small
+  \begin{tabularx}{\textwidth}{>{\bfseries}p{0.8cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}X}
+    \toprule
+    & \textbf{Gap in existing work} & \textbf{What we propose (design)} \\
+    \midrule
+    G1 & Each biomarker is analysed on its own & \textbf{Meta-learning:} each biomarker is a task; learn a shared, biomarker-invariant representation \\[3pt]
+    G2 & Clinical context is left out & \textbf{Fusion:} join covariates to the imaging representation, $H=[Z'\,\|\,C]$ \\[3pt]
+    G3 & Progression treated as unordered classes & \textbf{Ordinal model} over six ordered stages \\[3pt]
+    G4 & Overconfident single labels & \textbf{Bayesian output:} probability per stage with uncertainty \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{0.25cm}
+
+  \begin{alertblock}{Honest scope}
+    \footnotesize All four are \textbf{design only}: nothing is trained. Of three 2026 papers checked,
+    at least one partly addresses each of G2--G4 and none addresses G1 (report \S1.3).
+  \end{alertblock}
+\end{frame}
+
+% =====================================================================
+% PART B. REVIEW II CONTENT
+% =====================================================================
+
+% 13. Project Objectives
 \begin{frame}{Project Objectives}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries}p{0.5cm}X>{\centering\arraybackslash}p{2.3cm}}
@@ -173,12 +423,34 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
   \vspace{0.3cm}
   \begin{itemize}
-    \item Objectives 1--2: the \textbf{data inputs} (imaging biomarkers and cleaned clinical tables) are ready.
+    \item Objectives 1--2: the \textbf{data inputs} are ready: biomarkers for 127 subjects and a cleaned
+          clinical table (covariates for 107 of them).
     \item Comorbidity pattern analysis and fusion belong to the model stage, not yet started.
   \end{itemize}
 \end{frame}
 
-% 5. Proposed System Architecture
+% 14. First Review - Queries and Answers
+\begin{frame}{First Review - Queries and Answers}
+  \small
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
+    \toprule
+    \textbf{Panel comment} & \textbf{Response} & \textbf{Detail in} \\
+    \midrule
+    Need more clarity on the \textbf{dataset (biomarkers)} &
+    175 audited, 165 preprocessed, 127 subjects. Four biomarkers on 246 regions. &
+    Dataset and biomarker slides; report \S6.1 \\[4pt]
+    Need more clarity on the \textbf{Meta-Bayesian framework} &
+    ``Meta'': biomarkers as tasks. ``Bayesian'': ordinal head with uncertainty.
+    \alert{Design only.} &
+    Model slides (design); report \S4.5 \\[4pt]
+    Need more clarity on the \textbf{comorbidity data} &
+    Seven covariates with source and coverage. Cleaned table for 127 subjects; the LMCI group has APOE only. &
+    Covariates slide; report \S4.5 \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% 15. Proposed System Architecture
 \begin{frame}{Proposed System Architecture}
   \centering
   \resizebox{0.98\textwidth}{!}{%
@@ -205,14 +477,14 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tikzpicture}}
 \end{frame}
 
-% 6. System Modules
+% 16. System Modules
 \begin{frame}{System Modules}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm}>{\centering\arraybackslash}p{1.9cm}X}
     \toprule
     \textbf{Module (Review I names)} & \textbf{Status} & \textbf{At Review II} \\
     \midrule
-    1 Data/Input Management & \done & Imaging and clinical tables complete and cleaned \\
+    1 Data/Input Management & \done & Imaging audited; clinical table cleaned (covariates for 107 of 127 subjects) \\
     2 Preprocessing Pipeline & \done & 165 of 173 scans; 8 rejected (TR 6.02\,s) \\
     3 Feature Extraction (Brainnetome 246) & \done & ALFF, ReHo, DC, FC for 165/165; normalised \\
     4 Proposed Deep Learning Model & \notst & Transformer, meta-learning, fusion: design only \\
@@ -222,7 +494,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 7. Methodology / Workflow
+% 17. Methodology / Workflow
 \begin{frame}{Methodology / Workflow}
   \centering
   \begin{tikzpicture}[>=latex,
@@ -257,7 +529,25 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \small Every step is checked per acquisition; a scan that fails a check is logged, never silently altered.
 \end{frame}
 
-% 8a. Core Algorithm - implemented
+% 18. Preprocessing explained
+\begin{frame}{Preprocessing: What Each Step Does and Why}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}X}
+    \toprule
+    Step & What it does & Why it is needed \\
+    \midrule
+    Discard first 5 volumes & drops the first 15\,s & the signal is still settling at the start \\[2pt]
+    Motion correction & aligns every volume to the first & head movement would otherwise look like brain activity \cite{r8,r9} \\[2pt]
+    Warp to MNI template & maps each brain onto a standard brain \cite{r10} & so region $k$ is the same place in every person \\[2pt]
+    Resample to 4\,mm, smooth 6\,mm & coarser grid and slight blur & less noise and fewer voxels \\[2pt]
+    Detrend and 27 regressors & removes slow drift and motion, white-matter and whole-brain signal & non-neural influences hide the neural signal \\[2pt]
+    Band-pass 0.01--0.10\,Hz & keeps only slow fluctuations & the range where resting-state activity lives \\[2pt]
+    Quality control & motion, signal-to-noise and file checks per scan & failures are logged, never silently altered \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% 19. Core Algorithm - implemented
 \begin{frame}{Core Algorithm A: Implemented Biomarkers and Normalisation}
   \begin{columns}[T,onlytextwidth]
     \column{0.47\textwidth}
@@ -290,11 +580,39 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 8b. Core Algorithm - design only
+% 20. The Meta-Bayesian model in plain words (design only)
+\begin{frame}{The Meta-Bayesian Model in Plain Words (Design)}
+  \centering
+  \begin{tikzpicture}[>=latex,
+      card/.style={draw=UniversityBlue,dashed,rounded corners,fill=LightBlue,text width=2.9cm,
+                   minimum height=2.45cm,align=center,font=\scriptsize,inner sep=4pt,anchor=north west},
+      ar/.style={->,thick,draw=AccentBlue}]
+    \node[card] (c1) at (0,0)    {{\small\bfseries 1. Four views}\\[3pt] ALFF, ReHo, DC and FC describe the same brain in four ways. Each is one ``task''.};
+    \node[card] (c2) at (3.78,0) {{\small\bfseries 2. Attention}\\[3pt] A transformer learns which regions matter and how they relate: globally, locally and within networks.};
+    \node[card] (c3) at (7.56,0) {{\small\bfseries 3. Meta-learning}\\[3pt] Finds the signature the four views share: a biomarker-invariant representation.};
+    \node[card] (c4) at (11.34,0) {{\small\bfseries 4. Bayesian ordinal output}\\[3pt] A probability for each of six ordered stages, plus how sure the model is.};
+    \foreach \a/\b in {c1/c2,c2/c3,c3/c4} \draw[ar] (\a.east |- 0,-1.25) -- (\b.west |- 0,-1.25);
+    \node[draw=orange!70!black,fill=yellow!20,rounded corners,font=\scriptsize,text width=6.7cm,
+          align=center,inner sep=4pt,anchor=north west] (cl) at (7.56,-2.85)
+      {\textbf{Clinical profile} (age, APOE $\varepsilon$4, MMSE, CDR-SB, GDS, medical history) is added before the final step};
+    \draw[ar] (cl.north) -- ++(0,0.35) -| ([xshift=-0.3cm]c4.south);
+  \end{tikzpicture}
+  \vspace{0.1cm}
+
+  \begin{itemize}
+    \item \textbf{Ordinal:} CN$\to$AD is a progression, so confusing neighbouring stages is a smaller error than confusing distant ones.
+    \item \textbf{Bayesian:} borderline subjects get a wide uncertainty instead of a falsely confident label.
+  \end{itemize}
+  \begin{alertblock}{}
+    \small \textbf{Design only.} Nothing is trained; no accuracy, calibration or attention result exists.
+  \end{alertblock}
+\end{frame}
+
+% 21. Core Algorithm - design only
 \begin{frame}{Core Algorithm B: Meta-Bayesian Pipeline (Design, Not Implemented)}
   \centering
   {\small \alert{Design only: nothing is trained and no result exists.}}\par
-  \resizebox{0.9\textwidth}{!}{%
+  \resizebox{0.84\textwidth}{!}{%
   \begin{tikzpicture}[font=\small,>=latex]
     \tikzset{b/.style={rounded corners,thick,draw,align=center,minimum height=0.9cm,inner sep=4pt},
              ar/.style={->,thick}}
@@ -339,7 +657,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Uncertainty = predictive entropy over $S$ weight samples.}
 \end{frame}
 
-% 9. Implementation Status
+% 22. Implementation Status
 \begin{frame}{Implementation Status}
   \centering
   \resizebox{0.8\textwidth}{!}{%
@@ -373,7 +691,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
 \end{frame}
 
-% 10. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
+% 23. Pipeline Outputs (replaces "Prototype / Screenshots": there is no UI)
 \begin{frame}[fragile]{Pipeline Outputs}
   \begin{columns}[T,onlytextwidth]
     \column{0.58\textwidth}
@@ -385,6 +703,8 @@ derivatives/
     biomarkers/    23 files
   biomarkers_normalized/<STAGE>/.../
                    10 files
+  clinical_cleaned/   master + stage tables
+  ATLAS_FIGURES/      atlas visualisations
   fsfast/FINAL_6GROUP_AUDIT/
   fsfast/BIOMARKER_DATASET_AUDIT/
   STAGE_HEATMAPS/
@@ -405,31 +725,15 @@ derivatives/
   {\scriptsize Counts are per acquisition; the one pilot acquisition keeps its original extra files.}
 \end{frame}
 
-% 11. Results: data-stage only
+% 24. Results: data-stage only
 \begin{frame}{Results: Data Foundation Verification}
   \begin{alertblock}{}
     \small These are \textbf{data-stage} results. \textbf{No model performance exists.}
   \end{alertblock}
   \vspace{0.1cm}
   \begin{columns}[T,onlytextwidth]
-    \column{0.50\textwidth}
-      \footnotesize
-      \begin{tabular}{lrrrr}
-        \toprule
-        \textbf{Stage} & \textbf{Elig.} & \textbf{Prep.} & \textbf{Bio.} & \textbf{Subj.} \\
-        \midrule
-        CN   & 29 & 27 & 27 & 26 \\
-        SMC  & 32 & 31 & 31 & 21 \\
-        EMCI & 30 & 29 & 29 & 26 \\
-        MCI  & 35 & 32 & 32 & 14 \\
-        LMCI & 22 & 21 & 21 & 20 \\
-        AD   & 25 & 25 & 25 & 20 \\
-        \midrule
-        \textbf{Total} & \textbf{173} & \textbf{165} & \textbf{165} & \textbf{127} \\
-        \bottomrule
-      \end{tabular}
-    \column{0.48\textwidth}
-      \footnotesize
+    \column{0.52\textwidth}
+      \small
       \begin{tabular}{lr}
         \toprule
         \textbf{Check (165 acquisitions)} & \textbf{Result} \\
@@ -442,16 +746,51 @@ derivatives/
         Consistency checks passed & 165/165 \\
         \bottomrule
       \end{tabular}
+    \column{0.46\textwidth}
+      \small
+      \begin{itemize}
+        \item \alert{127 subjects, not 165 scans}: 96 have one scan, 25 two, 5 three, 1 four.
+        \item Smallest class: MCI, 32 scans but only \textbf{14 subjects}.
+        \item QC medians ($n=164$, one artefact scan excluded): tSNR 127.95, SNR 13.12, FD 0.317\,mm.
+      \end{itemize}
   \end{columns}
-  \vspace{0.2cm}
-  \begin{itemize}
-    \item \alert{127 subjects, not 165 scans}: 96 have one scan, 25 two, 5 three, 1 four.
-    \item Smallest class: MCI, 32 scans but only \textbf{14 subjects}.
-    \item QC medians ($n=164$): tSNR 127.95, SNR 13.12, FD 0.317\,mm.
-  \end{itemize}
 \end{frame}
 
-% 12. Results: finding 1
+% 25. How to read the heatmaps
+\begin{frame}{How to Read the Stage Heatmaps}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.42\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{figures/malff_annotated.pdf}\par
+      {\scriptsize mALFF, 127 subjects (real data).}
+    \column{0.56\textwidth}
+      \footnotesize
+      \begin{itemize}
+        \item Each \textbf{row} is a brain region (246), each \textbf{column} a stage. A cell is the
+              group average for that stage.
+        \item \textbf{Colour} is relative to the region's own average over the six stages
+              (row-wise $z$-score): absolute levels are removed on purpose.
+        \item Disease-driven change would appear as a row shifting \textbf{steadily} from one colour
+              to the other, left to right.
+        \item \textbf{By chance}, an unrelated region is steadily ordered with probability
+              $2/6!\approx0.28\%$: about \textbf{0.7 of 246 regions}. We found 1, 0 and 1.
+      \end{itemize}
+      \vspace{0.05cm}
+      \centering
+      \begin{tikzpicture}[x=0.6cm,y=0.5cm]
+        \foreach \i/\s in {0/CN,1/SMC,2/EMCI,3/MCI,4/LMCI,5/AD} \node[font=\tiny] at (\i+0.5,1.15) {\s};
+        \foreach \i/\c in {0/blue!70,1/blue!40,2/blue!15,3/red!15,4/red!40,5/red!70}
+          \fill[\c] (\i,0) rectangle (\i+1,0.8);
+        \foreach \i/\c in {0/red!40,1/blue!50,2/red!15,3/blue!15,4/red!60,5/blue!35}
+          \fill[\c] (\i,-1.0) rectangle (\i+1,-0.2);
+        \node[anchor=west,font=\scriptsize] at (6.3,0.4) {the pattern we looked for};
+        \node[anchor=west,font=\scriptsize] at (6.3,-0.6) {a typical region};
+      \end{tikzpicture}\par
+      {\tiny schematic, not data}
+  \end{columns}
+\end{frame}
+
+% 26. Results: finding 1
 \begin{frame}{Finding 1: FC Strength Equals DC/245}
   \begin{columns}[T,onlytextwidth]
     \column{0.52\textwidth}
@@ -480,7 +819,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 13. Results: finding 2
+% 27. Results: finding 2
 \begin{frame}{Finding 2: No Univariate Progression Signal}
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -511,7 +850,7 @@ derivatives/
   \end{columns}
 \end{frame}
 
-% 14. Team Responsibilities
+% 28. Team Responsibilities
 \begin{frame}{Team Responsibilities}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
@@ -520,7 +859,7 @@ derivatives/
     \midrule
     Harishkanna R & Preprocessing (Module 2); transformer model (Module 4) & Preprocessing: \done\newline Transformer: \notst \\
     Dhananchezhiyan M & Meta-Bayesian module (meta-learning, Bayesian classifier) and final module (dashboard) & \notst \\
-    Nagindhar Sachein R L & Dataset cleaning (clinical and comorbidity tables, dataset expansion) & Clinical tables cleaned; dataset expansion next \\
+    Nagindhar Sachein R L & Dataset cleaning (clinical and comorbidity tables, dataset expansion) & Clinical cleaning done and audited; dataset expansion next \\
     \bottomrule
   \end{tabularx}
   \vspace{0.3cm}
@@ -528,7 +867,7 @@ derivatives/
   {\footnotesize Feature extraction (Module 3) was completed by the team and is verified.}
 \end{frame}
 
-% 15. Next steps and closing
+% 29. Next steps and closing
 \begin{frame}{Next Steps}
   \begin{enumerate}
     \item Build subject-grouped cross-validation folds.
@@ -543,7 +882,7 @@ derivatives/
   {\footnotesize The expansion helps the 127-subject limit only through \emph{new subjects}; it has not started.}
 \end{frame}
 
-% 16. References
+% 30. References
 \begin{frame}{References}
   \setbeamertemplate{bibliography item}[text]
   \fontsize{6}{7}\selectfont
@@ -572,7 +911,7 @@ derivatives/
   \end{multicols}
 \end{frame}
 
-% 17. Thank you
+% 31. Thank you
 \begin{frame}[plain]
   \centering
   \vfill
@@ -581,6 +920,78 @@ derivatives/
   {\Large Questions and Discussion}\par
   \vspace{0.8cm}
   \vfill
+\end{frame}
+
+% =====================================================================
+% BACKUP SLIDES (not counted in the page numbers)
+% =====================================================================
+\appendix
+
+% B1. Glossary
+\begin{frame}{Backup: Glossary}
+  \scriptsize
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}X>{\bfseries\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}X}
+    \toprule
+    Term & Meaning & Term & Meaning \\
+    \midrule
+    rs-fMRI & functional MRI recorded while the person rests & ALFF & amplitude of low-frequency fluctuations: size of the slow signal swings \\[2pt]
+    BOLD & blood-oxygen-level-dependent signal measured by fMRI & ReHo & regional homogeneity: how in step a region's voxels are \\[2pt]
+    TR & time between two brain pictures (3\,s here) & FC & functional connectivity: correlation of two regions' signals \\[2pt]
+    Voxel & one 3-D pixel of a scan (a 4\,mm cube after resampling) & DC & degree centrality: a region's total connectivity (sum of its FC row) \\[2pt]
+    ROI, atlas & region of interest; a map that divides the brain into regions & ADNI & Alzheimer's Disease Neuroimaging Initiative \\[2pt]
+    MNI space & standard template brain that all scans are aligned to & Ordinal & classes with a natural order (CN $<$ \dots $<$ AD) \\[2pt]
+    Band-pass & keep only 0.01--0.10\,Hz & Meta-learning & learning, across several tasks, what they have in common \\[2pt]
+    Nuisance regression & removing motion and other non-neural signals & Bayesian model & outputs a distribution over predictions, giving uncertainty \\[2pt]
+    Row-wise $z$ & a row rescaled by its own mean and spread & Grouped CV & validation that keeps all scans of one person in the same fold \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% B2. Data limitations (for questions)
+\begin{frame}{Backup: Data Limitations}
+  \small
+  \begin{itemize}
+    \item \textbf{No structural (T1) scans:} each scan was registered directly to the template, with no
+          subject-specific tissue masks, so no CSF regressor: 27 regressors (24 motion terms, white matter, global signal).
+    \item \textbf{Slice-timing correction not applied:} the metadata needed to recover the slice order are
+          not available for this dataset, and nothing was inferred.
+    \item \textbf{Eight scans rejected:} TR $\approx$ 6.02\,s makes the 0.10\,Hz band-pass impossible (Nyquist).
+    \item \textbf{No cross-site harmonisation:} ADNI is multi-site, so scanner effects may remain.
+    \item \textbf{127 subjects, 14 in the smallest class (MCI):} model capacity is limited by subjects,
+          not scans; validation must keep each person's scans together.
+    \item \textbf{LMCI covariates missing:} APOE $\varepsilon$4 only for the 20 LMCI subjects; 116 duplicate
+          conflicts in the clinical sources await review.
+    \item \textbf{No univariate stage signal} in the group means (Finding 2): the case for a multivariate model.
+  \end{itemize}
+\end{frame}
+
+% B3. Technology stack
+\begin{frame}{Backup: Technology Stack}
+  \small
+  \begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+      \begin{block}{Used so far (data foundation)}
+        \footnotesize
+        \begin{itemize}
+          \item Python 3.12.3, NumPy, SciPy, pandas
+          \item NiBabel 5.4.2, Nilearn 0.14.1
+          \item ANTsPy 0.6.3 (registration), TemplateFlow 25.1.2
+          \item FreeSurfer 7.4.1 (FS-FAST motion correction)
+          \item WSL2 (Ubuntu) on Windows 11; Git
+        \end{itemize}
+      \end{block}
+    \column{0.46\textwidth}
+      \begin{block}{Planned (not yet used)}
+        \footnotesize
+        \begin{itemize}
+          \item PyTorch, GPyTorch (model, Bayesian layers)
+          \item Streamlit (Module 6 dashboard)
+          \item Hardware per Review I: Intel Core i7, 32\,GB RAM, RTX 4060 (8\,GB)
+        \end{itemize}
+      \end{block}
+  \end{columns}
+  \vspace{0.2cm}
+  {\footnotesize Dataset: ADNI via LONI. Versions are those recorded in each acquisition's provenance file.}
 \end{frame}
 
 \end{document}
