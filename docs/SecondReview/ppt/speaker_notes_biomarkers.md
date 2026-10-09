@@ -1,13 +1,13 @@
 # Speaker notes: the biomarkers, in simple words
 
-For slide 3 ("The Six Stages of Progression") and slide 13 ("The Four Feature Biomarkers").
+For slide 3 ("The Six Stages of Progression") and slide 14 ("The Four Feature Biomarkers").
 About 1.5 minutes. Say it slowly; point at each picture as you go.
 
 ## Slide 3 - the stages and the data per stage (15 s)
 
 "These are the six stages, from cognitively normal to Alzheimer's disease. Each stage
 has about 30 scans, 165 in total. The exact count per stage is in the dataset table on
-slide 7, together with our target of 30 per stage, 180 in all."
+slide 8, together with our target of 30 per stage, 180 in all."
 
 If asked how many people that is (do not volunteer it): 127, because some people were scanned
 more than once; the smallest stage, MCI, has 14 people.
@@ -16,7 +16,7 @@ If asked for the exact numbers: 27 CN, 31 SMC, 29 EMCI, 32 MCI, 21 LMCI, 25 AD s
 (LMCI is the smallest). To reach 30 in every stage we still need to add +3 CN, +1 EMCI,
 +9 LMCI and +5 AD processed scans (18 in all); SMC and MCI are already above 30.
 
-## Slide 13 - the four biomarkers, in everyday words (60 s)
+## Slide 14 - the four biomarkers, in everyday words (60 s)
 
 (The four small pictures come from one CN scan. ALFF, ReHo and DC are brain maps; FC is a
 table of who goes with whom.)

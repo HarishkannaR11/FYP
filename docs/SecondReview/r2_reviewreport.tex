@@ -7,6 +7,7 @@
 % NOTE: ssnreview.cls does not load amsmath, so \text, \operatorname, align etc.
 % are unavailable. Use \mathrm{} in formulas.
 \documentclass{ssnreview}
+\usepackage{longtable} % lets the deviations table continue across a page break
 
 \projecttitle{Assessment of Alzheimer's Disease Progression Using
 Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
@@ -452,9 +453,8 @@ model-stage criteria has been evaluated yet.
 The proposed system, the Comorbidity-Aware Meta-Bayesian Multi-Attention Transformer,
 follows the six-module architecture fixed at Review~I: Data/Input Management,
 Preprocessing Pipeline, Functional Feature Extraction (Brainnetome 246), Proposed Deep
-Learning Model, Core Output Classifier and Decision Support Dashboard. Modules~2 and~3
-are complete, Module~1 is complete for imaging only, and Modules~4--6 have not yet
-been started.
+Learning Model, Core Output Classifier and Decision Support Dashboard. Modules~1 to~3
+are complete and Modules~4--6 have not yet been started.
 
 \section{Proposed Workflow}
 \begin{enumerate}[label=\textbf{Step \arabic*:}]
@@ -481,15 +481,21 @@ Auditing the data changed four specifications made at Review~I. Each change was
 forced by what the dataset contains, and none was made for convenience
 (Table~\ref{tab:deviations}).
 
-\begin{table}[!htbp]
-\centering
-\caption{Deviations from the Review~I plan and their evidence.}
-\label{tab:deviations}
-\small
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{3.1cm}X@{}}
+{\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{\dimexpr\textwidth-6.4cm-4\tabcolsep\relax}@{}}
+\caption{Deviations from the Review~I plan and their evidence.}\label{tab:deviations}\\
 \toprule
 \textbf{Review I specified} & \textbf{Implemented} & \textbf{Evidence and consequence} \\
 \midrule
+\endfirsthead
+\toprule
+\textbf{Review I specified} & \textbf{Implemented} & \textbf{Evidence and consequence} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
 Slice-timing correction (Module 2, \S5.2.2) & Step omitted; recorded as
 \texttt{NOT\_PERFORMED} in every provenance file &
 No \texttt{SliceTiming} field in any of 175 JSON sidecars; DICOM headers from 17
@@ -512,50 +518,25 @@ performed; only within-subject normalisation was applied &
 FS-FAST was used for motion correction. No site or scanner harmonisation step exists in
 the pipeline, so site and protocol effects (matrix size, TR) are recorded but not
 corrected. This is listed as a limitation. \\
-\bottomrule
-\end{tabularx}
-\end{table}
+\end{longtable}}
 
 \section{Architectural Design for Proposed System}
 
-Figure~\ref{fig:architecture} shows the six-module architecture of Review~I, coloured by
-status at Review~II. Data flows strictly left to right through Modules~1--5, with the
-dashboard (Module~6) reading the outputs of the others. Each stage reads only the
+Figure~\ref{fig:architecture} shows the full architecture: the six modules of Review~I with their
+main processing steps and outputs, coloured by status at Review~II. Data flows left to right along
+the top row (Modules~1--3, built) and then along the bottom row (Modules~4--6, design only), with
+the dashboard (Module~6) reading the outputs of the others. Each stage reads only the
 outputs of the stage before it and writes to its own directory, so no stage can modify
 its own input. This separation is what makes each stage independently auditable.
 
 \begin{figure}[!htbp]
 \centering
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[font=\small,>=latex]
-  \tikzset{
-    mod/.style={rounded corners,thick,draw,align=center,text width=3.4cm,
-                minimum height=3.8cm,inner sep=4pt,anchor=north,
-                execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
-    dn/.style={mod,fill=green!12},
-    pt/.style={mod,fill=yellow!22},
-    pl/.style={mod,dashed,fill=gray!8},
-    ar/.style={->,thick}
-  }
-  \node[pt] (m1) at (0,0) {\footnotesize\textbf{Module 1}\\\footnotesize\textbf{Data/Input}\\\footnotesize\textbf{Management}\\[3pt]\scriptsize raw rs-fMRI (ADNI)\\ audit and recovery\\ clinical tables\\ stage labels};
-  \node[dn] (m2) at (4.1,0) {\footnotesize\textbf{Module 2}\\\footnotesize\textbf{Preprocessing}\\\footnotesize\textbf{Pipeline}\\[3pt]\scriptsize NIfTI conversion\\ volume removal\\ motion correction\\ EPI$\rightarrow$MNI, 4\,mm\\ band-pass, QC};
-  \node[dn] (m3) at (8.2,0) {\footnotesize\textbf{Module 3}\\\footnotesize\textbf{Feature Extraction}\\\footnotesize\textbf{(Brainnetome 246)}\\[3pt]\scriptsize 246 ROI time series\\ ALFF, ReHo, DC, FC\\ within-subject\\ normalisation};
-  \node[pl] (m4) at (12.3,0) {\footnotesize\textbf{Module 4}\\\footnotesize\textbf{Proposed Deep}\\\footnotesize\textbf{Learning Model}\\[3pt]\scriptsize transformer encoder\\ multi-attention\\ meta-learning\\ comorbidity fusion};
-  \node[pl] (m5) at (16.4,0) {\footnotesize\textbf{Module 5}\\\footnotesize\textbf{Core Output}\\\footnotesize\textbf{Classifier}\\[3pt]\scriptsize 6-class ordinal stage\\ class probabilities\\ confidence and\\ uncertainty};
-  \node[pl,anchor=north,minimum height=1.4cm,text width=19.8cm] (m6) at (8.2,-4.5) {\footnotesize\textbf{Module 6: Decision Support Dashboard}\\[2pt]\scriptsize
-      patient summary $\cdot$ progression chart $\cdot$ class probabilities $\cdot$ explainability overlays $\cdot$ network visualisation};
-  \foreach \a/\b in {m1/m2,m2/m3,m3/m4,m4/m5} \draw[ar] (\a.east |- 0,-1.9) -- (\b.west |- 0,-1.9);
-  \draw[ar,dashed] (m5.south) -- (m5.south |- m6.north);
-  % legend
-  \node[draw,fill=green!12,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (0,-6.7) {};
-  \node[anchor=west] at (0.45,-6.7) {\footnotesize complete};
-  \node[draw,fill=yellow!22,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (3.6,-6.7) {};
-  \node[anchor=west] at (4.05,-6.7) {\footnotesize partly complete (imaging done, clinical tables not)};
-  \node[draw,dashed,fill=gray!8,rounded corners,minimum width=0.6cm,minimum height=0.4cm] at (14.0,-6.7) {};
-  \node[anchor=west] at (14.45,-6.7) {\footnotesize not started};
-\end{tikzpicture}}
-\caption[Six-module architecture with status at Review~II]{Six-module architecture of the proposed system (Review~I design) with status
-at Review~II.}
+\includegraphics[width=\textwidth]{figures/architecture_full.pdf}
+\caption[Full architecture with status at Review~II]{Full architecture of the proposed system (Review~I design) with status at
+Review~II. Solid green: Modules~1--3, complete and verified for 165 acquisitions. Dashed blue:
+Modules~4--6, design only; nothing is trained and no result exists. The four biomarkers are the
+tasks of the meta-learning loop, and the clinical covariates $C$ from Module~1 are fused with the
+shared representation $Z'$ as $H=[Z'\,\|\,C]$.}
 \label{fig:architecture}
 \end{figure}
 

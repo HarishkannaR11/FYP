@@ -6,8 +6,8 @@
 % No accuracy, AUC, ROC, confusion matrix, calibration or attention result
 % exists, and none may be shown or implied.
 %
-% Structure: slides 2-15 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 16-25 are the Review II content;
+% Structure: slides 2-16 explain the project for a reader who has not seen it
+% (reusing the Review I material); slides 17-26 are the Review II content;
 % backup slides follow "Thank You" and are not counted in the page numbers:
 % glossary, data limitations, residual motion and site effects, the 246-ROI
 % verification pair and "why 246 regions", technology stack, the Phase 2
@@ -224,7 +224,13 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   clinical context, and say how sure the model is.
 \end{frame}
 
-% 6. Resting-state fMRI in plain words
+% 6. Full system architecture (all six modules: inputs, steps, outputs and status)
+\begin{frame}{Full System Architecture}
+  \centering
+  \makebox[\textwidth][c]{\includegraphics[width=15.2cm]{figures/architecture_full.pdf}}
+\end{frame}
+
+% 7. Resting-state fMRI in plain words
 \begin{frame}{Resting-State fMRI in Plain Words}
   \small
   \begin{itemize}
@@ -246,7 +252,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 7. The dataset
+% 8. The dataset
 \begin{frame}{The Dataset: ADNI}
   \begin{columns}[T,onlytextwidth]
     \column{0.52\textwidth}
@@ -285,7 +291,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 8. Clinical context
+% 9. Clinical context
 \begin{frame}{Clinical Context: Covariates and Comorbidity}
   \small
   \renewcommand{\arraystretch}{1.3}
@@ -304,7 +310,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 9. What is new
+% 10. What is new
 \begin{frame}{What Is New in Our Approach}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries}p{0.8cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}X}
@@ -325,7 +331,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{alertblock}
 \end{frame}
 
-% 10. System Modules
+% 11. System Modules
 \begin{frame}{System Modules}
   \small
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm}>{\centering\arraybackslash}p{1.9cm}X}
@@ -342,7 +348,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 11. Methodology / Workflow
+% 12. Methodology / Workflow
 \begin{frame}{Methodology / Workflow}
   \centering
   \begin{tikzpicture}[>=latex,
@@ -377,7 +383,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \small Every step is checked per acquisition; a scan that fails a check is logged, never silently altered.
 \end{frame}
 
-% 12. Preprocessing explained
+% 13. Preprocessing explained
 \begin{frame}{Preprocessing: What Each Step Does and Why}
   \footnotesize
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}X}
@@ -395,7 +401,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 13. The four biomarkers (plain words)
+% 14. The four biomarkers (plain words)
 \begin{frame}{The Four Feature Biomarkers}
   \begin{columns}[T,onlytextwidth]
     \column{0.245\textwidth}
@@ -427,7 +433,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{block}
 \end{frame}
 
-% 14. The brain atlas
+% 15. The brain atlas
 \begin{frame}{The Brain Atlas: 246 Regions}
   \begin{columns}[T,onlytextwidth]
     \column{0.64\textwidth}
@@ -447,7 +453,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 15. Brainnetome-246 parcellation as the feature-extraction space (compact and visual)
+% 16. Brainnetome-246 parcellation as the feature-extraction space (compact and visual)
 \begin{frame}{Brainnetome 246-ROI Parcellation for Feature Extraction}
   \centering
   {\small\itshape\color{UniversityBlue} Fine-grained, whole-brain representation for systematic regional
@@ -492,7 +498,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
 % PART B. REVIEW II CONTENT
 % =====================================================================
 
-% 16. Core Algorithm - implemented
+% 17. Core Algorithm - implemented
 \begin{frame}{Core Algorithm A: Implemented Biomarkers and Normalisation}
   \begin{columns}[T,onlytextwidth]
     \column{0.47\textwidth}
@@ -525,7 +531,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{itemize}
 \end{frame}
 
-% 17. Implementation Status
+% 18. Implementation Status
 \begin{frame}{Implementation Status}
   \centering
   \resizebox{0.8\textwidth}{!}{%
@@ -559,7 +565,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   Module 2 completed in September; Module 3 in October (normalised biomarkers 5 Oct).}
 \end{frame}
 
-% 18. Results: data-stage only
+% 19. Results: data-stage only
 \begin{frame}{Results: Data Foundation Verification}
   \begin{alertblock}{}
     \small These are \textbf{data-stage} results. \textbf{No model performance exists.}
@@ -590,7 +596,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 19. How to read the heatmaps
+% 20. How to read the heatmaps
 \begin{frame}{How to Read the Stage Heatmaps}
   \begin{columns}[T,onlytextwidth]
     \column{0.42\textwidth}
@@ -624,7 +630,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 20. Results: finding 1
+% 21. Results: finding 1
 \begin{frame}{Finding 1: FC Strength Equals DC/245}
   \begin{columns}[T,onlytextwidth]
     \column{0.52\textwidth}
@@ -653,7 +659,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 21. Results: finding 2
+% 22. Results: finding 2
 \begin{frame}{Finding 2: No Univariate Progression Signal}
   \begin{columns}[T,onlytextwidth]
     \column{0.50\textwidth}
@@ -684,7 +690,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 22. Results: finding 3
+% 23. Results: finding 3
 \begin{frame}{Finding 3: The Biomarkers Are Not Redundant}
   \centering
   \includegraphics[width=\textwidth]{figures/findings_complementarity.pdf}\\[2pt]
@@ -699,7 +705,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{block}
 \end{frame}
 
-% 23. Results: finding 4
+% 24. Results: finding 4
 \begin{frame}{Finding 4: The Features Are Reproducible and Plausible}
   \centering
   \includegraphics[width=\textwidth]{figures/findings_reliability.pdf}\\[2pt]
@@ -714,7 +720,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{block}
 \end{frame}
 
-% 24. Team Responsibilities
+% 25. Team Responsibilities
 \begin{frame}{Team Responsibilities}
   \small
   \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
@@ -731,7 +737,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   {\footnotesize Feature extraction (Module 3) was completed by the team and is verified.}
 \end{frame}
 
-% 25. References
+% 26. References
 \begin{frame}{References}
   \setbeamertemplate{bibliography item}[text]
   \fontsize{6}{7}\selectfont
@@ -760,7 +766,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{multicols}
 \end{frame}
 
-% 26. Thank you
+% 27. Thank you
 \begin{frame}[plain]
   \centering
   \vfill

@@ -1,11 +1,11 @@
 # Speaker notes: Findings 3 and 4, and the backups on motion, site and "why 246 regions"
 
-For slides 22 and 23 and the backups 3/10 ("Residual Motion and Site Effects") and 6/10
+For slides 23 and 24 and the backups 3/10 ("Residual Motion and Site Effects") and 6/10
 ("Why 246 Regions?"). Every number is reproduced by
 `python3 scripts/audit/findings_checks.py`. None of this is a model result: no stage label is
 used for Findings 3 and 4 or for the granularity check.
 
-## Slide 22 - Finding 3: the biomarkers are not redundant (45 s)
+## Slide 23 - Finding 3: the biomarkers are not redundant (45 s)
 
 "Do our biomarkers just repeat each other? Finding 1 showed that FC strength is exactly DC
 divided by 245, so we removed it. For the three that remain, we compared their patterns across
@@ -20,7 +20,7 @@ regions, between two biomarkers' maps; averaged over the 165 scans (mALFF-mReHo 
 mALFF-DC_z 11.1 %, mReHo-DC_z 5.7 %). Low overlap means different information about the
 brain, not information about disease.
 
-## Slide 23 - Finding 4: the features are reproducible and plausible (60 s)
+## Slide 24 - Finding 4: the features are reproducible and plausible (60 s)
 
 "Are the features reproducible? 31 people were scanned more than once: 69 scans, and 45 of the
 46 same-person pairs are from different sessions. For ALFF, each scan's most similar scan is
@@ -85,5 +85,5 @@ hemisphere).
 - "That is now measured, not assumed" (Gap G1) and "hemispheric asymmetry is real information"
   are not on the slides: the first overstates what a low overlap shows, and the second is not
   separable from the loss of half the features in the merge.
-- Not added: "Why the Full 246-ROI Space Is Retained" (the compact slide 15 replaces it) and the
+- Not added: "Why the Full 246-ROI Space Is Retained" (the compact slide 16 replaces it) and the
   user's two backup figures for it (slide-sized versions are backups 4/10 and 5/10).

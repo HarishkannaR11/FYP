@@ -1,11 +1,11 @@
 # Speaker notes: the 246-region atlas slide and its two backups
 
-For slide 15 ("Brainnetome 246-ROI Parcellation for Feature Extraction") and the two
+For slide 16 ("Brainnetome 246-ROI Parcellation for Feature Extraction") and the two
 backup slides 4/10 ("The 246-ROI Extraction Space Is Verified") and 5/10 ("246 Regions as
-Connectivity Nodes"). About 45-60 seconds for slide 15. Every number below is reproduced
+Connectivity Nodes"). About 45-60 seconds for slide 16. Every number below is reproduced
 by `python3 scripts/audit/roi_space_checks.py`.
 
-## Slide 15 - say this (45-60 s)
+## Slide 16 - say this (45-60 s)
 
 "The atlas divides the brain into 246 named regions: 210 on the cortex and 36 deeper
 inside. For every scan we do the same thing for every region: we take its signal over
@@ -50,7 +50,7 @@ keep the matrix signed and unthresholded. We have not rerun the pipeline without
 signal regression, so we cannot say how the percentage would change; that would be a
 sensitivity check for later."
 
-## Where each number on slide 15 and the backups comes from
+## Where each number on slide 16 and the backups comes from
 
 | On the slide | Value | Source |
 |---|---|---|
@@ -62,7 +62,7 @@ sensitivity check for later."
 | no zero-variance, no NaN/Inf | 0 and 0 over all 165 x 246 series | `scripts/audit/roi_space_checks.py` |
 | 50.1 % negative | 50.09 % mean over scans; range 45.6-53.1 % | `scripts/audit/roi_space_checks.py` |
 
-The picture on slide 15 is six axial slices read straight from the atlas file
+The picture on slide 16 is six axial slices read straight from the atlas file
 (`figures/make_atlas_axial.py`); each colour is one ROI. The two backup figures are
 slide-sized redraws of `fig_roi_qc.png` and `fig_fc_matrix.png`
 (`figures/make_atlas_backup_figs.py`). Panels (b) and (c) of the first and the matrix and
