@@ -16,36 +16,45 @@ If asked for the exact numbers: 27 CN, 31 SMC, 29 EMCI, 32 MCI, 21 LMCI, 25 AD s
 (LMCI is the smallest). To reach 30 in every stage we still need to add +3 CN, +1 EMCI,
 +9 LMCI and +5 AD processed scans (18 in all); SMC and MCI are already above 30.
 
-## Slide 13 - the four biomarkers (60-75 s)
+## Slide 13 - the four biomarkers, in everyday words (60 s)
 
-(The four small brain pictures come from one CN scan.)
+(The four small pictures come from one CN scan. ALFF, ReHo and DC are brain maps; FC is a
+table of who goes with whom.)
 
-"While the person rests in the scanner, we record the brain every 3 seconds. In every
-small region of the brain the signal goes up and down slowly, like a wave. We ask four
-simple questions about that wave."
+"While the person rests in the scanner, we take a picture of the brain every 3 seconds. In
+each small part of the brain, the picture gets a little brighter, then a little darker, again
+and again. We ask four easy questions about that up-and-down pattern. To make it easy, think of
+each part of the brain as a group of people clapping."
 
-1. **ALFF – how strong?** "ALFF measures how big the swings of the wave are in a region.
-   Big swings mean stronger activity."
-2. **ReHo – is the region working in step?** "ReHo looks at the small spots inside one
-   region. If they rise and fall together, the region is working in step."
-3. **FC – who talks to whom?** "Functional connectivity compares two different regions.
-   If their waves rise and fall together, we call them connected. Doing this for every
-   pair of our 246 regions gives a 246-by-246 table."
-4. **DC – how connected is a region overall?** "Degree centrality just adds up all the
-   connections of one region. A big total means the region is a hub."
+1. **ALFF - how active is it?** "ALFF is how loud the group claps. Big ups and downs mean a
+   very active part."
+2. **ReHo - do its tiny spots work together?** "Inside the group, do the people clap in time
+   with each other? If yes, the part works as a team."
+3. **FC - which other parts go along with it?** "Now take two groups. If they clap at the same
+   moments, we say they are connected. We check every pair of our 246 parts, so we get one big
+   table of who goes with whom."
+4. **DC - how well linked is it?** "Add up all the links one part has with the other parts. A
+   big total means a well-linked, busy part."
 
-"So every scan gives each region three numbers – strength, in-step-ness and total
-connections – plus the full table of who is connected to whom. We keep all four because
-each one shows a different side of the brain, and our model will use them together."
+"So for every part of the brain we know how active it is, whether it works as a team, who it
+goes along with, and how well linked it is. We keep all four because each one shows a
+different side of the brain."
+
+Ten-second version: "Four easy questions about each part of the brain: how active is it, do
+its tiny spots work together, which other parts go along with it, and how well linked is it."
+
+If someone wants the technical names: ALFF is the amplitude of low-frequency fluctuations,
+ReHo is regional homogeneity, FC is functional connectivity, DC is degree centrality.
 
 ## If the panel asks
 
-- **Why four and not one?** Earlier work mostly uses one at a time; each captures
-  something different, and combining them is the point of the project.
-- **Is DC the same as FC?** DC is built from FC: it is the row total. We checked that the
-  "FC strength" we planned equals DC divided by 245 (to rounding error), so we kept DC and FC and
-  dropped the duplicate.
-- **Do the biomarkers already separate the stages?** Not in simple group averages (our
-  Finding 2). That is why a combined, multivariate model is needed.
-- **Are these 30 scans per stage all different people?** No. 165 scans come from 127
-  people, because some were scanned more than once; the smallest stage (MCI) has 14 people.
+- **Why four and not one?** Each one shows something different, so together they give a fuller
+  picture. Earlier studies mostly used one at a time; using them together is the point of the
+  project.
+- **Is DC the same as FC?** DC is made from FC: it is the total of one row of the table. The
+  "FC strength" number we first planned turned out to be just DC divided by 245, so we kept DC and
+  FC and dropped the copy.
+- **Do the four already tell the stages apart?** Not in simple group averages (our Finding 2).
+  That is why we need a model that looks at all of them together.
+- **Are the scans all from different people?** No. 165 scans come from 127 people, because
+  some were scanned more than once; the smallest stage (MCI) has 14 people.
