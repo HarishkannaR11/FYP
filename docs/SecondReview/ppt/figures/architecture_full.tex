@@ -102,20 +102,20 @@
 \node[chip,minimum width=1.3cm,minimum height=1.0cm,text width=1.2cm] (fus) at (7.15,-5.0)
   {\fontsize{6}{7}\selectfont fusion\\[1pt]\fontsize{7}{8}\selectfont $H=[Z'\,\|\,C]$};
 \node[draw=ClinLine,fill=ClinFill,rounded corners=2pt,line width=0.5pt,align=center,inner sep=1.5pt,
-      font=\fontsize{6.2}{7.2}\selectfont,minimum width=1.3cm,minimum height=0.55cm] (cc) at (7.15,-6.05)
+      font=\fontsize{6.2}{7.2}\selectfont,minimum width=1.3cm,minimum height=0.55cm] (cc) at (7.15,-6.0)
   {clinical covariates $C$\\ (from M1)};
 \draw[->,line width=0.6pt,draw=ClinLine] (cc.north) -- (fus.south);
 \draw[flow] (7.8,-5.0) -- (8.4,-5.0);
 
 % ---- M5
-\node[anchor=north west,text width=3.4cm,align=left,inner sep=0pt] at (8.55,-3.78) {%
+\node[anchor=north west,text width=3.4cm,align=left,inner sep=0pt] at (8.55,-3.72) {%
   \bl{Bayesian ordinal head}
   \bl{six ordered stages, thresholds $\theta_0<\dots<\theta_4$}
   \bl{weights $w\sim q(w)$}};
 \node[draw=UBlue,fill=white,rounded corners=2pt,line width=0.5pt,anchor=north west,text width=3.3cm,align=left,
       inner sep=2pt,font=\fontsize{6.6}{7.8}\selectfont] at (8.55,-5.0) {%
-  cumulative link: $P(y\le k)=\sigma(\theta_k-g(H))$\\[1.5pt]
-  \textbf{out:} stage $\hat y$, class probabilities, uncertainty from $S$ weight samples};
+  cumulative link:\\ $P(y\le k)=\sigma(\theta_k-g(H))$\\[1.5pt]
+  \textbf{out:} stage $\hat y$, class probabilities, uncertainty};
 \draw[flow] (12.1,-5.0) -- (12.5,-5.0);
 
 % ---- M6
