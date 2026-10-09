@@ -6,8 +6,8 @@
 % No accuracy, AUC, ROC, confusion matrix, calibration or attention result
 % exists, and none may be shown or implied.
 %
-% Structure: slides 2-12 explain the project for a reader who has not seen it
-% (reusing the Review I material); slides 13-25 are the Review II content;
+% Structure: slides 2-15 explain the project for a reader who has not seen it
+% (reusing the Review I material); slides 16-25 are the Review II content;
 % backup slides follow "Thank You" and are not counted in the page numbers:
 % glossary, data limitations, residual motion and site effects, the 246-ROI
 % verification pair and "why 246 regions", technology stack, the Phase 2
@@ -304,7 +304,98 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tabularx}
 \end{frame}
 
-% 9. The four biomarkers (plain words)
+% 9. What is new
+\begin{frame}{What Is New in Our Approach}
+  \small
+  \begin{tabularx}{\textwidth}{>{\bfseries}p{0.8cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}X}
+    \toprule
+    & \textbf{Gap in existing work} & \textbf{What we propose (design)} \\
+    \midrule
+    G1 & Each biomarker is analysed on its own & \textbf{Meta-learning:} each biomarker is a task; learn a shared, biomarker-invariant representation \\[3pt]
+    G2 & Clinical context is left out & \textbf{Fusion:} join covariates to the imaging representation, $H=[Z'\,\|\,C]$ \\[3pt]
+    G3 & Progression treated as unordered classes & \textbf{Ordinal model} over six ordered stages \\[3pt]
+    G4 & Overconfident single labels & \textbf{Bayesian output:} probability per stage with uncertainty \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{0.25cm}
+
+  \begin{alertblock}{Honest scope}
+    \footnotesize All four are \textbf{design only}: nothing is trained. Of three 2026 papers checked,
+    at least one partly addresses each of G2--G4 and none addresses G1 (report \S1.3).
+  \end{alertblock}
+\end{frame}
+
+% 10. System Modules
+\begin{frame}{System Modules}
+  \small
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm}>{\centering\arraybackslash}p{1.9cm}X}
+    \toprule
+    \textbf{Module (Review I names)} & \textbf{Status} & \textbf{At Review II} \\
+    \midrule
+    1 Data/Input Management & \done & Imaging audited; clinical table cleaned (covariates for 107 of 127 subjects) \\
+    2 Preprocessing Pipeline & \done & 165 of 173 scans; 8 rejected (TR 6.02\,s) \\
+    3 Feature Extraction (Brainnetome 246) & \done & ALFF, ReHo, DC, FC for 165/165; normalised \\
+    4 Proposed Deep Learning Model & \notst & Transformer, meta-learning, fusion: design only \\
+    5 Core Output Classifier & \notst & Bayesian ordinal head: design only \\
+    6 Decision Support Dashboard & \notst & No interface built \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% 11. Methodology / Workflow
+\begin{frame}{Methodology / Workflow}
+  \centering
+  \begin{tikzpicture}[>=latex,
+      st/.style={draw=UniversityBlue,fill=LightBlue,rounded corners,
+                 text width=2.05cm,minimum height=0.95cm,align=center,font=\scriptsize,
+                 execute at begin node={\hyphenpenalty=10000}},
+      ar/.style={->,thick,draw=AccentBlue}]
+    % Module 2 chain, two rows
+    \node[st] (a1) {Discard first 5 volumes};
+    \node[st,right=0.35cm of a1] (a3) {Motion correction\\ mc-afni2};
+    \node[st,right=0.35cm of a3] (a4) {Direct EPI$\rightarrow$MNI\\ ANTs SyN, no T1w};
+    \node[st,right=0.35cm of a4] (a5) {4\,mm resample};
+    \node[st,below=0.45cm of a1] (b1) {6\,mm FWHM smoothing};
+    \node[st,right=0.35cm of b1] (b2) {Linear detrend};
+    \node[st,right=0.35cm of b2] (b3) {27 nuisance regressors};
+    \node[st,right=0.35cm of b3] (b4) {Band-pass 0.01--0.10\,Hz};
+    \node[st,right=0.35cm of b4] (b5) {Per-scan QC};
+    % Module 3 chain
+    \node[st,below=0.7cm of b1] (c1) {Brainnetome-246 atlas (nearest neighbour)};
+    \node[st,right=0.35cm of c1] (c2) {ROI time series\\ $135\times246$};
+    \node[st,right=0.35cm of c2] (c3) {ALFF, ReHo, FC, DC};
+    \node[st,right=0.35cm of c3] (c4) {Within-subject normalisation};
+    \foreach \x/\y in {a1/a3,a3/a4,a4/a5,b1/b2,b2/b3,b3/b4,b4/b5,c1/c2,c2/c3,c3/c4}
+      \draw[ar] (\x) -- (\y);
+    \draw[ar] (a5.south) -- ++(0,-0.25) -| (b1.north);
+    \draw[ar] (b5.south) -- ++(0,-0.3) -| (c1.north);
+    \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]a1.west) {Module 2};
+    \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]c1.west) {Module 3};
+  \end{tikzpicture}
+  \vspace{0.3cm}
+
+  \small Every step is checked per acquisition; a scan that fails a check is logged, never silently altered.
+\end{frame}
+
+% 12. Preprocessing explained
+\begin{frame}{Preprocessing: What Each Step Does and Why}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}X}
+    \toprule
+    Step & What it does & Why it is needed \\
+    \midrule
+    Discard first 5 volumes & drops the first 15\,s & the signal is still settling at the start \\[2pt]
+    Motion correction & aligns every volume to the first & head movement would otherwise look like brain activity \cite{r8,r9} \\[2pt]
+    Warp to MNI template & maps each brain onto a standard brain \cite{r10} & so region $k$ is the same place in every person \\[2pt]
+    Resample to 4\,mm, smooth 6\,mm & coarser grid and slight blur & less noise and fewer voxels \\[2pt]
+    Detrend and 27 regressors & removes slow drift and motion, white-matter and whole-brain signal & non-neural influences hide the neural signal \\[2pt]
+    Band-pass 0.01--0.10\,Hz & keeps only slow fluctuations & the range where resting-state activity lives \\[2pt]
+    Quality control & motion, signal-to-noise and file checks per scan & failures are logged, never silently altered \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% 13. The four biomarkers (plain words)
 \begin{frame}{The Four Feature Biomarkers}
   \begin{columns}[T,onlytextwidth]
     \column{0.245\textwidth}
@@ -335,7 +426,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{block}
 \end{frame}
 
-% 10. The brain atlas
+% 14. The brain atlas
 \begin{frame}{The Brain Atlas: 246 Regions}
   \begin{columns}[T,onlytextwidth]
     \column{0.64\textwidth}
@@ -355,7 +446,7 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{columns}
 \end{frame}
 
-% 11. Brainnetome-246 parcellation as the feature-extraction space (compact and visual)
+% 15. Brainnetome-246 parcellation as the feature-extraction space (compact and visual)
 \begin{frame}{Brainnetome 246-ROI Parcellation for Feature Extraction}
   \centering
   {\small\itshape\color{UniversityBlue} Fine-grained, whole-brain representation for systematic regional
@@ -396,100 +487,9 @@ Comorbidity-Aware Meta-Bayesian Framework with Resting-State fMRI}
   \end{tikzpicture}
 \end{frame}
 
-% 12. What is new
-\begin{frame}{What Is New in Our Approach}
-  \small
-  \begin{tabularx}{\textwidth}{>{\bfseries}p{0.8cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}X}
-    \toprule
-    & \textbf{Gap in existing work} & \textbf{What we propose (design)} \\
-    \midrule
-    G1 & Each biomarker is analysed on its own & \textbf{Meta-learning:} each biomarker is a task; learn a shared, biomarker-invariant representation \\[3pt]
-    G2 & Clinical context is left out & \textbf{Fusion:} join covariates to the imaging representation, $H=[Z'\,\|\,C]$ \\[3pt]
-    G3 & Progression treated as unordered classes & \textbf{Ordinal model} over six ordered stages \\[3pt]
-    G4 & Overconfident single labels & \textbf{Bayesian output:} probability per stage with uncertainty \\
-    \bottomrule
-  \end{tabularx}
-  \vspace{0.25cm}
-
-  \begin{alertblock}{Honest scope}
-    \footnotesize All four are \textbf{design only}: nothing is trained. Of three 2026 papers checked,
-    at least one partly addresses each of G2--G4 and none addresses G1 (report \S1.3).
-  \end{alertblock}
-\end{frame}
-
 % =====================================================================
 % PART B. REVIEW II CONTENT
 % =====================================================================
-
-% 13. System Modules
-\begin{frame}{System Modules}
-  \small
-  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm}>{\centering\arraybackslash}p{1.9cm}X}
-    \toprule
-    \textbf{Module (Review I names)} & \textbf{Status} & \textbf{At Review II} \\
-    \midrule
-    1 Data/Input Management & \done & Imaging audited; clinical table cleaned (covariates for 107 of 127 subjects) \\
-    2 Preprocessing Pipeline & \done & 165 of 173 scans; 8 rejected (TR 6.02\,s) \\
-    3 Feature Extraction (Brainnetome 246) & \done & ALFF, ReHo, DC, FC for 165/165; normalised \\
-    4 Proposed Deep Learning Model & \notst & Transformer, meta-learning, fusion: design only \\
-    5 Core Output Classifier & \notst & Bayesian ordinal head: design only \\
-    6 Decision Support Dashboard & \notst & No interface built \\
-    \bottomrule
-  \end{tabularx}
-\end{frame}
-
-% 14. Methodology / Workflow
-\begin{frame}{Methodology / Workflow}
-  \centering
-  \begin{tikzpicture}[>=latex,
-      st/.style={draw=UniversityBlue,fill=LightBlue,rounded corners,
-                 text width=2.05cm,minimum height=0.95cm,align=center,font=\scriptsize,
-                 execute at begin node={\hyphenpenalty=10000}},
-      ar/.style={->,thick,draw=AccentBlue}]
-    % Module 2 chain, two rows
-    \node[st] (a1) {Discard first 5 volumes};
-    \node[st,right=0.35cm of a1] (a3) {Motion correction\\ mc-afni2};
-    \node[st,right=0.35cm of a3] (a4) {Direct EPI$\rightarrow$MNI\\ ANTs SyN, no T1w};
-    \node[st,right=0.35cm of a4] (a5) {4\,mm resample};
-    \node[st,below=0.45cm of a1] (b1) {6\,mm FWHM smoothing};
-    \node[st,right=0.35cm of b1] (b2) {Linear detrend};
-    \node[st,right=0.35cm of b2] (b3) {27 nuisance regressors};
-    \node[st,right=0.35cm of b3] (b4) {Band-pass 0.01--0.10\,Hz};
-    \node[st,right=0.35cm of b4] (b5) {Per-scan QC};
-    % Module 3 chain
-    \node[st,below=0.7cm of b1] (c1) {Brainnetome-246 atlas (nearest neighbour)};
-    \node[st,right=0.35cm of c1] (c2) {ROI time series\\ $135\times246$};
-    \node[st,right=0.35cm of c2] (c3) {ALFF, ReHo, FC, DC};
-    \node[st,right=0.35cm of c3] (c4) {Within-subject normalisation};
-    \foreach \x/\y in {a1/a3,a3/a4,a4/a5,b1/b2,b2/b3,b3/b4,b4/b5,c1/c2,c2/c3,c3/c4}
-      \draw[ar] (\x) -- (\y);
-    \draw[ar] (a5.south) -- ++(0,-0.25) -| (b1.north);
-    \draw[ar] (b5.south) -- ++(0,-0.3) -| (c1.north);
-    \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]a1.west) {Module 2};
-    \node[font=\scriptsize\bfseries,text=UniversityBlue,anchor=east] at ([xshift=-0.15cm]c1.west) {Module 3};
-  \end{tikzpicture}
-  \vspace{0.3cm}
-
-  \small Every step is checked per acquisition; a scan that fails a check is logged, never silently altered.
-\end{frame}
-
-% 15. Preprocessing explained
-\begin{frame}{Preprocessing: What Each Step Does and Why}
-  \footnotesize
-  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}X}
-    \toprule
-    Step & What it does & Why it is needed \\
-    \midrule
-    Discard first 5 volumes & drops the first 15\,s & the signal is still settling at the start \\[2pt]
-    Motion correction & aligns every volume to the first & head movement would otherwise look like brain activity \cite{r8,r9} \\[2pt]
-    Warp to MNI template & maps each brain onto a standard brain \cite{r10} & so region $k$ is the same place in every person \\[2pt]
-    Resample to 4\,mm, smooth 6\,mm & coarser grid and slight blur & less noise and fewer voxels \\[2pt]
-    Detrend and 27 regressors & removes slow drift and motion, white-matter and whole-brain signal & non-neural influences hide the neural signal \\[2pt]
-    Band-pass 0.01--0.10\,Hz & keeps only slow fluctuations & the range where resting-state activity lives \\[2pt]
-    Quality control & motion, signal-to-noise and file checks per scan & failures are logged, never silently altered \\
-    \bottomrule
-  \end{tabularx}
-\end{frame}
 
 % 16. Core Algorithm - implemented
 \begin{frame}{Core Algorithm A: Implemented Biomarkers and Normalisation}

@@ -85,5 +85,5 @@ hemisphere).
 - "That is now measured, not assumed" (Gap G1) and "hemispheric asymmetry is real information"
   are not on the slides: the first overstates what a low overlap shows, and the second is not
   separable from the loss of half the features in the merge.
-- Not added: "Why the Full 246-ROI Space Is Retained" (the compact slide 11 replaces it) and the
+- Not added: "Why the Full 246-ROI Space Is Retained" (the compact slide 15 replaces it) and the
   user's two backup figures for it (slide-sized versions are backups 4/10 and 5/10).

@@ -1,6 +1,6 @@
 # Speaker notes: the biomarkers, in simple words
 
-For slide 3 ("The Six Stages of Progression") and slide 9 ("The Four Feature Biomarkers").
+For slide 3 ("The Six Stages of Progression") and slide 13 ("The Four Feature Biomarkers").
 About 1.5 minutes. Say it slowly; point at each picture as you go.
 
 ## Slide 3 - the stages and the data per stage (15 s)
@@ -16,7 +16,7 @@ If asked for the exact numbers: 27 CN, 31 SMC, 29 EMCI, 32 MCI, 21 LMCI, 25 AD s
 (LMCI is the smallest). To reach 30 in every stage we still need to add +3 CN, +1 EMCI,
 +9 LMCI and +5 AD processed scans (18 in all); SMC and MCI are already above 30.
 
-## Slide 9 - the four biomarkers (60-75 s)
+## Slide 13 - the four biomarkers (60-75 s)
 
 (The four small brain pictures come from one CN scan.)
 
