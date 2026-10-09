@@ -77,11 +77,16 @@ LMCI, and AD---together with a calibrated confidence score for each prediction.
 Review~I timeline. The modelling stages (Modules 4 to 6) have not been started, and no
 performance result is reported. Every derived feature was verified independently, and
 degree centrality recomputed from the stored connectivity matrices agreed exactly for all
-165 acquisitions. Two findings shaped the design. FC strength, the per-region summary of FC,
+165 acquisitions. Four findings shaped the design. FC strength, the per-region summary of FC,
 is exactly DC$/245$, so all four biomarkers are kept as a $246\times3$ regional matrix plus
-the full $246\times246$ connectivity matrix. Stage-wise group-mean heatmaps over 127 subjects
-show no detectable univariate progression signal (1, 0 and 1 of 246 regions monotonic,
-against about 0.7 expected by chance), which motivates a multivariate model. The model will
+the full $246\times246$ connectivity matrix. The three regional biomarkers share only 6 to
+11\% of their variance across regions, so each carries largely different information.
+Stage-wise group-mean heatmaps over 127 subjects show no detectable univariate progression
+signal (1, 0 and 1 of 246 regions monotonic, against about 0.7 expected by chance), which
+motivates a multivariate model. The features are reproducible between sessions: with no stage
+label, the most similar other acquisition belongs to the same subject for 91\% of the 69
+acquisitions of subjects scanned more than once (mALFF), although residual head motion and an
+uneven spread of sites across stages remain in the features. The model will
 be judged on the standard classification metric suite (accuracy, precision, recall,
 F1-score, ROC-AUC) alongside two model-specific checks: how well calibrated the Bayesian
 uncertainty estimates are, and how meaningful the learned attention maps prove to be, under
@@ -223,7 +228,7 @@ Documentation; final submission & Feb--Mar & Not yet due. \\
 \begin{figure}[!htbp]
 \centering
 \begin{ganttchart}[
-    x unit=1.0cm, y unit chart=0.62cm, y unit title=0.62cm,
+    x unit=1.0cm, y unit chart=0.5cm, y unit title=0.5cm,
     title height=1, title label font=\small, bar label font=\small,
     milestone label font=\small, vgrid={*{1}{draw=none},dotted},
     hgrid, bar height=0.55,
@@ -269,7 +274,7 @@ here.
 not say and the full text was not accessible.}
 \label{tab:litupdate}
 \footnotesize
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}X@{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}X@{}}
 \toprule
 \textbf{Work} & \textbf{Input} & \textbf{Ordinal staging} & \textbf{Uncertainty; gaps touched} \\
 \midrule
@@ -747,7 +752,7 @@ Endocrine/metabolic history & medical history, MH9ENDO & binary & 107 of 127; br
 \end{tabularx}
 \end{table}
 
-\textbf{How the table was cleaned.} One script (\texttt{scripts/clinical/clean\_clinical\_data.py}) reads 37
+\textbf{How the table was cleaned.} One script (\texttt{scripts/\allowbreak clinical/\allowbreak clean\_\allowbreak clinical\_\allowbreak data.py}) reads 37
 ADNI clinical tables without modifying them. Each CDR, MMSE and GDS score comes from the assessment closest in date
 to the subject's earliest MRI (median gap 0 days). Missing-value codes become missing, nothing is imputed, and 116
 conflicting duplicate values are left for manual review.
@@ -1036,6 +1041,37 @@ correction derived from auditing the features, not a pipeline error. A different
 per-region FC summary that is not a rescaling of DC (for example, within-network
 connectivity) could be added later if the model needs one.
 
+\subsection{Complementarity of the Retained Biomarkers}\label{sec:complement}
+
+Removing FC strength leaves three regional features. Carrying them separately is worthwhile only
+if they overlap little, so the overlap was measured. For every acquisition, the Pearson
+correlation across the 246 regions was computed between each pair of within-subject normalised
+features, and the squared correlation (the shared variance) was averaged over the 165
+acquisitions (Table~\ref{tab:complement}). The three retained pairs share 5.7 to 11.3\% of their
+variance, so the features are 89 to 94\% non-redundant, whereas the removed pair shares 100\%.
+mALFF and DC$_z$ are negatively related in all 165 acquisitions: regions with larger
+low-frequency amplitude tend to have lower degree centrality. Low overlap shows that the features
+describe different aspects of each acquisition, not that any of them is informative about disease;
+whether separate tasks improve staging can only be tested in the modelling stage.
+
+\begin{table}[!htbp]
+\centering
+\caption[Overlap between biomarker pairs]{Overlap between biomarker pairs across the 246 regions, over all 165
+acquisitions. Shared variance is the mean of the squared correlation.}
+\label{tab:complement}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xrrr@{}}
+\toprule
+\textbf{Pair} & \textbf{Mean $r$} & \textbf{Shared variance} & \textbf{Acquisitions with $r<0$} \\
+\midrule
+FC\_Strength--DC (removed) & $+1.000$ & 100\% & 0 / 165 \\
+mALFF--mReHo & $+0.291$ & 11.3\% & 7 / 165 \\
+mALFF--DC$_z$ & $-0.310$ & 11.1\% & 165 / 165 \\
+mReHo--DC$_z$ & $-0.161$ & 5.7\% & 133 / 165 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \section{Engineering and Reproducibility}
 
 \subsection{An Unstable Execution Environment}
@@ -1176,7 +1212,7 @@ value is kept visible in the last column. With it removed, the CN tSNR mean is 1
 preprocessed acquisitions and in every downstream count; how it is handled in
 modelling has not yet been decided.
 
-\section{Biomarker Quality}
+\section{Biomarker Quality}\label{sec:biomarkerqc}
 
 \begin{table}[!htbp]
 \centering
@@ -1230,6 +1266,57 @@ matrix is symmetric to $5.3\times10^{-15}$ with a diagonal of exactly zero in al
 $\pm0.999999$ clipping bound, so that safeguard never engaged --- confirming no
 region pair is numerically perfectly correlated.
 
+\textbf{Connectivity distribution.} Region sizes on the 4\,mm grid range from 10 to 186 voxels
+(median 68). Each acquisition gives 30{,}135 unique region pairs, of which 50.1\% are negative on
+average over the 165 acquisitions (45.6 to 53.1\% in any single one). This is expected after global
+signal regression, part of the 27-regressor design, which shifts correlations toward zero, so
+negative values should not be read as anticorrelation between networks. The matrices are kept
+signed and unthresholded.
+
+\textbf{Reproducibility between sessions.} Thirty-one subjects have repeat acquisitions (69 in all;
+45 of the 46 same-subject pairs come from different sessions). Using no stage label, each
+acquisition was matched to the other acquisition whose 246-region vector correlates most strongly
+with it (Table~\ref{tab:session}). For mALFF the match belongs to the same subject in 63 of 69 cases
+(91.3\%), against 3.2\% expected by chance for 31 subjects; the rate is 76.8\% for mReHo and 43.5\%
+for DC$_z$.
+
+\begin{table}[!htbp]
+\centering
+\caption[Between-session reproducibility of the regional features]{Between-session reproducibility (31 subjects with repeat acquisitions, 69 acquisitions).
+Correlations across the 246 regions: mean over same-subject pairs and over 3000 random pairs from
+different subjects. Identification: the most similar other acquisition belongs to the same subject
+(chance $=1/31=3.2\%$).}
+\label{tab:session}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Feature} & \textbf{Same subject} & \textbf{Different subjects} & \textbf{Identification} \\
+\midrule
+mALFF & 0.83 & 0.46 & 91.3\% (63 / 69) \\
+mReHo & 0.64 & 0.37 & 76.8\% (53 / 69) \\
+DC$_z$ & 0.58 & 0.41 & 43.5\% (30 / 69) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Positive control.} Left--right homologous regions are among the most strongly connected
+pairs in resting-state fMRI. Their mean Fisher-$z$ connectivity is 0.63 against 0.01 for the other
+30{,}012 pairs, and exceeds that of the other pairs in 164 of 165 acquisitions. The exception, EMCI
+\texttt{sub-012S4849/\allowbreak ses-01/\allowbreak run-01}, has a mean homologous connectivity of $-0.003$, a
+tSNR of 87 (lowest 7\% of the cohort) and the widest spread of connectivity values of any
+acquisition; it is not excluded and should be inspected before modelling. These checks show that the
+features are stable within a subject and reproduce a known anatomical pattern, not that they separate
+stages. A subject's repeat acquisitions usually share a site and scanner, so part of the
+reproducibility may be scanner-related.
+
+\textbf{Granularity.} The same matching test on mALFF asks whether 246 regions keep information
+that coarser versions lose. Merging consecutive atlas labels lowers the identification rate at every
+step: 91.3\% with 246 regions, 87.0\% with 123 (each left--right pair merged), then 84.1, 72.5 and
+50.7\% with 82, 41 and 6. Returns flatten, however: random subsets of 100 and 200 regions give 88.3
+and 90.6\%. Two regions share only 4.0\% of their variance on average, and 79 principal components
+are needed for 95\% of it. This does not show that 246 regions are optimal for staging, which only
+the trained model can test.
+
 \section{Stage-wise Group Patterns: A Negative Univariate Result}\label{sec:heatmaps}
 
 We tested whether a univariate, per-region group-mean signal distinguishes the six
@@ -1245,7 +1332,7 @@ are not shown, because they are dominated by anatomical differences between regi
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.78\textwidth]{figures/stage_rowz_panel.pdf}
+\includegraphics[width=0.7\textwidth]{figures/stage_rowz_panel.pdf}
 \caption[Stage-wise regional biomarker patterns (mALFF, mReHo, DC$_z$)]{Stage-wise regional biomarker patterns across the six-stage progression
 (CN, SMC, EMCI, MCI, LMCI, AD) for 127 subjects; from left to right mALFF, mReHo and
 DC$_z$. Rows are the 246 Brainnetome ROIs in atlas order (cortical 1--210 above the
@@ -1313,7 +1400,7 @@ be told apart.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.92\textwidth]{figures/group_fc_by_stage.pdf}
+\includegraphics[width=0.85\textwidth]{figures/group_fc_by_stage.pdf}
 \caption[Group-mean Fisher-$z$ functional connectivity by stage]{Group-mean Fisher-$z$ functional connectivity ($246\times246$) for each of the
 six stages, with the number of subjects per stage in each panel title. Regions are in
 Brainnetome atlas order, grouped by lobe (frontal 1--68, temporal 69--124, parietal 125--162,
@@ -1328,8 +1415,8 @@ side, which turns the redundancy of Section~\ref{sec:redundancy} into a visual p
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=0.32\textheight,keepaspectratio]{figures/DC_z_rowz.png}\hfill
-\includegraphics[height=0.32\textheight,keepaspectratio]{figures/FC_Strength_rowz.png}
+\includegraphics[height=0.26\textheight,keepaspectratio]{figures/DC_z_rowz.png}\hfill
+\includegraphics[height=0.26\textheight,keepaspectratio]{figures/FC_Strength_rowz.png}
 \caption[DC$_z$ and FC\_Strength heatmaps compared]{DC$_z$ (left) and FC\_Strength (right), rendered independently from
 separate stored files. The heatmap panels are identical, because
 FC\_Strength $=$ DC$/245$ exactly (maximum difference $6.939\times10^{-18}$ across
@@ -1351,6 +1438,9 @@ done.
         review. Cardiovascular and endocrine history are available only as the broad ADNI categories
         MH4CARD and MH9ENDO, and no analysis of comorbidity patterns or fusion with the imaging features
         has been done.
+  \item \textbf{Motion, site and one flagged acquisition are not handled.} Mean framewise displacement
+        and site are measured but not yet used as covariates or for harmonisation, and the EMCI
+        acquisition without homologous connectivity has not been inspected.
   \item \textbf{The dataset expansion has not started.} The planned 50 further
         acquisitions per stage have not been downloaded or processed; all counts in this
         report refer to the current 165 acquisitions.
@@ -1374,40 +1464,69 @@ alternative with this dataset. Likewise, slice-timing correction is unavailable
 (Chapter~\ref{ch:impl}), so the step was omitted and documented instead of assuming an
 acquisition order.
 
-\textbf{On scale and feature redundancy.} Two findings will shape the modelling
-stage more than any preprocessing choice. First, raw ALFF varies by more than two
-orders of magnitude across acquisitions, because it is expressed in units
-proportional to raw BOLD intensity, whereas ReHo --- being bounded --- varies only
-narrowly. Supplying both unnormalised to a model would allow scanner and protocol
-scaling to dominate any biological signal; the within-subject normalisation in
-Module~3 addresses this. Second, the per-region summary of FC, the fourth column of the
-Review~I matrix, was found to be an exact rescaling of DC. All four biomarkers are
-still used: ALFF, ReHo and DC as three regional features, and FC in full as a
-connectivity matrix. Both findings were identified by inspecting the data rather than inherited
-from the design, which illustrates the value of auditing features before modelling.
+\textbf{On scale and feature redundancy.} Two observations about the features will shape the
+modelling stage more than any preprocessing choice. First, raw ALFF varies by more than two
+orders of magnitude across acquisitions, because it is expressed in units proportional to raw
+BOLD intensity, whereas ReHo, being bounded, varies only narrowly; supplying both unnormalised
+would let scanner and protocol scaling dominate any biological signal, which the within-subject
+normalisation of Module~3 addresses. Second, the per-region summary of FC, the fourth column of
+the Review~I matrix, is an exact rescaling of DC; all four biomarkers are still used, as three
+regional features and FC in full. Both were found by inspecting the data rather than inherited
+from the design, which shows the value of auditing features before modelling.
 
-\textbf{Limitations.} Beyond the absence of T1w and slice-timing data, four
+\textbf{On complementarity and reproducibility.} The retained biomarkers overlap little
+(Section~\ref{sec:complement}) and are stable between sessions (Section~\ref{sec:biomarkerqc}), which
+supports one task per biomarker in the meta-learning design. Neither check uses a stage label, so
+neither shows that the features separate stages.
+
+\textbf{Limitations.} Beyond the absence of T1w and slice-timing data, five
 limitations bear on the conclusions that can eventually be drawn. The effective
-sample is 127 subjects across six ordered classes with a smallest class of 14,
-(a further 50 acquisitions per stage are planned and will change these counts), which bounds model capacity and makes a single held-out test split uninformative;
-repeated subject-grouped cross-validation is required. No cross-site or cross-scanner
-harmonisation was applied (Table~\ref{tab:deviations}), so site and protocol effects may remain in the features. Eight acquisitions are
+sample is 127 subjects across six ordered classes with a smallest class of 14, which bounds
+model capacity and makes a single held-out test split uninformative; repeated
+subject-grouped cross-validation is required. No cross-site or cross-scanner
+harmonisation was applied (Table~\ref{tab:deviations}), and sites are spread unevenly across stages
+(Table~\ref{tab:site}): one site supplies 40\% of the AD acquisitions and two supply 68\%, whereas no
+site supplies more than 19\% of the CN acquisitions, so any CN--AD contrast is partly a site contrast.
+Motion also survives the 27 regressors: across 164 acquisitions (artifact acquisition excluded), 129
+of 246 regions in mALFF, 131 in mReHo and 39 in DC$_z$ correlate with mean framewise displacement
+at $p<0.05$ (uncorrected; about 12 expected by chance; repeat acquisitions of one subject are not
+independent). A site covariate or harmonisation, and mean framewise displacement as a covariate,
+are therefore needed before modelling. Eight acquisitions are
 permanently excluded on account of the 6.02\,s TR subgroup unless the filter
 specification is revisited for them. Finally, Section~\ref{sec:notdone} records what has not yet been done.
 
-\textbf{Mitigation: dataset expansion.} The main limitation above is the small effective
-sample. A further 50 acquisitions per stage (about 300 in total) are planned to address it.
-The limitation counts subjects, not acquisitions: 165 acquisitions come from 127 subjects,
-and MCI has 32 acquisitions from only 14 subjects. The expansion therefore helps in
-proportion to the number of \emph{new subjects} it adds. If every added acquisition came from
-a new subject the stages would grow by up to 50 subjects each (MCI from 14 to at most 64),
-so the added acquisitions will be drawn from subjects not already in the cohort wherever
-ADNI allows, and counts will be reported per subject. The frozen Modules~1 to~3 are reused
-unchanged.
+\begin{table}[!htbp]
+\centering
+\caption[Site concentration by stage]{Site concentration by stage (site = three-digit prefix of the ADNI subject
+identifier); the last two columns are the share of the stage's acquisitions from its largest and its
+two largest sites.}
+\label{tab:site}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Stage} & \textbf{Acquisitions} & \textbf{Sites} & \textbf{Largest site} & \textbf{Two largest} \\
+\midrule
+CN & 27 & 11 & 19\% & 37\% \\
+SMC & 31 & 10 & 19\% & 32\% \\
+EMCI & 29 & 7 & 21\% & 41\% \\
+MCI & 32 & 8 & 31\% & 47\% \\
+LMCI & 21 & 7 & 29\% & 48\% \\
+AD & 25 & 7 & \textbf{40\%} & \textbf{68\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Mitigation: dataset expansion.} The main limitation is the small effective sample, which
+counts subjects, not acquisitions (MCI has 32 acquisitions from only 14 subjects). A further 50
+acquisitions per stage (about 300 in total) are planned; they help in proportion to the number of
+\emph{new subjects} they add (MCI could grow from 14 to at most 64), so they will be drawn from
+subjects not already in the cohort wherever ADNI allows, and counts will be reported per subject.
+The frozen Modules~1 to~3 are reused unchanged.
 
 \textbf{Next steps.} Immediate work is to construct the
 subject-level cohort index with fixed stratified grouped cross-validation folds so that
-cross-subject scaling is fitted on training data only, and then implement the
+cross-subject scaling is fitted on training data only, with mean framewise displacement and
+site carried alongside as covariates, and then implement the
 multi-attention transformer and meta-learning blocks. The stage order fixed at Review~I
 (CN $\rightarrow$ SMC $\rightarrow$ EMCI $\rightarrow$ MCI $\rightarrow$ LMCI
 $\rightarrow$ AD) determines the loss structure of the ordinal model and is held fixed.
@@ -1422,7 +1541,7 @@ stages. It is a proposal and has not been agreed with the supervisor.
 \begin{figure}[!htbp]
 \centering
 \begin{ganttchart}[
-    x unit=1.45cm, y unit chart=0.62cm, y unit title=0.62cm,
+    x unit=1.45cm, y unit chart=0.42cm, y unit title=0.42cm,
     title height=1, title label font=\small, bar label font=\small,
     milestone label font=\small, vgrid={*{1}{draw=none},dotted},
     hgrid, bar height=0.55,
@@ -1437,9 +1556,9 @@ stages. It is a proposal and has not been agreed with the supervisor.
   \ganttbar{Documentation}{5}{6}\\
   \ganttmilestone{Final submission}{6}
 \end{ganttchart}
-\caption[Proposed revised plan, October to March]{Proposed revised plan, October to March. The first three rows are new since
-Review~I; the model, testing, documentation and final-submission rows keep the Review~I
-dates. Review~I had no separate row for Module~6, so its dates are a proposal.}
+\caption[Proposed revised plan, October to March]{Proposed revised plan, October to March. The first two rows are new since Review~I,
+and Module~6 had no separate row there, so its dates are a proposal; the other rows keep the
+Review~I dates.}
 \label{fig:revgantt}
 \end{figure}
 
@@ -1454,11 +1573,15 @@ all 165 acquisitions. Every limitation of the BOLD-only dataset, from the missin
 and slice-timing metadata to the eight scans whose 6.02\,s TR breaks the fixed band, was
 handled by documented exclusion or substitution and not by fabrication.
 
-Two findings shaped the design. First, the per-region FC summary of Review~I is exactly
+Four findings shaped the design. First, the per-region FC summary of Review~I is exactly
 DC$/245$, so all four biomarkers are kept but enter the model as a $246\times3$ regional
-matrix and a $246\times246$ Fisher-$z$ connectivity matrix. Second, stage-wise group-mean
-heatmaps show no detectable univariate progression signal, which motivates the
-multivariate model of Modules~4 and~5 instead of weakening it.
+matrix and a $246\times246$ Fisher-$z$ connectivity matrix. Second, the three regional
+biomarkers share only 6 to 11\% of their variance, so each carries largely different
+information. Third, stage-wise group-mean heatmaps show no detectable univariate progression
+signal, which motivates the multivariate model of Modules~4 and~5 instead of weakening it.
+Fourth, the features are reproducible between sessions (91\% closest-acquisition identification
+for mALFF, with no stage label), although residual head motion and an uneven spread of sites
+across stages remain to be handled in the modelling stage.
 
 On the Review~I timeline, Modules~2 and~3 are complete ahead of schedule, while
 Module~1 is also complete, with covariates for 107 of 127 subjects (none for LMCI). Modules~4 to~6 have not been started, and no
