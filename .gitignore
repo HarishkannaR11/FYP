@@ -23,3 +23,6 @@ pilot_preprocessing/
 pilot_preprocessing_2mm4mm/
 tools/
 
+
+# Raw ADNI DICOMs (not needed, too large)
+ADNI/
