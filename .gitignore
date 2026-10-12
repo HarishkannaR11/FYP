@@ -2,6 +2,7 @@
 
 NIfTI/
 BIDS/
+raw_data_extra/
 
 # Exclude FreeSurfer stuff
 /home/harish/fyp-neuro-env

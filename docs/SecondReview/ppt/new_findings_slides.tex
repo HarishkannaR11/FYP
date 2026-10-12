@@ -183,11 +183,6 @@ optimal -- that needs the trained model to test.
 
 \begin{frame}{Why the Full 246-ROI Space Is Retained}
 
-\begin{columns}[T]
-\begin{column}{0.46\textwidth}
-  \includegraphics[width=\textwidth]{brainnetome246_combined.png}
-\end{column}
-\begin{column}{0.52\textwidth}
 \small
 \begin{itemize}
   \item \textbf{Fine-grained whole-brain coverage.} 246 anatomically
@@ -205,10 +200,17 @@ optimal -- that needs the trained model to test.
         which regions and interactions are predictive is decided later,
         by the model.
 \end{itemize}
-\end{column}
-\end{columns}
 
 \vspace{0.1cm}
+\begin{center}\footnotesize
+\begin{tabular}{llll}
+\toprule
+246/246 regions & 0 empty & 0 zero-variance & $135\times246$ per scan \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.05cm}
 \begin{block}{Position}
 We do not claim every region is individually disease-relevant. We retain the
 complete 246-region representation so that nothing is discarded before the
