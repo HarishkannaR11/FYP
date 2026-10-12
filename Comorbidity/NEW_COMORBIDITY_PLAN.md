@@ -11,10 +11,10 @@ Original columns and values, unchanged. Rows are in original order.
 | File | Subjects found / in inventory | Rows |
 |---|---|---|
 | `AD_comorbidity.csv` | 20 / 20 | 20 |
-| `CN_comorbidity.csv` | 20 / 26 in sheet | 24 |
-| `EMCI_comorbidity.csv` | 20 / 26 in sheet | 25 |
+| `CN_comorbidity.csv` | 20 / 20 | 24 |
+| `EMCI_comorbidity.csv` | 20 / 20 | 25 |
 | `LMCI_comorbidity.csv` | 20 / 20 | 20 |
 | `MCI_comorbidity.csv` | 14 / 14 | 27 |
-| `SMC_comorbidity.csv` | 20 / 21 in sheet | 20 |
+| `SMC_comorbidity.csv` | 20 / 20 | 20 |
 
-The sheet has 20 (AD), 26 (CN), 26 (EMCI), 20 (LMCI), 14 (MCI) and 21 (SMC) unique subjects. Nothing in it marks which 20 to keep, so CN, EMCI and SMC use the first 20 in sheet order (sorted by subject ID). Some subjects have more than one MEDHIST row (one per ADNI phase), so rows can exceed subjects.
+Subjects come from `selected_acquisitions.csv`, which has no duplicate subjects. Each file was checked against its ZIP's MEDHIST table: header and rows are identical to the ZIP rows for these subjects, with none missing or extra. Some subjects have more than one MEDHIST row (one per ADNI phase), so rows can exceed subjects.

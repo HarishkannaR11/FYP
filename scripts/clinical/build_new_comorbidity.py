@@ -1,6 +1,6 @@
 """Build Comorbidity/new_comorbidity: one comorbidity (MEDHIST = medical history) CSV per stage,
 restricted to the first MAX_SUBJECTS unique subjects of that stage (in sheet order) in
-acquisition_inventory.csv (fewer if the stage has fewer, e.g. MCI = 14). ZIPs are only read."""
+selected_acquisitions.csv (fewer if the stage has fewer, e.g. MCI = 14). ZIPs are only read."""
 import csv
 import io
 import sys
@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "Comorbidity"
 OUT = SRC / "new_comorbidity"
-INVENTORY = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / "Downloads" / "acquisition_inventory.csv"
+INVENTORY = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / "Downloads" / "selected_acquisitions.csv"
 ZIPS = {"AD": "Tables_01Sep2026 _AD.zip", "CN": "Tables_01Sep2026 _CN.zip", "EMCI": "Tables_01Sep2026 _EMCI.zip",
         "LMCI": "Tables_12Oct2026_LMCI.zip", "MCI": "Tables_01Sep2026_MCI.zip", "SMC": "Tables_01Sep2026_SMC.zip"}
 
