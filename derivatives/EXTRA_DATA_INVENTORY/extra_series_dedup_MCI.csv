@@ -1,0 +1,3 @@
+stage,archive,adni_subject,bids_subject,description,acq_datetime,image_uid,n_dicom,date,is_duplicate,protocol_tier,expected_volumes,suspicious,too_few_dicoms
+MCI,C:\Users\krish\Downloads\MCI_e.zip,007_S_2394,sub-007S2394,Axial_rsfMRI__Eyes_Open__10_min__-PJ,2015-07-13_11_50_44.0,I680900,9600,20150713,False,TIER1,200,False,False
+MCI,C:\Users\krish\Downloads\MCI_e.zip,100_S_0296,sub-100S0296,Extended_Resting_State_fMRI,2014-04-24_13_33_14.0,I422066,9600,20140424,False,TIER1,200,False,False

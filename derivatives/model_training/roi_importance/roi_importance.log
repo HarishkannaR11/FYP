@@ -1,0 +1,54 @@
+======================================================================================
+PHASE 6D -- ROI IMPORTANCE AND STABILITY
+======================================================================================
+features (116, 984); 246 ROI groups of 4; 4 biomarker groups of 246
+5 permutation repeats; importance on validation subjects only
+held-out test (35) NOT loaded
+  seed 20261015 done  (15s elapsed)
+  seed 20261016 done  (29s elapsed)
+  seed 20261017 done  (49s elapsed)
+  seed 20261018 done  (62s elapsed)
+  seed 20261019 done  (74s elapsed)
+
+======================================================================================
+BIOMARKER-LEVEL IMPORTANCE (drop in validation balanced accuracy)
+======================================================================================
+mean validation balanced accuracy before permutation: 0.1756
+  mALFF    -0.0078 +/- 0.0633   folds with a positive drop: 10/25
+  mReHo    -0.0002 +/- 0.0607   folds with a positive drop: 13/25
+  DC_z     +0.0051 +/- 0.0684   folds with a positive drop: 15/25
+  FCstr    +0.0082 +/- 0.0676   folds with a positive drop: 14/25
+
+======================================================================================
+ROI IMPORTANCE vs LABEL-SHUFFLED CONTROL
+======================================================================================
+  real   mean +0.00799  sd 0.02783  max +0.1667
+  null   mean +0.00320  sd 0.02466  max +0.1389
+  95th percentile of the null: +0.05556
+  ROI-folds exceeding it in the real run: 432/6150 (7.0%; 5% expected by construction)
+
+======================================================================================
+RANK STABILITY ACROSS THE 25 FOLDS
+======================================================================================
+  pairwise Spearman between fold rankings: mean +0.012, median +0.012, range [-0.223, +0.225]
+  top-20 ROI overlap between folds: mean 2.7/20 (chance 1.6/20)
+
+  top 15 ROIs by mean importance
+   ROI name             mean imp       sd  in top-20
+   103 A20rv_L          +0.01822  0.03355       4/25
+   112 A35/36c_R        +0.01800  0.04262       5/25
+    70 A38m_R           +0.01778  0.02459       3/25
+    21 A9/46v_L         +0.01711  0.03179       7/25
+   207 msOccG_L         +0.01711  0.04714       2/25
+   203 OPC_L            +0.01711  0.03275       5/25
+    27 A10l_L           +0.01667  0.02922       6/25
+     9 A6m_L            +0.01644  0.03116       9/25
+   210 lsOccG_R         +0.01622  0.02340       2/25
+   191 rCunG_L          +0.01600  0.02830       2/25
+   205 iOccG_L          +0.01600  0.03107       3/25
+   189 cLinG_L          +0.01578  0.02730       2/25
+    36 A45r_R           +0.01578  0.03042       5/25
+   198 vmPOS_R          +0.01578  0.02306       2/25
+   127 A7c_L            +0.01533  0.03373       3/25
+
+wrote derivatives\model_training\roi_importance\roi_importance.json

@@ -1,0 +1,52 @@
+======================================================================================
+PHASE 5 -- CLINICAL / COMORBIDITY FEASIBILITY
+======================================================================================
+cohort 116 subjects; clinical table 127 rows
+subjects with NO clinical row: ['sub-007S2394', 'sub-100S0296']
+
+proposed       column                   total       CN      SMC     EMCI      MCI     LMCI       AD
+age            Age_years                94/116   20/20    20/20    20/20    14/16     0/20    20/20 
+APOE4          APOE4_allele_count      113/116   20/20    19/20    20/20    14/16    20/20    20/20 
+MMSE           MMSE_total               94/116   20/20    20/20    20/20    14/16     0/20    20/20 
+CDR-SB         CDR_SB                   94/116   20/20    20/20    20/20    14/16     0/20    20/20 
+hypertension   MH4CARD_clean            94/116   20/20    20/20    20/20    14/16     0/20    20/20 
+diabetes       MH9ENDO_clean            94/116   20/20    20/20    20/20    14/16     0/20    20/20 
+GDS            GDS_total                94/116   20/20    20/20    20/20    14/16     0/20    20/20 
+
+CAVEAT [hypertension]: NOT a hypertension flag. ADNI records MH4CARD = cardiovascular medical history, which INCLUDES hypertension but also every other cardiovascular condition. It cannot be read as 'has hypertension'.
+CAVEAT [diabetes]: NOT a diabetes flag. ADNI records MH9ENDO = endocrine-metabolic history, which INCLUDES diabetes among other endocrine conditions.
+
+======================================================================================
+ELIGIBLE COHORTS
+======================================================================================
+
+rich clinical (MMSE+CDR-SB+GDS+age): 94 subjects
+   CN 20/20  SMC 20/20  EMCI 20/20  MCI 14/16  LMCI 0/20  AD 20/20
+   stages represented: 5/6  MISSING ['LMCI']
+
+APOE4 only: 113 subjects
+   CN 20/20  SMC 19/20  EMCI 20/20  MCI 14/16  LMCI 20/20  AD 20/20
+   stages represented: 6/6
+
+======================================================================================
+LABEL-LEAKAGE CHECK
+======================================================================================
+ADNI assigns diagnostic group using cognitive testing. A variable that reproduces the stage almost perfectly is not an independent predictor -- it is the label in another form.
+
+variable                   n     Spearman rho         p  reading
+age (Age_years)           94           -0.002  9.88e-01  weak association
+APOE4 (APOE4_allele_co   113           +0.350  1.46e-04  weak association
+MMSE (MMSE_total)         94           -0.563  3.36e-09  moderate association
+CDR-SB (CDR_SB)           94           +0.846  7.52e-27  SEVERE LEAKAGE RISK
+hypertension (MH4CARD_    94           -0.025  8.09e-01  weak association
+diabetes (MH9ENDO_clea    94           +0.147  1.58e-01  weak association
+GDS (GDS_total)           94           +0.230  2.56e-02  weak association
+
+
+Interpretation:
+  CDR-SB (rho = +0.85) is a component of the diagnostic criteria themselves -- it is the label in another form and MUST NOT be a model input.
+  MMSE (rho = -0.56) is also used in staging and carries the same risk to a lesser degree.
+  APOE4 (rho = +0.35) is a genuine genetic risk factor, not part of the staging decision, and its association is of the magnitude the literature would lead one to expect. It is a defensible input.
+  Age, cardiovascular history and endocrine history show NO useful association with stage in this cohort (|rho| <= 0.15), so they are safe but probably uninformative.
+
+wrote derivatives\model_training\clinical_feasibility.json

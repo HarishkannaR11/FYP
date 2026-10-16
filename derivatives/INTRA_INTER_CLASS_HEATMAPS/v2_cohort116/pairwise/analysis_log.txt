@@ -1,0 +1,43 @@
+==========================================================================
+PAIRWISE STAGE STATISTICS
+==========================================================================
+acquisitions 116   distinct subjects 116   (independent samples)
+   CN    n =  20
+   SMC   n =  20
+   EMCI  n =  20
+   MCI   n =  16
+   LMCI  n =  20
+   AD    n =  20
+
+comparisons (15): CN-SMC, CN-EMCI, CN-MCI, CN-LMCI, CN-AD, SMC-EMCI, SMC-MCI, SMC-LMCI, SMC-AD, EMCI-MCI, EMCI-LMCI, EMCI-AD, MCI-LMCI, MCI-AD, LMCI-AD
+
+test: Mann-Whitney U (two-sided); effect size: Hedges' g
+FDR family: 246 ROIs x 15 comparisons = 3690 tests PER biomarker
+
+  mALFF  tests=3690  p<0.05 raw=  277  q<0.05=   0  min q=0.0667  max |g|=1.223
+  mReHo  tests=3690  p<0.05 raw=  270  q<0.05=   0  min q=0.4839  max |g|=1.368
+  DC_z   tests=3690  p<0.05 raw=  203  q<0.05=   0  min q=0.7842  max |g|=1.286
+
+  FC: 30,135 edges x 15 comparisons = 452,025 tests
+  Family for FDR: the edges of ONE comparison (never pooled with ROI tests).
+    CN-SMC       n=20 vs 20  edges q<0.05:     0  min q=0.9987
+    CN-EMCI      n=20 vs 20  edges q<0.05:     0  min q=1.0000
+    CN-MCI       n=20 vs 16  edges q<0.05:     0  min q=0.6744
+    CN-LMCI      n=20 vs 20  edges q<0.05:     0  min q=0.2011
+    CN-AD        n=20 vs 20  edges q<0.05:     0  min q=0.7181
+    SMC-EMCI     n=20 vs 20  edges q<0.05:     0  min q=1.0000
+    SMC-MCI      n=20 vs 16  edges q<0.05:     0  min q=0.6973
+    SMC-LMCI     n=20 vs 20  edges q<0.05:     0  min q=1.0000
+    SMC-AD       n=20 vs 20  edges q<0.05:     0  min q=0.9208
+    EMCI-MCI     n=20 vs 16  edges q<0.05:     0  min q=0.8045
+    EMCI-LMCI    n=20 vs 20  edges q<0.05:     0  min q=0.9996
+    EMCI-AD      n=20 vs 20  edges q<0.05:     0  min q=0.7207
+    MCI-LMCI     n=16 vs 20  edges q<0.05:     0  min q=0.7964
+    MCI-AD       n=16 vs 20  edges q<0.05:     0  min q=0.2002
+    LMCI-AD      n=20 vs 20  edges q<0.05:     0  min q=0.9975
+
+consensus: cells with >=1 biomarker significant: 0, >=2: 0, =3: 0
+   saved pairwise_mALFF.png/.pdf
+   saved pairwise_mReHo.png/.pdf
+   saved pairwise_DC_z.png/.pdf
+   saved cross_biomarker_consensus.png/.pdf

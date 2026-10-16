@@ -1,0 +1,18 @@
+Metric,Expected,Actual,Status
+ALFF shape,"(246,)","(246,)",PASS
+ALFF NaN,0,0,PASS
+ALFF Inf,0,0,PASS
+ALFF negative values,0,0,PASS
+ReHo shape,"(246,)","(246,)",PASS
+ReHo NaN,0,0,PASS
+ReHo Inf,0,0,PASS
+FC shape,"(246, 246)","(246, 246)",PASS
+FC NaN,0,0,PASS
+FC Inf,0,0,PASS
+FC symmetry,~0,1.11e-16,PASS
+FC diagonal ~1,True,True,PASS
+DC agreement (saved vs recomputed),max diff < 1e-8,0.00e+00,PASS
+FC-strength agreement,max diff < 1e-8,9.89e-17,PASS
+ROI count,246,246,PASS
+Final matrix shape,"(246, 6)","(246, 6)",PASS
+Regional matrix internal consistency,all 4 columns match source files,True,PASS

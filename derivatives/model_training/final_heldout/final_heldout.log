@@ -1,0 +1,48 @@
+====================================================================================
+FINAL HELD-OUT EVALUATION -- frozen dc_only_mlp_h64
+====================================================================================
+frozen model confirmed: dc_only_mlp_h64
+input: (116, 246) DC_z, channel index 2 verified
+stage mapping: {'CN': 0, 'SMC': 1, 'EMCI': 2, 'MCI': 3, 'LMCI': 4, 'AD': 5}
+split fingerprint 6f478fbcf56364e2; pool 81, held-out 35; no overlap
+epochs = 10  (mean best epoch over the 22 of 25 CV folds that beat chance, +1, floored at 10); test labels played no part
+scaler fitted on the training pool only (verified != cohort statistics)
+trained on 81 pool subjects, 10 epochs, 20,614 parameters, 6.1s
+saved checkpoint derivatives\model_training\final_heldout\frozen_dc_only_mlp_h64.pt
+saved derivatives\model_training\final_heldout\test_predictions.csv
+metrics recomputed from the saved CSV agree: True
+
+====================================================================================
+HELD-OUT RESULTS  (35 subjects, evaluated once)
+====================================================================================
+  balanced accuracy 0.2000   (chance 0.1667)
+  accuracy          0.2000
+  macro-F1          0.2063
+  MAE (stages)      1.8286
+  QWK               +0.1519
+  distinct classes predicted 6 of 6
+
+  stage   supp  pred   prec    rec     F1
+  CN         6     7  0.429  0.500  0.462
+  SMC        6     6  0.000  0.000  0.000
+  EMCI       6     9  0.111  0.167  0.133
+  MCI        5     3  0.333  0.200  0.250
+  LMCI       6     2  0.500  0.167  0.250
+  AD         6     8  0.125  0.167  0.143
+
+  confusion (rows = true, cols = predicted)
+              CN   SMC  EMCI   MCI  LMCI    AD
+    CN         3     1     2     0     0     0
+    SMC        0     0     4     0     0     2
+    EMCI       1     2     1     0     0     2
+    MCI        0     1     0     1     1     2
+    LMCI       2     1     1     0     1     1
+    AD         1     1     1     2     0     1
+
+  comparison (descriptive; a single 35-subject estimate is NOT comparable in precision to a 25-fold CV mean)
+    repeated-CV balanced accuracy (25 folds) : 0.307+/-0.029
+    held-out balanced accuracy (1 estimate)  : 0.200
+    majority-class on the same 35 subjects   : 0.167 (MAE 2.486)
+    one subject changes balanced accuracy by about 0.029
+
+wrote derivatives\model_training\final_heldout\final_heldout_results.json

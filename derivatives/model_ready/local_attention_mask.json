@@ -1,0 +1,26 @@
+{
+  "default_mask": "local_attention_mask.npy",
+  "definition": "symmetric centroid 15-nearest-neighbour graph, diagonal True",
+  "k": 15,
+  "source_atlas": "atlases/Brainnetome246/BN_Atlas_246_2mm.nii.gz",
+  "centroid_space": "MNI mm via the image affine",
+  "encodes": "spatial proximity only; no functional, connectivity or diagnostic information",
+  "knn": {
+    "density": 0.07535197303192544,
+    "degree_min": 15,
+    "degree_median": 17,
+    "degree_max": 29,
+    "symmetric": true,
+    "rois_without_neighbour": 0
+  },
+  "adjacency": {
+    "density": 0.03539559785841761,
+    "degree_min": 3,
+    "degree_median": 7,
+    "degree_max": 17,
+    "symmetric": true,
+    "rois_without_neighbour": 0
+  },
+  "adjacency_edges_covered_by_knn": 0.9124472573839663,
+  "alternative_mask": "local_attention_mask_adjacency.npy"
+}

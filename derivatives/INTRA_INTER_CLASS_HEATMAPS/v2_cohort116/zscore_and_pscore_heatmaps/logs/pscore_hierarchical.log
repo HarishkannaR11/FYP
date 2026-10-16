@@ -1,0 +1,65 @@
+==============================================================================
+P-SCORE HIERARCHICAL CLUSTERING HEATMAPS
+==============================================================================
+cohort verified: 116 acquisitions, 116 unique subjects, one each
+stage order (from data): ['CN', 'SMC', 'EMCI', 'MCI', 'LMCI', 'AD']
+class counts: {'CN': 20, 'SMC': 20, 'EMCI': 20, 'MCI': 16, 'LMCI': 20, 'AD': 20}
+ROIs: 246 (Brainnetome)
+P-score = -log10(q); floor 1e-12 applied only if q == 0
+fixed colour scale: 0.0 to 1.4 (threshold 1.3010), identical for all four biomarkers
+columns fixed in clinical order, never clustered: ['CN', 'SMC', 'EMCI', 'MCI', 'LMCI', 'AD']
+
+--- mALFF ---
+  q: min 0.222694, max 1.000000
+  P-score: min 0.0000, max 0.6523, median 0.0266
+  cells with q < 0.05: 0 of 1476
+  mALFF: n=246, distance=euclidean, linkage=ward, cophenetic r=0.657
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_mALFF.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_mALFF.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\pscore_matrix_mALFF.csv
+
+--- mReHo ---
+  q: min 0.118084, max 1.000000
+  P-score: min 0.0000, max 0.9278, median 0.0348
+  cells with q < 0.05: 0 of 1476
+  mReHo: n=246, distance=euclidean, linkage=ward, cophenetic r=0.724
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_mReHo.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_mReHo.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\pscore_matrix_mReHo.csv
+
+--- DC_z ---
+  q: min 0.729702, max 1.000000
+  P-score: min 0.0000, max 0.1369, median 0.0087
+  cells with q < 0.05: 0 of 1476
+  DC_z: n=246, distance=euclidean, linkage=ward, cophenetic r=0.576
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_DC_z.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_DC_z.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\pscore_matrix_DC_z.csv
+
+--- FC ---
+  q: min 0.385767, max 1.000000
+  P-score: min 0.0000, max 0.4137, median 0.0743
+  cells with q < 0.05: 0 of 1476
+  FC: n=246, distance=euclidean, linkage=ward, cophenetic r=0.403
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_FC.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_FC.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\pscore_matrix_FC.csv
+
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\pscore_clustering_order.csv  (984 rows = 4 biomarkers x 246 ROIs)
+
+--- combined figure ---
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_combined.png
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\pscore_hierarchical_combined.pdf
+
+--- effect-size alternative ---
+  effect-size alternative: shared symmetric scale +/-1.1 (observed max |g| = 1.099)
+  mALFF (Hedges g): n=246, distance=euclidean, linkage=ward, cophenetic r=0.485
+  mReHo (Hedges g): n=246, distance=euclidean, linkage=ward, cophenetic r=0.422
+  DC_z (Hedges g): n=246, distance=euclidean, linkage=ward, cophenetic r=0.434
+  FC (Hedges g): n=246, distance=euclidean, linkage=ward, cophenetic r=0.432
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\effectsize_hierarchical_alternative.png
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\pscore_hierarchical\effectsize_hierarchical_alternative.pdf
+
+missing q-values across all biomarkers: 0
+ROI x stage cells reaching q < 0.05: 0 of 5904
+No ROI passes FDR correction in any biomarker. Reported as observed; no value was altered and the colour scale was not rescaled to exaggerate the null surface.

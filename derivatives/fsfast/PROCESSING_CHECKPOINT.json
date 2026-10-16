@@ -165,7 +165,9 @@
       "sub-130S4294/ses-01/run-01",
       "sub-130S4294/ses-02/run-01",
       "sub-130S4294/ses-03/run-01",
-      "sub-136S0107/ses-01/run-01"
+      "sub-136S0107/ses-01/run-01",
+      "sub-100S0296/ses-01/run-01",
+      "sub-007S2394/ses-01/run-01"
     ],
     "failed": [
       "sub-002S0729/ses-01/run-01",

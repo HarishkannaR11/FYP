@@ -1,0 +1,22 @@
+==============================================================================
+ORDINAL FIX ABLATION -- can each variant memorise 12 subjects?
+==============================================================================
+subset: 12 training-pool subjects, counts [2, 2, 2, 2, 2, 2]
+gate  : multiclass reaches train accuracy 1.00 on this subset
+split fingerprint 6f478fbcf56364e2; test set NOT loaded
+
+variant                   rank   eff  train acc  classes  final loss
+------------------------------------------------------------------------
+D  argmax->cumulative        1  1.00       0.83        5      0.8780
+ordinal (baseline)           1  1.00       0.83        5      0.8780
+A  mean_reduce               1  1.00       0.83        5      0.1756
+B  init_from_prior           1  1.00       1.00        6      0.7618   MEMORISED
+C  aux CE head               6  2.65       0.83        5      0.9133
+A+B                          1  1.00       1.00        6      0.1525   MEMORISED
+A+B+C (ordinal_fixed)        6  4.91       1.00        6      0.1547   MEMORISED
+multiclass (reference)       5  4.63       1.00        6      0.0032   MEMORISED
+
+Variants that now memorise the subset: ['B  init_from_prior', 'A+B', 'A+B+C (ordinal_fixed)']
+The collapse is therefore an optimisation failure with an identified and corrected cause, not absent signal.
+
+wrote derivatives\model_training\ordinal_fix_ablation.json

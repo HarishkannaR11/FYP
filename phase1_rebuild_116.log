@@ -1,0 +1,91 @@
+==========================================================================
+PHASE A  --  audit existing preprocessed acquisitions
+==========================================================================
+   ...40/167
+   ...80/167
+   ...120/167
+   ...160/167
+candidate acquisitions: 167
+
+==========================================================================
+PHASE B  --  classification
+==========================================================================
+   167  VALID_UNIQUE
+
+by stage:
+stage   cands  valid  subjects  invalid  missing
+CN         27     27        26        0        0
+SMC        31     31        21        0        0
+EMCI       29     29        26        0        0
+MCI        34     34        16        0        0
+LMCI       21     21        20        0        0
+AD         25     25        20        0        0
+
+==========================================================================
+PHASE C  --  proposed selection (deterministic, label-blind)
+==========================================================================
+stage   selected  target  subjects  repeats
+CN            20      20        20        0
+SMC           20      20        20        0
+EMCI          20      20        20        0
+MCI           16      20        16        0   SHORTFALL
+LMCI          20      20        20        0
+AD            20      20        20        0
+
+TOTAL selected: 116 / 120
+distinct subjects overall: 116
+
+!! SHORTFALL in 1 stage(s): [('MCI', 16)]
+
+manifests written to derivatives\phase1_selected_20\manifests
+
+Proceeding with a documented shortfall in: MCI (16/20)
+No subject is repeated and no data is duplicated to reach 20.
+
+==========================================================================
+PHASE D  --  copying selected acquisitions
+==========================================================================
+   copied 5/116 acquisitions
+   copied 10/116 acquisitions
+   copied 15/116 acquisitions
+   copied 20/116 acquisitions
+   copied 25/116 acquisitions
+   copied 30/116 acquisitions
+   copied 35/116 acquisitions
+   copied 40/116 acquisitions
+   copied 45/116 acquisitions
+   copied 50/116 acquisitions
+   copied 55/116 acquisitions
+   copied 60/116 acquisitions
+   copied 65/116 acquisitions
+   copied 70/116 acquisitions
+   copied 75/116 acquisitions
+   copied 80/116 acquisitions
+   copied 85/116 acquisitions
+   copied 90/116 acquisitions
+   copied 95/116 acquisitions
+   copied 100/116 acquisitions
+   copied 105/116 acquisitions
+   copied 110/116 acquisitions
+   copied 115/116 acquisitions
+   copied 116/116 acquisitions
+
+files handled: 5578  copied=96  identical=5482  mismatch=0  collision=0
+bytes: 1,974,837,755
+
+==========================================================================
+PHASE E  --  verifying the new dataset
+==========================================================================
+stage   selected  verified  subjects
+CN            20        20        20
+SMC           20        20        20
+EMCI          20        20        20
+MCI           16        16        16
+LMCI          20        20        20
+AD            20        20        20
+
+TOTAL verified: 116 / 120
+no verification problems
+
+report: derivatives\phase1_selected_20\reports\dataset_selection_report.md
+dataset: derivatives\phase1_selected_20

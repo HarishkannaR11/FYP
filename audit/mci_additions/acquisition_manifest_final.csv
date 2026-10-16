@@ -1,0 +1,3 @@
+subject_id,session_id,run_id,input_path,input_json,dimensions,voxel_size,TR,volumes,file_size_bytes,checksum_md5
+sub-100S0296,ses-01,run-01,/mnt/c/Users/krish/FYP/BIDS/sub-100S0296/ses-01/func/sub-100S0296_ses-01_task-rest_run-01_bold.nii.gz,/mnt/c/Users/krish/FYP/BIDS/sub-100S0296/ses-01/func/sub-100S0296_ses-01_task-rest_run-01_bold.json,"(64, 64, 48, 200)","(3.3125, 3.3125, 3.3125)",3,200,41903095,5cd1e191a57b02c50555b2fb6a9d8671
+sub-007S2394,ses-01,run-01,/mnt/c/Users/krish/FYP/BIDS/sub-007S2394/ses-01/func/sub-007S2394_ses-01_task-rest_run-01_bold.nii.gz,/mnt/c/Users/krish/FYP/BIDS/sub-007S2394/ses-01/func/sub-007S2394_ses-01_task-rest_run-01_bold.json,"(64, 64, 48, 200)","(3.2813, 3.2813, 3.3)",3,200,53116576,a9547d1c33307b658941295457603402

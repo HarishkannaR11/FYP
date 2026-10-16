@@ -1,0 +1,71 @@
+==============================================================================
+FIGURE A -- between-subject Z-score hierarchical clustering
+==============================================================================
+cohort: 116 acquisitions, 116 unique subjects
+stage order (from metadata, not reassigned): ['CN', 'SMC', 'EMCI', 'MCI', 'LMCI', 'AD']
+class counts: {'CN': 20, 'SMC': 20, 'EMCI': 20, 'MCI': 16, 'LMCI': 20, 'AD': 20}
+
+--- mALFF ---
+  input [ROI, subjects] = (246, 116), finite = True
+  zero-variance ROIs across subjects: 0
+  Z-score check: mean=-1.964e-17 (expect 0), sd=0.995698 (expect ~1), range=[-5.34, +6.95]
+mALFF: clustering
+  ROI: n=246, cophenetic r=0.646, distance=correlation, linkage=average
+  subject: n=116, cophenetic r=0.486, distance=correlation, linkage=average
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_mALFF.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_mALFF.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\zscore_mALFF_roi_by_subject.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_mALFF_subjects.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_mALFF_rois.csv
+
+--- mReHo ---
+  input [ROI, subjects] = (246, 116), finite = True
+  zero-variance ROIs across subjects: 0
+  Z-score check: mean=+1.899e-17 (expect 0), sd=0.995698 (expect ~1), range=[-3.58, +4.65]
+mReHo: clustering
+  ROI: n=246, cophenetic r=0.653, distance=correlation, linkage=average
+  subject: n=116, cophenetic r=0.513, distance=correlation, linkage=average
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_mReHo.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_mReHo.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\zscore_mReHo_roi_by_subject.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_mReHo_subjects.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_mReHo_rois.csv
+
+--- DC_z ---
+  input [ROI, subjects] = (246, 116), finite = True
+  zero-variance ROIs across subjects: 0
+  Z-score check: mean=-3.486e-18 (expect 0), sd=0.995698 (expect ~1), range=[-3.77, +4.31]
+DC_z: clustering
+  ROI: n=246, cophenetic r=0.605, distance=correlation, linkage=average
+  subject: n=116, cophenetic r=0.504, distance=correlation, linkage=average
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_DC_z.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_DC_z.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\zscore_DC_z_roi_by_subject.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_DC_z_subjects.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_DC_z_rois.csv
+
+--- FC ---
+  input [ROI, subjects] = (246, 116), finite = True
+  zero-variance ROIs across subjects: 0
+  Z-score check: mean=-6.552e-18 (expect 0), sd=0.995698 (expect ~1), range=[-2.21, +7.49]
+FC: clustering
+  ROI: n=246, cophenetic r=0.780, distance=correlation, linkage=average
+  subject: n=116, cophenetic r=0.572, distance=correlation, linkage=average
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_FC.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\zscore_hierarchical_FC.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\zscore_FC_roi_by_subject.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_FC_subjects.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\clustering_order_FC_rois.csv
+
+zero-variance ROIs total: 0 -> derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\zero_variance_rois.csv
+
+--- additional: per-stage mean 246x246 FC (labelled separately) ---
+  CN: mean of 20 subjects, off-diagonal mean z = +0.0187
+  SMC: mean of 20 subjects, off-diagonal mean z = +0.0175
+  EMCI: mean of 20 subjects, off-diagonal mean z = +0.0139
+  MCI: mean of 16 subjects, off-diagonal mean z = +0.0150
+  LMCI: mean of 20 subjects, off-diagonal mean z = +0.0171
+  AD: mean of 20 subjects, off-diagonal mean z = +0.0187
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\fc_stage_mean_connectivity_246x246.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\zscore_hierarchical\fc_stage_mean_connectivity_246x246.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\fc_stage_mean_offdiagonal_summary.csv

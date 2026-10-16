@@ -1,0 +1,38 @@
+==========================================================================
+ONE-VS-REST MULTIVARIATE PERMUTATION SUMMARY  (4 biomarkers x 6 stages)
+==========================================================================
+cohort: 116 acquisitions / 116 distinct subjects (one per subject)
+   CN    n =  20
+   SMC   n =  20
+   EMCI  n =  20
+   MCI   n =  16
+   LMCI  n =  20
+   AD    n =  20
+
+statistic   : distance-based pseudo-F (two-group PERMANOVA)
+permutations: 9999 (subject-level label permutation)
+seed        : 20261013
+correction  : Benjamini-Hochberg across all 24 tests
+feature dims: mALFF=246, mReHo=246, DC_z=246, FC=30135
+
+  mALFF  CN     n= 20 vs  96  F= 1.0580  null mean=1.0008  p=0.3506
+  mALFF  SMC    n= 20 vs  96  F= 1.2488  null mean=1.0055  p=0.1690
+  mALFF  EMCI   n= 20 vs  96  F= 0.5941  null mean=0.9999  p=0.9776
+  mALFF  MCI    n= 16 vs 100  F= 1.5274  null mean=0.9984  p=0.0580
+  mALFF  LMCI   n= 20 vs  96  F= 0.8923  null mean=0.9984  p=0.5841
+  mALFF  AD     n= 20 vs  96  F= 1.5499  null mean=1.0026  p=0.0480
+
+  mReHo  CN     n= 20 vs  96  F= 1.1462  null mean=1.0016  p=0.2132
+  mReHo  SMC    n= 20 vs  96  F= 0.8666  null mean=0.9978  p=0.7240
+  mReHo  EMCI   n= 20 vs  96  F= 1.7208  null mean=0.9984  p=0.0064
+  mReHo  MCI    n= 16 vs 100  F= 1.2852  null mean=1.0009  p=0.0953
+  mReHo  LMCI   n= 20 vs  96  F= 0.9353  null mean=0.9986  p=0.5691
+  mReHo  AD     n= 20 vs  96  F= 1.5235  null mean=0.9996  p=0.0200
+
+  DC_z   CN     n= 20 vs  96  F= 1.3289  null mean=1.0029  p=0.1118
+  DC_z   SMC    n= 20 vs  96  F= 0.8480  null mean=1.0019  p=0.6946
+  DC_z   EMCI   n= 20 vs  96  F= 0.8287  null mean=1.0013  p=0.7264
+  DC_z   MCI    n= 16 vs 100  F= 1.5190  null mean=1.0043  p=0.0451
+  DC_z   LMCI   n= 20 vs  96  F= 0.8500  null mean=0.9996  p=0.6855
+  DC_z   AD     n= 20 vs  96  F= 1.0263  null mean=0.9982  p=0.3943
+

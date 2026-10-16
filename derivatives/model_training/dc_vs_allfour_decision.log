@@ -1,0 +1,80 @@
+========================================================================================
+FINAL SELECTION CHECK -- DC-only vs all-four
+========================================================================================
+
+[1] FEATURE MAPPING
+    regional_channels = ['mALFF', 'mReHo', 'DC_z']
+    channel index 2 is DC_z: True
+    layout: index = roi * 4 + channel (interleaved, C order)
+    dc_only input = channel 2 only, 246 ROIs
+    all_four input = {'0': 'mALFF', '1': 'mReHo', '2': 'DC_z', '3': 'FC unsigned mean strength'}
+    FC caveat: channel 3 is a 246-D SUMMARY of the 246x246 matrix (mean_{j!=i} |z_ij|); 30,135 unique edg...
+
+[2] MATCHED DESIGN
+    dc_only: 25 evaluations | all_four: 25 evaluations
+    identical fold fingerprints, subject IDs and labels in all 25 pairs: True
+    parameters: dc_only 20,614 | all_four 67,846
+    input dim : dc_only 246 | all_four 984
+
+[3] METRIC REPRODUCIBILITY
+    200 checks, 0 mismatches
+    all metrics reproduce from saved predictions
+
+[4] VERIFY HISTORICAL FIGURES
+    dc_only    balanced_accuracy    recorded 0.307  recomputed 0.307  OK
+    dc_only    macro_f1             recorded 0.264  recomputed 0.264  OK
+    dc_only    mae_stages           recorded 1.642  recomputed 1.642  OK
+    dc_only    qwk                  recorded 0.172  recomputed 0.172  OK
+    all_four   balanced_accuracy    recorded 0.278  recomputed 0.278  OK
+    all_four   macro_f1             recorded 0.246  recomputed 0.246  OK
+    all_four   mae_stages           recorded 1.638  recomputed 1.638  OK
+    all_four   qwk                  recorded 0.171  recomputed 0.171  OK
+
+[5] SEED-LEVEL SUMMARY  (+/- = partition sensitivity, not a standard error)
+    candidate          bal.acc        accuracy        macro-F1             MAE             QWK   cls
+    dc_only      0.307+/-0.029   0.304+/-0.024   0.264+/-0.022   1.642+/-0.096   0.172+/-0.071 3-6
+    all_four     0.278+/-0.012   0.274+/-0.011   0.246+/-0.017   1.638+/-0.126   0.171+/-0.090 4-6
+
+[6] PAIRED DIFFERENCES (dc_only minus all_four, identical folds)
+    balanced_accuracy    +0.0289 (fold sd 0.1065)  seeds 5/5  folds 18/25
+                         per seed: [0.039, 0.006, 0.006, 0.05, 0.044]
+    accuracy             +0.0293 (fold sd 0.1092)  seeds 4/5  folds 13/25
+                         per seed: [0.05, 0.012, -0.001, 0.049, 0.035]
+    macro_f1             +0.0181 (fold sd 0.1266)  seeds 3/5  folds 15/25
+                         per seed: [0.048, -0.012, -0.0, 0.036, 0.019]
+    mae_stages           +0.0037 (fold sd 0.4040)  seeds 3/5  folds 14/25
+                         per seed: [-0.071, -0.032, 0.157, -0.286, 0.25]
+    qwk                  +0.0010 (fold sd 0.2826)  seeds 3/5  folds 13/25
+                         per seed: [0.033, 0.082, -0.041, 0.111, -0.18]
+
+[7] PER-CLASS RECALL and COVERAGE (pooled over 25 folds)
+    candidate       CN     SMC    EMCI     MCI    LMCI      AD   never predicted
+    dc_only       0.26    0.47    0.19    0.38    0.23    0.31   -
+    all_four      0.13    0.37    0.24    0.35    0.21    0.36   -
+
+    confusion, dc_only (rows true, cols predicted)
+                CN   SMC  EMCI   MCI  LMCI    AD
+      CN        18    12     6    12    13     9
+      SMC       14    33     5    10     6     2
+      EMCI      15     9    13     8    11    14
+      MCI        6     6     8    21    10     4
+      LMCI      14    13     6    10    16    11
+      AD        13     8     8     7    12    22
+
+    confusion, all_four (rows true, cols predicted)
+                CN   SMC  EMCI   MCI  LMCI    AD
+      CN         9    14    14     8    10    15
+      SMC       10    26    11     7     4    12
+      EMCI       7    15    17     8    15     8
+      MCI        6     4    10    19     4    12
+      LMCI       7     8    20     7    15    13
+      AD         4    10     8    14     9    25
+
+[8] DECISION
+    advantage consistent across seeds: 5/5 -> True
+    fold-level: 18/25 folds favour dc_only
+    magnitude +0.0289 vs fold sd 0.1065 (ratio 0.27)
+    worst per-class recall: dc_only 0.19 vs all_four 0.13 -> acceptable True
+    => ADOPT dc_only
+
+wrote derivatives\model_training\dc_vs_allfour_decision.json

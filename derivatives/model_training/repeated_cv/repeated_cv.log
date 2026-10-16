@@ -1,0 +1,43 @@
+==============================================================================
+REPEATED STRATIFIED CROSS-VALIDATION -- 5 folds x 5 split seeds
+==============================================================================
+training pool 81 subjects; held-out test (35) NOT loaded
+base split fingerprint 6f478fbcf56364e2
+seeds [20261015, 20261016, 20261017, 20261018, 20261019]
+
+seed 20261015  fold fingerprint 9d88243dd033155e  val sizes [17, 16, 16, 16, 16]  classes present per fold [6, 6, 6, 6, 6]
+  mlp_ordinal_h32          bal.acc 0.217  macroF1 0.154  MAE 1.435  QWK +0.207  cls [3, 3, 4, 5, 3]  4s
+  mlp_multiclass_h64       bal.acc 0.272  macroF1 0.225  MAE 1.638  QWK +0.244  cls [5, 5, 6, 6, 4]  2s
+  transformer_mc_d16       bal.acc 0.233  macroF1 0.129  MAE 1.807  QWK +0.143  cls [2, 3, 2, 2, 1]  96s
+  transformer_ordfix_d16   bal.acc 0.256  macroF1 0.120  MAE 1.419  QWK +0.074  cls [2, 2, 2, 2, 2]  98s
+  logreg_roi3              bal.acc 0.167  macroF1 0.142  MAE 1.738  QWK +0.265  cls [6, 5, 6, 6, 6]  0s
+
+seed 20261016  fold fingerprint cb9c36eccb7d4496  val sizes [17, 16, 16, 16, 16]  classes present per fold [6, 6, 6, 6, 6]
+  mlp_ordinal_h32          bal.acc 0.306  macroF1 0.199  MAE 1.496  QWK +0.058  cls [2, 3, 4, 4, 3]  2s
+  mlp_multiclass_h64       bal.acc 0.261  macroF1 0.239  MAE 1.688  QWK +0.116  cls [6, 6, 5, 5, 6]  2s
+  transformer_mc_d16       bal.acc 0.239  macroF1 0.143  MAE 1.806  QWK +0.145  cls [4, 3, 1, 3, 2]  115s
+  transformer_ordfix_d16   bal.acc 0.183  macroF1 0.071  MAE 1.518  QWK -0.024  cls [1, 1, 2, 1, 2]  85s
+  logreg_roi3              bal.acc 0.172  macroF1 0.151  MAE 1.680  QWK +0.241  cls [6, 6, 5, 5, 6]  0s
+
+seed 20261017  fold fingerprint 09525a6309ccdf34  val sizes [17, 16, 16, 16, 16]  classes present per fold [6, 6, 6, 6, 6]
+  mlp_ordinal_h32          bal.acc 0.244  macroF1 0.162  MAE 1.469  QWK +0.088  cls [2, 4, 3, 4, 3]  1s
+  mlp_multiclass_h64       bal.acc 0.283  macroF1 0.260  MAE 1.590  QWK +0.184  cls [5, 6, 6, 5, 5]  2s
+  transformer_mc_d16       bal.acc 0.294  macroF1 0.183  MAE 1.921  QWK +0.158  cls [2, 2, 5, 3, 3]  77s
+  transformer_ordfix_d16   bal.acc 0.222  macroF1 0.085  MAE 1.530  QWK -0.056  cls [1, 1, 2, 1, 2]  100s
+  logreg_roi3              bal.acc 0.172  macroF1 0.159  MAE 1.699  QWK +0.191  cls [6, 6, 4, 6, 6]  0s
+
+seed 20261018  fold fingerprint ca297c0daac768d3  val sizes [17, 16, 16, 16, 16]  classes present per fold [6, 6, 6, 6, 6]
+  mlp_ordinal_h32          bal.acc 0.311  macroF1 0.177  MAE 1.346  QWK +0.161  cls [2, 2, 4, 4, 2]  1s
+  mlp_multiclass_h64       bal.acc 0.278  macroF1 0.239  MAE 1.807  QWK +0.047  cls [5, 6, 5, 6, 5]  1s
+  transformer_mc_d16       bal.acc 0.278  macroF1 0.151  MAE 1.922  QWK +0.146  cls [2, 3, 2, 2, 2]  94s
+  transformer_ordfix_d16   bal.acc 0.222  macroF1 0.093  MAE 1.471  QWK +0.017  cls [2, 2, 2, 1, 1]  85s
+  logreg_roi3              bal.acc 0.178  macroF1 0.155  MAE 1.966  QWK +0.085  cls [5, 5, 5, 6, 6]  0s
+
+seed 20261019  fold fingerprint bc396eacad3893f2  val sizes [17, 16, 16, 16, 16]  classes present per fold [6, 6, 6, 6, 6]
+  mlp_ordinal_h32          bal.acc 0.328  macroF1 0.274  MAE 1.438  QWK +0.215  cls [5, 4, 3, 6, 4]  2s
+  mlp_multiclass_h64       bal.acc 0.294  macroF1 0.265  MAE 1.465  QWK +0.264  cls [6, 5, 4, 6, 6]  1s
+  transformer_mc_d16       bal.acc 0.261  macroF1 0.159  MAE 1.610  QWK +0.085  cls [3, 2, 4, 3, 4]  126s
+  transformer_ordfix_d16   bal.acc 0.189  macroF1 0.066  MAE 1.518  QWK -0.013  cls [1, 1, 2, 1, 2]  84s
+  logreg_roi3              bal.acc 0.189  macroF1 0.179  MAE 1.688  QWK +0.178  cls [6, 6, 5, 6, 5]  0s
+
+wrote derivatives\model_training\repeated_cv\repeated_cv_records.json  (125 fold evaluations)

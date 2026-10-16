@@ -1,0 +1,2025 @@
+{
+  "generated_from": "artifacts on disk",
+  "dataset": {
+    "source_directory": "derivatives\\phase1_selected_20",
+    "n_subjects": 116,
+    "n_unique_subjects": 116,
+    "acquisitions_per_subject": 1,
+    "class_counts": {
+      "CN": 20,
+      "SMC": 20,
+      "EMCI": 20,
+      "MCI": 16,
+      "LMCI": 20,
+      "AD": 20
+    },
+    "atlas": "Brainnetome 246",
+    "biomarkers": [
+      "mALFF",
+      "mReHo",
+      "DC_z",
+      "FC"
+    ],
+    "arrays": {
+      "X_regional.npy": {
+        "shape": [
+          116,
+          246,
+          3
+        ],
+        "dtype": "float32",
+        "sha256_16": "cf90056ff364b369",
+        "bytes": 342560
+      },
+      "X_fc.npy": {
+        "shape": [
+          116,
+          246,
+          246
+        ],
+        "dtype": "float32",
+        "sha256_16": "e46cb07f850523e6",
+        "bytes": 28079552
+      },
+      "X_fc_roi_unsigned.npy": {
+        "shape": [
+          116,
+          246
+        ],
+        "dtype": "float32",
+        "sha256_16": "b78e1a979ecb7445",
+        "bytes": 114272
+      },
+      "y.npy": {
+        "shape": [
+          116
+        ],
+        "dtype": "int64",
+        "sha256_16": "4a1c1a7a9c334cd5",
+        "bytes": 1056
+      },
+      "subjects.npy": {
+        "shape": [
+          116
+        ],
+        "dtype": "<U12",
+        "sha256_16": "6d36093fa87659bd",
+        "bytes": 5696
+      },
+      "local_attention_mask.npy": {
+        "shape": [
+          246,
+          246
+        ],
+        "dtype": "bool",
+        "sha256_16": "6677cee32ba74597",
+        "bytes": 60644
+      }
+    }
+  },
+  "stage_mapping": {
+    "stage_to_index": {
+      "CN": 0,
+      "SMC": 1,
+      "EMCI": 2,
+      "MCI": 3,
+      "LMCI": 4,
+      "AD": 5
+    },
+    "stage_order": [
+      "CN",
+      "SMC",
+      "EMCI",
+      "MCI",
+      "LMCI",
+      "AD"
+    ],
+    "note": "preserved from the repository; NOT modified. The order asserted in one task brief (LMCI before MCI) does not match this encoding and was not applied."
+  },
+  "split": {
+    "fingerprint": "6f478fbcf56364e2",
+    "seed": 20261015,
+    "test_fraction": 0.3,
+    "n_folds": 5,
+    "unit": "subject",
+    "stratified_by": "diagnostic stage",
+    "train_pool_subjects": [
+      "sub-002S1261",
+      "sub-002S1280",
+      "sub-006S4357",
+      "sub-010S4345",
+      "sub-012S4545",
+      "sub-013S4616",
+      "sub-018S4313",
+      "sub-018S4349",
+      "sub-018S4400",
+      "sub-019S4835",
+      "sub-031S4021",
+      "sub-031S4032",
+      "sub-031S4218",
+      "sub-031S4474",
+      "sub-006S5153",
+      "sub-012S5157",
+      "sub-012S5213",
+      "sub-013S5137",
+      "sub-018S5250",
+      "sub-018S5262",
+      "sub-019S5242",
+      "sub-053S5202",
+      "sub-053S5272",
+      "sub-053S5287",
+      "sub-100S5096",
+      "sub-100S5102",
+      "sub-100S5280",
+      "sub-130S5258",
+      "sub-002S2010",
+      "sub-002S2073",
+      "sub-002S4473",
+      "sub-006S4679",
+      "sub-012S4012",
+      "sub-012S4128",
+      "sub-012S4188",
+      "sub-012S4849",
+      "sub-013S2324",
+      "sub-013S4791",
+      "sub-018S2133",
+      "sub-018S2138",
+      "sub-018S4597",
+      "sub-018S4809",
+      "sub-002S1268",
+      "sub-002S4799",
+      "sub-006S4713",
+      "sub-007S2394",
+      "sub-013S1186",
+      "sub-013S2389",
+      "sub-053S4813",
+      "sub-100S0296",
+      "sub-100S4556",
+      "sub-130S4294",
+      "sub-136S0107",
+      "sub-002S4219",
+      "sub-002S4251",
+      "sub-002S4654",
+      "sub-006S4346",
+      "sub-006S4363",
+      "sub-013S4595",
+      "sub-019S4293",
+      "sub-019S4548",
+      "sub-031S4194",
+      "sub-031S4590",
+      "sub-130S4250",
+      "sub-130S4542",
+      "sub-130S4605",
+      "sub-130S4817",
+      "sub-002S5018",
+      "sub-006S4153",
+      "sub-013S5071",
+      "sub-018S4696",
+      "sub-019S4549",
+      "sub-019S5019",
+      "sub-031S4024",
+      "sub-130S4641",
+      "sub-130S4660",
+      "sub-130S4971",
+      "sub-130S4982",
+      "sub-130S4984",
+      "sub-130S4990",
+      "sub-130S5059"
+    ],
+    "held_out_test_subjects": [
+      "sub-010S4442",
+      "sub-012S4643",
+      "sub-013S4579",
+      "sub-018S4257",
+      "sub-018S4399",
+      "sub-019S4367",
+      "sub-002S5230",
+      "sub-002S5256",
+      "sub-012S5121",
+      "sub-012S5195",
+      "sub-019S5180",
+      "sub-130S5142",
+      "sub-002S4237",
+      "sub-002S4447",
+      "sub-012S4987",
+      "sub-013S4268",
+      "sub-013S4917",
+      "sub-018S2155",
+      "sub-002S0729",
+      "sub-002S1155",
+      "sub-002S4229",
+      "sub-018S2180",
+      "sub-053S0919",
+      "sub-002S4171",
+      "sub-002S4521",
+      "sub-002S4746",
+      "sub-006S4515",
+      "sub-018S4889",
+      "sub-031S4203",
+      "sub-006S4192",
+      "sub-018S4733",
+      "sub-019S4252",
+      "sub-019S4477",
+      "sub-019S5012",
+      "sub-130S4730"
+    ],
+    "folds": {
+      "fold_0": {
+        "validation_subjects": [
+          "sub-010S4345",
+          "sub-018S4349",
+          "sub-031S4474",
+          "sub-012S5213",
+          "sub-018S5262",
+          "sub-100S5102",
+          "sub-012S4849",
+          "sub-013S2324",
+          "sub-013S4791",
+          "sub-013S1186",
+          "sub-100S4556",
+          "sub-002S4219",
+          "sub-130S4250",
+          "sub-130S4542",
+          "sub-130S4660",
+          "sub-130S4971",
+          "sub-130S4982"
+        ]
+      },
+      "fold_1": {
+        "validation_subjects": [
+          "sub-002S1261",
+          "sub-018S4400",
+          "sub-019S4835",
+          "sub-013S5137",
+          "sub-053S5202",
+          "sub-053S5272",
+          "sub-002S4473",
+          "sub-018S4597",
+          "sub-018S4809",
+          "sub-053S4813",
+          "sub-130S4294",
+          "sub-002S4251",
+          "sub-013S4595",
+          "sub-130S4605",
+          "sub-002S5018",
+          "sub-130S5059"
+        ]
+      },
+      "fold_2": {
+        "validation_subjects": [
+          "sub-012S4545",
+          "sub-013S4616",
+          "sub-031S4021",
+          "sub-012S5157",
+          "sub-100S5096",
+          "sub-100S5280",
+          "sub-018S2133",
+          "sub-018S2138",
+          "sub-006S4713",
+          "sub-007S2394",
+          "sub-136S0107",
+          "sub-002S4654",
+          "sub-031S4194",
+          "sub-018S4696",
+          "sub-019S5019",
+          "sub-130S4990"
+        ]
+      },
+      "fold_3": {
+        "validation_subjects": [
+          "sub-002S1280",
+          "sub-018S4313",
+          "sub-031S4032",
+          "sub-006S5153",
+          "sub-053S5287",
+          "sub-002S2010",
+          "sub-006S4679",
+          "sub-012S4012",
+          "sub-002S1268",
+          "sub-013S2389",
+          "sub-006S4363",
+          "sub-031S4590",
+          "sub-130S4817",
+          "sub-006S4153",
+          "sub-019S4549",
+          "sub-130S4984"
+        ]
+      },
+      "fold_4": {
+        "validation_subjects": [
+          "sub-006S4357",
+          "sub-031S4218",
+          "sub-018S5250",
+          "sub-019S5242",
+          "sub-130S5258",
+          "sub-002S2073",
+          "sub-012S4128",
+          "sub-012S4188",
+          "sub-002S4799",
+          "sub-100S0296",
+          "sub-006S4346",
+          "sub-019S4293",
+          "sub-019S4548",
+          "sub-013S5071",
+          "sub-031S4024",
+          "sub-130S4641"
+        ]
+      }
+    },
+    "test_set_policy": "evaluated once, after model selection is complete"
+  },
+  "preprocessing": {
+    "within_acquisition": {
+      "mALFF": "ratio to that acquisition's own 246-ROI mean",
+      "mReHo": "ratio to that acquisition's own 246-ROI mean",
+      "DC_z": "z-score across the 246 ROIs of that acquisition",
+      "FC": "Fisher-z, signed, unthresholded, diagonal zeroed",
+      "leakage": "none by construction -- no cross-subject statistic, no label"
+    },
+    "cross_subject": {
+      "scaler": "per (ROI, channel) standardisation of the regional features",
+      "fitted_on": "training fold only (CV) / training pool only (final)",
+      "fc_rescaled": false
+    },
+    "class_weighting": "inverse class frequency, computed on the training fold"
+  },
+  "local_attention_mask": {
+    "default_mask": "local_attention_mask.npy",
+    "definition": "symmetric centroid 15-nearest-neighbour graph, diagonal True",
+    "k": 15,
+    "source_atlas": "atlases/Brainnetome246/BN_Atlas_246_2mm.nii.gz",
+    "centroid_space": "MNI mm via the image affine",
+    "encodes": "spatial proximity only; no functional, connectivity or diagnostic information",
+    "knn": {
+      "density": 0.07535197303192544,
+      "degree_min": 15,
+      "degree_median": 17,
+      "degree_max": 29,
+      "symmetric": true,
+      "rois_without_neighbour": 0
+    },
+    "adjacency": {
+      "density": 0.03539559785841761,
+      "degree_min": 3,
+      "degree_median": 7,
+      "degree_max": 17,
+      "symmetric": true,
+      "rois_without_neighbour": 0
+    },
+    "adjacency_edges_covered_by_knn": 0.9124472573839663,
+    "alternative_mask": "local_attention_mask_adjacency.npy"
+  },
+  "runs": {
+    "baselines": {
+      "status": "complete",
+      "kind": "baselines",
+      "models": [
+        "logreg_fc_edges",
+        "logreg_roi3",
+        "logreg_roi4",
+        "logreg_summary",
+        "majority",
+        "ordinal_logreg",
+        "stratified_prior"
+      ],
+      "split_fingerprint": "6f478fbcf56364e2"
+    },
+    "cap_d16_l1_p0.3": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 16,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "cap_d16_l1_p0.3"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stop_reasons": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_epochs": [
+        11,
+        6,
+        10,
+        13,
+        16
+      ],
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": {
+        "mean": 0.31111111111111106,
+        "sd": 0.030429030972509243
+      },
+      "cv_macro_f1": null,
+      "cv_qwk": {
+        "mean": 0.22767113200946185,
+        "sd": 0.23158479332527437
+      },
+      "cv_mae_stages": {
+        "mean": 1.65,
+        "sd": 0.41126709690905255
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_cap_d16_l1_p0.3.json",
+        "log": "derivatives\\model_training\\train_cap_d16_l1_p0.3.log",
+        "test_predictions": null
+      }
+    },
+    "cap_d16_l1_p0.5": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 16,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.5,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "cap_d16_l1_p0.5"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stop_reasons": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_epochs": [
+        2,
+        4,
+        15,
+        5,
+        8
+      ],
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": {
+        "mean": 0.26111111111111107,
+        "sd": 0.03726779962499648
+      },
+      "cv_macro_f1": null,
+      "cv_qwk": {
+        "mean": 0.1061798120431916,
+        "sd": 0.25090871487334593
+      },
+      "cv_mae_stages": {
+        "mean": 1.7301470588235293,
+        "sd": 0.29513381443949377
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_cap_d16_l1_p0.5.json",
+        "log": "derivatives\\model_training\\train_cap_d16_l1_p0.5.log",
+        "test_predictions": null
+      }
+    },
+    "cap_d32_l1_p0.3": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 32,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "cap_d32_l1_p0.3"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        11,
+        0,
+        11,
+        7,
+        11
+      ],
+      "degenerate": false,
+      "n_predicted_classes_per_fold": [
+        5,
+        3,
+        3,
+        3,
+        4
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.27222222222222214,
+        "sd": 0.03042903097250922
+      },
+      "cv_macro_f1": {
+        "mean": 0.1874084249084249,
+        "sd": 0.04720942197546917
+      },
+      "cv_qwk": {
+        "mean": 0.1504135354215277,
+        "sd": 0.29591625462834203
+      },
+      "cv_mae_stages": {
+        "mean": 1.7191176470588236,
+        "sd": 0.5631640159935954
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_cap_d32_l1_p0.3.json",
+        "log": "derivatives\\model_training\\train_cap_d32_l1_p0.3.log",
+        "test_predictions": null
+      }
+    },
+    "cap_d32_l1_p0.5": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 32,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.5,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "cap_d32_l1_p0.5"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        8,
+        5,
+        20,
+        0,
+        12
+      ],
+      "degenerate": false,
+      "n_predicted_classes_per_fold": [
+        3,
+        2,
+        3,
+        1,
+        2
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.2722222222222222,
+        "sd": 0.06334307917217433
+      },
+      "cv_macro_f1": {
+        "mean": 0.1384506137137716,
+        "sd": 0.05235476876392014
+      },
+      "cv_qwk": {
+        "mean": 0.20322648318318048,
+        "sd": 0.24582495004347138
+      },
+      "cv_mae_stages": {
+        "mean": 1.7301470588235293,
+        "sd": 0.48733417018059133
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_cap_d32_l1_p0.5.json",
+        "log": "derivatives\\model_training\\train_cap_d32_l1_p0.5.log",
+        "test_predictions": null
+      }
+    },
+    "cap_d32_l2_p0.3": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 32,
+        "num_heads": 4,
+        "num_layers": 2,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "cap_d32_l2_p0.3"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        2,
+        18,
+        19,
+        24,
+        16
+      ],
+      "degenerate": false,
+      "n_predicted_classes_per_fold": [
+        2,
+        4,
+        3,
+        6,
+        4
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.28888888888888886,
+        "sd": 0.057601225981465894
+      },
+      "cv_macro_f1": {
+        "mean": 0.21378787878787878,
+        "sd": 0.0861643397203562
+      },
+      "cv_qwk": {
+        "mean": 0.10684306405815262,
+        "sd": 0.14848844520655616
+      },
+      "cv_mae_stages": {
+        "mean": 1.6448529411764707,
+        "sd": 0.31889647391067893
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_cap_d32_l2_p0.3.json",
+        "log": "derivatives\\model_training\\train_cap_d32_l2_p0.3.log",
+        "test_predictions": null
+      }
+    },
+    "cap_d32_l2_p0.5": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 32,
+        "num_heads": 4,
+        "num_layers": 2,
+        "dropout": 0.5,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "cap_d32_l2_p0.5"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        1,
+        8,
+        11,
+        0,
+        3
+      ],
+      "degenerate": true,
+      "n_predicted_classes_per_fold": [
+        2,
+        2,
+        2,
+        1,
+        2
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.23888888888888887,
+        "sd": 0.0464811125852264
+      },
+      "cv_macro_f1": {
+        "mean": 0.11145502645502645,
+        "sd": 0.05029426857477026
+      },
+      "cv_qwk": {
+        "mean": 0.1641638497056389,
+        "sd": 0.3175372989478436
+      },
+      "cv_mae_stages": {
+        "mean": 1.450735294117647,
+        "sd": 0.3823759184272456
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_cap_d32_l2_p0.5.json",
+        "log": "derivatives\\model_training\\train_cap_d32_l2_p0.5.log",
+        "test_predictions": null
+      }
+    },
+    "mc_final": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "mask": "local",
+        "d_model": 16,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "mc_final"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        11,
+        6,
+        10,
+        13,
+        16
+      ],
+      "degenerate": false,
+      "n_predicted_classes_per_fold": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.31111111111111106,
+        "sd": 0.030429030972509243
+      },
+      "cv_macro_f1": {
+        "mean": 0.22098364598364598,
+        "sd": 0.04856638567598378
+      },
+      "cv_qwk": {
+        "mean": 0.22767113200946185,
+        "sd": 0.23158479332527437
+      },
+      "cv_mae_stages": {
+        "mean": 1.65,
+        "sd": 0.41126709690905255
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_mc_final.json",
+        "log": "derivatives\\model_training\\train_mc_final.log",
+        "test_predictions": null
+      }
+    },
+    "mc_globalmask": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "mask": "global",
+        "d_model": 16,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "mc_globalmask"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        10,
+        6,
+        10,
+        13,
+        16
+      ],
+      "degenerate": false,
+      "n_predicted_classes_per_fold": [
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.29999999999999993,
+        "sd": 0.049690399499995326
+      },
+      "cv_macro_f1": {
+        "mean": 0.20644583085759555,
+        "sd": 0.0578063474767504
+      },
+      "cv_qwk": {
+        "mean": 0.22194227968676422,
+        "sd": 0.2329876560892657
+      },
+      "cv_mae_stages": {
+        "mean": 1.6852941176470586,
+        "sd": 0.4541490412228111
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_mc_globalmask.json",
+        "log": "derivatives\\model_training\\train_mc_globalmask.log",
+        "test_predictions": null
+      }
+    },
+    "mlp_control": {
+      "status": "incomplete (0 folds)",
+      "kind": "transformer",
+      "config": null,
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [],
+      "stop_reasons": [],
+      "best_epochs": null,
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": null,
+      "cv_macro_f1": null,
+      "cv_qwk": null,
+      "cv_mae_stages": null,
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_mlp_control.json",
+        "log": "derivatives\\model_training\\train_mlp_control.log",
+        "test_predictions": null
+      }
+    },
+    "multiclass_lr1e-3": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "multiclass_lr1e-3"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stop_reasons": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_epochs": [
+        23,
+        20,
+        12,
+        13,
+        14
+      ],
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": {
+        "mean": 0.31666666666666665,
+        "sd": 0.03726779962499649
+      },
+      "cv_macro_f1": null,
+      "cv_qwk": {
+        "mean": 0.06744363421853275,
+        "sd": 0.10718895877572013
+      },
+      "cv_mae_stages": {
+        "mean": 1.6941176470588235,
+        "sd": 0.22094640040338076
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_multiclass_lr1e-3.json",
+        "log": "derivatives\\model_training\\train_multiclass_lr1e-3.log",
+        "test_predictions": null
+      }
+    },
+    "multiclass_lr3e-3": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "multiclass",
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "dropout": 0.3,
+        "lr": 0.003,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "multiclass_lr3e-3"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stop_reasons": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_epochs": [
+        4,
+        20,
+        9,
+        7,
+        24
+      ],
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": {
+        "mean": 0.3222222222222222,
+        "sd": 0.0576012259814659
+      },
+      "cv_macro_f1": null,
+      "cv_qwk": {
+        "mean": 0.056318532171596616,
+        "sd": 0.20108626072972166
+      },
+      "cv_mae_stages": {
+        "mean": 1.5683823529411764,
+        "sd": 0.2524024915359673
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_multiclass_lr3e-3.json",
+        "log": "derivatives\\model_training\\train_multiclass_lr3e-3.log",
+        "test_predictions": null
+      }
+    },
+    "ordfix_final": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "ordinal_fixed",
+        "mask": "local",
+        "d_model": 16,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "ordfix_final"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        0,
+        6,
+        0,
+        2,
+        14
+      ],
+      "degenerate": true,
+      "n_predicted_classes_per_fold": [
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.22777777777777777,
+        "sd": 0.07453559924999298
+      },
+      "cv_macro_f1": {
+        "mean": 0.10745253657018364,
+        "sd": 0.05712070697866832
+      },
+      "cv_qwk": {
+        "mean": 0.03216720263177384,
+        "sd": 0.09096561039832031
+      },
+      "cv_mae_stages": {
+        "mean": 1.4558823529411764,
+        "sd": 0.12394123405174685
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_ordfix_final.json",
+        "log": "derivatives\\model_training\\train_ordfix_final.log",
+        "test_predictions": null
+      }
+    },
+    "ordfix_globalmask": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "ordinal_fixed",
+        "mask": "global",
+        "d_model": 16,
+        "num_heads": 4,
+        "num_layers": 1,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "ordfix_globalmask"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        20261015,
+        20261016,
+        20261017,
+        20261018,
+        20261019
+      ],
+      "stop_reasons": [
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience",
+        "early_stopping_patience"
+      ],
+      "best_epochs": [
+        0,
+        14,
+        0,
+        2,
+        14
+      ],
+      "degenerate": true,
+      "n_predicted_classes_per_fold": [
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "cv_balanced_accuracy": {
+        "mean": 0.22777777777777777,
+        "sd": 0.07453559924999298
+      },
+      "cv_macro_f1": {
+        "mean": 0.10425925925925925,
+        "sd": 0.04720224704609172
+      },
+      "cv_qwk": {
+        "mean": -0.03166033480716808,
+        "sd": 0.049138527140028344
+      },
+      "cv_mae_stages": {
+        "mean": 1.5058823529411764,
+        "sd": 0.09969270475126471
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_ordfix_globalmask.json",
+        "log": "derivatives\\model_training\\train_ordfix_globalmask.log",
+        "test_predictions": null
+      }
+    },
+    "ordinal": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "ordinal",
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "dropout": 0.3,
+        "lr": 0.0003,
+        "weight_decay": 0.01,
+        "batch_size": 16,
+        "max_epochs": 100,
+        "patience": 20,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": true,
+        "tag": ""
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stop_reasons": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_epochs": [
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": {
+        "mean": 0.18888888888888886,
+        "sd": 0.049690399499995305
+      },
+      "cv_macro_f1": null,
+      "cv_qwk": {
+        "mean": 0.10664743358576752,
+        "sd": 0.15910406060811644
+      },
+      "cv_mae_stages": {
+        "mean": 2.3316176470588235,
+        "sd": 0.3575771657953985
+      },
+      "test_evaluated": true,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_ordinal.json",
+        "log": "derivatives\\model_training\\train_ordinal.log",
+        "test_predictions": "derivatives\\model_training\\test_predictions_ordinal.csv"
+      }
+    },
+    "ordinal_lr1e-3": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "ordinal",
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "dropout": 0.3,
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "ordinal_lr1e-3"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stop_reasons": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_epochs": [
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": {
+        "mean": 0.18888888888888886,
+        "sd": 0.049690399499995305
+      },
+      "cv_macro_f1": null,
+      "cv_qwk": {
+        "mean": 0.07118644067796609,
+        "sd": 0.15917772043218842
+      },
+      "cv_mae_stages": {
+        "mean": 2.3183823529411764,
+        "sd": 0.3013652075502401
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_ordinal_lr1e-3.json",
+        "log": "derivatives\\model_training\\train_ordinal_lr1e-3.log",
+        "test_predictions": null
+      }
+    },
+    "ordinal_lr3e-3": {
+      "status": "complete",
+      "kind": "transformer",
+      "config": {
+        "head": "ordinal",
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "dropout": 0.3,
+        "lr": 0.003,
+        "weight_decay": 0.01,
+        "batch_size": 8,
+        "eval_chunk": 4,
+        "max_epochs": 60,
+        "patience": 15,
+        "grad_clip": 1.0,
+        "seed": 20261015,
+        "mc_samples": 30,
+        "final_test": false,
+        "tag": "ordinal_lr3e-3"
+      },
+      "split_fingerprint": "6f478fbcf56364e2",
+      "seeds_per_fold": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stop_reasons": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_epochs": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "degenerate": null,
+      "n_predicted_classes_per_fold": null,
+      "cv_balanced_accuracy": {
+        "mean": 0.16666666666666666,
+        "sd": 0.0
+      },
+      "cv_macro_f1": null,
+      "cv_qwk": {
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "cv_mae_stages": {
+        "mean": 2.4566176470588235,
+        "sd": 0.1118577882509195
+      },
+      "test_evaluated": false,
+      "artifacts": {
+        "results_json": "derivatives\\model_training\\results_ordinal_lr3e-3.json",
+        "log": "derivatives\\model_training\\train_ordinal_lr3e-3.log",
+        "test_predictions": null
+      }
+    }
+  },
+  "software": {
+    "python": "3.13.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.2.2",
+    "scipy": "1.16.3",
+    "torch": "2.11.0+cpu",
+    "nibabel": "5.4.2",
+    "matplotlib": "3.10.7"
+  },
+  "scripts": {
+    "splits": "scripts/model/make_splits.py",
+    "mask": "scripts/model/build_local_attention_mask.py",
+    "training": "scripts/model/train_transformer.py",
+    "baselines": "scripts/model/baselines.py",
+    "heads": "scripts/model/heads.py",
+    "encoder": "scripts/model/multi_attention_transformer.py",
+    "audit": "scripts/model/audit_pipeline.py",
+    "ordinal_diagnosis": "scripts/model/diagnose_ordinal.py",
+    "protocol_validation": "scripts/model/validate_training_protocol.py",
+    "tests": [
+      "scripts/model/test_multi_attention_transformer.py",
+      "scripts/model/test_heads.py"
+    ]
+  },
+  "claims_not_supported": [
+    "no meta-learning is implemented",
+    "no comorbidity fusion is implemented",
+    "uncertainty is MC-dropout, not a full Bayesian posterior",
+    "LMCI has no MMSE/CDR/GDS/age/medical-history data (0/20)",
+    "no clinical readiness or progression-prediction claim is made"
+  ],
+  "model_freeze": {
+    "status": "FROZEN",
+    "selected": "dc_only_mlp_h64",
+    "supersedes": "mlp_multiclass_h64 (all four biomarkers)",
+    "configuration": {
+      "input": "246 features = DC_z, one value per Brainnetome ROI (channel index 2 of X_regional.npy, verified)",
+      "architecture": "MLP, 2 hidden layers of width 64, LayerNorm+GELU+dropout 0.3",
+      "head": "multiclass 6-way softmax, argmax decode",
+      "optimiser": "AdamW lr=1e-3 weight_decay=1e-2, batch 16, grad clip 1.0",
+      "epochs": "max 120, early stopping patience 20 on validation balanced accuracy",
+      "class_weighting": "inverse class frequency from the training fold",
+      "preprocessing": "per-feature standardisation fitted on the training fold only",
+      "n_parameters": 20614
+    },
+    "evidence": {
+      "design": "25 paired fold evaluations, identical fold fingerprints, subject IDs and labels verified in all 25 pairs",
+      "metrics_reproduced": "200/200 checks from saved predictions, 0 mismatches",
+      "historical_figures_verified": "all 8 recorded values recomputed exactly",
+      "dc_only": {
+        "bal_acc": "0.307+/-0.029",
+        "accuracy": "0.304+/-0.024",
+        "macro_f1": "0.264+/-0.022",
+        "mae": "1.642",
+        "qwk": "0.172",
+        "class_coverage": "3-6",
+        "params": 20614
+      },
+      "all_four": {
+        "bal_acc": "0.278+/-0.012",
+        "accuracy": "0.274+/-0.011",
+        "macro_f1": "0.246+/-0.017",
+        "mae": "1.638",
+        "qwk": "0.171",
+        "class_coverage": "4-6",
+        "params": 67846
+      },
+      "paired_balanced_accuracy": "+0.0289, favoured by 5/5 seeds and 18/25 folds",
+      "per_class_recall_dc": {
+        "CN": 0.26,
+        "SMC": 0.47,
+        "EMCI": 0.19,
+        "MCI": 0.38,
+        "LMCI": 0.23,
+        "AD": 0.31
+      },
+      "per_class_recall_all_four": {
+        "CN": 0.13,
+        "SMC": 0.37,
+        "EMCI": 0.24,
+        "MCI": 0.35,
+        "LMCI": 0.21,
+        "AD": 0.36
+      }
+    },
+    "rationale": "The advantage is consistent in direction across all five split seeds and 18 of 25 folds, it holds on balanced accuracy, accuracy and macro-F1 simultaneously, no class is ever left unpredicted, the worst per-class recall improves (0.19 vs 0.13), and the model uses 3.3x fewer parameters on a single biomarker. MAE and QWK are effectively unchanged.",
+    "uncertainty": "The effect is SMALL relative to fold noise: +0.0289 against a fold-level sd of 0.1065, a ratio of 0.27. Direction is consistent; magnitude is not established. Two of five seeds show a gain of only +0.006. This is a defensible simplification, not a demonstrated performance breakthrough.",
+    "caveat": "DC_z being the most predictive single biomarker is NOT evidence that degree centrality is biologically privileged in Alzheimer's disease. Phase 6D found NO stable ROI importance (mean pairwise Spearman +0.012).",
+    "test_set_history": "evaluated once on 2026-10-15 by the faulty argmax-decoder ordinal run. NOT pristine. No model selection has used it.",
+    "authorisation_required": "held-out evaluation NOT run; awaiting explicit user authorisation",
+    "evidence_file": "derivatives/model_training/dc_vs_allfour_decision.json"
+  },
+  "repeated_cv": {
+    "design": "5 stratified subject-level folds x 5 split seeds = 25 evaluations per candidate, 125 total; one fold assignment per seed shared by all candidates so comparisons are paired; training-fold-only preprocessing",
+    "seeds": [
+      20261015,
+      20261016,
+      20261017,
+      20261018,
+      20261019
+    ],
+    "quality_control": "all 25 partitions contained all six classes; 500/500 metrics recomputed from saved predictions matched exactly",
+    "statistical_note": "the 125 evaluations are NOT independent -- within a seed the five folds partition the same 81 subjects, and all seeds reuse those subjects. Seed-level means are the primary summary; the reported +/- is sensitivity to partitioning, not a standard error. No p-values are reported.",
+    "summary": {
+      "logreg_roi3": {
+        "balanced_accuracy": [
+          0.17555555555555555,
+          0.008425417160057284
+        ],
+        "accuracy": [
+          0.17308823529411765,
+          0.008954300546100524
+        ],
+        "macro_f1": [
+          0.1573068783068783,
+          0.01400504963982284
+        ],
+        "mae_stages": [
+          1.754264705882353,
+          0.12048439754550432
+        ],
+        "qwk": [
+          0.19211431665639198,
+          0.06979112921081089
+        ],
+        "classes": [
+          4,
+          6,
+          5.6
+        ],
+        "params": 4434
+      },
+      "mlp_multiclass_h64": {
+        "balanced_accuracy": [
+          0.2777777777777778,
+          0.012422599874998812
+        ],
+        "accuracy": [
+          0.27426470588235297,
+          0.010992585579210314
+        ],
+        "macro_f1": [
+          0.24552380952380953,
+          0.01686560741988961
+        ],
+        "mae_stages": [
+          1.6379411764705882,
+          0.1257402389808527
+        ],
+        "qwk": [
+          0.17082477183864536,
+          0.09008957730746917
+        ],
+        "classes": [
+          4,
+          6,
+          5.4
+        ],
+        "params": 67846
+      },
+      "mlp_ordinal_h32": {
+        "balanced_accuracy": [
+          0.2811111111111111,
+          0.04788747097668878
+        ],
+        "accuracy": [
+          0.26426470588235296,
+          0.04702031972592304
+        ],
+        "macro_f1": [
+          0.19306912695147987,
+          0.04829468507078548
+        ],
+        "mae_stages": [
+          1.436764705882353,
+          0.05681069076129144
+        ],
+        "qwk": [
+          0.145739699831275,
+          0.07058219687335955
+        ],
+        "classes": [
+          2,
+          6,
+          3.44
+        ],
+        "params": 32940
+      },
+      "transformer_mc_d16": {
+        "balanced_accuracy": [
+          0.26111111111111107,
+          0.025760051376376943
+        ],
+        "accuracy": [
+          0.25705882352941173,
+          0.027357486972044882
+        ],
+        "macro_f1": [
+          0.1530169175509733,
+          0.02009063528576829
+        ],
+        "mae_stages": [
+          1.813235294117647,
+          0.12757194014944984
+        ],
+        "qwk": [
+          0.13547391011127857,
+          0.02881770678238917
+        ],
+        "classes": [
+          1,
+          5,
+          2.6
+        ],
+        "params": 10301
+      },
+      "transformer_ordfix_d16": {
+        "balanced_accuracy": [
+          0.21444444444444438,
+          0.029292058503253483
+        ],
+        "accuracy": [
+          0.2026470588235294,
+          0.02412840506116904
+        ],
+        "macro_f1": [
+          0.08717104435525488,
+          0.02111687115669039
+        ],
+        "mae_stages": [
+          1.4913235294117648,
+          0.04640923444232283
+        ],
+        "qwk": [
+          -0.0005058567064782384,
+          0.04910838994616168
+        ],
+        "classes": [
+          1,
+          2,
+          1.56
+        ],
+        "params": 10323
+      }
+    },
+    "per_class_recall": {
+      "logreg_roi3": {
+        "recall": {
+          "CN": 0.02857142857142857,
+          "SMC": 0.2571428571428571,
+          "EMCI": 0.05714285714285714,
+          "MCI": 0.21818181818181817,
+          "LMCI": 0.12857142857142856,
+          "AD": 0.35714285714285715
+        },
+        "never_predicted": []
+      },
+      "mlp_multiclass_h64": {
+        "recall": {
+          "CN": 0.12857142857142856,
+          "SMC": 0.37142857142857144,
+          "EMCI": 0.24285714285714285,
+          "MCI": 0.34545454545454546,
+          "LMCI": 0.21428571428571427,
+          "AD": 0.35714285714285715
+        },
+        "never_predicted": []
+      },
+      "mlp_ordinal_h32": {
+        "recall": {
+          "CN": 0.014285714285714285,
+          "SMC": 0.3142857142857143,
+          "EMCI": 0.6285714285714286,
+          "MCI": 0.45454545454545453,
+          "LMCI": 0.15714285714285714,
+          "AD": 0.05714285714285714
+        },
+        "never_predicted": []
+      },
+      "transformer_mc_d16": {
+        "recall": {
+          "CN": 0.21428571428571427,
+          "SMC": 0.2571428571428571,
+          "EMCI": 0.21428571428571427,
+          "MCI": 0.21818181818181817,
+          "LMCI": 0.2,
+          "AD": 0.42857142857142855
+        },
+        "never_predicted": []
+      },
+      "transformer_ordfix_d16": {
+        "recall": {
+          "CN": 0.0,
+          "SMC": 0.0,
+          "EMCI": 0.7285714285714285,
+          "MCI": 0.5636363636363636,
+          "LMCI": 0.0,
+          "AD": 0.0
+        },
+        "never_predicted": [
+          "CN",
+          "SMC",
+          "LMCI",
+          "AD"
+        ]
+      }
+    },
+    "records": "derivatives/model_training/repeated_cv/repeated_cv_records.json",
+    "test_set_touched": false
+  },
+  "phase6a_biomarker_ablation": {
+    "feature_mapping_verified": {
+      "layout": "984 = 246 ROIs x 4 channels, INTERLEAVED: index = roi*4 + channel",
+      "channels": {
+        "0": "mALFF",
+        "1": "mReHo",
+        "2": "DC_z",
+        "3": "FC unsigned mean strength"
+      },
+      "fc_caveat": "channel 3 is NOT the connectivity matrix. It is a 246-D summary mean_{j!=i}|z_ij|; 30,135 unique edges are compressed to 246 values. Verified by recomputing it from X_fc.npy.",
+      "normalisation": "within-acquisition (leakage-free) then per-feature standardisation fitted on the training fold only",
+      "missing_values": "none; all arrays finite",
+      "dimensionality_reduction": "none applied"
+    },
+    "design": "6 configurations x 5 seeds x 5 folds = 150 evaluations, paired folds",
+    "results_seed_level": {
+      "dc_only": {
+        "dim": 246,
+        "bal_acc": "0.307+/-0.029",
+        "macro_f1": "0.264",
+        "mae": 1.642,
+        "qwk": 0.172
+      },
+      "fc_summary": {
+        "dim": 246,
+        "bal_acc": "0.296+/-0.019",
+        "macro_f1": "0.267",
+        "mae": 1.717,
+        "qwk": 0.099
+      },
+      "fc_edges": {
+        "dim": 30135,
+        "bal_acc": "0.292+/-0.050",
+        "macro_f1": "0.249",
+        "mae": 1.619,
+        "qwk": 0.181,
+        "params": 1933510
+      },
+      "reho_only": {
+        "dim": 246,
+        "bal_acc": "0.280+/-0.018",
+        "macro_f1": "0.250",
+        "mae": 1.715,
+        "qwk": 0.173
+      },
+      "all_four": {
+        "dim": 984,
+        "bal_acc": "0.278+/-0.012",
+        "macro_f1": "0.246",
+        "mae": 1.638,
+        "qwk": 0.171
+      },
+      "alff_only": {
+        "dim": 246,
+        "bal_acc": "0.239+/-0.043",
+        "macro_f1": "0.204",
+        "mae": 1.768,
+        "qwk": 0.11
+      }
+    },
+    "key_findings": [
+      "DC alone (246 features) beat all four combined (984) on 5/5 seeds for balanced accuracy (0.307 vs 0.278). Combining biomarkers did NOT help.",
+      "FC as 30,135 edges (1.9M parameters) was no better than FC as a 246-D summary (0.292 vs 0.296), so the compression loses nothing measurable here.",
+      "mALFF was the weakest single biomarker (0.239), below the combined model on 4/5 seeds.",
+      "All differences are small relative to the fold-level spread (sd 0.08-0.11), so these are rankings, not established effects."
+    ],
+    "caveat": "predictive usefulness is not biological importance",
+    "records": "derivatives/model_training/biomarker_ablation/ablation_records.json",
+    "test_set_touched": false
+  },
+  "phase6d_roi_importance": {
+    "method": "permutation importance on validation subjects only, grouped by ROI (4 channels together) and by biomarker (246 ROIs together), 5 repeats, 25 fold-models",
+    "controls": [
+      "label-shuffled null: whole procedure repeated with permuted training labels",
+      "pairwise Spearman between fold rankings",
+      "top-20 overlap against chance"
+    ],
+    "result": "NO STABLE ROI IMPORTANCE COULD BE ESTABLISHED",
+    "evidence": {
+      "rank_stability_mean_spearman": 0.012,
+      "rank_stability_note": "essentially zero agreement between folds; range -0.223 to +0.225",
+      "top20_overlap": "2.7/20 observed vs 1.6/20 by chance",
+      "real_vs_null": "7.0% of ROI-folds exceeded the 95th percentile of the label-shuffled null, against 5% expected by construction",
+      "biomarker_importance": "all four channels near zero; positive drop in only 10-15 of 25 folds, i.e. a coin flip",
+      "top_roi_recurrence": "the highest-ranked ROI appeared in the top 20 in only 4 of 25 folds"
+    },
+    "methodological_caveat": "models here were trained for a fixed 60 epochs with NO early stopping, to avoid selecting the checkpoint on the same validation subjects used for importance. They therefore reached only 0.176 mean validation balanced accuracy, below the frozen model's 0.278. Importance estimated from a weak model is correspondingly weak evidence.",
+    "conclusion": "ROI rankings from this cohort are not reproducible across partitions and must not be reported as disease-relevant regions.",
+    "test_set_touched": false
+  },
+  "model_freeze_history": [
+    {
+      "superseded_on": "2026-10-15",
+      "previously_frozen": "mlp_multiclass_h64",
+      "reason_superseded": "Phase 6A ablation showed dc_only beats all_four on 5/5 seeds with 3.3x fewer parameters"
+    }
+  ],
+  "final_heldout_evaluation": {
+    "status": "COMPLETED -- run once under explicit user authorisation on 2026-10-15",
+    "model": "dc_only_mlp_h64 (frozen before any test access)",
+    "n_test": 35,
+    "epochs": 10,
+    "seed": 20261015,
+    "epoch_selection": "mean best epoch over the 22 of 25 CV folds that beat chance, +1, floored at 10; test labels played no part",
+    "metrics": {
+      "accuracy": 0.2,
+      "balanced_accuracy": 0.20000000000000004,
+      "macro_f1": 0.2062881562881563,
+      "mae_stages": 1.8285714285714285,
+      "qwk": 0.15190203230849386,
+      "ece": 0.16814832772527422,
+      "n_predicted_classes": 6
+    },
+    "per_class": {
+      "CN": {
+        "support": 6,
+        "n_predicted": 7,
+        "precision": 0.42857142857142855,
+        "recall": 0.5,
+        "f1": 0.4615384615384615
+      },
+      "SMC": {
+        "support": 6,
+        "n_predicted": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "EMCI": {
+        "support": 6,
+        "n_predicted": 9,
+        "precision": 0.1111111111111111,
+        "recall": 0.16666666666666666,
+        "f1": 0.13333333333333333
+      },
+      "MCI": {
+        "support": 5,
+        "n_predicted": 3,
+        "precision": 0.3333333333333333,
+        "recall": 0.2,
+        "f1": 0.25
+      },
+      "LMCI": {
+        "support": 6,
+        "n_predicted": 2,
+        "precision": 0.5,
+        "recall": 0.16666666666666666,
+        "f1": 0.25
+      },
+      "AD": {
+        "support": 6,
+        "n_predicted": 8,
+        "precision": 0.125,
+        "recall": 0.16666666666666666,
+        "f1": 0.14285714285714288
+      }
+    },
+    "confusion_matrix": [
+      [
+        3,
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        2,
+        1,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        2,
+        0,
+        1
+      ]
+    ],
+    "class_support": {
+      "CN": 6,
+      "SMC": 6,
+      "EMCI": 6,
+      "MCI": 5,
+      "LMCI": 6,
+      "AD": 6
+    },
+    "predicted_distribution": {
+      "CN": 7,
+      "SMC": 6,
+      "EMCI": 9,
+      "MCI": 3,
+      "LMCI": 2,
+      "AD": 8
+    },
+    "majority_baseline_same_subjects": {
+      "balanced_accuracy": 0.16666666666666666,
+      "mae": 2.4857142857142858
+    },
+    "repeated_cv_reference": "balanced accuracy 0.307+/-0.029 over 25 folds",
+    "verification": {
+      "split_fingerprint_matched": true,
+      "pool_test_overlap": 0,
+      "held_out_subjects_never_in_CV_or_ablation": true,
+      "scaler_fitted_on_pool_only": true,
+      "metrics_reproduced_from_saved_predictions": true
+    },
+    "artifacts": {
+      "predictions": "derivatives\\model_training\\final_heldout\\test_predictions.csv",
+      "checkpoint": "derivatives\\model_training\\final_heldout\\frozen_dc_only_mlp_h64.pt",
+      "results": "derivatives/model_training/final_heldout/final_heldout_results.json"
+    },
+    "limitation_checkpoint": "no weights file existed for the frozen model; it was reproduced deterministically from the documented procedure and recorded seed",
+    "interpretation": {
+      "headline": "held-out balanced accuracy 0.200 against a 0.167 majority-class baseline on the same 35 subjects, and against a repeated-CV mean of 0.307",
+      "shortfall": "the held-out estimate is BELOW the cross-validated mean. With 35 subjects one subject moves balanced accuracy by ~0.029, so 0.200 vs 0.307 is roughly 3.7 subjects' worth of difference and is within what partition luck can produce. It should not be read as either refuting or confirming the CV estimate.",
+      "positives": "all six stages were predicted (no collapse); QWK +0.152 indicates errors tend toward neighbouring stages; CN recall 0.50 is the strongest class",
+      "negatives": "SMC recall 0.00 (none of its 6 subjects identified); EMCI, LMCI and AD recall all 0.167; MAE 1.83 stages",
+      "not_supported": [
+        "clinical readiness",
+        "biological importance of degree centrality",
+        "prediction of future progression",
+        "superiority over published models"
+      ]
+    },
+    "test_set_history": "this set was ALSO evaluated on 2026-10-15 by the faulty argmax-decoder ordinal run. It is NOT pristine. That earlier access did not inform any model selection, and the present evaluation is the first and only assessment of the frozen model.",
+    "stop_condition": "No further tuning or model selection will use these results."
+  }
+}

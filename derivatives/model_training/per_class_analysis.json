@@ -1,0 +1,975 @@
+{
+  "cap_d32_l1_p0.3": {
+    "classes_emitted": [
+      "CN",
+      "SMC",
+      "EMCI",
+      "MCI",
+      "LMCI",
+      "AD"
+    ],
+    "never_predicted": [],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 15,
+        "precision": 0.13333333333333333,
+        "recall": 0.14285714285714285,
+        "f1": 0.1379310344827586,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 13,
+        "precision": 0.3076923076923077,
+        "recall": 0.2857142857142857,
+        "f1": 0.29629629629629634,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 23,
+        "precision": 0.34782608695652173,
+        "recall": 0.5714285714285714,
+        "f1": 0.4324324324324324,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 11,
+        "precision": 0.18181818181818182,
+        "recall": 0.18181818181818182,
+        "f1": 0.18181818181818182,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 3,
+        "precision": 0.3333333333333333,
+        "recall": 0.07142857142857142,
+        "f1": 0.11764705882352941,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 16,
+        "precision": 0.3125,
+        "recall": 0.35714285714285715,
+        "f1": 0.3333333333333333,
+        "verdict": "SCATTERED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        4,
+        4,
+        2,
+        0,
+        2
+      ],
+      [
+        1,
+        4,
+        5,
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        1,
+        8,
+        1,
+        0,
+        2
+      ],
+      [
+        3,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        3,
+        3,
+        1,
+        3
+      ],
+      [
+        5,
+        1,
+        2,
+        1,
+        0,
+        5
+      ]
+    ],
+    "status": "FULL COVERAGE",
+    "mae": 1.7160493827160495,
+    "within_one_stage": 0.5308641975308642,
+    "decode_rule": "argmax"
+  },
+  "cap_d32_l1_p0.5": {
+    "classes_emitted": [
+      "CN",
+      "SMC",
+      "EMCI",
+      "MCI",
+      "LMCI",
+      "AD"
+    ],
+    "never_predicted": [],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 10,
+        "precision": 0.2,
+        "recall": 0.14285714285714285,
+        "f1": 0.16666666666666666,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 15,
+        "precision": 0.3333333333333333,
+        "recall": 0.35714285714285715,
+        "f1": 0.3448275862068965,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 18,
+        "precision": 0.2777777777777778,
+        "recall": 0.35714285714285715,
+        "f1": 0.31250000000000006,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 5,
+        "precision": 0.2,
+        "recall": 0.09090909090909091,
+        "f1": 0.12500000000000003,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 10,
+        "precision": 0.2,
+        "recall": 0.14285714285714285,
+        "f1": 0.16666666666666666,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 23,
+        "precision": 0.2608695652173913,
+        "recall": 0.42857142857142855,
+        "f1": 0.3243243243243243,
+        "verdict": "SCATTERED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        3,
+        3,
+        1,
+        1,
+        4
+      ],
+      [
+        2,
+        5,
+        4,
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        5,
+        1,
+        2,
+        4
+      ],
+      [
+        2,
+        2,
+        1,
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        2,
+        3,
+        1,
+        2,
+        4
+      ],
+      [
+        2,
+        1,
+        2,
+        1,
+        2,
+        6
+      ]
+    ],
+    "status": "FULL COVERAGE",
+    "mae": 1.728395061728395,
+    "within_one_stage": 0.5308641975308642,
+    "decode_rule": "argmax"
+  },
+  "cap_d32_l2_p0.3": {
+    "classes_emitted": [
+      "CN",
+      "SMC",
+      "EMCI",
+      "MCI",
+      "LMCI",
+      "AD"
+    ],
+    "never_predicted": [],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "ZERO RECALL"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 2,
+        "precision": 0.5,
+        "recall": 0.07142857142857142,
+        "f1": 0.125,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 33,
+        "precision": 0.30303030303030304,
+        "recall": 0.7142857142857143,
+        "f1": 0.42553191489361697,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 10,
+        "precision": 0.5,
+        "recall": 0.45454545454545453,
+        "f1": 0.47619047619047616,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 9,
+        "precision": 0.2222222222222222,
+        "recall": 0.14285714285714285,
+        "f1": 0.17391304347826086,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 22,
+        "precision": 0.2727272727272727,
+        "recall": 0.42857142857142855,
+        "f1": 0.33333333333333326,
+        "verdict": "SCATTERED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        5,
+        2,
+        2,
+        5
+      ],
+      [
+        1,
+        1,
+        7,
+        2,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        10,
+        0,
+        1,
+        2
+      ],
+      [
+        2,
+        0,
+        2,
+        5,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        4,
+        1,
+        2,
+        6
+      ],
+      [
+        1,
+        0,
+        5,
+        0,
+        2,
+        6
+      ]
+    ],
+    "status": "FULL COVERAGE",
+    "mae": 1.6419753086419753,
+    "within_one_stage": 0.5432098765432098,
+    "decode_rule": "argmax"
+  },
+  "cap_d32_l2_p0.5": {
+    "classes_emitted": [
+      "SMC",
+      "EMCI",
+      "MCI",
+      "LMCI",
+      "AD"
+    ],
+    "never_predicted": [
+      "CN"
+    ],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 7,
+        "precision": 0.2857142857142857,
+        "recall": 0.14285714285714285,
+        "f1": 0.19047619047619047,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 12,
+        "precision": 0.25,
+        "recall": 0.21428571428571427,
+        "f1": 0.23076923076923075,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 39,
+        "precision": 0.1794871794871795,
+        "recall": 0.6363636363636364,
+        "f1": 0.28,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 18,
+        "precision": 0.3333333333333333,
+        "recall": 0.42857142857142855,
+        "f1": 0.375,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 5,
+        "precision": 0.2,
+        "recall": 0.07142857142857142,
+        "f1": 0.10526315789473682,
+        "verdict": "SCATTERED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        3,
+        6,
+        3,
+        1
+      ],
+      [
+        0,
+        2,
+        3,
+        6,
+        1,
+        2
+      ],
+      [
+        0,
+        3,
+        3,
+        6,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        7,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        7,
+        6,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        7,
+        5,
+        1
+      ]
+    ],
+    "status": "FULL COVERAGE",
+    "mae": 1.4567901234567902,
+    "within_one_stage": 0.5802469135802469,
+    "decode_rule": "argmax"
+  },
+  "mc_final": {
+    "classes_emitted": [
+      "CN",
+      "SMC",
+      "EMCI",
+      "LMCI",
+      "AD"
+    ],
+    "never_predicted": [
+      "MCI"
+    ],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 15,
+        "precision": 0.3333333333333333,
+        "recall": 0.35714285714285715,
+        "f1": 0.3448275862068965,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 8,
+        "precision": 0.25,
+        "recall": 0.14285714285714285,
+        "f1": 0.18181818181818182,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 14,
+        "precision": 0.42857142857142855,
+        "recall": 0.42857142857142855,
+        "f1": 0.42857142857142855,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 19,
+        "precision": 0.2631578947368421,
+        "recall": 0.35714285714285715,
+        "f1": 0.30303030303030304,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 25,
+        "precision": 0.32,
+        "recall": 0.5714285714285714,
+        "f1": 0.41025641025641024,
+        "verdict": "SCATTERED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        5,
+        1,
+        0,
+        0,
+        4,
+        4
+      ],
+      [
+        3,
+        2,
+        4,
+        0,
+        3,
+        2
+      ],
+      [
+        2,
+        1,
+        6,
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        2,
+        0,
+        3,
+        3
+      ],
+      [
+        3,
+        0,
+        1,
+        0,
+        5,
+        5
+      ],
+      [
+        1,
+        2,
+        1,
+        0,
+        2,
+        8
+      ]
+    ],
+    "status": "FULL COVERAGE",
+    "mae": 1.654320987654321,
+    "within_one_stage": 0.5802469135802469,
+    "decode_rule": "argmax"
+  },
+  "mc_globalmask": {
+    "classes_emitted": [
+      "CN",
+      "SMC",
+      "EMCI",
+      "LMCI",
+      "AD"
+    ],
+    "never_predicted": [
+      "MCI"
+    ],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 17,
+        "precision": 0.29411764705882354,
+        "recall": 0.35714285714285715,
+        "f1": 0.3225806451612903,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 8,
+        "precision": 0.25,
+        "recall": 0.14285714285714285,
+        "f1": 0.18181818181818182,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 13,
+        "precision": 0.38461538461538464,
+        "recall": 0.35714285714285715,
+        "f1": 0.3703703703703704,
+        "verdict": "SCATTERED"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 19,
+        "precision": 0.2631578947368421,
+        "recall": 0.35714285714285715,
+        "f1": 0.30303030303030304,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 24,
+        "precision": 0.3333333333333333,
+        "recall": 0.5714285714285714,
+        "f1": 0.4210526315789474,
+        "verdict": "SCATTERED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        5,
+        1,
+        0,
+        0,
+        4,
+        4
+      ],
+      [
+        3,
+        2,
+        4,
+        0,
+        3,
+        2
+      ],
+      [
+        3,
+        1,
+        5,
+        0,
+        2,
+        3
+      ],
+      [
+        2,
+        2,
+        2,
+        0,
+        3,
+        2
+      ],
+      [
+        3,
+        0,
+        1,
+        0,
+        5,
+        5
+      ],
+      [
+        1,
+        2,
+        1,
+        0,
+        2,
+        8
+      ]
+    ],
+    "status": "FULL COVERAGE",
+    "mae": 1.691358024691358,
+    "within_one_stage": 0.5679012345679012,
+    "decode_rule": "argmax"
+  },
+  "ordfix_final": {
+    "classes_emitted": [
+      "EMCI",
+      "MCI"
+    ],
+    "never_predicted": [
+      "CN",
+      "SMC",
+      "LMCI",
+      "AD"
+    ],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 42,
+        "precision": 0.23809523809523808,
+        "recall": 0.7142857142857143,
+        "f1": 0.35714285714285715,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 39,
+        "precision": 0.20512820512820512,
+        "recall": 0.7272727272727273,
+        "f1": 0.32,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        6,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        9,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        7,
+        0,
+        0
+      ]
+    ],
+    "status": "COLLAPSED",
+    "mae": 1.4567901234567902,
+    "within_one_stage": 0.5061728395061729,
+    "decode_rule": "cumulative-threshold"
+  },
+  "ordfix_globalmask": {
+    "classes_emitted": [
+      "EMCI",
+      "MCI"
+    ],
+    "never_predicted": [
+      "CN",
+      "SMC",
+      "LMCI",
+      "AD"
+    ],
+    "per_class": [
+      {
+        "stage": "CN",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "SMC",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "EMCI",
+        "support": 14,
+        "n_predicted": 46,
+        "precision": 0.21739130434782608,
+        "recall": 0.7142857142857143,
+        "f1": 0.3333333333333333,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "MCI",
+        "support": 11,
+        "n_predicted": 35,
+        "precision": 0.22857142857142856,
+        "recall": 0.7272727272727273,
+        "f1": 0.34782608695652173,
+        "verdict": "NEIGHBOUR CONFUSION"
+      },
+      {
+        "stage": "LMCI",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      },
+      {
+        "stage": "AD",
+        "support": 14,
+        "n_predicted": 0,
+        "precision": NaN,
+        "recall": 0.0,
+        "f1": 0.0,
+        "verdict": "NEVER PREDICTED"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        6,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        9,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        9,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        9,
+        5,
+        0,
+        0
+      ]
+    ],
+    "status": "COLLAPSED",
+    "mae": 1.5061728395061729,
+    "within_one_stage": 0.48148148148148145,
+    "decode_rule": "cumulative-threshold"
+  }
+}

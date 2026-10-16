@@ -1,0 +1,55 @@
+======================================================================================
+PHASE 6B -- BIOMARKER ABLATION
+======================================================================================
+training pool 81; held-out test (35) NOT loaded
+architecture fixed: MLP h64 multiclass; only the input width varies
+
+configuration     input dim  meaning
+alff_only               246  246 ROIs, mALFF (ratio to within-acquisition mean)
+reho_only               246  246 ROIs, mReHo (ratio to within-acquisition mean)
+dc_only                 246  246 ROIs, DC_z (signed degree centrality, z across ROIs)
+fc_summary              246  246 ROIs, mean_{j!=i} |Fisher-z| (SUMMARY of the matrix)
+fc_edges              30135  30,135 unique edges, upper triangle of the Fisher-z matrix
+all_four                984  246 x 4 interleaved (mALFF, mReHo, DC_z, FCstr)
+
+seed 20261015  fold fingerprint 9d88243dd033155e
+  alff_only      bal.acc 0.278  macroF1 0.225  MAE 1.699  QWK +0.052  cls [6, 5, 6, 6, 3]  3s
+  reho_only      bal.acc 0.300  macroF1 0.267  MAE 1.836  QWK +0.086  cls [6, 6, 6, 5, 4]  1s
+  dc_only        bal.acc 0.311  macroF1 0.272  MAE 1.568  QWK +0.277  cls [5, 6, 6, 5, 5]  1s
+  fc_summary     bal.acc 0.267  macroF1 0.212  MAE 1.835  QWK +0.046  cls [4, 5, 4, 5, 5]  1s
+  fc_edges       bal.acc 0.311  macroF1 0.272  MAE 1.577  QWK +0.202  cls [5, 4, 6, 6, 4]  10s
+  all_four       bal.acc 0.272  macroF1 0.225  MAE 1.638  QWK +0.244  cls [5, 5, 6, 6, 4]  2s
+
+seed 20261016  fold fingerprint cb9c36eccb7d4496
+  alff_only      bal.acc 0.189  macroF1 0.167  MAE 1.788  QWK +0.095  cls [6, 5, 5, 6, 6]  1s
+  reho_only      bal.acc 0.289  macroF1 0.247  MAE 1.719  QWK +0.189  cls [6, 6, 5, 5, 6]  1s
+  dc_only        bal.acc 0.267  macroF1 0.227  MAE 1.657  QWK +0.198  cls [6, 5, 5, 6, 5]  1s
+  fc_summary     bal.acc 0.306  macroF1 0.299  MAE 1.448  QWK +0.312  cls [5, 6, 5, 5, 6]  1s
+  fc_edges       bal.acc 0.261  macroF1 0.216  MAE 1.643  QWK +0.178  cls [6, 5, 4, 5, 5]  8s
+  all_four       bal.acc 0.261  macroF1 0.239  MAE 1.688  QWK +0.116  cls [6, 6, 5, 5, 6]  1s
+
+seed 20261017  fold fingerprint 09525a6309ccdf34
+  alff_only      bal.acc 0.200  macroF1 0.187  MAE 1.851  QWK +0.121  cls [6, 5, 5, 4, 6]  2s
+  reho_only      bal.acc 0.267  macroF1 0.251  MAE 1.912  QWK +0.023  cls [5, 6, 4, 6, 5]  1s
+  dc_only        bal.acc 0.289  macroF1 0.260  MAE 1.747  QWK +0.142  cls [5, 4, 5, 5, 6]  1s
+  fc_summary     bal.acc 0.317  macroF1 0.312  MAE 1.780  QWK +0.059  cls [5, 6, 6, 6, 6]  2s
+  fc_edges       bal.acc 0.267  macroF1 0.230  MAE 1.629  QWK +0.148  cls [6, 6, 6, 6, 5]  11s
+  all_four       bal.acc 0.283  macroF1 0.260  MAE 1.590  QWK +0.184  cls [5, 6, 6, 5, 5]  2s
+
+seed 20261018  fold fingerprint ca297c0daac768d3
+  alff_only      bal.acc 0.244  macroF1 0.201  MAE 1.879  QWK +0.065  cls [6, 6, 5, 5, 4]  1s
+  reho_only      bal.acc 0.256  macroF1 0.213  MAE 1.625  QWK +0.259  cls [6, 6, 5, 5, 5]  1s
+  dc_only        bal.acc 0.328  macroF1 0.275  MAE 1.521  QWK +0.158  cls [6, 4, 4, 6, 3]  1s
+  fc_summary     bal.acc 0.289  macroF1 0.245  MAE 1.831  QWK -0.006  cls [6, 6, 5, 6, 5]  1s
+  fc_edges       bal.acc 0.250  macroF1 0.210  MAE 1.775  QWK +0.104  cls [6, 6, 6, 5, 4]  11s
+  all_four       bal.acc 0.278  macroF1 0.239  MAE 1.807  QWK +0.047  cls [5, 6, 5, 6, 5]  2s
+
+seed 20261019  fold fingerprint bc396eacad3893f2
+  alff_only      bal.acc 0.283  macroF1 0.243  MAE 1.621  QWK +0.215  cls [5, 6, 5, 6, 4]  1s
+  reho_only      bal.acc 0.289  macroF1 0.273  MAE 1.481  QWK +0.308  cls [4, 6, 5, 6, 6]  1s
+  dc_only        bal.acc 0.339  macroF1 0.284  MAE 1.715  QWK +0.084  cls [5, 6, 5, 5, 5]  1s
+  fc_summary     bal.acc 0.300  macroF1 0.267  MAE 1.690  QWK +0.086  cls [5, 5, 6, 6, 6]  1s
+  fc_edges       bal.acc 0.372  macroF1 0.317  MAE 1.469  QWK +0.274  cls [6, 4, 5, 5, 5]  10s
+  all_four       bal.acc 0.294  macroF1 0.265  MAE 1.465  QWK +0.264  cls [6, 5, 4, 6, 6]  2s
+
+wrote derivatives\model_training\biomarker_ablation\ablation_records.json  (150 fold evaluations)

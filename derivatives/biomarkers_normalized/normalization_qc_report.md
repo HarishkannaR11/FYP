@@ -1,12 +1,12 @@
 # Within-Subject Biomarker Normalization -- QC Report
 
-Generated (UTC): 2026-10-05T05:01:55.341284+00:00
+Generated (UTC): 2026-10-13T05:44:41.622232+00:00
 Script: `normalize_within_subject.py` v1.0.0
 
 ## 1-4. Completion
 
-- Total acquisitions discovered: **165**
-- Successfully normalized: **165**
+- Total acquisitions discovered: **167**
+- Successfully normalized: **167**
 - Failed: **0**
 - Acquisitions with incomplete raw inputs (not processed): **0**
 
@@ -20,17 +20,20 @@ No failures.
 | CN_Final | 27 | 27 | 27 | 0 |
 | EMCI | 29 | 29 | 29 | 0 |
 | LMCI | 21 | 21 | 21 | 0 |
-| MCI | 32 | 32 | 32 | 0 |
+| MCI | 32 | 34 | 34 | 0 |
 | SMC_Final | 31 | 31 | 31 | 0 |
-| **TOTAL** | **165** | **165** | **165** | **0** |
+| **TOTAL** | **165** | **167** | **167** | **0** |
 
 ## 10. Dataset completeness check
 
-Filesystem agrees with the expected counts (165 total; AD 25, CN_Final 27, EMCI 29, LMCI 21, MCI 32, SMC_Final 31).
+**DISCREPANCY against the expected counts -- reported, not corrected:**
+
+- total discovered 167 != expected 165
+- MCI: discovered 34 != expected 32
 
 ## 6-7. Shape / NaN / Inf validation
 
-- All inputs shape-validated (ALFF/ReHo/DC/FC_Strength = (246,), FC = (246,246)): **165/165**
+- All inputs shape-validated (ALFF/ReHo/DC/FC_Strength = (246,), FC = (246,246)): **167/167**
 - Input NaN total: **0**
 - Input Inf total: **0**
 - Output NaN total: **0**
@@ -38,7 +41,7 @@ Filesystem agrees with the expected counts (165 total; AD 25, CN_Final 27, EMCI 
 
 ## 8. mALFF statistics
 
-- Raw mean(ALFF) across acquisitions (the scaling removed): min 850.29, median 84450.03, max 215172.31
+- Raw mean(ALFF) across acquisitions (the scaling removed): min 104.30, median 84450.03, max 215172.31
 - mean(mALFF) per acquisition: min/median/max = 1.000000 / 1.000000 / 1.000000 (target exactly 1)
 
 ## 9. mReHo statistics
@@ -57,15 +60,15 @@ Filesystem agrees with the expected counts (165 total; AD 25, CN_Final 27, EMCI 
 
 - Fisher-z range across dataset: -2.2653 to 2.5924
 - Off-diagonal elements clipped at +-0.999999 (total across dataset): **0**
-- Negative correlations preserved as negative: **165/165**
+- Negative correlations preserved as negative: **167/167**
 - No thresholding, no absolute value, no within-subject z-scoring applied to FC.
 
 ## 12-13. FC symmetry / diagonal checks
 
-- Input FC symmetric (<=1e-6): **165/165**, max asymmetry 2.220e-16
+- Input FC symmetric (<=1e-6): **167/167**, max asymmetry 2.220e-16
 - Input FC diagonal ~1: max error 2.220e-16
-- Output Fisher-z symmetric: **165/165**, max asymmetry 5.329e-15
-- Output diagonal exactly 0: **165/165**
+- Output Fisher-z symmetric: **167/167**, max asymmetry 5.329e-15
+- Output diagonal exactly 0: **167/167**
 
 ## 14. FC_Strength / DC redundancy verification
 
@@ -78,7 +81,7 @@ FC_Strength is therefore perfectly collinear with DC (Pearson r = 1.0) and carri
 
 ## 15. Output completeness
 
-- Acquisitions with all 10 normalized outputs present and re-validated: **165/165**
+- Acquisitions with all 10 normalized outputs present and re-validated: **167/167**
 - Per acquisition: `malff.npy/.csv`, `mreho.npy/.csv`, `dc_z.npy/.csv`, `fc_fisher_z.npy`, `regional_biomarkers_normalized.npy` (246x3) + `.csv`, `normalization_metadata.json`
 
 ## 16. Warnings

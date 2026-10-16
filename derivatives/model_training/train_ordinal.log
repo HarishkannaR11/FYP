@@ -1,0 +1,37 @@
+==========================================================================
+TRAINING  head=ordinal  d_model=64 heads=4 layers=2
+==========================================================================
+split fingerprint 6f478fbcf56364e2  pool 81  test 35 (held out)
+local attention mask: density 7.54%, derived from the atlas
+  fold 0: train 64  val 17
+      best epoch   0/ 21  bal.acc 0.167  acc 0.176  MAE 2.47  QWK +0.000
+  fold 1: train 65  val 16
+      best epoch   0/ 21  bal.acc 0.167  acc 0.125  MAE 2.69  QWK +0.000
+  fold 2: train 65  val 16
+      best epoch   0/ 21  bal.acc 0.167  acc 0.188  MAE 2.56  QWK +0.000
+  fold 3: train 65  val 16
+      best epoch   5/ 26  bal.acc 0.278  acc 0.312  MAE 1.81  QWK +0.356
+  fold 4: train 65  val 16
+      best epoch   0/ 21  bal.acc 0.167  acc 0.188  MAE 2.12  QWK +0.177
+
+  5-fold CV summary (mean +/- sd across folds)
+    accuracy             +0.1978 +/- 0.0691
+    balanced_accuracy    +0.1889 +/- 0.0497
+    mae_stages           +2.3316 +/- 0.3576
+    qwk                  +0.1066 +/- 0.1591
+    ece                  +0.0799 +/- 0.0357
+    best epochs per fold  [0, 0, 0, 5, 0]
+    elapsed               425.3s
+
+  FINAL: retraining on the full training pool, then evaluating the held-out test set once
+    epochs = mean best epoch across folds + 1 = 2 (chosen from CV only; the test set played no part)
+    test accuracy          0.1714
+    test balanced accuracy 0.1667  (chance 0.1667)
+    test MAE (stages)      2.514
+    test QWK               +0.0000
+    test ECE               0.1704
+    MC-dropout bal.acc     0.1667  mean entropy 1.772 (max 1.792)
+    per-class recall       CN 0.00  SMC 0.00  EMCI 0.00  MCI 0.00  LMCI 0.00  AD 1.00
+    wrote derivatives\model_training\test_predictions_ordinal.csv
+
+wrote derivatives\model_training\results_ordinal.json

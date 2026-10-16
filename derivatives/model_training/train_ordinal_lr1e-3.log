@@ -1,0 +1,26 @@
+==========================================================================
+TRAINING  head=ordinal  d_model=64 heads=4 layers=2
+==========================================================================
+split fingerprint 6f478fbcf56364e2  pool 81  test 35 (held out)
+local attention mask: density 7.54%, derived from the atlas
+  fold 0: train 64  val 17
+      best epoch   0/ 16  bal.acc 0.167  acc 0.176  MAE 2.53  QWK +0.000
+  fold 1: train 65  val 16
+      best epoch   0/ 16  bal.acc 0.167  acc 0.188  MAE 2.31  QWK +0.000
+  fold 2: train 65  val 16
+      best epoch   0/ 16  bal.acc 0.167  acc 0.188  MAE 2.56  QWK +0.000
+  fold 3: train 65  val 16
+      best epoch   2/ 18  bal.acc 0.278  acc 0.312  MAE 1.81  QWK +0.356
+  fold 4: train 65  val 16
+      best epoch   0/ 16  bal.acc 0.167  acc 0.188  MAE 2.38  QWK +0.000
+
+  5-fold CV summary (mean +/- sd across folds)
+    accuracy             +0.2103 +/- 0.0573
+    balanced_accuracy    +0.1889 +/- 0.0497
+    mae_stages           +2.3184 +/- 0.3014
+    qwk                  +0.0712 +/- 0.1592
+    ece                  +0.1228 +/- 0.0700
+    best epochs per fold  [0, 0, 0, 2, 0]
+    elapsed               288.7s
+
+wrote derivatives\model_training\results_ordinal_lr1e-3.json

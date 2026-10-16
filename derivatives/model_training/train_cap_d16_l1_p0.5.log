@@ -1,0 +1,26 @@
+==========================================================================
+TRAINING  head=multiclass  d_model=16 heads=4 layers=1
+==========================================================================
+split fingerprint 6f478fbcf56364e2  pool 81  test 35 (held out)
+local attention mask: density 7.54%, derived from the atlas
+  fold 0: train 64  val 17
+      best epoch   2/ 18  bal.acc 0.222  acc 0.235  MAE 1.59  QWK -0.049
+  fold 1: train 65  val 16
+      best epoch   4/ 20  bal.acc 0.278  acc 0.250  MAE 1.94  QWK +0.342
+  fold 2: train 65  val 16
+      best epoch  15/ 31  bal.acc 0.222  acc 0.188  MAE 2.06  QWK -0.255
+  fold 3: train 65  val 16
+      best epoch   5/ 21  bal.acc 0.306  acc 0.312  MAE 1.75  QWK +0.214
+  fold 4: train 65  val 16
+      best epoch   8/ 24  bal.acc 0.278  acc 0.312  MAE 1.31  QWK +0.279
+
+  5-fold CV summary (mean +/- sd across folds)
+    accuracy             +0.2596 +/- 0.0536
+    balanced_accuracy    +0.2611 +/- 0.0373
+    mae_stages           +1.7301 +/- 0.2951
+    qwk                  +0.1062 +/- 0.2509
+    ece                  +0.0682 +/- 0.0560
+    best epochs per fold  [2, 4, 15, 5, 8]
+    elapsed               164.4s
+
+wrote derivatives\model_training\results_cap_d16_l1_p0.5.json

@@ -1,0 +1,34 @@
+{
+  "n_acquisitions": 116,
+  "n_subjects": 116,
+  "stage_order": [
+    "CN",
+    "SMC",
+    "EMCI",
+    "MCI",
+    "LMCI",
+    "AD"
+  ],
+  "per_stage": {
+    "CN": 20,
+    "SMC": 20,
+    "EMCI": 20,
+    "MCI": 16,
+    "LMCI": 20,
+    "AD": 20
+  },
+  "test": "Mann-Whitney U two-sided, stage vs pooled rest",
+  "effect_size": "Hedges' g (stage - rest)",
+  "fdr_family": "246 ROIs x 6 stages per biomarker",
+  "alpha": 0.05,
+  "q_floor_display": 0.0001,
+  "fc_representation": "unsigned mean |Fisher-z| per ROI",
+  "fc_excluded_alternative": "signed row mean (= DC/245), r=+0.994 with DC_z",
+  "n_significant": {
+    "mALFF": 0,
+    "mReHo": 0,
+    "DC_z": 0,
+    "FC": 0
+  },
+  "limitation": "one-vs-rest ignores ordinal structure CN->AD"
+}

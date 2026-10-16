@@ -1,0 +1,5 @@
+adni_subject,bids_subject,session,run,source_nii,dest_nii,status,reason
+100_S_0296,sub-100S0296,ses-01,run-01,NIfTI_extra\MCI\100_S_0296\100_S_0296_Extended_Resting_State_fMRI_20140424133314_501.nii.gz,BIDS\sub-100S0296\ses-01\func\sub-100S0296_ses-01_task-rest_run-01_bold.nii.gz,WOULD_COPY,
+007_S_2394,sub-007S2394,ses-01,run-01,NIfTI_extra\MCI\007_S_2394\007_S_2394_Axial_rsfMRI_(Eyes_Open)_10_min_-PJ_20150713115044_9.nii.gz,BIDS\sub-007S2394\ses-01\func\sub-007S2394_ses-01_task-rest_run-01_bold.nii.gz,WOULD_COPY,
+100_S_0296,sub-100S0296,ses-01,run-01,NIfTI_extra\MCI\100_S_0296\100_S_0296_Extended_Resting_State_fMRI_20140424133314_501.nii.gz,BIDS\sub-100S0296\ses-01\func\sub-100S0296_ses-01_task-rest_run-01_bold.nii.gz,COPIED,
+007_S_2394,sub-007S2394,ses-01,run-01,NIfTI_extra\MCI\007_S_2394\007_S_2394_Axial_rsfMRI_(Eyes_Open)_10_min_-PJ_20150713115044_9.nii.gz,BIDS\sub-007S2394\ses-01\func\sub-007S2394_ses-01_task-rest_run-01_bold.nii.gz,COPIED,

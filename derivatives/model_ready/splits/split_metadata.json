@@ -1,0 +1,37 @@
+{
+  "seed": 20261015,
+  "test_fraction": 0.3,
+  "n_folds": 5,
+  "n_subjects": 116,
+  "n_train_pool": 81,
+  "n_test": 35,
+  "stage_order": [
+    "CN",
+    "SMC",
+    "EMCI",
+    "MCI",
+    "LMCI",
+    "AD"
+  ],
+  "split_fingerprint": "6f478fbcf56364e2",
+  "stratified_by": "diagnostic stage",
+  "split_unit": "subject",
+  "test_set_policy": "evaluated once, after model selection is complete",
+  "scaling_policy": "any cross-subject scaler is fitted on training folds only",
+  "pool_class_counts": {
+    "CN": 14,
+    "SMC": 14,
+    "EMCI": 14,
+    "MCI": 11,
+    "LMCI": 14,
+    "AD": 14
+  },
+  "test_class_counts": {
+    "CN": 6,
+    "SMC": 6,
+    "EMCI": 6,
+    "MCI": 5,
+    "LMCI": 6,
+    "AD": 6
+  }
+}

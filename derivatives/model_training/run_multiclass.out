@@ -1,0 +1,63 @@
+==========================================================================
+TRAINING  head=multiclass  d_model=64 heads=4 layers=2
+==========================================================================
+split fingerprint 6f478fbcf56364e2  pool 81  test 35 (held out)
+local attention mask: density 7.54%, derived from the atlas
+  fold 0: train 64  val 17
+C:\Users\krish\FYP\scripts\model\train_transformer.py:203: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:837.)
+  tot += float(loss) * len(b)
+      best epoch  20/ 41  bal.acc 0.361  acc 0.353  MAE 1.76  QWK -0.008
+  fold 1: train 65  val 16
+      best epoch  17/ 38  bal.acc 0.278  acc 0.312  MAE 1.44  QWK +0.200
+  fold 2: train 65  val 16
+      best epoch   0/ 21  bal.acc 0.167  acc 0.188  MAE 1.62  QWK -0.085
+  fold 3: train 65  val 16
+      best epoch  10/ 31  bal.acc 0.222  acc 0.188  MAE 2.12  QWK -0.367
+  fold 4: train 65  val 16
+Traceback (most recent call last):
+  File "C:\Users\krish\FYP\scripts\model\train_transformer.py", line 389, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\krish\FYP\scripts\model\train_transformer.py", line 280, in main
+    m, hist, be = run_fold(reg, fc, y, mask_t, tr, va, cfg,
+                  ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           args.seed + f, log)
+                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\FYP\scripts\model\train_transformer.py", line 198, in run_fold
+    out = model(Xtr[b], Ftr[b], mask_t)
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\krish\FYP\scripts\model\heads.py", line 118, in forward
+    h = self.encoder(regional, fc, local_mask)["brain_embedding"]
+        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\krish\FYP\scripts\model\multi_attention_transformer.py", line 207, in forward
+    x, w, m = layer(x, fc, local_mask, return_attention)
+              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\krish\FYP\scripts\model\multi_attention_transformer.py", line 89, in forward
+    hl, al = self.loc(h, local_mask)
+             ~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\krish\FYP\scripts\model\attention_modules.py", line 110, in forward
+    s = self.scores(q, k)                              # [B, H, N, N]
+  File "C:\Users\krish\FYP\scripts\model\attention_modules.py", line 64, in scores
+    return torch.matmul(q, k.transpose(-2, -1)) * self.scale
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [enforce fail at alloc_cpu.cpp:117] data. DefaultCPUAllocator: not enough memory: you tried to allocate 15492096 bytes.

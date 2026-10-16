@@ -588,6 +588,12 @@ def main(group):
     if group not in GROUP_MANIFEST:
         print(f"FATAL: unknown group {group}"); sys.exit(1)
     manifest_rel, expected_n = GROUP_MANIFEST[group]
+    # Optional overrides so an additions run can reuse this exact pipeline
+    # without editing it. Unset -> original production behaviour verbatim.
+    _ovr = os.environ.get("FSFAST_MANIFEST_OVERRIDE")
+    if _ovr:
+        manifest_rel = _ovr
+        expected_n = int(os.environ["FSFAST_EXPECTED_N"])
     manifest_path = os.path.join(MANIFEST_DIR, manifest_rel)
     rows = list(csv.DictReader(open(manifest_path, newline="", encoding="utf-8")))
     if len(rows) != expected_n:

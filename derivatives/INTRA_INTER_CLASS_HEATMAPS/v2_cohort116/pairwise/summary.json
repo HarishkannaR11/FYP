@@ -1,0 +1,42 @@
+{
+  "n_acquisitions": 116,
+  "n_subjects": 116,
+  "per_stage": {
+    "CN": 20,
+    "SMC": 20,
+    "EMCI": 20,
+    "MCI": 16,
+    "LMCI": 20,
+    "AD": 20
+  },
+  "comparisons": [
+    "CN-SMC",
+    "CN-EMCI",
+    "CN-MCI",
+    "CN-LMCI",
+    "CN-AD",
+    "SMC-EMCI",
+    "SMC-MCI",
+    "SMC-LMCI",
+    "SMC-AD",
+    "EMCI-MCI",
+    "EMCI-LMCI",
+    "EMCI-AD",
+    "MCI-LMCI",
+    "MCI-AD",
+    "LMCI-AD"
+  ],
+  "alpha": 0.05,
+  "test": "Mann-Whitney U two-sided",
+  "effect_size": "Hedges' g (first - second)",
+  "fdr_family_regional": "246 ROIs x 15 comparisons per biomarker",
+  "fdr_family_fc": "edges within one comparison",
+  "regional_significant": {
+    "mALFF": 0,
+    "mReHo": 0,
+    "DC_z": 0
+  },
+  "fc_significant_edges_total": 0,
+  "consensus_ge1": 0,
+  "consensus_eq3": 0
+}

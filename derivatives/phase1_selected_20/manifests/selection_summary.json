@@ -1,0 +1,27 @@
+{
+  "target_per_stage": 20,
+  "selected": {
+    "CN": 20,
+    "SMC": 20,
+    "EMCI": 20,
+    "MCI": 16,
+    "LMCI": 20,
+    "AD": 20
+  },
+  "subjects": {
+    "CN": 20,
+    "SMC": 20,
+    "EMCI": 20,
+    "MCI": 16,
+    "LMCI": 20,
+    "AD": 20
+  },
+  "total": 116,
+  "shortfalls": [
+    [
+      "MCI",
+      16
+    ]
+  ],
+  "selection_rule": "Deterministic, label-blind selection. One acquisition per subject.\n\nRule, applied per stage:\n  1. consider only VALID_UNIQUE acquisitions\n  2. sort by (subject, session, run) ascending -- lexicographic,\n     stable, independent of any biomarker value or outcome\n  3. take the first acquisition of each distinct subject, in that\n     order, until 20 are held\n  4. if fewer than 20 distinct subjects exist, STOP and report the\n     shortfall. A second acquisition from an already-selected subject\n     is only taken when allow_repeats=True (off by default).\nNo QC metric, biomarker value or stage label influences the order, so\nno target information leaks into later evaluation."
+}

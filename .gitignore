@@ -1,8 +1,15 @@
 # Exclude massive folders as per user instruction
 
-NIfTI/
+NIfTI_*/
 BIDS/
 raw_data_extra/
+NIfTI_extra/
+/NIfTI_
+
+/derivatives/fsfast
+/derivatives/_QUARANTINE_wrong_pipeline
+/derivatives/ADNI_full_pipeline
+/derivatives/biomarkers_normalized/*
 
 # Exclude FreeSurfer stuff
 /home/harish/fyp-neuro-env
@@ -23,3 +30,16 @@ pilot_preprocessing/
 pilot_preprocessing_2mm4mm/
 tools/
 
+
+# ---------------------------------------------------------------------------
+# All NIfTI imaging, anywhere in the tree.
+# ADNI imaging is not redistributable under the Data Use Agreement, and this
+# covers raw, BIDS-converted, preprocessed and derivative volumes alike.
+*.nii
+*.nii.gz
+
+# Exception: the Brainnetome atlas is NOT ADNI data. It is a publicly
+# available parcellation (41 KB) that the code needs to rebuild the local
+# attention mask and the ROI parcellation, so reproducibility depends on it.
+!atlases/**/*.nii.gz
+!atlases/**/*.nii

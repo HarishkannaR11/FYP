@@ -1,0 +1,11 @@
+figure,objects_clustered,distance_metric,linkage_method,leaf_ordering,input_space,colour_scale_abs_max
+group_hierarchical_mALFF,diagnostic groups (6),correlation,average,optimal_leaf_ordering,standardised group means (246-D),2.05
+group_hierarchical_mALFF,ROIs (246),euclidean,average,optimal_leaf_ordering,standardised group means (6-D),2.05
+group_hierarchical_mReHo,diagnostic groups (6),correlation,average,optimal_leaf_ordering,standardised group means (246-D),2.05
+group_hierarchical_mReHo,ROIs (246),euclidean,average,optimal_leaf_ordering,standardised group means (6-D),2.05
+group_hierarchical_DC_z,diagnostic groups (6),correlation,average,optimal_leaf_ordering,standardised group means (246-D),2.05
+group_hierarchical_DC_z,ROIs (246),euclidean,average,optimal_leaf_ordering,standardised group means (6-D),2.05
+group_hierarchical_FC,diagnostic groups (6),correlation,average,optimal_leaf_ordering,standardised group means (246-D),2.05
+group_hierarchical_FC,ROIs (246),euclidean,average,optimal_leaf_ordering,standardised group means (6-D),2.05
+fc_representation_comparison,diagnostic groups (6),correlation,average,optimal_leaf_ordering,"mean FC edge vector (30135-D, upper triangle)",
+subject_level_clustering,subjects (116),correlation,average,optimal_leaf_ordering,concatenated standardised mALFF+mReHo+DC_z (738-D),

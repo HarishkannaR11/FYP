@@ -1,0 +1,2 @@
+expected_rois,rois_present,missing_roi_labels,extra_roi_labels,zero_voxel_rois,rois_lt5_voxels,rois_lt10_voxels,min_voxels,median_voxels,max_voxels,atlas_bold_dim_match,atlas_bold_affine_match,interpolation
+246,246,0,0,0,0,0,10,68.0,186,True,True,nearest_neighbor

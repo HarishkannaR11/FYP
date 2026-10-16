@@ -1,0 +1,38 @@
+==========================================================================
+TRAINING  head=multiclass  d_model=32 heads=4 layers=2
+==========================================================================
+split fingerprint 6f478fbcf56364e2  pool 81  test 35 (held out)
+local attention mask: density 7.54%, derived from the atlas
+  fold 0: train 64  val 17
+      best epoch   1/ 17  bal.acc 0.222  acc 0.176  MAE 1.94  QWK -0.153
+  fold 1: train 65  val 16
+      best epoch   8/ 24  bal.acc 0.278  acc 0.312  MAE 1.06  QWK +0.466
+  fold 2: train 65  val 16
+      best epoch  11/ 27  bal.acc 0.250  acc 0.250  MAE 1.62  QWK -0.036
+  fold 3: train 65  val 16
+      best epoch   0/ 16  bal.acc 0.167  acc 0.125  MAE 1.56  QWK +0.000
+  fold 4: train 65  val 16
+      best epoch   3/ 19  bal.acc 0.278  acc 0.312  MAE 1.06  QWK +0.545
+
+  5-fold CV summary (mean +/- sd across folds)
+    accuracy             +0.2353 +/- 0.0833
+    balanced_accuracy    +0.2389 +/- 0.0465
+    macro_f1             +0.1115 +/- 0.0503
+    mae_stages           +1.4507 +/- 0.3824
+    qwk                  +0.1642 +/- 0.3175
+    ece                  +0.0967 +/- 0.0294
+    best epochs per fold  [1, 8, 11, 0, 3]
+    stop reasons          ['early_stopping_patience', 'early_stopping_patience', 'early_stopping_patience', 'early_stopping_patience', 'early_stopping_patience']
+    distinct classes predicted per fold [2, 2, 2, 1, 2]   <-- DEGENERATE
+    grad norm encoder/head 1.1273 / 1.1434
+    confusion (rows=true, cols=pred, summed over folds)
+                  CN   SMC  EMCI   MCI  LMCI    AD
+      CN         0     1     3     6     3     1
+      SMC        0     2     3     6     1     2
+      EMCI       0     3     3     6     1     1
+      MCI        0     1     1     7     2     0
+      LMCI       0     0     1     7     6     0
+      AD         0     0     1     7     5     1
+    elapsed               306.0s
+
+wrote derivatives\model_training\results_cap_d32_l2_p0.5.json

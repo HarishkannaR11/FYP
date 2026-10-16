@@ -1,0 +1,35 @@
+==============================================================================
+MLP ARCHITECTURE CONTROL -- no attention, same folds, same features
+==============================================================================
+features (116, 984) (246 ROIs x 4 biomarkers, flattened)
+split fingerprint 6f478fbcf56364e2; test set NOT loaded
+
+  mlp_multiclass_h32  (32,902 parameters)
+    balanced_accuracy 0.2833 +/- 0.1135
+    macro_f1          0.2292 +/- 0.1224
+    mae_stages        1.6559 +/- 0.2598
+    qwk               +0.1587 +/- 0.1846
+    distinct classes predicted per fold [5, 6, 4, 3, 4]
+
+  mlp_multiclass_h64  (67,846 parameters)
+    balanced_accuracy 0.2611 +/- 0.0954
+    macro_f1          0.2471 +/- 0.1063
+    mae_stages        1.6081 +/- 0.1581
+    qwk               +0.2037 +/- 0.1531
+    distinct classes predicted per fold [6, 5, 6, 6, 6]
+
+  mlp_ordinal_fixed_h32  (32,940 parameters)
+    balanced_accuracy 0.3667 +/- 0.0865
+    macro_f1          0.2839 +/- 0.1204
+    mae_stages        1.4228 +/- 0.1599
+    qwk               +0.1058 +/- 0.2473
+    distinct classes predicted per fold [6, 4, 5, 2, 3]
+
+  mlp_ordinal_fixed_h64  (67,916 parameters)
+    balanced_accuracy 0.2667 +/- 0.0776
+    macro_f1          0.2105 +/- 0.0922
+    mae_stages        1.4559 +/- 0.2204
+    qwk               +0.1824 +/- 0.1121
+    distinct classes predicted per fold [6, 3, 2, 5, 4]
+
+wrote derivatives\model_training\results_mlp_control.json

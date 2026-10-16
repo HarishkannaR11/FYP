@@ -35,7 +35,11 @@ from nipype.interfaces.utility import IdentityInterface, Function
 WORK_DIR = "/home/harish/fyp_work/fsfast_mci/work"
 BIDS_ROOT = "/mnt/c/Users/krish/FYP/BIDS"
 DERIV_ROOT = "/mnt/c/Users/krish/FYP/derivatives/fsfast/MCI"
-MAPPING_CSV = "/mnt/c/Users/krish/FYP/audit/mci_session_mapping.csv"
+# Overridable so an additions run can reuse this exact pipeline without
+# editing it. Defaults reproduce the original 35-acquisition production run.
+MAPPING_CSV = os.environ.get(
+    "MCI_MAPPING_CSV", "/mnt/c/Users/krish/FYP/audit/mci_session_mapping.csv")
+EXPECTED_RUNS = int(os.environ.get("MCI_EXPECTED_RUNS", "35"))
 
 FWHM_MM = 6.0
 FD_THRESHOLD_MM = 0.5
@@ -861,7 +865,8 @@ def main():
     print(f"=== Processing exactly these {len(runs)} MCI acquisitions ===")
     for sub, ses, run in runs:
         print(f"  {sub} {ses} {run}")
-    assert len(runs) == 35, f"expected 35 runs, got {len(runs)}"
+    assert len(runs) == EXPECTED_RUNS, (
+        f"expected {EXPECTED_RUNS} runs, got {len(runs)}")
 
     wf = pe.Workflow(name="fsfast_mci_production", base_dir=WORK_DIR)
 

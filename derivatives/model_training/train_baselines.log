@@ -1,0 +1,26 @@
+==========================================================================
+BASELINES -- identical splits, folds and metrics as the transformer
+==========================================================================
+split fingerprint 6f478fbcf56364e2  pool 81  test 35
+
+  5-fold CV inside the training pool:
+  majority           bal.acc 0.167 +/- 0.000   acc 0.135   MAE 2.26   QWK +0.000
+  stratified_prior   bal.acc 0.167 +/- 0.000   acc 0.135   MAE 2.26   QWK +0.000
+  logreg_roi3        bal.acc 0.239 +/- 0.095   acc 0.248   MAE 1.55   QWK +0.317
+  logreg_roi4        bal.acc 0.178 +/- 0.091   acc 0.186   MAE 1.79   QWK +0.154
+  logreg_fc_edges    bal.acc 0.167 +/- 0.109   acc 0.162   MAE 1.87   QWK +0.069
+  logreg_summary     bal.acc 0.156 +/- 0.064   acc 0.160   MAE 1.93   QWK +0.011
+  ordinal_logreg     bal.acc 0.172 +/- 0.137   acc 0.174   MAE 2.40   QWK -0.083
+
+  held-out test (fitted on the whole training pool, evaluated once):
+  majority           bal.acc 0.167   acc 0.171   MAE 2.49   QWK +0.000   ECE 0.829
+  stratified_prior   bal.acc 0.167   acc 0.171   MAE 2.49   QWK +0.000   ECE 0.001
+  logreg_roi3        bal.acc 0.200   acc 0.200   MAE 1.54   QWK +0.347   ECE 0.323
+  logreg_roi4        bal.acc 0.233   acc 0.229   MAE 1.46   QWK +0.401   ECE 0.277
+  logreg_fc_edges    bal.acc 0.228   acc 0.229   MAE 1.74   QWK +0.228   ECE 0.159
+  logreg_summary     bal.acc 0.206   acc 0.200   MAE 2.14   QWK +0.007   ECE 0.155
+  ordinal_logreg     bal.acc 0.167   acc 0.171   MAE 2.23   QWK +0.117   ECE 0.029
+
+  chance balanced accuracy = 1/6 = 0.167
+
+wrote derivatives\model_training\results_baselines.json

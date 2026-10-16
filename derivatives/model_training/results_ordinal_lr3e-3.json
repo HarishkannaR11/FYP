@@ -1,0 +1,159 @@
+{
+  "config": {
+    "head": "ordinal",
+    "d_model": 64,
+    "num_heads": 4,
+    "num_layers": 2,
+    "dropout": 0.3,
+    "lr": 0.003,
+    "weight_decay": 0.01,
+    "batch_size": 8,
+    "eval_chunk": 4,
+    "max_epochs": 60,
+    "patience": 15,
+    "grad_clip": 1.0,
+    "seed": 20261015,
+    "mc_samples": 30,
+    "final_test": false,
+    "tag": "ordinal_lr3e-3"
+  },
+  "split_fingerprint": "6f478fbcf56364e2",
+  "n_train_pool": 81,
+  "n_test": 35,
+  "cv": {
+    "folds": [
+      {
+        "accuracy": 0.17647058823529413,
+        "balanced_accuracy": 0.16666666666666666,
+        "mae_stages": 2.4705882352941178,
+        "qwk": 0.0,
+        "ece": 0.11494367262896368,
+        "per_class_recall": {
+          "CN": 1.0,
+          "SMC": 0.0,
+          "EMCI": 0.0,
+          "MCI": 0.0,
+          "LMCI": 0.0,
+          "AD": 0.0
+        },
+        "n": 17,
+        "beat_chance": false,
+        "best_epoch": 0,
+        "epochs_run": 16,
+        "fold": 0
+      },
+      {
+        "accuracy": 0.1875,
+        "balanced_accuracy": 0.16666666666666666,
+        "mae_stages": 2.3125,
+        "qwk": 0.0,
+        "ece": 0.22312983870506287,
+        "per_class_recall": {
+          "CN": 1.0,
+          "SMC": 0.0,
+          "EMCI": 0.0,
+          "MCI": 0.0,
+          "LMCI": 0.0,
+          "AD": 0.0
+        },
+        "n": 16,
+        "beat_chance": false,
+        "best_epoch": 0,
+        "epochs_run": 16,
+        "fold": 1
+      },
+      {
+        "accuracy": 0.1875,
+        "balanced_accuracy": 0.16666666666666666,
+        "mae_stages": 2.5625,
+        "qwk": 0.0,
+        "ece": 0.054607927799224854,
+        "per_class_recall": {
+          "CN": 0.0,
+          "SMC": 0.0,
+          "EMCI": 0.0,
+          "MCI": 0.0,
+          "LMCI": 0.0,
+          "AD": 1.0
+        },
+        "n": 16,
+        "beat_chance": false,
+        "best_epoch": 0,
+        "epochs_run": 16,
+        "fold": 2
+      },
+      {
+        "accuracy": 0.1875,
+        "balanced_accuracy": 0.16666666666666666,
+        "mae_stages": 2.5625,
+        "qwk": 0.0,
+        "ece": 0.18003522604703903,
+        "per_class_recall": {
+          "CN": 1.0,
+          "SMC": 0.0,
+          "EMCI": 0.0,
+          "MCI": 0.0,
+          "LMCI": 0.0,
+          "AD": 0.0
+        },
+        "n": 16,
+        "beat_chance": false,
+        "best_epoch": 0,
+        "epochs_run": 16,
+        "fold": 3
+      },
+      {
+        "accuracy": 0.1875,
+        "balanced_accuracy": 0.16666666666666666,
+        "mae_stages": 2.375,
+        "qwk": 0.0,
+        "ece": 0.12141663581132889,
+        "per_class_recall": {
+          "CN": 0.0,
+          "SMC": 0.0,
+          "EMCI": 0.0,
+          "MCI": 0.0,
+          "LMCI": 0.0,
+          "AD": 1.0
+        },
+        "n": 16,
+        "beat_chance": false,
+        "best_epoch": 0,
+        "epochs_run": 16,
+        "fold": 4
+      }
+    ],
+    "summary": {
+      "accuracy": {
+        "mean": 0.18529411764705883,
+        "sd": 0.004932502891543648
+      },
+      "balanced_accuracy": {
+        "mean": 0.16666666666666666,
+        "sd": 0.0
+      },
+      "mae_stages": {
+        "mean": 2.4566176470588235,
+        "sd": 0.1118577882509195
+      },
+      "qwk": {
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "ece": {
+        "mean": 0.13882666019832385,
+        "sd": 0.06475236045302137
+      }
+    },
+    "best_epochs": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "test": null,
+  "trained": true,
+  "notes": "MC-dropout uncertainty is an approximation, not a full Bayesian posterior. Meta-learning and comorbidity fusion are not implemented."
+}

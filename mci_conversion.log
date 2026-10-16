@@ -1,0 +1,30 @@
+candidates: 10  (CN 0, LMCI 0)  suspicious: 0
+excluded as broken (<1000 DICOMs): 0
+duplicates skipped: 0
+already recorded in state: 0
+
+========================================================================
+MCI: 10 series from MCI_ersfMRI.zip
+========================================================================
+[1/10] I467646 002_S_1155 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  272.8s
+[2/10] I573627 002_S_4229 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  237.8s
+[3/10] I434493 002_S_4799 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  228.6s
+[4/10] I430122 006_S_4713 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  250.9s
+[5/10] I467980 018_S_2180 Extended_Resting_State_fMRI n=9600
+      -> ERROR  vols=None  ?s  OSError: [Errno 22] Invalid argument
+[6/10] I543654 053_S_0919 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  187.4s
+[7/10] I437878 053_S_4813 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  133.6s
+[8/10] I422066 100_S_0296 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  118.0s
+[9/10] I813812 100_S_4556 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  111.0s
+[10/10] I581891 130_S_4294 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  90.7s
+
+CONVERSION PASS COMPLETE

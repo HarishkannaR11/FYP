@@ -1,0 +1,146 @@
+{
+  "model": "dc_only_mlp_h64",
+  "evaluated_once": true,
+  "n_test": 35,
+  "epochs": 10,
+  "seed": 20261015,
+  "n_parameters": 20614,
+  "split_fingerprint": "6f478fbcf56364e2",
+  "metrics": {
+    "accuracy": 0.2,
+    "balanced_accuracy": 0.20000000000000004,
+    "macro_f1": 0.2062881562881563,
+    "mae_stages": 1.8285714285714285,
+    "qwk": 0.15190203230849386,
+    "ece": 0.16814832772527422,
+    "n_predicted_classes": 6
+  },
+  "per_class": {
+    "CN": {
+      "support": 6,
+      "n_predicted": 7,
+      "precision": 0.42857142857142855,
+      "recall": 0.5,
+      "f1": 0.4615384615384615
+    },
+    "SMC": {
+      "support": 6,
+      "n_predicted": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "EMCI": {
+      "support": 6,
+      "n_predicted": 9,
+      "precision": 0.1111111111111111,
+      "recall": 0.16666666666666666,
+      "f1": 0.13333333333333333
+    },
+    "MCI": {
+      "support": 5,
+      "n_predicted": 3,
+      "precision": 0.3333333333333333,
+      "recall": 0.2,
+      "f1": 0.25
+    },
+    "LMCI": {
+      "support": 6,
+      "n_predicted": 2,
+      "precision": 0.5,
+      "recall": 0.16666666666666666,
+      "f1": 0.25
+    },
+    "AD": {
+      "support": 6,
+      "n_predicted": 8,
+      "precision": 0.125,
+      "recall": 0.16666666666666666,
+      "f1": 0.14285714285714288
+    }
+  },
+  "confusion_matrix": [
+    [
+      3,
+      1,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      2,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      2,
+      0,
+      1
+    ]
+  ],
+  "class_support": {
+    "CN": 6,
+    "SMC": 6,
+    "EMCI": 6,
+    "MCI": 5,
+    "LMCI": 6,
+    "AD": 6
+  },
+  "predicted_distribution": {
+    "CN": 7,
+    "SMC": 6,
+    "EMCI": 9,
+    "MCI": 3,
+    "LMCI": 2,
+    "AD": 8
+  },
+  "majority_baseline": {
+    "balanced_accuracy": 0.16666666666666666,
+    "mae": 2.4857142857142858
+  },
+  "repeated_cv_reference": {
+    "bal_acc": "0.307+/-0.029",
+    "accuracy": "0.304+/-0.024",
+    "macro_f1": "0.264+/-0.022",
+    "mae": "1.642",
+    "qwk": "0.172",
+    "class_coverage": "3-6",
+    "params": 20614
+  },
+  "metrics_reproduced_from_saved_predictions": true,
+  "checkpoint": "derivatives\\model_training\\final_heldout\\frozen_dc_only_mlp_h64.pt",
+  "predictions": "derivatives\\model_training\\final_heldout\\test_predictions.csv",
+  "test_set_history": "evaluated once on 2026-10-15 by the faulty argmax-decoder ordinal run. NOT pristine. No model selection has used it.",
+  "limitation": "no weights file existed for the frozen model; it was reproduced deterministically from the documented procedure and recorded seed"
+}

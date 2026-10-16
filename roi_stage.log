@@ -1,0 +1,27 @@
+==========================================================================
+ROI x STAGE ONE-VS-REST  (246 ROIs x 6 stages, per biomarker)
+==========================================================================
+cohort 116 acquisitions / 116 subjects
+   CN    n =  20  vs rest  96
+   SMC   n =  20  vs rest  96
+   EMCI  n =  20  vs rest  96
+   MCI   n =  16  vs rest 100
+   LMCI  n =  20  vs rest  96
+   AD    n =  20  vs rest  96
+
+stage order (project): CN -> SMC -> EMCI -> MCI -> LMCI -> AD
+test: Mann-Whitney U two-sided; effect size: Hedges' g (stage - rest)
+FDR family: 246 ROIs x 6 stages = 1476 tests PER biomarker
+FC represented as unsigned mean |Fisher-z| per ROI (signed mean = DC/245, r=+0.994 with DC_z, excluded)
+stage annotation strip: NOT AVAILABLE (pending)
+
+  mALFF  tests=1476  raw p<0.05= 121 (chance 74)  q<0.05=   0  min q=0.2227  max |g|=0.963
+  mReHo  tests=1476  raw p<0.05= 109 (chance 74)  q<0.05=   0  min q=0.1181  max |g|=1.063
+  DC_z   tests=1476  raw p<0.05=  77 (chance 74)  q<0.05=   0  min q=0.7297  max |g|=1.099
+  FC     tests=1476  raw p<0.05= 108 (chance 74)  q<0.05=   0  min q=0.3858  max |g|=0.797
+   saved mALFF_roi_stage_significance_heatmap.png/.pdf
+   saved mReHo_roi_stage_significance_heatmap.png/.pdf
+   saved DC_z_roi_stage_significance_heatmap.png/.pdf
+   saved FC_roi_stage_significance_heatmap.png/.pdf
+
+outputs in derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116

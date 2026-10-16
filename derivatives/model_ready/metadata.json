@@ -1,0 +1,52 @@
+{
+  "n_acquisitions": 116,
+  "n_subjects": 116,
+  "n_roi": 246,
+  "regional_channels": [
+    "mALFF",
+    "mReHo",
+    "DC_z"
+  ],
+  "stage_order": [
+    "CN",
+    "SMC",
+    "EMCI",
+    "MCI",
+    "LMCI",
+    "AD"
+  ],
+  "stage_to_index": {
+    "CN": 0,
+    "SMC": 1,
+    "EMCI": 2,
+    "MCI": 3,
+    "LMCI": 4,
+    "AD": 5
+  },
+  "class_counts": {
+    "CN": 20,
+    "SMC": 20,
+    "EMCI": 20,
+    "MCI": 16,
+    "LMCI": 20,
+    "AD": 20
+  },
+  "fc": "Fisher-z, signed, unthresholded, diagonal zeroed",
+  "excluded_feature": "FC_Strength (= DC/245 exactly, not independent)",
+  "source": "derivatives\\phase1_selected_20",
+  "local_attention_mask": "NOT PROVIDED -- must be supplied to the model",
+  "dtypes": {
+    "X_regional": "float32",
+    "X_fc": "float32",
+    "y": "int64"
+  },
+  "verification": {
+    "X_regional finite": true,
+    "X_fc finite": true,
+    "X_fc symmetric": true,
+    "X_fc diagonal zero": true,
+    "no zero-variance acquisition": true,
+    "labels within range": true,
+    "one row per acquisition": true
+  }
+}

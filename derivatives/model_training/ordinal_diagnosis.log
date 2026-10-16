@@ -1,0 +1,40 @@
+==============================================================================
+STEP 2 -- ORDINAL COLLAPSE DIAGNOSIS
+==============================================================================
+All experiments use the training pool only. The held-out test set is not loaded, not indexed and not evaluated.
+
+[H1] the ordinal loss is mis-specified
+     intervention: unit-checked target construction, sign convention, monotonicity and decoding in isolation
+     result      : cumulative targets=True; out equals thresholds when g=0=True; higher score lowers P(y<=k)=True; probabilities sum to 1=True; non-negative probabilities=True; expected stage increases with score=True
+     VERDICT     : REJECTED -- the formulation is correct
+
+[H2] the ordinal loss has a different scale from cross-entropy
+     intervention: computed both losses and their head-gradient norms on identical random embeddings
+     result      : loss CE=2.1167 ordinal=3.4664 (ratio 1.64x, ordinal sums 5 BCE terms); head grad norm CE=0.7405 ordinal=2.1052
+     VERDICT     : SUPPORTED -- ordinal loss is 1.6x CE, so an identical learning rate is not an identical step size
+
+[H3] the encoder receives a rank-1 gradient from the ordinal head
+     intervention: measured the rank and effective rank of dL/d(embedding) for both heads on identical inputs
+     result      : multiclass: numerical rank 5, effective rank 4.89, top singular value holds 26.4%; ordinal: numerical rank 1, effective rank 1.00, top singular value holds 100.0%
+     VERDICT     : SUPPORTED -- the ordinal gradient is rank-1 while multiclass is higher rank, so the encoder is taught through a single direction
+
+[H5] initialisation places the model where gradients vanish
+     intervention: inspected initial thresholds and the implied class distribution at a zero embedding
+     result      : tau = [0.0, 0.693, 1.386, 2.08, 2.773]; implied P(stage) = [0.529, 0.163, 0.126, 0.082, 0.047, 0.053] (uniform would be 0.167); P(CN) = 0.529
+     VERDICT     : SUPPORTED -- init is strongly biased toward CN, far from the uniform prior, so early gradients fight the initialisation
+
+[H4] the head cannot overfit a deliberately learnable subset
+     intervention: trained both heads to convergence on 12 training-pool subjects (2/class), no dropout, no weight decay, 250 epochs, identical encoder and seed
+     result      : multiclass: train acc 1.00, loss 0.0032, 6 classes predicted; ordinal: train acc 0.67, loss 0.8780, 4 classes predicted
+     VERDICT     : SUPPORTED -- ordinal cannot memorise even 12 subjects, so this is an optimisation failure, not absent signal
+
+==============================================================================
+SUMMARY
+==============================================================================
+  H1: REJECTED     the ordinal loss is mis-specified
+  H2: SUPPORTED    the ordinal loss has a different scale from cross-entropy
+  H3: SUPPORTED    the encoder receives a rank-1 gradient from the ordinal head
+  H5: SUPPORTED    initialisation places the model where gradients vanish
+  H4: SUPPORTED    the head cannot overfit a deliberately learnable subset
+
+wrote derivatives\model_training\ordinal_diagnosis.json

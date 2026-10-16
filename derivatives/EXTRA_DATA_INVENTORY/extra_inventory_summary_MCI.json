@@ -1,0 +1,15 @@
+{
+  "stage": "MCI",
+  "archive": "C:\\Users\\krish\\Downloads\\MCI_e.zip",
+  "series": 2,
+  "duplicates": 0,
+  "broken": 0,
+  "non_tier1": 0,
+  "candidates": 2,
+  "already_preprocessed": 32,
+  "target": 20,
+  "descriptions": {
+    "Axial_rsfMRI__Eyes_Open__10_min__-PJ": 1,
+    "Extended_Resting_State_fMRI": 1
+  }
+}

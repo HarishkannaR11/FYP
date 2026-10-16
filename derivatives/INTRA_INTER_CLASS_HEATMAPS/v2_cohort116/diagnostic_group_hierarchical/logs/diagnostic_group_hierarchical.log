@@ -1,0 +1,99 @@
+==============================================================================
+DIAGNOSTIC-GROUP HIERARCHICAL CLUSTERING
+==============================================================================
+cohort: 116 acquisitions, 116 unique subjects, one per subject
+stage_to_index verified from source: {'CN': 0, 'SMC': 1, 'EMCI': 2, 'MCI': 3, 'LMCI': 4, 'AD': 5}
+group sizes: {'CN': 20, 'SMC': 20, 'EMCI': 20, 'MCI': 16, 'LMCI': 20, 'AD': 20}
+X_regional (116, 246, 3) channels ['mALFF', 'mReHo', 'DC_z']; X_fc_roi_unsigned (116, 246); all finite
+fixed colour scale +/-2.05; theoretical max |z| over k=6 groups = (k-1)/sqrt(k) = 2.0412
+groups: correlation + average; ROIs: euclidean + average
+
+--- mALFF ---
+  group-mean matrix (246, 6); zero-variance ROIs across groups: 0
+  standardised: mean -4.25e-16, range [-2.034, +2.002]
+  group dendrogram leaf order: ['EMCI', 'SMC', 'CN', 'AD', 'LMCI', 'MCI']
+  group branches: [['LMCI', 'AD'], ['SMC', 'EMCI'], ['CN', 'SMC', 'EMCI'], ['MCI', 'LMCI', 'AD']]
+  group cophenetic r = 0.763; pairwise correlation distance range [0.929, 1.416]
+  bootstrap stability (1000 resamples, seed 20261014, 0 skipped):
+    {LMCI,AD}: 45.5%
+    {CN,SMC,EMCI}: 25.3%
+    {SMC,EMCI}: 24.6%
+    {MCI,LMCI,AD}: 18.6%
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_mALFF.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_mALFF.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_raw_mALFF.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_standardized_mALFF.csv
+
+--- mReHo ---
+  group-mean matrix (246, 6); zero-variance ROIs across groups: 0
+  standardised: mean +6.29e-16, range [-2.019, +2.035]
+  group dendrogram leaf order: ['AD', 'CN', 'MCI', 'SMC', 'LMCI', 'EMCI']
+  group branches: [['CN', 'AD'], ['SMC', 'LMCI'], ['SMC', 'MCI', 'LMCI'], ['SMC', 'EMCI', 'MCI', 'LMCI']]
+  group cophenetic r = 0.554; pairwise correlation distance range [1.056, 1.440]
+  bootstrap stability (1000 resamples, seed 20261014, 0 skipped):
+    {CN,AD}: 35.6%
+    {SMC,LMCI}: 16.3%
+    {SMC,EMCI,MCI,LMCI}: 12.3%
+    {SMC,MCI,LMCI}: 9.3%
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_mReHo.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_mReHo.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_raw_mReHo.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_standardized_mReHo.csv
+
+--- DC_z ---
+  group-mean matrix (246, 6); zero-variance ROIs across groups: 0
+  standardised: mean +1.70e-17, range [-1.996, +1.959]
+  group dendrogram leaf order: ['MCI', 'AD', 'LMCI', 'SMC', 'CN', 'EMCI']
+  group branches: [['CN', 'SMC'], ['LMCI', 'AD'], ['MCI', 'LMCI', 'AD'], ['CN', 'SMC', 'EMCI']]
+  group cophenetic r = 0.674; pairwise correlation distance range [0.931, 1.421]
+  bootstrap stability (1000 resamples, seed 20261014, 0 skipped):
+    {CN,SMC}: 48.7%
+    {LMCI,AD}: 25.6%
+    {CN,SMC,EMCI}: 19.4%
+    {MCI,LMCI,AD}: 16.9%
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_DC_z.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_DC_z.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_raw_DC_z.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_standardized_DC_z.csv
+
+--- FC ---
+  group-mean matrix (246, 6); zero-variance ROIs across groups: 0
+  standardised: mean -7.39e-17, range [-1.998, +1.988]
+  group dendrogram leaf order: ['CN', 'MCI', 'AD', 'LMCI', 'SMC', 'EMCI']
+  group branches: [['CN', 'MCI'], ['SMC', 'EMCI'], ['LMCI', 'AD'], ['SMC', 'EMCI', 'LMCI', 'AD']]
+  group cophenetic r = 0.863; pairwise correlation distance range [0.797, 1.436]
+  bootstrap stability (1000 resamples, seed 20261014, 0 skipped):
+    {CN,MCI}: 72.2%
+    {SMC,EMCI}: 44.8%
+    {LMCI,AD}: 38.0%
+    {SMC,EMCI,LMCI,AD}: 23.8%
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_FC.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_FC.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_raw_FC.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_means_standardized_FC.csv
+
+--- combined overview ---
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_combined.png
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_combined.pdf
+
+--- FC representation comparison ---
+  matrix-level: 30135 unique edges per group (upper triangle, diagonal excluded)
+  ROI-summary leaf order : ['CN', 'MCI', 'AD', 'LMCI', 'SMC', 'EMCI']
+  matrix-level leaf order: ['MCI', 'CN', 'EMCI', 'SMC', 'LMCI', 'AD']
+  shared branches: 3 of 4 ([['LMCI', 'AD'], ['SMC', 'EMCI', 'LMCI', 'AD'], ['SMC', 'EMCI']])
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\fc_representation_comparison.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\fc_representation_comparison.pdf
+
+--- subject-level clustering ---
+  concatenated regional feature space: (116, 738)
+  nearest-neighbour same-group rate: 0.233 (chance 0.160), cophenetic r = 0.472
+  per group: CN 0.30, SMC 0.25, EMCI 0.20, MCI 0.19, LMCI 0.30, AD 0.15
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\subject_level_clustering.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\subject_level_clustering.pdf
+
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_dendrogram_leaf_order.csv
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\roi_dendrogram_leaf_order.csv
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_cluster_stability_bootstrap.csv
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\clustering_configuration.csv
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\fc_transformation_details.csv
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\subject_neighbour_purity.csv

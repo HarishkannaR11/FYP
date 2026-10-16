@@ -18,10 +18,10 @@ linear detrending -> Friston-24 + WM + CSF + GS (28 regressors) -> 0.01-0.10Hz b
 | CN_Final | 29 | 27 | 2 | 1 |
 | EMCI | 30 | 29 | 1 | 0 |
 | LMCI | 22 | 21 | 1 | 1 |
-| MCI | 35 | 32 | 3 | 0 |
+| MCI | 35 | 34 | 0 | 0 |
 | SMC_Final | 32 | 31 | 1 | 0 |
 
-**Total: 173 expected, 165 processed, 8 failed, 2 pre-excluded.**
+**Total: 173 expected, 167 processed, 5 failed, 2 pre-excluded.**
 
 ## Final QC Table (measured from completed acquisitions only, not copied from prior reports)
 
@@ -31,7 +31,7 @@ linear detrending -> Friston-24 + WM + CSF + GS (28 regressors) -> 0.01-0.10Hz b
 | CN_Final | 12064.3619 | 13.0265 | N/A | 0.3793 | 14451.8613 | 7.0902 | 3.5469 | 246/246 |
 | EMCI | 137.4854 | 13.7615 | N/A | 0.3546 | 16407.1233 | 7.1455 | 3.5292 | 246/246 |
 | LMCI | 127.537 | 12.9948 | N/A | 0.3224 | 13564.45 | 7.182 | 3.5122 | 246/246 |
-| MCI | 137.0515 | 12.9356 | N/A | 0.3207 | 16510.2114 | 7.1716 | 3.5629 | 246/246 |
+| MCI | 141.6223 | 12.8509 | N/A | 0.3188 | 16014.7097 | 7.1737 | 3.564 | 246/246 |
 | SMC_Final | 125.7105 | 13.1538 | N/A | 0.3755 | 13799.8246 | 7.1531 | 3.5677 | 246/246 |
 
 No composite/weighted quality score was created; each metric stands on its own.
@@ -47,7 +47,7 @@ Every single failure across all six groups shares **one identical root cause**: 
 
 ## Data Integrity
 
-- 165/165 completed acquisitions: 4D, 4mm isotropic, valid affine, valid binary 3D mask.
+- 167/167 completed acquisitions: 4D, 4mm isotropic, valid affine, valid binary 3D mask.
 - See `dataset_data_integrity.csv` for the full per-acquisition table.
 
 ## Brainnetome-246 Compatibility
@@ -60,7 +60,7 @@ Duplicate acquisition directories found: **0**
 
 ## Source Data Integrity
 
-- 165/165 acquisitions: source BOLD checksum verified unchanged before vs. after processing (per-acquisition, recorded during production).
+- 167/167 acquisitions: source BOLD checksum verified unchanged before vs. after processing (per-acquisition, recorded during production).
 - BIDS/, raw_data/, and the Brainnetome atlas were never written to by this pipeline.
 
 ## Processing Constraints Honored

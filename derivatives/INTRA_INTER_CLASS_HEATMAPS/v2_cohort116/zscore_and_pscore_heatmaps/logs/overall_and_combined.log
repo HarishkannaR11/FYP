@@ -1,0 +1,17 @@
+==============================================================================
+FIGURE C -- overall 4 x 6 biomarker x stage significance
+==============================================================================
+24/24 COMPLETED | fingerprint 6ab68ae6e80f61c2 | seed 20261013 | permutations 9999
+BH over the full 24-test family reproduces stored q exactly (max diff 0.00e+00)
+shape (4, 6) = 24 cells; q < 0.05: 0
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\overall_summary\overall_zscore_significance_heatmap.png
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\overall_summary\overall_zscore_significance_heatmap.pdf
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\overall_summary\overall_zscore_significance_heatmap.csv
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\overall_summary_4x6.csv
+No biomarker-stage combination reaches q < 0.05. Smallest q = 0.1392 (mReHo at EMCI).
+
+==============================================================================
+FIGURE D -- combined multi-panel summary
+==============================================================================
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\overall_summary\combined_summary_panels.png
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\overall_summary\combined_summary_panels.pdf

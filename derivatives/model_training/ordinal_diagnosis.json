@@ -1,0 +1,92 @@
+{
+  "findings": [
+    {
+      "hypothesis": "H1",
+      "statement": "the ordinal loss is mis-specified",
+      "intervention": "unit-checked target construction, sign convention, monotonicity and decoding in isolation",
+      "result": "cumulative targets=True; out equals thresholds when g=0=True; higher score lowers P(y<=k)=True; probabilities sum to 1=True; non-negative probabilities=True; expected stage increases with score=True",
+      "verdict": "REJECTED -- the formulation is correct"
+    },
+    {
+      "hypothesis": "H2",
+      "statement": "the ordinal loss has a different scale from cross-entropy",
+      "intervention": "computed both losses and their head-gradient norms on identical random embeddings",
+      "result": "loss CE=2.1167 ordinal=3.4664 (ratio 1.64x, ordinal sums 5 BCE terms); head grad norm CE=0.7405 ordinal=2.1052",
+      "verdict": "SUPPORTED -- ordinal loss is 1.6x CE, so an identical learning rate is not an identical step size"
+    },
+    {
+      "hypothesis": "H3",
+      "statement": "the encoder receives a rank-1 gradient from the ordinal head",
+      "intervention": "measured the rank and effective rank of dL/d(embedding) for both heads on identical inputs",
+      "result": "multiclass: numerical rank 5, effective rank 4.89, top singular value holds 26.4%; ordinal: numerical rank 1, effective rank 1.00, top singular value holds 100.0%",
+      "verdict": "SUPPORTED -- the ordinal gradient is rank-1 while multiclass is higher rank, so the encoder is taught through a single direction"
+    },
+    {
+      "hypothesis": "H5",
+      "statement": "initialisation places the model where gradients vanish",
+      "intervention": "inspected initial thresholds and the implied class distribution at a zero embedding",
+      "result": "tau = [0.0, 0.693, 1.386, 2.08, 2.773]; implied P(stage) = [0.529, 0.163, 0.126, 0.082, 0.047, 0.053] (uniform would be 0.167); P(CN) = 0.529",
+      "verdict": "SUPPORTED -- init is strongly biased toward CN, far from the uniform prior, so early gradients fight the initialisation"
+    },
+    {
+      "hypothesis": "H4",
+      "statement": "the head cannot overfit a deliberately learnable subset",
+      "intervention": "trained both heads to convergence on 12 training-pool subjects (2/class), no dropout, no weight decay, 250 epochs, identical encoder and seed",
+      "result": "multiclass: train acc 1.00, loss 0.0032, 6 classes predicted; ordinal: train acc 0.67, loss 0.8780, 4 classes predicted",
+      "verdict": "SUPPORTED -- ordinal cannot memorise even 12 subjects, so this is an optimisation failure, not absent signal"
+    }
+  ],
+  "loss_scale_ratio_ordinal_over_ce": 1.6376624385980127,
+  "gradient_rank": {
+    "multiclass": {
+      "grad_norm": 0.11022118479013443,
+      "numerical_rank": 5,
+      "effective_rank": 4.88808536529541,
+      "top_sv_share": 0.2642538547515869
+    },
+    "ordinal": {
+      "grad_norm": 0.21337464451789856,
+      "numerical_rank": 1,
+      "effective_rank": 1.0000025033950806,
+      "top_sv_share": 0.9999999403953552
+    }
+  },
+  "overfit_subset": {
+    "multiclass": {
+      "train_accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "final_loss": 0.0032182896975427866,
+      "distinct_classes_predicted": 6
+    },
+    "ordinal": {
+      "train_accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "final_loss": 0.8780465722084045,
+      "distinct_classes_predicted": 4
+    }
+  },
+  "overfit_subject_indices": [
+    13,
+    17,
+    27,
+    28,
+    40,
+    59,
+    72,
+    73,
+    87,
+    89,
+    109,
+    111
+  ],
+  "ordinal_init_distribution": [
+    0.5286,
+    0.163,
+    0.1261,
+    0.082,
+    0.0475,
+    0.0528
+  ],
+  "split_fingerprint": "6f478fbcf56364e2",
+  "test_set_touched": false
+}

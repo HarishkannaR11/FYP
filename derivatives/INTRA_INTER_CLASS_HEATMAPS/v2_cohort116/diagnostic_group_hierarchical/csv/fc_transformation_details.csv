@@ -1,0 +1,15 @@
+property,value
+source_array,"derivatives/model_ready/X_fc.npy (116,246,246)"
+source_normalisation,"Fisher-z, signed, unthresholded, diagonal zeroed"
+roi_level_summary,FCstr_i = mean_{j != i} |z_ij|
+roi_level_array,"derivatives/model_ready/X_fc_roi_unsigned.npy (116,246)"
+signed_or_absolute,absolute (unsigned magnitude)
+diagonal_handling,"zeroed at construction, excluded from the mean"
+missing_edges,none; matrix is unthresholded
+interpretation,"total connection magnitude, not signed net connectivity"
+signed_alternative,signed row mean = DC/245 exactly; r = +0.994 with DC_z
+correlation_with_DC_z,"-0.090 (different information, not better)"
+matrix_level_space,"upper triangle, 30135 unique edges"
+matrix_level_leaf_order,MCI -> CN -> EMCI -> SMC -> LMCI -> AD
+roi_summary_leaf_order,CN -> MCI -> AD -> LMCI -> SMC -> EMCI
+shared_branches,3 of 4

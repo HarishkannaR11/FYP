@@ -1,0 +1,80 @@
+==============================================================================
+FIGURE B -- ROI x stage significance (246 x 6 per biomarker)
+==============================================================================
+declared correction family: 246 x 6 = 1476 per biomarker
+threshold q < 0.05; -log10 floor 1e-12
+
+stage-level multivariate: 24/24 COMPLETED, cohort fingerprint 6ab68ae6e80f61c2, seed 20261013, 9999 permutations
+stage-level BH over the 24-test family reproduces exactly
+
+--- mALFF ---
+  shapes: p (246, 6), q (246, 6), g (246, 6)
+  BH over 1476 reproduces stored q-values to within 1e-05 (max diff 3.29e-06; source CSVs are stored at 6 decimal places, so this is rounding, not disagreement)
+  raw p : min 1.509e-04  max 1.000
+  adj q : min 0.2227   cells with q < 0.05: 0
+  Hedges g: max |g| 0.963
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mALFF_roi_stage.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mALFF_roi_stage.pdf
+  mALFF [p]: 121 cells marked at p < 0.05
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mALFF_roi_stage_rawp.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mALFF_roi_stage_rawp.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_rawp_mALFF.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_qvalues_mALFF.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_effectsize_hedges_g_mALFF.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10q_mALFF.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10p_mALFF.csv
+
+--- mReHo ---
+  shapes: p (246, 6), q (246, 6), g (246, 6)
+  BH over 1476 reproduces stored q-values to within 1e-05 (max diff 2.50e-06; source CSVs are stored at 6 decimal places, so this is rounding, not disagreement)
+  raw p : min 9.649e-05  max 1.000
+  adj q : min 0.1181   cells with q < 0.05: 0
+  Hedges g: max |g| 1.063
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mReHo_roi_stage.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mReHo_roi_stage.pdf
+  mReHo [p]: 109 cells marked at p < 0.05
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mReHo_roi_stage_rawp.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_mReHo_roi_stage_rawp.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_rawp_mReHo.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_qvalues_mReHo.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_effectsize_hedges_g_mReHo.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10q_mReHo.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10p_mReHo.csv
+
+--- DC_z ---
+  shapes: p (246, 6), q (246, 6), g (246, 6)
+  BH over 1476 reproduces stored q-values to within 1e-05 (max diff 2.51e-06; source CSVs are stored at 6 decimal places, so this is rounding, not disagreement)
+  raw p : min 1.073e-03  max 1.000
+  adj q : min 0.7297   cells with q < 0.05: 0
+  Hedges g: max |g| 1.099
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_DC_z_roi_stage.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_DC_z_roi_stage.pdf
+  DC_z [p]: 77 cells marked at p < 0.05
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_DC_z_roi_stage_rawp.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_DC_z_roi_stage_rawp.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_rawp_DC_z.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_qvalues_DC_z.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_effectsize_hedges_g_DC_z.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10q_DC_z.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10p_DC_z.csv
+
+--- FC ---
+  shapes: p (246, 6), q (246, 6), g (246, 6)
+  BH over 1476 reproduces stored q-values to within 1e-05 (max diff 2.55e-06; source CSVs are stored at 6 decimal places, so this is rounding, not disagreement)
+  raw p : min 6.167e-04  max 1.000
+  adj q : min 0.3858   cells with q < 0.05: 0
+  Hedges g: max |g| 0.797
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_FC_roi_stage.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_FC_roi_stage.pdf
+  FC [p]: 108 cells marked at p < 0.05
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_FC_roi_stage_rawp.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\roi_stage_significance\pscore_FC_roi_stage_rawp.pdf
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_rawp_FC.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_qvalues_FC.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_effectsize_hedges_g_FC.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10q_FC.csv
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\zscore_and_pscore_heatmaps\csv\roi_stage_neglog10p_FC.csv
+
+numerical floor 1e-12 reached anywhere: False
+TOTAL ROI x stage cells with q < 0.05 across all four biomarkers: 0 of 5904
+No ROI x stage test reaches the FDR threshold. This is reported as it stands; no value has been altered to produce a visible finding.

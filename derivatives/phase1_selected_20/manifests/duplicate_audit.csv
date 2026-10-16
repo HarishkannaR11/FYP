@@ -1,0 +1,1 @@
+stage,source_group,subject,session,run,acquisition_id,run_dir,norm_dir,preproc_bold,has_preproc,has_biomarkers,has_normalized,missing_features,roi_counts,fc_shape,n_timepoints,nan_inf,feature_ok,mean_tSNR,mean_FD_mm,acq_dates_for_subject,dup_status,dup_note

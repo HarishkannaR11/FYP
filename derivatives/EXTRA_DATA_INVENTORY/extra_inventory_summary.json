@@ -1,0 +1,29 @@
+{
+  "CN": {
+    "series": 30,
+    "subjects": 30,
+    "new_subjects": 16,
+    "known_subjects": 14,
+    "descriptions": {
+      "Extended_Resting_State_fMRI": 30
+    },
+    "processed_now": 27,
+    "target": 50,
+    "still_needed": 23
+  },
+  "LMCI": {
+    "series": 52,
+    "subjects": 27,
+    "new_subjects": 9,
+    "known_subjects": 18,
+    "descriptions": {
+      "Resting_State_fMRI": 39,
+      "Extended_Resting_State_fMRI": 11,
+      "Extended_Resting_State_fMRI_CLEAR": 1,
+      "Axial_rsfMRI__Eyes_Open__10_min__-PJ": 1
+    },
+    "processed_now": 21,
+    "target": 50,
+    "still_needed": 29
+  }
+}
