@@ -8,6 +8,11 @@ is visible on the bar). Only the layout differs: the figure is drawn at its
 final printed size (10.1 x 5.2 in) with 10-13 pt text, and the title,
 subtitle, legend and red footer are left to the poster itself.
 
+Pass "blue" as the first argument for the blue-red variant: RdBu_r with a
+per-panel scale (blue = P of 0, pale = that panel's median, red = its 99th
+percentile, as in group_hierarchical_with_pscore_top.py). Colour is then
+RELATIVE within each panel and the panels are not comparable.
+
 Reads the q-value CSVs through the original script's read_q(); nothing is
 recomputed.
 """
@@ -20,6 +25,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.cm import ScalarMappable
+from matplotlib.colors import TwoSlopeNorm
 from matplotlib.gridspec import GridSpec
 from scipy.cluster import hierarchy
 from scipy.spatial.distance import pdist
@@ -30,7 +37,10 @@ from pscore_combined_four_panel import (ALPHA, BASE, BIOMARKERS, CMAP, FLOOR,
                                         STAGE_COLORS, THRESH, VMAX, VMIN,
                                         read_q)
 
-OUT = os.path.join(BASE, "figures", "pscore_poster_panel.png")
+BLUE = len(sys.argv) > 1 and sys.argv[1] == "blue"
+CLIP_PCT = 99
+OUT = os.path.join(BASE, "figures",
+                   "pscore_poster_panel_blue.png" if BLUE else "pscore_poster_panel.png")
 
 
 def main():
@@ -47,7 +57,7 @@ def main():
     gs = GridSpec(2, 5, figure=fig, width_ratios=[1, 1, 1, 1, 0.07],
                   height_ratios=[0.16, 1.0], wspace=0.16, hspace=0.05,
                   left=0.035, right=0.915, top=0.885, bottom=0.135)
-    cmap = matplotlib.colormaps[CMAP].with_extremes(bad="#D1D5DB")
+    cmap = matplotlib.colormaps["RdBu_r" if BLUE else CMAP].with_extremes(bad="#D1D5DB")
 
     for k, bm in enumerate(BIOMARKERS):
         P, L, order = panels[bm]
@@ -62,8 +72,13 @@ def main():
                        fontsize=12, fontweight="bold", pad=4, linespacing=1.15)
 
         ax = fig.add_subplot(gs[1, k])
+        if BLUE:
+            vmid, vtop = float(np.median(P)), float(np.percentile(P, CLIP_PCT))
+            kw = dict(norm=TwoSlopeNorm(vmin=0.0, vcenter=vmid, vmax=vtop))
+        else:
+            kw = dict(vmin=VMIN, vmax=VMAX)
         im = ax.imshow(P[:, order], aspect="auto", cmap=cmap,
-                       vmin=VMIN, vmax=VMAX, interpolation="nearest")
+                       interpolation="nearest", **kw)
         ax.set_xticks(range(len(STAGES)))
         ax.set_xticklabels([STAGES[g] for g in order], fontsize=11,
                            rotation=45, ha="right", rotation_mode="anchor")
@@ -80,12 +95,21 @@ def main():
             sp.set_linewidth(0.6); sp.set_color("#9CA3AF")
 
     cax = fig.add_subplot(gs[1, 4])
-    cb = fig.colorbar(im, cax=cax)
-    cb.set_label("P-score = −log10(q)", fontsize=10)
-    cb.ax.tick_params(labelsize=9)
-    cb.ax.axhline(THRESH, color="#111827", lw=1.7)
-    cb.ax.text(1.15, THRESH, f"q={ALPHA}", transform=cb.ax.get_yaxis_transform(),
-               ha="left", va="center", fontsize=8.5, fontweight="bold")
+    if BLUE:
+        # one shared bar in panel-relative units: 0 = P of 0, 0.5 = median, 1 = 99th pct
+        sm = ScalarMappable(norm=TwoSlopeNorm(vmin=0.0, vcenter=0.5, vmax=1.0), cmap=cmap)
+        cb = fig.colorbar(sm, cax=cax, extend="max")
+        cb.set_ticks([0, 0.5, 1.0])
+        cb.set_ticklabels(["P = 0", "median", "top 1%"])
+        cb.set_label("P-score, relative within each panel", fontsize=10)
+        cb.ax.tick_params(labelsize=9)
+    else:
+        cb = fig.colorbar(im, cax=cax)
+        cb.set_label("P-score = \u2212log10(q)", fontsize=10)
+        cb.ax.tick_params(labelsize=9)
+        cb.ax.axhline(THRESH, color="#111827", lw=1.7)
+        cb.ax.text(1.15, THRESH, f"q={ALPHA}", transform=cb.ax.get_yaxis_transform(),
+                   ha="left", va="center", fontsize=8.5, fontweight="bold")
 
     fig.savefig(OUT, dpi=300)
     plt.close(fig)
