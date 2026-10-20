@@ -41,19 +41,57 @@ Verified coverage **within the 116-subject cohort**:
 
 | Variable | Coverage | Gap |
 |---|---:|---|
-| MMSE, CDR, GDS, medical history | **94/116** | **LMCI 0/20**, MCI 14/16 |
-| APOE ε4 count | 113/116 | SMC 19/20, MCI 14/16 |
+| MMSE, CDR global | **116/116** | — |
+| GDS | 115/116 | `130_S_4990` (AD) |
+| APOE ε4 count | 115/116 | `019_S_5180` (SMC) |
+| CDR sum-of-boxes | 114/116 | the two MCI subjects below |
+| Medical history (19 flags) | 114/116 | the two MCI subjects below |
+| **All of the above** | **113/116** | |
 
-**LMCI has no MMSE, CDR, GDS or medical-history data at all.** The LMCI
-assessment tables were never downloaded from ADNI. As the data stands, a
-comorbidity-aware model must either drop LMCI entirely — removing a stage
-from an ordinal progression problem — or acquire those tables.
+The earlier gap — LMCI at 0/20 — was an acquisition gap, not a data
+limitation: `Comorbidity/Tables_12Oct2026_LMCI.zip` supplies the LMCI
+assessment tables and LMCI is now complete. `derivatives/clinical_cleaned/`
+predates that download and still shows LMCI blank; use
+`derivatives/comorbidity_features/model_clinical_116.csv` instead.
 
-Two subjects (`sub-100S0296`, `sub-007S2394`) have complete imaging and **no
-clinical row of any kind**.
+Two subjects (`007_S_2394`, `100_S_0296`) entered through a separate download
+and appear in no ADNI assessment table in the project. Their MMSE, CDR and
+GDS are recoverable from the undated `idaSearch` export — so those rows are
+**not scan-matched** — but they have no CDR sum-of-boxes and **no medical
+history at all**.
 
-No imputation has been performed anywhere, and 116 conflicting duplicate
-records remain flagged for review rather than resolved.
+Usable *n* therefore depends on which fields a model takes: MMSE + CDR gives
+116, adding GDS 115, adding APOE 114, adding the medical-history flags 113,
+adding CDR-SB 112.
+
+### The comorbidity variables are weaker than their count suggests
+
+Of the 19 medical-history flags, five are too rare at this *n* to carry
+signal (drug abuse 2, alcohol abuse 4, hematopoietic 10, hepatic 11,
+malignancy 25) and three are near-constant at ~75% (major surgical
+procedures; head/eyes/ears/nose/throat; musculoskeletal). Roughly 6–8 have
+usable variance. They are also coarse by construction — a single yes/no box
+per body system at screening, so "cardiovascular = 1" spans treated
+hypertension to prior infarction with no distinction.
+
+Medical history is also the loosest-matched block: median 209 days from the
+MRI against 0 days for the cognitive and mood scores, because it is collected
+at screening rather than at each visit.
+
+### MMSE and CDR cannot be used as model features
+
+They are inputs to ADNI's diagnostic criteria, which assign the stage being
+predicted. Global CDR alone reaches **0.386** balanced accuracy on this
+cohort (5-fold CV, chance 0.167) against the rs-fMRI model's 0.307 — a
+measurement of the enrolment rule, not of the biology. CDR sum-of-boxes is
+the finest-grained form of the same criterion and is worse in this respect.
+`GDS_total`, the `MH_*` flags and `APOE4_count` do not enter the criteria and
+are the usable covariates.
+
+No imputation has been performed anywhere. `-4` is ADNI's missing code and is
+stored as missing, never as 0; a blank is never read as "no disease". The 116
+conflicting duplicate records found by the earlier builder remain flagged for
+review rather than resolved.
 
 ### Imaging
 

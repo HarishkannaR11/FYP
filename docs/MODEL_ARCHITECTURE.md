@@ -186,12 +186,24 @@ flowchart LR
 
 $$H = [\,Z' \,\Vert\, C\,]$$
 
-with $C$ the clinical covariate vector. **A blocking data issue exists**:
-within the 116-subject cohort, MMSE, CDR, GDS and medical history are
-available for only **94 subjects**, and **LMCI has none at all (0/20)**.
-APOE ε4 covers 113/116. Any comorbidity-aware model would currently have to
-drop LMCI entirely or acquire the missing ADNI tables. See
-[DATASET_AND_COHORT.md](DATASET_AND_COHORT.md) §4.
+with $C$ the clinical covariate vector. Coverage is no longer the obstacle —
+the earlier gap (94/116, LMCI 0/20) was an undownloaded ADNI table, now
+supplied. Within the 116-subject cohort: MMSE and CDR global **116/116**, GDS
+115, APOE ε4 115, CDR sum-of-boxes and the 19 medical-history flags 114, all
+of it together **113/116**.
+
+**The real obstacle is circularity.** MMSE, Global CDR and CDR sum-of-boxes
+are inputs to the ADNI diagnostic criteria that assign the stage this model
+predicts. On this cohort Global CDR **alone** reaches 0.386 balanced accuracy
+(5-fold CV, chance 0.167) against the rs-fMRI model's 0.307, and the CDR ×
+stage cross-tab simply reproduces the enrolment rule. Including them in $C$
+would measure the labelling rule, not the biology, and the accuracy gain
+would not be a result.
+
+Usable as genuine covariates: `GDS_total` (depression is not in the
+criteria), the 19 `MH_*` flags, and `APOE4_count`. Of the 19 flags roughly
+6–8 carry usable variance; five are too rare at this *n* and three are
+near-constant. See [DATASET_AND_COHORT.md](DATASET_AND_COHORT.md) §4.
 
 ### Meta-learning (proposed)
 

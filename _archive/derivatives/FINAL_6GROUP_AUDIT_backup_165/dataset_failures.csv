@@ -1,0 +1,9 @@
+group,acquisition,reason
+CN_Final,sub-002S0413/ses-01/run-01,invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+CN_Final,sub-002S0685/ses-01/run-01,invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+EMCI,sub-002S2043/ses-01/run-01,invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+LMCI,sub-002S4171/ses-01/run-01,invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+MCI,sub-002S0729/ses-01/run-01,invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+MCI,sub-002S1155/ses-02/run-01,invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+MCI,sub-002S4799/ses-01/run-01,invalid filter band for TR=6.02158260345459 (Nyquist=0.08303464934835393)
+SMC_Final,sub-002S5256/ses-02/run-01,invalid filter band for TR=6.023525238037109 (Nyquist=0.0830078700164848)

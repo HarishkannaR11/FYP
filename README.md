@@ -12,7 +12,7 @@ Sri Sivasubramaniya Nadar College of Engineering.
 | 1. Data audit, conversion, BIDS organisation | **complete** |
 | 2. Preprocessing pipeline | **complete** — 167 acquisitions |
 | 3. Brainnetome-246 features + normalisation | **complete** — 167/167 |
-| 4. Clinical / comorbidity cleaning | **complete with gaps** — LMCI has no assessments |
+| 4. Clinical / comorbidity cleaning | **complete** — 116/116 MMSE and CDR, 113/116 on everything |
 | 5. Statistical analysis + heatmaps | **complete** |
 | 6. Multi-Attention Transformer encoder | **architecture implemented, NOT trained** |
 | 7. Comorbidity fusion | **proposed — no code** |
@@ -162,20 +162,28 @@ pipeline/                   preprocessing (fsfast_production_4mm6mm.py is produc
 scripts/
 ├── data_prep/              conversion, BIDS, cohort selection
 ├── biomarkers/             parcellation, feature extraction, normalisation
-├── clinical/               clinical and comorbidity cleaning
+├── clinical/               earlier clinical cleaner (superseded)
+├── comorbidity/            clinical + comorbidity join for the 116 cohort
 ├── audit/                  audits, statistics, figures
 ├── model/                  transformer architecture + tests
 └── setup/                  WSL/FreeSurfer environment, resilient wrappers
 derivatives/
 ├── fsfast/                 preprocessed BOLD, QC, biomarkers, audit tables
 ├── biomarkers_normalized/  mALFF, mReHo, DC_z, Fisher-z FC
-├── clinical_cleaned/       master clinical table + audit
-├── phase1_selected_20/     the 116-subject cohort
-├── model_ready/            X_regional, X_fc, y, subjects
+├── phase1_selected_20/     the 116-subject cohort  (see its README)
+│   └── comorbidity/        clinical tables, copied alongside the cohort
+├── comorbidity_features/   model_clinical_116.csv — cohort row order
+├── clinical_cleaned/       earlier clinical build; STALE, 94/116, LMCI blank
+├── model_ready/            X_regional, X_fc, y, subjects, splits
 └── INTRA_INTER_CLASS_HEATMAPS/v2_cohort116/   statistics + figures
 docs/                       this documentation
-tools/                      dcm2niix
+tools/                      dcm2niix  (gitignored)
+_archive/                   superseded outputs and run logs; nothing deleted
 ```
+
+Row *i* is the same subject in `model_ready/*.npy`,
+`comorbidity_features/model_clinical_116.csv` and
+`model_ready/splits/split_assignment.csv` — no join needed.
 
 ## 10. Environment
 
@@ -233,7 +241,9 @@ are different questions. Effect sizes reach |g| = 1.37; they do not survive
 correction for thousands of simultaneous tests at n = 16–20 per stage.
 
 Principal limitations: 116 subjects for six classes; MCI under-represented;
-**LMCI has no clinical data at all**; residual motion correlates with 129/246
+**MMSE and CDR cannot be used as features** — they are inputs to the ADNI
+criteria that assign the label, and Global CDR alone scores 0.386 against the
+imaging model's 0.307; residual motion correlates with 129/246
 ROIs after nuisance regression; one site contributes 40% of AD scans with no
 harmonisation applied; the design is cross-sectional, so **no progression
 claim is supported**.
@@ -284,7 +294,8 @@ Full citations: [docs/PROJECT_METHODOLOGY.md](docs/PROJECT_METHODOLOGY.md)
 | Document | Contents |
 |---|---|
 | [PROJECT_METHODOLOGY.md](docs/PROJECT_METHODOLOGY.md) | methods, implemented vs proposed |
-| [DATASET_AND_COHORT.md](docs/DATASET_AND_COHORT.md) | provenance, selection, clinical coverage |
+| [DATA_SELECTION.md](docs/DATA_SELECTION.md) | **the selection diagram** — 175 raw → 116, every exclusion named |
+| [DATASET_AND_COHORT.md](docs/DATASET_AND_COHORT.md) | provenance, acquisition inventory, clinical coverage |
 | [PREPROCESSING_PIPELINE.md](docs/PREPROCESSING_PIPELINE.md) | exact parameters, QC, diagrams |
 | [FEATURES_AND_STATISTICAL_ANALYSIS.md](docs/FEATURES_AND_STATISTICAL_ANALYSIS.md) | definitions, tests, corrections |
 | [RESULTS_AND_INTERPRETATION.md](docs/RESULTS_AND_INTERPRETATION.md) | verified results, honest reading |
@@ -292,4 +303,12 @@ Full citations: [docs/PROJECT_METHODOLOGY.md](docs/PROJECT_METHODOLOGY.md)
 | [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) | environment, commands, recovery |
 | [LIMITATIONS_AND_FUTURE_WORK.md](docs/LIMITATIONS_AND_FUTURE_WORK.md) | constraints and next steps |
 
-The previous README is preserved as [README.v1_backup.md](README.v1_backup.md).
+Two further READMEs sit with the data they describe:
+
+| Document | Contents |
+|---|---|
+| [derivatives/phase1_selected_20/README.md](derivatives/phase1_selected_20/README.md) | the cohort — layout, per-subject contents, coverage |
+| [_archive/README.md](_archive/README.md) | what was archived and why; nothing was deleted |
+
+The previous README is preserved as
+[_archive/notes/README.v1_backup.md](_archive/notes/README.v1_backup.md).

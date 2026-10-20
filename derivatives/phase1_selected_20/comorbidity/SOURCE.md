@@ -19,7 +19,9 @@ is row *i* of `X_regional.npy`, `X_fc.npy` and `y.npy`**. No join needed.
 | `model_clinical_116.csv` | **the table** — cognitive, mood, genetics, 19 comorbidity flags |
 | `model_clinical_report.txt` | coverage, scan-match gaps, prevalence, rejections |
 | `stage_subject_mapping_116.csv` | join table: cohort folder ⟷ BIDS id ⟷ ADNI id |
-| `superseded/` | earlier idaSearch-only build — kept for reference, do not use |
+The earlier idaSearch-only build was moved to
+`_archive/derivatives/comorbidity_idasearch_only/`. It is not scan-matched
+and has no CDR sum-of-boxes — do not use it.
 
 Built by `scripts/comorbidity/build_model_clinical.py`.
 
