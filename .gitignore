@@ -28,7 +28,14 @@ scratch/
 
 pilot_preprocessing/
 pilot_preprocessing_2mm4mm/
-tools/git push origin main
+# Third-party binaries: dcm2niix and the Microsoft C++ redistributables it
+# needs. Not our code, not redistributable here, and ~30 MB of churn.
+tools/
+
+# Shell accidents -- a redirect that landed in the working tree.
+tatus
+how *.gitignore
+*.py.bak
 
 
 # ---------------------------------------------------------------------------

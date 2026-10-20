@@ -1,0 +1,57 @@
+==============================================================================
+MODEL-READY CLINICAL + COMORBIDITY TABLE
+==============================================================================
+cohort 116 subjects, row order = subjects.npy (aligns with X_regional.npy / X_fc.npy / y.npy)
+  CDR        872 rows,  143 subjects   (0 dropped for HAS_QC_ERROR)
+  MMSE       841 rows,  143 subjects   (0 dropped for HAS_QC_ERROR)
+  GDSCALE    853 rows,  143 subjects   (0 dropped for HAS_QC_ERROR)
+  MEDHIST    175 rows,  143 subjects   (0 dropped for HAS_QC_ERROR)
+  APOERES   3216 subjects with a genotype
+  idaSearch fallback available for 534 subjects (used only where the zips have none)
+
+values rejected by cleaning: 0
+
+COVERAGE BY STAGE
+  stage    n  MMSE  CDR  CDRSB  GDS  MedHist  APOE  complete
+  CN      20    20   20     20   20       20    20        20
+  SMC     20    20   20     20   20       20    19        20
+  EMCI    20    20   20     20   20       20    20        20
+  MCI     16    16   16     14   16       14    16        14
+  LMCI    20    20   20     20   20       20    20        20
+  AD      20    20   20     20   19       20    20        19
+  ALL    116   116  116    114  115      114   115       113
+
+SCAN MATCHING -- |days| between the visit used and the MRI
+  MMSE     n=114  median     0  max    77   within 90d 114   within 1y 114
+  CDR      n=114  median     0  max    77   within 90d 114   within 1y 114
+  GDSCALE  n=114  median     0  max    77   within 90d 114   within 1y 114
+  MEDHIST  n=114  median   209  max   812   within 90d  27   within 1y  99
+
+COMORBIDITY PREVALENCE (1 = present)
+  condition             yes   no  missing
+  psychiatric            43   71        2
+  neurologic_non_AD      45   69        2
+  head_eyes_ears_nose_throat   84   30        2
+  cardiovascular         67   47        2
+  respiratory            29   85        2
+  hepatic                11  103        2
+  dermatologic_connective_tissue   43   71        2
+  musculoskeletal        84   30        2
+  endocrine_metabolic    44   70        2
+  gastrointestinal       56   58        2
+  hematopoietic_lymphatic   10  104        2
+  renal_genitourinary    58   56        2
+  allergies_drug_sensitivities   58   56        2
+  alcohol_abuse           4  110        2
+  drug_abuse              2  112        2
+  smoking                45   69        2
+  malignancy             25   89        2
+  major_surgical_procedures   88   26        2
+  other                  28   86        2
+
+INCOMPLETE SUBJECTS
+  row  66 007_S_2394   MCI   missing: medhist
+  row  72 100_S_0296   MCI   missing: medhist
+  row 114 130_S_4990   AD    missing: mood
+
+wrote derivatives\comorbidity_features\model_clinical_116.csv  (116 rows, 50 columns)
