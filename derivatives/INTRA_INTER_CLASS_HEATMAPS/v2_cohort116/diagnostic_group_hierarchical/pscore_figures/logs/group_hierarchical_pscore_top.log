@@ -1,0 +1,57 @@
+================================================================================
+ORIGINAL GROUP-HIERARCHICAL FIGURE + P-SCORES AT THE TOP
+================================================================================
+stage mapping verified: {'CN': 0, 'SMC': 1, 'EMCI': 2, 'MCI': 3, 'LMCI': 4, 'AD': 5}
+heatmap, clustering and layout are UNCHANGED from the original
+
+--- mALFF ---
+  group order ['MCI', 'EMCI', 'LMCI', 'CN', 'AD', 'SMC']  (clustered on P-SCORE profile)
+  zero-variance ROIs excluded: 0
+    {AD} + {SMC}  d=0.755  F=1.67  p=0.0225  q=0.1125
+    {LMCI} + {CN}  d=0.795  F=1.03  p=0.4008  q=0.6680
+    {CN,LMCI} + {SMC,AD}  d=0.912  F=0.79  p=0.7805  q=0.9534
+    {EMCI} + {CN,SMC,LMCI,AD}  d=0.998  F=0.64  p=0.9534  q=0.9534
+    {MCI} + {CN,SMC,EMCI,LMCI,AD}  d=1.021  F=1.53  p=0.0604  q=0.1510
+  colour scale 0 / 0.0266 (median) / 0.2841 (p99); 1 of 1476 cells clipped at the top; true max 0.6523
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_mALFF.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_mALFF.pdf
+
+--- mReHo ---
+  group order ['CN', 'LMCI', 'EMCI', 'AD', 'SMC', 'MCI']  (clustered on P-SCORE profile)
+  zero-variance ROIs excluded: 0
+    {CN} + {LMCI}  d=0.898  F=1.28  p=0.0743  q=0.1737
+    {AD} + {SMC}  d=0.899  F=1.20  p=0.1524  q=0.1905
+    {EMCI} + {SMC,AD}  d=0.907  F=1.69  p=0.0077  q=0.0385
+    {SMC,EMCI,AD} + {MCI}  d=1.015  F=1.27  p=0.1042  q=0.1737
+    {CN,LMCI} + {SMC,EMCI,MCI,AD}  d=1.031  F=0.66  p=0.9864  q=0.9864
+  colour scale 0 / 0.0348 (median) / 0.4985 (p99); 9 of 1476 cells clipped at the top; true max 0.9278
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_mReHo.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_mReHo.pdf
+
+--- DC_z ---
+  group order ['LMCI', 'AD', 'CN', 'SMC', 'MCI', 'EMCI']  (clustered on P-SCORE profile)
+  zero-variance ROIs excluded: 0
+    {SMC} + {MCI}  d=0.827  F=1.31  p=0.1155  q=0.5775
+    {LMCI} + {AD}  d=0.864  F=0.89  p=0.6263  q=0.7095
+    {CN} + {SMC,MCI}  d=0.895  F=1.04  p=0.3782  q=0.6303
+    {CN,SMC,MCI} + {EMCI}  d=0.941  F=0.84  p=0.7095  q=0.7095
+    {LMCI,AD} + {CN,SMC,EMCI,MCI}  d=1.015  F=1.11  p=0.2907  q=0.6303
+  colour scale 0 / 0.0087 (median) / 0.1199 (p99); 14 of 1476 cells clipped at the top; true max 0.1369
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_DC_z.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_DC_z.pdf
+
+--- FC ---
+  group order ['EMCI', 'AD', 'SMC', 'MCI', 'LMCI', 'CN']  (clustered on P-SCORE profile)
+  zero-variance ROIs excluded: 0
+    {EMCI} + {AD}  d=0.822  F=0.91  p=0.4313  q=0.5004
+    {MCI} + {LMCI}  d=0.879  F=1.87  p=0.0307  q=0.1535
+    {SMC} + {MCI,LMCI}  d=0.967  F=0.90  p=0.5004  q=0.5004
+    {SMC,MCI,LMCI} + {CN}  d=0.976  F=0.90  p=0.4875  q=0.5004
+    {EMCI,AD} + {CN,SMC,MCI,LMCI}  d=1.012  F=1.27  p=0.1889  q=0.4723
+  colour scale 0 / 0.0743 (median) / 0.3271 (p99); 4 of 1476 cells clipped at the top; true max 0.4137
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_FC.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\group_hierarchical_pscore_top_FC.pdf
+
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_hierarchical_pscore_top_annotations.csv
+groups with multivariate q < 0.05: 0 of 24
+largest multivariate P-score: 0.8564 (threshold 1.3010)
