@@ -1,0 +1,26 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step7: QUBO feature selection: exact, simulated annealing, QAOA, random
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1", "qiskit": "2.6.0", "qiskit-aer": "0.17.2", "dimod": "0.12.22", "dwave-neal": "0.6.0"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  QUBO-exact_k10             dc            246->10     0.193+/-0.021    0.177  1.800  +0.132  0.26 4-6  58s
+      solver: {"hit_optimum_frac": 1.0, "mean_cost_gap": 0.0, "mean_solve_s": 0.013923768997192382}
+  QUBO-sa_k10                dc            246->10     0.189+/-0.021    0.172  1.812  +0.122  0.26 4-6  64s
+      solver: {"hit_optimum_frac": 0.96, "mean_cost_gap": 0.0002586430212662094, "mean_solve_s": 0.3521617126464844}
+  QUBO-qaoa_k10              dc            246->10     0.188+/-0.015    0.166  1.753  +0.193  0.25 4-6  3529s
+      solver: {"hit_optimum_frac": 0.16, "mean_cost_gap": 0.07307542586003266, "mean_solve_s": 139.2446984386444, "mean_feasible_shot_frac": 0.191923828125, "fallbacks": 0}
+  QUBO-random_k10            dc            246->10     0.193+/-0.032    0.172  1.748  +0.169  0.15 5-6  35s
+      solver: {"hit_optimum_frac": 0.0, "mean_cost_gap": 0.5338662004982853, "mean_solve_s": 0.0004030895233154297}
+  mRMR-greedy-pool20_k10     dc            246->10     0.178+/-0.030    0.158  1.856  +0.095  0.25 4-6  0s
+
+  best in step7: QUBO-exact_k10|dc  bal.acc 0.193 +/- 0.021

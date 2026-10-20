@@ -1,0 +1,47 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- steps 8 (shuffled control) and 9 (held-out test, used once)
+================================================================================================
+frozen from CV before reading test rows: PCA_k10 on regional, L1_k10 on regional, QUBO-qaoa_k8 on regional  (primary = PCA_k10 on regional)
+
+[STEP 8] SHUFFLED-LABEL CONTROL (25 folds, training labels permuted)
+  PCA_k10              regional   shuffled bal.acc 0.167 +/- 0.022  OK (near chance)
+  L1_k10               regional   shuffled bal.acc 0.170 +/- 0.047  OK (near chance)
+  QUBO-qaoa_k8         regional   shuffled bal.acc 0.161 +/- 0.027  OK (near chance)
+
+[STEP 9] HELD-OUT TEST: fit on 81 pool subjects, predict 35 test subjects, once
+  pool 81 subjects, test 35 subjects, test class counts CN=6, SMC=6, EMCI=6, MCI=5, LMCI=6, AD=6
+
+  PCA_k10 on regional: 738 -> 10 features
+    balanced accuracy 0.172  accuracy 0.171  macro-F1 0.178  MAE 1.86 stages  QWK +0.077
+    per-class recall: CN 0.33, SMC 0.17, EMCI 0.00, MCI 0.20, LMCI 0.17, AD 0.17
+    confusion matrix (rows true CN..AD, cols predicted):
+      CN    [2, 0, 1, 1, 0, 2]
+      SMC   [0, 1, 2, 0, 0, 3]
+      EMCI  [2, 1, 0, 1, 1, 1]
+      MCI   [0, 0, 2, 1, 2, 0]
+      LMCI  [1, 0, 1, 1, 1, 2]
+      AD    [1, 0, 0, 3, 1, 1]
+
+  L1_k10 on regional: 738 -> 10 features
+    balanced accuracy 0.228  accuracy 0.229  macro-F1 0.210  MAE 1.74 stages  QWK +0.172
+    per-class recall: CN 0.33, SMC 0.00, EMCI 0.17, MCI 0.20, LMCI 0.33, AD 0.33
+    confusion matrix (rows true CN..AD, cols predicted):
+      CN    [2, 0, 2, 0, 2, 0]
+      SMC   [1, 0, 0, 3, 2, 0]
+      EMCI  [1, 1, 1, 1, 1, 1]
+      MCI   [0, 0, 0, 1, 2, 2]
+      LMCI  [1, 0, 1, 1, 2, 1]
+      AD    [2, 0, 0, 1, 1, 2]
+    selected: A45r_R|DC_z, A12/47l_R|mReHo, A4tl_R|mALFF, A20il_R|DC_z, A37vl_L|mReHo, A37mv_L|mALFF, A40rd_R|DC_z, A40rv_L|mALFF, vmPu_L|mReHo, mPFtha_R|mReHo
+
+  QUBO-qaoa_k8 on regional: 738 -> 8 features
+    balanced accuracy 0.233  accuracy 0.229  macro-F1 0.212  MAE 1.77 stages  QWK +0.070
+    per-class recall: CN 0.17, SMC 0.00, EMCI 0.33, MCI 0.40, LMCI 0.17, AD 0.33
+    confusion matrix (rows true CN..AD, cols predicted):
+      CN    [1, 0, 2, 0, 1, 2]
+      SMC   [0, 0, 1, 1, 1, 3]
+      EMCI  [1, 1, 2, 0, 1, 1]
+      MCI   [0, 0, 1, 2, 2, 0]
+      LMCI  [1, 0, 1, 2, 1, 1]
+      AD    [0, 0, 0, 2, 2, 2]
+    selected: mOccG_L|DC_z, A40rd_R|DC_z, A4tl_R|mALFF, A39rd_L|mALFF, A37vl_L|mReHo, A37dl_R|DC_z, mOccG_R|DC_z, NAC_L|mReHo

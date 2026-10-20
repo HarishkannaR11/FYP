@@ -1,0 +1,26 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step7: QUBO feature selection: exact, simulated annealing, QAOA, random
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1", "qiskit": "2.6.0", "qiskit-aer": "0.17.2", "dimod": "0.12.22", "dwave-neal": "0.6.0"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  QUBO-exact_k10             regional      738->10     0.166+/-0.040    0.150  1.850  +0.077  0.12 4-6  58s
+      solver: {"hit_optimum_frac": 1.0, "mean_cost_gap": 0.0, "mean_solve_s": 0.01283376693725586}
+  QUBO-sa_k10                regional      738->10     0.191+/-0.044    0.170  1.803  +0.094  0.12 4-6  64s
+      solver: {"hit_optimum_frac": 0.48, "mean_cost_gap": 0.0055716201442973555, "mean_solve_s": 0.3490771865844727}
+  QUBO-qaoa_k10              regional      738->10     0.164+/-0.045    0.149  1.837  +0.087  0.12 5-6  3534s
+      solver: {"hit_optimum_frac": 0.12, "mean_cost_gap": 0.04449993835211011, "mean_solve_s": 139.16516511917115, "mean_feasible_shot_frac": 0.169267578125, "fallbacks": 0}
+  QUBO-random_k10            regional      738->10     0.181+/-0.053    0.160  1.801  +0.156  0.08 5-6  34s
+      solver: {"hit_optimum_frac": 0.0, "mean_cost_gap": 0.4255216910470292, "mean_solve_s": 0.0003737831115722656}
+  mRMR-greedy-pool20_k10     regional      738->10     0.164+/-0.043    0.147  1.852  +0.076  0.12 4-6  0s
+
+  best in step7: QUBO-sa_k10|regional  bal.acc 0.191 +/- 0.044

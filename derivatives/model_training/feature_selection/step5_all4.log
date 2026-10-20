@@ -1,0 +1,27 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step5: PCA, LDA, LRA (normal methods)
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300, all4=984
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  PCA_k5                     all4          984->5      0.191+/-0.028    0.170  1.815  +0.124       4-6  0s
+  LRA_k5                     all4          984->5      0.157+/-0.021    0.116  1.759  +0.208       4-6  0s
+  PCA_k10                    all4          984->10     0.204+/-0.026    0.173  1.817  +0.128       4-6  0s
+  LRA_k10                    all4          984->10     0.214+/-0.028    0.180  1.820  +0.121       4-6  0s
+  PCA_k20                    all4          984->20     0.190+/-0.027    0.164  1.793  +0.101       5-6  0s
+  LRA_k20                    all4          984->20     0.248+/-0.015    0.213  1.725  +0.141       4-6  0s
+  PCA_k40                    all4          984->40     0.181+/-0.030    0.168  1.884  +0.094       5-6  0s
+  LRA_k40                    all4          984->40     0.200+/-0.018    0.171  1.786  +0.121       5-6  0s
+  LDA_k5                     all4          984->5      0.162+/-0.018    0.146  1.902  +0.092       5-6  25s
+  PCA40+LDA_k5               all4          984->5      0.193+/-0.035    0.169  1.760  +0.133       4-6  2s
+
+  best in step5: LRA_k20|all4  bal.acc 0.248 +/- 0.015

@@ -1,0 +1,46 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step5: PCA, LDA, LRA (normal methods)
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  PCA_k5                     dc            246->5      0.131+/-0.027    0.114  1.979  -0.005       4-6  0s
+  LRA_k5                     dc            246->5      0.156+/-0.033    0.126  1.796  +0.178       4-6  0s
+  PCA_k10                    dc            246->10     0.177+/-0.045    0.159  1.863  +0.102       4-6  0s
+  LRA_k10                    dc            246->10     0.186+/-0.053    0.164  1.864  +0.085       5-6  0s
+  PCA_k20                    dc            246->20     0.193+/-0.022    0.175  1.812  +0.120       4-6  0s
+  LRA_k20                    dc            246->20     0.206+/-0.033    0.175  1.871  +0.094       4-6  0s
+  PCA_k40                    dc            246->40     0.191+/-0.030    0.177  1.807  +0.112       4-6  0s
+  LRA_k40                    dc            246->40     0.212+/-0.030    0.194  1.794  +0.104       4-6  0s
+  LDA_k5                     dc            246->5      0.167+/-0.021    0.147  1.814  +0.147       5-6  1s
+  PCA40+LDA_k5               dc            246->5      0.194+/-0.025    0.174  1.836  +0.111       4-6  0s
+  PCA_k5                     regional      738->5      0.204+/-0.026    0.179  1.728  +0.169       4-6  0s
+  LRA_k5                     regional      738->5      0.160+/-0.024    0.125  1.774  +0.196       4-6  0s
+  PCA_k10                    regional      738->10     0.253+/-0.037    0.224  1.704  +0.172       4-6  0s
+  LRA_k10                    regional      738->10     0.210+/-0.030    0.180  1.840  +0.100       4-6  0s
+  PCA_k20                    regional      738->20     0.229+/-0.026    0.213  1.761  +0.128       4-6  0s
+  LRA_k20                    regional      738->20     0.229+/-0.020    0.199  1.760  +0.136       4-6  0s
+  PCA_k40                    regional      738->40     0.199+/-0.032    0.186  1.770  +0.160       5-6  0s
+  LRA_k40                    regional      738->40     0.186+/-0.025    0.163  1.773  +0.145       5-6  0s
+  LDA_k5                     regional      738->5      0.167+/-0.025    0.149  1.776  +0.179       4-6  6s
+  PCA40+LDA_k5               regional      738->5      0.163+/-0.014    0.148  1.905  +0.032       4-6  1s
+  PCA_k5                     fc_edges    30135->5      0.188+/-0.030    0.151  1.849  +0.062       4-6  10s
+  LRA_k5                     fc_edges    30135->5      0.216+/-0.030    0.156  1.759  +0.147       3-6  8s
+  PCA_k10                    fc_edges    30135->10     0.192+/-0.026    0.160  1.865  +0.062       5-6  12s
+  LRA_k10                    fc_edges    30135->10     0.212+/-0.025    0.178  1.867  +0.062       4-6  9s
+  PCA_k20                    fc_edges    30135->20     0.160+/-0.034    0.136  1.865  +0.082       4-6  14s
+  LRA_k20                    fc_edges    30135->20     0.189+/-0.015    0.157  1.814  +0.109       4-6  12s
+  PCA_k40                    fc_edges    30135->40     0.206+/-0.034    0.184  1.835  +0.075       4-6  16s
+  LRA_k40                    fc_edges    30135->40     0.229+/-0.033    0.197  1.722  +0.158       4-6  17s
+  PCA40+LDA_k5               fc_edges    30135->5      0.181+/-0.037    0.160  1.907  +0.014       5-6  14s
+
+  best in step5: PCA_k10|regional  bal.acc 0.253 +/- 0.037

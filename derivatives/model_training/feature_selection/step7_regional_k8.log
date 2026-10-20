@@ -1,0 +1,26 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step7: QUBO feature selection: exact, simulated annealing, QAOA, random
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1", "qiskit": "2.6.0", "qiskit-aer": "0.17.2", "dimod": "0.12.22", "dwave-neal": "0.6.0"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  QUBO-exact_k8              regional      738->8      0.163+/-0.045    0.142  1.835  +0.083  0.11 4-6  58s
+      solver: {"hit_optimum_frac": 1.0, "mean_cost_gap": 0.0, "mean_solve_s": 0.012821645736694335}
+  QUBO-sa_k8                 regional      738->8      0.178+/-0.041    0.154  1.897  +0.032  0.10 4-6  67s
+      solver: {"hit_optimum_frac": 0.2, "mean_cost_gap": 0.01824139039551696, "mean_solve_s": 0.37653675079345705}
+  QUBO-qaoa_k8               regional      738->8      0.200+/-0.061    0.179  1.789  +0.089  0.11 4-6  3448s
+      solver: {"hit_optimum_frac": 0.0, "mean_cost_gap": 0.0685509126737643, "mean_solve_s": 135.95108044624328, "mean_feasible_shot_frac": 0.242216796875, "fallbacks": 0}
+  QUBO-random_k8             regional      738->8      0.210+/-0.065    0.190  1.802  +0.124  0.07 5-6  37s
+      solver: {"hit_optimum_frac": 0.0, "mean_cost_gap": 0.40940230872887085, "mean_solve_s": 0.0005770492553710938}
+  mRMR-greedy-pool20_k8      regional      738->8      0.164+/-0.050    0.140  1.837  +0.065  0.11 4-6  0s
+
+  best in step7: QUBO-random_k8|regional  bal.acc 0.210 +/- 0.065

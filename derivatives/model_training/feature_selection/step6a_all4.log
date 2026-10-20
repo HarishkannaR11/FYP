@@ -1,0 +1,29 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step6a: Sparse PCA, PLS, Kernel PCA, ICA (advanced extraction)
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300, all4=984
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  SparsePCA_k5               all4          984->5      0.198+/-0.032    0.171  1.786  +0.120       4-6  78s
+  PLS_k5                     all4          984->5      0.191+/-0.038    0.168  1.778  +0.137       4-6  2s
+  KernelPCA_rbf_k5           all4          984->5      0.209+/-0.027    0.175  1.800  +0.156       4-6  1s
+  ICA_k5                     all4          984->5      0.188+/-0.026    0.168  1.817  +0.124       4-6  9s
+  SparsePCA_k10              all4          984->10     0.222+/-0.026    0.192  1.739  +0.169       5-6  146s
+  PLS_k10                    all4          984->10     0.177+/-0.028    0.163  1.856  +0.096       5-6  3s
+  KernelPCA_rbf_k10          all4          984->10     0.201+/-0.028    0.173  1.862  +0.110       4-6  1s
+  ICA_k10                    all4          984->10     0.201+/-0.025    0.173  1.846  +0.103       4-6  18s
+  SparsePCA_k20              all4          984->20     0.213+/-0.024    0.189  1.710  +0.169       4-6  69s
+  PLS_k20                    all4          984->20     0.163+/-0.013    0.145  1.924  +0.094       5-6  1s
+  KernelPCA_rbf_k20          all4          984->20     0.171+/-0.031    0.144  1.814  +0.150       4-6  0s
+  ICA_k20                    all4          984->20     0.190+/-0.029    0.163  1.810  +0.077       4-6  1s
+
+  best in step6a: SparsePCA_k10|all4  bal.acc 0.222 +/- 0.026

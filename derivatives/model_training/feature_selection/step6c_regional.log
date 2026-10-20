@@ -1,0 +1,26 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step6c: Isomap, NMF, Boruta, genetic algorithm, particle swarm
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  Isomap_k5                  regional      738->5      0.174+/-0.011    0.148  1.942  -0.014       3-6  1s
+  NMF_k5                     regional      738->5      0.206+/-0.031    0.173  1.734  +0.172       4-6  3s
+  Isomap_k10                 regional      738->10     0.173+/-0.025    0.151  1.897  +0.047       4-6  1s
+  NMF_k10                    regional      738->10     0.217+/-0.009    0.183  1.732  +0.140       4-6  5s
+  Isomap_k20                 regional      738->20     0.191+/-0.038    0.176  1.800  +0.118       4-6  1s
+  NMF_k20                    regional      738->20     0.217+/-0.025    0.197  1.731  +0.152       4-6  12s
+  Boruta                     regional      738->10     0.212+/-0.023    0.185  1.869  +0.087  0.13 4-6  516s
+  GA                         regional      738->29     0.204+/-0.017    0.186  1.718  +0.196  0.09 5-6  635s
+  PSO                        regional      738->45     0.199+/-0.017    0.183  1.728  +0.171  0.13 5-6  621s
+
+  best in step6c: NMF_k10|regional  bal.acc 0.217 +/- 0.009

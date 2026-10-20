@@ -1,0 +1,5339 @@
+{
+ "extra": {
+  "versions": {
+   "python": "3.13.9",
+   "numpy": "2.5.3",
+   "scipy": "1.16.3",
+   "scikit-learn": "1.9.1",
+   "qiskit": "2.6.0",
+   "qiskit-aer": "0.17.2",
+   "dimod": "0.12.22",
+   "dwave-neal": "0.6.0"
+  },
+  "summary": {
+   "QUBO-exact_k6|all4": {
+    "method": "QUBO-exact_k6",
+    "view": "all4",
+    "n_features_in": 984,
+    "n_features_out": 6,
+    "stability_jaccard": 0.08101010101010102,
+    "time_s": 36.59769654273987,
+    "balanced_accuracy": [
+     0.14666666666666664,
+     0.05050363634383783
+    ],
+    "accuracy": [
+     0.14323529411764707,
+     0.053021589256977586
+    ],
+    "macro_f1": [
+     0.11966233766233766,
+     0.041158349278494426
+    ],
+    "mae_stages": [
+     1.9152941176470588,
+     0.11815002778562504
+    ],
+    "qwk": [
+     0.030550133404468837,
+     0.07338209986077068
+    ],
+    "fold_sd_bal_acc": 0.0751623756679456,
+    "classes_min": 4,
+    "classes_max": 6,
+    "top_features": [
+     [
+      "A40rd_R|DC_z",
+      11
+     ],
+     [
+      "PPtha_R|mALFF",
+      8
+     ],
+     [
+      "A37vl_L|mReHo",
+      8
+     ],
+     [
+      "A4tl_R|mALFF",
+      7
+     ],
+     [
+      "A23d_R|FC",
+      6
+     ],
+     [
+      "mOccG_R|DC_z",
+      6
+     ],
+     [
+      "A37dl_R|DC_z",
+      5
+     ],
+     [
+      "vmPu_L|mReHo",
+      5
+     ],
+     [
+      "NAC_L|mReHo",
+      5
+     ],
+     [
+      "A7r_L|DC_z",
+      5
+     ]
+    ],
+    "solver": {
+     "hit_optimum_frac": 1.0,
+     "mean_cost_gap": 0.0,
+     "mean_solve_s": 0.006697759628295898
+    }
+   },
+   "QUBO-sa_k6|all4": {
+    "method": "QUBO-sa_k6",
+    "view": "all4",
+    "n_features_in": 984,
+    "n_features_out": 6,
+    "stability_jaccard": 0.08276767676767677,
+    "time_s": 48.87780737876892,
+    "balanced_accuracy": [
+     0.1511111111111111,
+     0.050965977516354274
+    ],
+    "accuracy": [
+     0.1458823529411765,
+     0.048320853099781444
+    ],
+    "macro_f1": [
+     0.12353968253968253,
+     0.041947780681876636
+    ],
+    "mae_stages": [
+     1.9636764705882352,
+     0.08362541086631829
+    ],
+    "qwk": [
+     -0.00035645417009885565,
+     0.05040428575474625
+    ],
+    "fold_sd_bal_acc": 0.08464887535440403,
+    "classes_min": 4,
+    "classes_max": 6,
+    "top_features": [
+     [
+      "A40rd_R|DC_z",
+      11
+     ],
+     [
+      "PPtha_R|mALFF",
+      9
+     ],
+     [
+      "A37vl_L|mReHo",
+      8
+     ],
+     [
+      "A4tl_R|mALFF",
+      7
+     ],
+     [
+      "mOccG_R|DC_z",
+      7
+     ],
+     [
+      "vmPu_L|mReHo",
+      5
+     ],
+     [
+      "A23d_R|FC",
+      5
+     ],
+     [
+      "NAC_L|mReHo",
+      5
+     ],
+     [
+      "mOccG_L|DC_z",
+      5
+     ],
+     [
+      "A37dl_R|DC_z",
+      4
+     ]
+    ],
+    "solver": {
+     "hit_optimum_frac": 0.48,
+     "mean_cost_gap": 0.01585225451293482,
+     "mean_solve_s": 0.4347016620635986
+    }
+   },
+   "QUBO-qaoa_k6|all4": {
+    "method": "QUBO-qaoa_k6",
+    "view": "all4",
+    "n_features_in": 984,
+    "n_features_out": 6,
+    "stability_jaccard": 0.07141414141414143,
+    "time_s": 7166.528836250305,
+    "balanced_accuracy": [
+     0.18111111111111108,
+     0.025482988758177144
+    ],
+    "accuracy": [
+     0.17558823529411766,
+     0.028490725741672454
+    ],
+    "macro_f1": [
+     0.15406974506974508,
+     0.020010689189624307
+    ],
+    "mae_stages": [
+     1.858970588235294,
+     0.07487070747208312
+    ],
+    "qwk": [
+     0.04533888297772311,
+     0.10968875874192918
+    ],
+    "fold_sd_bal_acc": 0.09266959760885796,
+    "classes_min": 4,
+    "classes_max": 6,
+    "top_features": [
+     [
+      "A37vl_L|mReHo",
+      9
+     ],
+     [
+      "A40rd_R|DC_z",
+      9
+     ],
+     [
+      "A4tl_R|mALFF",
+      7
+     ],
+     [
+      "vmPu_L|mReHo",
+      6
+     ],
+     [
+      "PPtha_R|mALFF",
+      6
+     ],
+     [
+      "mOccG_R|DC_z",
+      6
+     ],
+     [
+      "A39rd_L|mALFF",
+      6
+     ],
+     [
+      "A37dl_R|DC_z",
+      5
+     ],
+     [
+      "A44v_L|FC",
+      4
+     ],
+     [
+      "Otha_L|mReHo",
+      4
+     ]
+    ],
+    "solver": {
+     "hit_optimum_frac": 0.08,
+     "mean_cost_gap": 0.06692091824190652,
+     "mean_solve_s": 284.9655565738678,
+     "mean_feasible_shot_frac": 0.28751953125,
+     "fallbacks": 0
+    }
+   },
+   "QUBO-random_k6|all4": {
+    "method": "QUBO-random_k6",
+    "view": "all4",
+    "n_features_in": 984,
+    "n_features_out": 6,
+    "stability_jaccard": 0.03876767676767676,
+    "time_s": 78.58116149902344,
+    "balanced_accuracy": [
+     0.15888888888888889,
+     0.038586123009300755
+    ],
+    "accuracy": [
+     0.1560294117647059,
+     0.0362952378509556
+    ],
+    "macro_f1": [
+     0.13160942760942762,
+     0.04094255591240203
+    ],
+    "mae_stages": [
+     2.002794117647059,
+     0.06681457065050307
+    ],
+    "qwk": [
+     -0.052380879304753124,
+     0.05292484949455342
+    ],
+    "fold_sd_bal_acc": 0.07265681210787474,
+    "classes_min": 4,
+    "classes_max": 6,
+    "top_features": [
+     [
+      "mOccG_L|DC_z",
+      8
+     ],
+     [
+      "A39rd_L|mALFF",
+      5
+     ],
+     [
+      "A37vl_L|mReHo",
+      5
+     ],
+     [
+      "A40rd_R|DC_z",
+      5
+     ],
+     [
+      "A8vl_L|mReHo",
+      4
+     ],
+     [
+      "PPtha_R|mALFF",
+      4
+     ],
+     [
+      "vCa_L|mReHo",
+      4
+     ],
+     [
+      "mOccG_R|DC_z",
+      4
+     ],
+     [
+      "dmPOS_L|mReHo",
+      3
+     ],
+     [
+      "A45r_R|DC_z",
+      3
+     ]
+    ],
+    "solver": {
+     "hit_optimum_frac": 0.0,
+     "mean_cost_gap": 0.40449759819536063,
+     "mean_solve_s": 0.0005348014831542968
+    }
+   },
+   "mRMR-greedy-pool20_k6|all4": {
+    "method": "mRMR-greedy-pool20_k6",
+    "view": "all4",
+    "n_features_in": 984,
+    "n_features_out": 6,
+    "stability_jaccard": 0.0808080808080808,
+    "time_s": 1.530729055404663,
+    "balanced_accuracy": [
+     0.14666666666666667,
+     0.039220805766050644
+    ],
+    "accuracy": [
+     0.1410294117647059,
+     0.039918819004657984
+    ],
+    "macro_f1": [
+     0.11944588744588742,
+     0.032132818162202634
+    ],
+    "mae_stages": [
+     1.8942647058823532,
+     0.10084247196617674
+    ],
+    "qwk": [
+     0.037372358844186,
+     0.08649988712391794
+    ],
+    "fold_sd_bal_acc": 0.07137105267889654,
+    "classes_min": 4,
+    "classes_max": 6,
+    "top_features": [
+     [
+      "A40rd_R|DC_z",
+      12
+     ],
+     [
+      "A37vl_L|mReHo",
+      8
+     ],
+     [
+      "A4tl_R|mALFF",
+      7
+     ],
+     [
+      "PPtha_R|mALFF",
+      7
+     ],
+     [
+      "A37dl_R|DC_z",
+      6
+     ],
+     [
+      "A23d_R|FC",
+      6
+     ],
+     [
+      "mOccG_R|DC_z",
+      6
+     ],
+     [
+      "vmPu_L|mReHo",
+      5
+     ],
+     [
+      "NAC_L|mReHo",
+      5
+     ],
+     [
+      "Otha_L|mReHo",
+      4
+     ]
+    ]
+   }
+  },
+  "seeds": [
+   20261015,
+   20261016,
+   20261017,
+   20261018,
+   20261019
+  ],
+  "n_folds": 5,
+  "test_set_touched": false
+ },
+ "records": [
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261015,
+   "fold": 0,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.23529411764705882,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.2222222222222222,
+   "mae_stages": 1.7058823529411764,
+   "qwk": 0.18242122719734655,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    257,
+    35,
+    673,
+    913,
+    359,
+    367
+   ],
+   "solver_info": {
+    "solve_s": 0.005636930465698242,
+    "cost": -2.229052778287901,
+    "cost_opt": -2.229052778287901,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261015,
+   "fold": 1,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.075,
+   "mae_stages": 2.1875,
+   "qwk": -0.17460317460317465,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    595,
+    776,
+    721,
+    612,
+    840,
+    717
+   ],
+   "solver_info": {
+    "solve_s": 0.005490541458129883,
+    "cost": -2.1884391252867097,
+    "cost_opt": -2.1884391252867097,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261015,
+   "fold": 2,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.18055555555555555,
+   "mae_stages": 2.0625,
+   "qwk": -0.057142857142857384,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.3333333333333333,
+    "LMCI": 0.5,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    183,
+    419,
+    444,
+    599,
+    289,
+    257
+   ],
+   "solver_info": {
+    "solve_s": 0.05054640769958496,
+    "cost": -2.1713837365632713,
+    "cost_opt": -2.1713837365632713,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261015,
+   "fold": 3,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.12222222222222223,
+   "mae_stages": 1.8125,
+   "qwk": 0.06077348066298338,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    717,
+    667,
+    673,
+    599,
+    131,
+    419
+   ],
+   "solver_info": {
+    "solve_s": 0.006021976470947266,
+    "cost": -2.2057256565129606,
+    "cost_opt": -2.2057256565129606,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261015,
+   "fold": 4,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.1976190476190476,
+   "mae_stages": 1.75,
+   "qwk": 0.09392265193370142,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    913,
+    419,
+    717,
+    378,
+    595,
+    933
+   ],
+   "solver_info": {
+    "solve_s": 0.005606889724731445,
+    "cost": -2.634115234318813,
+    "cost_opt": -2.634115234318813,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261016,
+   "fold": 0,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.11764705882352941,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.10833333333333334,
+   "mae_stages": 1.411764705882353,
+   "qwk": 0.5486725663716815,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    263,
+    408,
+    378,
+    667,
+    374,
+    234
+   ],
+   "solver_info": {
+    "solve_s": 0.00541377067565918,
+    "cost": -2.5222793357133355,
+    "cost_opt": -2.5222793357133355,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261016,
+   "fold": 1,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 2.3125,
+   "qwk": -0.22705314009661848,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    913,
+    933,
+    257,
+    667,
+    183,
+    131
+   ],
+   "solver_info": {
+    "solve_s": 0.004972696304321289,
+    "cost": -2.4260069916674567,
+    "cost_opt": -2.4260069916674567,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261016,
+   "fold": 2,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.1875,
+   "qwk": -0.18181818181818166,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    35,
+    23,
+    673,
+    269,
+    612,
+    496
+   ],
+   "solver_info": {
+    "solve_s": 0.004490375518798828,
+    "cost": -2.3610399730667524,
+    "cost_opt": -2.3610399730667524,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261016,
+   "fold": 3,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15595238095238095,
+   "mae_stages": 1.9375,
+   "qwk": -0.09826589595375745,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    289,
+    525,
+    596,
+    183,
+    419,
+    721
+   ],
+   "solver_info": {
+    "solve_s": 0.004692792892456055,
+    "cost": -2.4286436356961687,
+    "cost_opt": -2.4286436356961687,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261016,
+   "fold": 4,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15873015873015872,
+   "mae_stages": 1.75,
+   "qwk": -0.13103448275862073,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    599,
+    384,
+    717,
+    214,
+    289
+   ],
+   "solver_info": {
+    "solve_s": 0.0052487850189208984,
+    "cost": -1.98606210268556,
+    "cost_opt": -1.98606210268556,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261017,
+   "fold": 0,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.3529411764705883,
+   "qwk": -0.2952380952380955,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    183,
+    913,
+    378,
+    568,
+    658,
+    374
+   ],
+   "solver_info": {
+    "solve_s": 0.004831075668334961,
+    "cost": -1.3095154496773755,
+    "cost_opt": -1.3095154496773755,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261017,
+   "fold": 1,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.25,
+   "qwk": 0.02414231257941546,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    673,
+    145,
+    374,
+    419,
+    583,
+    353
+   ],
+   "solver_info": {
+    "solve_s": 0.0041658878326416016,
+    "cost": -1.8678136964239052,
+    "cost_opt": -1.8678136964239052,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261017,
+   "fold": 2,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.09523809523809523,
+   "mae_stages": 2.3125,
+   "qwk": -0.40845070422535223,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.5,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    599,
+    596,
+    510,
+    289,
+    371,
+    384
+   ],
+   "solver_info": {
+    "solve_s": 0.004991769790649414,
+    "cost": -2.1405711021594307,
+    "cost_opt": -2.1405711021594307,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261017,
+   "fold": 3,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.06666666666666667,
+   "mae_stages": 1.9375,
+   "qwk": 0.1253071253071254,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    251,
+    280,
+    717,
+    312,
+    784
+   ],
+   "solver_info": {
+    "solve_s": 0.004351139068603516,
+    "cost": -2.1478987201716606,
+    "cost_opt": -2.1478987201716606,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261017,
+   "fold": 4,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.08333333333333333,
+   "mae_stages": 1.8125,
+   "qwk": 0.19999999999999996,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    451,
+    924,
+    717,
+    131,
+    257,
+    583
+   ],
+   "solver_info": {
+    "solve_s": 0.004343986511230469,
+    "cost": -2.4771397825044303,
+    "cost_opt": -2.4771397825044303,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261018,
+   "fold": 0,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.1272727272727273,
+   "mae_stages": 2.1176470588235294,
+   "qwk": -0.004844961240310308,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    913,
+    717,
+    367,
+    183,
+    933,
+    302
+   ],
+   "solver_info": {
+    "solve_s": 0.004874229431152344,
+    "cost": -2.6195139943596146,
+    "cost_opt": -2.6195139943596146,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261018,
+   "fold": 1,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15595238095238095,
+   "mae_stages": 1.8125,
+   "qwk": 0.05413105413105401,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    667,
+    419,
+    289,
+    599,
+    267,
+    519
+   ],
+   "solver_info": {
+    "solve_s": 0.004666805267333984,
+    "cost": -2.3487295859397435,
+    "cost_opt": -2.3487295859397435,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261018,
+   "fold": 2,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.08465608465608465,
+   "mae_stages": 1.875,
+   "qwk": 0.14107365792759052,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    131,
+    640,
+    451,
+    23,
+    289,
+    620
+   ],
+   "solver_info": {
+    "solve_s": 0.005095958709716797,
+    "cost": -2.3065954993156197,
+    "cost_opt": -2.3065954993156197,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261018,
+   "fold": 3,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.16428571428571428,
+   "mae_stages": 1.4375,
+   "qwk": 0.2912912912912914,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    596,
+    673,
+    612,
+    962,
+    890,
+    263
+   ],
+   "solver_info": {
+    "solve_s": 0.004169940948486328,
+    "cost": -2.5206975159665213,
+    "cost_opt": -2.5206975159665213,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261018,
+   "fold": 4,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 1.8125,
+   "qwk": 0.20697167755991297,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    419,
+    183,
+    374,
+    149,
+    776,
+    694
+   ],
+   "solver_info": {
+    "solve_s": 0.004731893539428711,
+    "cost": -2.6446500713123946,
+    "cost_opt": -2.6446500713123946,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261019,
+   "fold": 0,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.13333333333333333,
+   "mae_stages": 2.2941176470588234,
+   "qwk": -0.4193753983428936,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    13,
+    595,
+    667,
+    289,
+    507,
+    589
+   ],
+   "solver_info": {
+    "solve_s": 0.0043697357177734375,
+    "cost": -2.1988246529757554,
+    "cost_opt": -2.1988246529757554,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261019,
+   "fold": 1,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.17777777777777778,
+   "mae_stages": 1.6875,
+   "qwk": 0.0957446808510638,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.5
+   },
+   "selected": [
+    257,
+    419,
+    599,
+    563,
+    660,
+    721
+   ],
+   "solver_info": {
+    "solve_s": 0.003957271575927734,
+    "cost": -2.358508494291378,
+    "cost_opt": -2.358508494291378,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261019,
+   "fold": 2,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.05555555555555555,
+   "mae_stages": 2.25,
+   "qwk": 0.05334626576139656,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    183,
+    783,
+    324,
+    408,
+    717,
+    145
+   ],
+   "solver_info": {
+    "solve_s": 0.00464940071105957,
+    "cost": -2.35946328448329,
+    "cost_opt": -2.35946328448329,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261019,
+   "fold": 3,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.1638888888888889,
+   "mae_stages": 1.375,
+   "qwk": 0.3600000000000001,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    596,
+    924,
+    289,
+    419,
+    776,
+    913
+   ],
+   "solver_info": {
+    "solve_s": 0.004976987838745117,
+    "cost": -2.3706999478361404,
+    "cost_opt": -2.3706999478361404,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-exact_k6",
+   "seed": 20261019,
+   "fold": 4,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.3125,
+   "balanced_accuracy": 0.3055555555555555,
+   "macro_f1": 0.26851851851851855,
+   "mae_stages": 1.4375,
+   "qwk": 0.3237822349570201,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    596,
+    721,
+    374,
+    339,
+    583,
+    685
+   ],
+   "solver_info": {
+    "solve_s": 0.00514674186706543,
+    "cost": -2.6418642140840163,
+    "cost_opt": -2.6418642140840163,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261015,
+   "fold": 0,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.23529411764705882,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.2222222222222222,
+   "mae_stages": 1.7058823529411764,
+   "qwk": 0.18242122719734655,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    257,
+    35,
+    673,
+    913,
+    359,
+    367
+   ],
+   "solver_info": {
+    "solve_s": 0.2492694854736328,
+    "cost": -2.229052778287901,
+    "cost_opt": -2.229052778287901,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261015,
+   "fold": 1,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.075,
+   "mae_stages": 2.1875,
+   "qwk": -0.17460317460317465,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    595,
+    776,
+    721,
+    612,
+    840,
+    717
+   ],
+   "solver_info": {
+    "solve_s": 0.2564578056335449,
+    "cost": -2.1884391252867097,
+    "cost_opt": -2.1884391252867097,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261015,
+   "fold": 2,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.3055555555555555,
+   "macro_f1": 0.22857142857142856,
+   "mae_stages": 2.0,
+   "qwk": -0.24513618677042803,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.5,
+    "MCI": 0.3333333333333333,
+    "LMCI": 1.0,
+    "AD": 0.0
+   },
+   "selected": [
+    183,
+    419,
+    444,
+    599,
+    289,
+    721
+   ],
+   "solver_info": {
+    "solve_s": 0.23190832138061523,
+    "cost": -2.1701282971257427,
+    "cost_opt": -2.1713837365632713,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261015,
+   "fold": 3,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.12222222222222223,
+   "mae_stages": 1.8125,
+   "qwk": 0.06077348066298338,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    717,
+    667,
+    673,
+    599,
+    131,
+    419
+   ],
+   "solver_info": {
+    "solve_s": 0.229233980178833,
+    "cost": -2.2057256565129606,
+    "cost_opt": -2.2057256565129606,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261015,
+   "fold": 4,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.19999999999999998,
+   "mae_stages": 1.75,
+   "qwk": 0.07692307692307687,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    913,
+    717,
+    378,
+    23,
+    596,
+    595
+   ],
+   "solver_info": {
+    "solve_s": 0.22984910011291504,
+    "cost": -2.5740650792144706,
+    "cost_opt": -2.634115234318813,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261016,
+   "fold": 0,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.235294117647059,
+   "qwk": -0.03563218390804601,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    263,
+    408,
+    378,
+    667,
+    16,
+    968
+   ],
+   "solver_info": {
+    "solve_s": 0.2427809238433838,
+    "cost": -2.479801590725394,
+    "cost_opt": -2.5222793357133355,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261016,
+   "fold": 1,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 2.3125,
+   "qwk": -0.22705314009661848,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    913,
+    933,
+    257,
+    667,
+    183,
+    131
+   ],
+   "solver_info": {
+    "solve_s": 0.2407970428466797,
+    "cost": -2.4260069916674567,
+    "cost_opt": -2.4260069916674567,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261016,
+   "fold": 2,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.25,
+   "qwk": -0.1157601115760114,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    35,
+    23,
+    673,
+    612,
+    496,
+    438
+   ],
+   "solver_info": {
+    "solve_s": 0.2316133975982666,
+    "cost": -2.3333629241347964,
+    "cost_opt": -2.3610399730667524,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261016,
+   "fold": 3,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.15873015873015872,
+   "mae_stages": 1.6875,
+   "qwk": 0.15053763440860202,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    289,
+    525,
+    596,
+    183,
+    419,
+    589
+   ],
+   "solver_info": {
+    "solve_s": 0.235748291015625,
+    "cost": -2.3652064031729267,
+    "cost_opt": -2.4286436356961687,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261016,
+   "fold": 4,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15873015873015872,
+   "mae_stages": 1.75,
+   "qwk": -0.13103448275862073,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    599,
+    384,
+    717,
+    214,
+    289
+   ],
+   "solver_info": {
+    "solve_s": 0.24141621589660645,
+    "cost": -1.98606210268556,
+    "cost_opt": -1.98606210268556,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261017,
+   "fold": 0,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.3529411764705883,
+   "qwk": -0.2952380952380955,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    183,
+    913,
+    378,
+    568,
+    658,
+    374
+   ],
+   "solver_info": {
+    "solve_s": 0.23032474517822266,
+    "cost": -1.3095154496773755,
+    "cost_opt": -1.3095154496773755,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261017,
+   "fold": 1,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.25,
+   "qwk": 0.02414231257941546,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    673,
+    145,
+    374,
+    419,
+    583,
+    353
+   ],
+   "solver_info": {
+    "solve_s": 0.2925136089324951,
+    "cost": -1.8678136964239052,
+    "cost_opt": -1.8678136964239052,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261017,
+   "fold": 2,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 2.25,
+   "qwk": -0.28000000000000025,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.5,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    599,
+    510,
+    289,
+    419,
+    371,
+    319
+   ],
+   "solver_info": {
+    "solve_s": 0.2562217712402344,
+    "cost": -2.1263455800563946,
+    "cost_opt": -2.1405711021594307,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261017,
+   "fold": 3,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.06666666666666667,
+   "mae_stages": 1.9375,
+   "qwk": 0.1253071253071254,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    251,
+    280,
+    717,
+    312,
+    784
+   ],
+   "solver_info": {
+    "solve_s": 0.2674682140350342,
+    "cost": -2.1478987201716606,
+    "cost_opt": -2.1478987201716606,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261017,
+   "fold": 4,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15555555555555556,
+   "mae_stages": 1.625,
+   "qwk": 0.33668341708542715,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    451,
+    924,
+    717,
+    131,
+    257,
+    679
+   ],
+   "solver_info": {
+    "solve_s": 0.24802184104919434,
+    "cost": -2.4676593790035284,
+    "cost_opt": -2.4771397825044303,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261018,
+   "fold": 0,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.23529411764705882,
+   "balanced_accuracy": 0.25,
+   "macro_f1": 0.20555555555555557,
+   "mae_stages": 1.9411764705882353,
+   "qwk": 0.1026147015293537,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    913,
+    717,
+    367,
+    183,
+    933,
+    408
+   ],
+   "solver_info": {
+    "solve_s": 0.26504993438720703,
+    "cost": -2.5817383616929597,
+    "cost_opt": -2.6195139943596146,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261018,
+   "fold": 1,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.14074074074074075,
+   "mae_stages": 1.875,
+   "qwk": -0.08429752066115692,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    667,
+    419,
+    289,
+    599,
+    267,
+    299
+   ],
+   "solver_info": {
+    "solve_s": 0.30718016624450684,
+    "cost": -2.332831372136514,
+    "cost_opt": -2.3487295859397435,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261018,
+   "fold": 2,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15595238095238095,
+   "mae_stages": 1.8125,
+   "qwk": 0.2476190476190474,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.5,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    131,
+    451,
+    23,
+    289,
+    620,
+    378
+   ],
+   "solver_info": {
+    "solve_s": 0.2897956371307373,
+    "cost": -2.2450518884647472,
+    "cost_opt": -2.3065954993156197,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261018,
+   "fold": 3,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.1574074074074074,
+   "mae_stages": 2.0625,
+   "qwk": -0.09004739336492906,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    596,
+    673,
+    612,
+    890,
+    955,
+    968
+   ],
+   "solver_info": {
+    "solve_s": 0.31491708755493164,
+    "cost": -2.502363410289945,
+    "cost_opt": -2.5206975159665213,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261018,
+   "fold": 4,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 1.8125,
+   "qwk": 0.20697167755991297,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    419,
+    183,
+    374,
+    149,
+    776,
+    694
+   ],
+   "solver_info": {
+    "solve_s": 0.2999560832977295,
+    "cost": -2.6446500713123946,
+    "cost_opt": -2.6446500713123946,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261019,
+   "fold": 0,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.13333333333333333,
+   "mae_stages": 2.2941176470588234,
+   "qwk": -0.4193753983428936,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    13,
+    595,
+    667,
+    289,
+    507,
+    589
+   ],
+   "solver_info": {
+    "solve_s": 0.30286288261413574,
+    "cost": -2.1988246529757554,
+    "cost_opt": -2.1988246529757554,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261019,
+   "fold": 1,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.17777777777777778,
+   "mae_stages": 1.6875,
+   "qwk": 0.0957446808510638,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.5
+   },
+   "selected": [
+    257,
+    419,
+    599,
+    563,
+    660,
+    721
+   ],
+   "solver_info": {
+    "solve_s": 1.4000215530395508,
+    "cost": -2.358508494291378,
+    "cost_opt": -2.358508494291378,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261019,
+   "fold": 2,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.05555555555555555,
+   "mae_stages": 2.25,
+   "qwk": 0.05334626576139656,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    183,
+    783,
+    324,
+    408,
+    717,
+    145
+   ],
+   "solver_info": {
+    "solve_s": 1.3131535053253174,
+    "cost": -2.35946328448329,
+    "cost_opt": -2.35946328448329,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261019,
+   "fold": 3,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.11428571428571428,
+   "mae_stages": 1.6875,
+   "qwk": 0.15857605177993517,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    596,
+    924,
+    289,
+    419,
+    776,
+    717
+   ],
+   "solver_info": {
+    "solve_s": 1.3419506549835205,
+    "cost": -2.365248610886244,
+    "cost_opt": -2.3706999478361404,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-sa_k6",
+   "seed": 20261019,
+   "fold": 4,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.3125,
+   "balanced_accuracy": 0.3055555555555555,
+   "macro_f1": 0.26851851851851855,
+   "mae_stages": 1.5625,
+   "qwk": 0.2676056338028169,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    596,
+    721,
+    374,
+    339,
+    583,
+    599
+   ],
+   "solver_info": {
+    "solve_s": 1.349029302597046,
+    "cost": -2.6031642977968232,
+    "cost_opt": -2.6418642140840163,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261015,
+   "fold": 0,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.29411764705882354,
+   "balanced_accuracy": 0.27777777777777773,
+   "macro_f1": 0.22486772486772486,
+   "mae_stages": 1.8235294117647058,
+   "qwk": 0.03909138932910716,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    257,
+    35,
+    673,
+    359,
+    289,
+    183
+   ],
+   "solver_info": {
+    "n_eval": 81,
+    "feasible_shot_frac": 0.047119140625,
+    "p_optimum": 1.0585403653780587e-06,
+    "final_energy": 6.30502676238973,
+    "solve_s": 332.50271821022034,
+    "cost": -2.1504961803233797,
+    "cost_opt": -2.229052778287901,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261015,
+   "fold": 1,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.05555555555555555,
+   "macro_f1": 0.05555555555555555,
+   "mae_stages": 2.5,
+   "qwk": -0.5132127955493744,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    595,
+    776,
+    721,
+    612,
+    661,
+    840
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.07421875,
+    "p_optimum": 1.729166982118565e-06,
+    "final_energy": 8.129098152324357,
+    "solve_s": 406.06503796577454,
+    "cost": -2.1520761899090672,
+    "cost_opt": -2.1884391252867097,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261015,
+   "fold": 2,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.27777777777777773,
+   "macro_f1": 0.2253968253968254,
+   "mae_stages": 1.8125,
+   "qwk": -0.1923076923076923,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.5,
+    "MCI": 0.3333333333333333,
+    "LMCI": 0.5,
+    "AD": 0.0
+   },
+   "selected": [
+    183,
+    419,
+    444,
+    289,
+    721,
+    554
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.019775390625,
+    "p_optimum": 7.781163621245148e-07,
+    "final_energy": 5.233642386291724,
+    "solve_s": 385.03803634643555,
+    "cost": -2.0836019656431795,
+    "cost_opt": -2.1713837365632713,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261015,
+   "fold": 3,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.12222222222222223,
+   "mae_stages": 1.8125,
+   "qwk": 0.06077348066298338,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    717,
+    667,
+    673,
+    599,
+    131,
+    419
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.497802734375,
+    "p_optimum": 1.209231983517999e-05,
+    "final_energy": 1.7224220062692128,
+    "solve_s": 301.58313727378845,
+    "cost": -2.2057256565129606,
+    "cost_opt": -2.2057256565129606,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261015,
+   "fold": 4,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.25,
+   "macro_f1": 0.20555555555555557,
+   "mae_stages": 1.875,
+   "qwk": -0.17500000000000027,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.0
+   },
+   "selected": [
+    913,
+    419,
+    717,
+    378,
+    595,
+    302
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.3935546875,
+    "p_optimum": 1.0065821749255316e-05,
+    "final_energy": -1.742381476900115,
+    "solve_s": 84.72576665878296,
+    "cost": -2.5957479778497685,
+    "cost_opt": -2.634115234318813,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261016,
+   "fold": 0,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 1.9411764705882353,
+   "qwk": 0.12571428571428578,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    263,
+    378,
+    667,
+    234,
+    968,
+    381
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.073486328125,
+    "p_optimum": 2.120316965775347e-06,
+    "final_energy": 9.976253529505648,
+    "solve_s": 92.81626057624817,
+    "cost": -2.4756300502544093,
+    "cost_opt": -2.5222793357133355,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261016,
+   "fold": 1,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.25,
+   "macro_f1": 0.25,
+   "mae_stages": 2.0,
+   "qwk": -0.08185053380782903,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.0
+   },
+   "selected": [
+    913,
+    933,
+    257,
+    667,
+    183,
+    924
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.20654296875,
+    "p_optimum": 1.1425393050054736e-05,
+    "final_energy": 1.1892118796009632,
+    "solve_s": 252.76155757904053,
+    "cost": -2.334305127949932,
+    "cost_opt": -2.4260069916674567,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261016,
+   "fold": 2,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.1875,
+   "qwk": -0.12345679012345667,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    35,
+    23,
+    673,
+    269,
+    496,
+    438
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.4833984375,
+    "p_optimum": 1.2116690064020568e-05,
+    "final_energy": 2.3282120447923194,
+    "solve_s": 91.45380759239197,
+    "cost": -2.345474632135467,
+    "cost_opt": -2.3610399730667524,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261016,
+   "fold": 3,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15079365079365079,
+   "mae_stages": 1.75,
+   "qwk": 0.13342140026420068,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    289,
+    596,
+    183,
+    721,
+    367,
+    453
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.4130859375,
+    "p_optimum": 9.576247181943827e-06,
+    "final_energy": -1.4353683148831244,
+    "solve_s": 98.86646056175232,
+    "cost": -2.314517402473207,
+    "cost_opt": -2.4286436356961687,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261016,
+   "fold": 4,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.3125,
+   "balanced_accuracy": 0.3055555555555555,
+   "macro_f1": 0.28968253968253965,
+   "mae_stages": 1.4375,
+   "qwk": 0.25761772853185594,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.5,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    599,
+    159,
+    214,
+    408,
+    289
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.060546875,
+    "p_optimum": 1.5551273628004958e-06,
+    "final_energy": 4.71295846398615,
+    "solve_s": 84.78029298782349,
+    "cost": -1.9486670831263844,
+    "cost_opt": -1.98606210268556,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261017,
+   "fold": 0,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.19444444444444442,
+   "mae_stages": 1.4705882352941178,
+   "qwk": 0.3752417794970986,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    183,
+    913,
+    660,
+    374,
+    408,
+    565
+   ],
+   "solver_info": {
+    "n_eval": 82,
+    "feasible_shot_frac": 0.03759765625,
+    "p_optimum": 9.538560105045394e-07,
+    "final_energy": 2.663201920753166,
+    "solve_s": 68.23534774780273,
+    "cost": -1.215602110591946,
+    "cost_opt": -1.3095154496773755,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261017,
+   "fold": 1,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.25,
+   "qwk": 0.02414231257941546,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    673,
+    145,
+    374,
+    419,
+    583,
+    353
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.476806640625,
+    "p_optimum": 1.2536225002239135e-05,
+    "final_energy": 1.2525198141602814,
+    "solve_s": 83.06177616119385,
+    "cost": -1.8678136964239052,
+    "cost_opt": -1.8678136964239052,
+    "hit_optimum": true,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261017,
+   "fold": 2,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.15,
+   "mae_stages": 2.0,
+   "qwk": -0.0639899623588458,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 1.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    599,
+    596,
+    510,
+    289,
+    384,
+    319
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.451416015625,
+    "p_optimum": 1.2495985079878892e-05,
+    "final_energy": -1.380192048968127,
+    "solve_s": 82.80858278274536,
+    "cost": -2.0912427816404033,
+    "cost_opt": -2.1405711021594307,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261017,
+   "fold": 3,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.16666666666666666,
+   "mae_stages": 1.625,
+   "qwk": 0.2794701986754965,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    251,
+    717,
+    146,
+    312,
+    784
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.053466796875,
+    "p_optimum": 1.4415087223808472e-06,
+    "final_energy": 6.277208146850704,
+    "solve_s": 83.15687870979309,
+    "cost": -2.122483981621933,
+    "cost_opt": -2.1478987201716606,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261017,
+   "fold": 4,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15,
+   "mae_stages": 1.9375,
+   "qwk": 0.14348785871964675,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    451,
+    924,
+    717,
+    131,
+    257,
+    776
+   ],
+   "solver_info": {
+    "n_eval": 90,
+    "feasible_shot_frac": 0.57861328125,
+    "p_optimum": 1.554872193978666e-05,
+    "final_energy": -1.8151170807072154,
+    "solve_s": 72.63669085502625,
+    "cost": -2.3999116421100553,
+    "cost_opt": -2.4771397825044303,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261018,
+   "fold": 0,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.13095238095238096,
+   "mae_stages": 1.6470588235294117,
+   "qwk": 0.31390134529147995,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    913,
+    717,
+    367,
+    933,
+    302,
+    408
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.41162109375,
+    "p_optimum": 9.809626702557901e-06,
+    "final_energy": 2.172952028613693,
+    "solve_s": 76.99573588371277,
+    "cost": -2.55466173241048,
+    "cost_opt": -2.6195139943596146,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261018,
+   "fold": 1,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.27777777777777773,
+   "macro_f1": 0.20555555555555557,
+   "mae_stages": 1.6875,
+   "qwk": 0.11504424778761058,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.5
+   },
+   "selected": [
+    667,
+    419,
+    289,
+    599,
+    267,
+    780
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.44873046875,
+    "p_optimum": 1.1656656284762122e-05,
+    "final_energy": -1.6557106251324736,
+    "solve_s": 2590.4643971920013,
+    "cost": -2.317191590400501,
+    "cost_opt": -2.3487295859397435,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261018,
+   "fold": 2,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.06666666666666667,
+   "mae_stages": 2.625,
+   "qwk": -0.46463245492371685,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.5,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    131,
+    640,
+    23,
+    289,
+    408,
+    673
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.035888671875,
+    "p_optimum": 9.338902926833249e-07,
+    "final_energy": 7.845715309100533,
+    "solve_s": 84.24934554100037,
+    "cost": -2.2017362584681557,
+    "cost_opt": -2.3065954993156197,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261018,
+   "fold": 3,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15,
+   "mae_stages": 2.0625,
+   "qwk": -0.29885057471264376,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    596,
+    673,
+    612,
+    890,
+    263,
+    975
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.587890625,
+    "p_optimum": 1.5809223484381165e-05,
+    "final_energy": -1.9203760922811717,
+    "solve_s": 84.06121492385864,
+    "cost": -2.456063260116931,
+    "cost_opt": -2.5206975159665213,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261018,
+   "fold": 4,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.24999999999999997,
+   "macro_f1": 0.18055555555555555,
+   "mae_stages": 1.375,
+   "qwk": 0.5087719298245613,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    183,
+    374,
+    149,
+    776,
+    257,
+    131
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.0693359375,
+    "p_optimum": 1.9075000695790496e-06,
+    "final_energy": 1.740557505537653,
+    "solve_s": 338.7823429107666,
+    "cost": -2.4769216168550656,
+    "cost_opt": -2.6446500713123946,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261019,
+   "fold": 0,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.11764705882352941,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.12222222222222223,
+   "mae_stages": 2.5294117647058822,
+   "qwk": -0.391869000564653,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    13,
+    595,
+    289,
+    507,
+    589,
+    227
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.4638671875,
+    "p_optimum": 1.23144717003775e-05,
+    "final_energy": -1.4886574069822067,
+    "solve_s": 114.67370200157166,
+    "cost": -2.1400130877656167,
+    "cost_opt": -2.1988246529757554,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261019,
+   "fold": 1,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.13333333333333333,
+   "mae_stages": 1.75,
+   "qwk": 0.008156606851550063,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    257,
+    419,
+    599,
+    717,
+    408,
+    149
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.00732421875,
+    "p_optimum": 2.4507547663380566e-07,
+    "final_energy": 5.582622061992071,
+    "solve_s": 106.92487072944641,
+    "cost": -2.197866858928002,
+    "cost_opt": -2.358508494291378,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261019,
+   "fold": 2,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.3125,
+   "balanced_accuracy": 0.27777777777777773,
+   "macro_f1": 0.24999999999999997,
+   "mae_stages": 1.5,
+   "qwk": 0.3699481865284975,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.6666666666666666,
+    "EMCI": 0.0,
+    "MCI": 0.3333333333333333,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    183,
+    783,
+    324,
+    408,
+    145,
+    23
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.609619140625,
+    "p_optimum": 1.6611881169165813e-05,
+    "final_energy": -1.69146676936685,
+    "solve_s": 344.7231252193451,
+    "cost": -2.322623280440183,
+    "cost_opt": -2.35946328448329,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261019,
+   "fold": 3,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.27777777777777773,
+   "macro_f1": 0.2583333333333333,
+   "mae_stages": 1.3125,
+   "qwk": 0.4078947368421053,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    596,
+    924,
+    289,
+    419,
+    776,
+    679
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.669189453125,
+    "p_optimum": 1.677390350359199e-05,
+    "final_energy": 1.2765893430293638,
+    "solve_s": 402.3501031398773,
+    "cost": -2.3227665268455944,
+    "cost_opt": -2.3706999478361404,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-qaoa_k6",
+   "seed": 20261019,
+   "fold": 4,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.16893939393939394,
+   "mae_stages": 1.5625,
+   "qwk": 0.27596439169139464,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    721,
+    374,
+    339,
+    599,
+    620,
+    767
+   ],
+   "solver_info": {
+    "n_eval": 100,
+    "feasible_shot_frac": 0.01708984375,
+    "p_optimum": 1.9931078753450646e-06,
+    "final_energy": 5.480755211359085,
+    "solve_s": 460.42172479629517,
+    "cost": -2.4990709344560145,
+    "cost_opt": -2.6418642140840163,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261015,
+   "fold": 0,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.15,
+   "mae_stages": 1.8823529411764706,
+   "qwk": 0.0462046204620461,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    408,
+    890,
+    367,
+    280,
+    183,
+    263
+   ],
+   "solver_info": {
+    "solve_s": 0.0006625652313232422,
+    "cost": -1.7439332233587876,
+    "cost_opt": -2.229052778287901,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261015,
+   "fold": 1,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.08928571428571429,
+   "mae_stages": 1.875,
+   "qwk": 0.22491349480968847,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.5
+   },
+   "selected": [
+    432,
+    679,
+    727,
+    67,
+    374,
+    510
+   ],
+   "solver_info": {
+    "solve_s": 0.0005733966827392578,
+    "cost": -1.5448585534278614,
+    "cost_opt": -2.1884391252867097,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261015,
+   "fold": 2,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.25,
+   "macro_f1": 0.21666666666666667,
+   "mae_stages": 2.1875,
+   "qwk": -0.05543237250554345,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.5,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    329,
+    447,
+    451,
+    679,
+    246,
+    717
+   ],
+   "solver_info": {
+    "solve_s": 0.0004763603210449219,
+    "cost": -1.7322955062660164,
+    "cost_opt": -2.1713837365632713,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261015,
+   "fold": 3,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.1875,
+   "qwk": -0.030612244897959107,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    717,
+    107,
+    246,
+    655,
+    574,
+    257
+   ],
+   "solver_info": {
+    "solve_s": 0.0006177425384521484,
+    "cost": -1.8706632607572047,
+    "cost_opt": -2.2057256565129606,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261015,
+   "fold": 4,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.25,
+   "macro_f1": 0.19907407407407407,
+   "mae_stages": 1.9375,
+   "qwk": -0.034965034965035,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.0
+   },
+   "selected": [
+    717,
+    23,
+    596,
+    933,
+    302,
+    276
+   ],
+   "solver_info": {
+    "solve_s": 0.0004870891571044922,
+    "cost": -2.3638411865225173,
+    "cost_opt": -2.634115234318813,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261016,
+   "fold": 0,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.11764705882352941,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.08333333333333333,
+   "mae_stages": 2.235294117647059,
+   "qwk": -0.15550978372811586,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.0
+   },
+   "selected": [
+    131,
+    16,
+    673,
+    349,
+    107,
+    612
+   ],
+   "solver_info": {
+    "solve_s": 0.0005178451538085938,
+    "cost": -2.04838801411384,
+    "cost_opt": -2.5222793357133355,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261016,
+   "fold": 1,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.06060606060606061,
+   "mae_stages": 2.125,
+   "qwk": -0.3354735152487962,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    924,
+    890,
+    891,
+    686,
+    655,
+    620
+   ],
+   "solver_info": {
+    "solve_s": 0.0004658699035644531,
+    "cost": -1.5836228874043172,
+    "cost_opt": -2.4260069916674567,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261016,
+   "fold": 2,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.09523809523809523,
+   "mae_stages": 2.3125,
+   "qwk": -0.27551020408163307,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 1.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    35,
+    685,
+    254,
+    438,
+    289,
+    114
+   ],
+   "solver_info": {
+    "solve_s": 0.0005578994750976562,
+    "cost": -2.0324511388370397,
+    "cost_opt": -2.3610399730667524,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261016,
+   "fold": 3,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.125,
+   "mae_stages": 1.6875,
+   "qwk": 0.2146596858638743,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    596,
+    419,
+    721,
+    450,
+    456,
+    673
+   ],
+   "solver_info": {
+    "solve_s": 0.0005636215209960938,
+    "cost": -2.0145419817626795,
+    "cost_opt": -2.4286436356961687,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261016,
+   "fold": 4,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.05555555555555555,
+   "macro_f1": 0.05555555555555555,
+   "mae_stages": 2.1875,
+   "qwk": -0.012048192771084487,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    599,
+    554,
+    214,
+    408,
+    69,
+    302
+   ],
+   "solver_info": {
+    "solve_s": 0.0004532337188720703,
+    "cost": -1.6532210452916143,
+    "cost_opt": -1.98606210268556,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261017,
+   "fold": 0,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.058823529411764705,
+   "balanced_accuracy": 0.05555555555555555,
+   "macro_f1": 0.047619047619047616,
+   "mae_stages": 1.8235294117647058,
+   "qwk": 0.04764971023824838,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    685,
+    516,
+    655,
+    611,
+    565,
+    433
+   ],
+   "solver_info": {
+    "solve_s": 0.0004887580871582031,
+    "cost": -0.6475497077817529,
+    "cost_opt": -1.3095154496773755,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261017,
+   "fold": 1,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.06666666666666667,
+   "mae_stages": 2.5625,
+   "qwk": -0.32714617169373583,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    673,
+    67,
+    250,
+    13,
+    418,
+    376
+   ],
+   "solver_info": {
+    "solve_s": 0.0005896091461181641,
+    "cost": -1.66603245655633,
+    "cost_opt": -1.8678136964239052,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261017,
+   "fold": 2,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.13888888888888887,
+   "mae_stages": 1.75,
+   "qwk": 0.25907384230287855,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.5,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    510,
+    913,
+    419,
+    287,
+    131,
+    319
+   ],
+   "solver_info": {
+    "solve_s": 0.0004246234893798828,
+    "cost": -1.8649269021965615,
+    "cost_opt": -2.1405711021594307,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261017,
+   "fold": 3,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.1976190476190476,
+   "mae_stages": 1.8125,
+   "qwk": 0.05945945945945941,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    251,
+    596,
+    312,
+    488,
+    149,
+    667
+   ],
+   "solver_info": {
+    "solve_s": 0.0007483959197998047,
+    "cost": -1.8044815463149142,
+    "cost_opt": -2.1478987201716606,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261017,
+   "fold": 4,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.07407407407407407,
+   "mae_stages": 2.1875,
+   "qwk": -0.283819628647215,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.6666666666666666,
+    "AD": 0.0
+   },
+   "selected": [
+    451,
+    408,
+    339,
+    107,
+    589,
+    563
+   ],
+   "solver_info": {
+    "solve_s": 0.0005567073822021484,
+    "cost": -2.085375141285798,
+    "cost_opt": -2.4771397825044303,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261018,
+   "fold": 0,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.058823529411764705,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.05555555555555555,
+   "mae_stages": 1.9411764705882353,
+   "qwk": 0.16362631288004414,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    913,
+    302,
+    69,
+    607,
+    599,
+    589
+   ],
+   "solver_info": {
+    "solve_s": 0.00035452842712402344,
+    "cost": -2.191616664631411,
+    "cost_opt": -2.6195139943596146,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261018,
+   "fold": 1,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.13888888888888887,
+   "mae_stages": 1.9375,
+   "qwk": -0.10385756676557878,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    289,
+    267,
+    596,
+    67,
+    519,
+    35
+   ],
+   "solver_info": {
+    "solve_s": 0.0005841255187988281,
+    "cost": -1.9503635202943563,
+    "cost_opt": -2.3487295859397435,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261018,
+   "fold": 2,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.0925925925925926,
+   "mae_stages": 1.875,
+   "qwk": -0.008077544426494221,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.3333333333333333,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    640,
+    451,
+    717,
+    620,
+    324,
+    596
+   ],
+   "solver_info": {
+    "solve_s": 0.0004627704620361328,
+    "cost": -1.889092491254086,
+    "cost_opt": -2.3065954993156197,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261018,
+   "fold": 3,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.21944444444444444,
+   "mae_stages": 2.0625,
+   "qwk": -0.36443148688046656,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    596,
+    962,
+    263,
+    721,
+    776,
+    975
+   ],
+   "solver_info": {
+    "solve_s": 0.0006349086761474609,
+    "cost": -2.2442359026754986,
+    "cost_opt": -2.5206975159665213,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261018,
+   "fold": 4,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.15873015873015872,
+   "mae_stages": 1.8125,
+   "qwk": 0.18826405867970653,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    374,
+    149,
+    257,
+    596,
+    408
+   ],
+   "solver_info": {
+    "solve_s": 0.0005059242248535156,
+    "cost": -2.232624664074809,
+    "cost_opt": -2.6446500713123946,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261019,
+   "fold": 0,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.16666666666666666,
+   "mae_stages": 2.0,
+   "qwk": -0.014925373134328401,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.6666666666666666,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    667,
+    289,
+    507,
+    257,
+    565,
+    612
+   ],
+   "solver_info": {
+    "solve_s": 0.0006577968597412109,
+    "cost": -1.8825001093175473,
+    "cost_opt": -2.1988246529757554,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261019,
+   "fold": 1,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.25,
+   "macro_f1": 0.2587301587301587,
+   "mae_stages": 2.125,
+   "qwk": -0.3835425383542539,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    599,
+    378,
+    149,
+    655,
+    595
+   ],
+   "solver_info": {
+    "solve_s": 0.0006110668182373047,
+    "cost": -2.0083343843621684,
+    "cost_opt": -2.358508494291378,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261019,
+   "fold": 2,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.3125,
+   "balanced_accuracy": 0.3055555555555555,
+   "macro_f1": 0.29074074074074074,
+   "mae_stages": 1.6875,
+   "qwk": 0.15545243619489535,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.5,
+    "MCI": 0.3333333333333333,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    183,
+    408,
+    312,
+    525,
+    367,
+    289
+   ],
+   "solver_info": {
+    "solve_s": 0.00045752525329589844,
+    "cost": -2.046903559858137,
+    "cost_opt": -2.35946328448329,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261019,
+   "fold": 3,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.1638888888888889,
+   "mae_stages": 1.6875,
+   "qwk": 0.058064516129032406,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    596,
+    289,
+    419,
+    788,
+    859,
+    684
+   ],
+   "solver_info": {
+    "solve_s": 0.0006265640258789062,
+    "cost": -2.1314423082833684,
+    "cost_opt": -2.3706999478361404,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "QUBO-random_k6",
+   "seed": 20261019,
+   "fold": 4,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.14537037037037037,
+   "mae_stages": 2.1875,
+   "qwk": -0.341538461538462,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    599,
+    620,
+    67,
+    265,
+    13,
+    519
+   ],
+   "solver_info": {
+    "solve_s": 0.0002911090850830078,
+    "cost": -2.1194984697875725,
+    "cost_opt": -2.6418642140840163,
+    "hit_optimum": false,
+    "n_selected": 6
+   },
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261015,
+   "fold": 0,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.1619047619047619,
+   "mae_stages": 1.411764705882353,
+   "qwk": 0.4720496894409938,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    257,
+    673,
+    35,
+    913,
+    353,
+    367
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261015,
+   "fold": 1,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 2.5,
+   "qwk": -0.48262548262548277,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    595,
+    13,
+    612,
+    721,
+    776,
+    840
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261015,
+   "fold": 2,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.18055555555555555,
+   "mae_stages": 2.0625,
+   "qwk": -0.057142857142857384,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.3333333333333333,
+    "LMCI": 0.5,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    183,
+    419,
+    599,
+    289,
+    444,
+    257
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261015,
+   "fold": 3,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.12222222222222223,
+   "mae_stages": 1.8125,
+   "qwk": 0.06077348066298338,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    717,
+    667,
+    419,
+    599,
+    673,
+    131
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261015,
+   "fold": 4,
+   "fold_fingerprint": "9d88243dd033155e",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.25,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.19999999999999998,
+   "mae_stages": 1.4375,
+   "qwk": 0.24252491694352152,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.6666666666666666,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    913,
+    23,
+    717,
+    419,
+    378,
+    595
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261016,
+   "fold": 0,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.1176470588235294,
+   "qwk": 0.04386951631046099,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    263,
+    667,
+    378,
+    968,
+    408,
+    234
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261016,
+   "fold": 1,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 2.3125,
+   "qwk": -0.22705314009661848,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    913,
+    933,
+    667,
+    257,
+    131,
+    183
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261016,
+   "fold": 2,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "macro_f1": 0.0,
+   "mae_stages": 2.1875,
+   "qwk": -0.18181818181818166,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    35,
+    23,
+    673,
+    612,
+    496,
+    269
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261016,
+   "fold": 3,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15595238095238095,
+   "mae_stages": 1.9375,
+   "qwk": -0.09826589595375745,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.0,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    289,
+    183,
+    596,
+    525,
+    419,
+    721
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261016,
+   "fold": 4,
+   "fold_fingerprint": "cb9c36eccb7d4496",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15873015873015872,
+   "mae_stages": 1.75,
+   "qwk": -0.13103448275862073,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    599,
+    384,
+    214,
+    717,
+    289
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261017,
+   "fold": 0,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.058823529411764705,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.06666666666666667,
+   "mae_stages": 2.3529411764705883,
+   "qwk": -0.39050131926121434,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    183,
+    913,
+    568,
+    374,
+    655,
+    660
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261017,
+   "fold": 1,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.09523809523809523,
+   "mae_stages": 1.4375,
+   "qwk": 0.4985422740524782,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.6666666666666666,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    673,
+    583,
+    353,
+    257,
+    419,
+    145
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261017,
+   "fold": 2,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 2.25,
+   "qwk": -0.28000000000000025,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.5,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    599,
+    289,
+    510,
+    371,
+    419,
+    319
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261017,
+   "fold": 3,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.06666666666666667,
+   "mae_stages": 1.9375,
+   "qwk": 0.1253071253071254,
+   "n_predicted_classes": 4,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    419,
+    717,
+    784,
+    251,
+    312,
+    280
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261017,
+   "fold": 4,
+   "fold_fingerprint": "09525a6309ccdf34",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.08333333333333333,
+   "macro_f1": 0.08333333333333333,
+   "mae_stages": 1.8125,
+   "qwk": 0.19999999999999996,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    451,
+    924,
+    257,
+    717,
+    131,
+    583
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261018,
+   "fold": 0,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.1272727272727273,
+   "mae_stages": 2.1176470588235294,
+   "qwk": -0.004844961240310308,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    913,
+    717,
+    367,
+    183,
+    933,
+    302
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261018,
+   "fold": 1,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.15595238095238095,
+   "mae_stages": 1.8125,
+   "qwk": 0.05413105413105401,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.0
+   },
+   "selected": [
+    667,
+    419,
+    599,
+    289,
+    267,
+    519
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261018,
+   "fold": 2,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.1111111111111111,
+   "macro_f1": 0.08465608465608465,
+   "mae_stages": 1.875,
+   "qwk": 0.14107365792759052,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.3333333333333333,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    131,
+    640,
+    23,
+    289,
+    451,
+    620
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261018,
+   "fold": 3,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.19444444444444442,
+   "macro_f1": 0.16428571428571428,
+   "mae_stages": 1.4375,
+   "qwk": 0.2912912912912914,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.3333333333333333,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    596,
+    673,
+    612,
+    890,
+    962,
+    263
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261018,
+   "fold": 4,
+   "fold_fingerprint": "ca297c0daac768d3",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.125,
+   "balanced_accuracy": 0.13888888888888887,
+   "macro_f1": 0.09722222222222221,
+   "mae_stages": 1.8125,
+   "qwk": 0.20697167755991297,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    419,
+    374,
+    183,
+    776,
+    149,
+    694
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261019,
+   "fold": 0,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 64,
+   "n_val": 17,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.17647058823529413,
+   "balanced_accuracy": 0.16666666666666666,
+   "macro_f1": 0.13333333333333333,
+   "mae_stages": 2.2941176470588234,
+   "qwk": -0.4193753983428936,
+   "n_predicted_classes": 6,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    13,
+    595,
+    507,
+    289,
+    667,
+    589
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261019,
+   "fold": 1,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.17777777777777778,
+   "mae_stages": 1.6875,
+   "qwk": 0.0957446808510638,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.3333333333333333,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.0,
+    "AD": 0.5
+   },
+   "selected": [
+    257,
+    563,
+    599,
+    660,
+    419,
+    721
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261019,
+   "fold": 2,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.0625,
+   "balanced_accuracy": 0.05555555555555555,
+   "macro_f1": 0.030303030303030304,
+   "mae_stages": 2.1875,
+   "qwk": 0.09090909090909094,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.0,
+    "EMCI": 0.0,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.3333333333333333
+   },
+   "selected": [
+    183,
+    783,
+    324,
+    408,
+    312,
+    717
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261019,
+   "fold": 3,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.1875,
+   "balanced_accuracy": 0.2222222222222222,
+   "macro_f1": 0.1638888888888889,
+   "mae_stages": 1.375,
+   "qwk": 0.3600000000000001,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.0,
+    "SMC": 0.5,
+    "EMCI": 0.0,
+    "MCI": 0.5,
+    "LMCI": 0.3333333333333333,
+    "AD": 0.0
+   },
+   "selected": [
+    596,
+    776,
+    419,
+    289,
+    924,
+    913
+   ],
+   "n_features_out": 6
+  },
+  {
+   "method": "mRMR-greedy-pool20_k6",
+   "seed": 20261019,
+   "fold": 4,
+   "fold_fingerprint": "bc396eacad3893f2",
+   "n_train": 65,
+   "n_val": 16,
+   "n_features_in": 984,
+   "shuffled_labels": false,
+   "accuracy": 0.3125,
+   "balanced_accuracy": 0.3055555555555555,
+   "macro_f1": 0.26851851851851855,
+   "mae_stages": 1.4375,
+   "qwk": 0.3237822349570201,
+   "n_predicted_classes": 5,
+   "per_class_recall": {
+    "CN": 0.5,
+    "SMC": 0.0,
+    "EMCI": 0.6666666666666666,
+    "MCI": 0.0,
+    "LMCI": 0.0,
+    "AD": 0.6666666666666666
+   },
+   "selected": [
+    596,
+    721,
+    583,
+    339,
+    374,
+    685
+   ],
+   "n_features_out": 6
+  }
+ ]
+}
