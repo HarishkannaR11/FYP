@@ -224,9 +224,16 @@ Medical history is decoded 1 → present, 0 → absent, sentinel → NaN. APOE �
 alleles are counted from the genotype string. **No imputation.** Conflicting
 duplicates are flagged, not resolved.
 
-**Coverage is incomplete and this is material**: within the 116-subject
-cohort, MMSE/CDR/GDS/medical history exist for **94/116**, with **LMCI at
-0/20**. APOE covers 113/116. See [DATASET_AND_COHORT.md](DATASET_AND_COHORT.md) §4.
+**Coverage**, within the 116-subject cohort: MMSE and CDR global **116/116**,
+GDS 115, APOE 115, CDR sum-of-boxes and the 19 medical-history flags 114, all
+of it together **113/116**. The earlier figure of 94/116 with LMCI at 0/20
+reflected an ADNI table that had not been downloaded; it has since been
+supplied. `derivatives/clinical_cleaned/` predates that and is stale — use
+`derivatives/comorbidity_features/model_clinical_116.csv`.
+
+**What is material is circularity, not coverage.** MMSE and CDR are inputs to
+the ADNI criteria that assign the stage being predicted, so they cannot serve
+as model features. See [DATASET_AND_COHORT.md](DATASET_AND_COHORT.md) §4.
 
 ---
 

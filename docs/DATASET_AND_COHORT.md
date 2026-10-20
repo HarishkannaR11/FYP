@@ -181,10 +181,51 @@ Resting_State_fMRI_<GROUP>_Cohort_APOERES_01Sep2026.csv
 Resting_State_fMRI_<GROUP>_Cohort_Functional_MRI_Images_01Sep2026.csv
 ```
 
-plus `Comorbidity/APOERES_01Sep2026.csv`, the full ADNI genetics table
+plus `Comorbidity/Tables_12Oct2026_LMCI.zip` (the LMCI equivalent, downloaded
+later, which also carries `DATADIC_12Oct2026.csv` — the ADNI data dictionary)
+and `Comorbidity/APOERES_01Sep2026.csv`, the full ADNI genetics table
 (3,216 subjects).
 
+A second, later export sits in `Comorbidity/new_comorbidity/`:
+`*_comorbidity.csv` (medical history — an exact subset of the ZIP `MEDHIST`
+tables, verified: no unique subjects, no differing visits) and
+`gdscale-cdr-mmse/idaSearch_*.csv` (MMSE, GDSCALE, Global CDR for all 116
+subjects, but **carrying Age and no study date**, so its rows cannot be
+matched to a scan). It is used only as a fallback — see below.
+
 ### How clinical data is joined
+
+Two builders exist. **`scripts/comorbidity/build_model_clinical.py` is the
+current one**; `scripts/clinical/clean_clinical_data.py` predates the
+116-subject cohort, expects 127 subjects, and ran before the LMCI tables
+arrived, so `derivatives/clinical_cleaned/` is stale.
+
+`build_model_clinical.py`:
+
+1. Reads the CDR, MMSE, GDSCALE and MEDHIST tables from inside
+   `Comorbidity/Tables_*.zip`, skipping rows flagged `HAS_QC_ERROR`.
+2. Maps ADNI `PTID` (`NNN_S_NNNN`) to the project's `sub-NNNSNNNN`.
+3. Takes each subject's MRI date from `audit/bids_conversion/bids_mapping.csv`
+   and `audit/bids_additions_mapping.csv` — 116/116 resolved.
+4. For each assessment, selects the visit **nearest in time to the MRI**,
+   recording the visit date, signed day offset, match method and source file
+   in dedicated columns.
+5. Falls back to the undated `idaSearch` export only for subjects the ZIP
+   tables do not carry, labelling those rows as **not scan-matched**.
+6. Treats `-4` and `-1` as ADNI missing codes → missing, never 0.
+7. Range-checks every total; counts APOE ε4 alleles from the genotype string.
+8. Writes `derivatives/comorbidity_features/model_clinical_116.csv` in
+   `subjects.npy` row order, so row *i* aligns with `X_regional.npy`,
+   `X_fc.npy` and `y.npy` without a join.
+
+Medical-history labels are copied from `DATADIC_12Oct2026.csv`, not inferred.
+`MH3HEAD` in particular is ADNI's *"Head, Eyes, Ears, Nose and Throat"*
+category — **not** head injury.
+
+**No imputation is performed.** Missing values remain missing, and a blank is
+never read as "no disease".
+
+### The earlier builder
 
 `scripts/clinical/clean_clinical_data.py`:
 
@@ -209,27 +250,71 @@ duplicate records are flagged for review rather than silently resolved
 
 | Variable | CN | SMC | EMCI | MCI | LMCI | AD | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| MMSE | 20/20 | 20/20 | 20/20 | 14/16 | **0/20** | 20/20 | **94/116** |
-| CDR global | 20/20 | 20/20 | 20/20 | 14/16 | **0/20** | 20/20 | **94/116** |
-| GDS | 20/20 | 20/20 | 20/20 | 14/16 | **0/20** | 20/20 | **94/116** |
-| Medical history | 20/20 | 20/20 | 20/20 | 14/16 | **0/20** | 20/20 | **94/116** |
-| APOE ε4 count | 20/20 | 19/20 | 20/20 | 14/16 | 20/20 | 20/20 | **113/116** |
+| MMSE | 20/20 | 20/20 | 20/20 | 16/16 | 20/20 | 20/20 | **116/116** |
+| CDR global | 20/20 | 20/20 | 20/20 | 16/16 | 20/20 | 20/20 | **116/116** |
+| CDR sum-of-boxes | 20/20 | 20/20 | 20/20 | 14/16 | 20/20 | 20/20 | **114/116** |
+| GDS | 20/20 | 20/20 | 20/20 | 16/16 | 20/20 | 19/20 | **115/116** |
+| Medical history | 20/20 | 20/20 | 20/20 | 14/16 | 20/20 | 20/20 | **114/116** |
+| APOE ε4 count | 20/20 | 19/20 | 20/20 | 16/16 | 20/20 | 20/20 | **115/116** |
+| **All of the above** | 20/20 | 20/20 | 20/20 | 14/16 | 20/20 | 19/20 | **113/116** |
 
-Two findings matter:
+Usable *n* therefore depends on which fields a model takes: MMSE + CDR gives
+116, adding GDS 115, adding APOE 114, adding the medical-history flags 113,
+adding CDR-SB 112.
 
-1. **LMCI has no MMSE, CDR, GDS or medical-history data at all.** The LMCI
-   assessment tables were never downloaded from ADNI; only APOE (which comes
-   from the cohort-wide table) is available. Any comorbidity-aware model
-   would currently exclude LMCI entirely or require that download.
-2. **Two cohort subjects have no clinical row of any kind**:
-   `sub-100S0296` and `sub-007S2394` — the two MCI subjects added most
-   recently. Their imaging is complete; their assessment tables have not
-   been downloaded.
+Three findings matter:
 
-Outputs: `derivatives/clinical_cleaned/` — `master_subject_clinical.csv`
-(127 subjects × 90 columns), per-stage tables in `stages/`,
-`clinical_data_dictionary.md`, `clinical_audit_report.md`,
-`duplicate_conflict_report.csv`, `visit_audit.csv`.
+1. **LMCI is now complete.** The earlier 0/20 reflected the LMCI assessment
+   tables not having been downloaded; `Tables_12Oct2026_LMCI.zip` supplies
+   them. `derivatives/clinical_cleaned/` was built before that date and still
+   shows LMCI blank — it is stale, not wrong about its own inputs.
+2. **The two most recent MCI subjects have scores but no medical history.**
+   `007_S_2394` and `100_S_0296` entered through a separate download
+   (`NIfTI_extra`, image ids `I680900`, `I422066`) and appear in no ZIP
+   assessment table. Their MMSE, CDR and GDS come from the undated
+   `idaSearch` export, so those rows are **not scan-matched** and have no
+   CDR-SB. Their comorbidity flags are absent.
+3. **Scan matching is tight for the rest.** For the 114 subjects covered by
+   the ZIP tables, the visit used for MMSE, CDR and GDS is a median of
+   **0 days** from the MRI, worst 77. Medical history is looser — median 209
+   days, 99/114 within a year — because it is collected at screening.
+
+### Label leakage — read before modelling
+
+MMSE, Global CDR and CDR sum-of-boxes are **inputs to ADNI's diagnostic
+criteria**, which assign the very stage the models predict. On this cohort,
+Global CDR alone reaches **0.386** balanced accuracy (5-fold CV, chance
+0.167) against the rs-fMRI model's 0.307, and the CDR × stage cross-tab
+simply reproduces the enrolment rule (CDR 0 → CN/SMC, 0.5 → the MCI band,
+1 → AD).
+
+They belong in a baseline table, not in the imaging model's feature set.
+`GDS_total`, the 19 `MH_*` flags and `APOE4_count` are not part of the
+criteria and are the usable covariates.
+
+Of the 19 medical-history flags, five are too rare at this *n* to carry
+signal (drug abuse 2, alcohol abuse 4, hematopoietic 10, hepatic 11,
+malignancy 25) and three are near-constant at ~75% (major surgical
+procedures, head/eyes/ears/nose/throat, musculoskeletal). Roughly 6–8 have
+usable variance.
+
+### Outputs
+
+**Current:** `derivatives/comorbidity_features/` — `model_clinical_116.csv`
+(116 × 50, cohort row order), `model_clinical_report.txt`,
+`stage_subject_mapping_116.csv`. Copied to
+`derivatives/phase1_selected_20/comorbidity/` so the cohort and its clinical
+data sit together; see that directory's `SOURCE.md`.
+
+**Stale, kept for reference:** `derivatives/clinical_cleaned/` —
+`master_subject_clinical.csv` (127 subjects × 90 columns), per-stage tables
+in `stages/`, `clinical_data_dictionary.md`, `clinical_audit_report.md`,
+`duplicate_conflict_report.csv`, `visit_audit.csv`. Built 2026-10-08, before
+the LMCI tables arrived.
+
+Under the ADNI Data Use Agreement these derived tables are not
+redistributable and are deliberately kept out of version control. They
+regenerate from `scripts/comorbidity/build_model_clinical.py`.
 
 ---
 
