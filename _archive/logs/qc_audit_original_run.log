@@ -1,0 +1,384 @@
+
+======================================================================
+SECTION 1 -- PILOT IDENTIFICATION (read-only)
+======================================================================
+  input NIfTI: /mnt/c/Users/krish/FYP/pilot_preprocessing/input/sub-019S4549_ses-01_task-rest_run-01_bold.nii.gz  [FOUND]
+  JSON sidecar: /mnt/c/Users/krish/FYP/pilot_preprocessing/input/sub-019S4549_ses-01_task-rest_run-01_bold.json  [FOUND]
+  final preprocessed NIfTI: /mnt/c/Users/krish/FYP/pilot_preprocessing/final/sub-019S4549_ses-01_task-rest_run-01_desc-paperpreproc_bold.nii.gz  [FOUND]
+  intermediate: discard5: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-discard5_bold.nii.gz  [FOUND]
+  intermediate: no-stc: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-no-stc_bold.nii.gz  [FOUND]
+  intermediate: motion-corrected: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-mc_bold.nii.gz  [FOUND]
+  intermediate: MNI-normalized: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-mni_bold.nii.gz  [FOUND]
+  intermediate: 4mm resampled: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-mni4mm_bold.nii.gz  [FOUND]
+  intermediate: 6mm smoothed: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-smooth6mm_bold.nii.gz  [FOUND]
+  intermediate: detrended: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-detrend_bold.nii.gz  [FOUND]
+  intermediate: nuisance-regressed: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-nuisance_bold.nii.gz  [FOUND]
+  intermediate: band-pass: /mnt/c/Users/krish/FYP/pilot_preprocessing/intermediate/desc-bandpass_bold.nii.gz  [FOUND]
+  motion parameters (.mcdat native): /mnt/c/Users/krish/FYP/pilot_preprocessing/motion/mc-afni2_motion.mcdat  [FOUND]
+  motion parameters (tsv): /mnt/c/Users/krish/FYP/pilot_preprocessing/motion/motion_parameters.tsv  [FOUND]
+  FD file: /mnt/c/Users/krish/FYP/pilot_preprocessing/motion/fd_values.tsv  [FOUND]
+  DVARS file: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc/dvars_values.csv  [FOUND]
+  QC metrics (stored): /mnt/c/Users/krish/FYP/pilot_preprocessing/qc/qc_metrics.csv  [FOUND]
+  QC metrics additional (stored): /mnt/c/Users/krish/FYP/pilot_preprocessing/qc/qc_metrics_additional.json  [FOUND]
+  existing QC report: /mnt/c/Users/krish/FYP/pilot_preprocessing/PILOT_PREPROCESSING_REPORT.md  [FOUND]
+  processing log: /mnt/c/Users/krish/FYP/pilot_preprocessing/processing_log.txt  [FOUND]
+  pipeline config: /mnt/c/Users/krish/FYP/pilot_preprocessing/pipeline_config.json  [FOUND]
+  brain mask (4mm): /mnt/c/Users/krish/FYP/pilot_preprocessing/transforms/brain_mask_mni4mm.nii.gz  [FOUND]
+  confounds (nuisance regressors): /mnt/c/Users/krish/FYP/pilot_preprocessing/confounds/nuisance_regressors.tsv  [FOUND]
+  MNI registration transform files (4):
+    /mnt/c/Users/krish/FYP/pilot_preprocessing/transforms/xfm_fwd_0_tmpax3zktvg1Warp.nii.gz
+    /mnt/c/Users/krish/FYP/pilot_preprocessing/transforms/xfm_fwd_1_tmpax3zktvg0GenericAffine.mat
+    /mnt/c/Users/krish/FYP/pilot_preprocessing/transforms/xfm_inv_0_tmpax3zktvg0GenericAffine.mat
+    /mnt/c/Users/krish/FYP/pilot_preprocessing/transforms/xfm_inv_1_tmpax3zktvg1InverseWarp.nii.gz
+
+  Files in final/: ['sub-019S4549_ses-01_task-rest_run-01_desc-paperpreproc_bold.nii.gz']
+  CONFIRMED: exactly ONE acquisition in this folder -- sub-019S4549/ses-01/run-01 (1 final image)
+  Audit outputs -> /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit (existing qc/ is never written to)
+
+======================================================================
+SECTION 2 -- VERIFY ACTUAL PIPELINE CONFIGURATION (from files, not assumed)
+======================================================================
+  First 5 volumes removed: YES (5 removed, 135 retained)
+      evidence: pipeline_config.json volumes_removed/volumes_retained; log 'removed exactly 5, VERIFIED'
+  Slice timing correction: NOT PERFORMED (SliceTiming metadata unavailable)
+      evidence: pipeline_config.json slice_timing_status; log 'SLICE_TIMING_CORRECTION = NOT_PERFORMED'
+  Motion correction: FreeSurfer FS-FAST mc-afni2, rigid-body 6-DOF, reference = frame 0 of the post-discard series (first retained volume)
+      evidence: pipeline_config.json motion_correction_method; native .mcdat present
+  MNI normalization: ANTsPy ants.registration(type_of_transform='SyN'); direct EPI->MNI because no T1w anatomical image is available onto MNI152NLin6Asym res-02 desc-brain_T1w (TemplateFlow)
+      evidence: pipeline_config.json registration_method/mni_template; transform files present
+  4 x 4 x 4 mm resampling: final_voxel_size_mm=[4.0, 4.0, 4.0] via continuous (nilearn resample_img), grid derived from template affine
+      evidence: pipeline_config.json final_voxel_size_mm (verified against image in Sec 3)
+  6 mm FWHM smoothing: 6.0 mm FWHM via nilearn.image.smooth_img (fwhm argument = FWHM, not sigma)
+      evidence: pipeline_config.json smoothing_FWHM_mm
+  Linear detrending: per-voxel OLS removal of intercept + linear term; temporal mean restored; no quadratic term
+      evidence: pipeline_config.json detrending_method
+  Nuisance regression: 28 regressors; Friston24=True; WM=PERFORMED (template prior); CSF=PERFORMED (template prior); GSR=True
+      evidence: pipeline_config.json nuisance_regressors (list of 28) + confounds/nuisance_regressors.tsv
+  0.01-0.10 Hz band-pass: 0.01-0.1 Hz, 2nd-order Butterworth, zero-phase filtfilt, Nyquist=0.1667 Hz
+      evidence: pipeline_config.json filter_low_hz/filter_high_hz/filter_design
+
+  INDEPENDENT VERIFICATION of confounds file: 28 columns, 135 timepoints, 24 Friston-24 columns
+  Friston-24 genuinely present as 24 distinct columns: True
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/pipeline_verification.md
+
+======================================================================
+SECTION 3 -- IMAGE INTEGRITY
+======================================================================
+  original_dimensions: (64, 64, 48, 140)
+  final_dimensions: (46, 55, 46, 135)
+  original_n_volumes: 140
+  final_n_volumes: 135
+  volumes_discarded: 5
+  TR_s: 3.0
+  original_voxel_size_mm: (3.3125, 3.3125, 3.3125)
+  final_voxel_size_mm: (4.0, 4.0, 4.0)
+  original_orientation: LAS
+  final_orientation: RAS
+  original_datatype: int16
+  final_datatype: float32
+  final_NaN_count: 0
+  final_Inf_count: 0
+  final_min: 0.0
+  final_max: 2774260.0
+  final_mean: 323156.46875
+  original_min: 0.0
+  original_max: 4134844.25
+  original_mean: 364101.1875
+  original affine:
+[[  -3.3125        0.           -0.          105.8367157 ]
+ [  -0.            3.3125       -0.         -103.35160065]
+ [   0.            0.            3.3125      -77.96124268]
+ [   0.            0.            0.            1.        ]]
+  final affine:
+[[   4.    0.    0.  -90.]
+ [   0.    4.    0. -126.]
+ [   0.    0.    4.  -72.]
+ [   0.    0.    0.    1.]]
+  VERIFIED final is 4D: True
+  VERIFIED final is 4mm isotropic: True
+
+======================================================================
+SECTION 4 -- MOTION QC (independent recomputation from native .mcdat)
+======================================================================
+  FD recomputed independently: Power et al. (2012) formulation, sum|dtrans| + sum|drot_rad * 50mm|, from the native FS-FAST .mcdat
+  stored fd_values.tsv vs independent recomputation: MATCH=True (max abs diff=1.110e-16)
+  MEASURED VALUES (no PASS/FAIL applied here):
+    mean_FD_mm: 0.35972469574460425
+    median_FD_mm: 0.3116140582366956
+    max_FD_mm: 1.3931205060746947
+    std_FD_mm: 0.2576437750711139
+    n_FD_gt_0.2mm: 90
+    n_FD_gt_0.5mm: 35
+    n_FD_gt_1.0mm: 4
+    pct_FD_gt_0.5mm: 25.93
+    pct_FD_gt_1.0mm: 2.96
+    max_abs_translation_mm: 0.9651
+    max_abs_rotation_deg: 0.437
+    fd_stored_matches_recomputed: True
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/fd_values_verified.csv
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/fd_plot.png
+
+======================================================================
+SECTION 5 -- DVARS QC
+======================================================================
+  Determining DVARS type actually used by this pilot:
+    stage: intermediate/desc-smooth6mm_bold.nii.gz (MNI-normalized, 4mm-resampled,/mnt/c/Users/krish/FYP/scripts/audit/qc_audit_original_pilot.py:504: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl2, target_affine=exp_aff, target_shape=exp_shape,
+
+           6mm-FWHM smoothed; detrend/nuisance/band-pass NOT yet applied)
+    formula in the pilot: sqrt(mean((BOLD_t - BOLD_t-1)^2)) over in-mask voxels,
+           on native scanner intensity units with NO normalization
+    => TYPE: RAW-INTENSITY DVARS (NOT standardized, NOT percent-signal-change)
+    => Literature thresholds for standardized/%-change DVARS DO NOT APPLY here.
+  stored dvars_values.csv vs independent recomputation: MATCH=True
+    dvars_type: RAW_INTENSITY (not standardized, not percent-signal-change)
+    dvars_stage: desc-smooth6mm_bold.nii.gz (pre-detrend/pre-nuisance/pre-bandpass)
+    mean_DVARS_raw: 12846.659383745337
+    median_DVARS_raw: 12315.16748046875
+    max_DVARS_raw: 23978.720703125
+    std_DVARS_raw: 2724.137189413503
+    extreme_definition: Q3 + 1.5*IQR, self-relative (no valid absolute threshold for raw units)
+    extreme_threshold_value: 19044.166137695312
+    n_extreme_DVARS_volumes: 6
+    dvars_stored_matches_recomputed: True
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/dvars_plot.png
+
+======================================================================
+SECTION 6 -- tSNR QC
+======================================================================
+  Stage used by the pilot for tSNR (from its stored QC + report):
+    stored tSNR_stage field: 4mm smoothed, pre-detrend/pre-nuisance (non-zero-mean magnitude domain)
+    -> desc-smooth6mm_bold.nii.gz
+       smoothing applied: YES (6mm FWHM)
+       detrending applied: NO
+       nuisance regression applied: NO
+       band-pass filtering applied: NO
+    mean_tSNR: 107.06280517578125
+    median_tSNR: 101.35000610351562
+    std_tSNR: 63.889678955078125
+    min_tSNR: 4.70264196395874
+    max_tSNR: 393.2464294433594
+    p5_tSNR: 16.146512985229492
+    p25_tSNR: 56.63306427001953
+    p75_tSNR: 148.61705017089844
+    p95_tSNR: 222.50439453125
+  stored mean_tSNR=107.06280517578125 vs recomputed=107.0628 -> match(±0.5)=True
+  Investigation of extremely high tSNR (>292.8, i.e. 99.5th pct) combined with
+  near-zero temporal SD (< 5x the 1st-percentile in-mask SD): 143 voxel(s)
+    connected clusters: 66; fraction lying in the outer 2-voxel mask rim: 24.48%
+    INTERPRETATION: these are treated as possible near-zero-variance ARTIFACTS,
+    NOT as evidence of excellent data quality.
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/tsnr_qc.png
+
+======================================================================
+SECTION 7 -- SNR
+======================================================================
+    SNR_recomputed: 12.208333057690501
+    SNR_signal_definition: mean of the temporal-mean intensity inside the native-space brain mask
+    SNR_background_definition: std of the temporal-mean intensity in non-brain, nonzero voxels (native space)
+    SNR_formula: signal_mean / background_std (fBIRN-style)
+    SNR_mask_used: native-resolution Otsu threshold + largest 3D connected component + hole filling
+    SNR_signal_value: 1441745.0
+    SNR_background_std: 118095.15625
+  stored SNR=12.208333057690501 vs recomputed=12.208333057690501 -> match=True
+  No threshold applied: reported as a measured value only.
+
+======================================================================
+SECTION 8 -- CNR
+======================================================================
+  CNR = NOT_RELIABLY_COMPUTABLE
+  Reason: this dataset contains NO T1w anatomical image for this subject, so no
+  reliable GM/WM/CSF tissue segmentation can be derived. Producing a segmentation
+  from BOLD/EPI alone (or asserting one from template priors) would not give a valid
+  subject-specific tissue-contrast estimate. No PASS/FAIL is assigned to CNR.
+
+======================================================================
+SECTION 9 -- SPATIAL ENTROPY
+======================================================================
+    spatial_entropy_recomputed: 7.3595 bits
+    image/stage: temporal mean of desc-smooth6mm_bold.nii.gz
+    mask: transforms/brain_mask_mni4mm.nii.gz
+    formula: Shannon H = -sum(p log2 p), 256-bin histogram of in-mask intensities
+    units: bits
+  stored=7.359534269553764 vs recomputed=7.359534269553764 -> match=True
+  No PASS/FAIL threshold assigned (no sourced universal reference exists).
+
+======================================================================
+SECTION 10 -- TEMPORAL ENTROPY
+======================================================================
+    per-voxel time-series matrix (n_voxels x nt): (28549, 135)
+    temporal_entropy_recomputed: 3.6051 bits
+    method: mean per-voxel Shannon entropy of the z-scored temporal histogram (16 bins)
+    stage: desc-smooth6mm_bold.nii.gz;  units: bits
+  stored=3.605069883861851 vs recomputed=3.605069883861851 -> match=True
+  No PASS/FAIL threshold assigned.
+
+======================================================================
+SECTION 11 -- BRAIN MASK QC
+======================================================================
+    mask_dimensions: (46, 55, 46)
+    mask_voxel_size_mm: (4.0, 4.0, 4.0)
+    mask_datatype: uint8
+    mask_is_binary: True
+    mask_unique_values: [0.0, 1.0]
+    mask_n_voxels: 28549
+    mask_pct_of_image: 24.531
+    mask_n_connected_components: 1
+    mask_largest_component_voxels: 28549
+    mask_largest_component_pct_of_mask: 100.0
+    mask_has_NaN: False
+    mask_has_Inf: False
+    mask_matches_final_grid: True
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/brain_mask_qc.png
+
+======================================================================
+SECTION 12 -- MNI REGISTRATION QC
+======================================================================
+    final_affine: [[4.0, 0.0, 0.0, -90.0], [0.0, 4.0, 0.0, -126.0], [0.0, 0.0, 4.0, -72.0], [0.0, 0.0, 0.0, 1.0]]
+    final_orientation: RAS
+    final_dimensions: (46, 55, 46)
+    final_voxel_size_mm: (4.0, 4.0, 4.0)
+    template_reference: MNI152NLin6Asym res-02 desc-brain_T1w (/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz)
+    expected_4mm_grid_from_template_shape: (46, 55, 46)
+    final_matches_expected_4mm_MNI_grid: True
+    n_transform_files_present: 4
+  NOTE: affine/grid agreement is necessary but NOT sufficient evidence of good
+  registration -- the overlay below is required for actual spatial judgement.
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/mni_registration_qc.png
+
+======================================================================
+SECTION 13 -- FINAL IMAGE / STAGE-BY-STAGE VISUAL QC
+======================================================================
+    motion-corrected (native): shape=(64, 64, 48, 135) voxel=(3.312, 3.312, 3.312) nonzero=0.8733 rel_grad=0.40513
+    MNI-normalized (2mm): shape=(91, 109, 91, 135) voxel=(2.0, 2.0, 2.0) nonzero=0.7181 rel_grad=0.22799
+    4mm resampled: shape=(46, 55, 46, 135) voxel=(4.0, 4.0, 4.0) nonzero=0.862 rel_grad=0.37445
+    6mm smoothed: shape=(46, 55, 46, 135) voxel=(4.0, 4.0, 4.0) nonzero=1.0 rel_grad=0.28591
+    detrended: shape=(46, 55, 46, 135) voxel=(4.0, 4.0, 4.0) nonzero=1.0 rel_grad=0.28341
+    nuisance-regressed: shape=(46, 55, 46, 135) voxel=(4.0, 4.0, 4.0) nonzero=0.2453 rel_grad=0.25613
+    band-pass filtered: shape=(46, 55, 46, 135) voxel=(4.0, 4.0, 4.0) nonzero=0.2453 rel_grad=0.25677
+    FINAL output: shape=(46, 55, 46, 135) voxel=(4.0, 4.0, 4.0) nonzero=0.2453 rel_grad=0.25677
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/stage_by_stage_qc.csv
+  'relative_spatial_gradient' = mean|grad| / mean|intensity| on volume 0; it drops when an
+  image is spatially smoother. Used to locate WHERE smoothing occurs, not to judge quality.
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/stage_by_stage_qc.png
+  final image: nonzero fraction=0.2453, in-mask relative SD=0.31708
+  (a very low in-mask relative SD would indicate a suspiciously uniform image)
+
+======================================================================
+SECTION 14 -- BRAINNETOME-246 COMPATIBILITY (performed fresh, not assumed)
+======================================================================
+  NOTE: this ORIGINAL pilot has NO pre-existing Brainnetome output, so compatibility
+  was NOT previously established for the 4mm grid. Testing it now.
+    atlas: /mnt/c/Users/krish/FYP/atlases/Brainnetome246/BN_Atlas_246_2mm.nii.gz
+    atlas dims=(91, 109, 91) voxel=(2.0, 2.0, 2.0) orientation=LAS
+    final BOLD dims=(46, 55, 46) voxel=(4.0, 4.0, 4.0) orientation=RAS
+    grids already identical: False -> resampling REQUIRED
+    resampling method used: NEAREST-NEIGHBOR ONLY (nilearn interpolation='nearest')
+    (atlas first losslessly reoriented LAS->RAS; original atlas file never modified)
+    bn_n_zero_voxel_ROIs: 0
+    bn_n_ROIs_1_to_2_voxels: 0
+    bn_n_ROIs_lt_5_voxels: 0
+    bn_n_ROIs_lt_10_voxels: 0
+    bn_min_voxels: 10
+    bn_max_voxels: 186
+    bn_mean_voxels: 71.85772357723577
+    bn_median_voxels: 68.0
+    bn_resample_method: nearest-neighbor (after lossless LAS->RAS reorientation of the atlas)
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/brainnetome_roi_voxel_counts_4mm.csv
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/brainnetome_roi_coverage_4mm.png
+
+======================================================================
+SECTION 15 -- ROI TIME-SERIES QC
+======================================================================
+  NO ROI time-series file exists in this pilot.
+  STATUS: NOT COMPUTABLE -- nothing to inspect. No ROI extraction was performed here,
+  and per the audit instructions none is generated now.
+
+======================================================================
+SECTION 16 -- VERIFIED QC METRIC TABLE
+======================================================================
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/qc_metrics_verified.csv
+    tSNR (mean)                  CHECK REQUIRED               107.06
+    SNR                          CHECK REQUIRED               12.2083
+    CNR                          NOT COMPUTABLE               NOT_RELIABLY_COMPUTABLE
+    Mean FD                      WARN                         0.3597
+    Median FD                    WARN                         0.3116
+    Maximum FD                   WARN                         1.3931
+    FD > 0.5 mm                  WARN                         35 (25.93%)
+    FD > 1.0 mm                  WARN                         4 (2.96%)
+    DVARS (mean)                 NOT COMPUTABLE AS PASS/FAIL  12846.7
+    Spatial entropy              CHECK REQUIRED               7.3595
+    Temporal entropy             CHECK REQUIRED               3.6051
+    Brain-mask coverage          PASS                         28549 vox (24.531% of image)
+    MNI registration             PASS                         matches expected 4mm MNI grid = True
+    NaN/Inf                      PASS                         0/0
+    Brainnetome ROI coverage     PASS                         0 zero-voxel of 246 (min=10, median=68.0)
+  saved: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/qc_metrics_verified.json
+
+======================================================================
+SECTION 17-19 -- OVERALL STATUS + REPORT
+======================================================================
+  OVERALL: PASS WITH WARNINGS
+  WHY: All structural, geometric, mask, registration and Brainnetome-coverage checks hold, and every recomputed metric reproduces the stored value. Head motion is genuinely elevated for a subset of frames and a small number of tSNR voxels look artifactual, so this is not an unqualified PASS.
+  report written: /mnt/c/Users/krish/FYP/pilot_preprocessing/qc_audit/QC_AUDIT_ORIGINAL_PILOT.md
+
+======================================================================
+FINAL SUMMARY
+======================================================================
+SUBJECT:
+sub-019S4549
+
+PIPELINE:
+discard 5 vols -> slice-timing NOT PERFORMED -> mc-afni2 motion correction ->
+direct EPI->MNI (ANTs SyN, MNI152NLin6Asym) -> 4mm resample -> 6mm FWHM smoothing ->
+linear detrend -> 28-regressor nuisance (Friston-24 + WM + CSF + GS) -> 0.01-0.10 Hz band-pass
+
+VOXEL SIZE:
+(4.0, 4.0, 4.0)
+
+SMOOTHING:
+6 mm FWHM
+
+tSNR:
+107.06 (median 101.35)
+
+SNR:
+12.21
+
+CNR:
+NOT COMPUTABLE (no T1w)
+
+MEAN FD:
+0.3597 mm
+
+FD > 0.5 mm:
+35 volumes (25.93%)
+
+FD > 1.0 mm:
+4 volumes (2.96%)
+
+DVARS:
+12846.7 (raw intensity units -- not comparable to standardized thresholds)
+
+SPATIAL ENTROPY:
+7.3595 bits
+
+TEMPORAL ENTROPY:
+3.6051 bits
+
+BRAIN MASK:
+28549 voxels (24.531% of image), 1 component(s), binary=True
+
+BRAINNETOME:
+246 ROIs tested on the 4mm grid -- 0 zero-voxel, 0 with <5 vox, 0 with <10 vox, min=10, median=68.0
+
+NaN/Inf:
+0/0
+
+MNI REGISTRATION:
+grid/affine match with expected 4mm MNI grid = True (visual confirmation required)
+
+OVERALL QC:
+PASS WITH WARNINGS
+
+QC_AUDIT_ORIGINAL_PILOT_DONE

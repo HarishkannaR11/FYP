@@ -1,0 +1,69 @@
+======================================================================
+COMPLETE VALIDATION AUDIT -- AD PREPROCESSING + MASKED GLM (READ-ONLY)
+======================================================================
+
+=== SECTION 2: Source data verification ===
+Source manifest rows: 25 (expected 25)
+Source files missing: 0
+
+=== SECTION 3-4: Discover actual preprocessed output structure ===
+Discovered acquisition directories (sub/ses/run): 25
+Discovered with an actual desc-preproc_bold.nii.gz present: 25
+
+Acquisitions with output correctly found: 25
+Acquisitions MISSING preprocessing output: 0
+Unexpected outputs (not in source manifest): 0
+
+--- Explicit check: 5 multi-acquisition subjects, BOTH sessions present ---
+  sub-002S5018: sessions found = ['ses-01', 'ses-02'] (expect 2 distinct sessions)
+  sub-019S4477: sessions found = ['ses-01', 'ses-02'] (expect 2 distinct sessions)
+  sub-019S4549: sessions found = ['ses-01', 'ses-02'] (expect 2 distinct sessions)
+  sub-130S4730: sessions found = ['ses-01', 'ses-02'] (expect 2 distinct sessions)
+  sub-130S4982: sessions found = ['ses-01', 'ses-02'] (expect 2 distinct sessions)
+
+Saved: /mnt/c/Users/krish/FYP/test/validation/ad_preprocessing_validation/acquisition_manifest.csv
+
+======================================================================
+PER-ACQUISITION INDEPENDENT VALIDATION
+======================================================================
+
+sub-002S5018 ses-01 run-01: PASS
+sub-002S5018 ses-02 run-01: PASS
+sub-006S4153 ses-01 run-01: PASS
+sub-006S4192 ses-01 run-01: PASS
+sub-013S5071 ses-01 run-01: PASS
+sub-018S4696 ses-01 run-01: PASS
+sub-018S4733 ses-01 run-01: PASS
+sub-019S4252 ses-01 run-01: PASS
+sub-019S4477 ses-01 run-01: PASS
+sub-019S4477 ses-02 run-01: PASS
+sub-019S4549 ses-01 run-01: PASS
+sub-019S4549 ses-02 run-01: PASS
+sub-019S5012 ses-01 run-01: PASS
+sub-019S5019 ses-01 run-01: PASS
+sub-031S4024 ses-01 run-01: PASS
+sub-130S4641 ses-01 run-01: PASS
+sub-130S4660 ses-01 run-01: PASS
+sub-130S4730 ses-01 run-01: PASS
+sub-130S4730 ses-02 run-01: PASS
+sub-130S4971 ses-01 run-01: PASS
+sub-130S4982 ses-01 run-01: PASS
+sub-130S4982 ses-02 run-01: PASS
+sub-130S4984 ses-01 run-01: PASS
+sub-130S4990 ses-01 run-01: PASS
+sub-130S5059 ses-01 run-01: PASS
+
+=== High-motion acquisitions (reported, NOT excluded) ===
+  sub-013S5071 ses-01 run-01: FD_mean=0.572mm FD_max=3.569mm
+  sub-019S5019 ses-01 run-01: FD_mean=1.302mm FD_max=3.786mm
+  sub-130S4660 ses-01 run-01: FD_mean=0.984mm FD_max=4.430mm
+  sub-130S4730 ses-01 run-01: FD_mean=0.517mm FD_max=1.600mm
+  sub-130S4982 ses-01 run-01: FD_mean=0.512mm FD_max=1.552mm
+  sub-130S4990 ses-01 run-01: FD_mean=0.515mm FD_max=2.089mm
+
+=== Original data integrity (final check) ===
+Original AD NIfTI count: 25 (expected 25)
+BIDS task-rest bold files: 175 (expected 175)
+Brainnetome atlas exists: True
+
+Saved: /mnt/c/Users/krish/FYP/test/validation/ad_preprocessing_validation/AD_preprocessing_validation.csv

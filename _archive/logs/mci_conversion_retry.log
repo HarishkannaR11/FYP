@@ -1,0 +1,21 @@
+candidates: 10  (CN 0, LMCI 0)  suspicious: 0
+excluded as broken (<1000 DICOMs): 0
+duplicates skipped: 0
+already recorded in state: 10
+
+========================================================================
+MCI: 10 series from MCI_ersfMRI.zip
+========================================================================
+[1/10] I467646 002_S_1155  SKIP (done)
+[2/10] I573627 002_S_4229  SKIP (done)
+[3/10] I434493 002_S_4799  SKIP (done)
+[4/10] I430122 006_S_4713  SKIP (done)
+[5/10] I467980 018_S_2180 Extended_Resting_State_fMRI n=9600
+      -> OK  vols=200  146.8s
+[6/10] I543654 053_S_0919  SKIP (done)
+[7/10] I437878 053_S_4813  SKIP (done)
+[8/10] I422066 100_S_0296  SKIP (done)
+[9/10] I813812 100_S_4556  SKIP (done)
+[10/10] I581891 130_S_4294  SKIP (done)
+
+CONVERSION PASS COMPLETE

@@ -1,0 +1,61 @@
+================================================================================
+P-SCORE HEATMAP + GROUP DENDROGRAM + PER-GROUP P-SCORES ABOVE
+================================================================================
+multivariate source: 24/24 COMPLETED, fingerprint 6ab68ae6e80f61c2, 9999 permutations, BH over the 24-test family
+
+--- mALFF ---
+  heatmap: min q 0.222694  max P 0.6523  q < 0.05: 0  missing 0
+  leaf order ['MCI', 'EMCI', 'LMCI', 'CN', 'AD', 'SMC']  cophenetic r 0.757
+  group   multivar q  multivar P  max ROI P  ROIs>=1.301
+  MCI         0.1827      0.7382     0.2841            0
+  EMCI        0.9720      0.0123     0.2593            0
+  LMCI        0.7597      0.1194     0.2841            0
+  CN          0.7012      0.1542     0.2841            0
+  AD          0.1827      0.7382     0.6523            0
+  SMC         0.3955      0.4028     0.2841            0
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_mALFF.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_mALFF.pdf
+
+--- mReHo ---
+  heatmap: min q 0.118084  max P 0.9278  q < 0.05: 0  missing 0
+  leaf order ['CN', 'LMCI', 'EMCI', 'AD', 'SMC', 'MCI']  cophenetic r 0.858
+  group   multivar q  multivar P  max ROI P  ROIs>=1.301
+  CN          0.4582      0.3390     0.5237            0
+  LMCI        0.7597      0.1194     0.3527            0
+  EMCI        0.1392      0.8564     0.9278            0
+  AD          0.1827      0.7382     0.9278            0
+  SMC         0.7597      0.1194     0.5237            0
+  MCI         0.2760      0.5591     0.4985            0
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_mReHo.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_mReHo.pdf
+
+--- DC_z ---
+  heatmap: min q 0.729702  max P 0.1369  q < 0.05: 0  missing 0
+  leaf order ['LMCI', 'AD', 'CN', 'SMC', 'MCI', 'EMCI']  cophenetic r 0.768
+  group   multivar q  multivar P  max ROI P  ROIs>=1.301
+  LMCI        0.7597      0.1194     0.1369            0
+  AD          0.7446      0.1281     0.1369            0
+  CN          0.2920      0.5346     0.1369            0
+  SMC         0.7597      0.1194     0.0554            0
+  MCI         0.1827      0.7382     0.1369            0
+  EMCI        0.7597      0.1194     0.1369            0
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_DC_z.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_DC_z.pdf
+
+--- FC ---
+  heatmap: min q 0.385767  max P 0.4137  q < 0.05: 0  missing 0
+  leaf order ['EMCI', 'AD', 'SMC', 'MCI', 'LMCI', 'CN']  cophenetic r 0.582
+  group   multivar q  multivar P  max ROI P  ROIs>=1.301
+  EMCI        0.7597      0.1194     0.4137            0
+  AD          0.1827      0.7382     0.4137            0
+  SMC         0.7597      0.1194     0.3271            0
+  MCI         0.1827      0.7382     0.4137            0
+  LMCI        0.7597      0.1194     0.3236            0
+  CN          0.7597      0.1194     0.3236            0
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_FC.png
+  wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\figures\pscore_grouptree_groupscore_FC.pdf
+
+wrote derivatives\INTRA_INTER_CLASS_HEATMAPS\v2_cohort116\diagnostic_group_hierarchical\csv\group_level_pscore_annotations.csv  (24 group annotations)
+heatmap totals: q < 0.05: 0 of 5904; max ROI P-score 0.9278 (threshold 1.3010)
+groups with multivariate q < 0.05: 0 of 24
+largest multivariate P-score: 0.8564 (threshold 1.3010) -> below threshold

@@ -1,0 +1,24 @@
+
+========================================================================
+PILOT REPRODUCTION CHECK (pilot directory is NOT written to)
+========================================================================
+reference (existing, untouched): /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers
+scratch output:                  /mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/PILOT_VERIFICATION/sub-019S4549_ses-01_run-01
+
+reprocessed in 3.3s
+  ALFF (246,)                  max|diff| = 0.000e+00   <=1e-10: True   <=1e-6: True
+  ReHo (246,)                  max|diff| = 0.000e+00   <=1e-10: True   <=1e-6: True
+  FC (246x246)                 max|diff| = 3.331e-16   <=1e-10: True   <=1e-6: True
+  DegreeCentrality (246,)      max|diff| = 1.776e-15   <=1e-10: True   <=1e-6: True
+  ROI timeseries (T,246)       max|diff| = 0.000e+00   <=1e-10: True   <=1e-6: True
+  FC strength (246,)           max|diff| = 9.888e-17   <=1e-10: True   <=1e-6: True
+  ROI voxel counts (246,)      max|diff| = 0.000e+00   <=1e-10: True   <=1e-6: True
+  aligned atlas labels         max|diff| = 0.000e+00   <=1e-10: True   <=1e-6: True
+
+worst max|diff| across all quantities: 1.776e-15
+all quantities match within 1e-10: True
+all quantities match within 1e-6:  True
+saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/BIOMARKER_DATASET_AUDIT/pilot_reproduction_check.csv
+
+PILOT_REPRODUCTION: PASS
+VERIFY_PILOT_DONE

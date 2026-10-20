@@ -1,0 +1,44 @@
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (366) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [MCI additions 4mm6mm] attempt 1 at Tue Oct 13 10:14:55 IST 2026 ===
+<3>WSL (404) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (404) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (404) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (404) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (404) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+    WSL available memory: 2501 MB
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (415) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+    C: free: 5855 MB
+<3>WSL (426) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (426) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (426) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (426) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (426) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+2026-10-13T04:45:01.602724 === MCI: 2 acquisitions to process (n_procs=1) ===
+2026-10-13T04:45:06.482093 template=/home/harish/.cache/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz
+2026-10-13T04:45:06.482595 WM/CSF mapping (template-level, precomputed): no_transform
+2026-10-13T04:51:00.788611 WARN sub-100S0296/ses-01/run-01  reg=10.0s warp=238.5s total=352.3s FD_mean=0.438 tSNR=154.3
+2026-10-13T04:54:34.622741 PASS sub-007S2394/ses-01/run-01  reg=10.4s warp=112.1s total=213.5s FD_mean=0.137 tSNR=275.2
+2026-10-13T04:54:35.123387 === MCI COMPLETE: 1 PASS, 1 WARN, 0 FAIL, 0 SKIPPED ===
+2026-10-13T04:54:35.124013 GROUP_MCI_DONE
+<3>WSL (738) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (738) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (738) ERROR: UtilTranslatePathList:2852: Failed to translate D:\app\dbhomeXE\bin
+<3>WSL (738) ERROR: UtilTranslatePathList:2852: Failed to translate E:\SOFTWARE\GIT\Git\cmd
+<3>WSL (738) ERROR: UtilTranslatePathList:2852: Failed to translate H:\Antigravity\bin
+=== [MCI additions 4mm6mm] DONE ===
+ Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:285: UserWarning: Resampling binary images with continuous or linear interpolation. This might lead to unexpected results. You might consider using nearest interpolation instead.
+  rr = resample_img(img_t, target_affine=tgt_aff, target_shape=tgt_shape,
+/mnt/c/Users/krish/FYP/pipeline/fsfast_production_4mm6mm.py:472: UserWarning: Casting data from int16 to float32
+  tpl4_res = resample_img(tpl_img, target_affine=tgt_aff, target_shape=tgt_shape,

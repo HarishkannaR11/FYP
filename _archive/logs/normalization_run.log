@@ -1,0 +1,14 @@
+
+========================================================================
+WITHIN-SUBJECT BIOMARKER NORMALIZATION
+========================================================================
+source (read-only): /mnt/c/Users/krish/FYP/derivatives/fsfast/<GROUP>/sub-*/ses-*/run-*/biomarkers/
+output:             /mnt/c/Users/krish/FYP/derivatives/biomarkers_normalized/<GROUP>/sub-*/ses-*/run-*/
+
+discovered 165 acquisitions with complete raw inputs; 0 incomplete
+filesystem agrees with expected counts (165)
+
+normalized=165  already_valid=0  failed=0  total=165
+saved: /mnt/c/Users/krish/FYP/derivatives/biomarkers_normalized/normalization_qc.csv
+saved: /mnt/c/Users/krish/FYP/derivatives/biomarkers_normalized/normalization_qc_report.md
+NORMALIZATION_DONE

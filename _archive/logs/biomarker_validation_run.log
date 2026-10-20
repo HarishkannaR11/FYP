@@ -1,0 +1,126 @@
+
+======================================================================
+1. ALFF -- independent read + verification
+======================================================================
+loaded: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/alff_roi_values.npy
+shape: (246,)
+NaN count: 0
+Inf count: 0
+negative values: 0
+every ROI (1-246) has a value: True (fixed-length vector, index i = ROI i+1)
+
+======================================================================
+2. ReHo -- independent read + verification
+======================================================================
+loaded: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/reho_roi_values.npy
+shape: (246,)
+NaN count: 0
+Inf count: 0
+missing ROIs: 0
+
+Neighborhood definition used by the original calculation (read from biomarker_metadata.json, not re-derived): 27-voxel (3x3x3 incl. center)
+reason recorded: Zang et al. 2004 original definition; AFNI 3dReHo / DPARSF default
+
+======================================================================
+3. FC -- independent read + recomputed statistics
+======================================================================
+loaded: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/fc_matrix.npy
+shape: (246, 246)
+NaN count: 0
+Inf count: 0
+minimum: -0.814370
+maximum: 1.000000
+mean: 0.009870
+median: -0.010077
+diagonal mean: 1.00000000
+diagonal minimum: 1.00000000
+diagonal maximum: 1.00000000
+symmetry error max(abs(FC - FC.T)): 1.110e-16
+diagonal approximately 1: True
+
+======================================================================
+4. Degree Centrality -- independently recomputed from fc_matrix.npy
+======================================================================
+Recomputing using EXACTLY the documented definition (from biomarker_metadata.json):
+  DC_i = sum_{j!=i} FC[i,j]  (weighted=True, signed=True, threshold=None)
+loaded saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/degree_centrality.npy  shape=(246,)
+recomputed shape: (246,)
+max absolute difference (saved vs. recomputed): 0.000e+00
+all 246 match within 1e-8: True
+saved (new validation-only artifact, does not touch original files): /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/validation_dc_comparison.csv
+
+======================================================================
+5. FC Regional Strength -- independently recomputed
+======================================================================
+Recomputing: FC_Strength(i) = mean(FC[i,j]) for j != i
+loaded saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/fc_regional_strength.csv  n=246
+max absolute difference (saved vs. recomputed): 9.888e-17
+all 246 match within 1e-8: True
+
+======================================================================
+6. Regional Biomarker Matrix -- independent read + verification
+======================================================================
+loaded: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/regional_biomarker_matrix.csv  shape=(246, 6)
+exactly 246 rows: True
+ROI IDs are exactly 1-246, each once: True
+duplicate ROI_ID rows: 0
+missing ROI count: 0
+
+regional_biomarker_matrix.ALFF == alff_roi_values.npy: True
+regional_biomarker_matrix.ReHo == reho_roi_values.npy: True
+regional_biomarker_matrix.DC == degree_centrality.npy: True
+regional_biomarker_matrix.FC_Strength == fc_regional_strength.csv: True
+
+======================================================================
+7. Cross-file consistency table
+======================================================================
+Metric                                     Expected          Actual   Status
+ALFF shape                                   (246,)          (246,)     PASS
+ALFF NaN                                          0               0     PASS
+ALFF Inf                                          0               0     PASS
+ALFF negative values                              0               0     PASS
+ReHo shape                                   (246,)          (246,)     PASS
+ReHo NaN                                          0               0     PASS
+ReHo Inf                                          0               0     PASS
+FC shape                                 (246, 246)      (246, 246)     PASS
+FC NaN                                            0               0     PASS
+FC Inf                                            0               0     PASS
+FC symmetry                                      ~0        1.11e-16     PASS
+FC diagonal ~1                                 True            True     PASS
+DC agreement (saved vs recomputed)  max diff < 1e-8        0.00e+00     PASS
+FC-strength agreement               max diff < 1e-8        9.89e-17     PASS
+ROI count                                       246             246     PASS
+Final matrix shape                         (246, 6)        (246, 6)     PASS
+Regional matrix internal consistency all 4 columns match source files            True     PASS
+
+saved (new validation-only artifact): /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-019S4549/ses-01/run-01/biomarkers/validation_crosscheck_table.csv
+
+======================================================================
+8. Scientific sanity check (distributions only, no good/bad judgment)
+======================================================================
+ALFF (raw amplitude units, not normalized):
+  min=28292.5 p25=56033.9 median=65980.1 p75=79448.2 max=127465.9
+ReHo (Kendall's W, bounded [0,1] by construction):
+  min=0.3198 p25=0.4261 median=0.4685 p75=0.5104 max=0.6803
+  all values within theoretical [0,1] bound: True
+Degree Centrality (signed, weighted sum of 245 correlations):
+  min=-16.84 median=2.83 max=12.94
+FC off-diagonal distribution:
+  min=-0.8144 median=-0.0117 max=0.9701 fraction negative=0.516
+
+any constant-value ALFF array (all ROIs identical, suspicious): False
+ALFF ROIs >5xIQR from median (candidate outliers, not flagged as errors): 0 -- []
+ReHo ROIs >5xIQR from median: 0
+
+Methodological choices in effect (documented in biomarker_metadata.json, repeated here for transparency): ALFF computed on already-band-pass-filtered data (not raw spectrum); ReHo uses 27-voxel neighborhood restricted to in-mask voxels near boundaries; DC/FC use signed, unthresholded Pearson correlations with no absolute-value transform.
+
+This section is a mathematical/statistical description only -- it is NOT a scientific claim about whether these values are biologically meaningful or diagnostically useful.
+
+======================================================================
+FINAL STATUS
+======================================================================
+STATUS: PASS
+REASON: Every mathematical/structural validation check (shapes, NaN/Inf, symmetry, diagonal, DC agreement, FC-strength agreement, internal cross-file consistency) passed.
+
+No files were modified. No preprocessing was rerun. No biomarker outputs were regenerated. No other subject was processed.
+BIOMARKER_VALIDATION_DONE

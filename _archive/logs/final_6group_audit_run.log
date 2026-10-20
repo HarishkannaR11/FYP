@@ -1,0 +1,46 @@
+======================================================================
+SECTION A -- SCAN ALL SIX GROUPS
+======================================================================
+
+--- AD ---
+  expected=25  acquisition_dirs=25  completed_valid=25  failed/incomplete=0
+
+--- CN_Final ---
+  expected=29  acquisition_dirs=29  completed_valid=27  failed/incomplete=2
+
+--- EMCI ---
+  expected=30  acquisition_dirs=30  completed_valid=29  failed/incomplete=1
+
+--- LMCI ---
+  expected=22  acquisition_dirs=22  completed_valid=21  failed/incomplete=1
+
+--- MCI ---
+  expected=35  acquisition_dirs=35  completed_valid=32  failed/incomplete=3
+
+--- SMC_Final ---
+  expected=32  acquisition_dirs=32  completed_valid=31  failed/incomplete=1
+
+Total duplicate-check keys with count>1: 0 (should be 0)
+
+======================================================================
+SECTION B -- BRAINNETOME-246 COVERAGE (computed once, shared grid)
+======================================================================
+reference grid taken from: /mnt/c/Users/krish/FYP/derivatives/fsfast/AD/sub-002S5018/ses-01/run-01/sub-002S5018_ses-01_task-rest_run-01_desc-preproc_bold.nii.gz
+Grid identical across all six groups (sampled): True
+Brainnetome coverage: {'rois_present': 246, 'zero_voxel_rois': 0, 'lt5_voxel_rois': 0, 'lt10_voxel_rois': 0, 'min_roi_voxels': 10, 'median_roi_voxels': 68.0, 'max_roi_voxels': 186}
+(This applies identically to every completed acquisition in every group, since all acquisitions register onto the exact same template-derived 4mm grid -- verified above.)
+
+======================================================================
+SECTION C -- WRITING OUTPUTS
+======================================================================
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_inventory.csv (6 rows)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_processing_status.csv (165 rows)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_qc_summary.csv (165 rows)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_data_integrity.csv (165 rows)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_motion_summary.csv (165 rows)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_brainnetome_summary.csv (246 rows)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_failures.csv (8 rows)
+  saved: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/dataset_exclusions.csv (2 rows)
+
+report written: /mnt/c/Users/krish/FYP/derivatives/fsfast/FINAL_6GROUP_AUDIT/FINAL_6GROUP_AUDIT_REPORT.md
+FINAL_6GROUP_AUDIT_DONE
