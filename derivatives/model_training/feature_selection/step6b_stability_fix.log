@@ -1,0 +1,26 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step6b_stability_fix: stability selection re-run (bug fix)
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  Stability_k10              dc            246->10     0.164+/-0.032    0.142  1.742  +0.187  0.17 5-6  573s
+  Stability_k20              dc            246->20     0.173+/-0.027    0.156  1.759  +0.178  0.23 5-6  790s
+  Stability_k50              dc            246->50     0.178+/-0.037    0.160  1.811  +0.126  0.33 5-6  560s
+  Stability_k10              regional      738->10     0.221+/-0.041    0.192  1.754  +0.129  0.15 4-6  2473s
+  Stability_k20              regional      738->20     0.196+/-0.043    0.177  1.732  +0.193  0.17 4-6  5872s
+  Stability_k50              regional      738->50     0.211+/-0.028    0.187  1.822  +0.142  0.21 5-6  7411s
+  Stability_k10              fc_blocks     300->10     0.189+/-0.031    0.175  2.052  -0.117  0.20 5-6  1543s
+  Stability_k20              fc_blocks     300->20     0.201+/-0.047    0.188  1.987  -0.068  0.24 4-6  1573s
+  Stability_k50              fc_blocks     300->50     0.177+/-0.034    0.151  2.036  -0.117  0.30 5-6  1343s
+
+  best in step6b_stability_fix: Stability_k10|regional  bal.acc 0.221 +/- 0.041

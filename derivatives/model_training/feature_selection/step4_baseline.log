@@ -1,0 +1,40 @@
+======================================================================================
+FEATURE-SELECTION HARNESS -- steps 2, 3 and 4
+======================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1"}
+
+[STEP 2] DATA AND SPLIT CHECK
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  views (rows = 81 pool subjects only): alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135
+  pool class counts: CN=14, SMC=14, EMCI=14, MCI=11, LMCI=14, AD=14
+  test set: 35 subjects, feature rows NOT loaded into memory
+
+[STEP 3] FOLD PLAN vs FINGERPRINTS FROM THE EARLIER ABLATION RUN
+  seed 20261015  9d88243dd033155e  expected 9d88243dd033155e  MATCH  val sizes [17, 16, 16, 16, 16]
+  seed 20261016  cb9c36eccb7d4496  expected cb9c36eccb7d4496  MATCH  val sizes [17, 16, 16, 16, 16]
+  seed 20261017  09525a6309ccdf34  expected 09525a6309ccdf34  MATCH  val sizes [17, 16, 16, 16, 16]
+  seed 20261018  ca297c0daac768d3  expected ca297c0daac768d3  MATCH  val sizes [17, 16, 16, 16, 16]
+  seed 20261019  bc396eacad3893f2  expected bc396eacad3893f2  MATCH  val sizes [17, 16, 16, 16, 16]
+
+[STEP 4] BASELINES AND SHUFFLED-LABEL CONTROLS (25 folds each, no reduction)
+  chance for 6 balanced classes = 0.167
+  reference (earlier torch MLP, DC_z only, no reduction): bal.acc 0.307 +/- 0.029
+  note: torch is not installed here, so the reference is compared, not re-run
+
+  method                            bal.acc accuracy  macroF1    MAE     QWK   cls  time
+  majority                   0.167+/-0.000    0.135    0.040  2.257  +0.000 1-1  0s
+  logreg_dc                  0.168+/-0.026    0.170    0.149  1.887  +0.086 5-6  0s
+  logreg_dc_SHUFFLED         0.162+/-0.049    0.158    0.139  2.008  +0.004 4-6  0s
+  mlp_dc                     0.181+/-0.042    0.181    0.162  1.878  +0.105 4-6  2s
+  mlp_dc_SHUFFLED            0.160+/-0.030    0.158    0.139  1.927  +0.049 4-6  2s
+  logreg_regional            0.176+/-0.008    0.173    0.157  1.754  +0.192 4-6  0s
+  logreg_regional_SHUFFLED   0.160+/-0.018    0.156    0.139  2.016  -0.006 4-6  0s
+
+  leak check: every SHUFFLED row must sit near chance (0.167)
+    logreg_dc_SHUFFLED         0.162  OK (near chance)
+    mlp_dc_SHUFFLED            0.160  OK (near chance)
+    logreg_regional_SHUFFLED   0.160  OK (near chance)

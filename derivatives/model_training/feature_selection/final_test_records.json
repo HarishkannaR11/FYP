@@ -1,0 +1,271 @@
+{
+ "extra": {
+  "frozen": [
+   [
+    "PCA_k10",
+    "regional"
+   ],
+   [
+    "L1_k10",
+    "regional"
+   ],
+   [
+    "QUBO-qaoa_k8",
+    "regional"
+   ]
+  ],
+  "control": {
+   "PCA_k10|regional": {
+    "bal_acc": [
+     0.16666666666666666,
+     0.022222222222222213
+    ],
+    "near_chance": true
+   },
+   "L1_k10|regional": {
+    "bal_acc": [
+     0.16999999999999998,
+     0.04708804466759352
+    ],
+    "near_chance": true
+   },
+   "QUBO-qaoa_k8|regional": {
+    "bal_acc": [
+     0.16111111111111107,
+     0.026527414191807378
+    ],
+    "near_chance": true
+   }
+  },
+  "test": {
+   "PCA_k10|regional": {
+    "accuracy": 0.17142857142857143,
+    "balanced_accuracy": 0.1722222222222222,
+    "macro_f1": 0.1775252525252525,
+    "mae_stages": 1.8571428571428572,
+    "qwk": 0.07737704918032784,
+    "n_predicted_classes": 6,
+    "per_class_recall": {
+     "CN": 0.3333333333333333,
+     "SMC": 0.16666666666666666,
+     "EMCI": 0.0,
+     "MCI": 0.2,
+     "LMCI": 0.16666666666666666,
+     "AD": 0.16666666666666666
+    },
+    "n_features_in": 738,
+    "n_features_out": 10,
+    "confusion_matrix": [
+     [
+      2,
+      0,
+      1,
+      1,
+      0,
+      2
+     ],
+     [
+      0,
+      1,
+      2,
+      0,
+      0,
+      3
+     ],
+     [
+      2,
+      1,
+      0,
+      1,
+      1,
+      1
+     ],
+     [
+      0,
+      0,
+      2,
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      0,
+      0,
+      3,
+      1,
+      1
+     ]
+    ]
+   },
+   "L1_k10|regional": {
+    "accuracy": 0.22857142857142856,
+    "balanced_accuracy": 0.22777777777777775,
+    "macro_f1": 0.20961538461538462,
+    "mae_stages": 1.7428571428571429,
+    "qwk": 0.1723446893787578,
+    "n_predicted_classes": 6,
+    "per_class_recall": {
+     "CN": 0.3333333333333333,
+     "SMC": 0.0,
+     "EMCI": 0.16666666666666666,
+     "MCI": 0.2,
+     "LMCI": 0.3333333333333333,
+     "AD": 0.3333333333333333
+    },
+    "n_features_in": 738,
+    "n_features_out": 10,
+    "selected_features": [
+     "A45r_R|DC_z",
+     "A12/47l_R|mReHo",
+     "A4tl_R|mALFF",
+     "A20il_R|DC_z",
+     "A37vl_L|mReHo",
+     "A37mv_L|mALFF",
+     "A40rd_R|DC_z",
+     "A40rv_L|mALFF",
+     "vmPu_L|mReHo",
+     "mPFtha_R|mReHo"
+    ],
+    "confusion_matrix": [
+     [
+      2,
+      0,
+      2,
+      0,
+      2,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      3,
+      2,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      0,
+      1,
+      1,
+      2,
+      1
+     ],
+     [
+      2,
+      0,
+      0,
+      1,
+      1,
+      2
+     ]
+    ]
+   },
+   "QUBO-qaoa_k8|regional": {
+    "accuracy": 0.22857142857142856,
+    "balanced_accuracy": 0.2333333333333333,
+    "macro_f1": 0.21212861212861212,
+    "mae_stages": 1.7714285714285714,
+    "qwk": 0.06966983771684376,
+    "n_predicted_classes": 6,
+    "per_class_recall": {
+     "CN": 0.16666666666666666,
+     "SMC": 0.0,
+     "EMCI": 0.3333333333333333,
+     "MCI": 0.4,
+     "LMCI": 0.16666666666666666,
+     "AD": 0.3333333333333333
+    },
+    "n_features_in": 738,
+    "n_features_out": 8,
+    "selected_features": [
+     "mOccG_L|DC_z",
+     "A40rd_R|DC_z",
+     "A4tl_R|mALFF",
+     "A39rd_L|mALFF",
+     "A37vl_L|mReHo",
+     "A37dl_R|DC_z",
+     "mOccG_R|DC_z",
+     "NAC_L|mReHo"
+    ],
+    "confusion_matrix": [
+     [
+      1,
+      0,
+      2,
+      0,
+      1,
+      2
+     ],
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      1,
+      2,
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      0,
+      1,
+      2,
+      2,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      2,
+      1,
+      1
+     ],
+     [
+      0,
+      0,
+      0,
+      2,
+      2,
+      2
+     ]
+    ]
+   }
+  },
+  "test_set_touched": true
+ },
+ "records": []
+}

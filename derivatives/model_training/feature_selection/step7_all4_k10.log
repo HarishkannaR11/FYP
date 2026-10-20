@@ -1,0 +1,26 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step7: QUBO feature selection: exact, simulated annealing, QAOA, random
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1", "qiskit": "2.6.0", "qiskit-aer": "0.17.2", "dimod": "0.12.22", "dwave-neal": "0.6.0"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300, all4=984
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  QUBO-exact_k10             all4          984->10     0.164+/-0.042    0.147  1.896  +0.042  0.10 4-6  36s
+      solver: {"hit_optimum_frac": 1.0, "mean_cost_gap": 0.0, "mean_solve_s": 0.006538858413696289}
+  QUBO-sa_k10                all4          984->10     0.150+/-0.039    0.132  1.890  +0.051  0.10 5-6  43s
+      solver: {"hit_optimum_frac": 0.4, "mean_cost_gap": 0.006764353880150224, "mean_solve_s": 0.37029568672180174}
+  QUBO-qaoa_k10              all4          984->10     0.160+/-0.035    0.140  1.944  +0.008  0.09 5-6  6990s
+      solver: {"hit_optimum_frac": 0.04, "mean_cost_gap": 0.06323218520560679, "mean_solve_s": 277.5700309753418, "mean_feasible_shot_frac": 0.193095703125, "fallbacks": 0}
+  QUBO-random_k10            all4          984->10     0.176+/-0.037    0.152  1.843  +0.082  0.07 5-6  128s
+      solver: {"hit_optimum_frac": 0.0, "mean_cost_gap": 0.4127763708383438, "mean_solve_s": 0.001243581771850586}
+  mRMR-greedy-pool20_k10     all4          984->10     0.161+/-0.040    0.145  1.891  +0.045  0.10 4-6  2s
+
+  best in step7: QUBO-random_k10|all4  bal.acc 0.176 +/- 0.037

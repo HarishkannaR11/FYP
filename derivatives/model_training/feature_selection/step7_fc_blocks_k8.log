@@ -1,0 +1,26 @@
+================================================================================================
+FEATURE-SELECTION STUDY -- step7: QUBO feature selection: exact, simulated annealing, QAOA, random
+================================================================================================
+versions: {"python": "3.13.9", "numpy": "2.5.3", "scipy": "1.16.3", "scikit-learn": "1.9.1", "qiskit": "2.6.0", "qiskit-aer": "0.17.2", "dimod": "0.12.22", "dwave-neal": "0.6.0"}
+  PASS  pool size 81
+  PASS  test size 35
+  PASS  split fingerprint
+  PASS  pool class counts match metadata
+  PASS  no test rows in memory
+  PASS  fold fingerprints match
+  views: alff=246, reho=246, dc=246, regional=738, fc_summary=246, fc_edges=30135, fc_blocks=300
+  classifier for every method: LogisticRegression(C=0.05, class_weight=balanced)
+  chance = 0.167; clean no-reduction baselines: logreg DC 0.168, logreg regional 0.176, MLP DC 0.181
+
+  method                     view         feat in->out        bal.acc  macroF1    MAE     QWK  stab   cls  time
+  QUBO-exact_k8              fc_blocks     300->8      0.160+/-0.014    0.148  2.050  -0.089  0.20 4-6  57s
+      solver: {"hit_optimum_frac": 1.0, "mean_cost_gap": 0.0, "mean_solve_s": 0.014866514205932617}
+  QUBO-sa_k8                 fc_blocks     300->8      0.170+/-0.010    0.158  2.041  -0.087  0.19 4-6  65s
+      solver: {"hit_optimum_frac": 0.52, "mean_cost_gap": 0.012882397301412994, "mean_solve_s": 0.38041168212890625}
+  QUBO-qaoa_k8               fc_blocks     300->8      0.172+/-0.058    0.156  2.051  -0.093  0.18 4-6  3374s
+      solver: {"hit_optimum_frac": 0.04, "mean_cost_gap": 0.09368777595751694, "mean_solve_s": 133.0064839553833, "mean_feasible_shot_frac": 0.209365234375, "fallbacks": 0}
+  QUBO-random_k8             fc_blocks     300->8      0.139+/-0.013    0.115  2.115  -0.153  0.10 4-6  50s
+      solver: {"hit_optimum_frac": 0.0, "mean_cost_gap": 0.4695701212143362, "mean_solve_s": 0.0005739116668701172}
+  mRMR-greedy-pool20_k8      fc_blocks     300->8      0.160+/-0.024    0.149  2.064  -0.091  0.19 4-6  0s
+
+  best in step7: QUBO-qaoa_k8|fc_blocks  bal.acc 0.172 +/- 0.058
