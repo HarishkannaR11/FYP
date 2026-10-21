@@ -1,0 +1,77 @@
+MODEL COMPARISON (seed-pooled out-of-fold metrics)
+  Transformer C0 (rerun, logged): accuracy 19.8% (sd 1.1), balanced 19.6% (seed sd 1.2, fold sd 5.4, 95% CI 16.5-22.9), macro-F1 16.7%, QWK +0.090, seeds 5, predictions 580
+  Transformer k=50 (earlier saved run): accuracy 19.8% (sd 1.1), balanced 19.6% (seed sd 1.2, fold sd 5.4, 95% CI 16.5-22.9), macro-F1 16.7%, QWK +0.090, seeds 5, predictions 580
+  Transformer, all 246 ROI tokens (earlier): accuracy 19.1% (sd 2.3), balanced 19.4% (seed sd 2.4, fold sd 5.8, 95% CI 15.4-23.5), macro-F1 15.2%, QWK +0.117, seeds 5, predictions 580
+  TabPFN k=50 (earlier saved run): accuracy 25.2% (sd 1.0), balanced 24.6% (seed sd 1.1, fold sd 8.2, 95% CI 20.5-29.0), macro-F1 23.5%, QWK +0.229, seeds 5, predictions 580
+  TabPFN k=25 (leakage-safe grid): accuracy 26.4% (sd 0.8), balanced 25.8% (seed sd 0.7, fold sd 7.4, 95% CI 20.9-30.7), macro-F1 25.1%, QWK +0.208, seeds 3, predictions 348
+  TabPFN k=50 (leakage-safe grid): accuracy 25.6% (sd 0.4), balanced 25.1% (seed sd 0.5, fold sd 8.7, 95% CI 20.3-30.2), macro-F1 24.3%, QWK +0.225, seeds 3, predictions 348
+  TabPFN k=100 (leakage-safe grid): accuracy 22.7% (sd 2.2), balanced 22.3% (seed sd 2.1, fold sd 7.5, 95% CI 17.6-27.3), macro-F1 21.2%, QWK +0.230, seeds 3, predictions 348
+  TabPFN k=150 (leakage-safe grid): accuracy 26.7% (sd 2.4), balanced 26.4% (seed sd 2.6, fold sd 10.3, 95% CI 21.3-31.6), macro-F1 24.9%, QWK +0.218, seeds 3, predictions 348
+  TabPFN k=246 (leakage-safe grid): accuracy 27.0% (sd 1.8), balanced 26.5% (seed sd 1.8, fold sd 9.0, 95% CI 21.4-31.8), macro-F1 25.2%, QWK +0.229, seeds 3, predictions 348
+  Transformer C1: lr 3e-4: accuracy 16.4% (sd 0.0), balanced 16.0% (seed sd 0.2, fold sd 6.8, 95% CI 11.8-20.7), macro-F1 13.9%, QWK -0.035, seeds 2, predictions 232
+  Transformer C2: lr 3e-3: accuracy 19.8% (sd 0.9), balanced 19.5% (seed sd 0.7, fold sd 6.7, 95% CI 14.9-24.3), macro-F1 17.0%, QWK +0.131, seeds 2, predictions 232
+  Transformer C3: dropout 0.1: accuracy 20.3% (sd 1.3), balanced 20.3% (seed sd 1.6, fold sd 7.3, 95% CI 14.8-26.2), macro-F1 18.5%, QWK +0.103, seeds 2, predictions 232
+  Transformer C4: weight decay 1e-1: accuracy 19.0% (sd 0.9), balanced 18.5% (seed sd 1.0, fold sd 5.2, 95% CI 14.1-23.2), macro-F1 15.8%, QWK +0.098, seeds 2, predictions 232
+  Transformer C5: larger (d32, 4 heads, 2 layers): accuracy 21.1% (sd 0.4), balanced 20.8% (seed sd 0.4, fold sd 7.8, 95% CI 16.2-25.9), macro-F1 18.0%, QWK +0.133, seeds 2, predictions 232
+  Transformer C0, no early stopping (epoch 60): accuracy 17.4% (sd 1.1), balanced 17.2% (seed sd 1.2, fold sd 6.2, 95% CI 14.5-20.2), macro-F1 15.6%, QWK +0.087, seeds 5, predictions 580
+  Transformer, configuration chosen per split by inner CV: accuracy 22.0% (sd 2.2), balanced 21.7% (seed sd 2.1, fold sd 7.1, 95% CI 17.4-26.2), macro-F1 19.4%, QWK +0.134, seeds 2, predictions 232
+
+PAIRED (balanced accuracy, A - B, identical folds)
+  Transformer C0 (rerun, logged)  vs  TabPFN k=50 (earlier saved run): -5.0 [-10.3, +0.0], seeds A better 0/5 -> no significant difference
+  Transformer, all 246 ROI tokens (earlier)  vs  Transformer C0 (rerun, logged): -0.2 [-5.3, +5.0], seeds A better 3/5 -> no significant difference
+  Transformer, configuration chosen per split by inner CV  vs  Transformer C0 (rerun, logged): +3.1 [-1.8, +8.1], seeds A better 2/2 -> no significant difference
+  Transformer, configuration chosen per split by inner CV  vs  TabPFN k=50 (earlier saved run): -3.2 [-9.3, +3.0], seeds A better 0/2 -> no significant difference
+  Transformer C0, no early stopping (epoch 60)  vs  Transformer C0 (rerun, logged): -2.4 [-5.9, +1.2], seeds A better 0/5 -> no significant difference
+  Transformer C1: lr 3e-4  vs  Transformer C0 (rerun, logged): -2.5 [-8.3, +3.3], seeds A better 0/2 -> no significant difference
+  Transformer C2: lr 3e-3  vs  Transformer C0 (rerun, logged): +0.9 [-3.6, +5.7], seeds A better 1/2 -> no significant difference
+  Transformer C3: dropout 0.1  vs  Transformer C0 (rerun, logged): +1.8 [-3.3, +7.3], seeds A better 2/2 -> no significant difference
+  Transformer C4: weight decay 1e-1  vs  Transformer C0 (rerun, logged): +0.0 [-3.3, +3.3], seeds A better 1/2 -> no significant difference
+  Transformer C5: larger (d32, 4 heads, 2 layers)  vs  Transformer C0 (rerun, logged): +2.3 [-2.8, +7.6], seeds A better 2/2 -> no significant difference
+  Transformer C1: lr 3e-4  vs  TabPFN k=50 (earlier saved run): -8.9 [-16.1, -1.5], seeds A better 0/2 -> second better
+  Transformer C2: lr 3e-3  vs  TabPFN k=50 (earlier saved run): -5.4 [-12.2, +1.3], seeds A better 0/2 -> no significant difference
+  Transformer C3: dropout 0.1  vs  TabPFN k=50 (earlier saved run): -4.6 [-12.1, +2.6], seeds A better 0/2 -> no significant difference
+  Transformer C4: weight decay 1e-1  vs  TabPFN k=50 (earlier saved run): -6.4 [-13.5, +0.4], seeds A better 0/2 -> no significant difference
+  Transformer C5: larger (d32, 4 heads, 2 layers)  vs  TabPFN k=50 (earlier saved run): -4.1 [-10.8, +2.6], seeds A better 0/2 -> no significant difference
+  TabPFN k=25 (leakage-safe grid)  vs  Transformer C0 (rerun, logged): +6.8 [+1.0, +12.7], seeds A better 3/3 -> first better
+  TabPFN k=50 (leakage-safe grid)  vs  Transformer C0 (rerun, logged): +6.1 [+0.6, +11.9], seeds A better 3/3 -> first better
+  TabPFN k=100 (leakage-safe grid)  vs  Transformer C0 (rerun, logged): +3.3 [-2.4, +9.0], seeds A better 3/3 -> no significant difference
+  TabPFN k=150 (leakage-safe grid)  vs  Transformer C0 (rerun, logged): +7.4 [+1.5, +13.3], seeds A better 3/3 -> first better
+  TabPFN k=246 (leakage-safe grid)  vs  Transformer C0 (rerun, logged): +7.4 [+1.5, +13.6], seeds A better 3/3 -> first better
+
+FIT DIAGNOSIS per configuration (inner models)
+  C0: n 100, best epoch median 14 (IQR 7-24), best <= 5: 19%, train bal at best 27.2%, val bal at best 32.8%, outer bal at best 18.9%, train bal final 42.2%, val bal final 23.9%, val-loss min epoch median 30, val loss min 1.705 -> final 1.968, epoch-to-epoch val jitter 4.5 pts, overfit later 14%
+  C1: n 40, best epoch median 12 (IQR 4-31), best <= 5: 32%, train bal at best 22.3%, val bal at best 29.2%, outer bal at best 16.9%, train bal final 30.8%, val bal final 24.2%, val-loss min epoch median 60, val loss min 1.744 -> final 1.751, epoch-to-epoch val jitter 3.1 pts, overfit later 0%
+  C2: n 40, best epoch median 14 (IQR 10-19), best <= 5: 8%, train bal at best 33.5%, val bal at best 36.8%, outer bal at best 18.1%, train bal final 60.6%, val bal final 25.1%, val-loss min epoch median 18, val loss min 1.663 -> final 2.406, epoch-to-epoch val jitter 5.9 pts, overfit later 70%
+  C3: n 40, best epoch median 16 (IQR 10-26), best <= 5: 10%, train bal at best 36.3%, val bal at best 36.9%, outer bal at best 18.6%, train bal final 69.1%, val bal final 26.4%, val-loss min epoch median 24, val loss min 1.664 -> final 2.005, epoch-to-epoch val jitter 5.1 pts, overfit later 78%
+  C4: n 40, best epoch median 18 (IQR 9-27), best <= 5: 20%, train bal at best 28.1%, val bal at best 35.2%, outer bal at best 18.5%, train bal final 42.2%, val bal final 25.4%, val-loss min epoch median 35, val loss min 1.665 -> final 1.896, epoch-to-epoch val jitter 4.8 pts, overfit later 12%
+  C5: n 40, best epoch median 14 (IQR 10-20), best <= 5: 10%, train bal at best 33.5%, val bal at best 35.8%, outer bal at best 19.3%, train bal final 60.9%, val bal final 26.1%, val-loss min epoch median 17, val loss min 1.668 -> final 2.301, epoch-to-epoch val jitter 5.5 pts, overfit later 68%
+
+LOSS GAP (validation - training) and validation metrics, per configuration (all splits run)
+  C0: gap at best epoch +0.048 (sd 0.070), gap at epoch 60 +0.592 (sd 0.298); inner-val bal at best 32.8% (sd 4.3), inner-val F1 at best 24.4%; held-out bal 19.6% (sd 5.5), held-out F1 12.9% (sd 5.0); splits 25
+  C1: gap at best epoch +0.005 (sd 0.016), gap at epoch 60 +0.057 (sd 0.061); inner-val bal at best 29.2% (sd 2.9), inner-val F1 at best 20.3%; held-out bal 16.1% (sd 7.1), held-out F1 9.7% (sd 5.1); splits 10
+  C2: gap at best epoch +0.173 (sd 0.232), gap at epoch 60 +1.490 (sd 0.521); inner-val bal at best 36.8% (sd 4.3), inner-val F1 at best 29.2%; held-out bal 19.4% (sd 7.1), held-out F1 14.8% (sd 6.5); splits 10
+  C3: gap at best epoch +0.113 (sd 0.159), gap at epoch 60 +1.118 (sd 0.353); inner-val bal at best 36.9% (sd 5.2), inner-val F1 at best 29.7%; held-out bal 20.3% (sd 7.7), held-out F1 16.1% (sd 6.7); splits 10
+  C4: gap at best epoch +0.043 (sd 0.065), gap at epoch 60 +0.523 (sd 0.309); inner-val bal at best 35.2% (sd 4.9), inner-val F1 at best 26.9%; held-out bal 18.6% (sd 5.5), held-out F1 12.6% (sd 5.2); splits 10
+  C5: gap at best epoch +0.145 (sd 0.168), gap at epoch 60 +1.325 (sd 0.392); inner-val bal at best 35.8% (sd 2.9), inner-val F1 at best 28.6%; held-out bal 20.6% (sd 8.2), held-out F1 15.5% (sd 6.8); splits 10
+
+CONSISTENCY vs C0 (same splits; held-out = outer fold, never used for any choice)
+  C1 (lr 3e-4): held-out bal -2.5 pts, up in 1/10 splits (sign p 0.38); held-out F1 -2.3; inner-val bal -6.4; TRAIN bal -6.7; gap at best -0.052; seed-pooled diff -2.5 CI [-0.0833, 0.0333]; consistent gain: False
+  C2 (lr 3e-3): held-out bal +0.8 pts, up in 5/10 splits (sign p 0.73); held-out F1 +2.8; inner-val bal +1.2; TRAIN bal +4.5; gap at best +0.116; seed-pooled diff +0.9 CI [-0.0365, 0.0573]; consistent gain: False
+  C3 (dropout 0.1): held-out bal +1.7 pts, up in 5/10 splits (sign p 0.73); held-out F1 +4.1; inner-val bal +1.3; TRAIN bal +7.3; gap at best +0.056; seed-pooled diff +1.8 CI [-0.0333, 0.0729]; consistent gain: False
+  C4 (weight decay 1e-1): held-out bal +0.0 pts, up in 2/10 splits (sign p 1.00); held-out F1 +0.6; inner-val bal -0.4; TRAIN bal -0.8; gap at best -0.014; seed-pooled diff +0.0 CI [-0.0333, 0.0333]; consistent gain: False
+  C5 (larger (d32, 4 heads, 2 layers)): held-out bal +1.9 pts, up in 6/10 splits (sign p 0.75); held-out F1 +3.5; inner-val bal +0.2; TRAIN bal +4.5; gap at best +0.087; seed-pooled diff +2.3 CI [-0.0282, 0.076]; consistent gain: False
+
+CONFIG CHOSEN PER SPLIT (inner CV): {"C2": 4, "C5": 3, "C3": 3}
+
+MATCHED HELD-OUT COMPARISON on the seeds every configuration shares [20261015, 20261016] (10 identical outer splits)
+  TabPFN k=50 (earlier saved run): held-out bal 24.9% CI [0.1906, 0.3104], macro-F1 24.4%, fold bal sd 9.7 (range 8-42), recall CN 18, SMC 28, EMCI 25, MCI 9, LMCI 15, AD 55
+  Transformer C0 (rerun, logged): held-out bal 18.5% CI [0.1417, 0.2292], macro-F1 15.2%, fold bal sd 4.5 (range 8-25), recall CN 15, SMC 18, EMCI 15, MCI 6, LMCI 0, AD 57
+  Transformer C1: lr 3e-4: held-out bal 16.0% CI [0.1177, 0.2073], macro-F1 13.9%, fold bal sd 6.8 (range 4-25), recall CN 25, SMC 28, EMCI 5, MCI 6, LMCI 10, AD 22
+  Transformer C2: lr 3e-3: held-out bal 19.5% CI [0.149, 0.2427], macro-F1 17.0%, fold bal sd 6.7 (range 8-33), recall CN 2, SMC 20, EMCI 22, MCI 9, LMCI 8, AD 55
+  Transformer C3: dropout 0.1: held-out bal 20.3% CI [0.1479, 0.2625], macro-F1 18.5%, fold bal sd 7.3 (range 8-29), recall CN 5, SMC 15, EMCI 25, MCI 22, LMCI 10, AD 45
+  Transformer C4: weight decay 1e-1: held-out bal 18.5% CI [0.1406, 0.2323], macro-F1 15.8%, fold bal sd 5.2 (range 12-29), recall CN 12, SMC 15, EMCI 25, MCI 6, LMCI 2, AD 50
+  Transformer C5: larger (d32, 4 heads, 2 layers): held-out bal 20.8% CI [0.1625, 0.2594], macro-F1 18.0%, fold bal sd 7.8 (range 8-33), recall CN 0, SMC 10, EMCI 30, MCI 12, LMCI 18, AD 55
+  Transformer, configuration chosen per split by inner CV: held-out bal 21.7% CI [0.174, 0.2625], macro-F1 19.4%, fold bal sd 7.1 (range 8-33), recall CN 2, SMC 20, EMCI 22, MCI 12, LMCI 15, AD 57
+  Transformer C0, no early stopping (epoch 60): held-out bal 17.4% CI [0.1323, 0.2219], macro-F1 15.6%, fold bal sd 4.6 (range 8-26), recall CN 2, SMC 12, EMCI 20, MCI 9, LMCI 12, AD 48
+
+REPRODUCTION: {"transformer_C0_vs_earlier": {"splits": 25, "identical": 25}, "tabpfn_k50_grid_vs_earlier": {"splits": 15, "identical": 15}}

@@ -1,0 +1,21 @@
+A,B,seeds,diff,ci,seeds_better,n_seeds,verdict
+"Transformer C0 (rerun, logged)",TabPFN k=50 (earlier saved run),"[20261015, 20261016, 20261017, 20261018, 20261019]",-0.05,"[-0.10291666666666666, 0.00041666666666664853]",0,5,no significant difference
+"Transformer, all 246 ROI tokens (earlier)","Transformer C0 (rerun, logged)","[20261015, 20261016, 20261017, 20261018, 20261019]",-0.0020833333333333537,"[-0.05292708333333333, 0.05000000000000002]",3,5,no significant difference
+"Transformer, configuration chosen per split by inner CV","Transformer C0 (rerun, logged)","[20261015, 20261016]",0.031249999999999972,"[-0.017708333333333326, 0.08127604166666653]",2,2,no significant difference
+"Transformer, configuration chosen per split by inner CV",TabPFN k=50 (earlier saved run),"[20261015, 20261016]",-0.03229166666666668,"[-0.09273437500000001, 0.03020833333333328]",0,2,no significant difference
+"Transformer C0, no early stopping (epoch 60)","Transformer C0 (rerun, logged)","[20261015, 20261016, 20261017, 20261018, 20261019]",-0.024166666666666677,"[-0.05874999999999997, 0.011666666666666633]",0,5,no significant difference
+Transformer C1: lr 3e-4,"Transformer C0 (rerun, logged)","[20261015, 20261016]",-0.02500000000000001,"[-0.08333333333333331, 0.033333333333333354]",0,2,no significant difference
+Transformer C2: lr 3e-3,"Transformer C0 (rerun, logged)","[20261015, 20261016]",0.00937499999999998,"[-0.036458333333333315, 0.057291666666666685]",1,2,no significant difference
+Transformer C3: dropout 0.1,"Transformer C0 (rerun, logged)","[20261015, 20261016]",0.017708333333333326,"[-0.033333333333333326, 0.07291666666666669]",2,2,no significant difference
+Transformer C4: weight decay 1e-1,"Transformer C0 (rerun, logged)","[20261015, 20261016]",0.0,"[-0.033333333333333354, 0.033333333333333354]",1,2,no significant difference
+"Transformer C5: larger (d32, 4 heads, 2 layers)","Transformer C0 (rerun, logged)","[20261015, 20261016]",0.022916666666666682,"[-0.028151041666666703, 0.07604166666666665]",2,2,no significant difference
+Transformer C1: lr 3e-4,TabPFN k=50 (earlier saved run),"[20261015, 20261016]",-0.08854166666666666,"[-0.16145833333333334, -0.014557291666666786]",0,2,second better
+Transformer C2: lr 3e-3,TabPFN k=50 (earlier saved run),"[20261015, 20261016]",-0.05416666666666667,"[-0.12190104166666667, 0.012500000000000011]",0,2,no significant difference
+Transformer C3: dropout 0.1,TabPFN k=50 (earlier saved run),"[20261015, 20261016]",-0.04583333333333332,"[-0.12083333333333332, 0.026041666666666685]",0,2,no significant difference
+Transformer C4: weight decay 1e-1,TabPFN k=50 (earlier saved run),"[20261015, 20261016]",-0.06354166666666665,"[-0.13541666666666666, 0.004166666666666652]",0,2,no significant difference
+"Transformer C5: larger (d32, 4 heads, 2 layers)",TabPFN k=50 (earlier saved run),"[20261015, 20261016]",-0.04062499999999997,"[-0.10835937500000006, 0.026041666666666657]",0,2,no significant difference
+TabPFN k=25 (leakage-safe grid),"Transformer C0 (rerun, logged)","[20261015, 20261016, 20261017]",0.06805555555555555,"[0.010416666666666657, 0.1270833333333333]",3,3,first better
+TabPFN k=50 (leakage-safe grid),"Transformer C0 (rerun, logged)","[20261015, 20261016, 20261017]",0.061111111111111095,"[0.005555555555555564, 0.11946180555555545]",3,3,first better
+TabPFN k=100 (leakage-safe grid),"Transformer C0 (rerun, logged)","[20261015, 20261016, 20261017]",0.03263888888888888,"[-0.02362847222222222, 0.08960069444444439]",3,3,no significant difference
+TabPFN k=150 (leakage-safe grid),"Transformer C0 (rerun, logged)","[20261015, 20261016, 20261017]",0.07361111111111111,"[0.014583333333333363, 0.13333333333333328]",3,3,first better
+TabPFN k=246 (leakage-safe grid),"Transformer C0 (rerun, logged)","[20261015, 20261016, 20261017]",0.07430555555555556,"[0.0145659722222222, 0.13611111111111113]",3,3,first better

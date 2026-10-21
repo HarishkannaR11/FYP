@@ -1,0 +1,419 @@
+{
+ "started": "2026-10-21 08:52:55",
+ "results": {
+  "A": [
+   {
+    "check": "116 rows, 116 unique subjects",
+    "ok": true,
+    "detail": "rows 116, unique 116"
+   },
+   {
+    "check": "116 unique acquisition ids, one acquisition per subject",
+    "ok": true,
+    "detail": "max acquisitions per subject 1"
+   },
+   {
+    "check": "subject order identical in subjects.npy, index.csv, split file, clinical and demographics tables",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "5-fold x 5 seeds: train/test disjoint by subject ID, every subject tested once per seed",
+    "ok": true,
+    "detail": "smallest per-stage count in a test fold: 3"
+   },
+   {
+    "check": "5-fold plans identical to every earlier experiment (fingerprints)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "inner folds use only the outer training subjects",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "10-fold x 5 seeds: train/test disjoint by subject ID, every subject tested once per seed",
+    "ok": true,
+    "detail": "smallest per-stage count in a test fold: 1"
+   },
+   {
+    "check": "70/30 split disjoint, 81 + 35, fingerprint as recorded",
+    "ok": true,
+    "detail": "fingerprint 6f478fbcf56364e2"
+   }
+  ],
+  "fold_fingerprints_5": {
+   "20261015": "3edbea19c1ee3c08",
+   "20261016": "d53ad26a06b7d5c5",
+   "20261017": "2a8e70dd0eb80cae",
+   "20261018": "d54bf96735be41dd",
+   "20261019": "8b7f4cd9e512b26a"
+  },
+  "fold_fingerprints_match_earlier_runs": true,
+  "B": [
+   {
+    "check": "labels complete and within 0..5",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "label identical across y.npy, index.csv, split file, clinical and demographics tables",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "class counts match metadata.json",
+    "ok": true,
+    "detail": "{\"CN\": 20, \"SMC\": 20, \"EMCI\": 20, \"MCI\": 16, \"LMCI\": 20, \"AD\": 20}"
+   }
+  ],
+  "C": [
+   {
+    "check": "no two subjects with identical 984-feature rows",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "no near-duplicate subjects (max between-subject correlation of standardised features < 0.95)",
+    "ok": true,
+    "detail": "max r = 0.526 (sub-018S5250 vs sub-012S4849)"
+   },
+   {
+    "check": "no near-duplicate connectivity matrices (max between-subject r < 0.95)",
+    "ok": true,
+    "detail": "max r = 0.650 (sub-012S5121 vs sub-012S4849)"
+   }
+  ],
+  "max_between_subject_r": {
+   "features": 0.5257451631562793,
+   "fc_edges": 0.6502417908349329
+  },
+  "D": [
+   {
+    "check": "all 984 features finite",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "no constant features",
+    "ok": true,
+    "detail": "0 constant"
+   },
+   {
+    "check": "FC strength = mean |Fisher-z| over the other 245 regions (as documented)",
+    "ok": true,
+    "detail": "max abs diff 1.19e-07"
+   },
+   {
+    "check": "FC strength is not a copy of DC_z (within-subject r < 0.99)",
+    "ok": true,
+    "detail": "median within-subject r(DC_z, FC strength) = -0.091 (min -0.433)"
+   }
+  ],
+  "fc_strength_vs_dc_within_subject_r": {
+   "median": -0.09134364211512137,
+   "min": -0.4326096232755885,
+   "max": 0.2715744554529818
+  },
+  "single_feature": {
+   "max_abs_spearman": 0.3641726440886683,
+   "max_one_vs_rest_auc": 0.778125,
+   "max_auc_by_stage": {
+    "CN": 0.7223958333333333,
+    "SMC": 0.7286458333333333,
+    "EMCI": 0.7692708333333333,
+    "MCI": 0.7637499999999999,
+    "LMCI": 0.7083333333333334,
+    "AD": 0.778125
+   }
+  },
+  "E": [
+   {
+    "check": "no single feature separates a stage (max one-vs-rest AUC < 0.95)",
+    "ok": true,
+    "detail": "max AUC 0.778; max |Spearman rho| with stage 0.364"
+   },
+   {
+    "check": "row order is sorted by stage (no model uses row order; folds are shuffled and stratified)",
+    "ok": true,
+    "detail": "Spearman(row index, stage) = 0.99"
+   },
+   {
+    "check": "scanner site independent of stage",
+    "ok": false,
+    "detail": "13 sites, chi2 p = 3.9e-05 (CONFOUND: site predicts stage)"
+   },
+   {
+    "check": "scan year independent of stage",
+    "ok": false,
+    "detail": "Kruskal p = 3.8e-05; median year by stage CN 2012, SMC 2013, EMCI 2012, MCI 2012, LMCI 2012, AD 2012"
+   },
+   {
+    "check": "scanner manufacturer independent of stage",
+    "ok": true,
+    "detail": "112/116 scans matched; manufacturers {'Philips': np.int64(112)}; chi2 p = 1"
+   },
+   {
+    "check": "repetition time (TR) independent of stage",
+    "ok": false,
+    "detail": "Kruskal p = 0.044"
+   },
+   {
+    "check": "age independent of stage",
+    "ok": true,
+    "detail": "Kruskal p = 0.11"
+   },
+   {
+    "check": "sex independent of stage",
+    "ok": true,
+    "detail": "chi2 p = 0.31"
+   }
+  ],
+  "site_stage": {
+   "n_sites": 13,
+   "chi2_p": 3.881815083180424e-05,
+   "counts": {
+    "002": [
+     2,
+     2,
+     5,
+     5,
+     6,
+     1
+    ],
+    "006": [
+     1,
+     1,
+     1,
+     1,
+     3,
+     2
+    ],
+    "007": [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    "010": [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "012": [
+     2,
+     4,
+     5,
+     0,
+     0,
+     0
+    ],
+    "013": [
+     2,
+     1,
+     4,
+     2,
+     1,
+     1
+    ],
+    "018": [
+     5,
+     2,
+     5,
+     1,
+     1,
+     2
+    ],
+    "019": [
+     2,
+     2,
+     0,
+     0,
+     2,
+     5
+    ],
+    "031": [
+     4,
+     0,
+     0,
+     0,
+     3,
+     1
+    ],
+    "053": [
+     0,
+     3,
+     0,
+     2,
+     0,
+     0
+    ],
+    "100": [
+     0,
+     3,
+     0,
+     2,
+     0,
+     0
+    ],
+    "130": [
+     0,
+     2,
+     0,
+     1,
+     4,
+     8
+    ],
+    "136": [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ]
+   }
+  },
+  "scan_year_by_stage": {
+   "CN": [
+    2011,
+    2012,
+    2014
+   ],
+   "SMC": [
+    2013,
+    2013,
+    2013
+   ],
+   "EMCI": [
+    2011,
+    2012,
+    2013
+   ],
+   "MCI": [
+    2011,
+    2012,
+    2015
+   ],
+   "LMCI": [
+    2012,
+    2012,
+    2013
+   ],
+   "AD": [
+    2011,
+    2012,
+    2013
+   ]
+  },
+  "scanner_matched": 112,
+  "manufacturer_stage": {
+   "chi2_p": 1.0,
+   "counts": {
+    "Philips": [
+     20,
+     20,
+     20,
+     14,
+     20,
+     18
+    ]
+   }
+  },
+  "tr_by_stage": {
+   "CN": [
+    3000.0
+   ],
+   "SMC": [
+    3000.0,
+    3001.0
+   ],
+   "EMCI": [
+    2250.0,
+    3000.0,
+    3001.0
+   ],
+   "MCI": [
+    3000.0,
+    3001.0
+   ],
+   "LMCI": [
+    3000.0,
+    3001.0
+   ],
+   "AD": [
+    3000.0
+   ]
+  },
+  "F": [
+   {
+    "check": "ComBat parameters depend on training rows only",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "harmonised training rows unchanged when test rows change",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "SVM-RFE (k=25) selection depends on training rows only",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "SVM-RFE (k=50) selection depends on training rows only",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "SVM-RFE after ComBat depends on training rows only",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "lr: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "svm: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "ordinal: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "tabpfn: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "inner folds depend on training labels only",
+    "ok": true,
+    "detail": ""
+   }
+  ],
+  "G": [
+   {
+    "check": "project metric functions equal scikit-learn (accuracy, balanced accuracy, macro-F1, QWK, MAE)",
+    "ok": true,
+    "detail": "max abs difference 6.7e-16 over 500 random cases"
+   },
+   {
+    "check": "every saved prediction record reproduces its stored balanced accuracy and labels",
+    "ok": true,
+    "detail": "2354 records in 83 files, 0 mismatches"
+   }
+  ]
+ }
+}
