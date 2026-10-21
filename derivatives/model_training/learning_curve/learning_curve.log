@@ -1,0 +1,32 @@
+====================================================================================================
+LEARNING CURVE -- training-set sizes [30, 45, 60, 75, 'all'], 5-fold plans, comorbidities 'comorbidity8' ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_cardiovascular', 'MH_endocrine_metabolic', 'MH_psychiatric', 'MH_smoking']
+====================================================================================================
+fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+
+transformer_svmrfe50_clin  (2 seeds x 5 folds per size)
+  n_train  30.0  test bal.acc 0.158  train 0.273  (10 folds)
+  n_train  45.0  test bal.acc 0.186  train 0.318  (10 folds)
+  n_train  60.0  test bal.acc 0.197  train 0.374  (10 folds)
+  n_train  75.0  test bal.acc 0.192  train 0.427  (10 folds)
+  n_train  92.8  test bal.acc 0.253  train 0.476  (10 folds)
+
+transformer_svmrfe50  (2 seeds x 5 folds per size)
+  n_train  30.0  test bal.acc 0.168  train 0.246  (10 folds)
+  n_train  45.0  test bal.acc 0.167  train 0.272  (10 folds)
+  n_train  60.0  test bal.acc 0.190  train 0.370  (10 folds)
+  n_train  75.0  test bal.acc 0.154  train 0.306  (10 folds)
+  n_train  92.8  test bal.acc 0.186  train 0.354  (10 folds)
+
+logreg_svmrfe50_clin  (5 seeds x 5 folds per size)
+  n_train  30.0  test bal.acc 0.224  train 1.000  (25 folds)
+  n_train  45.0  test bal.acc 0.209  train 1.000  (25 folds)
+  n_train  60.0  test bal.acc 0.198  train 1.000  (25 folds)
+  n_train  75.0  test bal.acc 0.255  train 0.999  (25 folds)
+  n_train  92.8  test bal.acc 0.264  train 0.996  (25 folds)
+
+logreg_svmrfe50  (5 seeds x 5 folds per size)
+  n_train  30.0  test bal.acc 0.193  train 1.000  (25 folds)
+  n_train  45.0  test bal.acc 0.188  train 1.000  (25 folds)
+  n_train  60.0  test bal.acc 0.187  train 0.999  (25 folds)
+  n_train  75.0  test bal.acc 0.242  train 0.998  (25 folds)
+  n_train  92.8  test bal.acc 0.237  train 0.992  (25 folds)

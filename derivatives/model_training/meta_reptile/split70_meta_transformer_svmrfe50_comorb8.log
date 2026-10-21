@@ -1,0 +1,6 @@
+====================================================================================================
+REPTILE META-LEARNING (biomarker tasks) + TRANSFORMER FINE-TUNE -- design split70, candidate meta_transformer_svmrfe50_comorb8
+====================================================================================================
+meta settings {'iterations': 200, 'inner_steps': 5, 'inner_lr': 0.001, 'batch': 16, 'eps_start': 0.5, 'eps_end': 0.05}; tasks ('mALFF', 'mReHo', 'DC_z', 'FC'); architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; fine-tune {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}
+    seed 20261015 fold 0  K=48  test bal.acc 0.200  acc 0.200  train 0.471  epochs [53, 10, 14, 26]  meta 27s  total 56s
+  elapsed 56s

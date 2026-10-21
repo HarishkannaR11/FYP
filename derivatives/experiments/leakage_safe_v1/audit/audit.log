@@ -1,0 +1,57 @@
+====================================================================================================
+PHASE 1 AUDIT -- 116-subject rs-fMRI cohort
+====================================================================================================
+
+[A] identity and subject-level grouping
+  PASS  116 rows, 116 unique subjects  -- rows 116, unique 116
+  PASS  116 unique acquisition ids, one acquisition per subject  -- max acquisitions per subject 1
+  PASS  subject order identical in subjects.npy, index.csv, split file, clinical and demographics tables
+  PASS  5-fold x 5 seeds: train/test disjoint by subject ID, every subject tested once per seed  -- smallest per-stage count in a test fold: 3
+  PASS  5-fold plans identical to every earlier experiment (fingerprints)
+  PASS  inner folds use only the outer training subjects
+  PASS  10-fold x 5 seeds: train/test disjoint by subject ID, every subject tested once per seed  -- smallest per-stage count in a test fold: 1
+  PASS  70/30 split disjoint, 81 + 35, fingerprint as recorded  -- fingerprint 6f478fbcf56364e2
+
+[B] labels
+  PASS  labels complete and within 0..5
+  PASS  label identical across y.npy, index.csv, split file, clinical and demographics tables
+  PASS  class counts match metadata.json  -- {"CN": 20, "SMC": 20, "EMCI": 20, "MCI": 16, "LMCI": 20, "AD": 20}
+
+[C] duplicate scans
+  PASS  no two subjects with identical 984-feature rows
+  PASS  no near-duplicate subjects (max between-subject correlation of standardised features < 0.95)  -- max r = 0.526 (sub-018S5250 vs sub-012S4849)
+  PASS  no near-duplicate connectivity matrices (max between-subject r < 0.95)  -- max r = 0.650 (sub-012S5121 vs sub-012S4849)
+
+[D] features
+  PASS  all 984 features finite
+  PASS  no constant features  -- 0 constant
+  PASS  FC strength = mean |Fisher-z| over the other 245 regions (as documented)  -- max abs diff 1.19e-07
+  PASS  FC strength is not a copy of DC_z (within-subject r < 0.99)  -- median within-subject r(DC_z, FC strength) = -0.091 (min -0.433)
+
+[E] leakage scans and confounds
+  PASS  no single feature separates a stage (max one-vs-rest AUC < 0.95)  -- max AUC 0.778; max |Spearman rho| with stage 0.364
+  PASS  row order is sorted by stage (no model uses row order; folds are shuffled and stratified)  -- Spearman(row index, stage) = 0.99
+  FLAG  scanner site independent of stage  -- 13 sites, chi2 p = 3.9e-05 (CONFOUND: site predicts stage)
+  FLAG  scan year independent of stage  -- Kruskal p = 3.8e-05; median year by stage CN 2012, SMC 2013, EMCI 2012, MCI 2012, LMCI 2012, AD 2012
+  PASS  scanner manufacturer independent of stage  -- 112/116 scans matched; manufacturers {'Philips': np.int64(112)}; chi2 p = 1
+  FLAG  repetition time (TR) independent of stage  -- Kruskal p = 0.044
+  PASS  age independent of stage  -- Kruskal p = 0.11
+  PASS  sex independent of stage  -- chi2 p = 0.31
+
+[F] fit-on-train verification: perturb test rows and labels, refit, compare
+  PASS  ComBat parameters depend on training rows only
+  PASS  harmonised training rows unchanged when test rows change
+  PASS  SVM-RFE (k=25) selection depends on training rows only
+  PASS  SVM-RFE (k=50) selection depends on training rows only
+  PASS  SVM-RFE after ComBat depends on training rows only
+  PASS  lr: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)
+  PASS  svm: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)
+  PASS  ordinal: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)
+  PASS  tabpfn: imputer, scaler and model fitted on training rows only (identical predictions after test rows change)
+  PASS  inner folds depend on training labels only
+
+[G] metric consistency and saved predictions
+  PASS  project metric functions equal scikit-learn (accuracy, balanced accuracy, macro-F1, QWK, MAE)  -- max abs difference 6.7e-16 over 500 random cases
+  PASS  every saved prediction record reproduces its stored balanced accuracy and labels  -- 2354 records in 83 files, 0 mismatches
+
+38 checks, 3 flagged

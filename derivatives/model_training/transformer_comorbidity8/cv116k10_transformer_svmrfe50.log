@@ -1,0 +1,13 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design cv116k10, candidate transformer_svmrfe50
+====================================================================================================
+cohort 116; clinical block 'comorbidity8', 8 features ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_cardiovascular', 'MH_endocrine_metabolic', 'MH_psychiatric', 'MH_smoking']; missing values 10 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+10 folds x 5 seeds; fold fingerprints {"20261015": "46f7f8edef75ab91", "20261016": "4420170207189c62", "20261017": "78a4e9ff5822f5fe", "20261018": "1c926278f5dffada", "20261019": "359c05c309b938bd"}
+  seed 20261015: bal.acc 0.233
+  seed 20261016: bal.acc 0.250
+  seed 20261017: bal.acc 0.183
+  seed 20261018: bal.acc 0.242
+  seed 20261019: bal.acc 0.200
+  transformer_svmrfe50: seed-level bal.acc 0.222 +/- 0.026  macroF1 0.154  MAE 1.773  QWK +0.141  train 0.343
+  elapsed 1247s
