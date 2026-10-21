@@ -1,0 +1,106 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- SVM-RFE 50 rs-fMRI tokens + 23 comorbidity features ('comorbidity23'), 116 subjects
+====================================================================================================
+comorbidity: age, sex (male), APOE4 count, GDS (depression), psychiatric, neurologic non AD, head eyes ears nose throat, cardiovascular, respiratory, hepatic, dermatologic connective tissue, musculoskeletal, endocrine metabolic, gastrointestinal, hematopoietic lymphatic, renal genitourinary, allergies drug sensitivities, alcohol abuse, drug abuse, smoking, malignancy, major surgical procedures, other
+MMSE and CDR are NOT inputs (they define the ADNI stage labels); they appear only as the ceiling row
+
+[0] QC
+  1086 checks, 0 mismatches
+  every CV candidate (incl. reused imaging-only records) used identical folds: True
+  every 70/30 candidate used the same split: True ['6f478fbcf56364e2']
+  fusion and imaging-only transformer used the same 50 rs-fMRI features in every fold: True
+
+[1] STAGE PREDICTION (balanced accuracy; chance 0.167)
+  model                                        70/30 test (35)  correct p vs chance |  5x5 CV on 116 within1  train
+  Transformer + comorbidity (primary)                    0.111    4/35        0.858 | 0.228+/-0.042   0.496  0.574
+  Transformer, imaging only                              0.167    6/35        0.540 | 0.196+/-0.011   0.471  0.322
+  Logistic reg., imaging + comorbidity                   0.367   13/35        0.003 | 0.266+/-0.043   0.531  0.998
+  Logistic reg., imaging only                            0.311   11/35        0.023 | 0.237+/-0.028   0.481  0.992
+  Logistic reg., comorbidity only                        0.333   12/35        0.009 | 0.267+/-0.028   0.548  0.646
+  Transformer + comorbidity, shuffled labels                                        | 0.183+/-0.039   0.443  0.383
+  MMSE + CDR only (circular ceiling)                     0.544   19/35        0.000 | 0.460+/-0.008   0.850  0.518
+  70/30: one test subject moves balanced accuracy by about 0.028-0.033
+
+[2] PAIRED CV COMPARISONS (identical folds; rule: >= 4/5 seeds and mean > 0)
+  does comorbidity help the transformer?       +0.032  seeds 4/5  [0.069, 0.047, -0.047, 0.008, 0.083]  -> transformer_svmrfe50_clin BETTER
+  does comorbidity help logistic regression?   +0.028  seeds 5/5  [0.033, 0.017, 0.006, 0.061, 0.025]  -> logreg_svmrfe50_clin BETTER
+  transformer fusion vs logistic fusion        -0.038  seeds 1/5  [-0.011, -0.017, -0.086, -0.125, 0.05]  -> logreg_svmrfe50_clin BETTER
+  fusion vs comorbidity alone                  -0.039  seeds 1/5  [-0.058, -0.044, -0.081, -0.028, 0.017]  -> logreg_clin BETTER
+  fusion vs shuffled labels                    +0.044  seeds 4/5  [0.108, 0.047, -0.0, 0.05, 0.017]  -> transformer_svmrfe50_clin BETTER
+  shuffled control 0.183: OK (near chance)
+
+[3] STAGE ORDERING (Spearman rho of expected stage vs true stage, permutation p)
+  Transformer + comorbidity (primary)          rho +0.223  p 0.008   CN 2.43 SMC 2.47 EMCI 2.48 MCI 2.44 LMCI 2.47 AD 2.57
+  Transformer, imaging only                    rho +0.175  p 0.029   CN 2.46 SMC 2.50 EMCI 2.45 MCI 2.46 LMCI 2.50 AD 2.55
+  Logistic reg., imaging + comorbidity         rho +0.384  p 0.001   CN 2.25 SMC 2.40 EMCI 2.44 MCI 2.50 LMCI 2.56 AD 3.04
+  Logistic reg., comorbidity only              rho +0.250  p 0.006   CN 2.34 SMC 2.46 EMCI 2.51 MCI 2.38 LMCI 2.47 AD 2.77
+  Transformer + comorbidity, shuffled labels   rho -0.034  p 0.620   CN 2.50 SMC 2.49 EMCI 2.49 MCI 2.49 LMCI 2.49 AD 2.49
+  70/30 primary (35 test subjects): rho +0.197  p 0.128
+
+[4] BRAIN vs COMORBIDITY inside the fusion model (out-of-fold, mean over 5 seeds)
+  gate = share of the fused representation from the brain (1) vs comorbidity (0)
+    CN 0.375  SMC 0.374  EMCI 0.376  MCI 0.373  LMCI 0.375  AD 0.370   trend rho -0.058 p 0.537
+  mean P(true stage): full 0.175   comorbidity removed 0.168   brain removed 0.174   (uniform guess 0.167)
+    CN    full 0.185  no comorbidity 0.175  no brain 0.184
+    SMC   full 0.170  no comorbidity 0.180  no brain 0.170
+    EMCI  full 0.172  no comorbidity 0.157  no brain 0.177
+    MCI   full 0.158  no comorbidity 0.160  no brain 0.156
+    LMCI  full 0.165  no comorbidity 0.170  no brain 0.160
+    AD    full 0.197  no comorbidity 0.162  no brain 0.190
+
+[5] COMORBIDITY VARIABLE IMPORTANCE (permutation within test folds; drop in mean P(true stage))
+    APOE4 count                          +4.64 x0.001  (SE 0.78)   |logreg coef| 0.173
+    renal genitourinary                  +1.68 x0.001  (SE 0.60)   |logreg coef| 0.114
+    head eyes ears nose throat           +0.97 x0.001  (SE 0.27)   |logreg coef| 0.082
+    other                                +0.70 x0.001  (SE 0.45)   |logreg coef| 0.119
+    psychiatric                          +0.65 x0.001  (SE 0.24)   |logreg coef| 0.096
+    drug abuse                           +0.61 x0.001  (SE 0.23)   |logreg coef| 0.064
+    major surgical procedures            +0.54 x0.001  (SE 0.45)   |logreg coef| 0.102
+    endocrine metabolic                  +0.34 x0.001  (SE 0.31)   |logreg coef| 0.086
+    age                                  +0.26 x0.001  (SE 0.27)   |logreg coef| 0.093
+    sex (male)                           +0.24 x0.001  (SE 0.29)   |logreg coef| 0.086
+    hematopoietic lymphatic              +0.21 x0.001  (SE 0.45)   |logreg coef| 0.082
+    cardiovascular                       +0.17 x0.001  (SE 0.35)   |logreg coef| 0.067
+    allergies drug sensitivities         +0.09 x0.001  (SE 0.44)   |logreg coef| 0.090
+    malignancy                           +0.04 x0.001  (SE 0.30)   |logreg coef| 0.064
+    respiratory                          -0.04 x0.001  (SE 0.29)   |logreg coef| 0.074
+    alcohol abuse                        -0.06 x0.001  (SE 0.25)   |logreg coef| 0.097
+    GDS (depression)                     -0.15 x0.001  (SE 0.31)   |logreg coef| 0.082
+    gastrointestinal                     -0.21 x0.001  (SE 0.34)   |logreg coef| 0.067
+    neurologic non AD                    -0.42 x0.001  (SE 0.33)   |logreg coef| 0.078
+    musculoskeletal                      -0.45 x0.001  (SE 0.32)   |logreg coef| 0.073
+    smoking                              -0.46 x0.001  (SE 0.24)   |logreg coef| 0.043
+    hepatic                              -0.55 x0.001  (SE 0.21)   |logreg coef| 0.052
+    dermatologic connective tissue       -0.86 x0.001  (SE 0.48)   |logreg coef| 0.081
+    figure derivatives\model_training\transformer_comorbidity\figures\fig2_comorbidity_importance.png
+
+[6] CONFOUNDS IN THE COHORT (how strongly each input differs by stage)
+                             CN    SMC   EMCI    MCI   LMCI     AD   test
+  age                     75.65  72.15  70.65  72.81  73.84  75.30   Kruskal p 0.108
+  sex (male)               0.45   0.40   0.35   0.69   0.60   0.45   chi2 p 0.314
+  APOE4 count              0.30   0.37   0.80   0.44   0.50   1.25   Kruskal p 4.52e-05
+  GDS (depression)         0.75   1.45   2.05   2.06   1.65   1.58   Kruskal p 0.173
+  psychiatric              0.15   0.55   0.45   0.43   0.25   0.45   chi2 p 0.095
+  neurologic non AD        0.25   0.30   0.40   0.50   0.45   0.50   chi2 p 0.502
+  head eyes ears nose th   0.80   0.70   0.75   0.86   0.80   0.55   chi2 p 0.344
+  cardiovascular           0.70   0.60   0.60   0.43   0.50   0.65   chi2 p 0.626
+  respiratory              0.40   0.10   0.25   0.29   0.25   0.25   chi2 p 0.437
+  hepatic                  0.05   0.10   0.10   0.07   0.15   0.10   chi2 p 0.939
+  dermatologic connectiv   0.50   0.30   0.25   0.36   0.50   0.35   chi2 p 0.475
+  musculoskeletal          0.65   0.80   0.80   0.71   0.80   0.65   chi2 p 0.727
+  endocrine metabolic      0.40   0.30   0.20   0.50   0.35   0.60   chi2 p 0.14
+  gastrointestinal         0.45   0.45   0.55   0.43   0.60   0.45   chi2 p 0.869
+  hematopoietic lymphati   0.05   0.15   0.05   0.07   0.00   0.20   chi2 p 0.236
+  renal genitourinary      0.40   0.35   0.60   0.36   0.50   0.80   chi2 p 0.039
+  allergies drug sensiti   0.40   0.65   0.60   0.36   0.45   0.55   chi2 p 0.427
+  alcohol abuse            0.00   0.05   0.10   0.00   0.00   0.05   chi2 p 0.452
+  drug abuse               0.00   0.00   0.10   0.00   0.00   0.00   chi2 p 0.0884
+  smoking                  0.45   0.35   0.45   0.43   0.40   0.30   chi2 p 0.913
+  malignancy               0.35   0.25   0.15   0.29   0.10   0.20   chi2 p 0.449
+  major surgical procedu   0.85   0.90   0.70   0.57   0.65   0.90   chi2 p 0.0783
+  other                    0.30   0.15   0.45   0.36   0.15   0.10   chi2 p 0.0744
+    figure derivatives\model_training\transformer_comorbidity\figures\fig5_inputs_by_stage.png
+    figure derivatives\model_training\transformer_comorbidity\figures\fig0_model_comparison.png
+    figure derivatives\model_training\transformer_comorbidity\figures\fig1_confusion_primary.png
+    figure derivatives\model_training\transformer_comorbidity\figures\fig3_brain_vs_comorbidity.png
+    figure derivatives\model_training\transformer_comorbidity\figures\fig4_stage_ordering.png

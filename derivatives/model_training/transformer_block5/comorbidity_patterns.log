@@ -1,0 +1,71 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- SVM-RFE 50 rs-fMRI tokens + 5 clinical block features ('block5'), 116 subjects
+====================================================================================================
+clinical block: age, GDS (depression), APOE4 count, MMSE, CDR sum of boxes
+NOTE: MMSE / CDR are inputs here by the user's decision. ADNI assigns the stage labels with them,
+      so compare against 'MMSE + CDR only' and 'imaging only' to see what the brain data adds.
+
+[0] QC
+  1086 checks, 0 mismatches
+  every CV candidate (incl. reused imaging-only records) used identical folds: True
+  every 70/30 candidate used the same split: True ['6f478fbcf56364e2']
+  fusion and imaging-only transformer used the same 50 rs-fMRI features in every fold: True
+
+[1] STAGE PREDICTION (balanced accuracy; chance 0.167)
+  model                                        70/30 test (35)  correct p vs chance |  5x5 CV on 116 within1  train
+  Transformer + clinical block (primary)                 0.389   14/35        0.001 | 0.397+/-0.016   0.708  0.551
+  Transformer, imaging only                              0.167    6/35        0.540 | 0.196+/-0.011   0.471  0.322
+  Logistic reg., imaging + clinical block                0.367   13/35        0.003 | 0.316+/-0.014   0.568  0.997
+  Logistic reg., imaging only                            0.311   11/35        0.023 | 0.237+/-0.028   0.481  0.992
+  Logistic reg., clinical block only                     0.333   12/35        0.009 | 0.420+/-0.024   0.732  0.504
+  Transformer + clinical block, shuffled labels                                      | 0.163+/-0.054   0.474  0.302
+  MMSE + CDR only (circular ceiling)                     0.544   19/35        0.000 | 0.460+/-0.008   0.850  0.518
+  70/30: one test subject moves balanced accuracy by about 0.028-0.033
+
+[2] PAIRED CV COMPARISONS (identical folds; rule: >= 4/5 seeds and mean > 0)
+  does comorbidity help the transformer?       +0.202  seeds 5/5  [0.219, 0.225, 0.208, 0.153, 0.203]  -> transformer_svmrfe50_clin BETTER
+  does comorbidity help logistic regression?   +0.078  seeds 5/5  [0.092, 0.069, 0.067, 0.047, 0.117]  -> logreg_svmrfe50_clin BETTER
+  transformer fusion vs logistic fusion        +0.082  seeds 5/5  [0.081, 0.108, 0.108, 0.033, 0.078]  -> transformer_svmrfe50_clin BETTER
+  fusion vs comorbidity alone                  -0.023  seeds 0/5  [-0.011, -0.053, -0.017, -0.025, -0.008]  -> logreg_clin BETTER
+  fusion vs shuffled labels                    +0.234  seeds 5/5  [0.217, 0.3, 0.264, 0.114, 0.278]  -> transformer_svmrfe50_clin BETTER
+  shuffled control 0.163: OK (near chance)
+
+[3] STAGE ORDERING (Spearman rho of expected stage vs true stage, permutation p)
+  Transformer + clinical block (primary)       rho +0.713  p 0.001   CN 1.94 SMC 1.97 EMCI 2.40 MCI 2.29 LMCI 2.52 AD 3.67
+  Transformer, imaging only                    rho +0.175  p 0.029   CN 2.46 SMC 2.50 EMCI 2.45 MCI 2.46 LMCI 2.50 AD 2.55
+  Logistic reg., imaging + clinical block      rho +0.572  p 0.001   CN 2.06 SMC 2.12 EMCI 2.39 MCI 2.42 LMCI 2.55 AD 3.62
+  Logistic reg., clinical block only           rho +0.705  p 0.001   CN 2.02 SMC 2.06 EMCI 2.42 MCI 2.30 LMCI 2.46 AD 3.73
+  Transformer + clinical block, shuffled labels rho +0.131  p 0.082   CN 2.51 SMC 2.50 EMCI 2.51 MCI 2.51 LMCI 2.51 AD 2.52
+  70/30 primary (35 test subjects): rho +0.837  p 0.001
+
+[4] BRAIN vs CLINICAL BLOCK inside the fusion model (out-of-fold, mean over 5 seeds)
+  gate = share of the fused representation from the brain (1) vs comorbidity (0)
+    CN 0.328  SMC 0.328  EMCI 0.327  MCI 0.328  LMCI 0.328  AD 0.318   trend rho -0.085 p 0.363
+  mean P(true stage): full 0.253   comorbidity removed 0.168   brain removed 0.244   (uniform guess 0.167)
+    CN    full 0.244  no comorbidity 0.152  no brain 0.233
+    SMC   full 0.228  no comorbidity 0.156  no brain 0.220
+    EMCI  full 0.200  no comorbidity 0.213  no brain 0.182
+    MCI   full 0.153  no comorbidity 0.168  no brain 0.155
+    LMCI  full 0.176  no comorbidity 0.223  no brain 0.185
+    AD    full 0.493  no comorbidity 0.100  no brain 0.468
+
+[5] CLINICAL BLOCK VARIABLE IMPORTANCE (permutation within test folds; drop in mean P(true stage))
+    CDR sum of boxes                    +41.23 x0.001  (SE 2.47)   |logreg coef| 0.225
+    MMSE                                +26.82 x0.001  (SE 1.46)   |logreg coef| 0.154
+    APOE4 count                          +8.98 x0.001  (SE 1.04)   |logreg coef| 0.136
+    GDS (depression)                     +1.48 x0.001  (SE 0.65)   |logreg coef| 0.092
+    age                                  +1.36 x0.001  (SE 0.84)   |logreg coef| 0.089
+    figure derivatives\model_training\transformer_block5\figures\fig2_comorbidity_importance.png
+
+[6] CONFOUNDS IN THE COHORT (how strongly each input differs by stage)
+                             CN    SMC   EMCI    MCI   LMCI     AD   test
+  age                     75.65  72.15  70.65  72.81  73.84  75.30   Kruskal p 0.108
+  GDS (depression)         0.75   1.45   2.05   2.06   1.65   1.58   Kruskal p 0.173
+  APOE4 count              0.30   0.37   0.80   0.44   0.50   1.25   Kruskal p 4.52e-05
+  MMSE                    28.25  28.85  27.75  27.50  27.40  21.00   Kruskal p 3.84e-09
+  CDR sum of boxes         0.10   0.05   1.32   1.07   2.05   5.42   Kruskal p 5.97e-18
+    figure derivatives\model_training\transformer_block5\figures\fig5_inputs_by_stage.png
+    figure derivatives\model_training\transformer_block5\figures\fig0_model_comparison.png
+    figure derivatives\model_training\transformer_block5\figures\fig1_confusion_primary.png
+    figure derivatives\model_training\transformer_block5\figures\fig3_brain_vs_comorbidity.png
+    figure derivatives\model_training\transformer_block5\figures\fig4_stage_ordering.png

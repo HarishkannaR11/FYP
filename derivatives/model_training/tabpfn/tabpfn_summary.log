@@ -1,0 +1,56 @@
+====================================================================================================
+TabPFN v2 vs MULTI-ATTENTION TRANSFORMER vs LOGISTIC REGRESSION -- 116 subjects, 6 stages, chance 0.167
+====================================================================================================
+same splits, same folds, same SVM-RFE features per fold; accuracy = plain, bal = balanced accuracy
+
+[5-fold x 5]
+  inputs                                                             TabPFN      transformer    logistic reg.   (accuracy / balanced)
+  rs-fMRI only                                                0.252 / 0.246    0.198 / 0.196    0.240 / 0.237
+  rs-fMRI + 8 comorbidities                                   0.281 / 0.274    0.245 / 0.240    0.269 / 0.264
+  rs-fMRI + 8 comorbidities + MMSE + CDR-SB                   0.434 / 0.427    0.371 / 0.359    0.326 / 0.321
+  8 comorbidities only                                        0.279 / 0.270                -    0.272 / 0.266
+  MMSE + CDR-SB + GDS + APOE4 + cardiovascular                0.462 / 0.453                -    0.411 / 0.400
+  rs-fMRI + MMSE + CDR-SB + GDS + APOE4 + cardiovascular      0.439 / 0.433                -    0.304 / 0.299
+  shuffled-label control (rs-fMRI + 8 comorb.)     0.161 balanced  OK (near chance)
+  TabPFN training-subject balanced accuracy (its own context, so near 100% by design): rs-fMRI only 0.99, rs-fMRI + 8 comorbidities 0.99, rs-fMRI + 8 comorbidities + MMSE + CDR-SB 0.96, 8 comorbidities only 0.38, MMSE + CDR-SB + GDS + APOE4 + cardiovascular 0.58, rs-fMRI + MMSE + CDR-SB + GDS + APOE4 + cardiovascular 0.97
+
+[10-fold x 5]
+  inputs                                                             TabPFN      transformer    logistic reg.   (accuracy / balanced)
+  rs-fMRI only                                                0.246 / 0.242    0.226 / 0.222    0.213 / 0.208
+  rs-fMRI + 8 comorbidities                                   0.259 / 0.255    0.239 / 0.232    0.255 / 0.253
+  rs-fMRI + 8 comorbidities + MMSE + CDR-SB                   0.417 / 0.412    0.400 / 0.387    0.308 / 0.305
+  8 comorbidities only                                        0.275 / 0.265                -    0.268 / 0.263
+  MMSE + CDR-SB + GDS + APOE4 + cardiovascular                0.453 / 0.448                -    0.390 / 0.378
+  rs-fMRI + MMSE + CDR-SB + GDS + APOE4 + cardiovascular      0.420 / 0.412                -    0.309 / 0.303
+
+[70/30 test (35)]
+  inputs                                                             TabPFN      transformer    logistic reg.   (accuracy / balanced)
+  rs-fMRI only                                                0.229 / 0.222    0.171 / 0.167    0.314 / 0.311
+  rs-fMRI + 8 comorbidities                                   0.314 / 0.306    0.200 / 0.194    0.314 / 0.311
+  rs-fMRI + 8 comorbidities + MMSE + CDR-SB                   0.543 / 0.528    0.343 / 0.344    0.371 / 0.367
+  8 comorbidities only                                        0.286 / 0.278                -    0.200 / 0.200
+  MMSE + CDR-SB + GDS + APOE4 + cardiovascular                0.514 / 0.511                -    0.429 / 0.422
+  rs-fMRI + MMSE + CDR-SB + GDS + APOE4 + cardiovascular      0.486 / 0.478                -    0.371 / 0.367
+
+[PAIRED, balanced accuracy, identical folds; rule: >= 4/5 seeds and mean > 0]
+  cv116|rs-fMRI only|tabpfn-transformer                                  +0.051  seeds 5/5  -> TabPFN BETTER
+  cv116|rs-fMRI only|tabpfn-logreg                                       +0.009  seeds 4/5  -> TabPFN BETTER
+  cv116|rs-fMRI + 8 comorbidities|tabpfn-transformer                     +0.034  seeds 4/5  -> TabPFN BETTER
+  cv116|rs-fMRI + 8 comorbidities|tabpfn-logreg                          +0.010  seeds 3/5  -> TIED
+  cv116|rs-fMRI + 8 comorbidities + MMSE + CDR-SB|tabpfn-transformer     +0.068  seeds 5/5  -> TabPFN BETTER
+  cv116|rs-fMRI + 8 comorbidities + MMSE + CDR-SB|tabpfn-logreg          +0.107  seeds 5/5  -> TabPFN BETTER
+  cv116|8 comorbidities only|tabpfn-logreg                               +0.004  seeds 3/5  -> TIED
+  cv116|MMSE + CDR-SB + GDS + APOE4 + cardiovascular|tabpfn-logreg       +0.053  seeds 5/5  -> TabPFN BETTER
+  cv116|rs-fMRI + MMSE + CDR-SB + GDS + APOE4 + cardiovascular|tabpfn-logreg +0.133  seeds 5/5  -> TabPFN BETTER
+  cv116k10|rs-fMRI only|tabpfn-transformer                               +0.020  seeds 4/5  -> TabPFN BETTER
+  cv116k10|rs-fMRI only|tabpfn-logreg                                    +0.033  seeds 5/5  -> TabPFN BETTER
+  cv116k10|rs-fMRI + 8 comorbidities|tabpfn-transformer                  +0.023  seeds 3/5  -> TIED
+  cv116k10|rs-fMRI + 8 comorbidities|tabpfn-logreg                       +0.002  seeds 3/5  -> TIED
+  cv116k10|rs-fMRI + 8 comorbidities + MMSE + CDR-SB|tabpfn-transformer  +0.025  seeds 3/5  -> TIED
+  cv116k10|rs-fMRI + 8 comorbidities + MMSE + CDR-SB|tabpfn-logreg       +0.107  seeds 5/5  -> TabPFN BETTER
+  cv116k10|8 comorbidities only|tabpfn-logreg                            +0.002  seeds 3/5  -> TIED
+  cv116k10|MMSE + CDR-SB + GDS + APOE4 + cardiovascular|tabpfn-logreg    +0.070  seeds 5/5  -> TabPFN BETTER
+  cv116k10|rs-fMRI + MMSE + CDR-SB + GDS + APOE4 + cardiovascular|tabpfn-logreg +0.108  seeds 5/5  -> TabPFN BETTER
+
+QC: 46 record sets, 0 metric mismatches; TabPFN used the transformer's 50 features in every fold: True
+    figure derivatives/model_training/tabpfn/figures/fig_tabpfn_comparison.png

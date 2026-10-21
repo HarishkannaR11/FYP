@@ -1,0 +1,56 @@
+====================================================================================================
+TabPFN v2 -- design cv116k10, candidate tabpfn_comorb8
+====================================================================================================
+fold fingerprints {"20261015": "46f7f8edef75ab91", "20261016": "4420170207189c62", "20261017": "78a4e9ff5822f5fe", "20261018": "1c926278f5dffada", "20261019": "359c05c309b938bd"}
+    seed 20261015 fold 0  features 8  test bal.acc 0.333  acc 0.333  train None  1s
+    seed 20261015 fold 1  features 8  test bal.acc 0.417  acc 0.417  train None  1s
+    seed 20261015 fold 2  features 8  test bal.acc 0.083  acc 0.083  train None  2s
+    seed 20261015 fold 3  features 8  test bal.acc 0.083  acc 0.083  train None  2s
+    seed 20261015 fold 4  features 8  test bal.acc 0.250  acc 0.250  train None  1s
+    seed 20261015 fold 5  features 8  test bal.acc 0.167  acc 0.167  train None  1s
+    seed 20261015 fold 6  features 8  test bal.acc 0.333  acc 0.364  train None  1s
+    seed 20261015 fold 7  features 8  test bal.acc 0.250  acc 0.273  train None  2s
+    seed 20261015 fold 8  features 8  test bal.acc 0.250  acc 0.273  train None  2s
+    seed 20261015 fold 9  features 8  test bal.acc 0.333  acc 0.364  train None  1s
+    seed 20261016 fold 0  features 8  test bal.acc 0.250  acc 0.250  train None  2s
+    seed 20261016 fold 1  features 8  test bal.acc 0.333  acc 0.333  train None  2s
+    seed 20261016 fold 2  features 8  test bal.acc 0.250  acc 0.250  train None  2s
+    seed 20261016 fold 3  features 8  test bal.acc 0.167  acc 0.167  train None  2s
+    seed 20261016 fold 4  features 8  test bal.acc 0.250  acc 0.250  train None  2s
+    seed 20261016 fold 5  features 8  test bal.acc 0.417  acc 0.417  train None  2s
+    seed 20261016 fold 6  features 8  test bal.acc 0.167  acc 0.182  train None  2s
+    seed 20261016 fold 7  features 8  test bal.acc 0.333  acc 0.364  train None  2s
+    seed 20261016 fold 8  features 8  test bal.acc 0.250  acc 0.273  train None  2s
+    seed 20261016 fold 9  features 8  test bal.acc 0.333  acc 0.364  train None  2s
+    seed 20261017 fold 0  features 8  test bal.acc 0.250  acc 0.250  train None  2s
+    seed 20261017 fold 1  features 8  test bal.acc 0.333  acc 0.333  train None  2s
+    seed 20261017 fold 2  features 8  test bal.acc 0.167  acc 0.167  train None  2s
+    seed 20261017 fold 3  features 8  test bal.acc 0.250  acc 0.250  train None  2s
+    seed 20261017 fold 4  features 8  test bal.acc 0.417  acc 0.417  train None  2s
+    seed 20261017 fold 5  features 8  test bal.acc 0.167  acc 0.167  train None  2s
+    seed 20261017 fold 6  features 8  test bal.acc 0.250  acc 0.273  train None  2s
+    seed 20261017 fold 7  features 8  test bal.acc 0.250  acc 0.273  train None  2s
+    seed 20261017 fold 8  features 8  test bal.acc 0.250  acc 0.273  train None  2s
+    seed 20261017 fold 9  features 8  test bal.acc 0.167  acc 0.182  train None  2s
+    seed 20261018 fold 0  features 8  test bal.acc 0.333  acc 0.333  train None  2s
+    seed 20261018 fold 1  features 8  test bal.acc 0.250  acc 0.250  train None  2s
+    seed 20261018 fold 2  features 8  test bal.acc 0.250  acc 0.250  train None  1s
+    seed 20261018 fold 3  features 8  test bal.acc 0.167  acc 0.167  train None  1s
+    seed 20261018 fold 4  features 8  test bal.acc 0.333  acc 0.333  train None  1s
+    seed 20261018 fold 5  features 8  test bal.acc 0.167  acc 0.167  train None  1s
+    seed 20261018 fold 6  features 8  test bal.acc 0.250  acc 0.273  train None  1s
+    seed 20261018 fold 7  features 8  test bal.acc 0.167  acc 0.182  train None  1s
+    seed 20261018 fold 8  features 8  test bal.acc 0.250  acc 0.273  train None  1s
+    seed 20261018 fold 9  features 8  test bal.acc 0.417  acc 0.455  train None  1s
+    seed 20261019 fold 0  features 8  test bal.acc 0.167  acc 0.167  train None  2s
+    seed 20261019 fold 1  features 8  test bal.acc 0.167  acc 0.167  train None  1s
+    seed 20261019 fold 2  features 8  test bal.acc 0.333  acc 0.333  train None  1s
+    seed 20261019 fold 3  features 8  test bal.acc 0.333  acc 0.333  train None  1s
+    seed 20261019 fold 4  features 8  test bal.acc 0.417  acc 0.417  train None  1s
+    seed 20261019 fold 5  features 8  test bal.acc 0.250  acc 0.250  train None  1s
+    seed 20261019 fold 6  features 8  test bal.acc 0.417  acc 0.455  train None  1s
+    seed 20261019 fold 7  features 8  test bal.acc 0.250  acc 0.273  train None  2s
+    seed 20261019 fold 8  features 8  test bal.acc 0.333  acc 0.364  train None  1s
+    seed 20261019 fold 9  features 8  test bal.acc 0.250  acc 0.273  train None  1s
+  tabpfn_comorb8: seed-level bal.acc 0.265 +/- 0.016  acc 0.275
+  elapsed 78s

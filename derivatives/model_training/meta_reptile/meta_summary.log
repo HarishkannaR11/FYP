@@ -1,0 +1,32 @@
+====================================================================================================
+REPTILE META-LEARNING (biomarker tasks) vs FROM-SCRATCH TRANSFORMER vs TabPFN -- 116 subjects, 6 stages
+====================================================================================================
+identical folds, SVM-RFE features and fine-tuning seeds; only the transformer's starting weights differ
+
+[5-fold x 5 CV (116)]  accuracy / balanced accuracy (+/- sd of 5 seed means in CV), training balanced accuracy
+  rs-fMRI only                 Transformer, from scratch                  0.198 / 0.196 +/- 0.011  train 0.322
+  rs-fMRI only                 Transformer, Reptile meta-learned start    0.203 / 0.202 +/- 0.032  train 0.301
+  rs-fMRI only                 TabPFN v2                                  0.252 / 0.246 +/- 0.011  train 0.995
+                               Reptile inner loss per biomarker task (last 10 visits; uniform guess 1.792): mALFF 1.802, mReHo 1.805, DC_z 1.803, FC 1.784
+  rs-fMRI + 8 comorbidities    Transformer, from scratch                  0.245 / 0.240 +/- 0.015  train 0.455
+  rs-fMRI + 8 comorbidities    Transformer, Reptile meta-learned start    0.257 / 0.251 +/- 0.013  train 0.462
+  rs-fMRI + 8 comorbidities    TabPFN v2                                  0.281 / 0.274 +/- 0.019  train 0.993
+                               Reptile inner loss per biomarker task (last 10 visits; uniform guess 1.792): mALFF 1.802, mReHo 1.805, DC_z 1.803, FC 1.784
+  shuffled-label control (meta, rs-fMRI + 8 comorb.): 0.152 balanced  OK (near chance)
+
+[70/30 test (35)]  accuracy / balanced accuracy (+/- sd of 5 seed means in CV), training balanced accuracy
+  rs-fMRI only                 Transformer, from scratch                  0.171 / 0.167  (6/35)  train 0.333
+  rs-fMRI only                 Transformer, Reptile meta-learned start    0.171 / 0.167  (6/35)  train 0.345
+  rs-fMRI only                 TabPFN v2                                  0.229 / 0.222  (8/35)  train 0.988
+  rs-fMRI + 8 comorbidities    Transformer, from scratch                  0.200 / 0.194  (7/35)  train 0.510
+  rs-fMRI + 8 comorbidities    Transformer, Reptile meta-learned start    0.200 / 0.200  (7/35)  train 0.471
+  rs-fMRI + 8 comorbidities    TabPFN v2                                  0.314 / 0.306  (11/35)  train 1.000
+
+[PAIRED, 5-fold x 5, balanced accuracy, identical folds; rule: >= 4/5 seeds and mean > 0]
+  rs-fMRI only|meta-scratch                      +0.006  seeds 2/5  per seed [-0.028, 0.064, 0.0, -0.039, 0.033]  -> TIED
+  rs-fMRI only|meta-tabpfn                       -0.044  seeds 1/5  per seed [-0.092, 0.003, -0.056, -0.078, 0.0]  -> TIED
+  rs-fMRI + 8 comorbidities|meta-scratch         +0.011  seeds 3/5  per seed [-0.025, 0.0, 0.011, 0.039, 0.028]  -> TIED
+  rs-fMRI + 8 comorbidities|meta-tabpfn          -0.023  seeds 2/5  per seed [-0.067, 0.008, -0.033, -0.036, 0.011]  -> TIED
+
+QC: 13 record sets, 0 metric mismatches; meta and scratch used the same folds and features: True
+    figure derivatives/model_training/meta_reptile/figures/fig_meta_comparison.png

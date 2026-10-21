@@ -1,0 +1,38 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design cv116, candidate logreg_svmrfe50_clin
+====================================================================================================
+cohort 116; comorbidity block 23 features ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_psychiatric', 'MH_neurologic_non_AD', 'MH_head_eyes_ears_nose_throat', 'MH_cardiovascular', 'MH_respiratory', 'MH_hepatic', 'MH_dermatologic_connective_tissue', 'MH_musculoskeletal', 'MH_endocrine_metabolic', 'MH_gastrointestinal', 'MH_hematopoietic_lymphatic', 'MH_renal_genitourinary', 'MH_allergies_drug_sensitivities', 'MH_alcohol_abuse', 'MH_drug_abuse', 'MH_smoking', 'MH_malignancy', 'MH_major_surgical_procedures', 'MH_other']; missing values 40 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+    seed 20261015 fold 0  test bal.acc 0.250  train 1.000  MAE 1.25  QWK +0.597  cls 5  epochs -  0s
+    seed 20261015 fold 1  test bal.acc 0.375  train 1.000  MAE 1.26  QWK +0.443  cls 6  epochs -  0s
+    seed 20261015 fold 2  test bal.acc 0.250  train 1.000  MAE 1.61  QWK +0.193  cls 6  epochs -  0s
+    seed 20261015 fold 3  test bal.acc 0.208  train 0.990  MAE 1.78  QWK +0.090  cls 5  epochs -  0s
+    seed 20261015 fold 4  test bal.acc 0.264  train 1.000  MAE 1.74  QWK +0.071  cls 6  epochs -  0s
+  seed 20261015: bal.acc 0.269
+    seed 20261016 fold 0  test bal.acc 0.208  train 1.000  MAE 1.46  QWK +0.444  cls 6  epochs -  0s
+    seed 20261016 fold 1  test bal.acc 0.125  train 1.000  MAE 2.04  QWK +0.180  cls 6  epochs -  0s
+    seed 20261016 fold 2  test bal.acc 0.264  train 1.000  MAE 1.74  QWK +0.051  cls 5  epochs -  0s
+    seed 20261016 fold 3  test bal.acc 0.250  train 1.000  MAE 1.39  QWK +0.409  cls 6  epochs -  0s
+    seed 20261016 fold 4  test bal.acc 0.389  train 1.000  MAE 1.48  QWK +0.311  cls 6  epochs -  0s
+  seed 20261016: bal.acc 0.247
+    seed 20261017 fold 0  test bal.acc 0.250  train 1.000  MAE 1.79  QWK +0.156  cls 6  epochs -  0s
+    seed 20261017 fold 1  test bal.acc 0.375  train 1.000  MAE 1.26  QWK +0.457  cls 6  epochs -  0s
+    seed 20261017 fold 2  test bal.acc 0.208  train 1.000  MAE 1.87  QWK +0.007  cls 6  epochs -  0s
+    seed 20261017 fold 3  test bal.acc 0.083  train 1.000  MAE 1.87  QWK +0.053  cls 6  epochs -  0s
+    seed 20261017 fold 4  test bal.acc 0.278  train 1.000  MAE 1.78  QWK +0.184  cls 6  epochs -  0s
+  seed 20261017: bal.acc 0.239
+    seed 20261018 fold 0  test bal.acc 0.333  train 0.990  MAE 1.67  QWK +0.224  cls 6  epochs -  0s
+    seed 20261018 fold 1  test bal.acc 0.292  train 1.000  MAE 1.78  QWK +0.047  cls 6  epochs -  0s
+    seed 20261018 fold 2  test bal.acc 0.333  train 1.000  MAE 1.30  QWK +0.558  cls 6  epochs -  0s
+    seed 20261018 fold 3  test bal.acc 0.347  train 1.000  MAE 1.17  QWK +0.573  cls 6  epochs -  0s
+    seed 20261018 fold 4  test bal.acc 0.431  train 1.000  MAE 1.26  QWK +0.484  cls 6  epochs -  0s
+  seed 20261018: bal.acc 0.347
+    seed 20261019 fold 0  test bal.acc 0.292  train 0.990  MAE 1.38  QWK +0.384  cls 6  epochs -  0s
+    seed 20261019 fold 1  test bal.acc 0.167  train 0.987  MAE 1.74  QWK +0.042  cls 6  epochs -  0s
+    seed 20261019 fold 2  test bal.acc 0.167  train 1.000  MAE 1.78  QWK +0.116  cls 5  epochs -  0s
+    seed 20261019 fold 3  test bal.acc 0.250  train 1.000  MAE 1.61  QWK +0.231  cls 6  epochs -  0s
+    seed 20261019 fold 4  test bal.acc 0.250  train 1.000  MAE 1.52  QWK +0.340  cls 6  epochs -  0s
+  seed 20261019: bal.acc 0.225
+  logreg_svmrfe50_clin: seed-level bal.acc 0.266 +/- 0.043  macroF1 0.260  MAE 1.582  QWK +0.266  train 0.998
+  elapsed 6s

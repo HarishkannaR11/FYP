@@ -1,0 +1,38 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design cv116, candidate ceiling_mmse_cdrsb
+====================================================================================================
+cohort 116; clinical block 'clinical10', 10 features ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_cardiovascular', 'MH_endocrine_metabolic', 'MH_psychiatric', 'MH_smoking', 'MMSE_total', 'CDR_SOB']; missing values 12 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+    seed 20261015 fold 0  test bal.acc 0.458  train 0.438  MAE 0.83  QWK +0.765  cls 5  epochs -  0s
+    seed 20261015 fold 1  test bal.acc 0.472  train 0.445  MAE 0.65  QWK +0.849  cls 5  epochs -  0s
+    seed 20261015 fold 2  test bal.acc 0.472  train 0.453  MAE 0.70  QWK +0.823  cls 6  epochs -  0s
+    seed 20261015 fold 3  test bal.acc 0.389  train 0.466  MAE 1.13  QWK +0.606  cls 4  epochs -  0s
+    seed 20261015 fold 4  test bal.acc 0.417  train 0.447  MAE 1.09  QWK +0.578  cls 5  epochs -  0s
+  seed 20261015: bal.acc 0.442
+    seed 20261016 fold 0  test bal.acc 0.500  train 0.427  MAE 0.79  QWK +0.757  cls 6  epochs -  0s
+    seed 20261016 fold 1  test bal.acc 0.375  train 0.458  MAE 1.04  QWK +0.656  cls 5  epochs -  0s
+    seed 20261016 fold 2  test bal.acc 0.458  train 0.417  MAE 1.00  QWK +0.663  cls 5  epochs -  0s
+    seed 20261016 fold 3  test bal.acc 0.431  train 0.463  MAE 1.00  QWK +0.625  cls 5  epochs -  0s
+    seed 20261016 fold 4  test bal.acc 0.417  train 0.440  MAE 0.78  QWK +0.788  cls 5  epochs -  0s
+  seed 20261016: bal.acc 0.436
+    seed 20261017 fold 0  test bal.acc 0.458  train 0.448  MAE 0.92  QWK +0.703  cls 4  epochs -  0s
+    seed 20261017 fold 1  test bal.acc 0.417  train 0.438  MAE 0.91  QWK +0.739  cls 4  epochs -  0s
+    seed 20261017 fold 2  test bal.acc 0.431  train 0.455  MAE 1.00  QWK +0.657  cls 5  epochs -  0s
+    seed 20261017 fold 3  test bal.acc 0.333  train 0.458  MAE 1.09  QWK +0.659  cls 5  epochs -  0s
+    seed 20261017 fold 4  test bal.acc 0.458  train 0.429  MAE 0.96  QWK +0.695  cls 4  epochs -  0s
+  seed 20261017: bal.acc 0.419
+    seed 20261018 fold 0  test bal.acc 0.333  train 0.483  MAE 1.38  QWK +0.454  cls 4  epochs -  0s
+    seed 20261018 fold 1  test bal.acc 0.500  train 0.385  MAE 0.65  QWK +0.820  cls 6  epochs -  0s
+    seed 20261018 fold 2  test bal.acc 0.514  train 0.429  MAE 0.57  QWK +0.880  cls 5  epochs -  0s
+    seed 20261018 fold 3  test bal.acc 0.292  train 0.455  MAE 1.13  QWK +0.661  cls 5  epochs -  0s
+    seed 20261018 fold 4  test bal.acc 0.500  train 0.463  MAE 0.96  QWK +0.657  cls 5  epochs -  0s
+  seed 20261018: bal.acc 0.428
+    seed 20261019 fold 0  test bal.acc 0.375  train 0.441  MAE 1.04  QWK +0.645  cls 6  epochs -  0s
+    seed 20261019 fold 1  test bal.acc 0.347  train 0.450  MAE 1.17  QWK +0.620  cls 5  epochs -  0s
+    seed 20261019 fold 2  test bal.acc 0.458  train 0.409  MAE 0.87  QWK +0.736  cls 5  epochs -  0s
+    seed 20261019 fold 3  test bal.acc 0.417  train 0.442  MAE 0.87  QWK +0.753  cls 5  epochs -  0s
+    seed 20261019 fold 4  test bal.acc 0.417  train 0.461  MAE 0.96  QWK +0.715  cls 5  epochs -  0s
+  seed 20261019: bal.acc 0.403
+  ceiling_mmse_cdrsb: seed-level bal.acc 0.426 +/- 0.014  macroF1 0.358  MAE 0.939  QWK +0.700  train 0.444
+  elapsed 0s
