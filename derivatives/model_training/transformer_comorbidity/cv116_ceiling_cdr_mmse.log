@@ -1,0 +1,38 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design cv116, candidate ceiling_cdr_mmse
+====================================================================================================
+cohort 116; comorbidity block 23 features ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_psychiatric', 'MH_neurologic_non_AD', 'MH_head_eyes_ears_nose_throat', 'MH_cardiovascular', 'MH_respiratory', 'MH_hepatic', 'MH_dermatologic_connective_tissue', 'MH_musculoskeletal', 'MH_endocrine_metabolic', 'MH_gastrointestinal', 'MH_hematopoietic_lymphatic', 'MH_renal_genitourinary', 'MH_allergies_drug_sensitivities', 'MH_alcohol_abuse', 'MH_drug_abuse', 'MH_smoking', 'MH_malignancy', 'MH_major_surgical_procedures', 'MH_other']; missing values 40 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+    seed 20261015 fold 0  test bal.acc 0.500  train 0.569  MAE 0.75  QWK +0.781  cls 6  epochs -  0s
+    seed 20261015 fold 1  test bal.acc 0.542  train 0.460  MAE 0.57  QWK +0.867  cls 4  epochs -  0s
+    seed 20261015 fold 2  test bal.acc 0.472  train 0.520  MAE 0.65  QWK +0.830  cls 5  epochs -  0s
+    seed 20261015 fold 3  test bal.acc 0.347  train 0.530  MAE 0.96  QWK +0.686  cls 5  epochs -  0s
+    seed 20261015 fold 4  test bal.acc 0.417  train 0.502  MAE 0.87  QWK +0.699  cls 5  epochs -  0s
+  seed 20261015: bal.acc 0.456
+    seed 20261016 fold 0  test bal.acc 0.458  train 0.503  MAE 0.71  QWK +0.799  cls 5  epochs -  0s
+    seed 20261016 fold 1  test bal.acc 0.472  train 0.510  MAE 0.61  QWK +0.841  cls 6  epochs -  0s
+    seed 20261016 fold 2  test bal.acc 0.375  train 0.514  MAE 0.74  QWK +0.820  cls 5  epochs -  0s
+    seed 20261016 fold 3  test bal.acc 0.514  train 0.507  MAE 0.70  QWK +0.774  cls 5  epochs -  0s
+    seed 20261016 fold 4  test bal.acc 0.472  train 0.524  MAE 0.78  QWK +0.746  cls 6  epochs -  0s
+  seed 20261016: bal.acc 0.458
+    seed 20261017 fold 0  test bal.acc 0.542  train 0.503  MAE 0.54  QWK +0.863  cls 4  epochs -  0s
+    seed 20261017 fold 1  test bal.acc 0.472  train 0.532  MAE 0.57  QWK +0.886  cls 4  epochs -  0s
+    seed 20261017 fold 2  test bal.acc 0.389  train 0.510  MAE 0.70  QWK +0.827  cls 5  epochs -  0s
+    seed 20261017 fold 3  test bal.acc 0.417  train 0.554  MAE 0.87  QWK +0.720  cls 6  epochs -  0s
+    seed 20261017 fold 4  test bal.acc 0.556  train 0.478  MAE 0.78  QWK +0.732  cls 6  epochs -  0s
+  seed 20261017: bal.acc 0.475
+    seed 20261018 fold 0  test bal.acc 0.375  train 0.538  MAE 0.83  QWK +0.754  cls 5  epochs -  0s
+    seed 20261018 fold 1  test bal.acc 0.514  train 0.509  MAE 0.70  QWK +0.758  cls 5  epochs -  0s
+    seed 20261018 fold 2  test bal.acc 0.528  train 0.512  MAE 0.52  QWK +0.897  cls 4  epochs -  0s
+    seed 20261018 fold 3  test bal.acc 0.347  train 0.538  MAE 0.96  QWK +0.706  cls 5  epochs -  0s
+    seed 20261018 fold 4  test bal.acc 0.514  train 0.507  MAE 0.74  QWK +0.741  cls 5  epochs -  0s
+  seed 20261018: bal.acc 0.456
+    seed 20261019 fold 0  test bal.acc 0.500  train 0.517  MAE 0.71  QWK +0.758  cls 5  epochs -  0s
+    seed 20261019 fold 1  test bal.acc 0.403  train 0.576  MAE 0.78  QWK +0.803  cls 5  epochs -  0s
+    seed 20261019 fold 2  test bal.acc 0.444  train 0.511  MAE 0.65  QWK +0.851  cls 4  epochs -  0s
+    seed 20261019 fold 3  test bal.acc 0.458  train 0.528  MAE 0.74  QWK +0.796  cls 6  epochs -  0s
+    seed 20261019 fold 4  test bal.acc 0.472  train 0.505  MAE 0.70  QWK +0.792  cls 5  epochs -  0s
+  seed 20261019: bal.acc 0.456
+  ceiling_cdr_mmse: seed-level bal.acc 0.460 +/- 0.008  macroF1 0.390  MAE 0.724  QWK +0.789  train 0.518
+  elapsed 0s

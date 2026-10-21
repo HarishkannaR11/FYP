@@ -1,0 +1,32 @@
+====================================================================================================
+REPTILE META-LEARNING (biomarker tasks) + TRANSFORMER FINE-TUNE -- design cv116, candidate meta_transformer_svmrfe50
+====================================================================================================
+meta settings {'iterations': 200, 'inner_steps': 5, 'inner_lr': 0.001, 'batch': 16, 'eps_start': 0.5, 'eps_end': 0.05}; tasks ('mALFF', 'mReHo', 'DC_z', 'FC'); architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; fine-tune {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}
+fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+    seed 20261015 fold 0  K=47  test bal.acc 0.292  acc 0.292  train 0.358  epochs [50, 15, 14, 23]  meta 22s  total 47s
+    seed 20261015 fold 1  K=47  test bal.acc 0.167  acc 0.174  train 0.365  epochs [0, 27, 17, 0]  meta 21s  total 36s
+    seed 20261015 fold 2  K=48  test bal.acc 0.167  acc 0.174  train 0.323  epochs [13, 3, 0, 4]  meta 20s  total 32s
+    seed 20261015 fold 3  K=45  test bal.acc 0.139  acc 0.130  train 0.267  epochs [11, 21, 10, 12]  meta 20s  total 36s
+    seed 20261015 fold 4  K=48  test bal.acc 0.042  acc 0.043  train 0.337  epochs [15, 13, 7, 8]  meta 20s  total 36s
+    seed 20261016 fold 0  K=45  test bal.acc 0.208  acc 0.208  train 0.333  epochs [9, 9, 17, 14]  meta 20s  total 36s
+    seed 20261016 fold 1  K=47  test bal.acc 0.222  acc 0.217  train 0.334  epochs [25, 21, 46, 22]  meta 20s  total 45s
+    seed 20261016 fold 2  K=45  test bal.acc 0.250  acc 0.261  train 0.315  epochs [3, 3, 5, 3]  meta 20s  total 31s
+    seed 20261016 fold 3  K=47  test bal.acc 0.347  acc 0.348  train 0.288  epochs [0, 2, 5, 13]  meta 20s  total 32s
+    seed 20261016 fold 4  K=48  test bal.acc 0.208  acc 0.217  train 0.344  epochs [25, 21, 36, 5]  meta 20s  total 42s
+    seed 20261017 fold 0  K=44  test bal.acc 0.208  acc 0.208  train 0.316  epochs [20, 21, 18, 26]  meta 19s  total 40s
+    seed 20261017 fold 1  K=49  test bal.acc 0.292  acc 0.304  train 0.320  epochs [11, 2, 12, 21]  meta 21s  total 37s
+    seed 20261017 fold 2  K=47  test bal.acc 0.125  acc 0.130  train 0.317  epochs [7, 18, 3, 2]  meta 20s  total 34s
+    seed 20261017 fold 3  K=45  test bal.acc 0.097  acc 0.087  train 0.187  epochs [0, 7, 10, 13]  meta 20s  total 33s
+    seed 20261017 fold 4  K=43  test bal.acc 0.278  acc 0.261  train 0.294  epochs [17, 15, 10, 13]  meta 19s  total 36s
+    seed 20261018 fold 0  K=46  test bal.acc 0.208  acc 0.208  train 0.240  epochs [3, 2, 0, 25]  meta 20s  total 33s
+    seed 20261018 fold 1  K=47  test bal.acc 0.083  acc 0.087  train 0.353  epochs [6, 16, 2, 14]  meta 20s  total 34s
+    seed 20261018 fold 2  K=48  test bal.acc 0.167  acc 0.174  train 0.198  epochs [0, 7, 15, 18]  meta 20s  total 35s
+    seed 20261018 fold 3  K=45  test bal.acc 0.208  acc 0.217  train 0.271  epochs [0, 2, 30, 19]  meta 20s  total 36s
+    seed 20261018 fold 4  K=48  test bal.acc 0.208  acc 0.217  train 0.240  epochs [2, 0, 11, 8]  meta 20s  total 33s
+    seed 20261019 fold 0  K=46  test bal.acc 0.250  acc 0.250  train 0.358  epochs [25, 15, 2, 22]  meta 19s  total 38s
+    seed 20261019 fold 1  K=45  test bal.acc 0.208  acc 0.217  train 0.234  epochs [12, 0, 16, 3]  meta 20s  total 33s
+    seed 20261019 fold 2  K=49  test bal.acc 0.167  acc 0.174  train 0.229  epochs [10, 1, 5, 16]  meta 20s  total 35s
+    seed 20261019 fold 3  K=47  test bal.acc 0.264  acc 0.261  train 0.347  epochs [37, 5, 21, 5]  meta 20s  total 39s
+    seed 20261019 fold 4  K=48  test bal.acc 0.236  acc 0.217  train 0.358  epochs [18, 4, 5, 5]  meta 20s  total 34s
+  meta_transformer_svmrfe50: seed-level bal.acc 0.202 +/- 0.032  acc 0.203  train 0.301
+  elapsed 902s

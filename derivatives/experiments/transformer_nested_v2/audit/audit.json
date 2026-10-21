@@ -1,0 +1,119 @@
+{
+  "results": [
+    {
+      "group": "A",
+      "check": "outer folds identical to the TabPFN k=50 baseline (test indices and fingerprints)",
+      "status": "PASS",
+      "detail": "25/25 splits; fingerprints ['3edbea19c1ee3c08', 'd53ad26a06b7d5c5', '2a8e70dd0eb80cae', 'd54bf96735be41dd', '8b7f4cd9e512b26a']"
+    },
+    {
+      "group": "A",
+      "check": "inner folds partition each outer training set; disjoint from the outer test fold; same as C0's",
+      "status": "PASS",
+      "detail": "25 splits x 4 inner folds; smallest per-stage count in an inner-validation fold 3"
+    },
+    {
+      "group": "A",
+      "check": "locked 70/30 test subjects are outside the 116-subject CV",
+      "status": "FLAG",
+      "detail": "35 locked subjects; each CV seed tests 35 of them in its outer folds and trains on them in the other folds. This is the project's established design (all 116 in CV; identical folds to the TabPFN baseline). run_test.py is not run here, but the 35 subjects are not unseen by CV-based comparisons"
+    },
+    {
+      "group": "B",
+      "check": "mALFF normalised within each subject (ROI mean = 1 for every subject)",
+      "status": "PASS",
+      "detail": "ROI mean range 1.00000..1.00000, ROI sd range 0.2051..0.8837"
+    },
+    {
+      "group": "B",
+      "check": "mReHo normalised within each subject (ROI mean = 1 for every subject)",
+      "status": "PASS",
+      "detail": "ROI mean range 1.00000..1.00000, ROI sd range 0.1107..0.1948"
+    },
+    {
+      "group": "B",
+      "check": "DC_z normalised within each subject (ROI mean 0, sd 1 for every subject)",
+      "status": "PASS",
+      "detail": "ROI mean range -0.00000..0.00000, ROI sd range 1.0000..1.0000"
+    },
+    {
+      "group": "B",
+      "check": "FC strength = each subject's own mean |Fisher-z| per region",
+      "status": "PASS",
+      "detail": "max abs difference 3.0e-08"
+    },
+    {
+      "group": "B",
+      "check": "FC matrices symmetric with zero diagonal (per-subject Fisher-z)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "check": "local attention mask = atlas centroid 15-NN graph (geometry only, no subject data)",
+      "status": "PASS",
+      "detail": "0 differing entries"
+    },
+    {
+      "group": "C",
+      "check": "inner scaler ignores inner-validation and outer-test rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "check": "inner SVM-RFE ignores inner-validation and outer-test rows and labels",
+      "status": "PASS",
+      "detail": "50 features, 47 regions"
+    },
+    {
+      "group": "C",
+      "check": "inner SVM-RFE is a separate fit from C0's outer-training fit",
+      "status": "PASS",
+      "detail": "Jaccard overlap with the outer-training selection 0.23 (69 vs 92 subjects)"
+    },
+    {
+      "group": "C",
+      "check": "training trajectory ignores inner-validation labels (labels used only to choose the checkpoint)",
+      "status": "PASS",
+      "detail": "train curves and outer-fold outputs identical; validation curves differ as intended: True"
+    },
+    {
+      "group": "C",
+      "check": "fit_split refuses to run when outer-test labels are not hidden",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "check": "selection, inner curves and chosen epochs ignore outer-test rows",
+      "status": "PASS",
+      "detail": "outer-fold probabilities change with the perturbed rows (sanity): True"
+    },
+    {
+      "group": "C",
+      "check": "training loop reproduces C0 exactly when given C0's outer-fitted inputs",
+      "status": "PASS",
+      "detail": "best epoch 16 vs C0 16; so the only change in v2 is where the scaler and SVM-RFE are fitted"
+    },
+    {
+      "group": "D",
+      "check": "no v2 script calls the locked-test evaluation (run_test.py)",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "input_hashes": {
+    "X_regional.npy": "cf90056ff364b369",
+    "X_fc.npy": "e46cb07f850523e6",
+    "X_fc_roi_unsigned.npy": "b78e1a979ecb7445",
+    "y.npy": "4a1c1a7a9c334cd5",
+    "subjects.npy": "6d36093fa87659bd",
+    "local_attention_mask.npy": "6677cee32ba74597"
+  },
+  "split": {
+    "seed": 20261015,
+    "fold": 0,
+    "inner_model": 0
+  }
+}

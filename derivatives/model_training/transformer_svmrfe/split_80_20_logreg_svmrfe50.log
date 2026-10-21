@@ -1,0 +1,8 @@
+====================================================================================================
+TRANSFORMER ON SVM-RFE FEATURES -- design split_80_20, candidate logreg_svmrfe50
+====================================================================================================
+cohort 116 subjects {'CN': 20, 'SMC': 20, 'EMCI': 20, 'MCI': 16, 'LMCI': 20, 'AD': 20}; versions {"python": "3.13.3", "numpy": "2.2.2", "scikit-learn": "1.7.2", "torch": "2.11.0+cpu"}
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+split {'seed': 20261020, 'test_fraction': 0.2, 'split_fingerprint': 'f31e25927538d456', 'n_train': 93, 'n_test': 23, 'train_class_counts': {'CN': 16, 'SMC': 16, 'EMCI': 16, 'MCI': 13, 'LMCI': 16, 'AD': 16}, 'test_class_counts': {'CN': 4, 'SMC': 4, 'EMCI': 4, 'MCI': 3, 'LMCI': 4, 'AD': 4}}
+    seed 20261020 fold 0  K=  -  test bal.acc 0.250  train 0.979  MAE 1.83  QWK +0.111  cls 6  epochs -  0s
+  elapsed 0s

@@ -1,0 +1,38 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design cv116, candidate logreg_clin
+====================================================================================================
+cohort 116; clinical block 'custom5', 5 features ['MMSE_total', 'CDR_SOB', 'GDS_total', 'APOE4_count', 'MH_cardiovascular']; missing values 6 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+5 folds x 5 seeds; fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+    seed 20261015 fold 0  test bal.acc 0.500  train 0.486  MAE 0.83  QWK +0.765  cls 6  epochs -  0s
+    seed 20261015 fold 1  test bal.acc 0.514  train 0.528  MAE 0.87  QWK +0.670  cls 6  epochs -  0s
+    seed 20261015 fold 2  test bal.acc 0.375  train 0.526  MAE 0.91  QWK +0.742  cls 6  epochs -  0s
+    seed 20261015 fold 3  test bal.acc 0.208  train 0.473  MAE 1.48  QWK +0.418  cls 5  epochs -  0s
+    seed 20261015 fold 4  test bal.acc 0.542  train 0.499  MAE 0.96  QWK +0.644  cls 6  epochs -  0s
+  seed 20261015: bal.acc 0.428
+    seed 20261016 fold 0  test bal.acc 0.500  train 0.451  MAE 1.08  QWK +0.657  cls 5  epochs -  0s
+    seed 20261016 fold 1  test bal.acc 0.458  train 0.562  MAE 0.91  QWK +0.675  cls 5  epochs -  0s
+    seed 20261016 fold 2  test bal.acc 0.375  train 0.484  MAE 1.17  QWK +0.553  cls 5  epochs -  0s
+    seed 20261016 fold 3  test bal.acc 0.431  train 0.546  MAE 0.87  QWK +0.689  cls 5  epochs -  0s
+    seed 20261016 fold 4  test bal.acc 0.292  train 0.522  MAE 1.17  QWK +0.641  cls 6  epochs -  0s
+  seed 20261016: bal.acc 0.411
+    seed 20261017 fold 0  test bal.acc 0.292  train 0.559  MAE 1.25  QWK +0.583  cls 5  epochs -  0s
+    seed 20261017 fold 1  test bal.acc 0.333  train 0.483  MAE 1.04  QWK +0.679  cls 5  epochs -  0s
+    seed 20261017 fold 2  test bal.acc 0.375  train 0.494  MAE 1.04  QWK +0.660  cls 5  epochs -  0s
+    seed 20261017 fold 3  test bal.acc 0.458  train 0.543  MAE 0.83  QWK +0.752  cls 5  epochs -  0s
+    seed 20261017 fold 4  test bal.acc 0.417  train 0.515  MAE 1.13  QWK +0.608  cls 5  epochs -  0s
+  seed 20261017: bal.acc 0.375
+    seed 20261018 fold 0  test bal.acc 0.292  train 0.521  MAE 1.29  QWK +0.572  cls 5  epochs -  0s
+    seed 20261018 fold 1  test bal.acc 0.514  train 0.470  MAE 0.78  QWK +0.735  cls 6  epochs -  0s
+    seed 20261018 fold 2  test bal.acc 0.292  train 0.554  MAE 1.09  QWK +0.737  cls 5  epochs -  0s
+    seed 20261018 fold 3  test bal.acc 0.375  train 0.520  MAE 0.78  QWK +0.824  cls 5  epochs -  0s
+    seed 20261018 fold 4  test bal.acc 0.333  train 0.498  MAE 1.09  QWK +0.600  cls 5  epochs -  0s
+  seed 20261018: bal.acc 0.361
+    seed 20261019 fold 0  test bal.acc 0.375  train 0.524  MAE 1.00  QWK +0.709  cls 5  epochs -  0s
+    seed 20261019 fold 1  test bal.acc 0.389  train 0.556  MAE 0.83  QWK +0.782  cls 5  epochs -  0s
+    seed 20261019 fold 2  test bal.acc 0.347  train 0.484  MAE 1.22  QWK +0.556  cls 5  epochs -  0s
+    seed 20261019 fold 3  test bal.acc 0.556  train 0.476  MAE 0.78  QWK +0.759  cls 6  epochs -  0s
+    seed 20261019 fold 4  test bal.acc 0.458  train 0.523  MAE 1.09  QWK +0.612  cls 5  epochs -  0s
+  seed 20261019: bal.acc 0.425
+  logreg_clin: seed-level bal.acc 0.400 +/- 0.027  macroF1 0.365  MAE 1.020  QWK +0.665  train 0.512
+  elapsed 0s

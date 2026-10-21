@@ -1,0 +1,38 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design cv116, candidate transformer_svmrfe50_clin_SHUFFLED
+====================================================================================================
+cohort 116; clinical block 'clinical10', 10 features ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_cardiovascular', 'MH_endocrine_metabolic', 'MH_psychiatric', 'MH_smoking', 'MMSE_total', 'CDR_SOB']; missing values 12 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+    seed 20261015 fold 0  test bal.acc 0.208  train 0.299  MAE 2.12  QWK -0.216  cls 5  epochs [22, 8, 4, 2]  16s
+    seed 20261015 fold 1  test bal.acc 0.167  train 0.240  MAE 2.57  QWK -0.124  cls 5  epochs [0, 15, 9, 8]  16s
+    seed 20261015 fold 2  test bal.acc 0.125  train 0.357  MAE 2.57  QWK -0.295  cls 4  epochs [11, 15, 20, 22]  21s
+    seed 20261015 fold 3  test bal.acc 0.097  train 0.308  MAE 2.09  QWK -0.017  cls 4  epochs [1, 7, 4, 13]  14s
+    seed 20261015 fold 4  test bal.acc 0.167  train 0.304  MAE 2.13  QWK -0.000  cls 4  epochs [7, 22, 12, 12]  18s
+  seed 20261015: bal.acc 0.153
+    seed 20261016 fold 0  test bal.acc 0.083  train 0.323  MAE 2.38  QWK -0.071  cls 3  epochs [9, 13, 14, 2]  16s
+    seed 20261016 fold 1  test bal.acc 0.083  train 0.349  MAE 2.57  QWK -0.352  cls 5  epochs [8, 5, 3, 10]  14s
+    seed 20261016 fold 2  test bal.acc 0.056  train 0.225  MAE 2.57  QWK -0.683  cls 4  epochs [10, 4, 11, 0]  15s
+    seed 20261016 fold 3  test bal.acc 0.153  train 0.298  MAE 2.04  QWK +0.035  cls 4  epochs [8, 12, 24, 8]  19s
+    seed 20261016 fold 4  test bal.acc 0.125  train 0.506  MAE 2.00  QWK +0.184  cls 6  epochs [11, 21, 11, 28]  21s
+  seed 20261016: bal.acc 0.100
+    seed 20261017 fold 0  test bal.acc 0.167  train 0.226  MAE 2.04  QWK -0.250  cls 4  epochs [1, 1, 5, 0]  11s
+    seed 20261017 fold 1  test bal.acc 0.167  train 0.312  MAE 2.91  QWK -0.348  cls 3  epochs [3, 0, 5, 18]  14s
+    seed 20261017 fold 2  test bal.acc 0.083  train 0.444  MAE 1.83  QWK +0.209  cls 6  epochs [18, 5, 13, 22]  19s
+    seed 20261017 fold 3  test bal.acc 0.167  train 0.409  MAE 2.35  QWK -0.015  cls 4  epochs [8, 14, 1, 13]  16s
+    seed 20261017 fold 4  test bal.acc 0.236  train 0.265  MAE 1.96  QWK -0.005  cls 4  epochs [2, 10, 2, 2]  13s
+  seed 20261017: bal.acc 0.164
+    seed 20261018 fold 0  test bal.acc 0.250  train 0.497  MAE 1.92  QWK +0.053  cls 6  epochs [9, 0, 28, 21]  20s
+    seed 20261018 fold 1  test bal.acc 0.125  train 0.353  MAE 1.52  QWK +0.288  cls 5  epochs [7, 4, 14, 12]  17s
+    seed 20261018 fold 2  test bal.acc 0.208  train 0.453  MAE 2.00  QWK -0.092  cls 5  epochs [18, 12, 14, 29]  22s
+    seed 20261018 fold 3  test bal.acc 0.042  train 0.395  MAE 2.04  QWK +0.167  cls 4  epochs [10, 24, 19, 16]  43s
+    seed 20261018 fold 4  test bal.acc 0.000  train 0.387  MAE 2.70  QWK -0.289  cls 5  epochs [20, 17, 0, 11]  24s
+  seed 20261018: bal.acc 0.125
+    seed 20261019 fold 0  test bal.acc 0.208  train 0.212  MAE 1.67  QWK -0.059  cls 4  epochs [0, 1, 6, 11]  15s
+    seed 20261019 fold 1  test bal.acc 0.083  train 0.307  MAE 2.04  QWK -0.016  cls 6  epochs [9, 13, 6, 2]  19s
+    seed 20261019 fold 2  test bal.acc 0.306  train 0.412  MAE 1.78  QWK +0.168  cls 6  epochs [14, 9, 28, 12]  26s
+    seed 20261019 fold 3  test bal.acc 0.181  train 0.463  MAE 1.96  QWK +0.003  cls 6  epochs [5, 22, 11, 26]  28s
+    seed 20261019 fold 4  test bal.acc 0.264  train 0.311  MAE 1.74  QWK +0.163  cls 4  epochs [12, 0, 3, 12]  20s
+  seed 20261019: bal.acc 0.208
+  transformer_svmrfe50_clin_SHUFFLED: seed-level bal.acc 0.150 +/- 0.037  macroF1 0.114  MAE 2.139  QWK -0.062  train 0.346
+  elapsed 478s

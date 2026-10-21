@@ -1,0 +1,38 @@
+====================================================================================================
+TRANSFORMER ON SVM-RFE FEATURES -- design cv116, candidate transformer_svmrfe50
+====================================================================================================
+cohort 116 subjects {'CN': 20, 'SMC': 20, 'EMCI': 20, 'MCI': 16, 'LMCI': 20, 'AD': 20}; versions {"python": "3.13.3", "numpy": "2.2.2", "scikit-learn": "1.7.2", "torch": "2.11.0+cpu"}
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+fold fingerprints {"20261015": "3edbea19c1ee3c08", "20261016": "d53ad26a06b7d5c5", "20261017": "2a8e70dd0eb80cae", "20261018": "d54bf96735be41dd", "20261019": "8b7f4cd9e512b26a"}
+    seed 20261015 fold 0  K= 47  test bal.acc 0.083  train 0.333  MAE 1.88  QWK +0.107  cls 5  epochs [15, 2, 20, 22]  41s
+    seed 20261015 fold 1  K= 47  test bal.acc 0.236  train 0.289  MAE 1.83  QWK +0.114  cls 2  epochs [2, 17, 2, 24]  28s
+    seed 20261015 fold 2  K= 48  test bal.acc 0.167  train 0.396  MAE 2.04  QWK +0.021  cls 5  epochs [24, 11, 13, 43]  51s
+    seed 20261015 fold 3  K= 45  test bal.acc 0.208  train 0.292  MAE 2.35  QWK -0.057  cls 3  epochs [25, 24, 25, 18]  53s
+    seed 20261015 fold 4  K= 48  test bal.acc 0.250  train 0.431  MAE 1.74  QWK +0.227  cls 5  epochs [35, 18, 8, 30]  1390s
+  seed 20261015: bal.acc 0.189
+    seed 20261016 fold 0  K= 45  test bal.acc 0.167  train 0.326  MAE 2.17  QWK +0.168  cls 4  epochs [16, 26, 8, 23]  39s
+    seed 20261016 fold 1  K= 47  test bal.acc 0.208  train 0.448  MAE 1.74  QWK +0.387  cls 4  epochs [32, 29, 3, 38]  41s
+    seed 20261016 fold 2  K= 45  test bal.acc 0.167  train 0.341  MAE 2.26  QWK -0.187  cls 5  epochs [19, 31, 7, 10]  33s
+    seed 20261016 fold 3  K= 47  test bal.acc 0.167  train 0.338  MAE 1.91  QWK +0.143  cls 5  epochs [4, 28, 40, 1]  36s
+    seed 20261016 fold 4  K= 48  test bal.acc 0.208  train 0.349  MAE 2.13  QWK +0.026  cls 3  epochs [4, 16, 8, 37]  37s
+  seed 20261016: bal.acc 0.183
+    seed 20261017 fold 0  K= 44  test bal.acc 0.208  train 0.333  MAE 2.00  QWK -0.101  cls 5  epochs [24, 17, 5, 5]  36s
+    seed 20261017 fold 1  K= 49  test bal.acc 0.250  train 0.271  MAE 1.35  QWK +0.468  cls 3  epochs [12, 16, 23, 12]  34s
+    seed 20261017 fold 2  K= 47  test bal.acc 0.292  train 0.317  MAE 1.61  QWK +0.188  cls 4  epochs [19, 1, 4, 9]  20s
+    seed 20261017 fold 3  K= 45  test bal.acc 0.125  train 0.268  MAE 2.35  QWK -0.026  cls 4  epochs [11, 15, 8, 4]  18s
+    seed 20261017 fold 4  K= 43  test bal.acc 0.125  train 0.312  MAE 1.87  QWK +0.165  cls 3  epochs [6, 30, 19, 12]  22s
+  seed 20261017: bal.acc 0.200
+    seed 20261018 fold 0  K= 46  test bal.acc 0.250  train 0.340  MAE 1.71  QWK +0.276  cls 5  epochs [18, 17, 18, 29]  26s
+    seed 20261018 fold 1  K= 47  test bal.acc 0.181  train 0.390  MAE 1.87  QWK -0.289  cls 4  epochs [7, 58, 18, 25]  36s
+    seed 20261018 fold 2  K= 48  test bal.acc 0.208  train 0.260  MAE 1.43  QWK +0.143  cls 2  epochs [15, 8, 7, 10]  28s
+    seed 20261018 fold 3  K= 45  test bal.acc 0.125  train 0.208  MAE 1.83  QWK +0.094  cls 2  epochs [0, 5, 14, 14]  23s
+    seed 20261018 fold 4  K= 48  test bal.acc 0.306  train 0.208  MAE 1.87  QWK +0.167  cls 4  epochs [4, 11, 1, 9]  22s
+  seed 20261018: bal.acc 0.214
+    seed 20261019 fold 0  K= 46  test bal.acc 0.167  train 0.264  MAE 1.79  QWK -0.008  cls 4  epochs [19, 13, 0, 12]  25s
+    seed 20261019 fold 1  K= 45  test bal.acc 0.167  train 0.167  MAE 2.43  QWK -0.001  cls 2  epochs [0, 4, 6, 17]  22s
+    seed 20261019 fold 2  K= 49  test bal.acc 0.167  train 0.260  MAE 1.87  QWK +0.134  cls 4  epochs [6, 5, 0, 25]  26s
+    seed 20261019 fold 3  K= 47  test bal.acc 0.278  train 0.478  MAE 1.74  QWK +0.064  cls 3  epochs [3, 51, 13, 1]  30s
+    seed 20261019 fold 4  K= 48  test bal.acc 0.181  train 0.431  MAE 2.00  QWK -0.211  cls 5  epochs [23, 13, 20, 5]  30s
+  seed 20261019: bal.acc 0.192
+  transformer_svmrfe50: seed-level bal.acc 0.196 +/- 0.011  macroF1 0.129  MAE 1.910  QWK +0.080  train 0.322
+  elapsed 2146s

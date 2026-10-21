@@ -1,0 +1,577 @@
+model,true,pred,count
+"Transformer C0 (rerun, logged)",CN,CN,9
+"Transformer C0 (rerun, logged)",CN,SMC,24
+"Transformer C0 (rerun, logged)",CN,EMCI,21
+"Transformer C0 (rerun, logged)",CN,MCI,9
+"Transformer C0 (rerun, logged)",CN,LMCI,6
+"Transformer C0 (rerun, logged)",CN,AD,31
+"Transformer C0 (rerun, logged)",SMC,CN,12
+"Transformer C0 (rerun, logged)",SMC,SMC,22
+"Transformer C0 (rerun, logged)",SMC,EMCI,20
+"Transformer C0 (rerun, logged)",SMC,MCI,9
+"Transformer C0 (rerun, logged)",SMC,LMCI,6
+"Transformer C0 (rerun, logged)",SMC,AD,31
+"Transformer C0 (rerun, logged)",EMCI,CN,17
+"Transformer C0 (rerun, logged)",EMCI,SMC,20
+"Transformer C0 (rerun, logged)",EMCI,EMCI,21
+"Transformer C0 (rerun, logged)",EMCI,MCI,11
+"Transformer C0 (rerun, logged)",EMCI,LMCI,7
+"Transformer C0 (rerun, logged)",EMCI,AD,24
+"Transformer C0 (rerun, logged)",MCI,CN,9
+"Transformer C0 (rerun, logged)",MCI,SMC,21
+"Transformer C0 (rerun, logged)",MCI,EMCI,14
+"Transformer C0 (rerun, logged)",MCI,MCI,11
+"Transformer C0 (rerun, logged)",MCI,LMCI,4
+"Transformer C0 (rerun, logged)",MCI,AD,21
+"Transformer C0 (rerun, logged)",LMCI,CN,12
+"Transformer C0 (rerun, logged)",LMCI,SMC,21
+"Transformer C0 (rerun, logged)",LMCI,EMCI,18
+"Transformer C0 (rerun, logged)",LMCI,MCI,8
+"Transformer C0 (rerun, logged)",LMCI,LMCI,3
+"Transformer C0 (rerun, logged)",LMCI,AD,38
+"Transformer C0 (rerun, logged)",AD,CN,12
+"Transformer C0 (rerun, logged)",AD,SMC,13
+"Transformer C0 (rerun, logged)",AD,EMCI,14
+"Transformer C0 (rerun, logged)",AD,MCI,5
+"Transformer C0 (rerun, logged)",AD,LMCI,7
+"Transformer C0 (rerun, logged)",AD,AD,49
+Transformer k=50 (earlier saved run),CN,CN,9
+Transformer k=50 (earlier saved run),CN,SMC,24
+Transformer k=50 (earlier saved run),CN,EMCI,21
+Transformer k=50 (earlier saved run),CN,MCI,9
+Transformer k=50 (earlier saved run),CN,LMCI,6
+Transformer k=50 (earlier saved run),CN,AD,31
+Transformer k=50 (earlier saved run),SMC,CN,12
+Transformer k=50 (earlier saved run),SMC,SMC,22
+Transformer k=50 (earlier saved run),SMC,EMCI,20
+Transformer k=50 (earlier saved run),SMC,MCI,9
+Transformer k=50 (earlier saved run),SMC,LMCI,6
+Transformer k=50 (earlier saved run),SMC,AD,31
+Transformer k=50 (earlier saved run),EMCI,CN,17
+Transformer k=50 (earlier saved run),EMCI,SMC,20
+Transformer k=50 (earlier saved run),EMCI,EMCI,21
+Transformer k=50 (earlier saved run),EMCI,MCI,11
+Transformer k=50 (earlier saved run),EMCI,LMCI,7
+Transformer k=50 (earlier saved run),EMCI,AD,24
+Transformer k=50 (earlier saved run),MCI,CN,9
+Transformer k=50 (earlier saved run),MCI,SMC,21
+Transformer k=50 (earlier saved run),MCI,EMCI,14
+Transformer k=50 (earlier saved run),MCI,MCI,11
+Transformer k=50 (earlier saved run),MCI,LMCI,4
+Transformer k=50 (earlier saved run),MCI,AD,21
+Transformer k=50 (earlier saved run),LMCI,CN,12
+Transformer k=50 (earlier saved run),LMCI,SMC,21
+Transformer k=50 (earlier saved run),LMCI,EMCI,18
+Transformer k=50 (earlier saved run),LMCI,MCI,8
+Transformer k=50 (earlier saved run),LMCI,LMCI,3
+Transformer k=50 (earlier saved run),LMCI,AD,38
+Transformer k=50 (earlier saved run),AD,CN,12
+Transformer k=50 (earlier saved run),AD,SMC,13
+Transformer k=50 (earlier saved run),AD,EMCI,14
+Transformer k=50 (earlier saved run),AD,MCI,5
+Transformer k=50 (earlier saved run),AD,LMCI,7
+Transformer k=50 (earlier saved run),AD,AD,49
+"Transformer, all 246 ROI tokens (earlier)",CN,CN,7
+"Transformer, all 246 ROI tokens (earlier)",CN,SMC,13
+"Transformer, all 246 ROI tokens (earlier)",CN,EMCI,10
+"Transformer, all 246 ROI tokens (earlier)",CN,MCI,30
+"Transformer, all 246 ROI tokens (earlier)",CN,LMCI,9
+"Transformer, all 246 ROI tokens (earlier)",CN,AD,31
+"Transformer, all 246 ROI tokens (earlier)",SMC,CN,16
+"Transformer, all 246 ROI tokens (earlier)",SMC,SMC,8
+"Transformer, all 246 ROI tokens (earlier)",SMC,EMCI,5
+"Transformer, all 246 ROI tokens (earlier)",SMC,MCI,34
+"Transformer, all 246 ROI tokens (earlier)",SMC,LMCI,8
+"Transformer, all 246 ROI tokens (earlier)",SMC,AD,29
+"Transformer, all 246 ROI tokens (earlier)",EMCI,CN,11
+"Transformer, all 246 ROI tokens (earlier)",EMCI,SMC,11
+"Transformer, all 246 ROI tokens (earlier)",EMCI,EMCI,6
+"Transformer, all 246 ROI tokens (earlier)",EMCI,MCI,32
+"Transformer, all 246 ROI tokens (earlier)",EMCI,LMCI,8
+"Transformer, all 246 ROI tokens (earlier)",EMCI,AD,32
+"Transformer, all 246 ROI tokens (earlier)",MCI,CN,10
+"Transformer, all 246 ROI tokens (earlier)",MCI,SMC,14
+"Transformer, all 246 ROI tokens (earlier)",MCI,EMCI,7
+"Transformer, all 246 ROI tokens (earlier)",MCI,MCI,22
+"Transformer, all 246 ROI tokens (earlier)",MCI,LMCI,6
+"Transformer, all 246 ROI tokens (earlier)",MCI,AD,21
+"Transformer, all 246 ROI tokens (earlier)",LMCI,CN,11
+"Transformer, all 246 ROI tokens (earlier)",LMCI,SMC,10
+"Transformer, all 246 ROI tokens (earlier)",LMCI,EMCI,7
+"Transformer, all 246 ROI tokens (earlier)",LMCI,MCI,18
+"Transformer, all 246 ROI tokens (earlier)",LMCI,LMCI,11
+"Transformer, all 246 ROI tokens (earlier)",LMCI,AD,43
+"Transformer, all 246 ROI tokens (earlier)",AD,CN,8
+"Transformer, all 246 ROI tokens (earlier)",AD,SMC,6
+"Transformer, all 246 ROI tokens (earlier)",AD,EMCI,5
+"Transformer, all 246 ROI tokens (earlier)",AD,MCI,14
+"Transformer, all 246 ROI tokens (earlier)",AD,LMCI,10
+"Transformer, all 246 ROI tokens (earlier)",AD,AD,57
+TabPFN k=50 (earlier saved run),CN,CN,12
+TabPFN k=50 (earlier saved run),CN,SMC,21
+TabPFN k=50 (earlier saved run),CN,EMCI,28
+TabPFN k=50 (earlier saved run),CN,MCI,8
+TabPFN k=50 (earlier saved run),CN,LMCI,17
+TabPFN k=50 (earlier saved run),CN,AD,14
+TabPFN k=50 (earlier saved run),SMC,CN,23
+TabPFN k=50 (earlier saved run),SMC,SMC,21
+TabPFN k=50 (earlier saved run),SMC,EMCI,6
+TabPFN k=50 (earlier saved run),SMC,MCI,10
+TabPFN k=50 (earlier saved run),SMC,LMCI,20
+TabPFN k=50 (earlier saved run),SMC,AD,20
+TabPFN k=50 (earlier saved run),EMCI,CN,23
+TabPFN k=50 (earlier saved run),EMCI,SMC,9
+TabPFN k=50 (earlier saved run),EMCI,EMCI,32
+TabPFN k=50 (earlier saved run),EMCI,MCI,10
+TabPFN k=50 (earlier saved run),EMCI,LMCI,16
+TabPFN k=50 (earlier saved run),EMCI,AD,10
+TabPFN k=50 (earlier saved run),MCI,CN,17
+TabPFN k=50 (earlier saved run),MCI,SMC,10
+TabPFN k=50 (earlier saved run),MCI,EMCI,11
+TabPFN k=50 (earlier saved run),MCI,MCI,7
+TabPFN k=50 (earlier saved run),MCI,LMCI,22
+TabPFN k=50 (earlier saved run),MCI,AD,13
+TabPFN k=50 (earlier saved run),LMCI,CN,11
+TabPFN k=50 (earlier saved run),LMCI,SMC,17
+TabPFN k=50 (earlier saved run),LMCI,EMCI,23
+TabPFN k=50 (earlier saved run),LMCI,MCI,9
+TabPFN k=50 (earlier saved run),LMCI,LMCI,20
+TabPFN k=50 (earlier saved run),LMCI,AD,20
+TabPFN k=50 (earlier saved run),AD,CN,9
+TabPFN k=50 (earlier saved run),AD,SMC,5
+TabPFN k=50 (earlier saved run),AD,EMCI,7
+TabPFN k=50 (earlier saved run),AD,MCI,9
+TabPFN k=50 (earlier saved run),AD,LMCI,16
+TabPFN k=50 (earlier saved run),AD,AD,54
+TabPFN k=25 (leakage-safe grid),CN,CN,11
+TabPFN k=25 (leakage-safe grid),CN,SMC,14
+TabPFN k=25 (leakage-safe grid),CN,EMCI,14
+TabPFN k=25 (leakage-safe grid),CN,MCI,3
+TabPFN k=25 (leakage-safe grid),CN,LMCI,9
+TabPFN k=25 (leakage-safe grid),CN,AD,9
+TabPFN k=25 (leakage-safe grid),SMC,CN,11
+TabPFN k=25 (leakage-safe grid),SMC,SMC,14
+TabPFN k=25 (leakage-safe grid),SMC,EMCI,6
+TabPFN k=25 (leakage-safe grid),SMC,MCI,5
+TabPFN k=25 (leakage-safe grid),SMC,LMCI,11
+TabPFN k=25 (leakage-safe grid),SMC,AD,13
+TabPFN k=25 (leakage-safe grid),EMCI,CN,12
+TabPFN k=25 (leakage-safe grid),EMCI,SMC,5
+TabPFN k=25 (leakage-safe grid),EMCI,EMCI,23
+TabPFN k=25 (leakage-safe grid),EMCI,MCI,5
+TabPFN k=25 (leakage-safe grid),EMCI,LMCI,10
+TabPFN k=25 (leakage-safe grid),EMCI,AD,5
+TabPFN k=25 (leakage-safe grid),MCI,CN,5
+TabPFN k=25 (leakage-safe grid),MCI,SMC,9
+TabPFN k=25 (leakage-safe grid),MCI,EMCI,9
+TabPFN k=25 (leakage-safe grid),MCI,MCI,4
+TabPFN k=25 (leakage-safe grid),MCI,LMCI,13
+TabPFN k=25 (leakage-safe grid),MCI,AD,8
+TabPFN k=25 (leakage-safe grid),LMCI,CN,7
+TabPFN k=25 (leakage-safe grid),LMCI,SMC,12
+TabPFN k=25 (leakage-safe grid),LMCI,EMCI,14
+TabPFN k=25 (leakage-safe grid),LMCI,MCI,7
+TabPFN k=25 (leakage-safe grid),LMCI,LMCI,12
+TabPFN k=25 (leakage-safe grid),LMCI,AD,8
+TabPFN k=25 (leakage-safe grid),AD,CN,4
+TabPFN k=25 (leakage-safe grid),AD,SMC,7
+TabPFN k=25 (leakage-safe grid),AD,EMCI,4
+TabPFN k=25 (leakage-safe grid),AD,MCI,9
+TabPFN k=25 (leakage-safe grid),AD,LMCI,8
+TabPFN k=25 (leakage-safe grid),AD,AD,28
+TabPFN k=50 (leakage-safe grid),CN,CN,8
+TabPFN k=50 (leakage-safe grid),CN,SMC,11
+TabPFN k=50 (leakage-safe grid),CN,EMCI,15
+TabPFN k=50 (leakage-safe grid),CN,MCI,6
+TabPFN k=50 (leakage-safe grid),CN,LMCI,11
+TabPFN k=50 (leakage-safe grid),CN,AD,9
+TabPFN k=50 (leakage-safe grid),SMC,CN,11
+TabPFN k=50 (leakage-safe grid),SMC,SMC,13
+TabPFN k=50 (leakage-safe grid),SMC,EMCI,4
+TabPFN k=50 (leakage-safe grid),SMC,MCI,8
+TabPFN k=50 (leakage-safe grid),SMC,LMCI,13
+TabPFN k=50 (leakage-safe grid),SMC,AD,11
+TabPFN k=50 (leakage-safe grid),EMCI,CN,16
+TabPFN k=50 (leakage-safe grid),EMCI,SMC,5
+TabPFN k=50 (leakage-safe grid),EMCI,EMCI,19
+TabPFN k=50 (leakage-safe grid),EMCI,MCI,7
+TabPFN k=50 (leakage-safe grid),EMCI,LMCI,8
+TabPFN k=50 (leakage-safe grid),EMCI,AD,5
+TabPFN k=50 (leakage-safe grid),MCI,CN,10
+TabPFN k=50 (leakage-safe grid),MCI,SMC,8
+TabPFN k=50 (leakage-safe grid),MCI,EMCI,6
+TabPFN k=50 (leakage-safe grid),MCI,MCI,6
+TabPFN k=50 (leakage-safe grid),MCI,LMCI,11
+TabPFN k=50 (leakage-safe grid),MCI,AD,7
+TabPFN k=50 (leakage-safe grid),LMCI,CN,7
+TabPFN k=50 (leakage-safe grid),LMCI,SMC,11
+TabPFN k=50 (leakage-safe grid),LMCI,EMCI,14
+TabPFN k=50 (leakage-safe grid),LMCI,MCI,6
+TabPFN k=50 (leakage-safe grid),LMCI,LMCI,10
+TabPFN k=50 (leakage-safe grid),LMCI,AD,12
+TabPFN k=50 (leakage-safe grid),AD,CN,4
+TabPFN k=50 (leakage-safe grid),AD,SMC,2
+TabPFN k=50 (leakage-safe grid),AD,EMCI,4
+TabPFN k=50 (leakage-safe grid),AD,MCI,7
+TabPFN k=50 (leakage-safe grid),AD,LMCI,10
+TabPFN k=50 (leakage-safe grid),AD,AD,33
+TabPFN k=100 (leakage-safe grid),CN,CN,7
+TabPFN k=100 (leakage-safe grid),CN,SMC,12
+TabPFN k=100 (leakage-safe grid),CN,EMCI,18
+TabPFN k=100 (leakage-safe grid),CN,MCI,3
+TabPFN k=100 (leakage-safe grid),CN,LMCI,11
+TabPFN k=100 (leakage-safe grid),CN,AD,9
+TabPFN k=100 (leakage-safe grid),SMC,CN,13
+TabPFN k=100 (leakage-safe grid),SMC,SMC,11
+TabPFN k=100 (leakage-safe grid),SMC,EMCI,9
+TabPFN k=100 (leakage-safe grid),SMC,MCI,6
+TabPFN k=100 (leakage-safe grid),SMC,LMCI,13
+TabPFN k=100 (leakage-safe grid),SMC,AD,8
+TabPFN k=100 (leakage-safe grid),EMCI,CN,14
+TabPFN k=100 (leakage-safe grid),EMCI,SMC,6
+TabPFN k=100 (leakage-safe grid),EMCI,EMCI,14
+TabPFN k=100 (leakage-safe grid),EMCI,MCI,8
+TabPFN k=100 (leakage-safe grid),EMCI,LMCI,11
+TabPFN k=100 (leakage-safe grid),EMCI,AD,7
+TabPFN k=100 (leakage-safe grid),MCI,CN,9
+TabPFN k=100 (leakage-safe grid),MCI,SMC,6
+TabPFN k=100 (leakage-safe grid),MCI,EMCI,7
+TabPFN k=100 (leakage-safe grid),MCI,MCI,5
+TabPFN k=100 (leakage-safe grid),MCI,LMCI,10
+TabPFN k=100 (leakage-safe grid),MCI,AD,11
+TabPFN k=100 (leakage-safe grid),LMCI,CN,3
+TabPFN k=100 (leakage-safe grid),LMCI,SMC,13
+TabPFN k=100 (leakage-safe grid),LMCI,EMCI,21
+TabPFN k=100 (leakage-safe grid),LMCI,MCI,3
+TabPFN k=100 (leakage-safe grid),LMCI,LMCI,8
+TabPFN k=100 (leakage-safe grid),LMCI,AD,12
+TabPFN k=100 (leakage-safe grid),AD,CN,5
+TabPFN k=100 (leakage-safe grid),AD,SMC,3
+TabPFN k=100 (leakage-safe grid),AD,EMCI,5
+TabPFN k=100 (leakage-safe grid),AD,MCI,5
+TabPFN k=100 (leakage-safe grid),AD,LMCI,8
+TabPFN k=100 (leakage-safe grid),AD,AD,34
+TabPFN k=150 (leakage-safe grid),CN,CN,7
+TabPFN k=150 (leakage-safe grid),CN,SMC,14
+TabPFN k=150 (leakage-safe grid),CN,EMCI,16
+TabPFN k=150 (leakage-safe grid),CN,MCI,4
+TabPFN k=150 (leakage-safe grid),CN,LMCI,8
+TabPFN k=150 (leakage-safe grid),CN,AD,11
+TabPFN k=150 (leakage-safe grid),SMC,CN,12
+TabPFN k=150 (leakage-safe grid),SMC,SMC,15
+TabPFN k=150 (leakage-safe grid),SMC,EMCI,7
+TabPFN k=150 (leakage-safe grid),SMC,MCI,5
+TabPFN k=150 (leakage-safe grid),SMC,LMCI,11
+TabPFN k=150 (leakage-safe grid),SMC,AD,10
+TabPFN k=150 (leakage-safe grid),EMCI,CN,13
+TabPFN k=150 (leakage-safe grid),EMCI,SMC,8
+TabPFN k=150 (leakage-safe grid),EMCI,EMCI,15
+TabPFN k=150 (leakage-safe grid),EMCI,MCI,5
+TabPFN k=150 (leakage-safe grid),EMCI,LMCI,10
+TabPFN k=150 (leakage-safe grid),EMCI,AD,9
+TabPFN k=150 (leakage-safe grid),MCI,CN,8
+TabPFN k=150 (leakage-safe grid),MCI,SMC,6
+TabPFN k=150 (leakage-safe grid),MCI,EMCI,9
+TabPFN k=150 (leakage-safe grid),MCI,MCI,8
+TabPFN k=150 (leakage-safe grid),MCI,LMCI,6
+TabPFN k=150 (leakage-safe grid),MCI,AD,11
+TabPFN k=150 (leakage-safe grid),LMCI,CN,6
+TabPFN k=150 (leakage-safe grid),LMCI,SMC,12
+TabPFN k=150 (leakage-safe grid),LMCI,EMCI,15
+TabPFN k=150 (leakage-safe grid),LMCI,MCI,4
+TabPFN k=150 (leakage-safe grid),LMCI,LMCI,11
+TabPFN k=150 (leakage-safe grid),LMCI,AD,12
+TabPFN k=150 (leakage-safe grid),AD,CN,9
+TabPFN k=150 (leakage-safe grid),AD,SMC,3
+TabPFN k=150 (leakage-safe grid),AD,EMCI,2
+TabPFN k=150 (leakage-safe grid),AD,MCI,3
+TabPFN k=150 (leakage-safe grid),AD,LMCI,6
+TabPFN k=150 (leakage-safe grid),AD,AD,37
+TabPFN k=246 (leakage-safe grid),CN,CN,9
+TabPFN k=246 (leakage-safe grid),CN,SMC,15
+TabPFN k=246 (leakage-safe grid),CN,EMCI,14
+TabPFN k=246 (leakage-safe grid),CN,MCI,3
+TabPFN k=246 (leakage-safe grid),CN,LMCI,10
+TabPFN k=246 (leakage-safe grid),CN,AD,9
+TabPFN k=246 (leakage-safe grid),SMC,CN,9
+TabPFN k=246 (leakage-safe grid),SMC,SMC,18
+TabPFN k=246 (leakage-safe grid),SMC,EMCI,11
+TabPFN k=246 (leakage-safe grid),SMC,MCI,5
+TabPFN k=246 (leakage-safe grid),SMC,LMCI,7
+TabPFN k=246 (leakage-safe grid),SMC,AD,10
+TabPFN k=246 (leakage-safe grid),EMCI,CN,12
+TabPFN k=246 (leakage-safe grid),EMCI,SMC,9
+TabPFN k=246 (leakage-safe grid),EMCI,EMCI,15
+TabPFN k=246 (leakage-safe grid),EMCI,MCI,7
+TabPFN k=246 (leakage-safe grid),EMCI,LMCI,8
+TabPFN k=246 (leakage-safe grid),EMCI,AD,9
+TabPFN k=246 (leakage-safe grid),MCI,CN,9
+TabPFN k=246 (leakage-safe grid),MCI,SMC,5
+TabPFN k=246 (leakage-safe grid),MCI,EMCI,11
+TabPFN k=246 (leakage-safe grid),MCI,MCI,5
+TabPFN k=246 (leakage-safe grid),MCI,LMCI,11
+TabPFN k=246 (leakage-safe grid),MCI,AD,7
+TabPFN k=246 (leakage-safe grid),LMCI,CN,10
+TabPFN k=246 (leakage-safe grid),LMCI,SMC,16
+TabPFN k=246 (leakage-safe grid),LMCI,EMCI,11
+TabPFN k=246 (leakage-safe grid),LMCI,MCI,1
+TabPFN k=246 (leakage-safe grid),LMCI,LMCI,12
+TabPFN k=246 (leakage-safe grid),LMCI,AD,10
+TabPFN k=246 (leakage-safe grid),AD,CN,4
+TabPFN k=246 (leakage-safe grid),AD,SMC,5
+TabPFN k=246 (leakage-safe grid),AD,EMCI,5
+TabPFN k=246 (leakage-safe grid),AD,MCI,4
+TabPFN k=246 (leakage-safe grid),AD,LMCI,7
+TabPFN k=246 (leakage-safe grid),AD,AD,35
+Transformer C1: lr 3e-4,CN,CN,10
+Transformer C1: lr 3e-4,CN,SMC,11
+Transformer C1: lr 3e-4,CN,EMCI,3
+Transformer C1: lr 3e-4,CN,MCI,4
+Transformer C1: lr 3e-4,CN,LMCI,3
+Transformer C1: lr 3e-4,CN,AD,9
+Transformer C1: lr 3e-4,SMC,CN,10
+Transformer C1: lr 3e-4,SMC,SMC,11
+Transformer C1: lr 3e-4,SMC,EMCI,4
+Transformer C1: lr 3e-4,SMC,MCI,4
+Transformer C1: lr 3e-4,SMC,LMCI,5
+Transformer C1: lr 3e-4,SMC,AD,6
+Transformer C1: lr 3e-4,EMCI,CN,14
+Transformer C1: lr 3e-4,EMCI,SMC,7
+Transformer C1: lr 3e-4,EMCI,EMCI,2
+Transformer C1: lr 3e-4,EMCI,MCI,6
+Transformer C1: lr 3e-4,EMCI,LMCI,3
+Transformer C1: lr 3e-4,EMCI,AD,8
+Transformer C1: lr 3e-4,MCI,CN,11
+Transformer C1: lr 3e-4,MCI,SMC,8
+Transformer C1: lr 3e-4,MCI,EMCI,4
+Transformer C1: lr 3e-4,MCI,MCI,2
+Transformer C1: lr 3e-4,MCI,LMCI,2
+Transformer C1: lr 3e-4,MCI,AD,5
+Transformer C1: lr 3e-4,LMCI,CN,12
+Transformer C1: lr 3e-4,LMCI,SMC,10
+Transformer C1: lr 3e-4,LMCI,EMCI,4
+Transformer C1: lr 3e-4,LMCI,MCI,2
+Transformer C1: lr 3e-4,LMCI,LMCI,4
+Transformer C1: lr 3e-4,LMCI,AD,8
+Transformer C1: lr 3e-4,AD,CN,13
+Transformer C1: lr 3e-4,AD,SMC,8
+Transformer C1: lr 3e-4,AD,EMCI,5
+Transformer C1: lr 3e-4,AD,MCI,3
+Transformer C1: lr 3e-4,AD,LMCI,2
+Transformer C1: lr 3e-4,AD,AD,9
+Transformer C2: lr 3e-3,CN,CN,1
+Transformer C2: lr 3e-3,CN,SMC,10
+Transformer C2: lr 3e-3,CN,EMCI,7
+Transformer C2: lr 3e-3,CN,MCI,7
+Transformer C2: lr 3e-3,CN,LMCI,3
+Transformer C2: lr 3e-3,CN,AD,12
+Transformer C2: lr 3e-3,SMC,CN,6
+Transformer C2: lr 3e-3,SMC,SMC,8
+Transformer C2: lr 3e-3,SMC,EMCI,5
+Transformer C2: lr 3e-3,SMC,MCI,2
+Transformer C2: lr 3e-3,SMC,LMCI,5
+Transformer C2: lr 3e-3,SMC,AD,14
+Transformer C2: lr 3e-3,EMCI,CN,11
+Transformer C2: lr 3e-3,EMCI,SMC,4
+Transformer C2: lr 3e-3,EMCI,EMCI,9
+Transformer C2: lr 3e-3,EMCI,MCI,4
+Transformer C2: lr 3e-3,EMCI,LMCI,0
+Transformer C2: lr 3e-3,EMCI,AD,12
+Transformer C2: lr 3e-3,MCI,CN,5
+Transformer C2: lr 3e-3,MCI,SMC,6
+Transformer C2: lr 3e-3,MCI,EMCI,5
+Transformer C2: lr 3e-3,MCI,MCI,3
+Transformer C2: lr 3e-3,MCI,LMCI,2
+Transformer C2: lr 3e-3,MCI,AD,11
+Transformer C2: lr 3e-3,LMCI,CN,4
+Transformer C2: lr 3e-3,LMCI,SMC,5
+Transformer C2: lr 3e-3,LMCI,EMCI,6
+Transformer C2: lr 3e-3,LMCI,MCI,5
+Transformer C2: lr 3e-3,LMCI,LMCI,3
+Transformer C2: lr 3e-3,LMCI,AD,17
+Transformer C2: lr 3e-3,AD,CN,4
+Transformer C2: lr 3e-3,AD,SMC,3
+Transformer C2: lr 3e-3,AD,EMCI,4
+Transformer C2: lr 3e-3,AD,MCI,3
+Transformer C2: lr 3e-3,AD,LMCI,4
+Transformer C2: lr 3e-3,AD,AD,22
+Transformer C3: dropout 0.1,CN,CN,2
+Transformer C3: dropout 0.1,CN,SMC,7
+Transformer C3: dropout 0.1,CN,EMCI,9
+Transformer C3: dropout 0.1,CN,MCI,8
+Transformer C3: dropout 0.1,CN,LMCI,5
+Transformer C3: dropout 0.1,CN,AD,9
+Transformer C3: dropout 0.1,SMC,CN,5
+Transformer C3: dropout 0.1,SMC,SMC,6
+Transformer C3: dropout 0.1,SMC,EMCI,7
+Transformer C3: dropout 0.1,SMC,MCI,7
+Transformer C3: dropout 0.1,SMC,LMCI,3
+Transformer C3: dropout 0.1,SMC,AD,12
+Transformer C3: dropout 0.1,EMCI,CN,10
+Transformer C3: dropout 0.1,EMCI,SMC,3
+Transformer C3: dropout 0.1,EMCI,EMCI,10
+Transformer C3: dropout 0.1,EMCI,MCI,7
+Transformer C3: dropout 0.1,EMCI,LMCI,2
+Transformer C3: dropout 0.1,EMCI,AD,8
+Transformer C3: dropout 0.1,MCI,CN,5
+Transformer C3: dropout 0.1,MCI,SMC,7
+Transformer C3: dropout 0.1,MCI,EMCI,5
+Transformer C3: dropout 0.1,MCI,MCI,7
+Transformer C3: dropout 0.1,MCI,LMCI,1
+Transformer C3: dropout 0.1,MCI,AD,7
+Transformer C3: dropout 0.1,LMCI,CN,4
+Transformer C3: dropout 0.1,LMCI,SMC,6
+Transformer C3: dropout 0.1,LMCI,EMCI,8
+Transformer C3: dropout 0.1,LMCI,MCI,5
+Transformer C3: dropout 0.1,LMCI,LMCI,4
+Transformer C3: dropout 0.1,LMCI,AD,13
+Transformer C3: dropout 0.1,AD,CN,1
+Transformer C3: dropout 0.1,AD,SMC,4
+Transformer C3: dropout 0.1,AD,EMCI,9
+Transformer C3: dropout 0.1,AD,MCI,5
+Transformer C3: dropout 0.1,AD,LMCI,3
+Transformer C3: dropout 0.1,AD,AD,18
+Transformer C4: weight decay 1e-1,CN,CN,5
+Transformer C4: weight decay 1e-1,CN,SMC,10
+Transformer C4: weight decay 1e-1,CN,EMCI,8
+Transformer C4: weight decay 1e-1,CN,MCI,4
+Transformer C4: weight decay 1e-1,CN,LMCI,0
+Transformer C4: weight decay 1e-1,CN,AD,13
+Transformer C4: weight decay 1e-1,SMC,CN,6
+Transformer C4: weight decay 1e-1,SMC,SMC,6
+Transformer C4: weight decay 1e-1,SMC,EMCI,8
+Transformer C4: weight decay 1e-1,SMC,MCI,3
+Transformer C4: weight decay 1e-1,SMC,LMCI,4
+Transformer C4: weight decay 1e-1,SMC,AD,13
+Transformer C4: weight decay 1e-1,EMCI,CN,9
+Transformer C4: weight decay 1e-1,EMCI,SMC,6
+Transformer C4: weight decay 1e-1,EMCI,EMCI,10
+Transformer C4: weight decay 1e-1,EMCI,MCI,6
+Transformer C4: weight decay 1e-1,EMCI,LMCI,3
+Transformer C4: weight decay 1e-1,EMCI,AD,6
+Transformer C4: weight decay 1e-1,MCI,CN,7
+Transformer C4: weight decay 1e-1,MCI,SMC,6
+Transformer C4: weight decay 1e-1,MCI,EMCI,5
+Transformer C4: weight decay 1e-1,MCI,MCI,2
+Transformer C4: weight decay 1e-1,MCI,LMCI,0
+Transformer C4: weight decay 1e-1,MCI,AD,12
+Transformer C4: weight decay 1e-1,LMCI,CN,8
+Transformer C4: weight decay 1e-1,LMCI,SMC,7
+Transformer C4: weight decay 1e-1,LMCI,EMCI,7
+Transformer C4: weight decay 1e-1,LMCI,MCI,3
+Transformer C4: weight decay 1e-1,LMCI,LMCI,1
+Transformer C4: weight decay 1e-1,LMCI,AD,14
+Transformer C4: weight decay 1e-1,AD,CN,7
+Transformer C4: weight decay 1e-1,AD,SMC,1
+Transformer C4: weight decay 1e-1,AD,EMCI,6
+Transformer C4: weight decay 1e-1,AD,MCI,1
+Transformer C4: weight decay 1e-1,AD,LMCI,5
+Transformer C4: weight decay 1e-1,AD,AD,20
+"Transformer C5: larger (d32, 4 heads, 2 layers)",CN,CN,0
+"Transformer C5: larger (d32, 4 heads, 2 layers)",CN,SMC,3
+"Transformer C5: larger (d32, 4 heads, 2 layers)",CN,EMCI,16
+"Transformer C5: larger (d32, 4 heads, 2 layers)",CN,MCI,6
+"Transformer C5: larger (d32, 4 heads, 2 layers)",CN,LMCI,4
+"Transformer C5: larger (d32, 4 heads, 2 layers)",CN,AD,11
+"Transformer C5: larger (d32, 4 heads, 2 layers)",SMC,CN,6
+"Transformer C5: larger (d32, 4 heads, 2 layers)",SMC,SMC,4
+"Transformer C5: larger (d32, 4 heads, 2 layers)",SMC,EMCI,7
+"Transformer C5: larger (d32, 4 heads, 2 layers)",SMC,MCI,5
+"Transformer C5: larger (d32, 4 heads, 2 layers)",SMC,LMCI,6
+"Transformer C5: larger (d32, 4 heads, 2 layers)",SMC,AD,12
+"Transformer C5: larger (d32, 4 heads, 2 layers)",EMCI,CN,6
+"Transformer C5: larger (d32, 4 heads, 2 layers)",EMCI,SMC,2
+"Transformer C5: larger (d32, 4 heads, 2 layers)",EMCI,EMCI,12
+"Transformer C5: larger (d32, 4 heads, 2 layers)",EMCI,MCI,6
+"Transformer C5: larger (d32, 4 heads, 2 layers)",EMCI,LMCI,2
+"Transformer C5: larger (d32, 4 heads, 2 layers)",EMCI,AD,12
+"Transformer C5: larger (d32, 4 heads, 2 layers)",MCI,CN,3
+"Transformer C5: larger (d32, 4 heads, 2 layers)",MCI,SMC,4
+"Transformer C5: larger (d32, 4 heads, 2 layers)",MCI,EMCI,7
+"Transformer C5: larger (d32, 4 heads, 2 layers)",MCI,MCI,4
+"Transformer C5: larger (d32, 4 heads, 2 layers)",MCI,LMCI,3
+"Transformer C5: larger (d32, 4 heads, 2 layers)",MCI,AD,11
+"Transformer C5: larger (d32, 4 heads, 2 layers)",LMCI,CN,2
+"Transformer C5: larger (d32, 4 heads, 2 layers)",LMCI,SMC,5
+"Transformer C5: larger (d32, 4 heads, 2 layers)",LMCI,EMCI,7
+"Transformer C5: larger (d32, 4 heads, 2 layers)",LMCI,MCI,6
+"Transformer C5: larger (d32, 4 heads, 2 layers)",LMCI,LMCI,7
+"Transformer C5: larger (d32, 4 heads, 2 layers)",LMCI,AD,13
+"Transformer C5: larger (d32, 4 heads, 2 layers)",AD,CN,2
+"Transformer C5: larger (d32, 4 heads, 2 layers)",AD,SMC,1
+"Transformer C5: larger (d32, 4 heads, 2 layers)",AD,EMCI,7
+"Transformer C5: larger (d32, 4 heads, 2 layers)",AD,MCI,4
+"Transformer C5: larger (d32, 4 heads, 2 layers)",AD,LMCI,4
+"Transformer C5: larger (d32, 4 heads, 2 layers)",AD,AD,22
+"Transformer C0, no early stopping (epoch 60)",CN,CN,4
+"Transformer C0, no early stopping (epoch 60)",CN,SMC,16
+"Transformer C0, no early stopping (epoch 60)",CN,EMCI,36
+"Transformer C0, no early stopping (epoch 60)",CN,MCI,10
+"Transformer C0, no early stopping (epoch 60)",CN,LMCI,13
+"Transformer C0, no early stopping (epoch 60)",CN,AD,21
+"Transformer C0, no early stopping (epoch 60)",SMC,CN,18
+"Transformer C0, no early stopping (epoch 60)",SMC,SMC,15
+"Transformer C0, no early stopping (epoch 60)",SMC,EMCI,19
+"Transformer C0, no early stopping (epoch 60)",SMC,MCI,18
+"Transformer C0, no early stopping (epoch 60)",SMC,LMCI,11
+"Transformer C0, no early stopping (epoch 60)",SMC,AD,19
+"Transformer C0, no early stopping (epoch 60)",EMCI,CN,19
+"Transformer C0, no early stopping (epoch 60)",EMCI,SMC,14
+"Transformer C0, no early stopping (epoch 60)",EMCI,EMCI,24
+"Transformer C0, no early stopping (epoch 60)",EMCI,MCI,18
+"Transformer C0, no early stopping (epoch 60)",EMCI,LMCI,6
+"Transformer C0, no early stopping (epoch 60)",EMCI,AD,19
+"Transformer C0, no early stopping (epoch 60)",MCI,CN,12
+"Transformer C0, no early stopping (epoch 60)",MCI,SMC,12
+"Transformer C0, no early stopping (epoch 60)",MCI,EMCI,21
+"Transformer C0, no early stopping (epoch 60)",MCI,MCI,9
+"Transformer C0, no early stopping (epoch 60)",MCI,LMCI,11
+"Transformer C0, no early stopping (epoch 60)",MCI,AD,15
+"Transformer C0, no early stopping (epoch 60)",LMCI,CN,16
+"Transformer C0, no early stopping (epoch 60)",LMCI,SMC,12
+"Transformer C0, no early stopping (epoch 60)",LMCI,EMCI,25
+"Transformer C0, no early stopping (epoch 60)",LMCI,MCI,7
+"Transformer C0, no early stopping (epoch 60)",LMCI,LMCI,10
+"Transformer C0, no early stopping (epoch 60)",LMCI,AD,30
+"Transformer C0, no early stopping (epoch 60)",AD,CN,9
+"Transformer C0, no early stopping (epoch 60)",AD,SMC,13
+"Transformer C0, no early stopping (epoch 60)",AD,EMCI,19
+"Transformer C0, no early stopping (epoch 60)",AD,MCI,9
+"Transformer C0, no early stopping (epoch 60)",AD,LMCI,11
+"Transformer C0, no early stopping (epoch 60)",AD,AD,39
+"Transformer, configuration chosen per split by inner CV",CN,CN,1
+"Transformer, configuration chosen per split by inner CV",CN,SMC,9
+"Transformer, configuration chosen per split by inner CV",CN,EMCI,10
+"Transformer, configuration chosen per split by inner CV",CN,MCI,5
+"Transformer, configuration chosen per split by inner CV",CN,LMCI,5
+"Transformer, configuration chosen per split by inner CV",CN,AD,10
+"Transformer, configuration chosen per split by inner CV",SMC,CN,5
+"Transformer, configuration chosen per split by inner CV",SMC,SMC,8
+"Transformer, configuration chosen per split by inner CV",SMC,EMCI,3
+"Transformer, configuration chosen per split by inner CV",SMC,MCI,5
+"Transformer, configuration chosen per split by inner CV",SMC,LMCI,5
+"Transformer, configuration chosen per split by inner CV",SMC,AD,14
+"Transformer, configuration chosen per split by inner CV",EMCI,CN,9
+"Transformer, configuration chosen per split by inner CV",EMCI,SMC,4
+"Transformer, configuration chosen per split by inner CV",EMCI,EMCI,9
+"Transformer, configuration chosen per split by inner CV",EMCI,MCI,7
+"Transformer, configuration chosen per split by inner CV",EMCI,LMCI,1
+"Transformer, configuration chosen per split by inner CV",EMCI,AD,10
+"Transformer, configuration chosen per split by inner CV",MCI,CN,3
+"Transformer, configuration chosen per split by inner CV",MCI,SMC,7
+"Transformer, configuration chosen per split by inner CV",MCI,EMCI,7
+"Transformer, configuration chosen per split by inner CV",MCI,MCI,4
+"Transformer, configuration chosen per split by inner CV",MCI,LMCI,2
+"Transformer, configuration chosen per split by inner CV",MCI,AD,9
+"Transformer, configuration chosen per split by inner CV",LMCI,CN,2
+"Transformer, configuration chosen per split by inner CV",LMCI,SMC,9
+"Transformer, configuration chosen per split by inner CV",LMCI,EMCI,6
+"Transformer, configuration chosen per split by inner CV",LMCI,MCI,4
+"Transformer, configuration chosen per split by inner CV",LMCI,LMCI,6
+"Transformer, configuration chosen per split by inner CV",LMCI,AD,13
+"Transformer, configuration chosen per split by inner CV",AD,CN,2
+"Transformer, configuration chosen per split by inner CV",AD,SMC,3
+"Transformer, configuration chosen per split by inner CV",AD,EMCI,7
+"Transformer, configuration chosen per split by inner CV",AD,MCI,2
+"Transformer, configuration chosen per split by inner CV",AD,LMCI,3
+"Transformer, configuration chosen per split by inner CV",AD,AD,23

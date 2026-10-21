@@ -1,0 +1,120 @@
+{
+ "experiment": "leakage_safe_v1",
+ "created": "2026-10-21 08:53:30",
+ "git": {
+  "commit": "86442cc09b3e6a5d0c89b3682f203373fb3bd8e9",
+  "branch": "feature/leakage-safe-experiments"
+ },
+ "versions": {
+  "python": "3.13.3",
+  "numpy": "2.2.2",
+  "scipy": "1.16.3",
+  "scikit-learn": "1.7.2",
+  "torch": "2.11.0+cpu",
+  "tabpfn": "9.2.0",
+  "pandas": "2.3.3"
+ },
+ "inputs": {
+  "derivatives/model_ready/X_regional.npy": "cf90056ff364b3697ac77bbcc051e54cdd1005541c266fd3e6a139b76c8892ac",
+  "derivatives/model_ready/X_fc_roi_unsigned.npy": "b78e1a979ecb744596a645f1df68beb26da34b71d39f6e310d2d624bd8f3f7b7",
+  "derivatives/model_ready/X_fc.npy": "e46cb07f850523e6744215f54c3e6fc6fd619345dc8fd2278acd45e937d3b3f4",
+  "derivatives/model_ready/y.npy": "4a1c1a7a9c334cd5d581649c085763a2472eb0657b89837a91d90dd1cab0d67c",
+  "derivatives/model_ready/subjects.npy": "6d36093fa87659bdc77561296ce20d015ec4bb576c26cf83aa16fcc1c195e593",
+  "derivatives/model_ready/splits/split_assignment.csv": "06e90f7f7a3d9a788dc7ad9ad9341d545938c37488c38c0e73d671165d8516fe",
+  "derivatives/comorbidity_features/model_clinical_116.csv": "5ef4b2c64bb325127dab0bff30ef741c67823c0bf61665bbcba5cb423ad8e519",
+  "derivatives/comorbidity_features/demographics_116.csv": "7eb4a21569c438d2ce32b7e04a18732cc6242489fd05e1d18eae8fea14894270"
+ },
+ "design": {
+  "seeds": [
+   20261015,
+   20261016,
+   20261017,
+   20261018,
+   20261019
+  ],
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "k_grid": [
+   25,
+   50,
+   100,
+   150,
+   246,
+   984
+  ],
+  "tabpfn_k": [
+   25,
+   50,
+   100,
+   150,
+   246
+  ],
+  "tabpfn_nested_k": [
+   25,
+   50,
+   100
+  ],
+  "harms": [
+   "none",
+   "combat"
+  ],
+  "lr_C": [
+   0.01,
+   0.1,
+   1.0
+  ],
+  "ordinal_C": [
+   0.01,
+   0.1
+  ],
+  "svm_grid": [
+   [
+    1.0,
+    0.25
+   ],
+   [
+    1.0,
+    1.0
+   ],
+   [
+    10.0,
+    0.25
+   ],
+   [
+    10.0,
+    1.0
+   ]
+  ],
+  "comorbidity8": [
+   "age",
+   "sex_male",
+   "APOE4_count",
+   "GDS_total",
+   "MH_cardiovascular",
+   "MH_endocrine_metabolic",
+   "MH_psychiatric",
+   "MH_smoking"
+  ]
+ },
+ "runs": [
+  {
+   "command": "python scripts/experiments/leakage_safe_v1/audit.py",
+   "started": "2026-10-21 08:52:55",
+   "finished": "2026-10-21 08:53:30",
+   "note": "",
+   "outputs": [
+    "derivatives/experiments/leakage_safe_v1/audit/audit.json",
+    "derivatives/experiments/leakage_safe_v1/audit/audit.log"
+   ]
+  },
+  {
+   "command": "python scripts/experiments/leakage_safe_v1/run_grid.py --job main --limit 1",
+   "started": "2026-10-21 09:03:27",
+   "finished": "2026-10-21 09:05:59",
+   "note": "main: 1 new split files",
+   "outputs": [
+    "derivatives\\experiments\\leakage_safe_v1\\grid\\main\\cv5_seed20261015_fold0.json"
+   ]
+  }
+ ]
+}

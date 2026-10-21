@@ -1,0 +1,33 @@
+====================================================================================================
+CROSS-VALIDATION SCHEME (5-fold x 5 vs 10-fold x 5) AND LEARNING CURVE -- 116 subjects, 6 stages
+====================================================================================================
+
+[1] SAME MODELS, TWO CV SCHEMES (balanced accuracy; chance 0.167; mean +/- sd of 5 seed means)
+  model                                                  5x5: train     validation | 10x5: train     validation  change
+  Model A: transformer + 8 comorbidities                      0.455 0.240+/-0.015 |       0.454 0.232+/-0.024  -0.008
+  Model B: transformer + 8 comorbidities + MMSE + CDR-SB      0.582 0.359+/-0.035 |       0.598 0.387+/-0.008  +0.028
+  Transformer, rs-fMRI only                                   0.322 0.196+/-0.011 |       0.343 0.222+/-0.026  +0.026
+  Logistic reg., rs-fMRI + 8 comorbidities                    0.996 0.264+/-0.038 |       0.992 0.253+/-0.014  -0.011
+  Logistic reg., rs-fMRI only                                 0.992 0.237+/-0.028 |       0.984 0.208+/-0.028  -0.029
+  Logistic reg., 8 comorbidities only                         0.418 0.266+/-0.017 |       0.409 0.263+/-0.015  -0.003
+  Logistic reg., MMSE + CDR-SB only (ceiling)                 0.444 0.426+/-0.014 |       0.448 0.425+/-0.015  -0.001
+  QC: 14 record sets recomputed from saved predictions, every subject tested once per seed
+  training subjects per fold: 5-fold ~93, 10-fold ~104
+
+[2] PAIRED COMPARISONS INSIDE EACH SCHEME (rule: >= 4/5 seeds and mean > 0)
+  Model A vs rs-fMRI-only transformer    5x5   +0.044  seeds 4/5  -> FIRST BETTER
+  Model A vs rs-fMRI-only transformer    10x5  +0.010  seeds 3/5  -> TIED
+  Model B vs Model A                     5x5   +0.119  seeds 5/5  -> FIRST BETTER
+  Model B vs Model A                     10x5  +0.155  seeds 5/5  -> FIRST BETTER
+  Model B vs MMSE + CDR-SB only          5x5   -0.067  seeds 0/5  -> SECOND BETTER
+  Model B vs MMSE + CDR-SB only          10x5  -0.038  seeds 0/5  -> SECOND BETTER
+
+[3] LEARNING CURVE (test fold fixed; training subsets nested and stratified)
+  Transformer + 8 comorbidities (A)          n= 30.0: 0.158  n= 45.0: 0.186  n= 60.0: 0.197  n= 75.0: 0.192  n= 92.8: 0.253
+                                             gain 30 -> all +0.094, 75 -> all +0.061; trend rho +0.37 p 0.007 (10 folds)
+  Transformer, rs-fMRI only                  n= 30.0: 0.168  n= 45.0: 0.167  n= 60.0: 0.190  n= 75.0: 0.154  n= 92.8: 0.186
+                                             gain 30 -> all +0.018, 75 -> all +0.032; trend rho +0.10 p 0.476 (10 folds)
+  Logistic reg., rs-fMRI + 8 comorbidities   n= 30.0: 0.224  n= 45.0: 0.209  n= 60.0: 0.198  n= 75.0: 0.255  n= 92.8: 0.264
+                                             gain 30 -> all +0.040, 75 -> all +0.009; trend rho +0.23 p 0.010 (25 folds)
+  Logistic reg., rs-fMRI only                n= 30.0: 0.193  n= 45.0: 0.188  n= 60.0: 0.187  n= 75.0: 0.242  n= 92.8: 0.237
+                                             gain 30 -> all +0.044, 75 -> all -0.005; trend rho +0.29 p 0.001 (25 folds)

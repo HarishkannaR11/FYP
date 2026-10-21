@@ -1,0 +1,8 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design split70, candidate logreg_svmrfe50_clin
+====================================================================================================
+cohort 116; clinical block 'comorbidity8', 8 features ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_cardiovascular', 'MH_endocrine_metabolic', 'MH_psychiatric', 'MH_smoking']; missing values 10 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+split: derivatives/model_ready/splits, fingerprint 6f478fbcf56364e2, train 81 / test 35, test counts {'CN': 6, 'SMC': 6, 'EMCI': 6, 'MCI': 5, 'LMCI': 6, 'AD': 6}
+    seed 20261015 fold 0  test bal.acc 0.311  train 1.000  MAE 1.31  QWK +0.353  cls 6  epochs -  0s
+  elapsed 0s

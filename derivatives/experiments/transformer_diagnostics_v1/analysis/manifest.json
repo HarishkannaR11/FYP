@@ -1,0 +1,16 @@
+{
+ "started": "2026-10-21 10:56:47",
+ "reproduction": {
+  "transformer_C0_vs_earlier": {
+   "splits": 25,
+   "identical": 25
+  },
+  "tabpfn_k50_grid_vs_earlier": {
+   "splits": 15,
+   "identical": 15
+  }
+ },
+ "sources": {
+  "grid": "derivatives\\experiments\\transformer_diagnostics_v1\\grid"
+ }
+}

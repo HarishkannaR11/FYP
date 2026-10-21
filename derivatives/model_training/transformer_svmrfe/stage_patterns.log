@@ -1,0 +1,94 @@
+====================================================================================================
+STAGE PATTERNS -- transformer on SVM-RFE (all4 984 -> 50) features, 116-subject cohort
+====================================================================================================
+
+[0] QC: metrics recomputed from saved predictions
+  535 checks, 0 mismatches
+  all candidates used identical CV folds: True
+  transformer and logistic regression used the same 50 features in every fold: True
+
+[1] STAGE PREDICTION -- 5x5 CV on 116 (seed-level mean +/- sd) and the 80/20 split (23 test)
+  chance 0.167
+  candidate                                bal.acc    acc macroF1   MAE    QWK within1  train | 80/20 bal.acc within1
+  Transformer, SVM-RFE 50 (primary)  0.196+/-0.011  0.198   0.129  1.91 +0.080   0.471  0.322 |         0.264   0.565
+  Logistic regression, SVM-RFE 50    0.237+/-0.028  0.240   0.226  1.68 +0.200   0.481  0.992 |         0.250   0.391
+  Transformer, all 246 regions       0.196+/-0.026  0.191   0.118  1.90 +0.111   0.469  0.250 |         0.250   0.435
+  Transformer, shuffled labels (control) 0.148+/-0.016  0.148   0.097  2.10 -0.072   0.410  0.280 
+  80/20 primary: 6/23 correct, accuracy 95% CI 0.10-0.48, p vs chance 0.172; one subject moves balanced accuracy by about 0.042
+  within-one-stage accuracy of random guessing: 0.443
+
+  paired comparison on identical folds (primary minus reference), rule: >= 4/5 seeds and mean > 0
+    vs Logistic regression, SVM-RFE 50          mean -0.042  seeds 0/5  per seed [-0.047, -0.047, -0.033, -0.072, -0.008]  -> REFERENCE BETTER
+    vs Transformer, all 246 regions             mean +0.000  seeds 2/5  per seed [-0.025, 0.031, -0.008, 0.033, -0.031]  -> TIED
+    vs Transformer, shuffled labels (control)   mean +0.048  seeds 5/5  per seed [0.025, 0.036, 0.083, 0.058, 0.036]  -> PRIMARY BETTER
+  shuffled control 0.148: OK (near chance)
+
+[2] DOES THE MODEL ORDER THE STAGES? (Spearman rho vs true stage, permutation p, 1000 shuffles)
+  Transformer, SVM-RFE 50 (primary)        E[stage] rho +0.175 p 0.029 | embedding axis rho +0.242 p 0.005
+    mean E[stage] by true stage: CN 2.46  SMC 2.50  EMCI 2.45  MCI 2.46  LMCI 2.50  AD 2.55
+  Logistic regression, SVM-RFE 50          E[stage] rho +0.329 p 0.001
+    mean E[stage] by true stage: CN 2.31  SMC 2.39  EMCI 2.44  MCI 2.53  LMCI 2.59  AD 2.94
+  Transformer, all 246 regions             E[stage] rho +0.154 p 0.048
+    mean E[stage] by true stage: CN 2.53  SMC 2.50  EMCI 2.50  MCI 2.48  LMCI 2.53  AD 2.56
+  Transformer, shuffled labels (control)   E[stage] rho -0.049 p 0.700
+    mean E[stage] by true stage: CN 2.51  SMC 2.52  EMCI 2.50  MCI 2.50  LMCI 2.52  AD 2.51
+  80/20 primary (23 test subjects): E[stage] rho -0.079 p 0.653
+
+  GATE: beats shuffled control True; ordering significant True -> patterns LEARNED
+
+[3] WHICH REGIONS DRIVE EACH STAGE (primary, out-of-fold, pooled over 5 seeds)
+  20 regions most often kept as tokens (folds out of 25): dmPOS_L 24, cLinG_R 24, cpSTS_L 22, vId/vIg_R 22, A37vl_L 21, A6dl_R 20, A12/47o_R 19, A11m_L 19, A23d_R 19, TI_L 18, cpSTS_R 18, A41/42_L 18, A20il_R 17, A23v_L 17, A35/36r_R 16, A40rd_R 16, rLinG_R 15, dCa_R 15, V5/MT+_L 15, A45r_R 14
+  top 3 regions per stage by occlusion importance (regions kept in >= 40% of folds, n=41):
+    CN    A23v_L +0.002, vId/vIg_R +0.001, V5/MT+_L +0.001
+    SMC   mOccG_R +0.001, iOccG_L +0.001, A9l_R +0.001
+    EMCI  cLinG_R +0.004, cCunG_R +0.003, V5/MT+_L +0.003
+    MCI   A9l_R +0.002, A24rv_R +0.001, A20il_L +0.001
+    LMCI  aSTS_L +0.001, aSTS_R +0.001, A39c_L +0.000
+    AD    A11l_R +0.002, dmPOS_L +0.002, dlPu_L +0.001
+    figure derivatives\model_training\transformer_svmrfe\figures\fig3_region_stage_occlusion.png
+    figure derivatives\model_training\transformer_svmrfe\figures\fig4_region_stage_pooling.png
+
+[4] WHICH ATTENTION BRANCH THE MODEL USES, BY STAGE (mean over test subjects)
+    CN    global 0.348  local 0.323  network 0.329
+    SMC   global 0.343  local 0.326  network 0.331
+    EMCI  global 0.345  local 0.324  network 0.331
+    MCI   global 0.345  local 0.325  network 0.330
+    LMCI  global 0.344  local 0.326  network 0.330
+    AD    global 0.345  local 0.325  network 0.330
+    trend with stage: global rho -0.037 p 0.697  local rho +0.006 p 0.950  network rho -0.002 p 0.979
+    figure derivatives\model_training\transformer_svmrfe\figures\fig5_branch_weights_by_stage.png
+
+[5] NETWORK ATTENTION BETWEEN THE 10 MOST-SELECTED REGIONS, BY STAGE
+    figure derivatives\model_training\transformer_svmrfe\figures\fig8_network_attention_by_stage.png
+    mean absolute difference from the all-stage average: CN 0.0002  SMC 0.0002  EMCI 0.0003  MCI 0.0003  LMCI 0.0002  AD 0.0003
+
+[6] DATA CHECK: do the selected features change with stage in the raw data? (model-independent)
+  all 984 features vs stage: 114 with p < 0.05 (about 49 expected by chance), 4 with FDR q < 0.05
+  stable features (selected in >= 50% of folds (12 most frequent shown)): 12
+    dmPOS_L|mReHo            folds 24/25  rho -0.346  p 0.000  q 0.001  z by stage +0.22 +0.46 +0.20 +0.04 -0.09 -0.83
+    cLinG_R|mReHo            folds 24/25  rho -0.004  p 0.963  q 0.963  z by stage -0.08 -0.46 +0.77 +0.00 +0.02 -0.25
+    A37vl_L|mReHo            folds 21/25  rho -0.082  p 0.383  q 0.521  z by stage -0.01 -0.21 +0.80 -0.28 -0.40 +0.03
+    A12/47o_R|DC_z           folds 19/25  rho -0.067  p 0.476  q 0.572  z by stage +0.30 +0.32 -0.31 -0.47 -0.33 +0.39
+    A6dl_R|mReHo             folds 18/25  rho -0.045  p 0.633  q 0.690  z by stage +0.17 -0.64 +0.53 +0.01 +0.14 -0.21
+    cpSTS_R|mALFF            folds 18/25  rho +0.098  p 0.294  q 0.504  z by stage -0.44 +0.22 -0.16 +0.12 +0.32 -0.03
+    cpSTS_L|mALFF            folds 18/25  rho -0.183  p 0.049  q 0.119  z by stage -0.11 +0.32 +0.04 +0.53 -0.46 -0.21
+    A11m_L|FC                folds 17/25  rho +0.102  p 0.275  q 0.504  z by stage +0.02 -0.34 +0.14 +0.01 -0.28 +0.45
+    A23v_L|mReHo             folds 17/25  rho -0.244  p 0.008  q 0.033  z by stage +0.68 -0.03 -0.11 -0.12 -0.31 -0.13
+    A20il_R|DC_z             folds 15/25  rho -0.361  p 0.000  q 0.001  z by stage +0.66 +0.12 +0.31 -0.51 -0.33 -0.36
+    vId/vIg_R|mALFF          folds 15/25  rho +0.080  p 0.391  q 0.521  z by stage -0.41 -0.07 +0.01 +0.26 +0.74 -0.48
+    A40rd_R|DC_z             folds 15/25  rho +0.216  p 0.020  q 0.059  z by stage -0.21 -0.53 -0.15 +0.73 +0.14 +0.17
+    figure derivatives\model_training\transformer_svmrfe\figures\fig6_biomarker_trajectories.png
+
+[7] UNCERTAINTY: MC-dropout predictive entropy by stage (max possible ln 6 = 1.792)
+    CN 1.786  SMC 1.784  EMCI 1.786  MCI 1.785  LMCI 1.785  AD 1.785
+    entropy vs fraction of seeds predicted correctly: rho -0.033 p 0.728
+
+[8] FEATURE STABILITY across the 25 CV folds
+    mean pairwise Jaccard overlap 0.183 (1 = same 50 features every fold)
+    share of picks: mReHo 0.32  DC_z 0.29  mALFF 0.21  FC 0.19
+    most frequent: dmPOS_L|mReHo 24, cLinG_R|mReHo 24, A37vl_L|mReHo 21, A12/47o_R|DC_z 19, A6dl_R|mReHo 18, cpSTS_R|mALFF 18, cpSTS_L|mALFF 18, A11m_L|FC 17, A23v_L|mReHo 17, A20il_R|DC_z 15, vId/vIg_R|mALFF 15, A40rd_R|DC_z 15
+    figure derivatives\model_training\transformer_svmrfe\figures\fig9_feature_stability.png
+    figure derivatives\model_training\transformer_svmrfe\figures\fig0_model_comparison.png
+    figure derivatives\model_training\transformer_svmrfe\figures\fig1_confusion_primary_cv.png
+    figure derivatives\model_training\transformer_svmrfe\figures\fig2_stage_ordering.png
+    figure derivatives\model_training\transformer_svmrfe\figures\fig7_uncertainty_by_stage.png

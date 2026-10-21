@@ -1,0 +1,82 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- SVM-RFE 50 rs-fMRI tokens + 10 comorbidity + MMSE/CDR-SB features ('clinical10'), 116 subjects
+====================================================================================================
+comorbidity + MMSE/CDR-SB: age, sex (male), APOE4 count, GDS (depression), cardiovascular, endocrine metabolic, psychiatric, smoking, MMSE, CDR sum of boxes
+NOTE: MMSE / CDR are inputs here by the user's decision. ADNI assigns the stage labels with them,
+      so compare against 'MMSE + CDR only' and 'imaging only' to see what the brain data adds.
+
+[0] QC
+  1242 checks, 0 mismatches
+  every CV candidate (incl. reused imaging-only records) used identical folds: True
+  every 70/30 candidate used the same split: True ['6f478fbcf56364e2']
+  fusion and imaging-only transformer used the same 50 rs-fMRI features in every fold: True
+
+[1] STAGE PREDICTION (balanced accuracy; chance 0.167)
+  model                                        70/30 test (35)  correct p vs chance |  5x5 CV on 116 within1  train
+  Transformer + comorbidity + MMSE/CDR-SB (primary)           0.344   12/35        0.009 | 0.359+/-0.035   0.683  0.582
+  Transformer, imaging only                              0.167    6/35        0.540 | 0.196+/-0.011   0.471  0.322
+  Logistic reg., imaging + comorbidity + MMSE/CDR-SB           0.367   13/35        0.003 | 0.321+/-0.031   0.585  0.998
+  Logistic reg., imaging only                            0.311   11/35        0.023 | 0.237+/-0.028   0.481  0.992
+  Logistic reg., comorbidity + MMSE/CDR-SB only           0.422   15/35        0.000 | 0.398+/-0.030   0.721  0.546
+  Transformer + comorbidity + MMSE/CDR-SB, shuffled labels                                      | 0.150+/-0.037   0.398  0.346
+  MMSE + CDR-SB only (circular ceiling)                  0.417   15/35        0.000 | 0.426+/-0.014   0.731  0.444
+  MMSE + CDR only (circular ceiling)                     0.544   19/35        0.000 | 0.460+/-0.008   0.850  0.518
+  70/30: one test subject moves balanced accuracy by about 0.028-0.033
+
+[2] PAIRED CV COMPARISONS (identical folds; rule: >= 4/5 seeds and mean > 0)
+  does comorbidity help the transformer?       +0.163  seeds 5/5  [0.147, 0.233, 0.183, 0.119, 0.133]  -> transformer_svmrfe50_clin BETTER
+  does comorbidity help logistic regression?   +0.083  seeds 5/5  [0.075, 0.042, 0.086, 0.081, 0.133]  -> logreg_svmrfe50_clin BETTER
+  transformer fusion vs logistic fusion        +0.038  seeds 3/5  [0.025, 0.144, 0.064, -0.033, -0.008]  -> TIED
+  fusion vs comorbidity alone                  -0.039  seeds 1/5  [-0.1, -0.017, 0.014, -0.042, -0.05]  -> logreg_clin BETTER
+  fusion vs shuffled labels                    +0.209  seeds 5/5  [0.183, 0.317, 0.219, 0.208, 0.117]  -> transformer_svmrfe50_clin BETTER
+  shuffled control 0.150: OK (near chance)
+
+[3] STAGE ORDERING (Spearman rho of expected stage vs true stage, permutation p)
+  Transformer + comorbidity + MMSE/CDR-SB (primary) rho +0.694  p 0.001   CN 2.07 SMC 2.09 EMCI 2.39 MCI 2.37 LMCI 2.50 AD 3.46
+  Transformer, imaging only                    rho +0.175  p 0.029   CN 2.46 SMC 2.50 EMCI 2.45 MCI 2.46 LMCI 2.50 AD 2.55
+  Logistic reg., imaging + comorbidity + MMSE/CDR-SB rho +0.572  p 0.001   CN 2.05 SMC 2.15 EMCI 2.38 MCI 2.44 LMCI 2.56 AD 3.62
+  Logistic reg., comorbidity + MMSE/CDR-SB only rho +0.711  p 0.001   CN 1.99 SMC 2.06 EMCI 2.37 MCI 2.35 LMCI 2.47 AD 3.74
+  Transformer + comorbidity + MMSE/CDR-SB, shuffled labels rho +0.114  p 0.136   CN 2.50 SMC 2.49 EMCI 2.50 MCI 2.52 LMCI 2.51 AD 2.50
+  70/30 primary (35 test subjects): rho +0.778  p 0.001
+
+[4] BRAIN vs COMORBIDITY + MMSE/CDR-SB inside the fusion model (out-of-fold, mean over 5 seeds)
+  gate = share of the fused representation from the brain (1) vs comorbidity (0)
+    CN 0.341  SMC 0.339  EMCI 0.336  MCI 0.335  LMCI 0.336  AD 0.319   trend rho -0.338 p 0.000
+  mean P(true stage): full 0.231   comorbidity removed 0.167   brain removed 0.227   (uniform guess 0.167)
+    CN    full 0.219  no comorbidity 0.164  no brain 0.218
+    SMC   full 0.211  no comorbidity 0.163  no brain 0.208
+    EMCI  full 0.186  no comorbidity 0.189  no brain 0.177
+    MCI   full 0.158  no comorbidity 0.173  no brain 0.156
+    LMCI  full 0.168  no comorbidity 0.204  no brain 0.176
+    AD    full 0.429  no comorbidity 0.109  no brain 0.414
+
+[5] COMORBIDITY + MMSE/CDR-SB VARIABLE IMPORTANCE (permutation within test folds; drop in mean P(true stage))
+    CDR sum of boxes                    +30.80 x0.001  (SE 3.12)   |logreg coef| 0.222
+    MMSE                                +21.08 x0.001  (SE 1.70)   |logreg coef| 0.151
+    APOE4 count                          +7.61 x0.001  (SE 0.66)   |logreg coef| 0.134
+    psychiatric                          +2.36 x0.001  (SE 0.91)   |logreg coef| 0.106
+    age                                  +1.44 x0.001  (SE 0.63)   |logreg coef| 0.082
+    GDS (depression)                     +0.64 x0.001  (SE 0.66)   |logreg coef| 0.091
+    endocrine metabolic                  +0.25 x0.001  (SE 0.56)   |logreg coef| 0.081
+    sex (male)                           -0.08 x0.001  (SE 0.55)   |logreg coef| 0.088
+    smoking                              -0.41 x0.001  (SE 0.38)   |logreg coef| 0.041
+    cardiovascular                       -1.44 x0.001  (SE 0.62)   |logreg coef| 0.062
+    figure derivatives\model_training\transformer_clinical10\figures\fig2_comorbidity_importance.png
+
+[6] CONFOUNDS IN THE COHORT (how strongly each input differs by stage)
+                             CN    SMC   EMCI    MCI   LMCI     AD   test
+  age                     75.65  72.15  70.65  72.81  73.84  75.30   Kruskal p 0.108
+  sex (male)               0.45   0.40   0.35   0.69   0.60   0.45   chi2 p 0.314
+  APOE4 count              0.30   0.37   0.80   0.44   0.50   1.25   Kruskal p 4.52e-05
+  GDS (depression)         0.75   1.45   2.05   2.06   1.65   1.58   Kruskal p 0.173
+  cardiovascular           0.70   0.60   0.60   0.43   0.50   0.65   chi2 p 0.626
+  endocrine metabolic      0.40   0.30   0.20   0.50   0.35   0.60   chi2 p 0.14
+  psychiatric              0.15   0.55   0.45   0.43   0.25   0.45   chi2 p 0.095
+  smoking                  0.45   0.35   0.45   0.43   0.40   0.30   chi2 p 0.913
+  MMSE                    28.25  28.85  27.75  27.50  27.40  21.00   Kruskal p 3.84e-09
+  CDR sum of boxes         0.10   0.05   1.32   1.07   2.05   5.42   Kruskal p 5.97e-18
+    figure derivatives\model_training\transformer_clinical10\figures\fig5_inputs_by_stage.png
+    figure derivatives\model_training\transformer_clinical10\figures\fig0_model_comparison.png
+    figure derivatives\model_training\transformer_clinical10\figures\fig1_confusion_primary.png
+    figure derivatives\model_training\transformer_clinical10\figures\fig3_brain_vs_comorbidity.png
+    figure derivatives\model_training\transformer_clinical10\figures\fig4_stage_ordering.png

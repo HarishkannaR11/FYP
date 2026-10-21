@@ -1,0 +1,117 @@
+row_index,bids_id,adni_id,cohort_stage,mri_date,age_at_scan,sex,age_source,age_match
+0,sub-002S1261,002_S_1261,CN,2011-03-14,75.0,F,image collection,+0 days from MRI
+1,sub-002S1280,002_S_1280,CN,2011-05-04,75.0,F,image collection,+0 days from MRI
+2,sub-006S4357,006_S_4357,CN,2014-01-22,76.0,F,image collection,+0 days from MRI
+3,sub-010S4345,010_S_4345,CN,2012-09-20,71.0,M,image collection,+0 days from MRI
+4,sub-010S4442,010_S_4442,CN,2012-12-03,75.0,F,image collection,+0 days from MRI
+5,sub-012S4545,012_S_4545,CN,2012-09-24,68.0,F,image collection,+0 days from MRI
+6,sub-012S4643,012_S_4643,CN,2012-10-16,66.0,F,image collection,+0 days from MRI
+7,sub-013S4579,013_S_4579,CN,2012-12-19,86.0,M,image collection,+0 days from MRI
+8,sub-013S4616,013_S_4616,CN,2012-10-25,85.0,M,image collection,+0 days from MRI
+9,sub-018S4257,018_S_4257,CN,2012-07-31,80.0,M,image collection,+0 days from MRI
+10,sub-018S4313,018_S_4313,CN,2012-11-28,78.0,F,image collection,+0 days from MRI
+11,sub-018S4349,018_S_4349,CN,2012-07-10,72.0,F,image collection,+0 days from MRI
+12,sub-018S4399,018_S_4399,CN,2013-01-11,79.0,F,image collection,+0 days from MRI
+13,sub-018S4400,018_S_4400,CN,2013-01-02,72.0,M,image collection,+0 days from MRI
+14,sub-019S4367,019_S_4367,CN,2012-11-19,66.0,F,image collection,+0 days from MRI
+15,sub-019S4835,019_S_4835,CN,2013-01-15,80.0,M,image collection,+0 days from MRI
+16,sub-031S4021,031_S_4021,CN,2013-05-06,69.0,M,image collection,+0 days from MRI
+17,sub-031S4032,031_S_4032,CN,2013-05-09,72.0,F,image collection,+0 days from MRI
+18,sub-031S4218,031_S_4218,CN,2012-10-02,82.0,M,image collection,+0 days from MRI
+19,sub-031S4474,031_S_4474,CN,2012-08-01,86.0,M,image collection,+0 days from MRI
+20,sub-002S5230,002_S_5230,SMC,2013-06-27,74.0,F,image collection,+0 days from MRI
+21,sub-002S5256,002_S_5256,SMC,2013-07-15,71.0,F,image collection,+0 days from MRI
+22,sub-006S5153,006_S_5153,SMC,2013-04-22,79.0,M,image collection,+0 days from MRI
+23,sub-012S5121,012_S_5121,SMC,2013-03-15,77.0,M,image collection,+0 days from MRI
+24,sub-012S5157,012_S_5157,SMC,2013-05-16,66.0,M,image collection,+0 days from MRI
+25,sub-012S5195,012_S_5195,SMC,2013-06-14,65.0,F,image collection,+0 days from MRI
+26,sub-012S5213,012_S_5213,SMC,2013-07-10,66.0,F,image collection,+0 days from MRI
+27,sub-013S5137,013_S_5137,SMC,2013-04-19,79.0,F,image collection,+0 days from MRI
+28,sub-018S5250,018_S_5250,SMC,2013-08-08,74.0,M,image collection,+0 days from MRI
+29,sub-018S5262,018_S_5262,SMC,2013-08-12,74.0,F,image collection,+0 days from MRI
+30,sub-019S5180,019_S_5180,SMC,2013-05-22,66.0,M,image collection,+0 days from MRI
+31,sub-019S5242,019_S_5242,SMC,2013-07-02,67.0,M,image collection,+0 days from MRI
+32,sub-053S5202,053_S_5202,SMC,2013-06-07,66.0,F,image collection,+0 days from MRI
+33,sub-053S5272,053_S_5272,SMC,2013-08-12,70.0,F,image collection,+0 days from MRI
+34,sub-053S5287,053_S_5287,SMC,2013-09-10,79.0,F,image collection,+0 days from MRI
+35,sub-100S5096,100_S_5096,SMC,2013-03-28,81.0,M,image collection,+0 days from MRI
+36,sub-100S5102,100_S_5102,SMC,2013-03-29,67.0,F,image collection,+0 days from MRI
+37,sub-100S5280,100_S_5280,SMC,2013-08-16,68.0,M,image collection,+0 days from MRI
+38,sub-130S5142,130_S_5142,SMC,2013-04-19,76.0,F,image collection,+0 days from MRI
+39,sub-130S5258,130_S_5258,SMC,2013-07-18,78.0,F,image collection,+0 days from MRI
+40,sub-002S2010,002_S_2010,EMCI,2011-01-22,64.0,F,image collection,+0 days from MRI
+41,sub-002S2073,002_S_2073,EMCI,2011-03-09,64.0,F,image collection,+0 days from MRI
+42,sub-002S4237,002_S_4237,EMCI,2012-05-03,82.0,F,image collection,+0 days from MRI
+43,sub-002S4447,002_S_4447,EMCI,2012-08-14,68.0,F,image collection,+0 days from MRI
+44,sub-002S4473,002_S_4473,EMCI,2012-08-23,75.0,M,image collection,+0 days from MRI
+45,sub-006S4679,006_S_4679,EMCI,2013-07-18,70.0,M,image collection,+0 days from MRI
+46,sub-012S4012,012_S_4012,EMCI,2011-11-07,70.0,F,image collection,+0 days from MRI
+47,sub-012S4128,012_S_4128,EMCI,2012-03-06,74.0,F,image collection,+0 days from MRI
+48,sub-012S4188,012_S_4188,EMCI,2012-05-02,78.0,M,image collection,+0 days from MRI
+49,sub-012S4849,012_S_4849,EMCI,2013-02-25,67.0,F,image collection,+0 days from MRI
+50,sub-012S4987,012_S_4987,EMCI,2013-05-13,70.0,M,image collection,+0 days from MRI
+51,sub-013S2324,013_S_2324,EMCI,2012-04-17,57.0,F,image collection,+0 days from MRI
+52,sub-013S4268,013_S_4268,EMCI,2012-05-23,64.0,F,image collection,+0 days from MRI
+53,sub-013S4791,013_S_4791,EMCI,2013-04-17,69.0,F,image collection,+0 days from MRI
+54,sub-013S4917,013_S_4917,EMCI,2013-03-20,76.0,M,image collection,+0 days from MRI
+55,sub-018S2133,018_S_2133,EMCI,2011-08-02,63.0,F,image collection,+0 days from MRI
+56,sub-018S2138,018_S_2138,EMCI,2011-09-08,83.0,M,image collection,+0 days from MRI
+57,sub-018S2155,018_S_2155,EMCI,2011-07-01,70.0,F,image collection,+0 days from MRI
+58,sub-018S4597,018_S_4597,EMCI,2013-03-11,70.0,F,image collection,+0 days from MRI
+59,sub-018S4809,018_S_4809,EMCI,2013-01-08,79.0,M,image collection,+0 days from MRI
+60,sub-002S0729,002_S_0729,MCI,2012-08-07,71.0,F,image collection,+0 days from MRI
+61,sub-002S1155,002_S_1155,MCI,2011-12-22,63.0,M,image collection,+0 days from MRI
+62,sub-002S1268,002_S_1268,MCI,2011-04-13,87.0,M,image collection,+0 days from MRI
+63,sub-002S4229,002_S_4229,MCI,2012-04-10,67.0,M,image collection,+0 days from MRI
+64,sub-002S4799,002_S_4799,MCI,2013-07-02,69.0,M,image collection,+0 days from MRI
+65,sub-006S4713,006_S_4713,MCI,2012-11-28,71.0,M,image collection,+0 days from MRI
+66,sub-007S2394,007_S_2394,MCI,2015-07-13,71.6,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+67,sub-013S1186,013_S_1186,MCI,2011-02-23,87.0,M,image collection,+0 days from MRI
+68,sub-013S2389,013_S_2389,MCI,2012-02-15,59.0,F,image collection,+0 days from MRI
+69,sub-018S2180,018_S_2180,MCI,2011-07-26,78.0,F,image collection,+0 days from MRI
+70,sub-053S0919,053_S_0919,MCI,2013-01-04,69.0,M,image collection,+0 days from MRI
+71,sub-053S4813,053_S_4813,MCI,2013-01-10,68.0,M,image collection,+0 days from MRI
+72,sub-100S0296,100_S_0296,MCI,2014-04-24,87.4,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+73,sub-100S4556,100_S_4556,MCI,2012-11-26,74.0,M,image collection,+0 days from MRI
+74,sub-130S4294,130_S_4294,MCI,2012-05-15,76.0,F,image collection,+0 days from MRI
+75,sub-136S0107,136_S_0107,MCI,2012-09-06,67.0,F,image collection,+0 days from MRI
+76,sub-002S4171,002_S_4171,LMCI,2012-02-29,70.0,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+77,sub-002S4219,002_S_4219,LMCI,2012-03-23,80.3,F,idaSearch visit,"2 visit(s) with the scan's MMSE/CDR/GDS, spread 0.6 y"
+78,sub-002S4251,002_S_4251,LMCI,2012-04-17,72.5,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+79,sub-002S4521,002_S_4521,LMCI,2012-09-04,70.7,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+80,sub-002S4654,002_S_4654,LMCI,2012-10-23,76.2,F,idaSearch visit,"2 visit(s) with the scan's MMSE/CDR/GDS, spread 0.5 y"
+81,sub-002S4746,002_S_4746,LMCI,2012-12-11,71.8,F,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+82,sub-006S4346,006_S_4346,LMCI,2012-05-24,71.9,M,idaSearch visit,"2 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+83,sub-006S4363,006_S_4363,LMCI,2012-06-19,74.1,F,idaSearch visit,"2 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+84,sub-006S4515,006_S_4515,LMCI,2013-03-14,75.8,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+85,sub-013S4595,013_S_4595,LMCI,2012-10-24,77.3,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+86,sub-018S4889,018_S_4889,LMCI,2013-02-28,76.2,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+87,sub-019S4293,019_S_4293,LMCI,2012-05-09,70.4,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+88,sub-019S4548,019_S_4548,LMCI,2012-08-27,85.4,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+89,sub-031S4194,031_S_4194,LMCI,2012-02-28,62.9,M,idaSearch visit,"2 visit(s) with the scan's MMSE/CDR/GDS, spread 0.6 y"
+90,sub-031S4203,031_S_4203,LMCI,2012-03-20,75.0,F,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+91,sub-031S4590,031_S_4590,LMCI,2012-10-01,60.8,F,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+92,sub-130S4250,130_S_4250,LMCI,2012-04-11,79.1,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+93,sub-130S4542,130_S_4542,LMCI,2012-09-05,79.9,F,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+94,sub-130S4605,130_S_4605,LMCI,2012-10-19,85.3,F,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+95,sub-130S4817,130_S_4817,LMCI,2013-01-22,61.3,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+96,sub-002S5018,002_S_5018,AD,2013-05-16,73.9,M,idaSearch visit,"1 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+97,sub-006S4153,006_S_4153,AD,2012-03-27,80.0,M,idaSearch visit,"2 visit(s) with the scan's MMSE/CDR/GDS, spread 0.0 y"
+98,sub-006S4192,006_S_4192,AD,2012-05-07,83.0,M,image collection,+0 days from MRI
+99,sub-013S5071,013_S_5071,AD,2013-08-27,77.0,M,image collection,+0 days from MRI
+100,sub-018S4696,018_S_4696,AD,2012-11-01,74.0,F,image collection,+0 days from MRI
+101,sub-018S4733,018_S_4733,AD,2012-11-30,76.0,M,image collection,+0 days from MRI
+102,sub-019S4252,019_S_4252,AD,2012-10-23,88.0,F,image collection,+0 days from MRI
+103,sub-019S4477,019_S_4477,AD,2012-08-07,83.0,F,image collection,+0 days from MRI
+104,sub-019S4549,019_S_4549,AD,2012-10-30,80.0,M,image collection,+0 days from MRI
+105,sub-019S5012,019_S_5012,AD,2013-05-15,77.0,M,image collection,+0 days from MRI
+106,sub-019S5019,019_S_5019,AD,2013-05-14,64.0,F,image collection,+0 days from MRI
+107,sub-031S4024,031_S_4024,AD,2011-10-28,57.0,F,image collection,+0 days from MRI
+108,sub-130S4641,130_S_4641,AD,2012-10-10,74.0,F,image collection,+0 days from MRI
+109,sub-130S4660,130_S_4660,AD,2012-10-17,78.0,F,image collection,+0 days from MRI
+110,sub-130S4730,130_S_4730,AD,2012-12-19,82.0,F,image collection,+0 days from MRI
+111,sub-130S4971,130_S_4971,AD,2013-05-03,77.0,M,image collection,+0 days from MRI
+112,sub-130S4982,130_S_4982,AD,2013-04-26,59.0,F,image collection,+0 days from MRI
+113,sub-130S4984,130_S_4984,AD,2013-03-28,74.0,F,image collection,+0 days from MRI
+114,sub-130S4990,130_S_4990,AD,2013-04-26,76.0,F,image collection,+0 days from MRI
+115,sub-130S5059,130_S_5059,AD,2013-08-09,73.0,M,image collection,+0 days from MRI

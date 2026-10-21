@@ -1,0 +1,8 @@
+====================================================================================================
+COMORBIDITY-AWARE TRANSFORMER -- design split70, candidate transformer_svmrfe50_clin
+====================================================================================================
+cohort 116; comorbidity block 23 features ['age', 'sex_male', 'APOE4_count', 'GDS_total', 'MH_psychiatric', 'MH_neurologic_non_AD', 'MH_head_eyes_ears_nose_throat', 'MH_cardiovascular', 'MH_respiratory', 'MH_hepatic', 'MH_dermatologic_connective_tissue', 'MH_musculoskeletal', 'MH_endocrine_metabolic', 'MH_gastrointestinal', 'MH_hematopoietic_lymphatic', 'MH_renal_genitourinary', 'MH_allergies_drug_sensitivities', 'MH_alcohol_abuse', 'MH_drug_abuse', 'MH_smoking', 'MH_malignancy', 'MH_major_surgical_procedures', 'MH_other']; missing values 40 (training-median fill)
+architecture {'d_model': 16, 'num_heads': 2, 'num_layers': 1, 'dropout': 0.3}; training {'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 8, 'grad_clip': 1.0, 'max_epochs': 60, 'patience': 15}; inner folds 4 (bagged)
+split: derivatives/model_ready/splits, fingerprint 6f478fbcf56364e2, train 81 / test 35, test counts {'CN': 6, 'SMC': 6, 'EMCI': 6, 'MCI': 5, 'LMCI': 6, 'AD': 6}
+    seed 20261015 fold 0  test bal.acc 0.111  train 0.345  MAE 2.09  QWK -0.040  cls 4  epochs [9, 17, 13, 2]  52s
+  elapsed 52s
