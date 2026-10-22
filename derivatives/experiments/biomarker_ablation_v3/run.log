@@ -1,0 +1,645 @@
+A_all4 seed 20261015 fold 0: 50 features, inner 0.233, 18s
+A_all4 seed 20261015 fold 1: 50 features, inner 0.242, 21s
+A_all4 seed 20261015 fold 2: 50 features, inner 0.195, 21s
+A_all4 seed 20261015 fold 3: 50 features, inner 0.208, 22s
+A_all4 seed 20261015 fold 4: 50 features, inner 0.125, 19s
+A_all4 seed 20261016 fold 0: 50 features, inner 0.146, 23s
+A_all4 seed 20261016 fold 1: 50 features, inner 0.219, 21s
+A_all4 seed 20261016 fold 2: 50 features, inner 0.234, 20s
+A_all4 seed 20261016 fold 3: 50 features, inner 0.234, 20s
+A_all4 seed 20261016 fold 4: 50 features, inner 0.252, 20s
+A_all4 seed 20261017 fold 0: 50 features, inner 0.222, 24s
+A_all4 seed 20261017 fold 1: 50 features, inner 0.192, 20s
+A_all4 seed 20261017 fold 2: 50 features, inner 0.263, 20s
+A_all4 seed 20261017 fold 3: 50 features, inner 0.167, 20s
+A_all4 seed 20261017 fold 4: 50 features, inner 0.200, 20s
+A_all4 seed 20261018 fold 0: 50 features, inner 0.174, 22s
+A_all4 seed 20261018 fold 1: 50 features, inner 0.322, 21s
+A_all4 seed 20261018 fold 2: 50 features, inner 0.257, 23s
+A_all4 seed 20261018 fold 3: 50 features, inner 0.211, 22s
+A_all4 seed 20261018 fold 4: 50 features, inner 0.151, 22s
+A_all4 seed 20261019 fold 0: 50 features, inner 0.260, 29s
+A_all4 seed 20261019 fold 1: 50 features, inner 0.224, 24s
+A_all4 seed 20261019 fold 2: 50 features, inner 0.221, 23s
+A_all4 seed 20261019 fold 3: 50 features, inner 0.177, 22s
+A_all4 seed 20261019 fold 4: 50 features, inner 0.212, 21s
+A_all4 done in 9.0 min
+baseline reproduction: 25/25 splits identical
+A_all4_k25 seed 20261015 fold 0: 25 features, inner 0.181, 12s
+A_all4_k25 seed 20261015 fold 1: 25 features, inner 0.221, 12s
+A_all4_k25 seed 20261015 fold 2: 25 features, inner 0.167, 12s
+A_all4_k25 seed 20261015 fold 3: 25 features, inner 0.200, 12s
+A_all4_k25 seed 20261015 fold 4: 25 features, inner 0.156, 12s
+A_all4_k25 seed 20261016 fold 0: 25 features, inner 0.125, 12s
+A_all4_k25 seed 20261016 fold 1: 25 features, inner 0.276, 13s
+A_all4_k25 seed 20261016 fold 2: 25 features, inner 0.179, 13s
+A_all4_k25 seed 20261016 fold 3: 25 features, inner 0.205, 13s
+A_all4_k25 seed 20261016 fold 4: 25 features, inner 0.288, 13s
+A_all4_k25 seed 20261017 fold 0: 25 features, inner 0.243, 14s
+A_all4_k25 seed 20261017 fold 1: 25 features, inner 0.163, 13s
+A_all4_k25 seed 20261017 fold 2: 25 features, inner 0.284, 12s
+A_all4_k25 seed 20261017 fold 3: 25 features, inner 0.169, 13s
+A_all4_k25 seed 20261017 fold 4: 25 features, inner 0.190, 12s
+A_all4_k25 seed 20261018 fold 0: 25 features, inner 0.149, 11s
+A_all4_k25 seed 20261018 fold 1: 25 features, inner 0.304, 11s
+A_all4_k25 seed 20261018 fold 2: 25 features, inner 0.255, 13s
+A_all4_k25 seed 20261018 fold 3: 25 features, inner 0.138, 15s
+A_all4_k25 seed 20261018 fold 4: 25 features, inner 0.125, 12s
+A_all4_k25 seed 20261019 fold 0: 25 features, inner 0.208, 12s
+A_all4_k25 seed 20261019 fold 1: 25 features, inner 0.200, 13s
+A_all4_k25 seed 20261019 fold 2: 25 features, inner 0.148, 14s
+A_all4_k25 seed 20261019 fold 3: 25 features, inner 0.236, 12s
+A_all4_k25 seed 20261019 fold 4: 25 features, inner 0.208, 11s
+A_all4_k25 done in 5.2 min
+A_all4_k100 seed 20261015 fold 0: 100 features, inner 0.191, 44s
+A_all4_k100 seed 20261015 fold 1: 100 features, inner 0.288, 41s
+A_all4_k100 seed 20261015 fold 2: 100 features, inner 0.101, 39s
+A_all4_k100 seed 20261015 fold 3: 100 features, inner 0.232, 41s
+A_all4_k100 seed 20261015 fold 4: 100 features, inner 0.156, 40s
+A_all4_k100 seed 20261016 fold 0: 100 features, inner 0.188, 40s
+A_all4_k100 seed 20261016 fold 1: 100 features, inner 0.284, 41s
+A_all4_k100 seed 20261016 fold 2: 100 features, inner 0.200, 41s
+A_all4_k100 seed 20261016 fold 3: 100 features, inner 0.188, 41s
+A_all4_k100 seed 20261016 fold 4: 100 features, inner 0.250, 42s
+A_all4_k100 seed 20261017 fold 0: 100 features, inner 0.257, 40s
+A_all4_k100 seed 20261017 fold 1: 100 features, inner 0.171, 41s
+A_all4_k100 seed 20261017 fold 2: 100 features, inner 0.224, 41s
+A_all4_k100 seed 20261017 fold 3: 100 features, inner 0.208, 41s
+A_all4_k100 seed 20261017 fold 4: 100 features, inner 0.159, 41s
+A_all4_k100 seed 20261018 fold 0: 100 features, inner 0.174, 40s
+A_all4_k100 seed 20261018 fold 1: 100 features, inner 0.255, 42s
+A_all4_k100 seed 20261018 fold 2: 100 features, inner 0.221, 41s
+A_all4_k100 seed 20261018 fold 3: 100 features, inner 0.179, 42s
+A_all4_k100 seed 20261018 fold 4: 100 features, inner 0.200, 41s
+A_all4_k100 seed 20261019 fold 0: 100 features, inner 0.188, 41s
+A_all4_k100 seed 20261019 fold 1: 100 features, inner 0.234, 41s
+A_all4_k100 seed 20261019 fold 2: 100 features, inner 0.244, 41s
+A_all4_k100 seed 20261019 fold 3: 100 features, inner 0.200, 48s
+A_all4_k100 seed 20261019 fold 4: 100 features, inner 0.155, 41s
+A_all4_k100 done in 17.2 min
+A_mALFF seed 20261015 fold 0: 50 features, inner 0.198, 22s
+A_mALFF seed 20261015 fold 1: 50 features, inner 0.234, 22s
+A_mALFF seed 20261015 fold 2: 50 features, inner 0.127, 22s
+A_mALFF seed 20261015 fold 3: 50 features, inner 0.203, 22s
+A_mALFF seed 20261015 fold 4: 50 features, inner 0.169, 25s
+A_mALFF seed 20261016 fold 0: 50 features, inner 0.181, 22s
+A_mALFF seed 20261016 fold 1: 50 features, inner 0.242, 22s
+A_mALFF seed 20261016 fold 2: 50 features, inner 0.203, 22s
+A_mALFF seed 20261016 fold 3: 50 features, inner 0.177, 23s
+A_mALFF seed 20261016 fold 4: 50 features, inner 0.174, 22s
+A_mALFF seed 20261017 fold 0: 50 features, inner 0.233, 22s
+A_mALFF seed 20261017 fold 1: 50 features, inner 0.197, 22s
+A_mALFF seed 20261017 fold 2: 50 features, inner 0.169, 22s
+A_mALFF seed 20261017 fold 3: 50 features, inner 0.203, 21s
+A_mALFF seed 20261017 fold 4: 50 features, inner 0.281, 22s
+A_mALFF seed 20261018 fold 0: 50 features, inner 0.156, 22s
+A_mALFF seed 20261018 fold 1: 50 features, inner 0.200, 22s
+A_mALFF seed 20261018 fold 2: 50 features, inner 0.190, 22s
+A_mALFF seed 20261018 fold 3: 50 features, inner 0.179, 21s
+A_mALFF seed 20261018 fold 4: 50 features, inner 0.179, 24s
+A_mALFF seed 20261019 fold 0: 50 features, inner 0.240, 24s
+A_mALFF seed 20261019 fold 1: 50 features, inner 0.224, 22s
+A_mALFF seed 20261019 fold 2: 50 features, inner 0.188, 23s
+A_mALFF seed 20261019 fold 3: 50 features, inner 0.226, 22s
+A_mALFF seed 20261019 fold 4: 50 features, inner 0.203, 23s
+A_mALFF done in 9.3 min
+A_mReHo seed 20261015 fold 0: 50 features, inner 0.198, 24s
+A_mReHo seed 20261015 fold 1: 50 features, inner 0.151, 22s
+A_mReHo seed 20261015 fold 2: 50 features, inner 0.234, 22s
+A_mReHo seed 20261015 fold 3: 50 features, inner 0.200, 22s
+A_mReHo seed 20261015 fold 4: 50 features, inner 0.208, 22s
+A_mReHo seed 20261016 fold 0: 50 features, inner 0.208, 21s
+A_mReHo seed 20261016 fold 1: 50 features, inner 0.184, 22s
+A_mReHo seed 20261016 fold 2: 50 features, inner 0.211, 21s
+A_mReHo seed 20261016 fold 3: 50 features, inner 0.190, 22s
+A_mReHo seed 20261016 fold 4: 50 features, inner 0.240, 22s
+A_mReHo seed 20261017 fold 0: 50 features, inner 0.139, 22s
+A_mReHo seed 20261017 fold 1: 50 features, inner 0.273, 22s
+A_mReHo seed 20261017 fold 2: 50 features, inner 0.200, 23s
+A_mReHo seed 20261017 fold 3: 50 features, inner 0.263, 37s
+A_mReHo seed 20261017 fold 4: 50 features, inner 0.221, 29s
+A_mReHo seed 20261018 fold 0: 50 features, inner 0.177, 28s
+A_mReHo seed 20261018 fold 1: 50 features, inner 0.263, 28s
+A_mReHo seed 20261018 fold 2: 50 features, inner 0.198, 28s
+A_mReHo seed 20261018 fold 3: 50 features, inner 0.273, 23s
+A_mReHo seed 20261018 fold 4: 50 features, inner 0.135, 23s
+A_mReHo seed 20261019 fold 0: 50 features, inner 0.250, 19s
+A_mReHo seed 20261019 fold 1: 50 features, inner 0.203, 19s
+A_mReHo seed 20261019 fold 2: 50 features, inner 0.273, 20s
+A_mReHo seed 20261019 fold 3: 50 features, inner 0.138, 20s
+A_mReHo seed 20261019 fold 4: 50 features, inner 0.075, 20s
+A_mReHo done in 9.6 min
+A_DCz seed 20261015 fold 0: 50 features, inner 0.177, 20s
+A_DCz seed 20261015 fold 1: 50 features, inner 0.192, 20s
+A_DCz seed 20261015 fold 2: 50 features, inner 0.174, 19s
+A_DCz seed 20261015 fold 3: 50 features, inner 0.210, 19s
+A_DCz seed 20261015 fold 4: 50 features, inner 0.127, 19s
+A_DCz seed 20261016 fold 0: 50 features, inner 0.135, 20s
+A_DCz seed 20261016 fold 1: 50 features, inner 0.203, 20s
+A_DCz seed 20261016 fold 2: 50 features, inner 0.179, 20s
+A_DCz seed 20261016 fold 3: 50 features, inner 0.159, 19s
+A_DCz seed 20261016 fold 4: 50 features, inner 0.130, 20s
+A_DCz seed 20261017 fold 0: 50 features, inner 0.236, 20s
+A_DCz seed 20261017 fold 1: 50 features, inner 0.195, 20s
+A_DCz seed 20261017 fold 2: 50 features, inner 0.189, 19s
+A_DCz seed 20261017 fold 3: 50 features, inner 0.117, 20s
+A_DCz seed 20261017 fold 4: 50 features, inner 0.190, 20s
+A_DCz seed 20261018 fold 0: 50 features, inner 0.149, 19s
+A_DCz seed 20261018 fold 1: 50 features, inner 0.218, 20s
+A_DCz seed 20261018 fold 2: 50 features, inner 0.174, 19s
+A_DCz seed 20261018 fold 3: 50 features, inner 0.192, 19s
+A_DCz seed 20261018 fold 4: 50 features, inner 0.216, 18s
+A_DCz seed 20261019 fold 0: 50 features, inner 0.156, 19s
+A_DCz seed 20261019 fold 1: 50 features, inner 0.192, 19s
+A_DCz seed 20261019 fold 2: 50 features, inner 0.159, 19s
+A_DCz seed 20261019 fold 3: 50 features, inner 0.171, 19s
+A_DCz seed 20261019 fold 4: 50 features, inner 0.140, 18s
+A_DCz done in 8.1 min
+A_FC seed 20261015 fold 0: 50 features, inner 0.240, 20s
+A_FC seed 20261015 fold 1: 50 features, inner 0.190, 19s
+A_FC seed 20261015 fold 2: 50 features, inner 0.182, 19s
+A_FC seed 20261015 fold 3: 50 features, inner 0.240, 19s
+A_FC seed 20261015 fold 4: 50 features, inner 0.138, 21s
+A_FC seed 20261016 fold 0: 50 features, inner 0.208, 20s
+A_FC seed 20261016 fold 1: 50 features, inner 0.288, 20s
+A_FC seed 20261016 fold 2: 50 features, inner 0.169, 19s
+A_FC seed 20261016 fold 3: 50 features, inner 0.115, 19s
+A_FC seed 20261016 fold 4: 50 features, inner 0.179, 19s
+A_FC seed 20261017 fold 0: 50 features, inner 0.222, 19s
+A_FC seed 20261017 fold 1: 50 features, inner 0.151, 19s
+A_FC seed 20261017 fold 2: 50 features, inner 0.148, 24s
+A_FC seed 20261017 fold 3: 50 features, inner 0.190, 24s
+A_FC seed 20261017 fold 4: 50 features, inner 0.205, 25s
+A_FC seed 20261018 fold 0: 50 features, inner 0.191, 21s
+A_FC seed 20261018 fold 1: 50 features, inner 0.265, 25s
+A_FC seed 20261018 fold 2: 50 features, inner 0.167, 23s
+A_FC seed 20261018 fold 3: 50 features, inner 0.148, 24s
+A_FC seed 20261018 fold 4: 50 features, inner 0.234, 27s
+exit 139
+=== resumed 2026-10-21 15:11 after exit 139 ===
+Traceback (most recent call last):
+  File "C:\Users\krish\FYP\scripts\experiments\biomarker_ablation_v3\run_tabpfn_configs.py", line 58, in <module>
+    import train_transformer_svmrfe as S  # noqa: E402  (sets thread env vars first)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krish\FYP\scripts\model\train_transformer_svmrfe.py", line 67, in <module>
+    import torch  # noqa: E402
+    ^^^^^^^^^^^^
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\__init__.py", line 2376, in <module>
+    from torch import masked as masked
+  File "C:\Users\krish\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\masked\__init__.py", line 1, in <module>
+    from torch.masked._ops import (
+    ...<26 lines>...
+    )
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1118, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+MemoryError
+exit 1
+=== resumed 2026-10-21 15:51 after MemoryError at start-up; free commit 3.83 GB ===
+A_all4 done in 0.0 min
+baseline reproduction: 25/25 splits identical
+A_all4_k25 done in 0.0 min
+A_all4_k100 done in 0.0 min
+A_mALFF done in 0.0 min
+A_mReHo done in 0.0 min
+A_DCz done in 0.0 min
+A_FC seed 20261019 fold 0: 50 features, inner 0.139, 19s
+A_FC seed 20261019 fold 1: 50 features, inner 0.219, 20s
+A_FC seed 20261019 fold 2: 50 features, inner 0.177, 19s
+A_FC seed 20261019 fold 3: 50 features, inner 0.299, 19s
+A_FC seed 20261019 fold 4: 50 features, inner 0.200, 19s
+A_FC done in 1.6 min
+A_local seed 20261015 fold 0: 50 features, inner 0.219, 19s
+A_local seed 20261015 fold 1: 50 features, inner 0.228, 20s
+A_local seed 20261015 fold 2: 50 features, inner 0.159, 19s
+A_local seed 20261015 fold 3: 50 features, inner 0.213, 20s
+A_local seed 20261015 fold 4: 50 features, inner 0.159, 19s
+A_local seed 20261016 fold 0: 50 features, inner 0.219, 19s
+A_local seed 20261016 fold 1: 50 features, inner 0.265, 20s
+A_local seed 20261016 fold 2: 50 features, inner 0.221, 20s
+A_local seed 20261016 fold 3: 50 features, inner 0.232, 20s
+A_local seed 20261016 fold 4: 50 features, inner 0.232, 19s
+A_local seed 20261017 fold 0: 50 features, inner 0.233, 19s
+A_local seed 20261017 fold 1: 50 features, inner 0.263, 20s
+A_local seed 20261017 fold 2: 50 features, inner 0.198, 20s
+A_local seed 20261017 fold 3: 50 features, inner 0.252, 20s
+A_local seed 20261017 fold 4: 50 features, inner 0.190, 20s
+A_local seed 20261018 fold 0: 50 features, inner 0.170, 19s
+A_local seed 20261018 fold 1: 50 features, inner 0.288, 20s
+A_local seed 20261018 fold 2: 50 features, inner 0.278, 20s
+A_local seed 20261018 fold 3: 50 features, inner 0.276, 20s
+A_local seed 20261018 fold 4: 50 features, inner 0.200, 20s
+A_local seed 20261019 fold 0: 50 features, inner 0.260, 20s
+A_local seed 20261019 fold 1: 50 features, inner 0.221, 20s
+A_local seed 20261019 fold 2: 50 features, inner 0.268, 20s
+A_local seed 20261019 fold 3: 50 features, inner 0.159, 21s
+A_local seed 20261019 fold 4: 50 features, inner 0.086, 20s
+A_local done in 8.2 min
+A_conn seed 20261015 fold 0: 50 features, inner 0.222, 20s
+A_conn seed 20261015 fold 1: 50 features, inner 0.151, 21s
+A_conn seed 20261015 fold 2: 50 features, inner 0.148, 20s
+A_conn seed 20261015 fold 3: 50 features, inner 0.198, 20s
+A_conn seed 20261015 fold 4: 50 features, inner 0.127, 20s
+A_conn seed 20261016 fold 0: 50 features, inner 0.135, 20s
+A_conn seed 20261016 fold 1: 50 features, inner 0.219, 20s
+A_conn seed 20261016 fold 2: 50 features, inner 0.125, 21s
+A_conn seed 20261016 fold 3: 50 features, inner 0.117, 20s
+A_conn seed 20261016 fold 4: 50 features, inner 0.226, 20s
+A_conn seed 20261017 fold 0: 50 features, inner 0.247, 20s
+A_conn seed 20261017 fold 1: 50 features, inner 0.174, 21s
+A_conn seed 20261017 fold 2: 50 features, inner 0.130, 22s
+A_conn seed 20261017 fold 3: 50 features, inner 0.146, 21s
+A_conn seed 20261017 fold 4: 50 features, inner 0.161, 21s
+A_conn seed 20261018 fold 0: 50 features, inner 0.142, 21s
+A_conn seed 20261018 fold 1: 50 features, inner 0.278, 21s
+A_conn seed 20261018 fold 2: 50 features, inner 0.179, 21s
+A_conn seed 20261018 fold 3: 50 features, inner 0.125, 22s
+A_conn seed 20261018 fold 4: 50 features, inner 0.234, 23s
+A_conn seed 20261019 fold 0: 50 features, inner 0.139, 21s
+A_conn seed 20261019 fold 1: 50 features, inner 0.146, 22s
+A_conn seed 20261019 fold 2: 50 features, inner 0.159, 21s
+A_conn seed 20261019 fold 3: 50 features, inner 0.159, 22s
+A_conn seed 20261019 fold 4: 50 features, inner 0.153, 21s
+A_conn done in 8.7 min
+Traceback (most recent call last):
+  File "C:\Users\krish\FYP\scripts\experiments\biomarker_ablation_v3\run_tabpfn_configs.py", line 313, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\krish\FYP\scripts\experiments\biomarker_ablation_v3\run_tabpfn_configs.py", line 302, in main
+    inner = f"inner {rec['inner']['score']:.3f}" if "inner" in rec else "outer only"
+                     ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'bool' object is not subscriptable
+exit 1
+=== resumed 2026-10-21 16:10 with run_tabpfn_outer_only.py after the print TypeError ===
+P_site1 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 6s
+P_site1 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 6s
+P_site1 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site1 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site1 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site1 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site1 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site1 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site1 done in 2.7 min
+P_site2 seed 20261015 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site2 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site2 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site2 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site2 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site2 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site2 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site2 done in 2.8 min
+P_site3 seed 20261015 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site3 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site3 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site3 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site3 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site3 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site3 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site3 done in 2.8 min
+P_site4 seed 20261015 fold 0: 50 features, 92 training subjects, outer only, 8s
+P_site4 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site4 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site4 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site4 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site4 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site4 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site4 done in 2.9 min
+P_site5 seed 20261015 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site5 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site5 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site5 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_site5 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 8s
+P_site5 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 8s
+P_site5 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 9s
+P_site5 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 8s
+P_site5 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_site5 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_site5 done in 2.9 min
+P_glob1 seed 20261015 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob1 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob1 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 8s
+P_glob1 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob1 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob1 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob1 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob1 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob1 done in 2.8 min
+P_glob2 seed 20261015 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob2 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob2 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob2 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob2 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob2 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob2 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob2 done in 2.9 min
+P_glob3 seed 20261015 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob3 seed 20261015 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261015 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261015 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261015 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261016 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob3 seed 20261016 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261016 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261016 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261016 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261017 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob3 seed 20261017 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261017 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261017 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261017 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261018 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob3 seed 20261018 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261018 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261018 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261018 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261019 fold 0: 50 features, 92 training subjects, outer only, 7s
+P_glob3 seed 20261019 fold 1: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261019 fold 2: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261019 fold 3: 50 features, 93 training subjects, outer only, 7s
+P_glob3 seed 20261019 fold 4: 50 features, 93 training subjects, outer only, 7s
+P_glob3 done in 2.8 min
+L_frac50 seed 20261015 fold 0: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261015 fold 1: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261015 fold 2: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261015 fold 3: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261015 fold 4: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261016 fold 0: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261016 fold 1: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261016 fold 2: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261016 fold 3: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261016 fold 4: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261017 fold 0: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261017 fold 1: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261017 fold 2: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261017 fold 3: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261017 fold 4: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261018 fold 0: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261018 fold 1: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261018 fold 2: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261018 fold 3: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261018 fold 4: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261019 fold 0: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261019 fold 1: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261019 fold 2: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261019 fold 3: 50 features, 46 training subjects, outer only, 4s
+L_frac50 seed 20261019 fold 4: 50 features, 46 training subjects, outer only, 4s
+L_frac50 done in 1.6 min
+L_frac75 seed 20261015 fold 0: 50 features, 69 training subjects, outer only, 5s
+L_frac75 seed 20261015 fold 1: 50 features, 70 training subjects, outer only, 6s
+L_frac75 seed 20261015 fold 2: 50 features, 70 training subjects, outer only, 6s
+L_frac75 seed 20261015 fold 3: 50 features, 70 training subjects, outer only, 6s
+L_frac75 seed 20261015 fold 4: 50 features, 70 training subjects, outer only, 6s
+L_frac75 seed 20261016 fold 0: 50 features, 69 training subjects, outer only, 6s
+L_frac75 seed 20261016 fold 1: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261016 fold 2: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261016 fold 3: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261016 fold 4: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261017 fold 0: 50 features, 69 training subjects, outer only, 5s
+L_frac75 seed 20261017 fold 1: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261017 fold 2: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261017 fold 3: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261017 fold 4: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261018 fold 0: 50 features, 69 training subjects, outer only, 6s
+L_frac75 seed 20261018 fold 1: 50 features, 70 training subjects, outer only, 6s
+L_frac75 seed 20261018 fold 2: 50 features, 70 training subjects, outer only, 6s
+L_frac75 seed 20261018 fold 3: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261018 fold 4: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261019 fold 0: 50 features, 69 training subjects, outer only, 5s
+L_frac75 seed 20261019 fold 1: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261019 fold 2: 50 features, 70 training subjects, outer only, 5s
+L_frac75 seed 20261019 fold 3: 50 features, 70 training subjects, outer only, 6s
+L_frac75 seed 20261019 fold 4: 50 features, 70 training subjects, outer only, 5s
+L_frac75 done in 2.3 min
+gate: baseline settings reproduce transformer v2 exactly: True
+small seed 20261015 fold 0: A_FC, E*(loss) 31  38s
+small seed 20261015 fold 1: A_all4_k100, E*(loss) 48  60s
+small seed 20261015 fold 2: A_mReHo, E*(loss) 51  38s
+small seed 20261015 fold 3: A_FC, E*(loss) 6  39s
+small seed 20261015 fold 4: A_mReHo, E*(loss) 57  39s
+exit 1
+=== restarted transformer variants 2026-10-21 16:42 after fixing the feature-setting bug ===
+gate: baseline settings reproduce transformer v2 exactly: True
+small seed 20261015 fold 0: A_all4, E*(loss) 59  47s
+small seed 20261015 fold 1: A_all4, E*(loss) 56  54s
+small seed 20261015 fold 2: A_all4, E*(loss) 56  40s
+small seed 20261015 fold 3: A_all4, E*(loss) 55  38s
+small seed 20261015 fold 4: A_all4, E*(loss) 51  38s
+small seed 20261016 fold 0: A_all4, E*(loss) 35  37s
+small seed 20261016 fold 1: A_all4, E*(loss) 60  37s
+small seed 20261016 fold 2: A_all4, E*(loss) 48  38s
+small seed 20261016 fold 3: A_all4, E*(loss) 53  37s
+small seed 20261016 fold 4: A_all4, E*(loss) 60  38s
+small seed 20261017 fold 0: A_all4, E*(loss) 50  38s
+small seed 20261017 fold 1: A_all4, E*(loss) 57  37s
+small seed 20261017 fold 2: A_all4, E*(loss) 60  38s
+small seed 20261017 fold 3: A_all4, E*(loss) 43  37s
+small seed 20261017 fold 4: A_all4, E*(loss) 43  38s
+small seed 20261018 fold 0: A_all4, E*(loss) 31  38s
+small seed 20261018 fold 1: A_all4, E*(loss) 60  51s
+small seed 20261018 fold 2: A_all4, E*(loss) 33  45s
+small seed 20261018 fold 3: A_all4, E*(loss) 60  39s
+small seed 20261018 fold 4: A_all4, E*(loss) 42  45s
+small seed 20261019 fold 0: A_all4, E*(loss) 50  38s
+small seed 20261019 fold 1: A_all4, E*(loss) 49  41s
+small seed 20261019 fold 2: A_all4, E*(loss) 45  38s
+small seed 20261019 fold 3: A_all4, E*(loss) 53  57s
+small seed 20261019 fold 4: A_all4, E*(loss) 24  40s
+unweighted seed 20261015 fold 0: A_all4, E*(loss) 23  41s
+unweighted seed 20261015 fold 1: A_all4, E*(loss) 6  40s
+unweighted seed 20261015 fold 2: A_all4, E*(loss) 9  40s
+unweighted seed 20261015 fold 3: A_all4, E*(loss) 22  44s
+unweighted seed 20261015 fold 4: A_all4, E*(loss) 7  42s
+unweighted seed 20261016 fold 0: A_all4, E*(loss) 17  44s
+unweighted seed 20261016 fold 1: A_all4, E*(loss) 12  45s
+unweighted seed 20261016 fold 2: A_all4, E*(loss) 20  43s
+unweighted seed 20261016 fold 3: A_all4, E*(loss) 9  41s
+unweighted seed 20261016 fold 4: A_all4, E*(loss) 12  67s
+unweighted seed 20261017 fold 0: A_all4, E*(loss) 12  44s
+unweighted seed 20261017 fold 1: A_all4, E*(loss) 11  43s
+unweighted seed 20261017 fold 2: A_all4, E*(loss) 12  46s
+unweighted seed 20261017 fold 3: A_all4, E*(loss) 10  43s
+unweighted seed 20261017 fold 4: A_all4, E*(loss) 28  47s
+unweighted seed 20261018 fold 0: A_all4, E*(loss) 5  43s
+unweighted seed 20261018 fold 1: A_all4, E*(loss) 15  48s
+unweighted seed 20261018 fold 2: A_all4, E*(loss) 5  43s
+unweighted seed 20261018 fold 3: A_all4, E*(loss) 6  44s
+unweighted seed 20261018 fold 4: A_all4, E*(loss) 7  44s
+unweighted seed 20261019 fold 0: A_all4, E*(loss) 6  47s
+unweighted seed 20261019 fold 1: A_all4, E*(loss) 6  40s
+unweighted seed 20261019 fold 2: A_all4, E*(loss) 12  43s
+unweighted seed 20261019 fold 3: A_all4, E*(loss) 21  40s
+unweighted seed 20261019 fold 4: A_all4, E*(loss) 8  41s
+comorb8 seed 20261015 fold 0: A_all4, E*(loss) 21  51s
+comorb8 seed 20261015 fold 1: A_all4, E*(loss) 9  50s
+comorb8 seed 20261015 fold 2: A_all4, E*(loss) 13  47s
+comorb8 seed 20261015 fold 3: A_all4, E*(loss) 19  54s
+comorb8 seed 20261015 fold 4: A_all4, E*(loss) 17  54s
+comorb8 seed 20261016 fold 0: A_all4, E*(loss) 18  50s
+comorb8 seed 20261016 fold 1: A_all4, E*(loss) 13  48s
+comorb8 seed 20261016 fold 2: A_all4, E*(loss) 5  47s
+comorb8 seed 20261016 fold 3: A_all4, E*(loss) 7  51s
+comorb8 seed 20261016 fold 4: A_all4, E*(loss) 21  46s
+comorb8 seed 20261017 fold 0: A_all4, E*(loss) 24  47s
+comorb8 seed 20261017 fold 1: A_all4, E*(loss) 9  48s
+comorb8 seed 20261017 fold 2: A_all4, E*(loss) 7  48s
+comorb8 seed 20261017 fold 3: A_all4, E*(loss) 18  53s
+comorb8 seed 20261017 fold 4: A_all4, E*(loss) 11  49s
+comorb8 seed 20261018 fold 0: A_all4, E*(loss) 14  47s
+comorb8 seed 20261018 fold 1: A_all4, E*(loss) 13  48s
+comorb8 seed 20261018 fold 2: A_all4, E*(loss) 18  48s
+comorb8 seed 20261018 fold 3: A_all4, E*(loss) 7  47s
+comorb8 seed 20261018 fold 4: A_all4, E*(loss) 11  48s
+comorb8 seed 20261019 fold 0: A_all4, E*(loss) 17  46s
+comorb8 seed 20261019 fold 1: A_all4, E*(loss) 26  46s
+comorb8 seed 20261019 fold 2: A_all4, E*(loss) 14  49s
+comorb8 seed 20261019 fold 3: A_all4, E*(loss) 11  45s
+comorb8 seed 20261019 fold 4: A_all4, E*(loss) 3  45s
+chosen seed 20261015 fold 0: A_FC, E*(loss) 14  42s
+chosen seed 20261015 fold 1: A_all4_k100, E*(loss) 25  66s
+chosen seed 20261015 fold 2: A_mReHo, E*(loss) 13  43s
+chosen seed 20261015 fold 3: A_FC, E*(loss) 3  43s
+chosen seed 20261015 fold 4: A_mReHo, E*(loss) 7  42s
+chosen seed 20261016 fold 0: A_local, E*(loss) 8  43s
+chosen seed 20261016 fold 1: A_FC, E*(loss) 9  42s
+chosen seed 20261016 fold 2: A_all4, E*(loss) 12  41s
+chosen seed 20261016 fold 3: A_all4, E*(loss) 9  40s
+chosen seed 20261016 fold 4: A_all4_k25, E*(loss) 9  32s
+chosen seed 20261017 fold 0: A_all4_k100, E*(loss) 36  65s
+chosen seed 20261017 fold 1: A_mReHo, E*(loss) 8  43s
+chosen seed 20261017 fold 2: A_all4_k25, E*(loss) 12  32s
+chosen seed 20261017 fold 3: A_mReHo, E*(loss) 10  43s
+chosen seed 20261017 fold 4: A_mALFF, E*(loss) 10  46s
+chosen seed 20261018 fold 0: A_FC, E*(loss) 4  44s
+chosen seed 20261018 fold 1: A_all4, E*(loss) 14  41s
+chosen seed 20261018 fold 2: A_local, E*(loss) 8  41s
+chosen seed 20261018 fold 3: A_local, E*(loss) 22  43s
+chosen seed 20261018 fold 4: A_FC, E*(loss) 6  43s
+chosen seed 20261019 fold 0: A_all4, E*(loss) 6  43s
+chosen seed 20261019 fold 1: A_all4_k100, E*(loss) 8  69s
+chosen seed 20261019 fold 2: A_mReHo, E*(loss) 10  45s
+chosen seed 20261019 fold 3: A_FC, E*(loss) 2  44s
+chosen seed 20261019 fold 4: A_all4, E*(loss) 8  47s
+exit 0

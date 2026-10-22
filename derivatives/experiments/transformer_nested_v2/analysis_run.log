@@ -1,0 +1,40 @@
+HELD-OUT RESULTS (outer test folds; 25 identical splits, 5 seeds; rs-fMRI only)
+  FIXED     Transformer v2, fixed epoch from inner CV (primary): accuracy 19.5% (seed sd 3.1), balanced 19.1% (seed sd 3.2, fold sd 6.2, range 4-33, CI [0.1621, 0.2208]), macro-F1 17.7% (fold sd 5.4); recall CN 11, SMC 19, EMCI 23, MCI 8, LMCI 16, AD 38; predicted AD share 22%
+  ES        Transformer v2, nested early stopping: accuracy 18.1% (seed sd 2.2), balanced 17.9% (seed sd 2.2, fold sd 4.9, range 4-29, CI [0.1517, 0.2075]), macro-F1 15.8% (fold sd 4.6); recall CN 9, SMC 19, EMCI 17, MCI 11, LMCI 21, AD 30; predicted AD share 22%
+  FIXED_BAL Transformer v2, fixed epoch from inner balanced acc. (sensitivity): accuracy 20.2% (seed sd 2.1), balanced 19.9% (seed sd 1.9, fold sd 8.0, range 4-38, CI [0.1658, 0.2325]), macro-F1 18.1% (fold sd 7.7); recall CN 8, SMC 11, EMCI 23, MCI 12, LMCI 18, AD 47; predicted AD share 28%
+  LAST      Transformer v2, epoch 60 (no selection): accuracy 16.9% (seed sd 2.2), balanced 17.0% (seed sd 2.0, fold sd 7.5, range 4-31, CI [0.1408, 0.2]), macro-F1 16.1% (fold sd 6.3); recall CN 6, SMC 12, EMCI 24, MCI 20, LMCI 14, AD 26; predicted AD share 21%
+  C0        Transformer C0 (v1: selection fitted on whole outer training set): accuracy 19.8% (seed sd 1.1), balanced 19.6% (seed sd 1.2, fold sd 5.4, range 8-31, CI [0.165, 0.2292]), macro-F1 16.7% (fold sd 4.9); recall CN 9, SMC 22, EMCI 21, MCI 14, LMCI 3, AD 49; predicted AD share 33%
+  TABPFN    TabPFN v2, k=50 (existing baseline): accuracy 25.2% (seed sd 1.0), balanced 24.6% (seed sd 1.1, fold sd 8.2, range 8-42, CI [0.2046, 0.2904]), macro-F1 23.5% (fold sd 7.3); recall CN 12, SMC 21, EMCI 32, MCI 9, LMCI 20, AD 54; predicted AD share 23%
+
+PAIRED (A - B; balanced accuracy, seed-pooled with bootstrap CI; split-level counts and sign test)
+  FIXED vs C0: -0.5 CI [-0.0446, 0.0346], seeds A better 1/5, splits up/down 10/11 (sign p 1.00); macro-F1 -0.6, accuracy -0.3 -> no significant difference
+  ES vs C0: -1.8 CI [-0.0575, 0.0196], seeds A better 2/5, splits up/down 10/13 (sign p 0.68); macro-F1 -1.8, accuracy -1.8 -> no significant difference
+  FIXED vs ES: +1.2 CI [-0.0188, 0.0429], seeds A better 3/5, splits up/down 12/8 (sign p 0.50); macro-F1 +1.3, accuracy +1.4 -> no significant difference
+  FIXED vs TABPFN: -5.5 CI [-0.1071, -0.0058], seeds A better 0/5, splits up/down 6/15 (sign p 0.08); macro-F1 -10.5, accuracy -5.7 -> second better
+  ES vs TABPFN: -6.8 CI [-0.1183, -0.0183], seeds A better 0/5, splits up/down 5/19 (sign p 0.01); macro-F1 -11.8, accuracy -7.1 -> second better
+  C0 vs TABPFN: -5.0 CI [-0.1029, 0.0004], seeds A better 0/5, splits up/down 4/17 (sign p 0.01); macro-F1 -9.9, accuracy -5.3 -> no significant difference
+  FIXED_BAL vs FIXED: +0.8 CI [-0.0254, 0.0425], seeds A better 4/5, splits up/down 9/11 (sign p 0.82); macro-F1 +3.5, accuracy +0.6 -> no significant difference
+  LAST vs FIXED: -2.1 CI [-0.0558, 0.0175], seeds A better 1/5, splits up/down 10/13 (sign p 0.68); macro-F1 +1.6, accuracy -2.6 -> no significant difference
+
+EPOCH SELECTION (inner CV only)
+  fixed epoch (loss): median 11, IQR 7-12, range 4-28; within 25-35: 1/25; values [4, 5, 6, 6, 6, 7, 7, 7, 8, 8, 9, 11, 11, 11, 12, 12, 12, 12, 12, 14, 17, 21, 22, 23, 28]
+  fixed epoch (balanced acc.): median 29, IQR 23-48, range 12-59
+  nested early stopping, best epochs (100 inner models): median 11, IQR 5-19, <= 5: 30% (C0: median 14, IQR 7-24)
+
+INNER (validation) vs HELD-OUT balanced accuracy, mean over splits
+  ES: inner 28.2% vs held-out 18.0% (optimism +10.2, CI [7.9, 12.5])
+  FIXED: inner 17.8% vs held-out 19.2% (optimism -1.4, CI [-3.6, 0.9])
+  FIXED_BAL: inner 24.2% vs held-out 20.0% (optimism +4.2, CI [1.0, 7.1])
+  LAST: inner 17.4% vs held-out 17.0% (optimism +0.4, CI [-2.5, 3.4])
+
+LEAKAGE CHECK: inner-val minus held-out balanced accuracy of the same single models, epochs 10-60, no epoch selected (should be ~0 when the validation subjects are truly unseen)
+  c0: +4.3 pts (CI over splits [2.7, 6.2], positive in 23/25 splits)
+  v2: +0.4 pts (CI over splits [-0.9, 1.6], positive in 16/25 splits)
+  v2 - c0: -4.0 pts (CI [-5.8, -2.2], lower in 21/25 splits)
+  at each model's early-stopping epoch, c0: +13.9 pts
+  at each model's early-stopping epoch, v2: +10.2 pts
+
+FEATURE SELECTION STABILITY (SVM-RFE k=50)
+  between the 4 inner fits of a split: Jaccard 0.12; inner fit vs C0's outer-training fit: 0.23; regions per model 46.2
+
+RUNTIME: 25 splits, median 38s, total 16.2 min

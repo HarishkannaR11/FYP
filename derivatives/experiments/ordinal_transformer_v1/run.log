@@ -1,0 +1,28 @@
+gate: reference head reproduces transformer v2 exactly: True
+seed 20261015 fold 0: E*(loss) 9  41s
+seed 20261015 fold 1: E*(loss) 12  44s
+seed 20261015 fold 2: E*(loss) 11  41s
+seed 20261015 fold 3: E*(loss) 16  45s
+seed 20261015 fold 4: E*(loss) 1  42s
+seed 20261016 fold 0: E*(loss) 4  42s
+seed 20261016 fold 1: E*(loss) 14  42s
+seed 20261016 fold 2: E*(loss) 8  41s
+seed 20261016 fold 3: E*(loss) 22  42s
+seed 20261016 fold 4: E*(loss) 10  42s
+seed 20261017 fold 0: E*(loss) 22  41s
+seed 20261017 fold 1: E*(loss) 21  42s
+seed 20261017 fold 2: E*(loss) 11  47s
+seed 20261017 fold 3: E*(loss) 10  42s
+seed 20261017 fold 4: E*(loss) 17  42s
+seed 20261018 fold 0: E*(loss) 41  42s
+seed 20261018 fold 1: E*(loss) 17  41s
+seed 20261018 fold 2: E*(loss) 18  44s
+seed 20261018 fold 3: E*(loss) 24  46s
+seed 20261018 fold 4: E*(loss) 24  40s
+seed 20261019 fold 0: E*(loss) 1  44s
+seed 20261019 fold 1: E*(loss) 7  41s
+seed 20261019 fold 2: E*(loss) 12  41s
+seed 20261019 fold 3: E*(loss) 11  42s
+seed 20261019 fold 4: E*(loss) 3  43s
+done
+exit 0

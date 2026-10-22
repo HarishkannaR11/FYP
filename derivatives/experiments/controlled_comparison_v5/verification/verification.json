@@ -1,0 +1,77 @@
+[
+  {
+    "check": "label mapping CN=0, SMC=1, EMCI=2, MCI=3, LMCI=4, AD=5",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "class counts CN 20, SMC 20, EMCI 20, MCI 16, LMCI 20, AD 20",
+    "pass": true,
+    "detail": "[20, 20, 20, 16, 20, 20]"
+  },
+  {
+    "check": "one scan per subject (116 subjects, 116 acquisitions)",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "fold fingerprints are the project's 5",
+    "pass": true,
+    "detail": "3edbea19c1ee3c08, d53ad26a06b7d5c5, 2a8e70dd0eb80cae, d54bf96735be41dd, 8b7f4cd9e512b26a"
+  },
+  {
+    "check": "BASE: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "L492: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "T_V2: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "COMORB8: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "T_COMORB8: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "MMSE_CDR: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "CLIN_FULL: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "BAL: 25/25 outer test sets identical to the plan, fingerprints and stored labels match",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "baseline records equal the original stored TabPFN baseline (predictions, 25/25)",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "balanced accuracy and macro-F1 from project code equal scikit-learn (all sources, all splits)",
+    "pass": true,
+    "detail": "max difference 0.0e+00"
+  },
+  {
+    "check": "recomputed per-split metrics equal each record's stored metrics",
+    "pass": true,
+    "detail": "max difference 0.0e+00"
+  }
+]

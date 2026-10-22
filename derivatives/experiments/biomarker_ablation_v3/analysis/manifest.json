@@ -1,0 +1,45 @@
+{
+  "created": "2026-10-21 18:25:57",
+  "decisions": {
+    "R1_nested_replaces_baseline": false,
+    "R1_nested_k_replaces_baseline": false,
+    "R2_tabpfn_balancing_adopted": false,
+    "R2_transformer_unweighted_adopted": false,
+    "R3_transformer_retained": "T_small",
+    "R4_baseline_exceeds_within_site_null": true
+  },
+  "reproduction": {
+    "A_all4_vs_existing_baseline": 25,
+    "T_chosen_equals_v2_where_baseline_chosen": "5/5"
+  },
+  "ci_definition": "Analysis for experiment v3 (pre-registered in derivatives/experiments/biomarker_ablation_v3/PLAN.md).\nReads saved predictions only; trains nothing; refuses to overwrite.\n\nPoint estimates: per seed, the 5 outer test folds are pooled into one prediction per subject (116), the metric is\ncomputed on that, then averaged over the 5 seeds. Fold-level mean +/- sd over the 25 outer folds is reported too.\n95% CI: percentile interval of 2000 class-stratified bootstraps of subjects; each resample reuses every seed's\npredictions for the drawn subjects and averages the seeds. It reflects test-subject sampling given the trained\nmodels. Paired comparisons add the corrected resampled t-test (Nadeau & Bengio 2003) over the 25 splits, whose\nvariance term (1/J + n_test/n_train) accounts for the overlap between training sets of repeated CV.\n\"Reliably different\" = bootstrap CI excludes 0, >= 4 of 5 seeds agree, and corrected-t p < 0.05.",
+  "nested_choice_counts": {
+    "A_FC": 6,
+    "A_mReHo": 5,
+    "A_all4": 5,
+    "A_all4_k100": 3,
+    "A_local": 3,
+    "A_all4_k25": 2,
+    "A_mALFF": 1
+  },
+  "nested_k_choice_counts": {
+    "K_all4_k20": 7,
+    "A_all4": 7,
+    "K_all4_k30": 5,
+    "K_all4_k75": 5,
+    "K_all4_k10": 1
+  },
+  "within_site_null": [
+    0.17250000000000001,
+    0.1720833333333333,
+    0.17541666666666667,
+    0.20125,
+    0.19291666666666668
+  ],
+  "global_null": [
+    0.13916666666666663,
+    0.1475,
+    0.1825
+  ],
+  "site_only_rule": 0.30833333333333335
+}

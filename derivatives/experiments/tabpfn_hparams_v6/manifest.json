@@ -1,0 +1,20 @@
+{
+  "experiment": "tabpfn_hparams_v6",
+  "script_sha256": "0ecf5bd8f3f1fca2",
+  "configs": {
+    "C1": {
+      "n_estimators": 8,
+      "softmax_temperature": 0.9,
+      "average_before_softmax": false
+    },
+    "C2": {
+      "n_estimators": 32
+    },
+    "C3": {
+      "average_before_softmax": true
+    }
+  },
+  "tabpfn": "9.2.0",
+  "baseline": "model_training/tabpfn/cv116_tabpfn_svmrfe50.json",
+  "created": "2026-10-22 18:23:10"
+}

@@ -1,0 +1,48 @@
+{
+  "created": "2026-10-21 19:51:08",
+  "baseline_records_match_original": true,
+  "splits_identical": true,
+  "primary": {
+    "A": "L492",
+    "B": "BASE",
+    "bal_diff": -0.01625000000000002,
+    "bal_diff_ci_low": -0.053760416666666686,
+    "bal_diff_ci_high": 0.01999999999999999,
+    "seeds_A_better": 1,
+    "fold_bal_diff_mean": -0.016111111111111104,
+    "fold_bal_diff_sd": 0.06917540477304346,
+    "fold_f1_diff_mean": -0.024329411329411334,
+    "splits_up": 8,
+    "splits_down": 14,
+    "sign_p": 0.28627872467041016,
+    "corrected_t": -0.4324887199433742,
+    "corrected_t_p": 0.669247639997839,
+    "reliably_different": false,
+    "direction": "no reliable difference",
+    "intermediate (SMC, EMCI, MCI, LMCI) diff": -0.044375000000000026,
+    "intermediate (SMC, EMCI, MCI, LMCI) ci": [
+      -0.0862,
+      -0.0044
+    ],
+    "MCI spectrum (EMCI, MCI, LMCI) diff": -0.07916666666666666,
+    "MCI spectrum (EMCI, MCI, LMCI) ci": [
+      -0.1267,
+      -0.0333
+    ],
+    "macro_f1_diff": -0.02881211972865877,
+    "macro_f1_diff_ci": [
+      -0.0632,
+      0.0071
+    ],
+    "per_seed_bal_diff": [
+      -0.0292,
+      -0.0104,
+      -0.0146,
+      -0.0354,
+      0.0083
+    ],
+    "splits_tied": 3,
+    "consistent_improvement": false,
+    "role": "primary"
+  }
+}

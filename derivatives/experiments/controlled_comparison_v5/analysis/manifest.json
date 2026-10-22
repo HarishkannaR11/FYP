@@ -1,0 +1,37 @@
+{
+  "created": "2026-10-22 18:06:27",
+  "decisions": {
+    "L492": {
+      "balanced_accuracy_gain": -1.63,
+      "macro_f1_change": -2.88,
+      "intermediate_recall_change": -4.44,
+      "promising": false,
+      "reliable": false
+    },
+    "BAL": {
+      "balanced_accuracy_gain": 1.5,
+      "macro_f1_change": 1.94,
+      "intermediate_recall_change": 3.25,
+      "promising": false,
+      "reliable": false
+    },
+    "COMORB8": {
+      "balanced_accuracy_gain": 2.83,
+      "macro_f1_change": 2.31,
+      "intermediate_recall_change": 0.0,
+      "promising": false,
+      "reliable": false
+    }
+  },
+  "stop": true,
+  "sources": {
+    "BASE": "experiments/biomarker_ablation_v3/grid/A_all4 (= model_training/tabpfn/cv116_tabpfn_svmrfe50.json)",
+    "L492": "experiments/tabpfn_local492_v4/grid",
+    "BAL": "experiments/biomarker_ablation_v3/grid/A_all4 (pred_balanced)",
+    "T_V2": "experiments/transformer_nested_v2/grid (FIXED)",
+    "COMORB8": "model_training/tabpfn/cv116_tabpfn_svmrfe50_comorb8.json",
+    "T_COMORB8": "experiments/biomarker_ablation_v3/transformer/comorb8 (FIXED)",
+    "MMSE_CDR": "experiments/controlled_comparison_v5/clinical_reference/grid (NEW RUN)",
+    "CLIN_FULL": "model_training/tabpfn/cv116_tabpfn_svmrfe50_clin10.json"
+  }
+}

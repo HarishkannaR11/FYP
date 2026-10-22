@@ -1,0 +1,26 @@
+{
+  "experiment": "ordinal_transformer_v1",
+  "script_sha256": "c7e4f12b78c060f4",
+  "label_order": [
+    "CN",
+    "SMC",
+    "EMCI",
+    "MCI",
+    "LMCI",
+    "AD"
+  ],
+  "settings": {
+    "d_model": 16,
+    "num_heads": 2,
+    "num_layers": 1,
+    "dropout": 0.3,
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "max_epochs": 60,
+  "primary_rule": "FIXED",
+  "primary_decision": "argmax",
+  "reference": "derivatives/experiments/transformer_nested_v2/grid",
+  "torch": "2.11.0+cpu",
+  "created": "2026-10-21 20:16:37"
+}
