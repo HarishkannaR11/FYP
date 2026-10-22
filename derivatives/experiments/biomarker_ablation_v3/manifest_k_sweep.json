@@ -1,0 +1,36 @@
+{
+  "script_sha256": "fa079b32982ca348",
+  "uses": {
+    "run_tabpfn_configs.py": "a7ba661aabb94664"
+  },
+  "configs": {
+    "K_all4_k10": {
+      "pool": "all4",
+      "k": 10,
+      "inner": true
+    },
+    "K_all4_k20": {
+      "pool": "all4",
+      "k": 20,
+      "inner": true
+    },
+    "K_all4_k30": {
+      "pool": "all4",
+      "k": 30,
+      "inner": true
+    },
+    "K_all4_k75": {
+      "pool": "all4",
+      "k": 75,
+      "inner": true
+    }
+  },
+  "nested_k_order": [
+    "A_all4",
+    "K_all4_k10",
+    "K_all4_k20",
+    "K_all4_k30",
+    "K_all4_k75"
+  ],
+  "created": "2026-10-21 17:57:15"
+}

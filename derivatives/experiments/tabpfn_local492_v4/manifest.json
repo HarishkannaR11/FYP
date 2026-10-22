@@ -1,0 +1,9 @@
+{
+  "experiment": "tabpfn_local492_v4",
+  "script_sha256": "750b48753aadd78d",
+  "uses_run_tabpfn_configs_sha256": "a7ba661aabb94664",
+  "n_features": 492,
+  "baseline": "derivatives/experiments/biomarker_ablation_v3/grid/A_all4",
+  "tabpfn": "9.2.0",
+  "created": "2026-10-21 19:25:49"
+}

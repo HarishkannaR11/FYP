@@ -1,0 +1,18 @@
+{
+  "created": "2026-10-21 11:30:18",
+  "splits": 25,
+  "seeds": [
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019
+  ],
+  "primary_rule": "FIXED",
+  "selection_uses_heldout": false,
+  "sources": {
+    "v2": "derivatives/experiments/transformer_nested_v2/grid",
+    "C0": "derivatives/experiments/transformer_diagnostics_v1/grid/C0",
+    "TABPFN": "derivatives/model_training/tabpfn/cv116_tabpfn_svmrfe50.json"
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "results": [
+    {
+      "group": "A",
+      "check": "116 subjects; class counts CN 20, SMC 20, EMCI 20, MCI 16, LMCI 20, AD 20",
+      "status": "PASS",
+      "detail": "{\"CN\": 20, \"SMC\": 20, \"EMCI\": 20, \"MCI\": 16, \"LMCI\": 20, \"AD\": 20}"
+    },
+    {
+      "group": "A",
+      "check": "subject IDs unique; one acquisition per subject",
+      "status": "PASS",
+      "detail": "sessions/runs used: ['ses-01|run-01', 'ses-02|run-01']"
+    },
+    {
+      "group": "A",
+      "check": "index.csv, subjects.npy, y.npy, stages.npy and demographics agree row by row",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "check": "model-ready inputs byte-identical to those used by the v2 run",
+      "status": "PASS",
+      "detail": "X_regional.npy cf90056ff364b369, X_fc.npy e46cb07f850523e6, X_fc_roi_unsigned.npy b78e1a979ecb7445, y.npy 4a1c1a7a9c334cd5, subjects.npy 6d36093fa87659bd, local_attention_mask.npy 6677cee32ba74597"
+    },
+    {
+      "group": "B",
+      "check": "5 x 5 CV fold fingerprints match the project's",
+      "status": "PASS",
+      "detail": "3edbea19c1ee3c08, d53ad26a06b7d5c5, 2a8e70dd0eb80cae, d54bf96735be41dd, 8b7f4cd9e512b26a"
+    },
+    {
+      "group": "B",
+      "check": "outer test folds identical: this plan, TabPFN baseline, transformer C0 (v1), transformer v2",
+      "status": "PASS",
+      "detail": "25/25 splits"
+    },
+    {
+      "group": "B",
+      "check": "every subject tested exactly once per seed; every outer test fold holds every stage",
+      "status": "PASS",
+      "detail": "smallest stage count in an outer test fold: 3"
+    },
+    {
+      "group": "B",
+      "check": "no v3 script calls the gated locked-test evaluation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "check": "no missing or non-finite values (regional, FC strength, FC matrices)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "check": "no constant feature across subjects",
+      "status": "PASS",
+      "detail": "min feature sd 0.041"
+    },
+    {
+      "group": "C",
+      "check": "no near-duplicate subjects (max between-subject correlation of the 984 standardised features < 0.9)",
+      "status": "PASS",
+      "detail": "max r 0.526 (sub-018S5250 vs sub-012S4849)"
+    },
+    {
+      "group": "C",
+      "check": "biomarkers built within each subject (mALFF, mReHo ROI mean 1; DC_z mean 0 sd 1; FC strength = mean |FC|)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "check": "outer SVM-RFE ignores outer-test rows, for all 7 pools",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "check": "inner SVM-RFE ignores inner-validation and outer-test rows and labels, for all 7 pools",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "check": "fit_config refuses to run when outer-test labels are not hidden",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "check": "the all-four pool reproduces the baseline's SVM-RFE selection exactly",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "check": "scanner site independent of stage",
+      "status": "FLAG",
+      "detail": "13 sites, chi2 p = 3.9e-05, Cramer's V = 0.44; sites missing at least 3 of the 6 stages: 7"
+    },
+    {
+      "group": "F",
+      "check": "imaging features carry little site information (few features differ by site after FDR)",
+      "status": "PASS",
+      "detail": "31 of 984 features differ by site (sites with >= 5 subjects, FDR 5%) vs 0 by stage"
+    },
+    {
+      "group": "F",
+      "check": "site alone does not predict stage under the same CV (site-only lookup rule near chance)",
+      "status": "FLAG",
+      "detail": "balanced accuracy 30.8% (seeds [31.7, 29.2, 26.7, 31.7, 35.0]); the rule predicts the most common training stage of the test subject's site"
+    },
+    {
+      "group": "G",
+      "check": "project balanced accuracy, macro-F1 and recall equal scikit-learn's on all saved predictions",
+      "status": "PASS",
+      "detail": "max difference 0.0e+00"
+    },
+    {
+      "group": "G",
+      "check": "reported numbers reproduced from saved predictions (TabPFN 24.6 / 23.5; transformer v2 19.1 / 17.7)",
+      "status": "PASS",
+      "detail": "TabPFN baseline: balanced 24.63%, macro-F1 23.48%; transformer v2 FIXED: balanced 19.08%, macro-F1 17.75%"
+    }
+  ],
+  "facts": {
+    "within_subject_biomarker_r_median": {
+      "mALFF~mReHo": 0.288,
+      "mALFF~DC_z": -0.313,
+      "mALFF~FC": 0.28,
+      "mReHo~DC_z": -0.169,
+      "mReHo~FC": 0.419,
+      "DC_z~FC": -0.091
+    },
+    "baseline_selection": {
+      "pairwise_jaccard_25_outer_fits": 0.18344357533131864,
+      "features_selected_in_half_or_more": 19,
+      "biomarker_share": {
+        "mALFF": 0.20560000000000003,
+        "mReHo": 0.31920000000000004,
+        "DC_z": 0.2896,
+        "FC": 0.1856
+      },
+      "v2_inner_pairwise_jaccard": 0.12240565672291265
+    },
+    "site_by_stage": {
+      "002": {
+        "CN": 2,
+        "SMC": 2,
+        "EMCI": 5,
+        "MCI": 5,
+        "LMCI": 6,
+        "AD": 1
+      },
+      "006": {
+        "CN": 1,
+        "SMC": 1,
+        "EMCI": 1,
+        "MCI": 1,
+        "LMCI": 3,
+        "AD": 2
+      },
+      "007": {
+        "CN": 0,
+        "SMC": 0,
+        "EMCI": 0,
+        "MCI": 1,
+        "LMCI": 0,
+        "AD": 0
+      },
+      "010": {
+        "CN": 2,
+        "SMC": 0,
+        "EMCI": 0,
+        "MCI": 0,
+        "LMCI": 0,
+        "AD": 0
+      },
+      "012": {
+        "CN": 2,
+        "SMC": 4,
+        "EMCI": 5,
+        "MCI": 0,
+        "LMCI": 0,
+        "AD": 0
+      },
+      "013": {
+        "CN": 2,
+        "SMC": 1,
+        "EMCI": 4,
+        "MCI": 2,
+        "LMCI": 1,
+        "AD": 1
+      },
+      "018": {
+        "CN": 5,
+        "SMC": 2,
+        "EMCI": 5,
+        "MCI": 1,
+        "LMCI": 1,
+        "AD": 2
+      },
+      "019": {
+        "CN": 2,
+        "SMC": 2,
+        "EMCI": 0,
+        "MCI": 0,
+        "LMCI": 2,
+        "AD": 5
+      },
+      "031": {
+        "CN": 4,
+        "SMC": 0,
+        "EMCI": 0,
+        "MCI": 0,
+        "LMCI": 3,
+        "AD": 1
+      },
+      "053": {
+        "CN": 0,
+        "SMC": 3,
+        "EMCI": 0,
+        "MCI": 2,
+        "LMCI": 0,
+        "AD": 0
+      },
+      "100": {
+        "CN": 0,
+        "SMC": 3,
+        "EMCI": 0,
+        "MCI": 2,
+        "LMCI": 0,
+        "AD": 0
+      },
+      "130": {
+        "CN": 0,
+        "SMC": 2,
+        "EMCI": 0,
+        "MCI": 1,
+        "LMCI": 4,
+        "AD": 8
+      },
+      "136": {
+        "CN": 0,
+        "SMC": 0,
+        "EMCI": 0,
+        "MCI": 1,
+        "LMCI": 0,
+        "AD": 0
+      }
+    },
+    "features_fdr_site": 31,
+    "features_fdr_stage": 0,
+    "site_only_rule_balanced_accuracy": {
+      "mean": 0.30833333333333335,
+      "per_seed": [
+        0.31666666666666665,
+        0.2916666666666667,
+        0.26666666666666666,
+        0.31666666666666665,
+        0.35000000000000003
+      ]
+    }
+  }
+}

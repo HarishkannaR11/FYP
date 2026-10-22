@@ -1,0 +1,20 @@
+METRICS (seed-pooled out-of-fold, 25 identical outer splits; 95% CI = stratified subject bootstrap)
+  BASE      TabPFN baseline: SVM-RFE k=50 of 984 features: balanced 24.6 [20.5, 29.0] (fold 24.6 +/- 8.4); macro-F1 23.5 [19.2, 27.5]; accuracy 25.2 [21.0, 29.7]; recall CN 12 SMC 21 EMCI 32 MCI 9 LMCI 20 AD 54; intermediate (SMC, EMCI, MCI, LMCI) 20.4; MCI spectrum (EMCI, MCI, LMCI) 20.2
+  L492      TabPFN all 492 mALFF + mReHo features, no selection: balanced 23.0 [18.8, 27.2] (fold 23.0 +/- 6.0); macro-F1 20.6 [16.5, 24.2]; accuracy 23.8 [19.5, 28.1]; recall CN 14 SMC 27 EMCI 21 MCI 0 LMCI 16 AD 60; intermediate (SMC, EMCI, MCI, LMCI) 16.0; MCI spectrum (EMCI, MCI, LMCI) 12.3
+  BASE_BAL  baseline + class balancing: balanced 26.1 [21.6, 30.9] (fold 26.1 +/- 9.1); macro-F1 25.4 [20.8, 29.8]; accuracy 26.2 [21.7, 30.9]; recall CN 12 SMC 20 EMCI 31 MCI 24 LMCI 20 AD 50; intermediate (SMC, EMCI, MCI, LMCI) 23.7; MCI spectrum (EMCI, MCI, LMCI) 24.9
+  L492_BAL  492 features + class balancing: balanced 22.6 [18.4, 26.9] (fold 22.4 +/- 6.3); macro-F1 21.2 [16.8, 25.2]; accuracy 22.9 [18.6, 27.2]; recall CN 13 SMC 23 EMCI 16 MCI 12 LMCI 12 AD 59; intermediate (SMC, EMCI, MCI, LMCI) 15.9; MCI spectrum (EMCI, MCI, LMCI) 13.5
+
+PAIRED
+  [primary] L492 vs BASE: balanced -1.6 [-5.4, +2.0], per seed [-2.9, -1.0, -1.5, -3.5, 0.8], seeds A better 1/5, splits up/down/tied 8/14/3 (sign p 0.29), corrected t p 0.669; macro-F1 -2.9 [-6.3, 0.7]; intermediate (SMC, EMCI, MCI, LMCI) -4.4 [-8.6, -0.4]; MCI spectrum (EMCI, MCI, LMCI) -7.9 [-12.7, -3.3] -> reliably different: False; consistent improvement: False
+  [secondary] L492_BAL vs BASE: balanced -2.0 [-6.1, +1.8], per seed [-2.5, -0.4, 0.0, -6.0, -1.2], seeds A better 0/5, splits up/down/tied 7/13/5 (sign p 0.26), corrected t p 0.594; macro-F1 -2.2 [-6.1, 1.5]; intermediate (SMC, EMCI, MCI, LMCI) -4.6 [-9.1, -0.2]; MCI spectrum (EMCI, MCI, LMCI) -6.7 [-11.9, -1.7] -> reliably different: False; consistent improvement: False
+  [secondary] L492_BAL vs BASE_BAL: balanced -3.5 [-7.9, +0.7], per seed [-2.7, -2.7, -3.3, -5.4, -3.5], seeds A better 0/5, splits up/down/tied 6/18/1 (sign p 0.02), corrected t p 0.424; macro-F1 -4.2 [-8.4, -0.1]; intermediate (SMC, EMCI, MCI, LMCI) -7.8 [-13.0, -3.0]; MCI spectrum (EMCI, MCI, LMCI) -11.4 [-17.8, -5.5] -> reliably different: False; consistent improvement: False
+
+PER-CLASS RECALL DIFFERENCES (L492 - BASE) [95% CI]
+  CN: 12 -> 14 (+2.0 [-8.0, +12.0])
+  SMC: 21 -> 27 (+6.0 [-2.0, +15.0])
+  EMCI: 32 -> 21 (-11.0 [-22.0, -1.0])
+  MCI: 9 -> 0 (-8.8 [-16.2, -2.5])
+  LMCI: 20 -> 16 (-4.0 [-10.0, +2.0])
+  AD: 54 -> 60 (+6.0 [-5.0, +17.0])
+
+RUNTIME: 24.3 min

@@ -1,0 +1,147 @@
+{
+  "experiment": "biomarker_ablation_v3",
+  "script": "scripts\\experiments\\biomarker_ablation_v3\\run_tabpfn_configs.py",
+  "script_sha256": "a7ba661aabb94664",
+  "configs": {
+    "A_all4": {
+      "pool": "all4",
+      "k": 50,
+      "inner": true
+    },
+    "A_all4_k25": {
+      "pool": "all4",
+      "k": 25,
+      "inner": true
+    },
+    "A_all4_k100": {
+      "pool": "all4",
+      "k": 100,
+      "inner": true
+    },
+    "A_mALFF": {
+      "pool": "mALFF",
+      "k": 50,
+      "inner": true
+    },
+    "A_mReHo": {
+      "pool": "mReHo",
+      "k": 50,
+      "inner": true
+    },
+    "A_DCz": {
+      "pool": "DCz",
+      "k": 50,
+      "inner": true
+    },
+    "A_FC": {
+      "pool": "FC",
+      "k": 50,
+      "inner": true
+    },
+    "A_local": {
+      "pool": "local",
+      "k": 50,
+      "inner": true
+    },
+    "A_conn": {
+      "pool": "conn",
+      "k": 50,
+      "inner": true
+    },
+    "P_site1": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "site",
+      "rep": 1
+    },
+    "P_site2": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "site",
+      "rep": 2
+    },
+    "P_site3": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "site",
+      "rep": 3
+    },
+    "P_site4": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "site",
+      "rep": 4
+    },
+    "P_site5": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "site",
+      "rep": 5
+    },
+    "P_glob1": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "glob",
+      "rep": 1
+    },
+    "P_glob2": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "glob",
+      "rep": 2
+    },
+    "P_glob3": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "permute": "glob",
+      "rep": 3
+    },
+    "L_frac50": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "frac": 0.5
+    },
+    "L_frac75": {
+      "pool": "all4",
+      "k": 50,
+      "inner": false,
+      "frac": 0.75
+    }
+  },
+  "baseline": "A_all4",
+  "nested_order": [
+    "A_all4",
+    "A_all4_k25",
+    "A_all4_k100",
+    "A_mALFF",
+    "A_mReHo",
+    "A_DCz",
+    "A_FC",
+    "A_local",
+    "A_conn"
+  ],
+  "n_inner": 3,
+  "seeds": [
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019
+  ],
+  "n_folds": 5,
+  "inputs": "rs-fMRI only; no clinical variables",
+  "tabpfn": "9.2.0",
+  "python": "3.13.3",
+  "torch": "2.11.0+cpu",
+  "sklearn": "1.7.2",
+  "created": "2026-10-21 14:05:16"
+}

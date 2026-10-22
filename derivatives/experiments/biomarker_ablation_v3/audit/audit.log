@@ -1,0 +1,57 @@
+[A] cohort
+  PASS  116 subjects; class counts CN 20, SMC 20, EMCI 20, MCI 16, LMCI 20, AD 20  -- {"CN": 20, "SMC": 20, "EMCI": 20, "MCI": 16, "LMCI": 20, "AD": 20}
+  PASS  subject IDs unique; one acquisition per subject  -- sessions/runs used: ['ses-01|run-01', 'ses-02|run-01']
+  PASS  index.csv, subjects.npy, y.npy, stages.npy and demographics agree row by row
+  PASS  model-ready inputs byte-identical to those used by the v2 run  -- X_regional.npy cf90056ff364b369, X_fc.npy e46cb07f850523e6, X_fc_roi_unsigned.npy b78e1a979ecb7445, y.npy 4a1c1a7a9c334cd5, subjects.npy 6d36093fa87659bd, local_attention_mask.npy 6677cee32ba74597
+
+[B] outer splits
+  PASS  5 x 5 CV fold fingerprints match the project's  -- 3edbea19c1ee3c08, d53ad26a06b7d5c5, 2a8e70dd0eb80cae, d54bf96735be41dd, 8b7f4cd9e512b26a
+  PASS  outer test folds identical: this plan, TabPFN baseline, transformer C0 (v1), transformer v2  -- 25/25 splits
+  PASS  every subject tested exactly once per seed; every outer test fold holds every stage  -- smallest stage count in an outer test fold: 3
+  PASS  no v3 script calls the gated locked-test evaluation
+  INFO  the 35 subjects of the 70/30 'locked' partition are inside every CV split and have been evaluated before (transformer_nested_v2 report, section 2); they are not an untouched hold-out
+
+[C] data quality and biomarker construction
+  PASS  no missing or non-finite values (regional, FC strength, FC matrices)
+  PASS  no constant feature across subjects  -- min feature sd 0.041
+  PASS  no near-duplicate subjects (max between-subject correlation of the 984 standardised features < 0.9)  -- max r 0.526 (sub-018S5250 vs sub-012S4849)
+  PASS  biomarkers built within each subject (mALFF, mReHo ROI mean 1; DC_z mean 0 sd 1; FC strength = mean |FC|)
+  INFO  median within-subject correlation across ROIs between biomarkers: {'mALFF~mReHo': 0.288, 'mALFF~DC_z': -0.313, 'mALFF~FC': 0.28, 'mReHo~DC_z': -0.169, 'mReHo~FC': 0.419, 'DC_z~FC': -0.091}
+
+[D] where learned steps are fitted (perturbation tests, seed 20261015 fold 0)
+  PASS  outer SVM-RFE ignores outer-test rows, for all 7 pools
+  PASS  inner SVM-RFE ignores inner-validation and outer-test rows and labels, for all 7 pools
+  PASS  fit_config refuses to run when outer-test labels are not hidden
+  PASS  the all-four pool reproduces the baseline's SVM-RFE selection exactly
+  INFO  scaling: SVM-RFE standardises inside its pipeline on the rows it is fitted on; TabPFN receives raw values and preprocesses with its training context only; there is no imputation or resampling step
+
+[E] stability of the existing SVM-RFE selections (all4, k = 50)
+  INFO  baseline outer fits: mean pairwise Jaccard 0.18; features chosen in >= 50% of the 25 fits: 19; share of selected features by biomarker mALFF 21%, mReHo 32%, DC_z 29%, FC 19%; v2 inner fits Jaccard 0.12
+
+[F] scanner site and acquisition
+  FLAG  scanner site independent of stage  -- 13 sites, chi2 p = 3.9e-05, Cramer's V = 0.44; sites missing at least 3 of the 6 stages: 7
+  INFO  site x stage counts (CN SMC EMCI MCI LMCI AD):
+        002: [2, 2, 5, 5, 6, 1]
+        006: [1, 1, 1, 1, 3, 2]
+        007: [0, 0, 0, 1, 0, 0]
+        010: [2, 0, 0, 0, 0, 0]
+        012: [2, 4, 5, 0, 0, 0]
+        013: [2, 1, 4, 2, 1, 1]
+        018: [5, 2, 5, 1, 1, 2]
+        019: [2, 2, 0, 0, 2, 5]
+        031: [4, 0, 0, 0, 3, 1]
+        053: [0, 3, 0, 2, 0, 0]
+        100: [0, 3, 0, 2, 0, 0]
+        130: [0, 2, 0, 1, 4, 8]
+        136: [0, 0, 0, 1, 0, 0]
+  PASS  imaging features carry little site information (few features differ by site after FDR)  -- 31 of 984 features differ by site (sites with >= 5 subjects, FDR 5%) vs 0 by stage
+  FLAG  site alone does not predict stage under the same CV (site-only lookup rule near chance)  -- balanced accuracy 30.8% (seeds [31.7, 29.2, 26.7, 31.7, 35.0]); the rule predicts the most common training stage of the test subject's site
+  INFO  from the leakage-safe v1 audit: scan year differs by stage (Kruskal p = 3.8e-05; all SMC scans 2013); TR differs by stage (p = 0.044; only EMCI has 2250 ms scans); all 112 matched scans are Philips; age (p = 0.11) and sex (p = 0.31) do not differ by stage
+
+[G] metric consistency
+  PASS  project balanced accuracy, macro-F1 and recall equal scikit-learn's on all saved predictions  -- max difference 0.0e+00
+  PASS  reported numbers reproduced from saved predictions (TabPFN 24.6 / 23.5; transformer v2 19.1 / 17.7)  -- TabPFN baseline: balanced 24.63%, macro-F1 23.48%; transformer v2 FIXED: balanced 19.08%, macro-F1 17.75%
+  INFO  definition used for all point estimates: for each seed the 5 outer test folds are pooled into one prediction per subject, the metric is computed on the 116 subjects, then averaged over the 5 seeds
+  INFO  95% CI used: percentile interval of 2000 class-stratified bootstraps of SUBJECTS; in each resample every seed's predictions for the drawn subjects are reused and the 5 seeds averaged (seeds are not treated as independent). It covers test-subject sampling given the trained models, not training-set variability; paired comparisons add a corrected resampled t-test (Nadeau-Bengio) over the 25 splits for that
+
+21 checks, 2 flagged

@@ -1,0 +1,59 @@
+VERIFICATION
+  PASS  label mapping CN=0, SMC=1, EMCI=2, MCI=3, LMCI=4, AD=5
+  PASS  class counts CN 20, SMC 20, EMCI 20, MCI 16, LMCI 20, AD 20  -- [20, 20, 20, 16, 20, 20]
+  PASS  one scan per subject (116 subjects, 116 acquisitions)
+  PASS  fold fingerprints are the project's 5  -- 3edbea19c1ee3c08, d53ad26a06b7d5c5, 2a8e70dd0eb80cae, d54bf96735be41dd, 8b7f4cd9e512b26a
+  PASS  BASE: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  L492: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  T_V2: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  COMORB8: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  T_COMORB8: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  MMSE_CDR: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  CLIN_FULL: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  BAL: 25/25 outer test sets identical to the plan, fingerprints and stored labels match
+  PASS  baseline records equal the original stored TabPFN baseline (predictions, 25/25)
+  PASS  balanced accuracy and macro-F1 from project code equal scikit-learn (all sources, all splits)  -- max difference 0.0e+00
+  PASS  recomputed per-split metrics equal each record's stored metrics  -- max difference 0.0e+00
+
+METRICS (seed-pooled; 95% CI subject bootstrap)
+  [imaging-only] BASE: balanced 24.6 [20.5, 29.0] (fold 24.6 +/- 8.4); macro-F1 23.5 [19.2, 27.5]; accuracy 25.2 [20.9, 29.5]; intermediate recall 20.4; recall CN 12 SMC 21 EMCI 32 MCI 9 LMCI 20 AD 54
+  [imaging-only] L492: balanced 23.0 [18.8, 27.2] (fold 23.0 +/- 6.0); macro-F1 20.6 [16.5, 24.2]; accuracy 23.8 [19.3, 28.1]; intermediate recall 16.0; recall CN 14 SMC 27 EMCI 21 MCI 0 LMCI 16 AD 60
+  [imaging-only] BAL: balanced 26.1 [21.6, 30.9] (fold 26.1 +/- 9.1); macro-F1 25.4 [20.8, 29.8]; accuracy 26.2 [21.6, 30.7]; intermediate recall 23.7; recall CN 12 SMC 20 EMCI 31 MCI 24 LMCI 20 AD 50
+  [imaging-only] T_V2: balanced 19.1 [16.2, 22.1] (fold 19.2 +/- 6.3); macro-F1 17.7 [14.8, 20.3]; accuracy 19.5 [16.6, 22.4]; intermediate recall 16.4; recall CN 11 SMC 19 EMCI 23 MCI 8 LMCI 16 AD 38
+  [non-circular multimodal] COMORB8: balanced 27.5 [22.8, 32.3] (fold 27.4 +/- 7.2); macro-F1 25.8 [21.2, 30.2]; accuracy 28.1 [23.3, 32.9]; intermediate recall 20.4; recall CN 16 SMC 21 EMCI 32 MCI 9 LMCI 20 AD 67
+  [non-circular multimodal] T_COMORB8: balanced 25.7 [21.5, 29.8] (fold 25.7 +/- 9.7); macro-F1 24.4 [20.1, 28.3]; accuracy 26.4 [22.1, 30.7]; intermediate recall 18.0; recall CN 35 SMC 28 EMCI 18 MCI 5 LMCI 21 AD 47
+  [clinical reference] MMSE_CDR: balanced 47.1 [40.2, 53.9] (fold 47.2 +/- 8.5); macro-F1 43.9 [36.7, 50.7]; accuracy 48.1 [41.2, 55.0]; intermediate recall 46.4; recall CN 11 SMC 77 EMCI 47 MCI 19 LMCI 43 AD 86
+  [clinical reference] CLIN_FULL: balanced 42.6 [36.8, 49.0] (fold 42.7 +/- 11.4); macro-F1 42.3 [36.2, 48.1]; accuracy 43.4 [37.2, 49.5]; intermediate recall 36.2; recall CN 35 SMC 41 EMCI 44 MCI 19 LMCI 41 AD 76
+
+PAIRED (A - B)
+  [candidate] L492 vs BASE bal: -1.6 [-5.3, +2.2], seeds A better 1/5, splits 8/14/3, corrected p 0.669, Holm 1.000
+  [candidate] L492 vs BASE f1: -2.9 [-6.3, +0.7], seeds A better 0/5, splits 9/16/0, corrected p 0.564
+  [candidate] L492 vs BASE acc: -1.4 [-5.2, +2.6], seeds A better 1/5, splits 8/14/3, corrected p 0.715
+  [candidate] L492 vs BASE inter: -4.4 [-8.6, -0.4], seeds A better 1/5, splits 5/15/5, corrected p 0.346
+  [candidate] BAL vs BASE bal: +1.5 [-0.3, +3.3], seeds A better 4/5, splits 8/4/13, corrected p 0.539, Holm 1.000
+  [candidate] BAL vs BASE f1: +1.9 [+0.3, +3.5], seeds A better 5/5, splits 14/6/5, corrected p 0.449
+  [candidate] BAL vs BASE acc: +1.0 [-0.5, +2.6], seeds A better 3/5, splits 7/4/14, corrected p 0.621
+  [candidate] BAL vs BASE inter: +3.2 [+0.9, +5.8], seeds A better 5/5, splits 9/2/14, corrected p 0.345
+  [candidate] COMORB8 vs BASE bal: +2.8 [-0.4, +5.8], seeds A better 4/5, splits 14/6/5, corrected p 0.372, Holm 1.000
+  [candidate] COMORB8 vs BASE f1: +2.3 [-0.8, +5.2], seeds A better 4/5, splits 17/7/1, corrected p 0.398
+  [candidate] COMORB8 vs BASE acc: +2.9 [-0.3, +5.9], seeds A better 4/5, splits 14/6/5, corrected p 0.343
+  [candidate] COMORB8 vs BASE inter: +0.0 [-3.1, +2.9], seeds A better 2/5, splits 8/7/10, corrected p 0.987
+  [context: transformer] T_COMORB8 vs T_V2 bal: +6.6 [+1.5, +11.5], seeds A better 4/5, splits 18/4/3, corrected p 0.321
+  [context: transformer] T_COMORB8 vs T_V2 f1: +6.7 [+1.6, +11.6], seeds A better 4/5, splits 21/4/0, corrected p 0.141
+  [context: transformer] T_COMORB8 vs T_V2 acc: +6.9 [+1.7, +11.9], seeds A better 4/5, splits 18/4/3, corrected p 0.310
+  [context: transformer] T_COMORB8 vs T_V2 inter: +1.6 [-4.1, +7.4], seeds A better 3/5, splits 11/9/5, corrected p 0.844
+  [clinical reference] MMSE_CDR vs BASE bal: +22.5 [+14.4, +30.7], seeds A better 5/5, splits 25/0/0, corrected p 0.001
+  [clinical reference] MMSE_CDR vs BASE f1: +20.4 [+11.9, +28.6], seeds A better 5/5, splits 25/0/0, corrected p 0.002
+  [clinical reference] MMSE_CDR vs BASE acc: +22.9 [+14.8, +31.2], seeds A better 5/5, splits 25/0/0, corrected p 0.001
+  [clinical reference] MMSE_CDR vs BASE inter: +26.0 [+15.0, +37.6], seeds A better 5/5, splits 24/1/0, corrected p 0.002
+  [clinical reference] CLIN_FULL vs BASE bal: +18.0 [+12.1, +24.3], seeds A better 5/5, splits 24/0/1, corrected p 0.001
+  [clinical reference] CLIN_FULL vs BASE f1: +18.9 [+12.7, +25.2], seeds A better 5/5, splits 25/0/0, corrected p 0.000
+  [clinical reference] CLIN_FULL vs BASE acc: +18.3 [+12.4, +24.5], seeds A better 5/5, splits 24/0/1, corrected p 0.001
+  [clinical reference] CLIN_FULL vs BASE inter: +15.7 [+7.7, +23.9], seeds A better 5/5, splits 22/1/2, corrected p 0.023
+  [clinical reference] CLIN_FULL vs MMSE_CDR bal: -4.5 [-10.9, +1.9], seeds A better 0/5, splits 6/16/3, corrected p 0.378
+  [clinical reference] CLIN_FULL vs MMSE_CDR f1: -1.6 [-8.2, +5.0], seeds A better 1/5, splits 11/14/0, corrected p 0.759
+  [clinical reference] CLIN_FULL vs MMSE_CDR acc: -4.7 [-11.0, +1.7], seeds A better 0/5, splits 6/16/3, corrected p 0.358
+  [clinical reference] CLIN_FULL vs MMSE_CDR inter: -10.3 [-18.9, -1.8], seeds A better 0/5, splits 4/19/2, corrected p 0.096
+
+CANDIDATE DECISIONS (promising = +3.0 balanced, macro-F1 not lower, intermediate recall not >3 lower): {"L492": {"balanced_accuracy_gain": -1.63, "macro_f1_change": -2.88, "intermediate_recall_change": -4.44, "promising": false, "reliable": false}, "BAL": {"balanced_accuracy_gain": 1.5, "macro_f1_change": 1.94, "intermediate_recall_change": 3.25, "promising": false, "reliable": false}, "COMORB8": {"balanced_accuracy_gain": 2.83, "macro_f1_change": 2.31, "intermediate_recall_change": 0.0, "promising": false, "reliable": false}}
+STOPPING RULE: no candidate is promising -> stop; no further experiment, no confirmation

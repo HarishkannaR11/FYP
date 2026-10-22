@@ -1,0 +1,22 @@
+{
+  "created": "2026-10-22 18:45:15",
+  "verification_all_pass": true,
+  "decisions": {
+    "C2": {
+      "balanced_accuracy_change": -0.5,
+      "macro_f1_change": -0.25,
+      "intermediate_recall_change": -0.75,
+      "promising": false,
+      "reliable": false,
+      "decision": "REJECT"
+    },
+    "C3": {
+      "balanced_accuracy_change": 0.04,
+      "macro_f1_change": 0.15,
+      "intermediate_recall_change": 0.31,
+      "promising": false,
+      "reliable": false,
+      "decision": "REJECT"
+    }
+  }
+}

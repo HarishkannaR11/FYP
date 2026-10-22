@@ -1,0 +1,13 @@
+PASS  label order CN<SMC<EMCI<MCI<LMCI<AD in metadata, y.npy/stages.npy and the shared STAGES constant  -- metadata {'CN': 0, 'SMC': 1, 'EMCI': 2, 'MCI': 3, 'LMCI': 4, 'AD': 5}; y->stage [(0, 'CN'), (1, 'SMC'), (2, 'EMCI'), (3, 'MCI'), (4, 'LMCI'), (5, 'AD')]
+PASS  probabilities non-negative, sum to 1; thresholds strictly increasing; CDF monotone (incl. |g| up to 1e3)  -- max |sum-1| 2.2e-16
+PASS  stable log P(y=k) equals log of CDF differences (|g| <= 12) and is finite at |g| = 80  -- max abs diff 1.9e-10; naive float32 log gives -inf in 5 of 12 entries
+PASS  exp(log P) sums to 1
+PASS  loss = mean -log P(y) (unweighted) and sum w_y(-log P(y)) / sum w_y (weighted, as F.cross_entropy)
+PASS  gradient wrt the severity score has the right sign for every stage (score too low -> increase it, too high -> decrease it)  -- 10/10 cases
+PASS  torch.autograd.gradcheck of the weighted loss wrt scores, tau0 and threshold increments
+PASS  initial thresholds give uniform stage probabilities (1/6) at g = 0  -- [0.1667, 0.1667, 0.1667, 0.1667, 0.1667, 0.1666]
+PASS  edge cases: batch of one, single-class batches at both boundary stages, weights, float32
+PASS  median rule: first stage with cumulative probability >= 0.5, equal to threshold counting for one model  -- median of examples [3, 2, 5]
+PASS  synthetic ordered data: learned thresholds increasing, severity score ordered with the true stage, accuracy close to the noise-free oracle  -- Spearman 0.928; accuracy 0.627 vs oracle 0.643; MAE 0.41 stages
+
+11 tests, 0 failed

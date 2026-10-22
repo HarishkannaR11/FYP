@@ -1,0 +1,70 @@
+{
+  "initial_thresholds": [
+    -1.609,
+    -0.693,
+    0.0,
+    0.693,
+    1.609
+  ],
+  "final_thresholds_mean": [
+    -1.606,
+    -0.667,
+    0.059,
+    0.782,
+    1.734
+  ],
+  "final_thresholds_sd": [
+    0.015,
+    0.024,
+    0.033,
+    0.044,
+    0.056
+  ],
+  "bagged_probability_mean_per_stage": [
+    0.1706,
+    0.1661,
+    0.1644,
+    0.1638,
+    0.1656,
+    0.1695
+  ],
+  "bagged_max_probability_mean": 0.1867,
+  "probability_range_per_stage": [
+    [
+      0.082,
+      0.359
+    ],
+    [
+      0.1,
+      0.22
+    ],
+    [
+      0.123,
+      0.172
+    ],
+    [
+      0.112,
+      0.172
+    ],
+    [
+      0.087,
+      0.215
+    ],
+    [
+      0.07,
+      0.322
+    ]
+  ],
+  "severity_logit_sd": 0.1828,
+  "corr_severity_logit_with_true_stage": -0.0627,
+  "constant_rule_reference": {
+    "always_stage_2": {
+      "mae": 1.5172413793103448,
+      "within_one": 0.4827586206896552
+    },
+    "always_stage_3": {
+      "mae": 1.5517241379310345,
+      "within_one": 0.4827586206896552
+    }
+  }
+}

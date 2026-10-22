@@ -1,0 +1,61 @@
+{
+  "created": "2026-10-21 20:14:35",
+  "torch": "2.11.0+cpu",
+  "results": [
+    {
+      "test": "label order CN<SMC<EMCI<MCI<LMCI<AD in metadata, y.npy/stages.npy and the shared STAGES constant",
+      "pass": true,
+      "detail": "metadata {'CN': 0, 'SMC': 1, 'EMCI': 2, 'MCI': 3, 'LMCI': 4, 'AD': 5}; y->stage [(0, 'CN'), (1, 'SMC'), (2, 'EMCI'), (3, 'MCI'), (4, 'LMCI'), (5, 'AD')]"
+    },
+    {
+      "test": "probabilities non-negative, sum to 1; thresholds strictly increasing; CDF monotone (incl. |g| up to 1e3)",
+      "pass": true,
+      "detail": "max |sum-1| 2.2e-16"
+    },
+    {
+      "test": "stable log P(y=k) equals log of CDF differences (|g| <= 12) and is finite at |g| = 80",
+      "pass": true,
+      "detail": "max abs diff 1.9e-10; naive float32 log gives -inf in 5 of 12 entries"
+    },
+    {
+      "test": "exp(log P) sums to 1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "loss = mean -log P(y) (unweighted) and sum w_y(-log P(y)) / sum w_y (weighted, as F.cross_entropy)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "gradient wrt the severity score has the right sign for every stage (score too low -> increase it, too high -> decrease it)",
+      "pass": true,
+      "detail": "10/10 cases"
+    },
+    {
+      "test": "torch.autograd.gradcheck of the weighted loss wrt scores, tau0 and threshold increments",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "initial thresholds give uniform stage probabilities (1/6) at g = 0",
+      "pass": true,
+      "detail": "[0.1667, 0.1667, 0.1667, 0.1667, 0.1667, 0.1666]"
+    },
+    {
+      "test": "edge cases: batch of one, single-class batches at both boundary stages, weights, float32",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "median rule: first stage with cumulative probability >= 0.5, equal to threshold counting for one model",
+      "pass": true,
+      "detail": "median of examples [3, 2, 5]"
+    },
+    {
+      "test": "synthetic ordered data: learned thresholds increasing, severity score ordered with the true stage, accuracy close to the noise-free oracle",
+      "pass": true,
+      "detail": "Spearman 0.928; accuracy 0.627 vs oracle 0.643; MAE 0.41 stages"
+    }
+  ]
+}

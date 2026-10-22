@@ -1,0 +1,38 @@
+VERIFICATION
+  PASS  labels: class counts 20/20/20/16/20/20
+  PASS  C1: 25/25 outer test sets and stored labels identical to C0
+  PASS  C1: SVM-RFE support identical to C0 in 25/25 splits
+  PASS  C1: resolved settings as pre-registered in 25/25 splits {'n_estimators_': 8, 'softmax_temperature_': 0.9, 'n_ensemble_configs': 8, 'average_before_softmax': False}  -- mismatches []
+  PASS  C1: no warnings raised by TabPFN
+  PASS  C2: 25/25 outer test sets and stored labels identical to C0
+  PASS  C2: SVM-RFE support identical to C0 in 25/25 splits
+  PASS  C2: resolved settings as pre-registered in 25/25 splits {'n_estimators_': 32, 'softmax_temperature_': 0.9, 'n_ensemble_configs': 32, 'average_before_softmax': False}  -- mismatches []
+  PASS  C2: no warnings raised by TabPFN
+  PASS  C3: 25/25 outer test sets and stored labels identical to C0
+  PASS  C3: SVM-RFE support identical to C0 in 25/25 splits
+  PASS  C3: resolved settings as pre-registered in 25/25 splits {'n_estimators_': 8, 'softmax_temperature_': 0.9, 'n_ensemble_configs': 8, 'average_before_softmax': True}  -- mismatches []
+  PASS  C3: no warnings raised by TabPFN
+  PASS  C1 reproduces the stored baseline (predictions identical)  -- 25/25 splits identical; max probability difference 0.0e+00
+
+METRICS (seed-pooled; 95% CI subject bootstrap)
+  C0 C0 stored baseline (defaults: 8 estimators, T 0.9): balanced 24.6 [20.5, 29.0] (fold 24.6 +/- 8.4); macro-F1 23.5 [19.2, 27.5]; accuracy 25.2 [20.9, 29.5]; intermediate recall 20.4; recall CN 12 SMC 21 EMCI 32 MCI 9 LMCI 20 AD 54
+  C1 C1 explicit defaults (reproduction): balanced 24.6 [20.5, 29.0] (fold 24.6 +/- 8.4); macro-F1 23.5 [19.2, 27.5]; accuracy 25.2 [20.9, 29.5]; intermediate recall 20.4; recall CN 12 SMC 21 EMCI 32 MCI 9 LMCI 20 AD 54
+  C2 C2 n_estimators = 32: balanced 24.1 [19.8, 28.6] (fold 24.1 +/- 8.2); macro-F1 23.2 [18.6, 27.7]; accuracy 24.5 [20.2, 29.0]; intermediate recall 19.7; recall CN 11 SMC 20 EMCI 28 MCI 14 LMCI 17 AD 55
+  C3 C3 average_before_softmax = True: balanced 24.7 [20.5, 29.2] (fold 24.6 +/- 8.8); macro-F1 23.6 [19.2, 27.7]; accuracy 25.2 [20.9, 29.5]; intermediate recall 20.8; recall CN 12 SMC 21 EMCI 32 MCI 10 LMCI 20 AD 53
+
+PAIRED (A - B)
+  [reproduction] C1 vs C0 bal: +0.0 [+0.0, +0.0], seeds A better 0/5, splits 0/0/25, corrected p 1.000
+  [reproduction] C1 vs C0 f1: +0.0 [+0.0, +0.0], seeds A better 0/5, splits 0/0/25, corrected p 1.000
+  [reproduction] C1 vs C0 acc: +0.0 [+0.0, +0.0], seeds A better 0/5, splits 0/0/25, corrected p 1.000
+  [reproduction] C1 vs C0 inter: +0.0 [+0.0, +0.0], seeds A better 0/5, splits 0/0/25, corrected p 1.000
+  [candidate] C2 vs C0 bal: -0.5 [-2.8, +1.7], seeds A better 1/5, splits 8/11/6, corrected p 0.874, Holm 1.000
+  [candidate] C2 vs C0 f1: -0.2 [-2.6, +1.9], seeds A better 1/5, splits 12/13/0, corrected p 0.794
+  [candidate] C2 vs C0 acc: -0.7 [-2.9, +1.6], seeds A better 1/5, splits 8/10/7, corrected p 0.833
+  [candidate] C2 vs C0 inter: -0.8 [-3.9, +2.1], seeds A better 1/5, splits 8/11/6, corrected p 0.833
+  [candidate] C3 vs C0 bal: +0.0 [-0.5, +0.6], seeds A better 1/5, splits 1/1/23, corrected p 1.000, Holm 1.000
+  [candidate] C3 vs C0 f1: +0.2 [-0.3, +0.7], seeds A better 3/5, splits 8/1/16, corrected p 0.790
+  [candidate] C3 vs C0 acc: +0.0 [-0.5, +0.5], seeds A better 1/5, splits 1/1/23, corrected p 0.991
+  [candidate] C3 vs C0 inter: +0.3 [+0.0, +0.9], seeds A better 1/5, splits 1/0/24, corrected p 0.714
+
+DECISIONS: {"C2": {"balanced_accuracy_change": -0.5, "macro_f1_change": -0.25, "intermediate_recall_change": -0.75, "promising": false, "reliable": false, "decision": "REJECT"}, "C3": {"balanced_accuracy_change": 0.04, "macro_f1_change": 0.15, "intermediate_recall_change": 0.31, "promising": false, "reliable": false, "decision": "REJECT"}}
+RUNTIME: 19.8 min (C1 2.8, C2 14.2, C3 2.9)

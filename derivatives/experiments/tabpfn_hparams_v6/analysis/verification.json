@@ -1,0 +1,72 @@
+[
+  {
+    "check": "labels: class counts 20/20/20/16/20/20",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C1: 25/25 outer test sets and stored labels identical to C0",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C1: SVM-RFE support identical to C0 in 25/25 splits",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C1: resolved settings as pre-registered in 25/25 splits {'n_estimators_': 8, 'softmax_temperature_': 0.9, 'n_ensemble_configs': 8, 'average_before_softmax': False}",
+    "pass": true,
+    "detail": "mismatches []"
+  },
+  {
+    "check": "C1: no warnings raised by TabPFN",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C2: 25/25 outer test sets and stored labels identical to C0",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C2: SVM-RFE support identical to C0 in 25/25 splits",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C2: resolved settings as pre-registered in 25/25 splits {'n_estimators_': 32, 'softmax_temperature_': 0.9, 'n_ensemble_configs': 32, 'average_before_softmax': False}",
+    "pass": true,
+    "detail": "mismatches []"
+  },
+  {
+    "check": "C2: no warnings raised by TabPFN",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C3: 25/25 outer test sets and stored labels identical to C0",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C3: SVM-RFE support identical to C0 in 25/25 splits",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C3: resolved settings as pre-registered in 25/25 splits {'n_estimators_': 8, 'softmax_temperature_': 0.9, 'n_ensemble_configs': 8, 'average_before_softmax': True}",
+    "pass": true,
+    "detail": "mismatches []"
+  },
+  {
+    "check": "C3: no warnings raised by TabPFN",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "C1 reproduces the stored baseline (predictions identical)",
+    "pass": true,
+    "detail": "25/25 splits identical; max probability difference 0.0e+00"
+  }
+]

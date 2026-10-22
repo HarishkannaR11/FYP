@@ -1,0 +1,21 @@
+{
+  "created": "2026-10-21 20:38:28",
+  "checks": {
+    "tests_pass": true,
+    "gate_reproduces_v2": true,
+    "label_order": true,
+    "splits_identical": true,
+    "outer_labels_match": true
+  },
+  "decision": "REJECT",
+  "ordinal_error": "not reliably different",
+  "label_order": [
+    "CN",
+    "SMC",
+    "EMCI",
+    "MCI",
+    "LMCI",
+    "AD"
+  ],
+  "primary": "FIXED epoch rule, argmax"
+}
