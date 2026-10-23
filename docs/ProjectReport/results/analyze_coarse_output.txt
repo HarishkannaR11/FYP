@@ -1,0 +1,9 @@
+C1  C1 site-only rule                                          BA  51.4 [42.7, 59.6]  acc  46.4  F1  46.2  recall 44 / 39 / 71
+R   R post-hoc: collapsed six-class TabPFN (reference only)    BA  48.7 [42.8, 55.0]  acc  48.4  F1  47.3  recall 38 / 54 / 54
+M1  M1 TabPFN v2, three-group labels                           BA  43.6 [37.2, 50.4]  acc  47.2  F1  44.4  recall 38 / 58 / 34
+C2  C2 global label shuffle                                    BA  32.6 [29.3, 36.0]  acc  40.9  F1  31.8  recall 35 / 58 / 5
+C3  C3 within-site label shuffle                               BA  33.7 [29.6, 37.8]  acc  38.8  F1  33.4  recall 32 / 51 / 18
+M1 minus site-only: -7.9 [-17.7, +2.3]  seeds first better 0/5
+M1 minus within-site shuffle: +9.9 [+2.8, +17.0]  seeds first better 4/5
+M1 minus global shuffle: +11.0 [+3.9, +18.3]  seeds first better 5/5
+decision rules: {'1_beats_site_only': False, '2_beats_within_site_shuffle': True, '3_interval_excludes_chance_33.3': True, 'imaging_information_beyond_site_shown': False}
